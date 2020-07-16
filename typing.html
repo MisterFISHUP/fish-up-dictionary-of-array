@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>FISH UP 行列打字練習</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法">
+    <meta name="description" content="最有效的行列輸入法打字練習！附上最完整的提示，並提供多種字元清單！">    
+    <meta name="author" content="Mister FISH UP">    
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/style.css">     
+<body>
+    <header>
+        <h1>FISH UP 行列打字練習</h1>
+        <p>最有效的行列輸入法打字練習！附上最完整的提示，以及多種打字題目，甚至可自製打字題目！</p>
+        去<a href="dictionary.html" target="_blank"> FISH UP 行列查碼</a>或去<a href="index.html" target="_blank">首頁</a>
+    </header>
+    
+    
+    
+    <!-- The Grid -->
+    <div class="w3-padding-24 w3-row-padding w3-pale-red">
+
+        <!-- Left Column -->
+        <div class="w3-quarter">
+            <div id='hint'>
+                <div class="w3-card w3-white">
+                    <header class="w3-container w3-red">
+                        <h5>當前提示</h5>
+                    </header>
+                    <div id="hint_current" style="min-height: 15em;"></div>
+                </div>
+                <br>
+                <div class='w3-card w3-white'> 
+                    <header class="w3-container w3-red">
+                        <h5>下一字提示</h5>
+                    </header>                    
+                    <div id="hint_next" style="min-height: 15em;"></div>
+                </div>
+            </div>
+            <br>
+            <div id='cust_exer' class="w3-card w3-white">
+                <header class="w3-container w3-red">
+                    <h5>題目選擇</h5>
+                </header>
+                <label for="num_char">每行最多字數：</label>
+                <select name='num_char' id="option_num_char" class="w3-select">
+                    <option value="4">4</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20" selected="selected">20 (預設)</option>
+                </select>
+                <br>
+                選擇題庫：
+                <button id="btn_exer_one">題目One</button>
+                <button id="btn_exer_two">題目Two</button>
+                <br>
+                或是自製題目：
+                <br>                
+                <textarea id='input_cust_exer' rows="4" class="w3-input w3-border w3-border-dark-gray" placeholder="輸入中英文都可以呦！"></textarea>
+                <button id="btn_submit_cust_exer">製作我自己的題目</button>
+                <div id='cust_exer_hint'></div>
+
+                <div class="w3-card w3-red w3-padding w3-display-container w3-margin">
+                    <span onclick="this.parentElement.style.display='none'"
+                    class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h4>小提醒</h4>
+                    <p>在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。</p>
+                </div>
+            </div>
+            
+
+        <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class='w3-half'>
+            <div id='display-options'>
+                <label>
+                    <input type="checkbox" name="" id="cb_eng_key_active" class="checkbox">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>      
+                    </span>
+                    <span>按鍵顯示為英文鍵</span>
+                </label>
+            </div>
+            <div id="sentence_display" class="sentence-display w3-padding-16">
+                <div id='sentence_current' class='w3-padding w3-border w3-white w3-border-red w3-margin-bottom' style="font-size: 1.8em; min-height: 2em;"></div>
+                <div id='sentence_next' class='w3-padding w3-border w3-white w3-border-red' style="font-size: 1.8em; min-height: 2em;"></div>
+            </div>
+            <input type="text" id="typing_input" autofocus placeholder="按 enter 鍵換下一句" class="w3-input w3-border w3-border-dark-gray">
+            <div id='sentences_already' class='w3-padding w3-border w3-white w3-border-red w3-margin-top w3-margin-bottom' style="font-size: 1.2em; min-height: 2em;"></div>            
+            <div>
+                <h5>先前錯字</h5>
+                <div class="w3-card w3-white w3-padding">
+                    <p>先前錯字超連結：</p>
+                    <div id='wrong_chars_already_link' class="w3-card w3-padding w3-margin-bottom w3-pale-red" style="font-size: 1.3em;"></div>
+                </div>
+                
+                <div id='wrong_chars_already'></div>
+            </div>
+
+        <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class='w3-quarter'>
+            <div id="result_display">
+                <div class="w3-card w3-white">
+                    <header class="w3-container w3-red">
+                        <h5>結果</h5>
+                    </header>
+                    <div id="results" class="w3-padding" style="min-height: 5em;">
+                        總共 <span id='num_total_sentences'></span> 句，合計 <span id='num_total_chars' style="color: brown;"></span> 字<br>
+                        目前是第 <span id='pos_line'></span> 句，剩下 <span id='num_remaining_lines'></span> 句<br>
+                        正確/錯誤字數：<span id='num_total_correct_chars' style="color: green;"></span> / <span id="num_total_incorrect_chars" style="color: red;"></span><br>
+                        剩餘字數：<span id='num_total_untouched_chars'></span> 字 <br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id='wrong_chars'> 
+                <!-- <div class="w3-card w3-pale-red"> -->
+                    <header class="w3-container w3-red">
+                        <h5>當句錯字</h5>
+                     </header>
+                    <div id="wrong_chars_current" class="w3-container" style="min-height: 5em;"></div>
+                <!-- </div> -->
+            </div>  
+        
+        <!-- End Right Column -->
+        </div>
+
+    <!-- End Grid -->
+    </div>
+
+    <footer>
+        <p>This is my footer</p>
+    </footer>   
+    
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ext_A_dict.js"></script>
+    <script type="text/javascript" src="js/keys.js"></script>
+    <script type="text/javascript" src="js/built_in_strings.js"></script>
+    <script type="text/javascript" src="js/typing.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>

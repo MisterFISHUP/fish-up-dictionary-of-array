@@ -1,0 +1,131 @@
+/* ----- KeyCap Style ----- */
+.keycap {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    white-space: nowrap;
+    border: 1px solid #aaa;
+    border-style: outset;
+    border-radius: 4px;
+    padding: 0px 3px 1px 3px;
+    margin: 0px 0px 0px 0px;
+    vertical-align: baseline;
+    line-height: 1.8em;    
+}
+
+.keycap-letter {
+    background: rgb(235, 235, 235);
+    font-family: 'Courier New', Courier, monospace;
+}
+.keycap-number {
+    background: rgb(141, 141, 141);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.keycap-space {
+    background: rgb(235, 235, 235);
+    font-family: 'Courier New', Courier, monospace;
+}
+.title-single {
+    background: rgb(253, 94, 94);
+    color: aliceblue;
+}
+.title-special {
+    background: rgb(253, 171, 94);
+}
+.title-shortcode1 {
+    background: rgb(145, 238, 122);
+}
+.title-shortcode2 {
+    background: rgb(121, 233, 253);
+}
+.title-normal {
+    background: rgb(235, 235, 235);
+}
+.title-symbol {
+    background: rgb(253, 94, 94);
+    color: aliceblue;
+}
+
+
+/* checkbox_switch */
+.btn-toggle-box {
+    display:inline-block;
+    vertical-align:middle;
+    width: 40px;
+    height: 20px;
+    border-radius:100px;
+    background-color: #ccc;
+    box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
+  }
+.btn-toggle-box .btn-toggle {
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+    background-color: #fff;
+    margin-left: 0;/*動畫從ml為0開始*/
+    transition: .5s;
+    box-shadow:1px 2px 5px rgba(0,0,0,.3);
+  }
+.checkbox {
+    position:absolute;
+    opacity:0;
+  }
+.checkbox:checked + .btn-toggle-box {
+    background-color: rgb(113, 230, 113);
+  }
+.checkbox:checked + .btn-toggle-box .btn-toggle {
+    margin-left: 20px;
+  }
+
+/* https://ezbox.idv.tw/131/back-to-top-button-without-images/ */
+.toTop-arrow {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 30%;
+	opacity: 0.6;
+	background: rgb(100, 100, 100);
+	cursor: pointer;
+	position:fixed;
+	right: 1rem;
+	bottom: 1rem;
+	display: none;
+}
+.toTop-arrow:hover{
+    opacity: 0.8;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+	width: 18px;
+	height: 5px;
+	border-radius: 0px;
+	background: whitesmoke;
+	position: absolute;
+	content: "";
+}
+.toTop-arrow::before {
+	transform: rotate(-45deg) translate(0, -50%);
+	left: 0.45rem;
+}
+.toTop-arrow::after {
+	transform: rotate(45deg) translate(0, -50%);
+	right: 0.45rem;
+}
+.toTop-arrow:focus {outline: none;}
+
+
+/* for script_typing.js */
+.correct {
+    color: green;
+}
+  
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>FISH UP 行列查碼</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法查碼,中文輸入法">
+    <meta name="description" content="最好用、最實用的行列輸入法查碼">    
+    <meta name="author" content="Mister FISH UP">    
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header >
+        <h1>FISH UP 行列查碼</h1>
+        <p>最好用、最實用的行列輸入法查碼</p>
+        去<a href="typing.html" target="_blank"> FISH UP 行列打字練習</a>或去<a href="index.html" target="_blank">首頁</a>
+    </header>
+    <br>    
+    <div class= 'w3-container' style ='width: 70%; margin: auto;' >        
+        <div class="w3-row">
+            <a href="javascript:void(0)" onclick="openSearchTag(event, 'search_tab_content_1');">
+                <div class="w3-half tablink w3-bottombar w3-border-red w3-hover-light-grey w3-padding w3-center">我想要查碼</div>                
+            </a>
+            <a href="javascript:void(0)" onclick="openSearchTag(event, 'search_tab_content_2');">
+                <div class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding w3-center">我想看列表</div>
+            </a>            
+        </div>
+        <div id="search_tab_content_1" class="w3-container search-type w3-card ">
+            <div class='w3-container w3-padding-24 w3-center w3-animate-left'>
+                <input type="text" id="inputCharacters" name="characters" placeholder="最多可輸入 500 字！" class="w3-input" style="width: 80%;" autofocus>       
+
+                <button type="submit" id="btn_submit" value="Submit" class="w3-button w3-round w3-green">查詢</button>
+            </div>
+        </div>        
+        <div id="search_tab_content_2" class="w3-container search-type w3-card " style="display:none">
+            <div class="w3-animate-left w3-center w3-padding-24" >
+                <!-- <label>我想看列表:</label> -->
+                <label><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll"> 單鍵碼&nbsp&nbsp</label>
+                <label><input type="checkbox" id='checkbox--sp' name="special" value="spAll"> 特別碼&nbsp&nbsp</label>
+                <label><input type="checkbox" id='checkbox--sc1' name="shortcode1" value="sc1All"> 一級簡碼&nbsp&nbsp</label>
+                <label><input type="checkbox" id='checkbox--sc2' name="shortcode2" value="sc2All"> 二級簡碼&nbsp&nbsp</label>
+                <label><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll"> 符號&nbsp&nbsp</label>        
+                <button type="submit" id="btn_filter_submit" value="somevalue" class="w3-button w3-round w3-green">查看</button> 
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- The Grid -->
+    <div class="w3-padding-24 w3-row-padding w3-pale-green">
+
+        <!-- Left Column -->
+        <div class="w3-quarter">
+            <div class="w3-card w3-white w3-margin-bottom">
+                <header class="w3-container w3-green">
+                    <h5>設定</h5>
+                </header>
+                <div class="w3-container w3-padding-16">
+                    <span>按鍵顯示為英文鍵</span>
+                    <label class="w3-right">
+                        <input type="checkbox" name="" id="cb_eng_key_active" class="checkbox">
+                        <span class="btn-toggle-box">
+                            <span class="btn-toggle"></span>      
+                        </span>
+                    </label>
+                </div>
+                <header class="w3-container w3-green">
+                    <h5>圖示說明</h5>
+                </header>
+                <ul class="w3-ul w3-hoverable">
+                    <li><span class="keycap title-single">單</span>：單鍵碼（一碼字）</li>
+                    <li><span class="keycap title-special">特</span>：特殊碼</li>
+                    <li><span class="keycap title-shortcode1">一</span>：一級簡碼</li>
+                    <li><span class="keycap title-shortcode2">二</span>：二級簡碼</li>
+                    <li><span class="keycap title-normal">普</span>：一般輸入</li>
+                    <li><span class="keycap title-symbol">符</span>：符號</li>
+                </ul>
+            </div>
+            <div class="w3-card w3-green w3-padding w3-display-container">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h4>注意！</h4>
+                <p>「敦」、「雇」兩字的特別碼有重碼：按完本網站給出的特別碼後，還要再按一次 <span class="keycap keycap-space" style="color: black;">space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
+            </div>
+        
+        <!-- End Left Column -->
+        </div>
+
+        <!-- Right column -->
+        <div class="w3-threequarter">
+            <div id='result_area'>
+                <div class="w3-card w3-white w3-padding">
+                    <h2>歡迎來到 FISH UP 行列查碼！</h2>
+                    此頁面能夠讓您查詢行列輸入法的編碼，以及查看行列<br>
+                    我所設計的行列查碼提供了許多實用的功能，包括
+                    <ul>
+                        <li>支援行動裝置瀏覽，<b class="w3-text-green">手機、平板</b>、筆電、桌電都能良好顯示</li>
+                        <li>按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
+                        <li><b style="color: crimson;"">標註單鍵碼、特殊碼、一級簡碼、二級簡碼與符號</b></li>
+                        <li>一級與二級簡碼給出數字鍵</li>
+                        <li>會提示是否需要按空白鍵 <span class="keycap keycap-space">space</span></li>
+                        <li>給出符號在行列的符號選單的位置</li>
+                    </ul>
+                    
+                    <h3>我想要查碼</h3>
+                    <ul>
+                        <li>總共 74956 字符提供查詢</li>
+                        <li>查詢範圍涵蓋至中日韓統一表意文字擴充區 D</li>
+                        <li>支援多字查詢，<b style="color: crimson;">一次最多可查詢 500 字</b></li>
+                    </ul>                    
+
+                    <h3>我想看列表</h3>
+                    <ul>
+                        <li>一碼字、特別碼、一級簡碼、二級簡碼（因太多字暫不提供）及符號的列表</li>
+                        <li>能夠隨意混篩，找出擁有上述邊碼的字，不僅實用也滿足您的好奇心</li>
+                    </ul>
+                </div>
+            </div>
+
+        <!-- End Right Column -->
+        </div>
+
+    <!-- End Grid -->
+    </div>
+
+    <footer class="w3-container">
+        <p>This is my footer</p>
+    </footer>
+
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+
+    <!-- script -->
+    <script>
+        function openSearchTag(evt, searchTypeName) {
+            let x = document.getElementsByClassName("search-type");
+            let tablinks = document.getElementsByClassName("tablink");      
+            
+            for (elem of x) {
+                elem.style.display = "none";
+            }        
+            for (elem of tablinks) {
+                elem.className = elem.className.replace("w3-border-red");
+            }
+            document.getElementById(searchTypeName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-border-red";
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ext_ABCD_dict.js"></script>
+    <script type="text/javascript" src="js/keys.js"></script>        
+    <script type="text/javascript" src="js/dictionary.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>

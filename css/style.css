@@ -1,3 +1,42 @@
+html * 
+{
+    font-family: 'Georgia','Noto Serif TC', serif;
+}
+hr {
+    border-top: 1px solid lightslategray;
+}
+.bgimg-index {
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../img/header_index.jpg");
+    min-height: 100%;
+    alt: "Header image of the main page ";
+}
+.bgimg-dictionary {
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)), url("../img/header_search.jpg");
+    alt: "Header image of dictionary page";
+}
+.bgimg-typing {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../img/leaf_compressed.jpg");
+    alt: "Header image of typing page";
+}
+/* .bgimg-4 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../img/");
+} */
+/* linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),  */
+img.root {
+    display:inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: text-top;
+}
+
 /* ----- KeyCap Style ----- */
 .keycap {
     -webkit-border-radius: 4px;
@@ -13,7 +52,6 @@
     vertical-align: baseline;
     line-height: 1.8em;    
 }
-
 .keycap-letter {
     background: rgb(235, 235, 235);
     font-family: 'Courier New', Courier, monospace;
@@ -49,24 +87,24 @@
     color: aliceblue;
 }
 
-
 /* checkbox_switch */
 .btn-toggle-box {
     display:inline-block;
     vertical-align:middle;
-    width: 40px;
-    height: 20px;
+    width: 30px;
+    height: 15px;
     border-radius:100px;
     background-color: #ccc;
     box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
   }
 .btn-toggle-box .btn-toggle {
     display:inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius:50%;
     background-color: #fff;
-    margin-left: 0;/*動畫從ml為0開始*/
+    margin-left: 0;
+    margin-bottom: 2px;
     transition: .5s;
     box-shadow:1px 2px 5px rgba(0,0,0,.3);
   }
@@ -78,54 +116,47 @@
     background-color: rgb(113, 230, 113);
   }
 .checkbox:checked + .btn-toggle-box .btn-toggle {
-    margin-left: 20px;
+    margin-left: 15px;
   }
 
 /* https://ezbox.idv.tw/131/back-to-top-button-without-images/ */
 .toTop-arrow {
-	width: 2.5rem;
-	height: 2.5rem;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	border-radius: 30%;
-	opacity: 0.6;
-	background: rgb(100, 100, 100);
-	cursor: pointer;
-	position:fixed;
-	right: 1rem;
-	bottom: 1rem;
-	display: none;
-}
-.toTop-arrow:hover{
-    opacity: 0.8;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 25%;
+    opacity: 0.6;
+    background: rgb(120, 120, 120);
+    cursor: pointer;
+    position:fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
 }
 .toTop-arrow::before, .toTop-arrow::after {
-	width: 18px;
-	height: 5px;
-	border-radius: 0px;
-	background: whitesmoke;
-	position: absolute;
-	content: "";
+    width: 25px;
+    height: 6px;
+    border-radius: 3px;
+    background: whitesmoke;
+    position: absolute;
+    content: "";
 }
 .toTop-arrow::before {
-	transform: rotate(-45deg) translate(0, -50%);
-	left: 0.45rem;
+    transform: rotate(-45deg) translate(0, -50%);
+    left: 0.35rem;
 }
 .toTop-arrow::after {
-	transform: rotate(45deg) translate(0, -50%);
-	right: 0.45rem;
+    transform: rotate(45deg) translate(0, -50%);
+    right: 0.35rem;
 }
 .toTop-arrow:focus {outline: none;}
-
 
 /* for script_typing.js */
 .correct {
     color: green;
-}
-  
+}  
 .incorrect {
     color: red;
-    text-decoration: underline;
 }
-

@@ -1,4 +1,12 @@
-const maxInputChar = 500;
+/* Structure: (use search)
+    - get html DOMS
+    - search functionality
+    - auto focus
+    - filter with checkboxes
+    - fetch data
+    - eng Key Toggle
+    - page display
+*/
 
 // get html DOMS
 const resultAreaElem = document.getElementById('result_area');
@@ -6,11 +14,7 @@ const inputElem = document.getElementById('inputCharacters');
 const btnSubmitElem = document.getElementById('btn_submit');
 const btnFilterSubmit = document.getElementById("btn_filter_submit");
 
-// click btn or press enter to trigger 'search'
-btnSubmitElem.addEventListener("click", search);
-$(window).on('keypress',function(e) {
-    if (e.which == 13) search();
-});
+const maxInputChar = 500;
 
 // auto focus for the input area
 $('#inputCharacters').on('hover, mouseover', function() {
@@ -20,15 +24,25 @@ $('#btn_submit').on('hover, mouseover', function() {
     $('#inputCharacters').focus();
 });
 
+// ---------------------
+// search functionality
+// ---------------------
+
+// click btn or press enter to trigger 'search'
+btnSubmitElem.addEventListener("click", search);
+$(window).on('keypress',function(e) {
+    if (e.which == 13) search();
+});
+
 // clear the result area, and if input is not too long, call printResults
 function search() {    
     resultAreaElem.innerHTML="";
     let input = inputElem.value;
-    inputElem.value = '';
+    // inputElem.value = '';
     if (input.length === 0) {
         const hintDiv = document.createElement('div');
         hintDiv.className = 'w3-card w3-white w3-padding';
-        hintDiv.innerHTML='<p>你沒有輸入任何字呦！<br>你可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特殊碼和一級簡碼的字！</p>';
+        hintDiv.innerHTML='<p>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特殊碼和一級簡碼的字！</p>';
         resultAreaElem.appendChild(hintDiv);
     } else if (input.length > maxInputChar) {
         const hintDiv = document.createElement('div');
@@ -37,9 +51,6 @@ function search() {
         resultAreaElem.appendChild(hintDiv);
     } else printResults(input);
 }
-
-// test sentence, comment out for final version
-printResults('㐃㫈嘂㠩㦰、屮芔茻、嫑氼、槑孖、飝皛灥');
 
 // create resultCharList, resultBlocks in the result area
 function printResults (input) {
@@ -55,7 +66,7 @@ function printResults (input) {
     // create resultCharList, put it into the resultDescription
     let resultCharList = document.createElement('div');
     resultCharList.id = 'result_char_list';
-    resultCharList.className = 'w3-card w3-pale-green w3-padding w3-margin-bottom';  // w3 css
+    resultCharList.className = 'w3-card w3-sand w3-padding w3-margin-bottom';  // w3 css
     resultCharList.style = "font-size: 1.3em"; // bigger font size
     resultDescription.appendChild(resultCharList);
     
@@ -91,6 +102,10 @@ function printResults (input) {
     // show engKey if asked
     if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
 }
+
+//------------------------
+// filter with checkboxes
+//------------------------
 
 btnFilterSubmit.addEventListener("click", array30Filter);
 
@@ -174,6 +189,10 @@ function array30Filter() {
         }
     }
 }
+
+// ------------
+// fetch data
+// ------------
 
 // create the block (resultBlock) #block_id_name from char and its mappingDict, add it to some elem #id_name
 function createBlock(character, mappingDict, block_id_name, id_name) {    
@@ -482,7 +501,7 @@ function createLineNL (nlKeys, id_name) {
 // eng Key Toggle
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 function engKeyToggle() {
-    letterList=document.getElementsByClassName("keycap-letter");  
+    letterList = document.getElementsByClassName("keycap-letter");  
     for (let letter of letterList) {
         const letter_content = letter.textContent;
         if (letter_content.length === 1) {
@@ -492,6 +511,8 @@ function engKeyToggle() {
         }
     }
 }
+
+// page display
 
 // back to top button
 $(function() {
@@ -506,3 +527,18 @@ $(function() {
 		}
 	}).scroll();
 });
+
+// accordion
+let acc = document.getElementsByClassName("accordion");
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+    });
+    acc[i].click();
+}

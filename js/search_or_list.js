@@ -5,7 +5,8 @@ function openSearchTag(evt, searchTypeName) {
     let clickedTag = evt.currentTarget;
     let clickedDotSpan = clickedTag.getElementsByTagName("span")[0];
     for (elem of x) {
-        elem.style.display = "none";
+        elem.classList.remove('w3-show');
+        elem.classList.add('w3-hide');
     }        
     for (elem of tablinks) {
         const dotSpan = elem.getElementsByTagName("span")[0];
@@ -13,7 +14,7 @@ function openSearchTag(evt, searchTypeName) {
         dotSpan.classList.add('w3-hide');
         elem.classList.add('w3-grayscale');
     }
-    document.getElementById(searchTypeName).style.display = "block";
+    document.getElementById(searchTypeName).classList.add('w3-show');
     document.getElementById(searchTypeName).children[0].classList.add('w3-animate-left'); 
     clickedTag.classList.remove('w3-grayscale');
     clickedDotSpan.classList.remove("w3-hide");

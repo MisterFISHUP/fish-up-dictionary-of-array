@@ -14,6 +14,7 @@ function openSearchTag(evt, searchTypeName) {
         elem.classList.add('w3-grayscale');
     }
     document.getElementById(searchTypeName).style.display = "block";
+    document.getElementById(searchTypeName).children[0].classList.add('w3-animate-left'); 
     clickedTag.classList.remove('w3-grayscale');
     clickedDotSpan.classList.remove("w3-hide");
     clickedDotSpan.classList.add("w3-show-inline-block");

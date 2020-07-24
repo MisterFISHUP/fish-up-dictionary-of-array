@@ -1,23 +1,425 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant-TW">
 <head>
     <title>FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="最好用、最實用的行列輸入法查碼網站。嗯？還不認識「行列」這個最快的免費中文輸入法？十分鐘不到讓你了解！">
     <meta name="keywords" content="行列,行列輸入法,行列輸入法查碼,中文輸入法">
-    <meta name="description" content="最好用、最實用的行列輸入法查碼">    
-    <meta name="author" content="Mister FISH UP">    
-    <!-- <link rel="stylesheet" href="css/w3.css"> -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="FISH UP 行列查碼">
+    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
+    <meta itemprop="description" content="最好用、最實用的行列輸入法查碼網站。嗯？還不認識「行列」這個最快的免費中文輸入法？十分鐘不到讓你了解！">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:title" content="FISH UP 行列查碼">
+    <meta property="og:description" content="最好用、最實用的行列輸入法查碼網站。嗯？還不認識「行列」這個最快的免費中文輸入法？十分鐘不到讓你了解！">
+    <meta property="og:type" content="網站">
+    <meta property="og:url" content="https://array30.misterfishup.com/">
+    <!-- <meta property="og:image" content="圖片網址"/> -->
+    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
+    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+
+    <!-- to be updated -->
+    <link rel="shortcut icon" href="#">
+
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <header >
-        <h1>FISH UP 行列查碼網站</h1>
-        <p>最好用、最實用的行列輸入法查碼</p>
-        去<a href="typing.html" target="_blank"> FISH UP 行列打字練習</a>或去<a href="dictionary.html" target="_blank"> FISH UP 行列打字練習</a>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-sand w3-card w3-left-align">
+            <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-black w3-sand" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow">首頁</a>
+
+            <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
+            <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>            
+            <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
+            <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
+            <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
+            <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">常見問題</a>
+            <a href="download.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">下載</a>
+        </div>
+  
+        <!-- Navbar on small screens -->
+        <div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
+            <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
+            <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>            
+            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
+            <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
+            <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
+            <a href="download.html" class="w3-bar-item w3-button w3-padding-large">常見問題</a>
+            <a href="about.html" class="w3-bar-item w3-button w3-padding-large">關於本站</a>
+        </div>
+    </div>
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-index" id="home">
+        <div class="w3-center w3-margin-bottom" style="padding-top: 15%;">
+            <div class=" w3-hide-small w3-opacity-min w3-hover-opacity-off">
+                <span class="w3-jumbo w3-dark-gray w3-padding-large">FISH UP 行列查碼</span>
+                <br><br>
+                <span class=" w3-xlarge w3-dark-gray w3-padding w3-margin-top">- 網路上最好的行列查碼網站 -</span>
+            </div>
+        </div>
+        <!-- Same thing but on small screen -->
+        <div class="w3-center w3-margin-bottom w3-hide-large w3-hide-medium" style="padding-top: 35%;">            
+            <span class="w3-xxlarge w3-dark-gray w3-opacity w3-hover-opacity-off w3-padding-small">FISH UP 行列查碼</span>
+            <br>
+            <span class=" w3-large w3-text-dark-gray w3-padding">網路上最好的行列查碼網站</span>
+        </div>
+        <!-- two blocks -->
+        <div class="w3-row-padding">
+            <div class="w3-col l2 w3-hide-medium w3-hide-small">&nbsp;</div>
+            <div class="w3-col l4 m6 s12 w3-center" >
+                <div class="w3-padding-large w3-margin-bottom">
+                    <p class="w3-hover-text-blue"><u>還不認識中文最快的免費輸入法？</u></p>
+                    <a href="#introduction" class="w3-button w3-round-xxlarge w3-yellow w3-margin-bottom w3-hover-red" id='to_introduction'>&emsp;<i class="fa fa-angle-double-right"></i> 馬上認識行列 <i class="fa fa-angle-double-left"></i>&emsp;</a>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 s12 w3-center">
+                <div class=" w3-padding-large w3-margin-bottom" >
+                    <p class="w3-hover-text-blue">開始使用本站熱門功能</p>
+                    <p><a href="dictionary.html" target="_blank" class="w3-btn w3-red w3-round-xxlarge">&emsp;查碼去&emsp;</a>&nbsp;
+                    <a href="typing.html" target="_blank" class="w3-btn w3-white  w3-border w3-border-red w3-text-red w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
+                </div>
+            </div>
+            <div class="w3-col l2 w3-hide-medium w3-hide-small">&nbsp;</div>
+        </div>
     </header>
+
+    <!-- Introduction -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px; line-height: 1.8;" id="introduction">
+        <h2 class="w3-wide w3-text-gray">行列輸入法</h2>
+        <p class="w3-justify">行列，或稱行列 30，是一套免費授權、具有開放理念的字根式中文輸入法，為倚天資訊共同創辦人<a href="https://zh.wikipedia.org/zh-tw/%E8%A1%8C%E5%88%97%E8%BC%B8%E5%85%A5%E6%B3%95" target="_blank" class="w3-hover-text-red" title="行列輸入法維基頁面">廖明德</a>先生所發明。不僅能輸入繁體中文和簡體中文，亦可輸入 Unicode 當中的中日韓統一表意文字，總數超過 7 萬字。</p>
+        <p class="w3-justify">行列輸入法使用科學的方法分配字根，學習容易並輸入快速。行列輸入法是字根輸入法中最容易學習的輸入法之一，並且行列輸入法為免費中文輸入法中輸入最快的，最高紀錄達每分鐘 215.5 字。</p>
+        <p class="w3-justify">行列輸入法因為免費授權並且開源，使得各開發者能夠持續維護行列、並讓行列更臻完善。此外，行列輸入法有<a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-hover-text-red" title="行列社群頁面">活躍且友善的社群</a>，有疑惑或想法都能夠在社群中提出。</p>
+    </div>
+    <!-- Statistics -->
+    <div class="w3-container w3-row w3-center w3-dark-gray w3-padding-48">
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">215.5</span>
+            <br>每分鐘字最高紀錄
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">$ 0</span>
+            <br>安裝與學習花費
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">70,000+</span>
+            <br>支援中文字數量
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge"><4</span>
+            <br>平均取碼數
+        </div>
+    </div>
+
+    <!-- Advantages -->
+    <div class="w3-center w3-padding-48 w3-content" style="max-width:1000px;">
+        <p class="w3-large"><span class="w3-padding w3-opacity w3-hover-opacity-off w3-text-dark-gray w3-bottombar w3-hover-border-deep-orange">行列輸入法</span></p>
+        <h2 class="w3-wide w3-padding-16" style="margin-top: 0px;" title="行列輸入法是最優秀的中文輸入法之一">最優秀的中文輸入法</h2>
+        <div class="w3-row-padding">
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">
+                    <li class="w3-black w3-padding"><h3>價錢與軟體上</h3></li>
+                    <li class="w3-padding-16">各作業系統上皆有免費、開源版本*<sup>1</sup></li>
+                    <li class="w3-padding-16">支援 Mac、Linux、iOS、Android</li>
+                    <li class="w3-padding-16"> Windows 內建*<sup>1</sup></li>
+                    <li class="w3-padding-16">學習資源免費</li>
+                    <li class="w3-padding-16 w3-hover-blue">
+                        <h2 class="w3-wide">$ 0</h2>
+                        <span class="w3-opacity">安裝、學習、使用行列的價錢</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 1：快速的輸入法如大新倉頡、嘸蝦米皆有版權問題，需付費使用，且在公共電腦不可使用！
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">
+                    <li class="w3-black w3-padding"><h3>學習上</h3></li>
+                    <li class="w3-padding-16">字形輸入法中最容易學之一*<sup>2</sup></li>
+                    <li class="w3-padding-16">完全不用記鍵位，一開始就可盲打</li>
+                    <li class="w3-padding-16">僅需 10 分鐘就能學會核心概念*<sup>3</sup></li>
+                    <li class="w3-padding-16">僅需 2 小時就能拆碼多數的中文字*<sup>3</sup></li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide">10 min.</h2>
+                        <span class="w3-opacity">學會核心概念所需時間</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 2：例如相較大新倉頡、倉頡、速成、五筆等<br>
+                        註 3：例如透過本站的「行列教學」
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                    
+                    <li class="w3-black w3-padding"><h3>拆碼上</h3></li>
+                    <li class="w3-padding-16">字根分佈與取碼最科學的輸入法*<sup>4</sup></li>
+                    <li class="w3-padding-16">依書寫拆字，會寫就會打</li>
+                    <li class="w3-padding-16">一般字最多僅 4 碼，且拆碼快速又科學</li>
+                    <li class="w3-padding-16">支援萬用碼、支援容錯*<sup>5</sup></li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide"><4</h2>
+                        <span class="w3-opacity">字的平均取碼數</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 4：幾乎跟任何字根輸入法比，故易學不易忘！<br>
+                        註 5：例如倉頡的一個缺點是容錯率太低
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                
+                    <li class="w3-black w3-padding"><h3>輸入上</h3></li>
+                <li class="w3-padding-16">常用字具有特別碼、一級簡碼*<sup>6</sup></li>
+                <li class="w3-padding-16">輕鬆輸入全形標點符號</li>
+                <li class="w3-padding-16">輕鬆輸入特殊符號、注音符號</li>
+                <li class="w3-padding-16">許多常用字和難字無須完整拆字<br>便出現在選字欄中*<sup>6, 7</sup></li>                
+                <li class="w3-padding-16">
+                    <h2 class="w3-wide"><span class="keycap title-single">單</span> <span class="keycap title-special">特</span> <span class="keycap title-shortcode1">一</span></h2>
+                    <span class="w3-opacity">具不同簡碼來增快打字速度</span>
+                </li>
+                <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                    註 6：加快打字速度&emsp;&ensp;註 7：減輕拆碼的苦惱
+                </li>
+                </ul>
+            </div>        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                    
+                    <li class="w3-black w3-padding"><h3>打字速度上</h3></li>
+                    <li class="w3-padding-16">免費中文輸入法速度最快的輸入法</li>
+                    <li class="w3-padding-16">打字速度輕易破每分鐘 100 字*<sup>8</sup></li>
+                    <li class="w3-padding-16">最快紀錄達每分鐘 215.5 字</li>
+                    
+                    <li class="w3-padding-16">透過持續練習<br>每分鐘 150 字以上絕非難事</li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide">215.5</h2>
+                        <span class="w3-opacity">每分鐘字最高紀錄</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 8：透過持續 6 個月到一年左右的練習
+                    </li>
+                </ul>
+            </div>
+            <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
+        </div>
+    </div>
+    <!-- call to action -->
+    <div class="w3-padding-large w3-padding-24 w3-center w3-pale-red">
+        <h3>心動不如馬上行動</h3>
+        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">點我開始行列教學</a>
+        <br>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&nbsp; 加入行列輸入法社群</a>
+    </div>
     
+    <!-- FAQ -->
+    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px" id="FAQ">
+        <h2 class="w3-wide w3-center">常見問題節選</h2>
+        <p class="w3-opacity w3-center">初次接觸行列常有的疑惑</p>
+        
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">我已經能用注音或拼音打字了，為甚麼還要學行列？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">您當然可以不用學，但如果您想學字形輸入法、或是想學一個好學且輸入快速的輸入法，或純粹只是想學一種新的輸入法，那麼行列輸入法絕對是您的首選！</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">我已經有多種語言鍵盤了，行列能夠快速中英切換嗎？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">可以！</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">行列和嘸蝦米哪個比較好？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">都很好！以打字速度、學習曲線上來說沒有一個明顯勝過對方。但如同上表所寫，嘸蝦米須付費，並且在公用電腦（例如公家機關）基本上無法使用。</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">行列和大易哪個比較好？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">打字速度上，一般來說行列較大易快。學習曲線上好像沒太多案例比較。另外，大易目前僅能輸入兩萬到三萬字，並且相較行列，大易的維護社群似乎稍微小一些。結論：兩個都可以學學看，但如果要先選一個，推薦選行列。</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">如何使用各作業系統上的行列輸入法？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">請參考<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。Windows 系統雖已內建行列輸入法，但有其他更好用的行列輸入法如 DIME 行列，如果您使用 Windows 系統請一定要試試！</div>
+        </div>
+        
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">手機上也能使用行列嗎？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">可以。除了行列 30 還有行列 10 可以使用！詳情請見<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。</div>
+        </div>        
+        
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">不知道某個字怎麼輸入怎麼辦？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">有可以練習行列輸入法的資源嗎？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">有的！您可以使用本站的「<a href="typing.html" target="_blank" class="w3-hover-text-red">FISH UP 打字練習</a>」，不僅在打字時提供行列邊碼提示，您還能自製題目來練習。</div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">為什麼說行列不用記鍵位，還有一開始就可盲打？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">
+                注意到鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列分別稱之為 5 上、5 中以及 5 下，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。
+                <p>十顆數字鍵下方的這 30 顆鍵（依照 10 個數字以及「上、中、下」定位）構成了行列輸入法的 30 顆鍵，這就是「行列 30」這名稱的由來。</p>
+                <p>使用行列 30 將文字拆碼後對應到的鍵，便是這 30 顆透過數字以及「上、中、下」定位的鍵，這就是為什麼行列輸入法不必記鍵位。例如中文字「字」的行列編碼為 6 下 + 5 平 + 4 平，您不必記任何鍵位就可以輸入這三個鍵！</p>
+
+            </div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">為什麼叫行列？為什麼叫行列 30？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">
+                正上方的回答有答案！<br>
+                <p>另外，行列早期的編碼設計，除了使用現在的 30 顆鍵，還使用了上排的 10 顆數字鍵，一共 40 顆鍵，稱為「行列 40」。而現在所謂的行列輸入法，一般都是指行列 30，是行列 40 改良後的設計。</p>
+            </div>
+        </div>
+
+        <div class="w3-row w3-padding w3-text-gray">
+            <div class="w3-col" style="width: 2em;">問：</div>
+            <div class="w3-rest">「繼」這個字怎麼拆？</div>
+        </div>
+        <div class="w3-row w3-padding w3-margin-bottom w3-hover-text-deep-orange">
+            <div class="w3-col" style="width: 2em;">答：</div>
+            <div class="w3-rest">如果只是要查碼，您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。如果是問拆字，您可以到<a href="faq.html" target="_blank" class="w3-hover-text-red">常見問題</a>找找。（這次就在這提供答案：糸 28 + ㄠ 26 + ㄠ 26 + ㇗ 2-，所以是 <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2-</span> + <span class="keycap keycap-space">Space</span>。）</div>
+        </div>
+
+        <div class="w3-center w3-padding-24">
+            <p class="w3-center">以上為常見問題節選，是特別給第一次接觸行列的讀者。想看更多常見問題，請到「常見問題」的完整頁面。</p>
+            <a href="faq.html" target="_blank" class="w3-button w3-deep-purple w3-hover-text-deep-orange">更多常見問題</a>
+        </div>        
+    </div>
+    <!-- call to action -->
+    <div class="w3-padding-large w3-center w3-card w3-sand w3-hover-shadow" style="width: 75%; margin: auto;">
+        <h3>還在等什麼？馬上加入行列輸入法的行列！</h3>
+        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">點我開始行列教學</a>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&nbsp; 加入行列社群</a>
+    </div>
+    <div class="w3-container w3-dark-grey" style="padding:80px 16px; margin-top: 48px;">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <h2>FISH UP 行列查碼</h2>
+                <p>網路上最好用的行列查碼</p>
+                <ul>
+                    <li>支援多字查碼，一次最多可查詢 500 字</li>
+                    <li>標註單鍵碼、特殊碼、一級簡碼、二級簡碼與符號</li>
+                    <li>按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
+                    <li>支援行動裝置瀏覽，手機、平板、筆電、桌電都能良好顯示</li>
+                    <li>查碼支援至中日韓統一表意文字擴充區 D，總數超過七萬四千字</li>
+                </ul>
+                還有更多功能…等您來使用！
+                <p class="w3-margin-bottom"><a href="dictionary.html" target="_blank" class="w3-btn w3-red w3-hover-green w3-padding-large w3-round-xxlarge">&emsp;查碼去&emsp;</a></p>
+            </div>
+            <div class="w3-col m6">
+                <img class="w3-image w3-round-large w3-margin-top" src="img/screenshot_search.jpg" alt="Buildings" width="500" height="300">
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-light-grey" style="padding:80px 16px">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <img class="w3-image w3-round-large w3-margin-bottom" src="img/screenshot_typing.jpg" alt="Buildings" width="500" height="300">
+            </div>
+            <div class="w3-col m6">
+                <h2>FISH UP 行列打字練習</h2>
+                <p>線上最有效的行列輸入法打字練習</p>
+                <ul>
+                    <li>即時性附上最完整的行列提示</li>
+                    <li>追蹤錯字並附上行列編碼</li>                    
+                    <li>眾多內建題庫讓您快速進步</li>
+                    <li>推出免費客製化題目功能</li>
+                    <li>可設定題目字元逆序或隨機打亂</li>
+                    <li>按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
+                    <li>行列提示支援至中日韓統一表意文字擴充區 A，總數超過兩萬七千字</li>
+                </ul>
+                您還在等什麼，趕快來試試！
+                <p><a href="typing.html" target="_blank" class="w3-btn w3-red w3-hover-green w3-padding-large w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
+            </div>        
+        </div>
+    </div>
+    <div class="w3-padding w3-center w3-margin">
+        <p>此網站所提供的服務（行列查碼、打字練習、教學）皆是免費的！</p>
+        <p>如果您覺得本網站對您很有幫助，可以考慮透過下方按鈕贊助本站作者 FISH UP ^^</p>
+        <a href="https://www.buymeacoffee.com/misterfishup" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" class="w3-margin-top"></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding w3-dark-grey w3-center">
+        <div class="w3-xlarge w3-section">
+        <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
+        <a href="https://github.com/MisterFISHUP" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+        </div>
+        <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
+    </footer>
+
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+
     <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/menu_toggle.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>
 </html>

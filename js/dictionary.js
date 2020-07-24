@@ -505,9 +505,9 @@ function engKeyToggle() {
     for (let letter of letterList) {
         const letter_content = letter.textContent;
         if (letter_content.length === 1) {
-            letter.innerText= letterToArray30Dict[letter_content];
+            letter.textContent = letterToArray30Dict[letter_content];
         } else {
-            letter.innerText= array30ToLetterDict[letter_content];
+            letter.textContent = array30ToLetterDict[letter_content];
         }
     }
 }

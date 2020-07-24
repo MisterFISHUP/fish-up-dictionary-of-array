@@ -1,102 +1,282 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant-TW">
 <head>
     <title>FISH UP 行列打字練習</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="最有效的行列輸入法打字練習！附上最完整的提示，並提供多種字元清單，甚至能夠免費自製題目！">
     <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法">
-    <meta name="description" content="最有效的行列輸入法打字練習！附上最完整的提示，並提供多種字元清單！">    
-    <meta name="author" content="Mister FISH UP">    
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="FISH UP 行列查碼">
+    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
+    <meta itemprop="description" content="最有效的行列輸入法打字練習！附上最完整的提示，並提供多種字元清單，甚至能夠免費自製題目！">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:title" content="FISH UP 行列查碼">
+    <meta property="og:description" content="最有效的行列輸入法打字練習！附上最完整的提示，並提供多種字元清單，甚至能夠免費自製題目！">
+    <meta property="og:type" content="網站">
+    <meta property="og:url" content="https://array30.misterfishup.com/">
+    <!-- <meta property="og:image" content="圖片網址"/> -->
+    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
+    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+
+    <!-- to be updated -->
+    <link rel="shortcut icon" href="#">
+    
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/w3.css">
-    <link rel="stylesheet" href="css/style.css">     
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    <header>
-        <h1>FISH UP 行列打字練習</h1>
-        <p>最有效的行列輸入法打字練習！附上最完整的提示，以及多種打字題目，甚至可自製打字題目！</p>
-        去<a href="dictionary.html" target="_blank"> FISH UP 行列查碼</a>或去<a href="index.html" target="_blank">首頁</a>
+    <!-- Navbar -->
+    <div class="w3-bar w3-black w3-card w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-black w3-sand" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow">首頁</a>
+
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>            
+        <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">常見問題</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">下載</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>            
+        <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large">常見問題</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large">關於本站</a>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-center w3-text-white bgimg-typing" style="padding:50px 16px 0px 16px">
+        <h1 class="w3-button w3-sand w3-opacity-min w3-hover-opacity-off w3-hover-sand" id="to_page_content">FISH UP 行列打字練習</h1>
+        <h3>最有效的行列輸入法打字練習</h3>
+        <h6>附上最完整的行列提示，以及多種打字題目，甚至可自製打字題目！</h6>
+        <br>
     </header>
-    
-    
-    
+
     <!-- The Grid -->
-    <div class="w3-padding-24 w3-row-padding w3-pale-red">
+    <div class="w3-padding-24 w3-row-padding w3-pale-green" id="page_content">
 
         <!-- Left Column -->
         <div class="w3-quarter">
             <div id='hint'>
-                <div class="w3-card w3-white">
-                    <header class="w3-container w3-red">
-                        <h5>當前提示</h5>
-                    </header>
-                    <div id="hint_current" style="min-height: 15em;"></div>
-                </div>
+                <span class="w3-large">當前提示</span>                    
+                <span class="w3-small">（請關閉</span>
+                <label>
+                    <input type="checkbox" id="cb_close_hint_current" class="checkbox" autocomplete="off">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>
+                    </span>
+                </label>
+                <span class="w3-small">）</span>
+                <div id="hint_current" class="w3-card"></div>
                 <br>
-                <div class='w3-card w3-white'> 
-                    <header class="w3-container w3-red">
-                        <h5>下一字提示</h5>
-                    </header>                    
-                    <div id="hint_next" style="min-height: 15em;"></div>
-                </div>
+                <span class="w3-large">下一字提示</span>                    
+                <span class="w3-small">（請關閉</span>
+                <label>
+                    <input type="checkbox" id="cb_close_hint_next" class="checkbox" autocomplete="off">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>
+                    </span>
+                </label>
+                <span class="w3-small">）</span>
+                <div id="hint_next" class="w3-card"></div>
             </div>
             <br>
-            <div id='cust_exer' class="w3-card w3-white">
-                <header class="w3-container w3-red">
-                    <h5>題目選擇</h5>
-                </header>
-                <label for="num_char">每行最多字數：</label>
-                <select name='num_char' id="option_num_char" class="w3-select">
+
+            <button onclick="displayToggle(this,'cust_exer')" class="w3-button w3-large w3-block w3-green w3-left-align">題目選擇 <i class="fa fa-caret-down"></i></button>
+            <div id="cust_exer" class="w3-card w3-padding w3-white w3-animate-opacity w3-hide">
+                <h5>題目產生設定</h5>
+                <label for="num_char" class="w3-small">每行最多字數：</label>
+                <select name='num_char' id="option_num_char" class="w3-select w3-light-gray">
                     <option value="4">4</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20" selected="selected">20 (預設)</option>
                 </select>
-                <br>
-                選擇題庫：
-                <button id="btn_exer_one">題目One</button>
-                <button id="btn_exer_two">題目Two</button>
-                <br>
-                或是自製題目：
-                <br>                
-                <textarea id='input_cust_exer' rows="4" class="w3-input w3-border w3-border-dark-gray" placeholder="輸入中英文都可以呦！"></textarea>
-                <button id="btn_submit_cust_exer">製作我自己的題目</button>
-                <div id='cust_exer_hint'></div>
 
-                <div class="w3-card w3-red w3-padding w3-display-container w3-margin">
-                    <span onclick="this.parentElement.style.display='none'"
-                    class="w3-button w3-large w3-display-topright">&times;</span>
-                    <h4>小提醒</h4>
-                    <p>在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。</p>
+                <label for="num_char" class="w3-small">字元順序：</label>
+                <select name='char_permutation' id="option_permutation" class="w3-select w3-light-gray">
+                    <option value="normal" selected="selected">正常 (預設)</option>
+                    <option value="reversed">逆序</option>
+                    <option value="random">隨機打亂</option>
+                </select>
+                <hr>
+                <h5>選擇內建題目或自製題目</h5>
+                
+                
+                
+                <h6>內建題目：</h6>
+                <p>常用字詞系列（未開放）</p>
+                <button onclick="displayToggle(this,'common_chars')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">常用 2000 字 <i class="fa fa-caret-down"></i></button>
+                <div id='common_chars' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                </div>
+
+                <button onclick="displayToggle(this,'common_words')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">常用 2000 詞 <i class="fa fa-caret-down"></i></button>
+                <div id='common_words' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
+                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                </div>
+
+                <p>一般拆碼系列</p>
+                <button onclick="displayToggle(this,'key1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">單鍵 <i class="fa fa-caret-down"></i></button>
+                <div id='key1' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_no_cc">一碼字</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_cc_first">重碼位 1</button>
+                </div>
+                <button onclick="displayToggle(this,'key2')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">雙鍵 <i class="fa fa-caret-down"></i></button>
+                <div id='key2' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_no_cc">無重碼</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_first">重碼位 1</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_second">重碼位 2 但少用，簡碼不用記 </button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_third">重碼位 3 但少用，簡碼不用記 </button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_common_sc2">常用且重碼位 = 二級簡碼數字鍵</button>
+                </div>
+                <button onclick="displayToggle(this,'key3')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">三鍵 <i class="fa fa-caret-down"></i></button>
+                <div id='key3' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key3_no_cc">無重碼</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_first'>重碼位 1</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_second'>重碼位 2 但少用，若有簡碼不用記 </button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_common_sc2'>常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                </div>
+                <button onclick="displayToggle(this,'key4')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">四鍵 <i class="fa fa-caret-down"></i></button>
+                <div id='key4' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_no_cc">無重碼</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_first'>重碼位 1</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_cc_second">重碼位 2 但少用 </button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_third'>重碼位 3 但少用 </button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_common_sc2">常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                </div>
+
+                <p>特殊碼、簡碼系列</p>
+                <button onclick="displayToggle(this,'special')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">特殊碼 <i class="fa fa-caret-down"></i></button>
+                <div id='special' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_all'>全部</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_14'>四鍵取首尾</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_12'>四鍵取首二</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_13'>四鍵取首三</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_23'>四鍵取二三</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_24'>四鍵取二尾</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_34'>四鍵取三尾</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_13'>三鍵取首尾</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_12'>三鍵取首中</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_23'>三鍵取中尾</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_normal'>1996 新增（正向取）</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_reversed'>1996 新增（反向取）</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_irregular'>無規則</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_sc1'>有一級簡碼</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_no_sc1'>無一級簡碼</button>
+                </div>
+
+                <button onclick="displayToggle(this,'shortcode1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">一級簡碼 <i class="fa fa-caret-down"></i></button>
+                <div id='shortcode1' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_all'>全部</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_char'>文字</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sym'>符號</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sp'>有特殊碼</button>
+                </div>
+
+                <p>符號系列</p>
+                <button onclick="displayToggle(this,'symbol')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">符號 <i class="fa fa-caret-down"></i></button>
+                <div id='symbol' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_sc1">有一級簡碼</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_bopomofo">注音符號</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_upper">大寫希臘字母</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_lower">小寫希臘字母</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_happy">開心顏文字</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_angry">生氣顏文字</button>
+                </div>
+
+                <p>文章</p>
+                <button onclick="displayToggle(this,'ancient')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">古文 <i class="fa fa-caret-down"></i></button>
+                <div id='ancient' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='hundred'>百家姓</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='thousand'>千字文（含標點）</button>
+                </div>
+
+                <p>自製題目：</p>
+                <textarea id='input_cust_exer' rows="4" class="w3-input w3-border w3-border-dark-gray" placeholder="輸入中英文都可以呦！最多可以輸入 3000 字元！"></textarea>
+                <button id="btn_submit_cust_exer" class="w3-button w3-small w3-light-gray">產生題目</button>
+                <div id='cust_exer_hint' class="w3-padding-16"></div>
+
+                <div class="w3-leftbar w3-border-red w3-pale-red w3-padding w3-margin-bottom">
+                    在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。    
                 </div>
             </div>
-            
+            <div class="w3-card w3-green w3-padding w3-display-container w3-margin-bottom w3-margin-top">
+                <span onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h4>注意！</h4>
+                <p>「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1：<br>按完本網站給出的特別碼後（包含空白鍵），要嘛直接繼續打字（輸入會自動完成），要嘛還要再按一次 <span class="keycap keycap-space" style="color: black;">space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
+            </div>
 
         <!-- End Left Column -->
         </div>
 
         <!-- Middle Column -->
-        <div class='w3-half'>
-            <div id='display-options'>
+        <div class='w3-half w3-padding'>
+            <div class="w3-right" style="margin: 6px 0;">
+                <span>按鍵顯示為英文鍵 </span>
                 <label>
-                    <input type="checkbox" name="" id="cb_eng_key_active" class="checkbox">
+                    <input type="checkbox" id="cb_eng_key_active" class="checkbox">
                     <span class="btn-toggle-box">
-                        <span class="btn-toggle"></span>      
+                        <span class="btn-toggle"></span>
                     </span>
-                    <span>按鍵顯示為英文鍵</span>
                 </label>
             </div>
-            <div id="sentence_display" class="sentence-display w3-padding-16">
-                <div id='sentence_current' class='w3-padding w3-border w3-white w3-border-red w3-margin-bottom' style="font-size: 1.8em; min-height: 2em;"></div>
-                <div id='sentence_next' class='w3-padding w3-border w3-white w3-border-red' style="font-size: 1.8em; min-height: 2em;"></div>
+            <hr style="clear: both;">
+            <div id="sentence_display">
+                <div id='sentence_current' class='w3-padding w3-white w3-border-green w3-round-large' style="font-size: 1.8em; min-height: 2.2em; border: 4px solid;"></div>                
+                <div id='sentence_next' class='w3-padding w3-text-gray w3-opacity' style="font-size: 1.4em; min-height: 2.2em;"></div>
             </div>
-            <input type="text" id="typing_input" autofocus placeholder="按 enter 鍵換下一句" class="w3-input w3-border w3-border-dark-gray">
-            <div id='sentences_already' class='w3-padding w3-border w3-white w3-border-red w3-margin-top w3-margin-bottom' style="font-size: 1.2em; min-height: 2em;"></div>            
-            <div>
-                <h5>先前錯字</h5>
-                <div class="w3-card w3-white w3-padding">
-                    <p>先前錯字超連結：</p>
-                    <div id='wrong_chars_already_link' class="w3-card w3-padding w3-margin-bottom w3-pale-red" style="font-size: 1.3em;"></div>
-                </div>
-                
+            <label class="w3-small">輸入欄：</label>
+            <input type="text" id="typing_input" autofocus placeholder="按 enter 鍵換下一句" class="w3-input w3-round w3-padding w3-border w3-border-dark-gray" style="font-size: 1.2em;">
+            <br>
+            <br><br>
+
+            <span class="w3-large">已打句子</span>                    
+            <span class="w3-small">（請關閉</span>
+            <label>
+                <input type="checkbox" id="cb_close_sentences_already" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span><div id='sentences_already' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off' style="font-size: 1.2em; min-height: 2em;"></div>
+                    
+            
+            <br>
+            <span class="w3-large">先前行列錯字</span>                    
+            <span class="w3-small">（請關閉</span>
+            <label>
+                <input type="checkbox" id="cb_close_wrong_chars_already" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span>
+            <div id='wrong_chars_already_div'>
+                <div id='wrong_chars_already_link' class="w3-card w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
                 <div id='wrong_chars_already'></div>
             </div>
 
@@ -106,43 +286,49 @@
         <!-- Right Column -->
         <div class='w3-quarter'>
             <div id="result_display">
-                <div class="w3-card w3-white">
-                    <header class="w3-container w3-red">
-                        <h5>結果</h5>
-                    </header>
-                    <div id="results" class="w3-padding" style="min-height: 5em;">
-                        總共 <span id='num_total_sentences'></span> 句，合計 <span id='num_total_chars' style="color: brown;"></span> 字<br>
-                        目前是第 <span id='pos_line'></span> 句，剩下 <span id='num_remaining_lines'></span> 句<br>
-                        正確/錯誤字數：<span id='num_total_correct_chars' style="color: green;"></span> / <span id="num_total_incorrect_chars" style="color: red;"></span><br>
-                        剩餘字數：<span id='num_total_untouched_chars'></span> 字 <br>
-                    </div>
+                <h5>結果</h5>                
+                <div id="results" class="w3-card w3-white w3-padding" style="min-height: 5em;">
+                    總共 <span id='num_total_sentences'></span> 句，合計 <span id='num_total_chars'></span> 字<br>
+                    目前是第 <span id='pos_line'></span> 句，剩下 <span id='num_remaining_lines'></span> 句<br>
+                    <span style="color: green;">正確</span>/<span style="color: red;">錯誤</span>字數：<span id='num_total_correct_chars' style="color: green;"></span> / <span id="num_total_incorrect_chars" style="color: red;"></span><br>
+                    剩餘字數：<span id='num_total_untouched_chars'></span> 字 <br>
+                    目前沒有計時功能
                 </div>
             </div>
             <br>
-            <div id='wrong_chars'> 
-                <!-- <div class="w3-card w3-pale-red"> -->
-                    <header class="w3-container w3-red">
-                        <h5>當句錯字</h5>
-                     </header>
-                    <div id="wrong_chars_current" class="w3-container" style="min-height: 5em;"></div>
-                <!-- </div> -->
-            </div>  
-        
+            <span class="w3-large">當句行列錯字</span>                    
+            <span class="w3-small">（請關閉</span>
+            <label>
+                <input type="checkbox" id="cb_close_wrong_chars_current" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span>
+            <div id="wrong_chars_current"></div>
+            
         <!-- End Right Column -->
         </div>
 
     <!-- End Grid -->
     </div>
 
-    <footer>
-        <p>This is my footer</p>
-    </footer>   
+    <!-- Footer -->
+    <footer class="w3-container w3-padding w3-dark-grey w3-center">
+        <div class="w3-xlarge w3-section">
+        <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
+        <a href="https://github.com/MisterFISHUP" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+        </div>
+        <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
+    </footer>
     
     <!-- back to top button -->
     <button type="button" id="to_top" class="toTop-arrow"></button>
 
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/menu_toggle.js"></script>
     <script type="text/javascript" src="js/ext_A_dict.js"></script>
     <script type="text/javascript" src="js/keys.js"></script>
     <script type="text/javascript" src="js/built_in_strings.js"></script>

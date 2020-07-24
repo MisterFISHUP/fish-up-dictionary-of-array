@@ -1,3 +1,16 @@
+/* Structure: (use search)
+    - get html DOMS, initialisation
+    - cust exer, built-in exer
+    - prepare page content
+    - instant verification
+    - enter Key action
+    - eng Key Toggle
+    - fetch data
+    - 6 createLne functions
+    - page scroll
+    - content display
+*/
+
 // get html DOMs Middle
 const engKeyActiveElem = document.getElementById('cb_eng_key_active');
 const sentenceCurrentElem = document.getElementById('sentence_current');
@@ -21,13 +34,30 @@ const numRemainingLinesSpan = document.getElementById('num_remaining_lines');
 const hintCurrentElem = document.getElementById('hint_current');
 const hintNextElem = document.getElementById('hint_next');
 
-// get html DOMs Left Exercises
+// get html DOMs Left Exercises (except built-in exer buttons)
 const numCharElem = document.getElementById('option_num_char');
+const permutationElem = document.getElementById('option_permutation');
+
 const inputCustExerElem = document.getElementById("input_cust_exer");
-const exerOneElem = document.getElementById('btn_exer_one');
-const exerTwoElem = document.getElementById('btn_exer_two');
 const submitCustExerElem = document.getElementById('btn_submit_cust_exer');
 const custExerHintElem = document.getElementById('cust_exer_hint');
+
+// two string functions
+function shuffle(str) {
+    let a = [...str];
+    let n = a.length;
+    for (let i = n - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
+}
+
+function reverse(str){
+    return [...str].reverse().join("");
+}
 
 // initialisation
 let lines = createArrayLines(defaultString);
@@ -37,43 +67,160 @@ let numAlreadyCorrectChars = 0;
 let numCurrentIncorrectChars = 0;
 let numAlreadyIncorrectChars = 0;
 
+// Case of cust exer
 submitCustExerElem.addEventListener('click',custExerCreator);
-
 function custExerCreator() {
+    // clear custExer hint
+    custExerHintElem.innerHTML = '';
     const inputString = inputCustExerElem.value.trim();
     if (inputString) {
-        // create lines (arrays), initialise index current line
-        lines = createArrayLines(inputString);
-        indexCurrentLine = 0;
+        if (inputString.length > 3000) {
+            custExerHintElem.textContent='提醒：您的輸入超過了 3000 字元！';
+        } else {
+            // create lines (arrays), initialise index current line
+            lines = createArrayLines(inputString);
+            indexCurrentLine = 0;
+            numCurrentCorrectChars = 0;
+            numAlreadyCorrectChars = 0;
+            numCurrentIncorrectChars = 0;
+            numAlreadyIncorrectChars = 0;
 
-        // call prepareSentencesHintsResults (overwrite current, next sentence)
-        prepareSentencesHintsResults(indexCurrentLine);
+            // call prepareSentencesHintsResults (overwrite current, next sentence)
+            prepareSentencesHintsResults(indexCurrentLine);
 
-        // clear typing input, sentence already
-        typingInputElem.value='';
-        sentencesAlreadyElem.innerHTML='';
+            // clear typing input, sentence already
+            typingInputElem.value='';
+            sentencesAlreadyElem.innerHTML='';
 
-        // clear wrong chars already, wrong chars already link
-        wrongCharsAlreadyLinkElem.innerHTML ='';
-        wrongCharsAlreadyElem.innerHTML = '';
-        
-        // focus typing input
-        $('#typing_input').focus();
+            // clear wrong chars already, wrong chars already link
+            wrongCharsAlreadyLinkElem.innerHTML ='';
+            wrongCharsAlreadyElem.innerHTML = '';
+            
+            // focus typing input
+            $('#typing_input').focus();
+        }
+    } else {
+        custExerHintElem.textContent='提醒：您的輸入為空白！';
     }
-    else custExerHintElem.textContent='您的輸入為空白';
 
     // clear input cust exer
     inputCustExerElem.value='';
 }
 
-exerOneElem.addEventListener('click',function() {builtInExerCreator(stringOne)});
-exerTwoElem.addEventListener('click',function() {builtInExerCreator(stringTwo)});
+// built-in exer
+// common char
+
+// key1
+const key1NoCCElem = document.getElementById('key1_no_cc');
+const key1CCFirstElem = document.getElementById('key1_cc_first');
+key1NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey1NoCC)});
+key1CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey1CCFirst)});
+
+//key2
+const key2NoCCElem = document.getElementById('key2_no_cc');
+const key2CCFirstElem = document.getElementById('key2_cc_first');
+const key2CCSecondElem = document.getElementById('key2_cc_second');
+const key2CCThirdElem = document.getElementById('key2_cc_third');
+const key2CommonSC2Elem = document.getElementById('key2_common_sc2');
+key2NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey2NoCC)});
+key2CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCFirst)});
+key2CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCSecond)});
+key2CCThirdElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCThird)});
+key2CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey2CommonSC2)});
+
+//key3
+const key3NoCCElem = document.getElementById('key3_no_cc');
+const key3CCFirstElem = document.getElementById('key3_cc_first');
+const key3CCSecondElem = document.getElementById('key3_cc_second');
+const key3CommonSC2Elem = document.getElementById('key3_common_sc2');
+key3NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey3NoCC)});
+key3CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey3CCFirst)});
+key3CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey3CCSecond)});
+key3CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey3CommonSC2)});
+
+//key4
+const key4NoCCElem = document.getElementById('key4_no_cc');
+const key4CCFirstElem = document.getElementById('key4_cc_first');
+const key4CCSecondElem = document.getElementById('key4_cc_second');
+const key4CCThirdElem = document.getElementById('key4_cc_third');
+const key4CommonSC2Elem = document.getElementById('key4_common_sc2');
+key4NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey4NoCC)});
+key4CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCFirst)});
+key4CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCSecond)});
+key4CCThirdElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCThird)});
+key4CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey4CommonSC2)});
+
+// sp
+const spAllElem = document.getElementById("sp_all");
+const spIrregularElem = document.getElementById("sp_irregular");
+const spKey412Elem = document.getElementById("sp_key4_12");
+const spKey413Elem = document.getElementById("sp_key4_13");
+const spKey414Elem = document.getElementById("sp_key4_14");
+const spKey423Elem = document.getElementById("sp_key4_23");
+const spKey424Elem = document.getElementById("sp_key4_24");
+const spKey434Elem = document.getElementById("sp_key4_34");
+const spKey312Elem = document.getElementById("sp_key3_12");
+const spKey313Elem = document.getElementById("sp_key3_13");
+const spKey323Elem = document.getElementById("sp_key3_23");
+const sp96NormalElem = document.getElementById("sp_96_normal");
+const sp96ReversedElem = document.getElementById("sp_96_reversed");
+const spSC1Elem = document.getElementById("sp_sc1");
+const spNoSC1Elem = document.getElementById("sp_no_sc1");
+spAllElem.addEventListener('click',function() {builtInExerCreator(stringSPAll)});
+spIrregularElem.addEventListener('click',function() {builtInExerCreator(stringSPIrregular)});
+spKey412Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey412)});
+spKey413Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey413)});
+spKey414Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey414)});
+spKey423Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey423)});
+spKey424Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey424)});
+spKey434Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey434)});
+spKey312Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey312)});
+spKey313Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey313)});
+spKey323Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey323)});
+sp96NormalElem.addEventListener('click',function() {builtInExerCreator(stringSP96Normal)});
+sp96ReversedElem.addEventListener('click',function() {builtInExerCreator(stringSP96Reversed)});
+spSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSC1SP)});
+spNoSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSPNoSC1)});
+
+// shortcode 1
+const sc1AllElem = document.getElementById('sc1_all');
+const sc1CharElem = document.getElementById('sc1_char');
+const sc1SymElem = document.getElementById('sc1_sym');
+const sc1SpElem = document.getElementById('sc1_sp');
+sc1AllElem.addEventListener('click',function() {builtInExerCreator(stringSC1All)});
+sc1CharElem.addEventListener('click',function() {builtInExerCreator(stringSC1Char)});
+sc1SymElem.addEventListener('click',function() {builtInExerCreator(stringSymbolSC1)});
+sc1SpElem.addEventListener('click',function() {builtInExerCreator(stringSC1SP)});
+
+// symbol
+const symbolSC1Elem = document.getElementById("symbol_sc1");
+const symbolBopomofoElem = document.getElementById("symbol_bopomofo");
+const symbolGreekUpperElem = document.getElementById("symbol_greek_upper");
+const symbolGreekLowerElem = document.getElementById("symbol_greek_lower");
+const symbolEmojiHappyElem = document.getElementById("symbol_emoji_happy");
+const symbolEmojiAngryElem = document.getElementById("symbol_emoji_angry");
+symbolSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSymbolSC1)});
+symbolBopomofoElem.addEventListener('click',function() {builtInExerCreator(stringSymbolBopomofo)});
+symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(string)});
+symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekUpper)});
+symbolGreekLowerElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekLower)});
+symbolEmojiHappyElem.addEventListener('click',function() {builtInExerCreator(stringSymbolEmojiHappy)});
+symbolEmojiAngryElem.addEventListener('click',function() {builtInExerCreator(stringSymbolEmojiAngry)});
+
+// articles
+const thousandElem = document.getElementById("thousand");
+const hundredElem = document.getElementById("hundred");
+hundredElem.addEventListener('click',function() {builtInExerCreator(stringHundred)});
+thousandElem.addEventListener('click',function() {builtInExerCreator(stringThousand)});
 
 function builtInExerCreator(str) {
-    // create lines (arrays), initialise index current line
+    // create lines (arrays), initialise things
     lines = createArrayLines(str);
     indexCurrentLine = 0;
-
+    numCurrentCorrectChars = 0;
+    numAlreadyCorrectChars = 0;
+    numCurrentIncorrectChars = 0;
+    numAlreadyIncorrectChars = 0;
     // call prepareSentencesHintsResults (overwrite current, next sentence)
     prepareSentencesHintsResults(indexCurrentLine);
 
@@ -92,17 +239,26 @@ function builtInExerCreator(str) {
     inputCustExerElem.value='';
 }
 
-// create the array 'lines' from a string according to selected numChar 
-function createArrayLines (str) {
+// create the array 'lines' from a string according to selected options 
+function createArrayLines(str) {
     const numChar = numCharElem.value;
+    const order = permutationElem.value;
+    let orderedStr;
+    if (order == 'normal') {
+        orderedStr = str;
+    } else if (order == 'reversed') {
+        orderedStr = reverse(str);
+    } else if (order == "random") {
+        orderedStr = shuffle(str);
+    }
 
     // this regex will break each line in input by numChar chars
     const regex = new RegExp(".{1," + numChar + "}", "g");  
 
     // trim each string in the list, remove it if empty after being trimmed
-    return str.match(regex).map(x => x.trim()).filter(Boolean)
+    return orderedStr.match(regex).map(x => x.trim()).filter(Boolean)
 }
-
+// prepare page content
 // execute prepareSentencesHintsResults for the 1st time js with default 'lines'
 prepareSentencesHintsResults(indexCurrentLine)
 
@@ -173,8 +329,8 @@ function printHintNext(character) {
     }    
 }
 
+// instant verification
 typingInputElem.addEventListener('input', instantVerification);
-
 function instantVerification() {
     // only called when indexCurrentLine <= lines.length -1
     if (indexCurrentLine <= lines.length -1) {
@@ -243,6 +399,7 @@ function instantVerification() {
     }
 }
 
+// enter Key action
 $("#typing_input").on('keypress', function(e) {
     if (e.which == 13) {
         if (indexCurrentLine < lines.length -1) {
@@ -796,10 +953,19 @@ function createLineNL(nlKeys, id_name) {
     elem.appendChild(warning);              
 }
 
+// page scroll
+
+// scroll to page_content
+$(document).ready(function() {
+    $(function() { $('#to_page_content').click(function() { 
+        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
+    }); 
+});
+
 // back to top button
 $(function(){
 	$('#to_top').click(function(){ 
-		$('html,body').animate({ scrollTop:0 }, 333);
+		$('html,body').animate({ scrollTop:$('#page_content').offset().top }, 333);
 	});
 	$(window).scroll(function() {
 		if ( $(this).scrollTop() > 300 ){
@@ -810,3 +976,50 @@ $(function(){
 	}).scroll();
 });
 
+// content display
+
+// toggle between display none and block
+function displayToggle(btnElem, id) {
+    const x = document.getElementById(id);
+    const icon = btnElem.getElementsByTagName("i");
+    if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
+        x.classList.add('w3-hide');
+        icon[0].className = "fa fa-caret-down";
+    } else { 
+        x.classList.add("w3-show");
+        x.classList.remove("w3-hide");        
+        icon[0].className = "fa fa-caret-up";
+    }
+}
+
+// hide blocks
+const cbCloseHintCurrent = document.getElementById('cb_close_hint_current');
+const cbCloseHintNext = document.getElementById('cb_close_hint_next');
+const cbCloseSentencesAlready = document.getElementById("cb_close_sentences_already");
+const cbCloseWrongCharsAlready = document.getElementById("cb_close_wrong_chars_already");
+const cbCloseWrongCharsCurrent = document.getElementById("cb_close_wrong_chars_current")
+
+cbCloseHintCurrent.addEventListener('click', function() {
+    toggleByCb(this,"hint_current");
+})
+cbCloseHintNext.addEventListener('click', function() {
+    toggleByCb(this,"hint_next");
+})
+cbCloseSentencesAlready.addEventListener('click', function() {
+    toggleByCb(this,"sentences_already");
+})
+cbCloseWrongCharsAlready.addEventListener('click', function () {
+    toggleByCb(this,"wrong_chars_already_div");
+})
+cbCloseWrongCharsCurrent.addEventListener('click', function() {
+    toggleByCb(this,"wrong_chars_current");
+})
+
+function toggleByCb(cbElem, id) {
+    if (cbElem.checked) {
+        $("#" + id).hide();
+    } else {
+        $("#" + id).show();
+    }
+}

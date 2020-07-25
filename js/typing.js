@@ -572,7 +572,7 @@ function finalise() {
 }
 
 // eng Key Toggle
-document.getElementById("cb_eng_key_active").addEventListener("click", function() { engKeyToggle() });
+document.getElementById("cb_eng_key_active").addEventListener("click",engKeyToggle);
 function engKeyToggle() {
     letterList=document.getElementsByClassName("keycap-letter");  
     for (let letter of letterList) {

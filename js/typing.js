@@ -572,9 +572,9 @@ function finalise() {
 }
 
 // eng Key Toggle
-document.getElementById("cb_eng_key_active").addEventListener("click",engKeyToggle);
+document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 function engKeyToggle() {
-    letterList=document.getElementsByClassName("keycap-letter");  
+    letterList = document.getElementsByClassName("keycap-letter");  
     for (let letter of letterList) {
         const letter_content = letter.textContent;
         if (letter_content.length === 1) {
@@ -958,6 +958,11 @@ function createLineNL(nlKeys, id_name) {
 // scroll to page_content
 $(document).ready(function() {
     $(function() { $('#to_page_content').click(function() { 
+        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
+    }); 
+});
+$(document).ready(function() {
+    $(function() { $('#to_page_content_small').click(function() { 
         $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
     }); 
 });

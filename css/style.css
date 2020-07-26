@@ -8,7 +8,7 @@ hr {
 .bgimg-index {
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../img/header_index.jpg");
+    background-image: linear-gradient(rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.6)), url("../img/header_index.jpg");
     min-height: 100%;
     alt: "Header image of the main page ";
 }

@@ -41,8 +41,7 @@
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
+<body>    
     <!-- Navbar -->
     <div class="w3-bar w3-black w3-card w3-left-align">
         <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -133,8 +132,6 @@
                 <hr>
                 <h5>選擇內建題目或自製題目</h5>
                 
-                
-                
                 <h6>內建題目：</h6>
                 <p>常用字詞系列（未開放）</p>
                 <button onclick="displayToggle(this,'common_chars')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">常用 2000 字 <i class="fa fa-caret-down"></i></button>
@@ -145,7 +142,6 @@
                     <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
                     <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
                 </div>
-
                 <button onclick="displayToggle(this,'common_words')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">常用 2000 詞 <i class="fa fa-caret-down"></i></button>
                 <div id='common_words' class="w3-hide w3-margin-bottom">
                     <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
@@ -224,6 +220,14 @@
                     <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_angry">生氣顏文字</button>
                 </div>
 
+                <p>顏文字系列（每行最多字數請設為 20）</p>
+                <button onclick="displayToggle(this,'emoji')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">顏文字 <i class="fa fa-caret-down"></i></button>
+                <div id='emoji' class="w3-hide w3-margin-bottom">
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_happy">開心</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_angry">生氣</button>
+                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_guro">獵奇</button>
+                </div>
+
                 <p>文章</p>
                 <button onclick="displayToggle(this,'ancient')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">古文 <i class="fa fa-caret-down"></i></button>
                 <div id='ancient' class="w3-hide w3-margin-bottom">
@@ -239,6 +243,9 @@
                 <div class="w3-leftbar w3-border-red w3-pale-red w3-padding w3-margin-bottom">
                     在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。    
                 </div>
+                <div class="w3-padding">
+                    若有發現任何技術問題，或是有推薦的題目想要我加到本站上，歡迎透過頁底聯絡資訊來聯絡我 ^^
+                </div>
             </div>
             <div class="w3-card w3-green w3-padding w3-display-container w3-margin-bottom w3-margin-top">
                 <span onclick="this.parentElement.style.display='none'"
@@ -246,12 +253,11 @@
                 <h4>注意！</h4>
                 <p>「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1：<br>按完本網站給出的特別碼後（包含空白鍵），要嘛直接繼續打字（輸入會自動完成），要嘛還要再按一次 <span class="keycap keycap-space" style="color: black;">space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
             </div>
-
         <!-- End Left Column -->
         </div>
 
         <!-- Middle Column -->
-        <div class='w3-half w3-padding'>
+        <div class='w3-half w3-padding'>            
             <div class="w3-right" style="margin: 6px 0;">
                 <span>按鍵顯示為英文鍵 </span>
                 <label>
@@ -345,7 +351,7 @@
 
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/menu_toggle.js"></script>
+    <script type="text/javascript" src="js/display.js"></script>
     <script type="text/javascript" src="js/ext_A_dict.js"></script>
     <script type="text/javascript" src="js/keys.js"></script>
     <script type="text/javascript" src="js/built_in_strings.js"></script>

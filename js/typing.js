@@ -197,15 +197,19 @@ const symbolSC1Elem = document.getElementById("symbol_sc1");
 const symbolBopomofoElem = document.getElementById("symbol_bopomofo");
 const symbolGreekUpperElem = document.getElementById("symbol_greek_upper");
 const symbolGreekLowerElem = document.getElementById("symbol_greek_lower");
-const symbolEmojiHappyElem = document.getElementById("symbol_emoji_happy");
-const symbolEmojiAngryElem = document.getElementById("symbol_emoji_angry");
 symbolSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSymbolSC1)});
 symbolBopomofoElem.addEventListener('click',function() {builtInExerCreator(stringSymbolBopomofo)});
 symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(string)});
 symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekUpper)});
 symbolGreekLowerElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekLower)});
-symbolEmojiHappyElem.addEventListener('click',function() {builtInExerCreator(stringSymbolEmojiHappy)});
-symbolEmojiAngryElem.addEventListener('click',function() {builtInExerCreator(stringSymbolEmojiAngry)});
+
+// emoji
+const emojiHappyElem = document.getElementById("emoji_happy");
+const emojiAngryElem = document.getElementById("emoji_angry");
+const emojiGuroElem = document.getElementById("emoji_guro");
+emojiHappyElem.addEventListener('click',function() {builtInExerCreator(stringEmojiHappy)});
+emojiAngryElem.addEventListener('click',function() {builtInExerCreator(stringEmojiAngry)});
+emojiGuroElem.addEventListener('click',function() {builtInExerCreator(stringEmojiGuro)});
 
 // articles
 const thousandElem = document.getElementById("thousand");
@@ -965,20 +969,6 @@ $(document).ready(function() {
     $(function() { $('#to_page_content_small').click(function() { 
         $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
     }); 
-});
-
-// back to top button
-$(function(){
-	$('#to_top').click(function(){ 
-		$('html,body').animate({ scrollTop:$('#page_content').offset().top }, 333);
-	});
-	$(window).scroll(function() {
-		if ( $(this).scrollTop() > 300 ){
-			$('#to_top').fadeIn(222);
-		} else {
-			$('#to_top').stop().fadeOut(222);
-		}
-	}).scroll();
 });
 
 // content display

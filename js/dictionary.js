@@ -5,7 +5,7 @@
     - filter with checkboxes
     - fetch data
     - eng Key Toggle
-    - page display
+    - accordion
 */
 
 // get html DOMS
@@ -511,22 +511,6 @@ function engKeyToggle() {
         }
     }
 }
-
-// page display
-
-// back to top button
-$(function() {
-	$('#to_top').click(function() { 
-		$('html,body').animate({ scrollTop:0 }, 333);
-	});
-	$(window).scroll(function() {
-		if ( $(this).scrollTop() > 300 ){
-			$('#to_top').fadeIn(222);
-		} else {
-			$('#to_top').stop().fadeOut(222);
-		}
-	}).scroll();
-});
 
 // accordion
 let acc = document.getElementsByClassName("accordion");

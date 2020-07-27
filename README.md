@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## 歡迎來到 FISH UP 行列查碼的 GitHub 專案
+目標打造最好用、最實用的行列輸入法查碼網站！
 
-You can use the [editor on GitHub](https://github.com/MisterFISHUP/array30/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+網站在此→→ [FISH UP 行列查碼](https://array30.misterfishup.com/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### FISH UP 行列查碼
+- 支援多字查碼，一次最多可查詢 500 字
+- 標註單鍵碼、特殊碼、一級簡碼、二級簡碼與符號
+- 按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵
+- 支援行動裝置瀏覽，手機、平板、筆電、桌電都能良好顯示
+- 查碼支援至中日韓統一表意文字擴充區 D，總數超過七萬四千字
 
-### Markdown
+### FISH UP 打字練習
+- 即時性附上最完整的行列提示
+- 追蹤錯字並附上行列編碼
+- 眾多內建題庫讓您快速進步
+- 推出免費客製化題目功能
+- 可設定題目字元逆序或隨機打亂
+- 按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵
+- 行列提示支援至中日韓統一表意文字擴充區 A，總數超過兩萬七千字
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 其他頁面正在努力建構中
+包括行列教學、字根表、下載、常見問題、關於本站等頁面
 
-```markdown
-Syntax highlighted code block
+### 技術支援
+有發現任何問題、或願意提供您寶貴的意見，可以寫信到 misterfishup@gmail.com
 
-# Header 1
-## Header 2
-### Header 3
+### 關於數據庫
+行列輸入法為開源的輸入法，編碼資料皆可在網路找到。詳情請見本專案的 array30_data 資料夾
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MisterFISHUP/array30/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

@@ -42,7 +42,7 @@ function search() {
     if (input.length === 0) {
         const hintDiv = document.createElement('div');
         hintDiv.className = 'w3-card w3-white w3-padding';
-        hintDiv.innerHTML='<p>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特殊碼和一級簡碼的字！</p>';
+        hintDiv.innerHTML='<p>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特別碼和一級簡碼的字！</p>';
         resultAreaElem.appendChild(hintDiv);
     } else if (input.length > maxInputChar) {
         const hintDiv = document.createElement('div');
@@ -178,7 +178,7 @@ function array30Filter() {
             }
             filterResultRecapSpan.textContent += "有";
             if (sg.checked) filterResultRecapSpan.textContent += "單鍵碼、";
-            if (sp.checked) filterResultRecapSpan.textContent += "特殊碼、";
+            if (sp.checked) filterResultRecapSpan.textContent += "特別碼、";
             if (sc1.checked) filterResultRecapSpan.textContent += "一級簡碼、";
             if (sc2.checked) filterResultRecapSpan.textContent += "二級簡碼、";
             if (sp.checked||sc1.checked||sc2.checked||sg.checked) {

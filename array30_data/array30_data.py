@@ -1,197 +1,232 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # author: Mister FISH UP
-"""
-Create ext_ABCD_dict.js, ext_A_dict.js and keys.js
-steps: Read data from .txt files -> data processing
--> convert data into js object -> write into js files
-"""
+# create js/objectXXX.js and js/keys.js files
+
+# Steps: Read data from .txt files -> data processing
+# -> convert data into js object -> write into js files
+
 # make sure you are in the root directory
-import os
-# create the main dictionary
-array30_dict = dict()
 
-# get sp_dict (which is clean)
-with open(r"array30_data\special_DIME.txt", encoding='utf-8') as f:
+import os, json
+from pathlib import Path
+data_folder = Path("array30_data/")
+js_folder = Path("js/")
+
+# get special_dict 
+# structure: char: encoding
+with open(data_folder / "special_DIME.txt" , encoding='utf-8') as f:
     special_raw_list = f.read().splitlines()
-# a character has at most ONE special code
-sp_dict = {line.split('\t')[1] : line.split('\t')[0] \
+special_dict = {line.split('\t')[1] : line.split('\t')[0] \
                 for line in special_raw_list}
-# add sp_dict to the main dictionary
-for char in sp_dict:
-    array30_dict[char] = {"sp":sp_dict[char]}
-	
-# get sc1_dict (with number), which is not yet clean
-with open(r"array30_data\shortcode1_DIME.txt", encoding='utf-8') as f:
-    shortcode1_raw_list = f.read().splitlines() 
-# a character has at most ONE shortcode1    
-sc1_dict = {line.split('\t')[1] : line.split('\t')[0]+str(line_num %10) \
+# convert special_dict to js object and write to js/object_special.js
+with open(js_folder / "object_special.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectSpecial = ")
+with open(js_folder / "object_special.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(special_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
+
+# get shortcode1_dict_unclean (with number), which is not yet clean
+# structure: char: encoding
+with open(data_folder / "shortcode1_DIME.txt", encoding='utf-8') as f:
+    shortcode1_raw_list = f.read().splitlines()
+# a character has at most ONE shortcode1
+shortcode1_dict_unclean = {line.split('\t')[1] : line.split('\t')[0]+str(line_num %10) \
             for line_num, line in enumerate(shortcode1_raw_list, start=1)}
-# purify the sc1_dict 
+# purify the shortcode1_dict_unclean
 import copy
-sc1_dict_clean = copy.deepcopy(sc1_dict)
-del sc1_dict_clean['⎔']
-del sc1_dict_clean['女']
-# now sc1_dict_clean is clean
+shortcode1_dict = copy.deepcopy(shortcode1_dict_unclean)
+del shortcode1_dict['⎔']
+del shortcode1_dict['女']
+# now shortcode1_dict is clean
+# convert shortcode1_dict to js object and write to js/object_shortcode1.js
+with open(js_folder / "object_shortcode1.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectShortcode1 = ")
+with open(js_folder / "object_shortcode1.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(shortcode1_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
 
-# just to see two items are removed
-# print(len(sc1_dict_clean),len(sc1_dict))
-
-# add sc1_dict_clean to the main dictionary
-# Be careful! Not allowed: dict[key1][key2] = sth
-# if dict does not have key1 yet
-for char in sc1_dict_clean:
-    if char in array30_dict:
-        array30_dict[char]['sc1'] = sc1_dict_clean[char]
-    else:
-        array30_dict[char] = {"sc1": sc1_dict_clean[char]}
-
-# get sc2_dict (with number), which is not yet clean
-with open(r"array30_data\shortcode2_DIME.txt", encoding='utf-8') as f:
+# get shortcode2_dict_unclean (with number), which is not yet clean
+# structure: char: list of encodings
+with open(data_folder / "shortcode2_DIME.txt", encoding='utf-8') as f:
     shortcode2_raw_list = f.read().splitlines()
-sc2_dict = dict()
-for line_num, line in enumerate(shortcode2_raw_list, start=1): 
+shortcode2_dict_unclean = dict()
+for line_num, line in enumerate(shortcode2_raw_list, start=1):
     [keys, char] = line.split('\t')
     keys += str(line_num % 10)
-    if char not in sc2_dict:
-        sc2_dict[char] = [keys]
+    if char not in shortcode2_dict_unclean:
+        shortcode2_dict_unclean[char] = [keys]
     else:
-        sc2_dict[char].append(keys)
-# purify the sc2_dict 
-sc2_dict_clean = copy.deepcopy(sc2_dict)
-del sc2_dict_clean['⎔']
-# now sc2_dict_clean is clean
+        shortcode2_dict_unclean[char].append(keys)
+# purify the shortcode2_dict_unclean
+shortcode2_dict = copy.deepcopy(shortcode2_dict_unclean)
+del shortcode2_dict['⎔']
+# now shortcode2_dict is clean
 
 # only three characters have more than one shortcode2
-# sc2_multi = dict(filter(lambda elem: len(elem[1]) > 1, sc2_dict_clean.items()))
+# sc2_multi = dict(filter(lambda elem: len(elem[1]) > 1, shortcode2_dict.items()))
 # print(sc2_multi)
 # output: {'卅': ['fd2', 'ff4'], '句': ['l;1', 'lx0'], '彝': ['t,2', 'w,2']}
 
-# add sc2_dict_clean to the main dictionary
-for char in sc2_dict_clean:
-    if char in array30_dict:
-        array30_dict[char]['sc2'] = sc2_dict_clean[char]
-    else:
-        array30_dict[char] = {"sc2": sc2_dict_clean[char]}
+# convert shortcode2_dict to js object and write to js/object_shortcode2.js
+with open(js_folder / "object_shortcode2.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectShortcode2 = ")
+with open(js_folder / "object_shortcode2.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(shortcode2_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
 
-# get sg_dict 
-with open(r"array30_data\single_DIME.txt", encoding='utf-8') as f:
+# get single_dict
+# structure: char: encoding
+with open(data_folder / "single_DIME.txt", encoding='utf-8') as f:
     single_raw_list = f.read().splitlines()
 # there are only nine characters
-sg_dict = {line.split(' ')[0] : line.split(' ')[1] \
+single_dict = {line.split(' ')[0] : line.split(' ')[1] \
                 for line in single_raw_list}
-# add sg_dict to the main dictionary
-for char in sg_dict:
-    if char in array30_dict:
-        array30_dict[char]['sg'] = sg_dict[char]
-    else:
-        array30_dict[char] = {"sg": sg_dict[char]}
+# convert single_dict to js object and write to js/object_single.js
+with open(js_folder / "object_single.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectSingle = ")
+with open(js_folder / "object_single.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(single_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
 
-# get sym_dict 
-with open(r"array30_data\symbol_DIME.txt", encoding='utf-8') as f:
-    symbol_raw_list = f.read().splitlines()    
-sym_dict = dict()
+# get symbol_dict
+# structure: char: [encoding, number]
+with open(data_folder / "symbol_DIME.txt", encoding='utf-8') as f:
+    symbol_raw_list = f.read().splitlines()
+symbol_dict = dict()
 counter, saved_keys = 1, 'w0'
-for line in symbol_raw_list:    
+for line in symbol_raw_list:
     [keys, symbol]= line.split()
     if saved_keys != keys:
         counter = 1
-    sym_dict[symbol] = [keys, counter]
+    symbol_dict[symbol] = [keys, counter]
     counter += 1
     saved_keys = keys
-# add sym_dict to the main dictionary
-for symbol in sym_dict:
-    if symbol in array30_dict:
-        array30_dict[symbol]['sym'] = sym_dict[symbol]
-    else:
-        array30_dict[symbol] = {"sym": sym_dict[symbol]}
+# convert symbol_dict to js object and write to js/object_symbol.js
+with open(js_folder / "object_symbol.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectSymbol = ")
+with open(js_folder / "object_symbol.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(symbol_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
 
-# get ext_a_dict
-with open(r"array30_data\extension_A_DIME.txt", encoding='utf-8') as f:
-    extension_A_raw_list = f.read().splitlines() 
-# the file includes special and single codes but no shortcode1 or 2
-ext_a_dict = {}
+# get normal_dict and enconding_dict
+with open(data_folder / "extension_A_DIME.txt" , encoding='utf-8') as f:
+    extension_A_raw_list = f.read().splitlines()
+with open(data_folder / "extension_B_DIME.txt", encoding='utf-8') as f:
+    extension_B_raw_list = f.read().splitlines()
+with open(data_folder / "extension_CD_DIME.txt", encoding='utf-8') as f:
+    extension_CD_raw_list = f.read().splitlines()
+normal_dict = {}
+encoding_dict = {}
+# structure
+# normal_dict[char] = list of (enc, coincident code position)
+# encoding_dict[enc] = [#cc in A, #cc in B, #cc in CD, #cc total]
 for line in extension_A_raw_list:
-    [keys, char] = line.split()
-    # exclude special keys and single key 
-    if (char not in (sp_dict.keys()|sg_dict.keys())) \
-    or (char in sp_dict.keys() and keys != sp_dict[char]) \
-    or (char in sg_dict.keys() and keys != sg_dict[char]):
-        if char not in ext_a_dict:
-            ext_a_dict[char]=[keys]
+    [enc, char] = line.split()
+    if enc not in encoding_dict:
+        encoding_dict[enc] = [1,0,0,1]
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, 1)]
         else:
-            ext_a_dict[char].append(keys)			
-# add ext_a_dict to the main dictionary
-for char in ext_a_dict:
-    if char in array30_dict:
-        array30_dict[char]['nl'] = ext_a_dict[char]
+            normal_dict[char].append((enc, 1))
     else:
-        array30_dict[char] = {"nl": ext_a_dict[char]}
-
-# convert array30_dict to js object and write to ext_a_dict_path
-import json
-ext_a_dict_path = r"ext_A_dict.js"
-with open(ext_a_dict_path, "w", encoding='utf-8') as text_file:
-    text_file.write("const extADict = ")
-with open(ext_a_dict_path, "a", encoding='utf-8') as text_file:
-    text_file.write(json.dumps(array30_dict, ensure_ascii=False).encode('utf8').decode())
-
-# get ext_b_dict
-with open(r"array30_data\extension_B_DIME.txt", encoding='utf-8') as f:
-    extension_b_raw_list = f.read().splitlines() 
-# the file includes no characters having sg, sp, sc1, sc2, sym
-ext_b_dict = dict()
-for line in extension_b_raw_list:
-    [keys, char] = line.split()
-    if char not in ext_b_dict:
-        ext_b_dict[char] = [keys]
+        encoding_dict[enc][0] += 1
+        encoding_dict[enc][-1] += 1
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, encoding_dict[enc][-1])]
+        else:
+            normal_dict[char].append((enc, encoding_dict[enc][-1]))
+for line in extension_B_raw_list:
+    [enc, char] = line.split()
+    if enc not in encoding_dict:
+        encoding_dict[enc] = [0,1,0,1]
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, 1)]
+        else:
+            normal_dict[char].append((enc, 1))
     else:
-        ext_b_dict[char].append(keys)		
-# add ext_b_dict to the main dictionary
-for char in ext_b_dict:
-    array30_dict[char] = {"nl": ext_b_dict[char]} 
-
-# get ext_cd_dict
-with open(r"array30_data\extension_CD_DIME.txt", encoding='utf-8') as f:
-    extension_cd_raw_list = f.read().splitlines() 
-# the file includes no characters having sg, sp, sc1, sc2, sym
-ext_cd_dict = dict()
-for line in extension_cd_raw_list:
-    [keys, char] = line.split()
-    if char not in ext_cd_dict:
-        ext_cd_dict[char] = [keys]
+        encoding_dict[enc][1] += 1
+        encoding_dict[enc][-1] += 1
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, encoding_dict[enc][-1])]
+        else:
+            normal_dict[char].append((enc, encoding_dict[enc][-1]))
+for line in extension_CD_raw_list:
+    [enc, char] = line.split()
+    if enc not in encoding_dict:
+        encoding_dict[enc] = [0,0,1,1]
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, 1)]
+        else:
+            normal_dict[char].append((enc, 1))
     else:
-        ext_cd_dict[char].append(keys)		
-# add ext_cd_dict to the main dictionary
-for char in ext_cd_dict:
-    array30_dict[char] = {"nl": ext_cd_dict[char]} 
+        encoding_dict[enc][2] += 1
+        encoding_dict[enc][-1] += 1
+        if char not in normal_dict:
+            normal_dict[char] = [(enc, encoding_dict[enc][-1])]
+        else:
+            normal_dict[char].append((enc, encoding_dict[enc][-1]))            
+# remove normal encoding already in special or single dict (disjoint)
+for char in special_dict:
+    index_item_remove = 100
+    encoding_list = normal_dict[char]
+    for i in range(len(encoding_list)):
+        if encoding_list[i][0] == special_dict[char]:
+            index_item_remove = i
+    if index_item_remove != 100:
+        del encoding_list[index_item_remove]
+    if encoding_list == []:
+        del normal_dict[char]
+for char in single_dict:
+    index_item_remove = 100
+    encoding_list = normal_dict[char]
+    for i in range(len(encoding_list)):
+        if encoding_list[i][0] == single_dict[char]:
+            index_item_remove = i
+    if index_item_remove != 100:
+        del encoding_list[index_item_remove]
+    if encoding_list == []:
+        del normal_dict[char]
+# convert normal_dict to js object and write to js/object_normal.js
+with open(js_folder / "object_normal.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectNormal = ")
+with open(js_folder / "object_normal.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(normal_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
+    text_file.write("const objectEncoding = ")
+    text_file.write(json.dumps(encoding_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
 
-# convert array30_dict to js object and write to main_dict_path
-main_dict_path = r"ext_ABCD_dict.js"
-with open(main_dict_path, "w", encoding='utf-8') as text_file:
-    text_file.write("const charDict = ")
-with open(main_dict_path, "a", encoding='utf-8') as text_file:
-    text_file.write(json.dumps(array30_dict, ensure_ascii=False).encode('utf8').decode())
-	
-# for keys.js
+# create char_dict (value = 0)
+# structure: char: 0
+char_set = symbol_dict.keys() | special_dict.keys() \
+    | shortcode1_dict.keys() | shortcode2_dict.keys() \
+    | single_dict.keys() | normal_dict.keys()
+char_dict = dict.fromkeys(char_set, 0)
+# convert char_set to js object and write to js/object_char_set.js
+with open(js_folder / "object_char_set.js", "w", encoding='utf-8') as text_file:
+    text_file.write("const objectCharSet = ")
+with open(js_folder / "object_char_set.js", "a", encoding='utf-8') as text_file:
+    text_file.write(json.dumps(char_dict, ensure_ascii=False).encode('utf8').decode())
+    text_file.write(';\n')
+
 # get letter_to_array30_dict and array30_to_letter_dict
-with open(r"array30_data\key_mapping.txt", encoding='utf-8') as f:
+with open(data_folder / "key_mapping.txt", encoding='utf-8') as f:
     key_mapping_raw_list = f.read().splitlines()
 letter_to_array30_dict = {line.split()[0]: line.split()[1] for line in key_mapping_raw_list}
 array30_to_letter_dict = {line.split()[1]: line.split()[0] for line in key_mapping_raw_list}
 # beautify the arrows
 letter_to_array30_dict_str = str(letter_to_array30_dict).replace('v','↓').replace('^','↑').replace('+','v')
 array30_to_letter_dict_str = str(array30_to_letter_dict).replace('v','↓').replace('^','↑').replace('+','v')
-# write different code character arrays to char_type_path
-# write the two mappings to char_type_path
-char_type_path = r"keys.js"
-with open(char_type_path, "w", encoding='utf-8') as text_file:
+# write character arrays of different encodings to js/keys.js
+# and write the two mappings to js/keys.js
+with open(js_folder / "keys.js", "w", encoding='utf-8') as text_file:
     text_file.write("const sgAllArray = ")
-with open(char_type_path, "a", encoding='utf-8') as text_file:
-    text_file.write(str(list(sg_dict.keys())) + ';\n')
-    text_file.write("const spAllArray = " + str(list(sp_dict.keys())) + ';\n')
-    text_file.write("const symAllArray = " + str(list(sym_dict.keys())) + ';\n')
-    text_file.write("const sc1AllArray = " + str(list(sc1_dict_clean.keys())) + ';\n')
-    text_file.write("const sc2AllArray = " + str(list(sc2_dict_clean.keys())) + ';\n')
+with open(js_folder / "keys.js", "a", encoding='utf-8') as text_file:
+    text_file.write(str(list(single_dict.keys())) + ';\n')
+    text_file.write("const spAllArray = " + str(list(special_dict.keys())) + ';\n')
+    text_file.write("const symAllArray = " + str(list(symbol_dict.keys())) + ';\n')
+    text_file.write("const sc1AllArray = " + str(list(shortcode1_dict.keys())) + ';\n')
+    text_file.write("const sc2AllArray = " + str(list(shortcode2_dict.keys())) + ';\n')
     text_file.write("const letterToArray30Dict = " + letter_to_array30_dict_str + ';\n')
     text_file.write("const array30ToLetterDict = " + array30_to_letter_dict_str + ';\n')

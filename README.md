@@ -5,7 +5,7 @@
 
 使用本網站的核心功能頁面：
 
-👉 [點我去查碼！](https://array30.misterfishup.com/dictionary.html) 👉 [點我練打字！](https://array30.misterfishup.com/typing.html)
+👉 [點我去查碼](https://array30.misterfishup.com/dictionary.html) 👉 [點我練打字](https://array30.misterfishup.com/typing.html)
 
 ---
 

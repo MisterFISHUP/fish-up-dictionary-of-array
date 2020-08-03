@@ -981,10 +981,10 @@ function createLineNL(encodingNl, id_name) {
         }
         if (ccData[0] === 1) {
             if (ccData[1] > 0) {
-                const ccHint = document.createTextNode('，若開啟擴充區 B 則重碼位 1，否則無重碼');
+                const ccHint = document.createTextNode('，若啟用擴充區 B 則重碼位 1，否則無重碼');
                 elem.appendChild(ccHint);
             } else if (ccData[2] > 0) {
-                const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
                 elem.appendChild(ccHint);
             }
         }
@@ -996,7 +996,7 @@ function createLineNL(encodingNl, id_name) {
             }
             if (ccData[1] === 1) {
                 if (ccData[2] > 0) {
-                    const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                    const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
                     elem.appendChild(ccHint);
                 }
             }

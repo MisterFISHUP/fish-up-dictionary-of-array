@@ -8,7 +8,7 @@ hr {
 .bgimg-index {
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.6)), url("../img/header_index.jpg");
+    background-image: linear-gradient(rgba(30, 30, 30, 0.6), rgb(255, 255, 255)), url("../img/header_index.jpg");
     min-height: 100%;
     alt: "Header image of the main page ";
 }
@@ -62,13 +62,23 @@ img.root {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
+.keycap-cc {
+    background: black;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.keycap-cc-trivia {
+    background: rgb(235, 235, 235);
+    font-family: 'Courier New', Courier, monospace;
+}
 .keycap-space {
     background: rgb(235, 235, 235);
     font-family: 'Courier New', Courier, monospace;
 }
 .title-single {
     background: rgb(253, 94, 94);
-    color: aliceblue;
+    color: white;
 }
 .title-special {
     background: rgb(253, 171, 94);
@@ -83,8 +93,8 @@ img.root {
     background: rgb(235, 235, 235);
 }
 .title-symbol {
-    background: rgb(253, 94, 94);
-    color: aliceblue;
+    background: rgb(160, 80, 218);
+    color: white;
 }
 
 /* checkbox_switch */

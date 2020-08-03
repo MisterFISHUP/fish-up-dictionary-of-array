@@ -1,9 +1,15 @@
-## 🎉 歡迎來到 FISH UP 行列查碼的 GitHub 專案
-目標打造最好用、最實用的行列輸入法查碼網站💪💪
+# 🎉 歡迎來到 FISH UP 行列查碼的 GitHub 專案
+### 目標打造最好用、最實用的行列輸入法查碼網站💪
 
-網站在此👉👉 [FISH UP 行列查碼](https://array30.misterfishup.com/)
+網站在此 👉 [FISH UP 行列查碼](https://array30.misterfishup.com/)
 
-### FISH UP 行列查碼 👉[點我去查碼！](https://array30.misterfishup.com/dictionary.html)
+使用本網站的核心功能頁面：
+
+👉 [點我去查碼！](https://array30.misterfishup.com/dictionary.html) 👉 [點我練打字！](https://array30.misterfishup.com/typing.html)
+
+---
+
+### FISH UP 行列查碼
 - 支援多字查碼，一次最多可查詢 500 字 🔥🔥🔥
 - 標註單鍵碼、特殊碼、一級簡碼、二級簡碼與符號
 - 標註簡碼、符號的數字鍵以及普通編碼的重碼位置 🔥🔥🔥
@@ -11,7 +17,7 @@
 - 支援行動裝置瀏覽，手機、平板、筆電、桌電都能良好顯示
 - 查碼支援至中日韓統一表意文字擴充區 D，總數超過七萬四千字
 
-### FISH UP 打字練習 👉[點我練打字！](https://array30.misterfishup.com/typing.html)
+### FISH UP 打字練習
 - 即時性附上最完整的行列提示
 - 追蹤錯字並附上行列編碼
 - 眾多內建題庫讓您快速進步

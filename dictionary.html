@@ -10,7 +10,7 @@
 
         gtag('config', 'UA-173562145-1');
     </script>
-    <title>FISH UP 行列查碼</title>
+    <title>行列查碼 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For google -->
@@ -19,12 +19,12 @@
     <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="FISH UP 行列查碼">
+    <meta itemprop="name" content="行列查碼 | FISH UP 行列查碼">
     <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
     <meta itemprop="description" content="最好用、最實用的行列輸入法查碼網站。支援多字查詢、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵">
     
     <!-- For facebook Open Graph -->
-    <meta property="og:title" content="FISH UP 行列查碼">
+    <meta property="og:title" content="行列查碼 | FISH UP 行列查碼">
     <meta property="og:description" content="最好用、最實用的行列輸入法查碼網站。支援多字查詢、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵">
     <meta property="og:type" content="網站">
     <meta property="og:url" content="https://array30.misterfishup.com/dictionary.html">
@@ -36,11 +36,11 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/accordion_dictionary.css">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -49,7 +49,7 @@
         <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
 
         <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>            
+        <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>
         <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
         <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
         <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
@@ -58,9 +58,9 @@
     </div>
 
     <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
+    <div id="navSmall" class="w3-bar-block w3-sand w3-hide w3-hide-large ">
         <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>            
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>
         <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
         <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
         <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
@@ -79,7 +79,6 @@
         <div class= 'w3-container' style ='width: 80%; margin: auto;'>
             <div class="w3-row">
                 <button onclick="openSearchTag(event, 'search_tab_content_1');" class="w3-half w3-btn w3-brown w3-padding tablink" style="cursor: pointer;"><span class="w3-show-inline-block">●</span> 我想要查碼</button>
-
                 <button onclick="openSearchTag(event, 'search_tab_content_2');" class="w3-half w3-btn w3-brown w3-grayscale w3-padding tablink" style="cursor: pointer;"><span class="w3-hide">●</span> 我想看列表</button>
             </div>
 
@@ -89,15 +88,15 @@
                     <input type="text" id="inputCharacters" name="characters" placeholder="最多可輸入 500 字！" class="w3-input w3-border" style="width: 80%; margin: 8px;" autofocus>
                     <button type="submit" id="btn_submit" value="Submit" class="w3-button w3-round w3-brown">查詢</button>
                 </div>
-            </div>        
+            </div>
             <div id="search_tab_content_2" class="w3-container search-type w3-card w3-white w3-hide">
-                <div class='w3-container w3-padding-24 w3-center w3-animate-left'>                    
+                <div class='w3-container w3-padding-24 w3-center w3-animate-left'>
                     <label class="w3-margin-right"><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll"> 單鍵碼</label>
                     <label class="w3-margin-right"><input type="checkbox" id='checkbox--sp' name="special" value="spAll"> 特別碼</label>
                     <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc1' name="shortcode1" value="sc1All"> 一級簡碼</label>
                     <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc2' name="shortcode2" value="sc2All"> 二級簡碼</label>
-                    <label class="w3-margin-right"><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll"> 符號</label>        
-                    <button type="submit" id="btn_filter_submit" value="somevalue" class="w3-button w3-round w3-brown" style="margin: 8px;">查看</button> 
+                    <label class="w3-margin-right"><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll"> 符號</label>
+                    <button type="submit" id="btn_filter_submit" value="somevalue" class="w3-button w3-round w3-brown" style="margin: 8px;">查看</button>
                 </div>
             </div>
 
@@ -105,7 +104,7 @@
             <div class="w3-right" style="margin-top: 6px;">
                 <span class="w3-text-white">按鍵顯示為英文鍵</span>
                 <label>
-                    <input type="checkbox" id="cb_eng_key_active" class="checkbox">
+                    <input type="checkbox" id="cb_eng_key_active" class="checkbox" >
                     <span class="btn-toggle-box">
                         <span class="btn-toggle"></span>
                     </span>
@@ -113,7 +112,7 @@
             </div>
         </div>
         <br>
-    </header> 
+    </header>
     <!-- The Grid -->
     <div class="w3-padding-24 w3-row-padding w3-sand">
 
@@ -123,22 +122,21 @@
                 <button class="accordion">圖示說明</button>
                 <div class="panel w3-margin-bottom">
                     <ul class="w3-ul w3-hoverable">
-                        <li><span class="keycap title-single">單</span>：單鍵碼（一碼字）</li>
+                        <li><span class="keycap title-single">單</span>：單鍵碼</li>
                         <li><span class="keycap title-special">特</span>：特別碼</li>
                         <li><span class="keycap title-shortcode1">一</span>：一級簡碼</li>
                         <li><span class="keycap title-shortcode2">二</span>：二級簡碼</li>
-                        <li><span class="keycap title-normal">普</span>：一般輸入</li>
+                        <li><span class="keycap title-normal">普</span>：普通編碼</li>
                         <li><span class="keycap title-symbol">符</span>：符號</li>
                     </ul>
                 </div>
             </div>
             <div class="w3-card w3-brown w3-padding w3-display-container w3-margin-bottom">
-                <span onclick="this.parentElement.style.display='none'"
-                class="w3-button w3-large w3-display-topright">&times;</span>
+                <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
                 <h4>注意！</h4>
-                <p>「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1：<br>按完本網站給出的特別碼後（包含空白鍵），要嘛直接繼續打字（輸入會自動完成），要嘛還要再按一次 <span class="keycap keycap-space" style="color: black;">space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
+                <p>「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1：<br>按完本網站給出的特別碼後（包含空白鍵），直接繼續打字（輸入會自動完成），或是還要再按一次 <span class="keycap keycap-space" style="color: black;">Space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
             </div>
-            
+
         <!-- End Left Column -->
         </div>
 
@@ -155,12 +153,13 @@
                             <li class="w3-margin-bottom">支援行動裝置瀏覽，<b class="w3-text-red">手機、平板</b>、筆電、桌電都能良好顯示</li>
                             <li class="w3-margin-bottom">按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
                             <li class="w3-margin-bottom"><b class="w3-text-red">標註單鍵碼、特別碼、一級簡碼、二級簡碼與符號</b></li>
+                            <li class="w3-margin-bottom">會提示是否需要按 <span class="keycap keycap-space">Space</span> 空白鍵</li>
                             <li class="w3-margin-bottom">一級與二級簡碼給出數字鍵</li>
-                            <li class="w3-margin-bottom">會提示是否需要按空白鍵 <span class="keycap keycap-space">space</span></li>
-                            <li class="w3-margin-bottom">給出符號在行列的符號選單的位置</li>
+                            <li class="w3-margin-bottom">普通編碼提示重碼位置 🔥<span class="w3-text-red" style="font-weight: bold; font-style: italic;">NEW</span>🔥</li>
+                            <li class="w3-margin-bottom">給出符號在行列符號選單中的位置</li>
                             <li class="w3-margin-bottom">查詢結果提供超連結，多筆資料時能方便地快速移動</li>
                         </ul>
-                    </div>  
+                    </div>
                 </div>
                 <div class="w3-card w3-white w3-padding w3-margin-bottom">
                     <h3 class="w3-panel w3-sand w3-leftbar w3-border-brown w3-padding">本行列查碼頁面主要提供兩大功能：</h3>
@@ -174,7 +173,7 @@
                         <hr>
                         <h4 class="w3-text-brown">我想看列表</h4>
                         <ul>
-                            <li class="w3-margin-bottom">一碼字、特別碼、一級簡碼、二級簡碼（因太多字目前不提供）及符號的列表</li>
+                            <li class="w3-margin-bottom">列出單鍵碼、特別碼、一級簡碼、二級簡碼（因太多字目前不提供）及符號的列表</li>
                             <li class="w3-margin-bottom">能夠隨意混篩，找出擁有上述編碼的字，不僅實用也滿足您的好奇心</li>
                         </ul>
                     </div>
@@ -182,26 +181,87 @@
                     <div class="w3-container">
                         <p>想看更多分類？例如想了解特別碼的取碼邏輯？</p>
                         <p class="w3-margin-bottom">千萬要記得到本站另一頁面<span class="w3-text-red">打字練習</span>的「題目選擇」挖寶！</p>
-                    </div>                    
+                    </div>
                     <div class="w3-container w3-margin w3-center">
                         <a href='typing.html' target="_blank" class="w3-button w3-brown w3-hover-red">前往打字練習</a>
                     </div>
-                    
+                </div>
+                <div class="w3-card w3-white w3-padding w3-margin-bottom" id="about_coincident_codes">
+                    <h3 class="w3-panel w3-sand w3-leftbar w3-border-brown w3-padding">關於普通編碼的重碼</h3>
+                    <div class="w3-padding">
+                        <h4 class="w3-text-brown">無重碼/有重碼且重碼位大於 1</h4>
+                        本網站都幫您把按鍵寫出來了，完全照著輸入即可（黑色按鍵負責選擇重碼）。另外，開始輸入黑色按鍵前的 <span class="keycap keycap-space">Space</span> 時常可以省略不用按。
+                        <hr>
+                        <h4 class="w3-text-brown">有重碼且重碼位為 1</h4>
+                        <p>查碼結果後面會加上「，重碼位 1」。沒有直接像重碼位大於 1 時寫出黑色按鍵，是因為重碼位等於 1 有<b class="w3-text-red">不只一種</b>輸入方法：按完本網站給出的按鍵後（即一到數顆行列 30 鍵 + 空白鍵後）</p>
+                        <ul>
+                            <li class="w3-margin-bottom">按下數字鍵 <span class="keycap keycap-cc">1</span> ，即可完成輸入。同樣地，數字鍵 <span class="keycap keycap-cc">1</span> 之前的 <span class="keycap keycap-space">Space</span> 時常可以省略不用按。</li>
+                            <li class="w3-margin-bottom">直接繼續打下一個字，也就是按下行列 30 鍵，原本的字會自動完成輸入。</li>
+                            <li class="w3-margin-bottom">按下 <span class="keycap keycap-space">Space</span> 即可完成輸入，但此方法<b class="w3-text-red">僅限於重碼數量不超過 10 個的情況</b>。</li>
+                        </ul>
+                        <hr>
+                        <h4 class="w3-text-brown">無重碼變為有重碼</h4>
+                        有些字可能原本沒有重碼，但因為您啟用了更廣的中日韓統一表意文字擴充區，導致變成有重碼。本網站會貼心地標示出這種狀況。一般來說，有這種狀況的字多數是罕用字。
+                    </div>
+                </div>
+                <div class="w3-card w3-white w3-padding w3-margin-bottom" id="coincident_code_trivia">
+                    <h3 class="w3-panel w3-sand w3-leftbar w3-border-brown w3-padding">重碼冷知識<span class="w3-small">（可使用上方按鈕在英文鍵與行列 30 鍵之間切換）</span></h3>
+                    <div class="w3-padding">
+                        <h4 class="w3-text-brown">未開擴充區 B 區時</h4>
+                        <ul>
+                            <li class="w3-margin-bottom">重碼數最高是 9 個。僅 1 組編碼：<span class="keycap keycap-cc-trivia">....i</span> 。此編碼下重碼位 9 的字是「㸚」。</li>
+                            <li class="w3-margin-bottom">沒有編碼重碼數恰為 7 或 8 個。</li>
+                            <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 6 個：<span class="keycap keycap-cc-trivia">kqi</span> 以及 <span class="keycap keycap-cc-trivia">nnnn</span>。這兩組編碼下重碼位 6 的字分別是「㒰㣺」。</li>
+                            <li class="w3-margin-bottom">有 14 組編碼的重碼數恰為 5 個：<span class="keycap keycap-cc-trivia">.vi</span>、<span class="keycap keycap-cc-trivia">aaaxi</span>、<span class="keycap keycap-cc-trivia">ar.d</span>、<span class="keycap keycap-cc-trivia">bbbbi</span>、<span class="keycap keycap-cc-trivia">fkkfi</span>、<span class="keycap keycap-cc-trivia">iiii</span>、<span class="keycap keycap-cc-trivia">kkkk</span>、<span class="keycap keycap-cc-trivia">ksi</span>、<span class="keycap keycap-cc-trivia">ooi</span>、<span class="keycap keycap-cc-trivia">r;i;</span>、<span class="keycap keycap-cc-trivia">vkkfi</span>、<span class="keycap keycap-cc-trivia">xxxxi</span>、<span class="keycap keycap-cc-trivia">ykj;</span>、<span class="keycap keycap-cc-trivia">zkkfi</span>。這些編碼下重碼位 5 的字分別是「䝗㦮瑶叕䴽䒑乁㐈㧮囍䴽糹諮䴽」。</li>
+                            <li class="w3-margin-bottom">有 65 組編碼的重碼數恰為 4 個、有 355 組編碼的重碼數恰為 3 個、有 2323 組編碼的重碼數恰為 2 個。最後，有 25459 組編碼沒有重碼。</li>
+                        </ul>
+                        <hr>
+                        <h4 class="w3-text-brown">開啟擴充區 B 但未開啟 擴充區 CD 時</h4>
+                        <ul>
+                            <li class="w3-margin-bottom">重碼數最高是 17 個。僅 1 組編碼：<span class="keycap keycap-cc-trivia">zkkfi</span> 。此編碼下重碼位 17 的字是「𪍵」。</li>
+                            <li class="w3-margin-bottom">有 3 組編碼的重碼數恰為 16 個：<span class="keycap keycap-cc-trivia">fkk;i</span>、<span class="keycap keycap-cc-trivia">fkkfi</span>、<span class="keycap keycap-cc-trivia">vkkfi</span>。這三組編碼下重碼位 16 的字分別是「𪍼𪍵𪍵」。</li>
+                            <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 15 個：<span class="keycap keycap-cc-trivia">vkk;i</span>。此編碼下重碼位 15 的字是「𪍼」。</li>
+                            <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 14 個：<span class="keycap keycap-cc-trivia">zkkxi</span>。此編碼下重碼位 14 的字是「𪍺」。</li>
+                            <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 13 個：<span class="keycap keycap-cc-trivia">bgd,i</span> 以及 <span class="keycap keycap-cc-trivia">fkkxi</span>。這兩組編碼下重碼位 13 的字分別是「𪈄𪍺」。</li>                            
+                            <li class="w3-margin-bottom">有 9 組編碼的重碼數恰為 12 個： <span class="keycap keycap-cc-trivia">....i</span>、<span class="keycap keycap-cc-trivia">alpsi</span>、<span class="keycap keycap-cc-trivia">bgdmi</span>、<span class="keycap keycap-cc-trivia">ffi</span>、<span class="keycap keycap-cc-trivia">qdjvi</span>、<span class="keycap keycap-cc-trivia">vkk,i</span>、<span class="keycap keycap-cc-trivia">y;jfi</span>、<span class="keycap keycap-cc-trivia">vkkqi</span>、<span class="keycap keycap-cc-trivia">zkkqi</span>。這些編碼下重碼位 12 的字分別是「𢼫𪓱𪍫𦬢𣡪𪒅𩫬𪎀𪎀」。</li>
+                            <li class="w3-margin-bottom">有 9 組編碼的重碼數恰為 11 個： <span class="keycap keycap-cc-trivia">fkk.i</span>、<span class="keycap keycap-cc-trivia">lvl.i</span>、<span class="keycap keycap-cc-trivia">vkksi</span>、<span class="keycap keycap-cc-trivia">vkkxi</span>、<span class="keycap keycap-cc-trivia">yqq;i</span>、<span class="keycap keycap-cc-trivia">yqqbi</span>、<span class="keycap keycap-cc-trivia">zkkki</span>、<span class="keycap keycap-cc-trivia">t;qbi</span>、<span class="keycap keycap-cc-trivia">zkk;i</span>。這些編碼下重碼位 11 的字分別是「𪍸𪚼𪌡𪍺𪋸𪋪𪎂𩏺𪍼」。</li>
+                            <li class="w3-margin-bottom">有 16 組編碼的重碼數恰為 10 個、有 24 組編碼的重碼數恰為 9 個、有 33 組編碼的重碼數恰為 8 個、有 62 組編碼的重碼數恰為 7 個、有 121 組編碼的重碼數恰為 6 個、有 253 組編碼的重碼數恰為 5 個、有 570 組編碼的重碼數恰為 4 個、有 1759 組編碼的重碼數恰為 3 個、有 7450 組編碼的重碼數恰為 2 個。最後，有 54853 組編碼沒有重碼。</li>
+                        </ul>
+                        <hr>
+                        <h4 class="w3-text-brown">開啟擴充區 CD 但未開啟擴充區 EF 時</h4>
+                        <ul>
+                            <li class="w3-margin-bottom">重碼數最高是 17 個。有 2 組編碼：<span class="keycap keycap-cc-trivia">fkk;i</span> 以及 <span class="keycap keycap-cc-trivia">zkkfi</span>。這兩組編碼下重碼位 17 的字分別是「𫈅𪍵」。</li>
+                            <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 16 個：<span class="keycap keycap-cc-trivia">fkkfi</span> 以及 <span class="keycap keycap-cc-trivia">vkkfi</span>。這兩組編碼下重碼位 16 的字分別是「𪍵𪍵」。</li>
+                            <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 15 個：<span class="keycap keycap-cc-trivia">vkk;i</span>。此編碼下重碼位 15 的字是「𪍼」。</li>
+                            <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 14 個：<span class="keycap keycap-cc-trivia">zkkxi</span>。此編碼下重碼位 14 的字是「𪍺」。</li>
+                            <li class="w3-margin-bottom">有 4 組編碼的重碼數恰為 13 個： <span class="keycap keycap-cc-trivia">bgd,i</span>、<span class="keycap keycap-cc-trivia">fkkxi</span>、<span class="keycap keycap-cc-trivia">vkksi</span>、<span class="keycap keycap-cc-trivia">y;jfi</span>。這些編碼下重碼位 13 的字分別是「𪈄𪍺𫜐𫘷」。</li>
+                            <li class="w3-margin-bottom">有 12 組編碼的重碼數恰為 12 個： <span class="keycap keycap-cc-trivia">....i</span>、<span class="keycap keycap-cc-trivia">alpsi</span>、<span class="keycap keycap-cc-trivia">bgdmi</span>、<span class="keycap keycap-cc-trivia">ffi</span>、<span class="keycap keycap-cc-trivia">lvl.i</span>、<span class="keycap keycap-cc-trivia">qdjvi</span>、<span class="keycap keycap-cc-trivia">vkk,i</span>、<span class="keycap keycap-cc-trivia">yqq;i</span>、<span class="keycap keycap-cc-trivia">yqqbi</span>、<span class="keycap keycap-cc-trivia">t;qbi</span>、<span class="keycap keycap-cc-trivia">vkkqi</span>、<span class="keycap keycap-cc-trivia">zkkqi</span>。這些編碼下重碼位 12 的字分別是「𢼫𪓱𪍫𦬢𫁇𣡪𪒅𫜍𫜋𫖏𪎀𪎀」。</li>
+                            <li class="w3-margin-bottom">有 7 組編碼的重碼數恰為 11 個： <span class="keycap keycap-cc-trivia">bbi</span>、<span class="keycap keycap-cc-trivia">fkk.i</span>、<span class="keycap keycap-cc-trivia">lvlfi</span>、<span class="keycap keycap-cc-trivia">vkkxi</span>、<span class="keycap keycap-cc-trivia">ykyxi</span>、<span class="keycap keycap-cc-trivia">zkkki</span>、<span class="keycap keycap-cc-trivia">zkk;i</span>。這些編碼下重碼位 11 的字分別是「𪟙𪍸𪺳𪍺𫋴𪎂𪍼」。</li>
+                            <li class="w3-margin-bottom">有 15 組編碼的重碼數恰為 10 個、有 31 組編碼的重碼數恰為 9 個、有 43 組編碼的重碼數恰為 8 個、有 68 組編碼的重碼數恰為 7 個、有 154 組編碼的重碼數恰為 6 個、有 270 組編碼的重碼數恰為 5 個、有 650 組編碼的重碼數恰為 4 個、有 1965 組編碼的重碼數恰為 3 個、有 8061 組編碼的重碼數恰為 2 個。最後，有 57176 組編碼沒有重碼。</li>
+                        </ul>
+                        <hr>
+                        <h4 class="w3-text-brown">無重碼變為有重碼</h4>                        
+                        <ul>
+                            <li class="w3-margin-bottom">有 1203 個擴充區 A （或之前）的字，在輸入法未開啟擴充區 B 時沒有重碼，開啟後有重碼。</li>
+                            <li class="w3-margin-bottom">有 70 個擴充區 A （或之前）的字，在輸入法未開啟擴充區 CD 時沒有重碼，開啟後有重碼。</li>
+                            <li class="w3-margin-bottom">有 831 個擴充區 B 的字，在輸入法未開啟擴充區 CD 時沒有重碼，開啟後有重碼。</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="w3-card w3-white  w3-padding w3-margin-bottom">
                     <div class="w3-row w3-padding">
                         <div class="w3-col" style="width: 2em;">註：</div>
-                        <div class="w3-rest">由於 Noto Sans CJK 只支援到中日韓統一表意文字擴充區 A，本站只好放棄無襯線字體，轉而使用 Noto Serif CJK。</div>
+                        <div class="w3-rest">由於字體 Noto Sans CJK 只支援到中日韓統一表意文字擴充區 A，本站只好放棄它，轉而使用字體 Noto Serif CJK。</div>
                     </div>
                     <div class="w3-row w3-padding">
                         <div class="w3-col" style="width: 2em;">註：</div>
-                        <div class="w3-rest">由於 Noto Serif CJK 只支援到中日韓統一表意文字擴充區 D，並且擴充區 D 之後的字相當罕用，本站僅供查詢至擴充區 D。題外話，花園明朝體能夠支援到中日韓統一表意文字擴充區 F。</div>
+                        <div class="w3-rest">由於字體 Noto Serif CJK 只支援到中日韓統一表意文字擴充區 D，並且擴充區 D 之後的字相當罕用，本站僅供查詢至擴充區 D。題外話，花園明朝體能夠支援到中日韓統一表意文字擴充區 F。</div>
                     </div>
                 </div>
                 <div class="w3-card w3-padding w3-margin-bottom w3-pale-red w3-hover-red">
                     <div class="w3-row w3-padding">
                         <div class="w3-col" style="width: 2em;">註：</div>
-                        <div class="w3-rest">本站使用的資料庫來自 DIME 行列輸入法，所以有可能和其他行列輸入法稍有不同。</div>
+                        <div class="w3-rest">本站使用的資料庫來自 DIME 行列輸入法，所以有可能和其他行列輸入法稍有不同。普通編碼的重碼提示建立在<u>沒有啟用擴充區 EF </u>的條件下。</div>
                     </div>
                 </div>
             </div>
@@ -215,9 +275,9 @@
     <!-- Footer -->
     <footer class="w3-container w3-padding w3-dark-grey w3-center">
         <div class="w3-xlarge w3-section">
-        <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-        <a href="https://github.com/MisterFISHUP" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="https://github.com/MisterFISHUP" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
         </div>
         <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
     </footer>
@@ -229,8 +289,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/display.js"></script>
     <script type="text/javascript" src="js/search_or_list.js"></script>
-    <script type="text/javascript" src="js/ext_ABCD_dict.js"></script>
-    <script type="text/javascript" src="js/keys.js"></script>        
+    <script type="text/javascript" src="js/object_char_set.js"></script>
+    <script type="text/javascript" src="js/object_normal.js"></script>
+    <script type="text/javascript" src="js/object_shortcode1.js"></script>
+    <script type="text/javascript" src="js/object_shortcode2.js"></script>
+    <script type="text/javascript" src="js/object_single.js"></script>
+    <script type="text/javascript" src="js/object_special.js"></script>
+    <script type="text/javascript" src="js/object_symbol.js"></script>
+    <script type="text/javascript" src="js/keys.js"></script>
     <script type="text/javascript" src="js/dictionary.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>

@@ -1,10 +1,11 @@
 # 🎉 歡迎來到 FISH UP 行列查碼的 GitHub 專案
 ### 目標打造最好用、最實用的行列輸入法查碼網站💪
 
-網站在此 👉 <a href="https://array30.misterfishup.com/" target="_blank">FISH UP 行列查碼</a>
+網站在此 👉 [FISH UP 行列查碼](https://array30.misterfishup.com/)
+
 使用本網站的核心功能頁面：
 
-👉 <a href="https://array30.misterfishup.com/dictionary.html" target="_blank">點我去查碼</a> 👉 <a href="https://array30.misterfishup.com/typing.html" target="_blank">點我練打字</a>
+👉 [點我去查碼](https://array30.misterfishup.com/dictionary.html)  👉 [點我練打字](https://array30.misterfishup.com/typing.html)
 
 ---
 

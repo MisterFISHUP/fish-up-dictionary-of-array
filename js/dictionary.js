@@ -1,7 +1,7 @@
 /* Structure: (use search)
-    - get html DOMS
-    - search functionality
+    - get html DOMs
     - auto focus
+    - search functionality
     - filter with checkboxes
     - fetch data
     - eng Key Toggle
@@ -35,7 +35,7 @@ $(window).on('keypress',function(e) {
 });
 
 // clear the result area, and if input is not too long, call printResults
-function search() {    
+function search() {
     resultAreaElem.innerHTML="";
     let input = inputElem.value;
     // inputElem.value = '';
@@ -44,7 +44,7 @@ function search() {
         hintDiv.className = 'w3-card w3-white w3-padding';
         hintDiv.innerHTML='<p>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特別碼和一級簡碼的字！</p>';
         resultAreaElem.appendChild(hintDiv);
-    } else if (input.length > maxInputChar) {
+    } else if ([...input].length > maxInputChar) {
         const hintDiv = document.createElement('div');
         hintDiv.className = 'w3-card w3-white w3-padding';
         hintDiv.innerHTML="<p>不要輸入超過 " + String(maxInputChar) + " 字啦！</p>";
@@ -53,11 +53,11 @@ function search() {
 }
 
 // create resultCharList, resultBlocks in the result area
-function printResults (input) {
+function printResults(input) {
     // create resultDescription, put it into the result area
     let resultDescription = document.createElement('div');
     resultDescription.id = 'result_description';
-    resultDescription.className = 'w3-card w3-padding w3-white'
+    resultDescription.className = 'w3-card w3-padding w3-white';
     resultAreaElem.appendChild(resultDescription);
 
     // add the descriptive sentence to resultDescription
@@ -66,10 +66,10 @@ function printResults (input) {
     // create resultCharList, put it into the resultDescription
     let resultCharList = document.createElement('div');
     resultCharList.id = 'result_char_list';
-    resultCharList.className = 'w3-card w3-sand w3-padding w3-margin-bottom';  // w3 css
+    resultCharList.className = 'w3-card w3-sand w3-padding w3-margin-bottom'; // w3 css
     resultCharList.style = "font-size: 1.3em"; // bigger font size
     resultDescription.appendChild(resultCharList);
-    
+
     // create resultBlocks, put it into the result area 
     let resultBlocks = document.createElement('div');
     resultBlocks.id = 'result_blocks';
@@ -78,9 +78,9 @@ function printResults (input) {
     // loop over characters in input
     let num = 0; // number of characters in charDict
     for (let character of input) {
-        if (charDict.hasOwnProperty(character)){
-            // add the block of that character to resultBlocks #result_blocks  
-            createBlock(character, charDict[character], 'result_'+ String(num+1), 'result_blocks');
+        if (objectCharSet.hasOwnProperty(character)) {
+            // add the block of that character to resultBlocks #result_blocks
+            createBlock(character, 'result_'+ String(num+1), 'result_blocks');
             
             // add characters with link in resultCharList
             const charLink = document.createElement('a');
@@ -92,12 +92,12 @@ function printResults (input) {
             num += 1;
         }
     }
-
-    // depending on num, modify the sentence in resultDescription, or remove resultCharList 
+    
+    // depending on num, modify the sentence in resultDescription, or remove resultCharList
     document.getElementById('total_num').textContent = num;
     if (num > 0) {
         document.getElementById('link_hint').innerHTML = "您可以透過下面超連結快速跳到該字：<br><br>";
-    }  else resultDescription.removeChild(resultCharList);
+    } else resultDescription.removeChild(resultCharList);
 
     // show engKey if asked
     if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
@@ -131,7 +131,7 @@ function array30Filter() {
                 outputArray = ['一', '十', '方', '竹', '乙', '的', '木', '風'];
             }
             if (sp.checked||sc2.checked||sym.checked) outputArray = [];
-        } else if (sym.checked) {            
+        } else if (sym.checked) {
             outputArray = [...symAllArray];
             if (sc1.checked) {
                 outputArray = outputArray.filter(value => sc1AllArray.includes(value));
@@ -145,7 +145,7 @@ function array30Filter() {
             if (sc2.checked) {
                 outputArray = outputArray.filter(value => sc2AllArray.includes(value));
             }
-        } else if (sc1.checked) { 
+        } else if (sc1.checked) {
             outputArray = [...sc1AllArray];
             if (sc2.checked) {
                 outputArray = outputArray.filter(value => sc2AllArray.includes(value));
@@ -157,10 +157,10 @@ function array30Filter() {
     printResults(outputArray.join(""));
 
     //create filterResultRecap, put it in the beginning of resultDescription
-    const filterResultRecapSpan = document.createElement('p');    
+    const filterResultRecapSpan = document.createElement('p');
     document.getElementById('result_description').prepend(filterResultRecapSpan);
 
-    // add result recap sentence to filterResultRecap    
+    // add result recap sentence to filterResultRecap
     if (checkedCouldOnlyBeSC2) {
         if (sc2.checked) {
             filterResultRecapSpan.textContent = '總共有 3037 個有二級簡碼。實在是太多了，所以…';
@@ -170,7 +170,7 @@ function array30Filter() {
         if (sym.checked) {
             filterResultRecapSpan.textContent += "符號";
         } else filterResultRecapSpan.textContent += "字";
-        if ((!(sp.checked)&&!(sc1.checked)&&!(sc2.checked)&&!(sg.checked)&&sym.checked)){
+        if ((!(sp.checked)&&!(sc1.checked)&&!(sc2.checked)&&!(sg.checked)&&sym.checked)) {
             filterResultRecapSpan.textContent += '。' ; // only sym is checked
         } else {
             if (~~sp.checked + ~~sc1.checked + ~~sc2.checked + ~~sg.checked > 1) {
@@ -194,14 +194,14 @@ function array30Filter() {
 // fetch data
 // ------------
 
-// create the block (resultBlock) #block_id_name from char and its mappingDict, add it to some elem #id_name
-function createBlock(character, mappingDict, block_id_name, id_name) {    
+// create the block (resultBlock) #block_id_name from character, add it to some elem #id_name
+function createBlock(character, block_id_name, id_name) {
     const elem = document.getElementById(id_name);
 
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
-    resultBlock.id = block_id_name;    
-    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css    
+    resultBlock.id = block_id_name;
+    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock
@@ -211,99 +211,99 @@ function createBlock(character, mappingDict, block_id_name, id_name) {
     resultBlock.appendChild(char);
 
     // add content to resultBlock
-    createList (mappingDict, block_id_name + '_list', block_id_name);
+    createList(character, block_id_name + '_list', block_id_name);
 }
 
-// create the list (resultList) #list_id_name from mappingDict, add it to some elem #id_name
-function createList (mappingDict, list_id_name, id_name) {
+// create the list (resultList) #list_id_name from character, add it to some elem #id_name
+function createList(character, list_id_name, id_name) {
     const elem = document.getElementById(id_name);
 
     // create resultList, put it into elem
     let resultList = document.createElement("ul");
-    resultList.id = list_id_name;    
-    resultList .className = 'w3-ul w3-hoverable';   // w3 css     
+    resultList.id = list_id_name;
+    resultList .className = 'w3-ul w3-hoverable'; // w3 css
     elem.appendChild(resultList);
 
     // add items to resultList
-    if (mappingDict.hasOwnProperty('sg')) {
+    if (objectSingle.hasOwnProperty(character)) {
         // create itemSG, add it into resultList
         let itemSG = document.createElement('li');
         itemSG.id = list_id_name + '_item_SG';
         resultList.appendChild(itemSG);
 
         // add content of itemSG
-        createLineSG(mappingDict.sg, itemSG.id);
+        createLineSG(objectSingle[character], itemSG.id);
     }
-    if (mappingDict.hasOwnProperty('sp')) {
+    if (objectSpecial.hasOwnProperty(character)) {
         // create itemSP, add it into resultList
         let itemSP = document.createElement('li');
         itemSP.id = list_id_name + '_item_SP';
         resultList.appendChild(itemSP);
 
         // add content of itemSP
-        createLineSP(mappingDict.sp, itemSP.id);
+        createLineSP(objectSpecial[character], itemSP.id);
     }
-    if (mappingDict.hasOwnProperty('sc1')) {
+    if (objectShortcode1.hasOwnProperty(character)) {
         // create itemSC1, add it into resultList
         let itemSC1 = document.createElement('li');
         itemSC1.id = list_id_name + '_item_SC1';
         resultList.appendChild(itemSC1);
 
         // add content of itemSC1
-        createLineSC1(mappingDict.sc1, itemSC1.id);
+        createLineSC1(objectShortcode1[character], itemSC1.id);
     }
-    if (mappingDict.hasOwnProperty('sc2')) {
-        const sc2Dict = mappingDict.sc2;
-        for (let i = 0; i< sc2Dict.length; i++) {
+    if (objectShortcode2.hasOwnProperty(character)) {
+        const sc2Array = objectShortcode2[character];
+        for (let i = 0; i< sc2Array.length; i++) {
             // create itemSC2, add it into resultList
             let itemSC2 = document.createElement('li');
             itemSC2.id = list_id_name + '_item_SC2_' + String(i+1);
             resultList.appendChild(itemSC2);
 
             // add content of itemSC2
-            createLineSC2(sc2Dict[i], itemSC2.id);
-        } 
+            createLineSC2(sc2Array[i], itemSC2.id);
+        }
     }
-    if (mappingDict.hasOwnProperty('sym')) {
+    if (objectSymbol.hasOwnProperty(character)) {
         // create itemSYM, add it into resultList
         let itemSYM = document.createElement('li');
         itemSYM.id = list_id_name + '_item_SYM';
         resultList.appendChild(itemSYM);
 
         // add content of itemSYM
-        createLineSYM(mappingDict.sym, itemSYM.id);
+        createLineSYM(objectSymbol[character], itemSYM.id);
     }
-    if (mappingDict.hasOwnProperty('nl')) {
-        const nlDict = mappingDict.nl;
-        for (let i = 0; i< nlDict.length; i++) {
+    if (objectNormal.hasOwnProperty(character)) {
+        const nlArray = objectNormal[character];
+        for (let i = 0; i< nlArray.length; i++) {
             // create itemNL, add it into resultList
             let itemNL = document.createElement('li');
             itemNL.id = list_id_name + '_item_NL_' + String(i+1);
             resultList.appendChild(itemNL);
 
             // add content of itemNL
-            createLineNL(nlDict[i], itemNL.id);
-        } 
+            createLineNL(nlArray[i], itemNL.id);
+        }
     }
 }
 
-// create lineSG from sgKey and add it to some elem #id_name
-function createLineSG(sgKey, id_name) {
+// create lineSG from encodingSG and add it to some elem #id_name
+function createLineSG(encodingSG, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSG and colon, insert them into elem
     const titleSG = document.createElement("span");
-    titleSG.className = 'keycap title-single';        
+    titleSG.className = 'keycap title-single';
     titleSG.textContent = '單';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSG);
     elem.appendChild(colon);
 
-    // create keySG, insert it into elem
-    let keySG = document.createElement('span');
-    keySG.className = 'keycap keycap-letter';
-    keySG.textContent = sgKey;
-    elem.appendChild(keySG);
+    // create encodingSGKey, insert it into elem
+    let encodingSGKey = document.createElement('span');
+    encodingSGKey.className = 'keycap keycap-letter';
+    encodingSGKey.textContent = encodingSG;
+    elem.appendChild(encodingSGKey);
 
     // create plus and spaceKey, insert them into elem
     const plus = document.createTextNode(' + ');
@@ -311,34 +311,34 @@ function createLineSG(sgKey, id_name) {
     spaceKey.className = 'keycap keycap-space';
     spaceKey.textContent = 'Space';
     elem.appendChild(plus);
-    elem.appendChild(spaceKey);    
+    elem.appendChild(spaceKey);
 }
 
-// create lineSP from spKeys and add it to some elem #id_name
-function createLineSP (spKeys, id_name) {    
+// create lineSP from encodingSP and add it to some elem #id_name
+function createLineSP(encodingSP, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSP and colon, insert them into elem
     const titleSP = document.createElement("span");
-    titleSP.className = 'keycap title-special';        
+    titleSP.className = 'keycap title-special'; 
     titleSP.textContent = '特';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSP);
     elem.appendChild(colon);
 
-    // create keySP1, insert it into elem
-    let keySP1 = document.createElement('span');
-    keySP1.className = 'keycap keycap-letter';
-    keySP1.textContent = spKeys[0];
-    elem.appendChild(keySP1);
+    // create encodingSPKey1, insert it into elem
+    let encodingSPKey1 = document.createElement('span');
+    encodingSPKey1.className = 'keycap keycap-letter';
+    encodingSPKey1.textContent = encodingSP[0];
+    elem.appendChild(encodingSPKey1);
 
-    // create plus1 and keySP2, insert them into elem
+    // create plus1 and encodingSPKey2, insert them into elem
     const plus1 = document.createTextNode(' + ');
-    let keySP2 = document.createElement('span');
-    keySP2.className = 'keycap keycap-letter';
-    keySP2.textContent = spKeys[1];
+    let encodingSPKey2 = document.createElement('span');
+    encodingSPKey2.className = 'keycap keycap-letter';
+    encodingSPKey2.textContent = encodingSP[1];
     elem.appendChild(plus1);
-    elem.appendChild(keySP2);
+    elem.appendChild(encodingSPKey2);
 
     // create plus2 and spaceKey, insert them into elem
     const plus2 = document.createTextNode(' + ');
@@ -349,75 +349,75 @@ function createLineSP (spKeys, id_name) {
     elem.appendChild(spaceKey);
 }
 
-// create lineSC1 from sc1Keys and add it to some elem #id_name
-function createLineSC1(sc1Keys, id_name){
+// create lineSC1 from encodingSC1 and add it to some elem #id_name
+function createLineSC1(encodingSC1, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSC1 and colon, insert them into elem
     const titleSC1 = document.createElement("span");
-    titleSC1.className = 'keycap title-shortcode1';        
+    titleSC1.className = 'keycap title-shortcode1';
     titleSC1.textContent = '一';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSC1);
     elem.appendChild(colon);
 
-    // create keySC1Letter, insert it into elem
-    let keySC1Letter = document.createElement('span');
-    keySC1Letter.className = 'keycap keycap-letter';
-    keySC1Letter.textContent = sc1Keys[0];
-    elem.appendChild(keySC1Letter);
+    // create encodingSC1Key1, insert it into elem
+    let encodingSC1Key1 = document.createElement('span');
+    encodingSC1Key1.className = 'keycap keycap-letter';
+    encodingSC1Key1.textContent = encodingSC1[0];
+    elem.appendChild(encodingSC1Key1);
 
-    // create plus and keySC1Number, insert them into elem
+    // create plus and encodingSC1Key2, insert them into elem
     const plus = document.createTextNode(' + ');
-    let keySC1Number = document.createElement('span');
-    keySC1Number.className = 'keycap keycap-number';
-    keySC1Number.textContent = sc1Keys[1];
+    let encodingSC1Key2 = document.createElement('span');
+    encodingSC1Key2.className = 'keycap keycap-number';
+    encodingSC1Key2.textContent = encodingSC1[1];
     elem.appendChild(plus);
-    elem.appendChild(keySC1Number);
+    elem.appendChild(encodingSC1Key2);
 }
 
-// create lineSC2 from sc2Keys and add it to some elem #id_name
-function createLineSC2 (sc2Keys, id_name) {
+// create lineSC2 from encodingSC2 and add it to some elem #id_name
+function createLineSC2(encodingSC2, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSC2 and colon, insert them into elem
     const titleSC2 = document.createElement("span");
-    titleSC2.className = 'keycap title-shortcode2';        
+    titleSC2.className = 'keycap title-shortcode2';
     titleSC2.textContent = '二';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSC2);
     elem.appendChild(colon);
 
-    // create keySC2Letter1, insert it into elem
-    let keySC2Letter1 = document.createElement('span');
-    keySC2Letter1.className = 'keycap keycap-letter';
-    keySC2Letter1.textContent = sc2Keys[0];
-    elem.appendChild(keySC2Letter1);
+    // create encodingSC2Key1, insert it into elem
+    let encodingSC2Key1 = document.createElement('span');
+    encodingSC2Key1.className = 'keycap keycap-letter';
+    encodingSC2Key1.textContent = encodingSC2[0];
+    elem.appendChild(encodingSC2Key1);
 
-    // create plus1 and keySC2Letter2, insert them into elem
+    // create plus1 and encodingSC2Key2, insert them into elem
     const plus1 = document.createTextNode(' + ');
-    let keySC2Letter2 = document.createElement('span');
-    keySC2Letter2.className = 'keycap keycap-letter';
-    keySC2Letter2.textContent = sc2Keys[1];
+    let encodingSC2Key2 = document.createElement('span');
+    encodingSC2Key2.className = 'keycap keycap-letter';
+    encodingSC2Key2.textContent = encodingSC2[1];
     elem.appendChild(plus1);
-    elem.appendChild(keySC2Letter2);
+    elem.appendChild(encodingSC2Key2);
 
-    // create plus2 and keySC2Number, insert them into elem  
+    // create plus2 and encodingSC2Key3, insert them into elem  
     const plus2 = document.createTextNode(' + ');
-    let keySC2Number = document.createElement('span');
-    keySC2Number.className = 'keycap keycap-number';
-    keySC2Number.textContent = sc2Keys[2];
+    let encodingSC2Key3 = document.createElement('span');
+    encodingSC2Key3.className = 'keycap keycap-number';
+    encodingSC2Key3.textContent = encodingSC2[2];
     elem.appendChild(plus2);
-    elem.appendChild(keySC2Number);
+    elem.appendChild(encodingSC2Key3);
 }
 
-// create lineSYM from symKeys and add it to some elem #id_name
-function createLineSYM (symKeys, id_name) {
+// create lineSYM from encodingSYM and add it to some elem #id_name
+function createLineSYM(encodingSYM, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSYM and colon, insert them into elem
     const titleSYM = document.createElement("span");
-    titleSYM.className = 'keycap title-symbol';        
+    titleSYM.className = 'keycap title-symbol';
     titleSYM.textContent = '符';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSYM);
@@ -432,14 +432,14 @@ function createLineSYM (symKeys, id_name) {
     elem.appendChild(plus1);
 
     // create keyNum, insert it into elem
-    let keyNum = document.createElement("span");        
+    let keyNum = document.createElement("span");     
     keyNum.className = 'keycap keycap-number';
-    keyNum.textContent = symKeys[0][1];        
-    elem.appendChild(keyNum);      
+    keyNum.textContent = encodingSYM[0][1];   
+    elem.appendChild(keyNum);
 
     // create several plus and spaceKey, insert them into elem
-    const position = symKeys[1]
-    for (i = 10; i < position; i+= 10) {
+    const position = encodingSYM[1];
+    for (i = 10; i < position; i += 10) {
         const plus = document.createTextNode(' + ');
         const spaceKey = document.createElement("span");
         spaceKey.className = 'keycap keycap-space';
@@ -457,32 +457,32 @@ function createLineSYM (symKeys, id_name) {
     elem.appendChild(keySelect);
 }
 
-// create lineNL from nlKeys and add it to some elem #id_name
-function createLineNL (nlKeys, id_name) {
+// create lineNL from encodingNl and add it to some elem #id_name
+function createLineNL(encodingNl, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleNL and colon, insert them into elem
     const titleNL = document.createElement("span");
-    titleNL.className = 'keycap title-normal';        
+    titleNL.className = 'keycap title-normal';
     titleNL.textContent = '普';
     const colon = document.createTextNode("：");
     elem.appendChild(titleNL);
     elem.appendChild(colon);
 
-    // create keyNLLetter1, insert it into elem
-    let keyNLLetter1 = document.createElement('span');
-    keyNLLetter1.className = 'keycap keycap-letter';
-    keyNLLetter1.textContent = nlKeys[0];
-    elem.appendChild(keyNLLetter1);
+    // create encodingNlKey1, insert it into elem
+    let encodingNlKey1 = document.createElement('span');
+    encodingNlKey1.className = 'keycap keycap-letter';
+    encodingNlKey1.textContent = encodingNl[0][0];
+    elem.appendChild(encodingNlKey1);
 
     // create several plus & keyNL, insert them into elem
-    for (let i = 1; i < nlKeys.length; i++) {
+    for (let i = 1; i < encodingNl[0].length; i++) {
         const plus = document.createTextNode(' + ');
         let keyNL = document.createElement('span');
         keyNL.className = 'keycap keycap-letter';
-        keyNL.textContent = nlKeys[i];
+        keyNL.textContent = encodingNl[0][i];
         elem.appendChild(plus);
-        elem.appendChild(keyNL);                           
+        elem.appendChild(keyNL);
     }
 
     // create plusLast and spaceKey, insert them into elem
@@ -492,16 +492,78 @@ function createLineNL (nlKeys, id_name) {
     spaceKey.textContent = 'Space';
     elem.appendChild(plusLast);
     elem.appendChild(spaceKey);
-
-    // create warning, insert it into elelm
-    const warning = document.createTextNode(' （可能需再選字） ');
-    elem.appendChild(warning);              
+    
+    if (encodingNl[1] > 1 && encodingNl[1] <= 10) {
+        const plusCC = document.createTextNode(' + ');
+        const numberCC = document.createElement("span");
+        numberCC.className = 'keycap keycap-cc';
+        if (encodingNl[1] === 10) {
+            numberCC.textContent = '0';
+        } else {
+            numberCC.textContent = encodingNl[1];
+        }
+        elem.appendChild(plusCC);
+        elem.appendChild(numberCC);
+    } else if (encodingNl[1] > 10) {
+        const plusCC1 = document.createTextNode(' + ');
+        const spaceCC = document.createElement("span");
+        spaceCC.className = 'keycap keycap-cc';
+        spaceCC.textContent = 'Space';
+        const plusCC2 = document.createTextNode(' + ');
+        const numberCC = document.createElement("span");
+        numberCC.className = 'keycap keycap-cc';
+        numberCC.textContent = encodingNl[1]-10;
+        elem.appendChild(plusCC1);
+        elem.appendChild(spaceCC);
+        elem.appendChild(plusCC2);
+        elem.appendChild(numberCC);
+    }
+    if (encodingNl[1] === 1) {
+        // get coincidence code data
+        ccData = objectEncoding[encodingNl[0]];
+        if (ccData[0] > 1) {
+            // cc pos = 1
+            const ccHint = document.createTextNode('，重碼位 1');
+            elem.appendChild(ccHint);
+        }
+        if (ccData[0] === 1) {
+            if (ccData[1] > 0) {
+                const ccHint = document.createTextNode('，若開啟擴充區 B 則重碼位 1，否則無重碼');
+                elem.appendChild(ccHint);
+            } else if (ccData[2] > 0) {
+                const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                elem.appendChild(ccHint);
+            }
+        }
+        if (ccData[0] === 0) {
+            if (ccData[1] > 1) {
+                // cc pos = 1
+                const ccHint = document.createTextNode('，重碼位 1');
+                elem.appendChild(ccHint);
+            }
+            if (ccData[1] === 1) {
+                if (ccData[2] > 0) {
+                    const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                    elem.appendChild(ccHint);
+                }
+            }
+            if (ccData[1] === 0) {
+                if (ccData[2] > 1) {
+                    // cc pos = 1
+                    const ccHint = document.createTextNode('，重碼位 1');
+                    elem.appendChild(ccHint);
+                }
+            }
+        }
+    }
 }
 
 // eng Key Toggle
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
+document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaEngKeyToggle);
+
 function engKeyToggle() {
-    letterList = document.getElementsByClassName("keycap-letter");  
+    letterList = document.getElementsByClassName("keycap-letter");
     for (let letter of letterList) {
         const letter_content = letter.textContent;
         if (letter_content.length === 1) {
@@ -510,6 +572,31 @@ function engKeyToggle() {
             letter.textContent = array30ToLetterDict[letter_content];
         }
     }
+}
+function ccTriviaEngKeyToggle() {
+    ccTrivia = document.getElementById("coincident_code_trivia");
+    encodingList = ccTrivia.getElementsByClassName("keycap-cc-trivia");
+    for (let encoding of encodingList) {
+        const encodingString = encoding.textContent;
+        // if encoding uses array30 keys
+        if (encodingString[0] >= '0' && encodingString[0] <= '9') {
+            let newTextContent = '';
+            for (var i = 0; i < encodingString.length; i += 2) {
+                newTextContent += array30ToLetterDict[encodingString.slice(i,i+2)];
+            }
+            encoding.textContent = newTextContent;
+        } else { // if encoding uses eng keys
+            let newTextContent = '';
+            for (char of encodingString) {
+                newTextContent += letterToArray30Dict[char];
+            }
+            encoding.textContent = newTextContent;
+        }
+    }
+}
+// perform ccTrivia eng key toggle when loading the page
+if (!document.getElementById('cb_eng_key_active').checked) {
+    ccTriviaEngKeyToggle();
 }
 
 // accordion
@@ -522,7 +609,7 @@ for (let i = 0; i < acc.length; i++) {
             panel.style.maxHeight = null;
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
+        }
     });
     acc[i].click();
 }

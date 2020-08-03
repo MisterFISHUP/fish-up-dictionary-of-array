@@ -1,5 +1,5 @@
 /* Structure: (use search)
-    - get html DOMS, initialisation
+    - get html DOMs, initialisation
     - cust exer, built-in exer
     - prepare page content
     - instant verification
@@ -42,7 +42,7 @@ const inputCustExerElem = document.getElementById("input_cust_exer");
 const submitCustExerElem = document.getElementById('btn_submit_cust_exer');
 const custExerHintElem = document.getElementById('cust_exer_hint');
 
-// two string functions
+// two string functions (utf-16 compatible)
 function shuffle(str) {
     let a = [...str];
     let n = a.length;
@@ -55,7 +55,7 @@ function shuffle(str) {
     return a.join("");
 }
 
-function reverse(str){
+function reverse(str) {
     return [...str].reverse().join("");
 }
 
@@ -72,9 +72,10 @@ submitCustExerElem.addEventListener('click',custExerCreator);
 function custExerCreator() {
     // clear custExer hint
     custExerHintElem.innerHTML = '';
+    // get input string (trimmed)
     const inputString = inputCustExerElem.value.trim();
     if (inputString) {
-        if (inputString.length > 3000) {
+        if ([...inputString].length > 3000) {
             custExerHintElem.textContent='提醒：您的輸入超過了 3000 字元！';
         } else {
             // create lines (arrays), initialise index current line
@@ -225,11 +226,14 @@ function builtInExerCreator(str) {
     numAlreadyCorrectChars = 0;
     numCurrentIncorrectChars = 0;
     numAlreadyIncorrectChars = 0;
+
+    // clear typing input
+    typingInputElem.value='';
+
     // call prepareSentencesHintsResults (overwrite current, next sentence)
     prepareSentencesHintsResults(indexCurrentLine);
 
-    // clear typing input, sentence already
-    typingInputElem.value='';
+    // clear sentence already
     sentencesAlreadyElem.innerHTML='';
 
     // clear wrong chars already, wrong chars already link
@@ -243,7 +247,7 @@ function builtInExerCreator(str) {
     inputCustExerElem.value='';
 }
 
-// create the array 'lines' from a string according to selected options 
+// create the array 'lines' from a string according to selected options
 function createArrayLines(str) {
     const numChar = numCharElem.value;
     const order = permutationElem.value;
@@ -256,48 +260,49 @@ function createArrayLines(str) {
         orderedStr = shuffle(str);
     }
 
-    // this regex will break each line in input by numChar chars
-    const regex = new RegExp(".{1," + numChar + "}", "g");  
+    // this regex will break each line in input by numChar chars (u: compatibility for utf-16)
+    const regex = new RegExp(".{1," + numChar + "}", "gu");
 
     // trim each string in the list, remove it if empty after being trimmed
     return orderedStr.match(regex).map(x => x.trim()).filter(Boolean)
 }
+
 // prepare page content
 // execute prepareSentencesHintsResults for the 1st time js with default 'lines'
 prepareSentencesHintsResults(indexCurrentLine)
 
-function prepareSentencesHintsResults (indexCurrentLine) {
+function prepareSentencesHintsResults(indexCurrentLine) {
     // overwrite current, next sentence according to lines, indexCurrentLine
     sentenceCurrentElem.innerHTML = '';
-    const currentLine = lines[indexCurrentLine];
-    for (char of currentLine) {
+    const currentLineArray = [...lines[indexCurrentLine]];
+    for (char of currentLineArray) {
         const charSpan = document.createElement('span');
         charSpan.textContent = char;
         sentenceCurrentElem.appendChild(charSpan);
-    }    
+    }
     sentenceNextElem.innerHTML = '';
     if (lines[indexCurrentLine+1]) sentenceNextElem.textContent = lines[indexCurrentLine+1];
 
     // overwrite current hint via printHintCurrent
-    printHintCurrent(lines[indexCurrentLine][0]);
+    printHintCurrent(currentLineArray[0]);
 
     // clear next hint, write next hint via printHintNext if exists
     hintNextElem.innerHTML = '';
-    if (lines[indexCurrentLine][1]) printHintNext(lines[indexCurrentLine][1]);
+    if (currentLineArray[1]) printHintNext(currentLineArray[1]);
 
     // clear current wrong chars
     wrongCharsCurrentElem.innerHTML = '';
 
     // instantVerification for the first time
-    if (indexCurrentLine==0) instantVerification();
+    if (indexCurrentLine == 0) instantVerification();
 
     // show results
     const numTotalCorrectChars = numCurrentCorrectChars+numAlreadyCorrectChars;
     const numTotalIncorrectChars = numCurrentIncorrectChars+numAlreadyIncorrectChars;
-    numTotalCharsSpan.textContent = lines.join('').length;
+    numTotalCharsSpan.textContent = [...lines.join('')].length;
     numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
     numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
-    numTotalUntouchedCharsSpan.textContent = lines.join('').length - numTotalCorrectChars - numTotalIncorrectChars;
+    numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars - numTotalIncorrectChars;
     numTotalSentencesSpan.textContent = lines.length;
     posLineSpan.textContent = indexCurrentLine + 1;
     numRemainingLinesSpan.textContent = lines.length-indexCurrentLine - 1;
@@ -308,14 +313,10 @@ function printHintCurrent(character) {
     hintCurrentElem.innerHTML = '';
 
     /**
-     * append block (another style) #hint_current_coding to #hint_current 
+     * append block (another style) #hint_current_coding to #hint_current
      * P.S. character shown even without encoding
      */
-    if (extADict.hasOwnProperty(character)) {        
-        createBlockAnotherStyle(character, extADict[character], "hint_current_coding", "hint_current");
-    } else {
-        createBlockAnotherStyle(character, {}, "hint_current_coding", "hint_current");
-    }     
+    createBlockAnotherStyle(character, "hint_current_coding", "hint_current");
 }
 
 function printHintNext(character) {
@@ -323,14 +324,10 @@ function printHintNext(character) {
     hintNextElem.innerHTML = '';
 
     /**
-     * append block (another style) #hint_next_coding to #hint_next 
+     * append block (another style) #hint_next_coding to #hint_next
      * character shown even without encoding
      */
-    if (extADict.hasOwnProperty(character)) {        
-        createBlockAnotherStyle(character, extADict[character], "hint_next_coding", "hint_next");
-    } else {
-        createBlockAnotherStyle(character, {}, "hint_next_coding", "hint_next");
-    }    
+    createBlockAnotherStyle(character, "hint_next_coding", "hint_next");
 }
 
 // instant verification
@@ -339,7 +336,7 @@ function instantVerification() {
     // only called when indexCurrentLine <= lines.length -1
     if (indexCurrentLine <= lines.length -1) {
         const arrayCurrentCharsSpan = sentenceCurrentElem.querySelectorAll('span');
-        const arrayInput = typingInputElem.value.split('');
+        const arrayInput = [...typingInputElem.value];
 
         // clear current wrong chars, current hint, next hint
         wrongCharsCurrentElem.innerHTML='';
@@ -366,7 +363,7 @@ function instantVerification() {
                 numCurrentCorrectChars += 1;
 
                 // update indexLastCorrect
-                indexLastCorrect = index
+                indexLastCorrect = index;
             } else {
                 characterSpan.classList.remove('correct');
                 characterSpan.classList.add('incorrect');
@@ -379,27 +376,28 @@ function instantVerification() {
                 addWrongCharCurrent(character, index+1);
             }
         })
-
+        
+        const currentLineArray = [...lines[indexCurrentLine]];
         // print (overwrite) hint for current char (if exists and not empty string)
-        if (lines[indexCurrentLine][indexLastCorrect+1]) {
-            printHintCurrent(lines[indexCurrentLine][indexLastCorrect+1]);
+        if (currentLineArray[indexLastCorrect+1]) {
+            printHintCurrent(currentLineArray[indexLastCorrect+1]);
         }
         
         // print (overwrite) hint for next char (if exists and not empty string)
-        if (lines[indexCurrentLine][indexLastCorrect+2]) {
-            printHintNext(lines[indexCurrentLine][indexLastCorrect+2]);
+        if (currentLineArray[indexLastCorrect+2]) {
+            printHintNext(currentLineArray[indexLastCorrect+2]);
         }
 
-        // change results     
-        const numTotalCorrectChars = numCurrentCorrectChars+numAlreadyCorrectChars;
-        const numTotalIncorrectChars = numCurrentIncorrectChars+numAlreadyIncorrectChars; 
+        // change results
+        const numTotalCorrectChars = numCurrentCorrectChars + numAlreadyCorrectChars;
+        const numTotalIncorrectChars = numCurrentIncorrectChars + numAlreadyIncorrectChars;
         numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
         numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
-        numTotalUntouchedCharsSpan.textContent = lines.join('').length-numTotalCorrectChars-numTotalIncorrectChars;
+        numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars - numTotalIncorrectChars;
 
         // reset num Current In/correct Chars
         numCurrentCorrectChars = 0;
-        numCurrentIncorrectChars = 0;        
+        numCurrentIncorrectChars = 0;
     }
 }
 
@@ -416,20 +414,20 @@ $("#typing_input").on('keypress', function(e) {
             sentenceCurrentElem.innerHTML='';
             sentenceNextElem.innerHTML='';
         }
-    }        
-})
+    }
+});
 
-// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_current if in extADict
+// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_current if in objectCharSet
 function addWrongCharCurrent(character, pos) {
-    if (extADict.hasOwnProperty(character)) {        
-        createBlock(character, extADict[character], 'line_'+String(indexCurrentLine+1)+'_pos_'+String(pos), 'wrong_chars_current');    
-    }    
+    if (objectCharSet.hasOwnProperty(character)) {
+        createBlock(character, 'line_'+String(indexCurrentLine+1)+'_pos_'+String(pos), 'wrong_chars_current');
+    }
 }
-// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_already if in extADict
+// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_already if in objectCharSet
 function addWrongCharAlready(character, pos) {
-    if (extADict.hasOwnProperty(character)) { // this line is in fact not necessary   
-        createBlock(character, extADict[character], 'line_'+String(indexCurrentLine+1)+'_pos_'+String(pos), 'wrong_chars_already');    
-    }    
+    if (objectCharSet.hasOwnProperty(character)) { // this line is in fact not necessary
+        createBlock(character, 'line_'+String(indexCurrentLine+1)+'_pos_'+String(pos), 'wrong_chars_already');
+    }
 }
 
 // function called until current line is the last line in 'lines'
@@ -447,10 +445,10 @@ function changeLine() {
             numAlreadyCorrectChars += 1;
         }
 
-        // incorrect: increment num Already Incorrect Chars, add link if in extADict 
+        // incorrect: increment num Already Incorrect Chars, add link if in objectCharSet
         if (characterSpan.className == 'incorrect') {
             numAlreadyIncorrectChars += 1;
-            if (extADict.hasOwnProperty(character)) {
+            if (objectCharSet.hasOwnProperty(character)) {
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
@@ -460,10 +458,10 @@ function changeLine() {
             }
         }
 
-        // untouched: increment num Already Incorrect Chars, create block & link (if in extADict), becomes incorrect
+        // untouched: increment num Already Incorrect Chars, create block & link (if in objectCharSet), becomes incorrect
         if (characterSpan.className == 'untouched') {
             numAlreadyIncorrectChars += 1;
-            if (extADict.hasOwnProperty(character)) {
+            if (objectCharSet.hasOwnProperty(character)) {
                 addWrongCharAlready(character, index+1);
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
@@ -482,7 +480,7 @@ function changeLine() {
     const numTotalIncorrectChars = numCurrentIncorrectChars+numAlreadyIncorrectChars;
     numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
     numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
-    numTotalUntouchedCharsSpan.textContent = lines.join('').length-numTotalCorrectChars-numTotalIncorrectChars;
+    numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars-numTotalIncorrectChars;
     
     // put sentence current to sentence already then line break
     sentencesAlreadyElem.innerHTML += sentenceCurrentElem.innerHTML;
@@ -499,7 +497,7 @@ function changeLine() {
 
 function finalise() {
     // parse wrong Chars Current to wrong Chars Already
-    wrongCharsAlreadyElem.innerHTML += wrongCharsCurrentElem.innerHTML;    
+    wrongCharsAlreadyElem.innerHTML += wrongCharsCurrentElem.innerHTML;
     const arrayCurrentCharSpan = sentenceCurrentElem.querySelectorAll('span');
 
     // loop through every characterSpan in current sentence
@@ -511,10 +509,10 @@ function finalise() {
             numAlreadyCorrectChars += 1;
         }
 
-        // incorrect: increment num Already Incorrect Chars, add link if in extADict 
+        // incorrect: increment num Already Incorrect Chars, add link if in objectCharSet
         if (characterSpan.className == 'incorrect') {
             numAlreadyIncorrectChars += 1;
-            if (extADict.hasOwnProperty(character)) {
+            if (objectCharSet.hasOwnProperty(character)) {
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
@@ -524,10 +522,10 @@ function finalise() {
             }
         }
 
-        // untouched: increment num Already Incorrect Chars, create block & link (if in extADict), becomes incorrect
+        // untouched: increment num Already Incorrect Chars, create block & link (if in objectCharSet), becomes incorrect
         if (characterSpan.className == 'untouched') {
             numAlreadyIncorrectChars += 1;
-            if (extADict.hasOwnProperty(character)) {
+            if (objectCharSet.hasOwnProperty(character)) {
                 addWrongCharAlready(character, index+1);
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
@@ -538,7 +536,7 @@ function finalise() {
             }
             characterSpan.classList.add('incorrect');
             characterSpan.classList.remove('untouched');
-        }    
+        }
     })
 
     // change results
@@ -546,7 +544,7 @@ function finalise() {
     const numTotalIncorrectChars = numCurrentIncorrectChars+numAlreadyIncorrectChars;
     numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
     numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
-    numTotalUntouchedCharsSpan.textContent = lines.join('').length-numTotalCorrectChars-numTotalIncorrectChars;
+    numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length-numTotalCorrectChars-numTotalIncorrectChars;
 
     // put sentence current to sentence already then line break
     sentencesAlreadyElem.innerHTML += sentenceCurrentElem.innerHTML;
@@ -560,7 +558,7 @@ function finalise() {
     wrongCharsCurrentElem.innerHTML='';
 
     // clear hints
-    hintCurrentElem.innerHTML = '';    
+    hintCurrentElem.innerHTML = '';
     hintNextElem.innerHTML = '';
 
     // clear input
@@ -578,7 +576,7 @@ function finalise() {
 // eng Key Toggle
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 function engKeyToggle() {
-    letterList = document.getElementsByClassName("keycap-letter");  
+    letterList = document.getElementsByClassName("keycap-letter");
     for (let letter of letterList) {
         const letter_content = letter.textContent;
         if (letter_content.length === 1) {
@@ -593,144 +591,145 @@ function engKeyToggle() {
 // fetch data
 // ------------
 
-// create the block (resultBlock) #block_id_name from char and its mappingDict, add it to some elem #id_name
-function createBlock(character, mappingDict, block_id_name, id_name) {
+// create the block (resultBlock) #block_id_name from character, add it to some elem #id_name
+function createBlock(character, block_id_name, id_name) {
     const elem = document.getElementById(id_name);
 
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
-    resultBlock.id = block_id_name;    
-    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css    
+    resultBlock.id = block_id_name;
+    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock
     let char = document.createElement('span');
     char.textContent = character + "：";
-    char.style = "font-size: 1.2em;";  // bigger font size
+    char.style = "font-size: 1.2em;"; // bigger font size
     resultBlock.appendChild(char);
 
     // add content to resultBlock
-    createList (mappingDict, block_id_name + '_list', block_id_name);
+    createList(character, block_id_name + '_list', block_id_name);
 }
 
-// create the block (resultBlock) #block_id_name of another style from char and its mappingDict, add it to some elem #id_name
-function createBlockAnotherStyle(character, mappingDict, block_id_name, id_name) {    
+// create the block (resultBlock) #block_id_name of another style from character, add it to some elem #id_name
+function createBlockAnotherStyle(character, block_id_name, id_name) {
     const elem = document.getElementById(id_name);
 
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
-    resultBlock.id = block_id_name;    
-    resultBlock.className = 'w3-white w3-padding w3-margin-top'; // w3 css    
+    resultBlock.id = block_id_name;
+    resultBlock.className = 'w3-white w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character to resultBlock
     let char = document.createElement('div');
     char.textContent = character;
-    char.style = "font-size: 2em; text-align: center;";  // bigger font size
+    char.style = "font-size: 2em; text-align: center;"; // bigger font size
     resultBlock.appendChild(char);
 
     // add content to resultBlock
-    createList (mappingDict, block_id_name + '_list', block_id_name);
+    if (objectCharSet.hasOwnProperty(character)) {
+        createList(character, block_id_name + '_list', block_id_name);
+    }    
 }
 
-// create the list (resultList) #list_id_name from mappingDict, add it to some elem #id_name
-function createList (mappingDict, list_id_name, id_name) {
+// create the list (resultList) #list_id_name from character, add it to some elem #id_name
+function createList(character, list_id_name, id_name) {
     const elem = document.getElementById(id_name);
 
     // create resultList, put it into elem
     let resultList = document.createElement("ul");
-    resultList.id = list_id_name;    
-    resultList .className = 'w3-ul w3-hoverable';   // w3 css     
+    resultList.id = list_id_name;
+    resultList .className = 'w3-ul w3-hoverable'; // w3 css
     elem.appendChild(resultList);
 
     // add items to resultList
-    if (mappingDict.hasOwnProperty('sg')) {
+    if (objectSingle.hasOwnProperty(character)) {
         // create itemSG, add it into resultList
         let itemSG = document.createElement('li');
         itemSG.id = list_id_name + '_item_SG';
         resultList.appendChild(itemSG);
 
         // add content of itemSG
-        createLineSG(mappingDict.sg, itemSG.id);
+        createLineSG(objectSingle[character], itemSG.id);
     }
-    if (mappingDict.hasOwnProperty('sp')) {
+    if (objectSpecial.hasOwnProperty(character)) {
         // create itemSP, add it into resultList
         let itemSP = document.createElement('li');
         itemSP.id = list_id_name + '_item_SP';
         resultList.appendChild(itemSP);
 
         // add content of itemSP
-        createLineSP(mappingDict.sp, itemSP.id);
+        createLineSP(objectSpecial[character], itemSP.id);
     }
-    if (mappingDict.hasOwnProperty('sc1')) {
+    if (objectShortcode1.hasOwnProperty(character)) {
         // create itemSC1, add it into resultList
         let itemSC1 = document.createElement('li');
         itemSC1.id = list_id_name + '_item_SC1';
         resultList.appendChild(itemSC1);
 
         // add content of itemSC1
-        createLineSC1(mappingDict.sc1, itemSC1.id);
+        createLineSC1(objectShortcode1[character], itemSC1.id);
     }
-    if (mappingDict.hasOwnProperty('sc2')) {
-        const sc2Dict = mappingDict.sc2;
-        for (let i = 0; i< sc2Dict.length; i++) {
+    if (objectShortcode2.hasOwnProperty(character)) {
+        const sc2Array = objectShortcode2[character];
+        for (let i = 0; i< sc2Array.length; i++) {
             // create itemSC2, add it into resultList
             let itemSC2 = document.createElement('li');
             itemSC2.id = list_id_name + '_item_SC2_' + String(i+1);
             resultList.appendChild(itemSC2);
 
             // add content of itemSC2
-            createLineSC2(sc2Dict[i], itemSC2.id);
-        } 
+            createLineSC2(sc2Array[i], itemSC2.id);
+        }
     }
-    if (mappingDict.hasOwnProperty('sym')) {
+    if (objectSymbol.hasOwnProperty(character)) {
         // create itemSYM, add it into resultList
         let itemSYM = document.createElement('li');
         itemSYM.id = list_id_name + '_item_SYM';
         resultList.appendChild(itemSYM);
 
         // add content of itemSYM
-        createLineSYM(mappingDict.sym, itemSYM.id);
+        createLineSYM(objectSymbol[character], itemSYM.id);
     }
-    if (mappingDict.hasOwnProperty('nl')) {
-        const nlDict = mappingDict.nl;
-        for (let i = 0; i< nlDict.length; i++) {
+    if (objectNormal.hasOwnProperty(character)) {
+        const nlArray = objectNormal[character];
+        for (let i = 0; i< nlArray.length; i++) {
             // create itemNL, add it into resultList
             let itemNL = document.createElement('li');
             itemNL.id = list_id_name + '_item_NL_' + String(i+1);
             resultList.appendChild(itemNL);
 
             // add content of itemNL
-            createLineNL(nlDict[i], itemNL.id);
-        } 
+            createLineNL(nlArray[i], itemNL.id);
+        }
     }
 }
 
 // ----------------------------------------------------------------------
 // 6 createLne functions (output depending on engKeyActiveElem.checked)
 // ----------------------------------------------------------------------
-
-// create lineSG from sgKey and add it to some elem #id_name
-function createLineSG(sgKey, id_name) {
+// create lineSG from encodingSG and add it to some elem #id_name
+function createLineSG(encodingSG, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSG and colon, insert them into elem
     const titleSG = document.createElement("span");
-    titleSG.className = 'keycap title-single';        
+    titleSG.className = 'keycap title-single';
     titleSG.textContent = '單';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSG);
     elem.appendChild(colon);
 
-    // create keySG, insert it into elem
-    let keySG = document.createElement('span');
-    keySG.className = 'keycap keycap-letter';
+    // create encodingSGKey, insert it into elem
+    let encodingSGKey = document.createElement('span');
+    encodingSGKey.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySG.textContent = sgKey;
+        encodingSGKey.textContent = encodingSG;
     } else {
-        keySG.textContent = letterToArray30Dict[sgKey];
+        encodingSGKey.textContent = letterToArray30Dict[encodingSG];
     }
-    elem.appendChild(keySG);
+    elem.appendChild(encodingSGKey);
 
     // create plus and spaceKey, insert them into elem
     const plus = document.createTextNode(' + ');
@@ -738,42 +737,41 @@ function createLineSG(sgKey, id_name) {
     spaceKey.className = 'keycap keycap-space';
     spaceKey.textContent = 'Space';
     elem.appendChild(plus);
-    elem.appendChild(spaceKey);    
+    elem.appendChild(spaceKey);
 }
-
-// create lineSP from spKeys and add it to some elem #id_name
-function createLineSP (spKeys, id_name) {    
+// create lineSP from encodingSP and add it to some elem #id_name
+function createLineSP(encodingSP, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSP and colon, insert them into elem
     const titleSP = document.createElement("span");
-    titleSP.className = 'keycap title-special';        
+    titleSP.className = 'keycap title-special'; 
     titleSP.textContent = '特';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSP);
     elem.appendChild(colon);
 
-    // create keySP1, insert it into elem
-    let keySP1 = document.createElement('span');
-    keySP1.className = 'keycap keycap-letter';
+    // create encodingSPKey1, insert it into elem
+    let encodingSPKey1 = document.createElement('span');
+    encodingSPKey1.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySP1.textContent = spKeys[0];
+        encodingSPKey1.textContent = encodingSP[0];
     } else {
-        keySP1.textContent = letterToArray30Dict[spKeys[0]];
+        encodingSPKey1.textContent = letterToArray30Dict[encodingSP[0]];
     }
-    elem.appendChild(keySP1);
+    elem.appendChild(encodingSPKey1);
 
-    // create plus1 and keySP2, insert them into elem
+    // create plus1 and encodingSPKey2, insert them into elem
     const plus1 = document.createTextNode(' + ');
-    let keySP2 = document.createElement('span');
-    keySP2.className = 'keycap keycap-letter';
+    let encodingSPKey2 = document.createElement('span');
+    encodingSPKey2.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySP2.textContent = spKeys[1];
+        encodingSPKey2.textContent = encodingSP[1];
     } else {
-        keySP2.textContent = letterToArray30Dict[spKeys[1]];
-    }    
+        encodingSPKey2.textContent = letterToArray30Dict[encodingSP[1]];
+    }
     elem.appendChild(plus1);
-    elem.appendChild(keySP2);
+    elem.appendChild(encodingSPKey2);
 
     // create plus2 and spaceKey, insert them into elem
     const plus2 = document.createTextNode(' + ');
@@ -783,88 +781,85 @@ function createLineSP (spKeys, id_name) {
     elem.appendChild(plus2);
     elem.appendChild(spaceKey);
 }
-
-// create lineSC1 from sc1Keys and add it to some elem #id_name
-function createLineSC1(sc1Keys, id_name) {
+// create lineSC1 from encodingSC1 and add it to some elem #id_name
+function createLineSC1(encodingSC1, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSC1 and colon, insert them into elem
     const titleSC1 = document.createElement("span");
-    titleSC1.className = 'keycap title-shortcode1';        
+    titleSC1.className = 'keycap title-shortcode1';
     titleSC1.textContent = '一';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSC1);
     elem.appendChild(colon);
 
-    // create keySC1Letter, insert it into elem
-    let keySC1Letter = document.createElement('span');
-    keySC1Letter.className = 'keycap keycap-letter';
+    // create encodingSC1Key1, insert it into elem
+    let encodingSC1Key1 = document.createElement('span');
+    encodingSC1Key1.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySC1Letter.textContent = sc1Keys[0];
+        encodingSC1Key1.textContent = encodingSC1[0];
     } else {
-        keySC1Letter.textContent = letterToArray30Dict[sc1Keys[0]];
+        encodingSC1Key1.textContent = letterToArray30Dict[encodingSC1[0]];
     }
-    elem.appendChild(keySC1Letter);
+    elem.appendChild(encodingSC1Key1);
 
-    // create plus and keySC1Number, insert them into elem
+    // create plus and encodingSC1Key2, insert them into elem
     const plus = document.createTextNode(' + ');
-    let keySC1Number = document.createElement('span');
-    keySC1Number.className = 'keycap keycap-number';
-    keySC1Number.textContent = sc1Keys[1];
+    let encodingSC1Key2 = document.createElement('span');
+    encodingSC1Key2.className = 'keycap keycap-number';
+    encodingSC1Key2.textContent = encodingSC1[1];
     elem.appendChild(plus);
-    elem.appendChild(keySC1Number);
+    elem.appendChild(encodingSC1Key2);
 }
-
-// create lineSC2 from sc2Keys and add it to some elem #id_name
-function createLineSC2(sc2Keys, id_name) {
+// create lineSC2 from encodingSC2 and add it to some elem #id_name
+function createLineSC2(encodingSC2, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSC2 and colon, insert them into elem
     const titleSC2 = document.createElement("span");
-    titleSC2.className = 'keycap title-shortcode2';        
+    titleSC2.className = 'keycap title-shortcode2';
     titleSC2.textContent = '二';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSC2);
     elem.appendChild(colon);
 
-    // create keySC2Letter1, insert it into elem
-    let keySC2Letter1 = document.createElement('span');
-    keySC2Letter1.className = 'keycap keycap-letter';
+    // create encodingSC2Key1, insert it into elem
+    let encodingSC2Key1 = document.createElement('span');
+    encodingSC2Key1.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySC2Letter1.textContent = sc2Keys[0];
+        encodingSC2Key1.textContent = encodingSC2[0];
     } else {
-        keySC2Letter1.textContent = letterToArray30Dict[sc2Keys[0]];
+        encodingSC2Key1.textContent = letterToArray30Dict[encodingSC2[0]];
     }
-    elem.appendChild(keySC2Letter1);
+    elem.appendChild(encodingSC2Key1);
 
-    // create plus1 and keySC2Letter2, insert them into elem
+    // create plus1 and encodingSC2Key2, insert them into elem
     const plus1 = document.createTextNode(' + ');
-    let keySC2Letter2 = document.createElement('span');
-    keySC2Letter2.className = 'keycap keycap-letter';
+    let encodingSC2Key2 = document.createElement('span');
+    encodingSC2Key2.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keySC2Letter2.textContent = sc2Keys[1];
+        encodingSC2Key2.textContent = encodingSC2[1];
     } else {
-        keySC2Letter2.textContent = letterToArray30Dict[sc2Keys[1]];
+        encodingSC2Key2.textContent = letterToArray30Dict[encodingSC2[1]];
     }
     elem.appendChild(plus1);
-    elem.appendChild(keySC2Letter2);
+    elem.appendChild(encodingSC2Key2);
 
-    // create plus2 and keySC2Number, insert them into elem  
+    // create plus2 and encodingSC2Key3, insert them into elem
     const plus2 = document.createTextNode(' + ');
-    let keySC2Number = document.createElement('span');
-    keySC2Number.className = 'keycap keycap-number';
-    keySC2Number.textContent = sc2Keys[2];
+    let encodingSC2Key3 = document.createElement('span');
+    encodingSC2Key3.className = 'keycap keycap-number';
+    encodingSC2Key3.textContent = encodingSC2[2];
     elem.appendChild(plus2);
-    elem.appendChild(keySC2Number);
+    elem.appendChild(encodingSC2Key3);
 }
-
-// create lineSYM from symKeys and add it to some elem #id_name
-function createLineSYM(symKeys, id_name) {
+// create lineSYM from encodingSYM and add it to some elem #id_name
+function createLineSYM(encodingSYM, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleSYM and colon, insert them into elem
     const titleSYM = document.createElement("span");
-    titleSYM.className = 'keycap title-symbol';        
+    titleSYM.className = 'keycap title-symbol';
     titleSYM.textContent = '符';
     const colon = document.createTextNode("：");
     elem.appendChild(titleSYM);
@@ -883,20 +878,20 @@ function createLineSYM(symKeys, id_name) {
     elem.appendChild(plus1);
 
     // create keyNum, insert it into elem
-    let keyNum = document.createElement("span");        
+    let keyNum = document.createElement("span");    
     keyNum.className = 'keycap keycap-number';
-    keyNum.textContent = symKeys[0][1];        
+    keyNum.textContent = encodingSYM[0][1];   
     elem.appendChild(keyNum);
 
     // create several plus and spaceKey, insert them into elem
-    const position = symKeys[1];
-    for (let i = 10; i < position; i += 10) {
+    const position = encodingSYM[1];
+    for (i = 10; i < position; i += 10) {
         const plus = document.createTextNode(' + ');
         const spaceKey = document.createElement("span");
         spaceKey.className = 'keycap keycap-space';
         spaceKey.textContent = 'Space';
         elem.appendChild(plus);
-        elem.appendChild(spaceKey) 
+        elem.appendChild(spaceKey);
     }
 
     // create plusLast and keySelect, insert them into elem
@@ -907,41 +902,40 @@ function createLineSYM(symKeys, id_name) {
     elem.appendChild(plusLast);
     elem.appendChild(keySelect);
 }
-
-// create lineNL from nlKeys and add it to some elem #id_name
-function createLineNL(nlKeys, id_name) {
+// create lineNL from encodingNl and add it to some elem #id_name
+function createLineNL(encodingNl, id_name) {
     let elem = document.getElementById(id_name);
 
     // create titleNL and colon, insert them into elem
     const titleNL = document.createElement("span");
-    titleNL.className = 'keycap title-normal';        
+    titleNL.className = 'keycap title-normal';
     titleNL.textContent = '普';
     const colon = document.createTextNode("：");
     elem.appendChild(titleNL);
     elem.appendChild(colon);
 
-    // create keyNLLetter1, insert it into elem
-    let keyNLLetter1 = document.createElement('span');
-    keyNLLetter1.className = 'keycap keycap-letter';
+    // create encodingNlKey1, insert it into elem
+    let encodingNlKey1 = document.createElement('span');
+    encodingNlKey1.className = 'keycap keycap-letter';
     if (engKeyActiveElem.checked) {
-        keyNLLetter1.textContent = nlKeys[0]
+        encodingNlKey1.textContent = encodingNl[0][0];
     } else {
-        keyNLLetter1.textContent = letterToArray30Dict[nlKeys[0]];
+        encodingNlKey1.textContent = letterToArray30Dict[encodingNl[0][0]];
     }
-    elem.appendChild(keyNLLetter1);
+    elem.appendChild(encodingNlKey1);
 
     // create several plus & keyNL, insert them into elem
-    for (let i = 1; i < nlKeys.length; i++) {
+    for (let i = 1; i < encodingNl[0].length; i++) {
         const plus = document.createTextNode(' + ');
         let keyNL = document.createElement('span');
         keyNL.className = 'keycap keycap-letter';
         if (engKeyActiveElem.checked) {
-            keyNL.textContent = nlKeys[i]
+            keyNL.textContent = encodingNl[0][i];
         } else {
-            keyNL.textContent = letterToArray30Dict[nlKeys[i]];
+            keyNL.textContent = letterToArray30Dict[encodingNl[0][i]];
         }
         elem.appendChild(plus);
-        elem.appendChild(keyNL);                           
+        elem.appendChild(keyNL);
     }
 
     // create plusLast and spaceKey, insert them into elem
@@ -951,24 +945,84 @@ function createLineNL(nlKeys, id_name) {
     spaceKey.textContent = 'Space';
     elem.appendChild(plusLast);
     elem.appendChild(spaceKey);
-
-    // create warning, insert it into elelm
-    const warning = document.createTextNode(' （可能需再選字） ');
-    elem.appendChild(warning);              
+    
+    if (encodingNl[1] > 1 && encodingNl[1] <= 10) {
+        const plusCC = document.createTextNode(' + ');
+        const numberCC = document.createElement("span");
+        numberCC.className = 'keycap keycap-cc';
+        if (encodingNl[1] === 10) {
+            numberCC.textContent = '0';
+        } else {
+            numberCC.textContent = encodingNl[1];
+        }
+        elem.appendChild(plusCC);
+        elem.appendChild(numberCC);
+    } else if (encodingNl[1] > 10) {
+        const plusCC1 = document.createTextNode(' + ');
+        const spaceCC = document.createElement("span");
+        spaceCC.className = 'keycap keycap-cc';
+        spaceCC.textContent = 'Space';
+        const plusCC2 = document.createTextNode(' + ');
+        const numberCC = document.createElement("span");
+        numberCC.className = 'keycap keycap-cc';
+        numberCC.textContent = encodingNl[1]-10;
+        elem.appendChild(plusCC1);
+        elem.appendChild(spaceCC);
+        elem.appendChild(plusCC2);
+        elem.appendChild(numberCC);
+    }
+    if (encodingNl[1] === 1) {
+        // get coincidence code data
+        ccData = objectEncoding[encodingNl[0]];
+        if (ccData[0] > 1) {
+            // cc pos = 1
+            const ccHint = document.createTextNode('，重碼位 1');
+            elem.appendChild(ccHint);
+        }
+        if (ccData[0] === 1) {
+            if (ccData[1] > 0) {
+                const ccHint = document.createTextNode('，若開啟擴充區 B 則重碼位 1，否則無重碼');
+                elem.appendChild(ccHint);
+            } else if (ccData[2] > 0) {
+                const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                elem.appendChild(ccHint);
+            }
+        }
+        if (ccData[0] === 0) {
+            if (ccData[1] > 1) {
+                // cc pos = 1
+                const ccHint = document.createTextNode('，重碼位 1');
+                elem.appendChild(ccHint);
+            }
+            if (ccData[1] === 1) {
+                if (ccData[2] > 0) {
+                    const ccHint = document.createTextNode('，若開啟擴充區 CD 則重碼位 1，否則無重碼');
+                    elem.appendChild(ccHint);
+                }
+            }
+            if (ccData[1] === 0) {
+                if (ccData[2] > 1) {
+                    // cc pos = 1
+                    const ccHint = document.createTextNode('，重碼位 1');
+                    elem.appendChild(ccHint);
+                }
+            }
+        }        
+    }
 }
 
 // page scroll
 
 // scroll to page_content
 $(document).ready(function() {
-    $(function() { $('#to_page_content').click(function() { 
-        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
-    }); 
+    $(function() { $('#to_page_content').click(function() {
+        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});
+    });
 });
 $(document).ready(function() {
-    $(function() { $('#to_page_content_small').click(function() { 
-        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});  
-    }); 
+    $(function() { $('#to_page_content_small').click(function() {
+        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});
+    });
 });
 
 // content display
@@ -981,9 +1035,9 @@ function displayToggle(btnElem, id) {
         x.classList.remove("w3-show");
         x.classList.add('w3-hide');
         icon[0].className = "fa fa-caret-down";
-    } else { 
+    } else {
         x.classList.add("w3-show");
-        x.classList.remove("w3-hide");        
+        x.classList.remove("w3-hide");
         icon[0].className = "fa fa-caret-up";
     }
 }
@@ -993,7 +1047,7 @@ const cbCloseHintCurrent = document.getElementById('cb_close_hint_current');
 const cbCloseHintNext = document.getElementById('cb_close_hint_next');
 const cbCloseSentencesAlready = document.getElementById("cb_close_sentences_already");
 const cbCloseWrongCharsAlready = document.getElementById("cb_close_wrong_chars_already");
-const cbCloseWrongCharsCurrent = document.getElementById("cb_close_wrong_chars_current")
+const cbCloseWrongCharsCurrent = document.getElementById("cb_close_wrong_chars_current");
 
 cbCloseHintCurrent.addEventListener('click', function() {
     toggleByCb(this,"hint_current");
@@ -1004,7 +1058,7 @@ cbCloseHintNext.addEventListener('click', function() {
 cbCloseSentencesAlready.addEventListener('click', function() {
     toggleByCb(this,"sentences_already");
 })
-cbCloseWrongCharsAlready.addEventListener('click', function () {
+cbCloseWrongCharsAlready.addEventListener('click', function() {
     toggleByCb(this,"wrong_chars_already_div");
 })
 cbCloseWrongCharsCurrent.addEventListener('click', function() {

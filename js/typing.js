@@ -1,7 +1,8 @@
 /* Structure: (use search)
     - get html DOMs, initialisation
+    - prepare or reset exercise
     - cust exer, built-in exer
-    - prepare page content
+    - prepare sentences, hints and results
     - instant verification
     - enter Key action
     - eng Key Toggle
@@ -16,6 +17,7 @@ const engKeyActiveElem = document.getElementById('cb_eng_key_active');
 const sentenceCurrentElem = document.getElementById('sentence_current');
 const sentenceNextElem = document.getElementById('sentence_next');
 const typingInputElem = document.getElementById('typing_input');
+const btnExerReset = document.getElementById('btn_exer_reset')
 const sentencesAlreadyElem = document.getElementById('sentences_already');
 const wrongCharsAlreadyLinkElem = document.getElementById('wrong_chars_already_link');
 const wrongCharsAlreadyElem = document.getElementById('wrong_chars_already');
@@ -67,6 +69,40 @@ let numAlreadyCorrectChars = 0;
 let numCurrentIncorrectChars = 0;
 let numAlreadyIncorrectChars = 0;
 
+// ----------------------------------------------
+// prepare or reset exercise according to 'lines'
+// ----------------------------------------------
+
+// prepare the exercise (with respect to 'lines')
+function prepareExer() {
+    // initialise things
+    indexCurrentLine = 0;
+    numCurrentCorrectChars = 0;
+    numAlreadyCorrectChars = 0;
+    numCurrentIncorrectChars = 0;
+    numAlreadyIncorrectChars = 0;
+
+    // clear typing input
+    typingInputElem.value='';
+
+    // call prepareSentencesHintsResults (overwrite current, next sentence)
+    prepareSentencesHintsResults(indexCurrentLine);
+
+    // clear sentence already
+    sentencesAlreadyElem.innerHTML='';
+
+    // clear wrong chars already, wrong chars already link
+    wrongCharsAlreadyLinkElem.innerHTML ='';
+    wrongCharsAlreadyElem.innerHTML = '';
+
+    // focus typing input
+    $('#typing_input').focus();
+}
+
+// reset the exercise w.r.t to current 'lines'
+btnExerReset.addEventListener('click', prepareExer);
+
+
 // Case of cust exer
 submitCustExerElem.addEventListener('click',custExerCreator);
 function custExerCreator() {
@@ -78,34 +114,15 @@ function custExerCreator() {
         if ([...inputString].length > 3000) {
             custExerHintElem.textContent='提醒：您的輸入超過了 3000 字元！';
         } else {
-            // create lines (arrays), initialise index current line
+            // create and overwrite lines (arrays)
             lines = createArrayLines(inputString);
-            indexCurrentLine = 0;
-            numCurrentCorrectChars = 0;
-            numAlreadyCorrectChars = 0;
-            numCurrentIncorrectChars = 0;
-            numAlreadyIncorrectChars = 0;
 
-            // call prepareSentencesHintsResults (overwrite current, next sentence)
-            prepareSentencesHintsResults(indexCurrentLine);
-
-            // clear typing input, sentence already
-            typingInputElem.value='';
-            sentencesAlreadyElem.innerHTML='';
-
-            // clear wrong chars already, wrong chars already link
-            wrongCharsAlreadyLinkElem.innerHTML ='';
-            wrongCharsAlreadyElem.innerHTML = '';
-            
-            // focus typing input
-            $('#typing_input').focus();
+            // call prepareExer to prepare the exercise (w.r.t to 'lines')
+            prepareExer();
         }
     } else {
         custExerHintElem.textContent='提醒：您的輸入為空白！';
     }
-
-    // clear input cust exer
-    inputCustExerElem.value='';
 }
 
 // built-in exer
@@ -218,35 +235,6 @@ const hundredElem = document.getElementById("hundred");
 hundredElem.addEventListener('click',function() {builtInExerCreator(stringHundred)});
 thousandElem.addEventListener('click',function() {builtInExerCreator(stringThousand)});
 
-function builtInExerCreator(str) {
-    // create lines (arrays), initialise things
-    lines = createArrayLines(str);
-    indexCurrentLine = 0;
-    numCurrentCorrectChars = 0;
-    numAlreadyCorrectChars = 0;
-    numCurrentIncorrectChars = 0;
-    numAlreadyIncorrectChars = 0;
-
-    // clear typing input
-    typingInputElem.value='';
-
-    // call prepareSentencesHintsResults (overwrite current, next sentence)
-    prepareSentencesHintsResults(indexCurrentLine);
-
-    // clear sentence already
-    sentencesAlreadyElem.innerHTML='';
-
-    // clear wrong chars already, wrong chars already link
-    wrongCharsAlreadyLinkElem.innerHTML ='';
-    wrongCharsAlreadyElem.innerHTML = '';
-
-    // focus typing input
-    $('#typing_input').focus();
-
-    // clear input cust exer
-    inputCustExerElem.value='';
-}
-
 // create the array 'lines' from a string according to selected options
 function createArrayLines(str) {
     const numChar = numCharElem.value;
@@ -266,10 +254,20 @@ function createArrayLines(str) {
     // trim each string in the list, remove it if empty after being trimmed
     return orderedStr.match(regex).map(x => x.trim()).filter(Boolean)
 }
+function builtInExerCreator(str) {
+    // create and overwrite lines (arrays)
+    lines = createArrayLines(str);
 
-// prepare page content
+    // call prepareExer to prepare the exercise w.r.t 'lines'
+    prepareExer();
+}
+
+// ------------------------------------
+// prepare sentences, hints and results
+// ------------------------------------
+
 // execute prepareSentencesHintsResults for the 1st time js with default 'lines'
-prepareSentencesHintsResults(indexCurrentLine)
+prepareSentencesHintsResults(indexCurrentLine);
 
 function prepareSentencesHintsResults(indexCurrentLine) {
     // overwrite current, next sentence according to lines, indexCurrentLine

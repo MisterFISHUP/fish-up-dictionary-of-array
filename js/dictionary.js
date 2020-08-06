@@ -18,10 +18,8 @@ const maxInputChar = 500;
 
 // auto focus for the input area
 $('#inputCharacters').on('hover, mouseover', function() {
-    $('#inputCharacters').focus();
-});
-$('#btn_submit').on('hover, mouseover', function() {
-    $('#inputCharacters').focus();
+    $('#inputCharacters').focus();    
+    $('#inputCharacters').select();
 });
 
 // ---------------------

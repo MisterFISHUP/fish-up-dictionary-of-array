@@ -83,6 +83,8 @@ function printResults(input) {
             // add characters with link in resultCharList
             const charLink = document.createElement('a');
             charLink.textContent = `${character}`;
+            charLink.className = "w3-hover-text-brown";
+            charLink.style = "text-decoration: none;"
             charLink.href = '#result_' + String(num+1);
             const aSpace = document.createTextNode(' ');
             resultCharList.appendChild(charLink);
@@ -161,7 +163,7 @@ function array30Filter() {
     // add result recap sentence to filterResultRecap
     if (checkedCouldOnlyBeSC2) {
         if (sc2.checked) {
-            filterResultRecapSpan.textContent = '總共有 3037 個有二級簡碼。實在是太多了，所以…';
+            filterResultRecapSpan.textContent = '總共有 3037 個字有二級簡碼。實在是太多了，所以…';
         } else  filterResultRecapSpan.textContent = '您似乎甚麼都沒選，所以…';
     } else {
         filterResultRecapSpan.textContent = `總共有 ${outputArray.length} 個`;
@@ -199,7 +201,7 @@ function createBlock(character, block_id_name, id_name) {
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
     resultBlock.id = block_id_name;
-    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
+    resultBlock.className = 'w3-card w3-white w3-hover-shadow w3-hover-border-black w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock

@@ -5,31 +5,29 @@ html *
 hr {
     border-top: 1px solid lightslategray;
 }
+/* background images */
 .bgimg-index {
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(30, 30, 30, 0.6), rgb(255, 255, 255)), url("../img/header_index.jpg");
+    /* background-image: url("../img/header-index.png"); */
+    background-color: tan;
     min-height: 100%;
     alt: "Header image of the main page ";
 }
 .bgimg-dictionary {
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)), url("../img/header_search.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)), url("../img/header-search.jpg");
     alt: "Header image of dictionary page";
 }
-.bgimg-typing {
+.bgimg-typing { 
     background-position: center;
     background-size: cover;
-    background-image: url("../img/leaf_compressed.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.719)), url("../img/header-typing.jpg");
     alt: "Header image of typing page";
 }
-/* .bgimg-4 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("../img/");
-} */
-/* linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),  */
+
+/* for array30root images */
 img.root {
     display:inline-block;
     width: 1em;
@@ -37,6 +35,43 @@ img.root {
     vertical-align: text-top;
 }
 
+/* for array30root.html */
+li.root-example-title {
+    background-color: wheat;
+}
+a.root-table-box {
+    text-decoration: none;
+}
+a.root-example-column-title {
+    text-decoration: none;
+}
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+.root-special {
+    filter: invert(99%) sepia(69%) saturate(916%) hue-rotate(100deg) brightness(87%) contrast(88%);
+}
+.root-sc {
+    filter: invert(59%) sepia(69%) saturate(916%) hue-rotate(100deg) brightness(87%) contrast(88%);
+}
+.root-recap-nb {
+    color: palevioletred;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+.root-table-nb {
+    color:palevioletred;
+}
+.root-recap-nb:hover {
+    color: rgb(148, 53, 85);
+}
+.root-nb {
+    color:palevioletred;
+}
+.root-plus {
+    color: rgb(148, 148, 148);
+}
+li.root-table:hover {
+    background-color: rgb(255, 220, 189);
+  }
 /* ----- KeyCap Style ----- */
 .keycap {
     -webkit-border-radius: 4px;

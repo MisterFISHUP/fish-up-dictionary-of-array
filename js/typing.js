@@ -126,6 +126,67 @@ function custExerCreator() {
 }
 
 // built-in exer
+
+// root example arcai
+const arcaiExampleCol1Elem = document.getElementById('arcai_example_col_1');
+const arcaiExampleCol2Elem = document.getElementById('arcai_example_col_2');
+const arcaiExampleCol3Elem = document.getElementById('arcai_example_col_3');
+const arcaiExampleCol4Elem = document.getElementById('arcai_example_col_4');
+const arcaiExampleCol5Elem = document.getElementById('arcai_example_col_5');
+const arcaiExampleCol6Elem = document.getElementById('arcai_example_col_6');
+const arcaiExampleCol7Elem = document.getElementById('arcai_example_col_7');
+const arcaiExampleCol8Elem = document.getElementById('arcai_example_col_8');
+const arcaiExampleCol9Elem = document.getElementById('arcai_example_col_9');
+const arcaiExampleCol0Elem = document.getElementById('arcai_example_col_0');
+const arcaiExampleColAllElem = document.getElementById('arcai_example_col_all');
+arcaiExampleCol1Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo1)});
+arcaiExampleCol2Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo2)});
+arcaiExampleCol3Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo3)});
+arcaiExampleCol4Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo4)});
+arcaiExampleCol5Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo5)});
+arcaiExampleCol6Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo6)});
+arcaiExampleCol7Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo7)});
+arcaiExampleCol8Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo8)});
+arcaiExampleCol9Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo9)});
+arcaiExampleCol0Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo0)});
+arcaiExampleColAllElem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCoAll)});
+
+
+// radicals
+const radical1Elem = document.getElementById('radical_1');
+const radical2Elem = document.getElementById('radical_2');
+const radical3Elem = document.getElementById('radical_3');
+const radical4Elem = document.getElementById('radical_4');
+const radical5Elem = document.getElementById('radical_5');
+const radical6Elem = document.getElementById('radical_6');
+const radical7Elem = document.getElementById('radical_7');
+const radical8Elem = document.getElementById('radical_8');
+const radical9Elem = document.getElementById('radical_9');
+const radical10Elem = document.getElementById('radical_10');
+const radical11Elem = document.getElementById('radical_11');
+const radical12Elem = document.getElementById('radical_12');
+const radical13Elem = document.getElementById('radical_13');
+const radical14Elem = document.getElementById('radical_14');
+const radical15Elem = document.getElementById('radical_15');
+const radical16Elem = document.getElementById('radical_16');
+const radical17Elem = document.getElementById('radical_17');
+radical1Elem.addEventListener('click',function() {builtInExerCreator(stringRadical1)});
+radical2Elem.addEventListener('click',function() {builtInExerCreator(stringRadical2)});
+radical3Elem.addEventListener('click',function() {builtInExerCreator(stringRadical3)});
+radical4Elem.addEventListener('click',function() {builtInExerCreator(stringRadical4)});
+radical5Elem.addEventListener('click',function() {builtInExerCreator(stringRadical5)});
+radical6Elem.addEventListener('click',function() {builtInExerCreator(stringRadical6)});
+radical7Elem.addEventListener('click',function() {builtInExerCreator(stringRadical7)});
+radical8Elem.addEventListener('click',function() {builtInExerCreator(stringRadical8)});
+radical9Elem.addEventListener('click',function() {builtInExerCreator(stringRadical9)});
+radical10Elem.addEventListener('click',function() {builtInExerCreator(stringRadical10)});
+radical11Elem.addEventListener('click',function() {builtInExerCreator(stringRadical11)});
+radical12Elem.addEventListener('click',function() {builtInExerCreator(stringRadical12)});
+radical13Elem.addEventListener('click',function() {builtInExerCreator(stringRadical13)});
+radical14Elem.addEventListener('click',function() {builtInExerCreator(stringRadical14)});
+radical15Elem.addEventListener('click',function() {builtInExerCreator(stringRadical15)});
+radical16Elem.addEventListener('click',function() {builtInExerCreator(stringRadical16)});
+radical17Elem.addEventListener('click',function() {builtInExerCreator(stringRadical17)});
 // common char
 
 // key1
@@ -449,6 +510,8 @@ function changeLine() {
             if (objectCharSet.hasOwnProperty(character)) {
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
+                linkElem.className = "w3-hover-text-green";
+                linkElem.style = "text-decoration: none;"
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
                 wrongCharsAlreadyLinkElem.appendChild(linkElem);
                 const aSpace = document.createTextNode(' ');
@@ -463,6 +526,8 @@ function changeLine() {
                 addWrongCharAlready(character, index+1);
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
+                linkElem.className = "w3-hover-text-green";
+                linkElem.style = "text-decoration: none;"
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
                 wrongCharsAlreadyLinkElem.appendChild(linkElem);
                 const aSpace = document.createTextNode(' ');
@@ -513,6 +578,8 @@ function finalise() {
             if (objectCharSet.hasOwnProperty(character)) {
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
+                linkElem.className = "w3-hover-text-green";
+                linkElem.style = "text-decoration: none;"
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
                 wrongCharsAlreadyLinkElem.appendChild(linkElem);
                 const aSpace = document.createTextNode(' ');
@@ -527,6 +594,8 @@ function finalise() {
                 addWrongCharAlready(character, index+1);
                 const linkElem = document.createElement('a');
                 linkElem.textContent = character;
+                linkElem.className = "w3-hover-text-green";
+                linkElem.style = "text-decoration: none;"
                 linkElem.href = '#line_'+String(indexCurrentLine+1)+'_pos_'+String(index+1);
                 wrongCharsAlreadyLinkElem.appendChild(linkElem);
                 const aSpace = document.createTextNode(' ');
@@ -596,7 +665,7 @@ function createBlock(character, block_id_name, id_name) {
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
     resultBlock.id = block_id_name;
-    resultBlock.className = 'w3-card w3-white w3-border-bottom w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
+    resultBlock.className = 'w3-card w3-white w3-hover-shadow w3-hover-border-black w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock

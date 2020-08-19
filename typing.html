@@ -110,8 +110,8 @@
             </div>
             <br>
 
-            <button onclick="displayToggle(this,'cust_exer')" class="w3-button w3-large w3-block w3-green w3-left-align">題目選擇 <i class="fa fa-caret-down"></i></button>
-            <div id="cust_exer" class="w3-card w3-padding w3-white w3-animate-opacity w3-hide">
+            <button onclick="displayToggle(this,'exercise')" class="w3-button w3-large w3-block w3-green w3-left-align">題目選擇 <i class="fa fa-caret-down"></i></button>
+            <div id="exercise" class="w3-card w3-padding w3-white w3-animate-opacity w3-hide">
                 <h5>題目產生設定</h5>
                 <label for="num_char" class="w3-small">每行最多字數：</label>
                 <select name='num_char' id="option_num_char" class="w3-select w3-light-gray">
@@ -130,125 +130,186 @@
                 <hr>
                 <h5>選擇內建題目或自製題目</h5>
                 
-                <h6>內建題目：</h6>
-                <p>常用字詞系列（未開放）</p>
-                <button onclick="displayToggle(this,'common_chars')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">常用 2000 字 <i class="fa fa-caret-down"></i></button>
-                <div id='common_chars' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                <button onclick="displayToggle(this,'built_in_exer')" class="w3-button w3-large w3-block w3-green w3-left-align w3-margin-bottom">內建題目 <i class="fa fa-caret-down"></i></button>
+                <div id='built_in_exer' class="w3-animate-opacity w3-hide w3-margin-bottom">
+                    <p>字根運用練習系列</p>
+                    <button onclick="displayToggle(this,'root_example_arcai')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">ARCAI <i class="fa fa-caret-down"></i></button>
+                    <div id='root_example_arcai' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_1">行 1 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_2">行 2</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_3">行 3</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_4">行 4</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_5">行 5</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_6">行 6</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_7">行 7</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_8">行 8</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_9">行 9</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_0">行 0</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="arcai_example_col_all">全部</button>
+                    </div>
+
+                    <button onclick="displayToggle(this,'root_example_fish_up')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">（未開放） <i class="fa fa-caret-down"></i></button>
+                    <div id='root_example_fish_up' class="w3-hide w3-margin-bottom">
+                        （本站字根表實例）
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_1" disabled>行 1</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_2" disabled>行 2</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_3" disabled>行 3</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_4" disabled>行 4</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_5" disabled>行 5</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_6" disabled>行 6</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_7" disabled>行 7</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_8" disabled>行 8</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_9" disabled>行 9</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_0" disabled>行 0</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="my_example_col_all" disabled>全部</button>
+                    </div>
+
+                    <button onclick="displayToggle(this,'radicals')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">中文部首 <i class="fa fa-caret-down"></i></button>
+                    <div id='radicals' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_1">1 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_2">2 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_3">3 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_4">4 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_5">5 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_6">6 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_7">7 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_8">8 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_9">9 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_10">10 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_11">11 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_12">12 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_13">13 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_14">14 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_15">15 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_16">16 畫</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="radical_17">17 畫</button>
+
+                    </div>
+
+                    <p>常用字詞系列（未開放）</p>
+                    <button onclick="displayToggle(this,'common_chars')" class="w3-button  w3-block w3-green" style="margin-bottom: 2px;">常用 2000 字 <i class="fa fa-caret-down"></i></button>
+                    <div id='common_chars' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                    </div>
+                    <button onclick="displayToggle(this,'common_words')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">常用 2000 詞 <i class="fa fa-caret-down"></i></button>
+                    <div id='common_words' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
+                        <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                    </div>
+
+                    <p>一般拆碼系列</p>
+                    <button onclick="displayToggle(this,'key1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">單鍵 <i class="fa fa-caret-down"></i></button>
+                    <div id='key1' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_no_cc">一碼字</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_cc_first">重碼位 1</button>
+                    </div>
+                    <button onclick="displayToggle(this,'key2')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">雙鍵 <i class="fa fa-caret-down"></i></button>
+                    <div id='key2' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_no_cc">無重碼</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_first">重碼位 1</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_second">重碼位 2 但少用，簡碼不用記 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_third">重碼位 3 但少用，簡碼不用記 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_common_sc2">常用且重碼位 = 二級簡碼數字鍵</button>
+                    </div>
+                    <button onclick="displayToggle(this,'key3')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">三鍵 <i class="fa fa-caret-down"></i></button>
+                    <div id='key3' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key3_no_cc">無重碼</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_first'>重碼位 1</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_second'>重碼位 2 但少用，若有簡碼不用記 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_common_sc2'>常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                    </div>
+                    <button onclick="displayToggle(this,'key4')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">四鍵 <i class="fa fa-caret-down"></i></button>
+                    <div id='key4' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_no_cc">無重碼</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_first'>重碼位 1</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_cc_second">重碼位 2 但少用 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_third'>重碼位 3 但少用 </button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_common_sc2">常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                    </div>
+
+                    <p>特別碼、簡碼系列</p>
+                    <button onclick="displayToggle(this,'special')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">特別碼 <i class="fa fa-caret-down"></i></button>
+                    <div id='special' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_all'>全部</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_14'>四鍵取首尾</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_12'>四鍵取首二</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_13'>四鍵取首三</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_23'>四鍵取二三</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_24'>四鍵取二尾</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_34'>四鍵取三尾</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_13'>三鍵取首尾</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_12'>三鍵取首中</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_23'>三鍵取中尾</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_normal'>1996 新增（正向取）</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_reversed'>1996 新增（反向取）</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_irregular'>無規則</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_sc1'>有一級簡碼</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_no_sc1'>無一級簡碼</button>
+                    </div>
+
+                    <button onclick="displayToggle(this,'shortcode1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">一級簡碼 <i class="fa fa-caret-down"></i></button>
+                    <div id='shortcode1' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_all'>全部</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_char'>文字</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sym'>符號</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sp'>有特別碼</button>
+                    </div>
+
+                    <p>符號系列</p>
+                    <button onclick="displayToggle(this,'symbol')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">符號 <i class="fa fa-caret-down"></i></button>
+                    <div id='symbol' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_sc1">有一級簡碼</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_bopomofo">注音符號</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_upper">大寫希臘字母</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_lower">小寫希臘字母</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_happy">開心顏文字</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_angry">生氣顏文字</button>
+                    </div>
+
+                    <p>顏文字系列（每行最多字數請設為 20）</p>
+                    <button onclick="displayToggle(this,'emoji')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">顏文字 <i class="fa fa-caret-down"></i></button>
+                    <div id='emoji' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_happy">開心</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_angry">生氣</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_guro">獵奇</button>
+                    </div>
+
+                    <p>文章</p>
+                    <button onclick="displayToggle(this,'ancient')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">古文 <i class="fa fa-caret-down"></i></button>
+                    <div id='ancient' class="w3-hide w3-margin-bottom">
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='hundred'>百家姓</button>
+                        <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='thousand'>千字文（含標點）</button>
+                    </div>
                 </div>
-                <button onclick="displayToggle(this,'common_words')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">常用 2000 詞 <i class="fa fa-caret-down"></i></button>
-                <div id='common_words' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
-                    <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
+                
+                <button onclick="displayToggle(this,'cust_exer')" class="w3-button w3-large w3-block w3-green w3-left-align w3-margin-bottom">自製題目 <i class="fa fa-caret-down"></i></button>
+                
+                <div id='cust_exer' class="w3-animate-opacity w3-hide w3-margin-bottom">
+                    <textarea id='input_cust_exer' rows="4" class="w3-input w3-border w3-border-dark-gray" placeholder="輸入中英文都可以呦！最多可以輸入 3000 字元！"></textarea>
+                    <button id="btn_submit_cust_exer" class="w3-button w3-small w3-light-gray">產生題目</button>
+                    <div id='cust_exer_hint' class="w3-padding-16"></div>
+                    <div class="w3-leftbar w3-border-red w3-pale-red w3-padding w3-margin-bottom">
+                        在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。
+                    </div>
                 </div>
 
-                <p>一般拆碼系列</p>
-                <button onclick="displayToggle(this,'key1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">單鍵 <i class="fa fa-caret-down"></i></button>
-                <div id='key1' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_no_cc">一碼字</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key1_cc_first">重碼位 1</button>
-                </div>
-                <button onclick="displayToggle(this,'key2')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">雙鍵 <i class="fa fa-caret-down"></i></button>
-                <div id='key2' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_no_cc">無重碼</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_first">重碼位 1</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_second">重碼位 2 但少用，簡碼不用記 </button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_cc_third">重碼位 3 但少用，簡碼不用記 </button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key2_common_sc2">常用且重碼位 = 二級簡碼數字鍵</button>
-                </div>
-                <button onclick="displayToggle(this,'key3')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">三鍵 <i class="fa fa-caret-down"></i></button>
-                <div id='key3' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key3_no_cc">無重碼</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_first'>重碼位 1</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_cc_second'>重碼位 2 但少用，若有簡碼不用記 </button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key3_common_sc2'>常用且第三字根數字位 = 二級簡碼數字鍵</button>
-                </div>
-                <button onclick="displayToggle(this,'key4')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">四鍵 <i class="fa fa-caret-down"></i></button>
-                <div id='key4' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_no_cc">無重碼</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_first'>重碼位 1</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_cc_second">重碼位 2 但少用 </button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='key4_cc_third'>重碼位 3 但少用 </button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="key4_common_sc2">常用且第三字根數字位 = 二級簡碼數字鍵</button>
-                </div>
-
-                <p>特別碼、簡碼系列</p>
-                <button onclick="displayToggle(this,'special')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">特別碼 <i class="fa fa-caret-down"></i></button>
-                <div id='special' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_all'>全部</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_14'>四鍵取首尾</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_12'>四鍵取首二</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_13'>四鍵取首三</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_23'>四鍵取二三</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_24'>四鍵取二尾</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key4_34'>四鍵取三尾</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_13'>三鍵取首尾</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_12'>三鍵取首中</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_key3_23'>三鍵取中尾</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_normal'>1996 新增（正向取）</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_96_reversed'>1996 新增（反向取）</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_irregular'>無規則</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_sc1'>有一級簡碼</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sp_no_sc1'>無一級簡碼</button>
-                </div>
-
-                <button onclick="displayToggle(this,'shortcode1')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">一級簡碼 <i class="fa fa-caret-down"></i></button>
-                <div id='shortcode1' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_all'>全部</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_char'>文字</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sym'>符號</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='sc1_sp'>有特別碼</button>
-                </div>
-
-                <p>符號系列</p>
-                <button onclick="displayToggle(this,'symbol')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">符號 <i class="fa fa-caret-down"></i></button>
-                <div id='symbol' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_sc1">有一級簡碼</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_bopomofo">注音符號</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_upper">大寫希臘字母</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id="symbol_greek_lower">小寫希臘字母</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_happy">開心顏文字</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="symbol_emoji_angry">生氣顏文字</button>
-                </div>
-
-                <p>顏文字系列（每行最多字數請設為 20）</p>
-                <button onclick="displayToggle(this,'emoji')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">顏文字 <i class="fa fa-caret-down"></i></button>
-                <div id='emoji' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_happy">開心</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_angry">生氣</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;"id="emoji_guro">獵奇</button>
-                </div>
-
-                <p>文章</p>
-                <button onclick="displayToggle(this,'ancient')" class="w3-button w3-block w3-green" style="margin-bottom: 2px;">古文 <i class="fa fa-caret-down"></i></button>
-                <div id='ancient' class="w3-hide w3-margin-bottom">
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='hundred'>百家姓</button>
-                    <button class="w3-button w3-small w3-light-grey" style="margin-bottom: 4px;" id='thousand'>千字文（含標點）</button>
-                </div>
-
-                <p>自製題目：</p>
-                <textarea id='input_cust_exer' rows="4" class="w3-input w3-border w3-border-dark-gray" placeholder="輸入中英文都可以呦！最多可以輸入 3000 字元！"></textarea>
-                <button id="btn_submit_cust_exer" class="w3-button w3-small w3-light-gray">產生題目</button>
-                <div id='cust_exer_hint' class="w3-padding-16"></div>
-
-                <div class="w3-leftbar w3-border-red w3-pale-red w3-padding w3-margin-bottom">
-                    在上方輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。若您輸入自製題目時換行，產生的題目也會換行。
-                </div>
-                <div class="w3-padding">
-                    若有發現任何技術問題，或是有推薦的題目想要我加到本站上，歡迎透過頁底聯絡資訊來聯絡我 ^^
+                <hr>
+                <div class="w3-padding-small">
+                    本站使用思源宋體 Noto Serif CJK，僅支援到中日韓統一表意文字擴充區 A 區、以及 B 區中部分常用字。若要正確顯示所有罕用字，可以考慮下載花園明朝體 HanaMinB，此字體能夠完整支援到擴充區 F。
                 </div>
             </div>
             <div class="w3-card w3-green w3-padding w3-display-container w3-margin-bottom w3-margin-top">
                 <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
                 <h4>注意！</h4>
                 <p>「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1：<br>按完本網站給出的特別碼後（包含空白鍵），直接繼續打字（輸入會自動完成），或是還要再按一次 <span class="keycap keycap-space" style="color: black;">Space</span> 或一次數字鍵 <span class="keycap keycap-number">1</span> 才能完成輸入。</p>
+                <p class="w3-right-align"><button class="w3-button w3-light-gray w3-padding-small w3-round" onclick="this.parentElement.parentElement.style.display='none'">好，我知道了</button></p>
             </div>
         <!-- End Left Column -->
         </div>
@@ -277,7 +338,7 @@
             <div class="w3-card w3-green w3-padding w3-display-container w3-margin-bottom w3-margin-top">
                 <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
                 <h5>了解後關閉我</h5>
-                <p>您可以點擊本頁的標題，將畫面移動至打字練習的區塊。另外，打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，尤其是關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about_coincident_codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a></p>                
+                <p>您可以點擊本頁的標題，將畫面移動至打字練習的區塊。另外，打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，尤其是關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a></p>                
             </div>
             <br>
             <span class="w3-large">已打句子</span>
@@ -311,7 +372,7 @@
         <div class='w3-quarter'>
             <div id="result_display">
                 <h5>結果</h5>
-                <div id="results" class="w3-card w3-white w3-padding" style="min-height: 5em;">
+                <div id="results" class="w3-card w3-white w3-padding" style="line-height: 1.6;">
                     總共 <span id='num_total_sentences'></span> 句，合計 <span id='num_total_chars'></span> 字<br>
                     目前是第 <span id='pos_line'></span> 句，剩下 <span id='num_remaining_lines'></span> 句<br>
                     <span style="color: green;">正確</span>/<span style="color: red;">錯誤</span>字數：<span id='num_total_correct_chars' style="color: green;"></span> / <span id="num_total_incorrect_chars" style="color: red;"></span><br>
@@ -341,8 +402,8 @@
     <footer class="w3-container w3-padding w3-dark-grey w3-center">
         <div class="w3-xlarge w3-section">
             <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="https://github.com/MisterFISHUP" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
         </div>
         <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
     </footer>

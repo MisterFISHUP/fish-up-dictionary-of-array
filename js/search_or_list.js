@@ -12,11 +12,12 @@ function openSearchTag(evt, searchTypeName) {
         const dotSpan = elem.getElementsByTagName("span")[0];
         dotSpan.classList.remove('w3-show-inline-block');
         dotSpan.classList.add('w3-hide');
-        elem.classList.add('w3-grayscale');
+        elem.classList.add('dict-tag-not-selected');
     }
     document.getElementById(searchTypeName).classList.add('w3-show');
     document.getElementById(searchTypeName).children[0].classList.add('w3-animate-left'); 
-    clickedTag.classList.remove('w3-grayscale');
+    clickedTag.classList.remove('dict-tag-not-selected');
+    clickedTag.classList.add('dict-tag-selected');
     clickedDotSpan.classList.remove("w3-hide");
     clickedDotSpan.classList.add("w3-show-inline-block");
 }

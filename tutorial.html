@@ -33,53 +33,1916 @@
     <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- css -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        html, body {
-            height: 100%;
-            min-height: 100%;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-sand w3-card w3-left-align">
-            <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-black w3-sand" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
+    <div class="w3-bar w3-black w3-card w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
 
-            <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
-            <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
-            <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
-            <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
-            <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">常見問題</a>
-            <a href="download.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">下載</a>
-        </div>
-  
-        <!-- Navbar on small screens -->
-        <div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
-            <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
-            <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>            
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
-            <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
-            <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
-            <a href="download.html" class="w3-bar-item w3-button w3-padding-large">常見問題</a>
-            <a href="about.html" class="w3-bar-item w3-button w3-padding-large">關於本站</a>
-        </div>
-    </div>
-    <div class="w3-display-middle w3-center">
-        <h2>網頁建構中</h2>
-        <a href="dictionary.html" class="w3-button w3-large w3-margin w3-padding-large w3-red">查碼去</a>
-        <a href="typing.html" class="w3-button w3-large w3-margin w3-padding-large w3-red">打字去</a>
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>
+        <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
+        <a href="faq.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">常見問題</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">下載</a>
     </div>
 
+    <!-- Navbar on small screens -->
+    <div id="navSmall" class="w3-bar-block w3-sand w3-hide w3-hide-large ">
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>
+        <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
+        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large">常見問題</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large">關於本站</a>
+    </div>
+
+<div class="page-content" id="tutorial-page-content">
+    <article>
+        <h1>行列教學 - 測試版</h1>
+        <h5>最完整的行列輸入法教學</h5>
+        <p>歡迎來到行列教學！如果您是第一次接觸行列的人，恭喜您，您非常幸運，同時遇見了最科學最好學的字形輸入法以及最完整最深入淺出的行列教學。如果您使用行列沒多久，這個行列教學絕對能讓您更快速的往行列老手邁進。而如果您已經是行列老手了，也推薦您閱讀此教學，不但能讓您複習行列，說不定您也能在此教學中學到以前不認識的新知！</p>
+        <!-- <p>頁面規劃</p> -->
+        <!-- <details>
+            <summary><span style="font-size: xx-large;">使用指南（新手必看）</span></summary>
+            <p>行列輸入法基本的五件事->行列輸入法完整教學->去下載行列->去字根表看滿滿為新手與老手準備的例子->回來二刷此行列教學頁面或是本站字根表頁面
+                開始使用行列輸入法之後：繼續回來二刷此行列教學頁面或是本站字根表頁面+使用本站行列查碼查字+使用本站行列打字練習
+            </p>
+        </details> -->
+    </article>
+    <section>
+        <p>正式進入行列教學之前，我要快速告訴您行列輸入法基本的五件事。這花您最多 10 分鐘，並且看完後您就會了解行列輸入法的原理。</p>
+    </section>
+
+    <section>
+        <h2>1. 行列 30 鍵</h2>
+        <p>注意到鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列輸入法分別稱之為「5 上」、「5 中」以及「5 下」，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。</p>   
+        <p>我們將十顆數字鍵下方的這 30 顆鍵稱作<u>行列 30 鍵</u>。每顆鍵依照 10 個數字（行）以及「上、中、下」（列）來定位，這就是行列輸入法或行列 30 這兩個名稱的由來。</p>
+        <p>使用行列輸入法將文字拆碼後對應到的鍵，便是這 30 顆透過數字以及「上、中、下」定位的鍵，這就是為什麼行列輸入法不用像英打或多數其他字根輸入法需要記鍵位。</p>
+        <p>例如中文字「繼」的行列編碼為 2 下 + 2 下 + 2 下 + 2 中，您不必記任何鍵位也不用看鍵盤就可以輸入這四個鍵！</p>
+
+        <p class="comment">除非有特別說明，否則本站在描述輸入字符的按鍵或編碼時使用的加號「+」，表示依序輸入，並不是要同時按按鍵。</p>
+        <p>使用行列輸入法應該從一開始就養成正確的按鍵方式來鍵入行列 30 鍵，也就是要有正確的「按鍵指法」。</p>
+        <h3>準備狀態</h3>
+        <p>左手的小指、無名指、中指以及食指，應該依序輕放在行列 30 鍵 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">2-</span>、<span class="keycap keycap-letter">3-</span>、<span class="keycap keycap-letter">4-</span> 上，也就是英文鍵 <span class="keycap keycap-letter">a</span>、<span class="keycap keycap-letter">s</span>、<span class="keycap keycap-letter">d</span>、<span class="keycap keycap-letter">f</span>；而右手的食指、中指、無名指以及小指，應該依序輕放在行列 30 鍵 <span class="keycap keycap-letter">7-</span>、<span class="keycap keycap-letter">8-</span>、<span class="keycap keycap-letter">9-</span>、<span class="keycap keycap-letter">0-</span> 上，也就是英文鍵 <span class="keycap keycap-letter">j</span>、<span class="keycap keycap-letter">k</span>、<span class="keycap keycap-letter">l</span>、<span class="keycap keycap-letter">;</span>。雙手的食指則是輕放在空白鍵上。</p>
+        <p class="comment">此時雙手「食指」所在的按鍵上，也就是 <span class="keycap keycap-letter">4-</span> 和 <span class="keycap keycap-letter">7-</span>，會有突起以方便觸摸定位。此兩鍵是行列 30 鍵中唯二有突起的按鍵。</p>
+        <!-- <img src="image-test/keyboard.png" alt="行列輸入法按鍵指法" width="200px"> -->
+        <h3>打字時</h3>
+        <p style="line-height: 2.2;">
+            <span class="keycap keycap-letter">1↑</span>、<span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">1↓</span> 以及數字鍵 <span class="keycap keycap-number">1</span> 這四顆鍵由左手小指掌管<br>
+            <span class="keycap keycap-letter">2↑</span>、<span class="keycap keycap-letter">2-</span>、<span class="keycap keycap-letter">2↓</span> 以及數字鍵 <span class="keycap keycap-number">2</span> 這四顆鍵由左手無名指掌管<br>
+            <span class="keycap keycap-letter">3↑</span>、<span class="keycap keycap-letter">3-</span>、<span class="keycap keycap-letter">3↓</span> 以及數字鍵 <span class="keycap keycap-number">3</span> 這四顆鍵由左手中指掌管<br>
+            <span class="keycap keycap-letter">4↑</span>、<span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">4↓</span> 以及數字鍵 <span class="keycap keycap-number">4</span> 這四顆鍵由左手食指掌管<br>
+            <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span> 以及數字鍵 <span class="keycap keycap-number">5</span> 這四顆鍵由左手食指掌管<br>
+            <span class="keycap keycap-letter">6↑</span>、<span class="keycap keycap-letter">6-</span>、<span class="keycap keycap-letter">6↓</span> 以及數字鍵 <span class="keycap keycap-number">6</span> 這四顆鍵由右手食指掌管<br>
+            <span class="keycap keycap-letter">7↑</span>、<span class="keycap keycap-letter">7-</span>、<span class="keycap keycap-letter">7↓</span> 以及數字鍵 <span class="keycap keycap-number">7</span> 這四顆鍵由右手食指掌管<br>
+            <span class="keycap keycap-letter">8↑</span>、<span class="keycap keycap-letter">8-</span>、<span class="keycap keycap-letter">8↓</span> 以及數字鍵 <span class="keycap keycap-number">8</span> 這四顆鍵由右手中指掌管<br>
+            <span class="keycap keycap-letter">9↑</span>、<span class="keycap keycap-letter">9-</span>、<span class="keycap keycap-letter">9↓</span> 以及數字鍵 <span class="keycap keycap-number">9</span> 這四顆鍵由右手無名指掌管<br>
+            <span class="keycap keycap-letter">0↑</span>、<span class="keycap keycap-letter">0-</span>、<span class="keycap keycap-letter">0↓</span> 以及數字鍵 <span class="keycap keycap-number">0</span> 這四顆鍵由右手小指掌管<br>
+            <span class="keycap keycap-space">Space</span> 由左手拇指或是右手拇指掌管<br>
+        </p>
+        <p>以上就是行列 30 鍵的所有說明。</p>
+    </section>
+
+    <section>
+        <h2>2. 字與符號</h2>
+        <p>第二件基礎但重要的事情是，行列輸入法除了能夠輸入中文字外，還能輸入超過四百多個符號，其中包括了所有全形標點符號。</p>
+        <p>先按 <span class="keycap keycap-letter">2↑</span> （也就是英文鍵 <span class="keycap keycap-letter">w</span>），再按任意一顆數字鍵便會進入符號選單（不同的數字鍵對應到不同類型的選單）。進入符號選單後可以按空白鍵到下一頁，或是按方向鍵切換上一頁/下一頁，看到想要的符號以數字鍵選擇完成輸入。</p>
+        <div class="example">
+            <p>
+                例如：<br>
+                先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">2</span> 進入括號符號選單，例如有（ ） 「 」等等符號可選<br>
+                先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">4</span> 進入數學符號選單，例如有÷ ≠ ∞ ≒等等符號可選<br>
+                先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">8</span> 進入順序符號選單，例如有③ ⑶ ⅲ Ⅲ等等符號可選<br>
+                先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">0</span> 進入注音符號選單，例如有ㄅ ˙ ˊ ˇ等等符號可選
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 基本筆形、字根、字根碼、鍵位</h2>
+        <p>此部分要帶您了解行列輸入法的四個核心名詞，它們分別是基本筆形、字根、字根碼以及鍵位。這四個元素相當重要，同時也簡單易懂，幾乎不太有需要死記的事！</p>
+        <h3>基本筆形</h3>
+        <p>行列輸入法建立在 <u>10 個基本筆形</u>上，每一個基本筆形對應到一個數字。</p>
+        <p>舉例來說，有一個基本筆形叫逆彎：㇗，此基本筆形對應的數字是 2，可以用「寫數字 2 時最後面就是一個逆彎（逆時針的彎曲）」來理解；有另一個基本筆形叫撇：㇒，此基本筆形對應的數字是 9，可以用「寫數字 9 時最後面就像是一撇」來理解。</p>
+        <p class="comment">如同字面上的意思，基本筆「形」是一個形狀，不一定是單一一個筆畫！比如說有一個基本筆形叫正交：＋，是橫豎兩線交叉的筆形。它對應的數字是 4，可以用「數字 4 裡面有一個正交」來理解。</p>
+        <h3>字根</h3>
+        <p>字根是組成中文字的各種零件，也就是說每個中文字可以拆解成一至數個字根。例如中文字「功」在行列輸入法中拆成「工、力」這兩個字根，中文字「架」拆成「力、口、木」這三個字根。</p>
+        <p class="comment">行列的字根不一定是中文的部首或偏旁，可能是單位更大或更小的零件，例如「有」這個字在行列輸入法中拆成「」這兩個字根、「鼎」拆成「目、<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目">」這兩個字根，又或者「代」拆成「亻、一、<img src="img/array30-root/26弋.png" class="root" alt="行列字根 26，「弋」去掉橫線">」這三個字根、「會」拆成「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口">、<img src="img/array30-root/08曾.png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日">、日」這三個字根。（只是舉例，您看過去即可，不用特別去記這些例子！）</p>
+        <h3>字根碼</h3>
+        <p>行列輸入法的每一個字根都會對應到一個字根碼，而絕大多數的情況這個對應遵循著簡單的規則。這個簡單的規則在後面的完整教學就會說明，而上面剛解釋的基本筆形就是用在這個規則裡。</p>
+        <p>字根碼是一個二位數字（例如 <span class="root-nb">16</span>、<span class="root-nb">59</span>、<span class="root-nb">08</span>），或是一個數字加上連字號 - （例如 <span class="root-nb">2-</span>、<span class="root-nb">6-</span>、<span class="root-nb">0-</span> 等，此時字根碼讀做「2 單」、「6 單」「0 單」）。字根碼就只有上述這兩種型態。</p>
+        <p>這裡舉出幾個剛看過的字根為例，字根「工」的字根碼是 <span class="root-nb">11</span>、字根「力」的字根碼是 <span class="root-nb">59</span>、字根「口」的字根碼是 <span class="root-nb">0-</span>、字根「木」的字根碼是 <span class="root-nb">48</span>。（只是舉例，您看過去即可，不用特別去記這些例子！）</p>
+        <h3>鍵位</h3>
+        <p>所謂的<u>鍵位</u>就是行列 30 鍵各鍵（的名稱），像是 <span class="keycap keycap-letter">7↑</span>（7 上）、<span class="keycap keycap-letter">3-</span>（3 中）、<span class="keycap keycap-letter">0↓</span>（0 下）。依照相當簡單的規則，行列輸入法的每一個字根碼都會對應到一個鍵位。例如「<span class="root-nb">59</span>」這個字根碼的鍵位是 5 下，「<span class="root-nb">0-</span>」這個字根碼的鍵位是 0 中。</p>
+        <p>這個相當簡單的規則如下。</p>
+        <p><b>1. 字根碼是一個二位數字</b>：第一位數對應到行列 30 鍵的行，而第二位數依照「0, 1, 2, 3, 4：上&emsp;5：中&emsp;6, 7, 8, 9, 0：下」對應行列 30 鍵的列。</p>
+        <div class="example">
+            <p>
+                例如：<br>
+                字根碼 <span class="root-nb">21</span> 對應到鍵位 <span class="keycap keycap-letter">2↑</span>（2 上）<br>
+                字根碼 <span class="root-nb">25</span> 對應到鍵位 <span class="keycap keycap-letter">2-</span>（2 中）<br>
+                字根碼 <span class="root-nb">29</span> 對應到鍵位 <span class="keycap keycap-letter">2↓</span>（2 下）<br>
+            </p>
+            <p>
+                字根碼 <span class="root-nb">60</span> 對應到鍵位 <span class="keycap keycap-letter">6↑</span>（6 上）<br>
+                字根碼 <span class="root-nb">65</span> 對應到鍵位 <span class="keycap keycap-letter">6-</span>（6 中）<br>
+                字根碼 <span class="root-nb">66</span> 對應到鍵位 <span class="keycap keycap-letter">6↓</span>（6 下）
+            </p>
+            <p>
+                字根碼 <span class="root-nb">01</span> 對應到鍵位 <span class="keycap keycap-letter">0↑</span>（0 上）<br>
+                字根碼 <span class="root-nb">04</span> 對應到鍵位 <span class="keycap keycap-letter">0↑</span>（0 上）<br>
+                字根碼 <span class="root-nb">06</span> 對應到鍵位 <span class="keycap keycap-letter">0↓</span>（0 下）
+            </p>            
+        </div>
+        <p>總之就是字根碼第二位數等於 5 對應到「中」，而小於 5 和大於 5 則分別對應到「上」還有「下」。</p>
+        <p><b>2. 字根碼是一個數字加上連字號</b>：數字對應到的行列 30 鍵的行，連字號對應到「上、中、下」的中。</p>
+        <div class="example">
+            <p>
+                例如：<br>
+                字根碼 <span class="root-nb">1-</span> 對應到鍵位 <span class="keycap keycap-letter">1-</span>（1 中）<br>
+                字根碼 <span class="root-nb">5-</span> 對應到鍵位 <span class="keycap keycap-letter">5-</span>（5 中）<br>
+                字根碼 <span class="root-nb">7-</span> 對應到鍵位 <span class="keycap keycap-letter">7-</span>（7 中）<br>
+                字根碼 <span class="root-nb">0-</span> 對應到鍵位 <span class="keycap keycap-letter">0-</span>（0 中）<br>
+            </p>
+        </div>
+        <p>字根碼對應到鍵位的規則就這樣！相當簡單易懂！</p>
+        
+        <p>如果您將上述幾個知識結合在一起，就可以發現每個字根都可以對應到一個鍵位！例如字根「工」的字根碼是 <span class="root-nb">11</span>，對應到鍵位 <span class="keycap keycap-letter">1↑</span>，我們就會說字根「工」的鍵位是 <span class="keycap keycap-letter">1↑</span>（1 上）；字根「力」的字根碼是 <span class="root-nb">59</span>，對應到鍵位 <span class="keycap keycap-letter">5↓</span>，我們就會說字根「力」的鍵位是 <span class="keycap keycap-letter">5↓</span>（5 下）。</p>
+        <p>又例如字根「口」的字根碼是 <span class="root-nb">0-</span>，所以鍵位是 <span class="keycap keycap-letter">0-</span>（0 中）；字根「木」的字根碼是 <span class="root-nb">48</span>，所以鍵位是 <span class="keycap keycap-letter">4↓</span>（4 下）。綜上所述，行列輸入法中，每一個字根都會對應到一顆行列 30 鍵（即每一個字根都會對應到一個鍵位）。</p>
+    </section>
+
+    <section>
+        <h2>4. 拆字、拆碼、取碼</h2>
+        <p>我們將一個字拆成一至數個字根，這個叫做「拆字」。例如將「功」這個字拆成「工、力」這兩個字根、「架」拆成「力、口、木」這三個字根等等。</p>
+        <p>但真正輸入時並不一定會使用到所有字根，可能只會取一部分字根來輸入。得到這些字根、或這些字根的字根碼、或是這些字根的鍵位，這個叫做「拆碼」或「取碼」。</p>
+        <p>實際溝通上，我們常混淆使用「拆字」、「拆碼」、「取碼」這三個詞彙。</p>
+        <p class="comment">行列輸入法每個字最多只會取 4 個字根來輸入。</p>
+    </section>
+
+    <section>
+        <h2>5. 普通編碼 vs. 特別碼、簡碼</h2>
+        <p>將字拆成一至數個字根，並取其中最多 4 個字根來實際輸入，以這種原理得到字根碼或是鍵位，本站稱之為<u>普通編碼</u>。</p>
+        <p>然而對於常用的字或是符號，行列輸入法提供更簡短的編碼（更少的按鍵數）讓您可以更快速地輸入。分為兩大類：<u>特殊碼</u>以及<u>簡碼</u>。</p>
+        <p><b>特殊碼</b>：按完兩顆行列 30 鍵後按空白鍵完成輸入。</p>
+        <p><b>簡碼</b>：特色是最後透過按一顆數字鍵來完成輸入，且輸入全程不需要空白鍵。又分為一級簡碼和二級簡碼：</p>
+        <p>
+            &emsp;<b>一級簡碼</b>：按完一顆行列 30 鍵後按一顆數字鍵完成輸入。<br>
+            &emsp;<b>二級簡碼</b>：按完兩顆行列 30 鍵後按一顆數字鍵完成輸入。
+        </p>
+        <p>至於普通編碼，它則是按一或多顆行列 30 鍵後，再按一下空白鍵。如果該編碼沒有重碼*，則輸入完成，否則會需要面對重碼的問題。</p>
+        <p class="comment">一個編碼有重碼的意思是，它是不只一個字的普通編碼。</p>
+        <!-- <p>最後這裡以特殊碼與簡碼的幾個數據做為結尾，看過去就好
+        <p class="comment"><br>
+            總共有 398 個字有特殊碼，沒有任何符號有特殊碼。<br>
+            
+            </p> -->        
+    </section>
+    <section>
+        <p>以上就是「行列輸入法基本的五件事」所有內容。您可以休息片刻，但不要忘記繼續閱讀下方的「行列輸入法完整教學」！</p>
+    </section>
+
+    <article>
+        <h1>行列輸入法完整教學</h1>
+        <h5>（請先看過上面行列輸入法基本五件事呦）</h5>
+    </article>
+
+    <section>
+        <h2>基本筆形</h2>
+        <p>行列有 10 個基本筆形，每一個筆形對應到一個數字。</p>
+        <div class="example">            
+            <p>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">一</div>
+                    <div class="w3-col" style="width: 4em;">（橫）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形就像中文字「一」，所以用數字 1 來代表。口訣是「橫 1」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;"> ㇗</div>
+                    <div class="w3-col" style="width: 4em;"> （逆彎）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形就像數字 2 下面逆彎的筆形，所以用數字 2 來代表。口訣是「逆彎 2」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">丨</div>
+                    <div class="w3-col" style="width: 4em;">（直）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形是由上向下的垂直筆形，用數字 3 來代表。口訣是「直 3」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">十</div>
+                    <div class="w3-col" style="width: 4em;">（正交）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形就像數字 4 裡面出現的正交筆形，所以用數字 4 來代表。口訣是「正交 4」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">㇕</div>
+                    <div class="w3-col" style="width: 4em;">（順彎）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形就像數字 5 下面順彎的筆形，所以用數字 5 來代表。口訣是「順彎 5」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">丶</div>
+                    <div class="w3-col" style="width: 4em;">（點）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">中文字「六」的第一個筆畫就是基本筆形「丶（點）」，所以這個基本筆形用數字 6 來代表。口訣是「點 6」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;"><span style="font-family: sans-serif;">ㄇ</span></div>
+                    <div class="w3-col" style="width: 4em;">（蓋）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形就像數字 7 上面蓋子的筆形，所以用數字 7 來代表。口訣是「蓋 7」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">八㇏</div>
+                    <div class="w3-col" style="width: 4em;">（八捺）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">「八」這種由兩個不同方向筆畫構成的基本筆形，最典型的例子就是中文字「八」，所以用數字 8 來代表。而基本筆形「㇏（捺）」就是中文字「八」末筆的筆形，所以也用數字 8 來代表。口訣是「八捺 8」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">㇒</div>
+                    <div class="w3-col" style="width: 4em;">（撇）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">中文字「九」的第一個筆畫就是基本筆形「㇒（撇）」，所以這個基本筆形用數字 9 來代表。口訣是「撇 9」。</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">口</div>
+                    <div class="w3-col" style="width: 4em;">（方框）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">此筆形是一個封閉的筆形，就像是數字 0，所以用數字 0 來代表。口訣是「方框 0」。</div>
+                </div>
+            </p>
+        </div>
+        <p>如果您認真讀完上面基本筆形的說明，您會發現兩件事：</p>
+        <div class="example">
+            <p>第一，嚴格說起來行列輸入法的基本筆形有「11」個才對。「八」這種由兩個不同方向筆畫構成的基本筆形，和「㇏（捺）」當然是兩種不同的筆形，但是因為這兩個基本筆形都用數字 8 來代表，所以大家時常把它們看成一個叫做「八捺」的基本筆形。這就是為什麼說行列輸入法有 10 個基本筆形。</p>
+            <p>第二，其實只有「丨（直）」這個基本筆形對應到數字 3 這件事情需要死記。其它的基本筆形和所對應到的數字，都可以用上面的說明來「理解」，甚至可以說不使用上述提供的口訣也能輕鬆記憶。不過有趣的是，本教學特別點出因為「直 3」沒有好記的方法所以「直 3」這個基本筆形需要特別用「直 3」這個口訣來記之後，您大概也不會忘記「直 3」這個基本筆形了。</p>
+        </div>
+        <p>這十個基本筆形，以數字的角度看變成：</p>
+        <div class="example">
+            <p>
+                1 對應到基本筆形「一（橫）」，因為 1 的中文字就是這個筆形。口訣「橫 1」。<br>
+                2 對應到基本筆形「㇗（逆彎）」，因為 2 的尾端就是這個筆形。口訣「逆彎 2」。<br>
+                3 對應到基本筆形「丨（直）」，您必須特別記憶。口訣「橫 3」<br>
+                4 對應到基本筆形「十（正交）」，因為 4 的裡面就是這個筆形。口訣「正交 4」。<br>
+                5 對應到基本筆形「㇕（順彎）」，因為 5 的尾端就是這個筆形。口訣「順彎 5」。<br>
+                6 對應到基本筆形「丶（點）」，因為 6 的中文字首筆就是這個筆形。口訣「點 6」。<br>
+                7 對應到基本筆形「<span style="font-family: sans-serif;">ㄇ</span>（蓋）」，因為 7 的上面就是這個筆形。口訣「蓋 7」。<br>
+                8 對應到基本筆形「八㇏（八捺）」，因為 8 的中文整個字以及末筆就是這個筆形。口訣「八捺 8」。<br>
+                9 對應到基本筆形「㇒（撇）」，因為 9 的尾端就是這個筆形。口訣「撇 9」。<br>
+                0 對應到基本筆形「口（方框）」，因為 0 形狀像是這個筆形。口訣「方框 0」。<br>
+            </p>
+        </div>
+        <p>以上就是基本筆形的所有說明，可以說是除了「直 3」需要死記，其它都可以透過理解來記憶！下一部分「字根」將要說明字根如何對應到字根碼，是本教學篇幅最長的部分。不過您完全不用擔心，就如同行列的基本筆形，大部分的知識都可以透過理解而學會，很少有需要死記的內容！</p>
+    </section>
+
+    <section>
+        <h2>字根</h2>
+        <p>行列輸入法有許多字根，而在「行列輸入法基本的五件事」中您已經學過每個字根會對應到一個字根碼，以及字根碼是一個二位數字（例如 <span class="root-nb">16</span>、<span class="root-nb">59</span>、<span class="root-nb">08</span> 等），或是一個數字加上連字號 - （例如 <span class="root-nb">2-</span>、<span class="root-nb">6-</span>、<span class="root-nb">0-</span> 等，並且此時字根碼讀做「2 單」、「6 單」「0 單」）。</p>
+        <p>這一部份您將學會字根的字根碼是怎麼來的。依照字根與字根碼的對應方式，行列的字根可以分為三類：<u>基本筆形字根</u>、<u>首尾筆形字根</u>以及<u>特殊歸位字根</u>。以下將依序介紹這三類字根。</p>
+        <p></p>
+        
+        <h3>基本筆形字根</h3>
+        <p>行列輸入法中，有一些字根符合基本筆形的描述或是是基本筆形衍生而來的，稱作「基本筆形字根」。這類字根的字根碼設定為「基本筆形對應的數字」加上「連字號 -」。</p>
+        <p>舉例來說，字根「乚」是基本筆形字根，它符合基本筆形「逆彎 2」的描述，它的字根碼訂為「2-」，讀作「2 單」；字根「艹」是基本筆形字根，由基本筆形「＋：正交 4」衍生出來，它的字根碼訂為「4-」，讀作「4 單」。</p>
+        <p>以下列出所有基本筆形字根，以及它們對應的基本筆形。</p>
+
+        <div class="example">
+            <h2 class="bold-center">基本筆形字根</h2>
+            <p>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">一</div>
+                    <div class="w3-col" style="width: 5em;">（橫 1）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">一㇀</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;"> ㇗</div>
+                    <div class="w3-col" style="width: 5em;"> （逆彎 2）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">乙⺄乚㇗㇛㇙㇂几<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">儿<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖"></div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">丨</div>
+                    <div class="w3-col" style="width: 5em;">（直 3）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">丨丿亅</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">＋</div>
+                    <div class="w3-col" style="width: 5em;">（正交 4）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">十<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫"><img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"><img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"><img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">艹卄廾卅</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">㇕</div>
+                    <div class="w3-col" style="width: 5em;">（順彎 5）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">㇡㇉㇞㇖㇆㇕</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">丶</div>
+                    <div class="w3-col" style="width: 5em;">（點 6）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">丶⺀</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;"><span style="font-family: sans-serif;">ㄇ</span></div>
+                    <div class="w3-col" style="width: 5em;">（蓋 7）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">冂冖⺈<img src="img/array30-root/7-久.png" class="root" alt="行列字根 7-，「久」去掉最末筆畫">刀卩</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">八㇏</div>
+                    <div class="w3-col" style="width: 5em;">（八捺 8）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">八ㄦ<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">人入亻冫<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分"><img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">㇏</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">㇒</div>
+                    <div class="w3-col" style="width: 5em;">（撇 9）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">㇒</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col" style="width: 2em;">口</div>
+                    <div class="w3-col" style="width: 5em;">（方框 0）</div>
+                    <div class="w3-col" style="width: 1em;">：</div>
+                    <div class="w3-rest">口</div>
+                </div>
+            </p>
+        </div>
+        
+        雖然上面列出了所有基本筆形字根，但其中一些字根您第一次看到可能不知道為什麼是基本筆形字根、或是在什麼字會用到它們。於是下面附上了一些說明來幫助您理解。
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">1-</span> 的基本筆形字根全部有：「一㇀」<br>
+                這兩個字根都符合基本筆形「橫 1」，所以歸到基本筆形字根。
+            </p>
+            <p>
+                字根「一」，本身是常用字，還有例如出現在「二」字中。<br>
+                字根「㇀」，筆畫挑，例如出現在「刁」字中。
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">2-</span> 的基本筆形字根全部有：「乙⺄乚㇗㇛㇙㇂几<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">儿<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖">」<br>
+                這些字根全部都因為筆畫最後「逆彎」，符合基本筆形「逆彎 2」，所以歸到基本筆形字根。
+            </p>
+            <p>
+                字根「乙」，本身是常用字，還有例如出現在「乞」字中。<br>
+                字根「⺄」，例如出現在「飛」、「九」等字中。<br>
+                字根「乚」，例如出現在「己」、「也」等字中。<br>
+                字根「㇗」，例如出現在「繼」、「藏」等字中。<br>
+                字根「㇛」，例如出現在「鄉」字中。<br>
+                字根「㇙」，例如出現在「民」、「收」等字中。<br>
+                字根「㇂」，例如出現在「氏」字中。<br>
+                字根「几」，本身是常用字，還有例如出現在「凡」字中。<br>
+                字根「<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">」，例如出現在「投」、「段」等字中。<br>
+                字根「儿」，例如出現在「元」、「兒」字中。<br>
+                字根「<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖">」，例如出現在「沈」、「免」等字中。
+            </p>
+        </div>
+        <p>嗯，沒錯，本教學會把所有基本筆形字根一個一個講過去。您現在不用特別去記任何字根或任何例字，您只要「看過這些字根、看過這些例字」並且「理解為甚麼這個字根對應到這個基本筆形、理解為什麼這個例字有用到這個字根」就好了！</p>
+        <p>我們繼續囉！</p>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">3-</span> 的基本筆形字根全部有：「丨丿亅」<br>
+                這三個字根全部都符合基本筆形「直 3」，所以歸到基本筆形字根。
+            </p>
+            <p>
+                字根「丨」，例如出現在「巾」、「井」、「收」等字中。<br>
+                字根「丿」，例如出現在「卯」、「州」字中。<br>
+                字根「亅」，例如出現在「丁」、「了」、「牙」等字中。<br>
+            </p>
+        </div>          
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">4-</span> 的基本筆形字根全部有：「十<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫"><img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"><img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"><img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">艹卄廾卅」<br>
+            </p>
+            <p>
+
+            </p>
+                字根「十<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"><img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">」，都是基本筆形「正交 4」，所以歸到基本筆形字根。
+                字根「<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫">」，和字根「十」的差別只是直筆尾端有勾起。例如出現在「寸」、「子」、「求」等字中。<br>
+                字根「<img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">」，和字根「十」或「<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫">」的差別只是橫筆是挑。例如出現在「孑」、「孔」、「特」等字中。由例字「特」可以看出直筆尾端是否有勾不重要，而其實這三個字根「十<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"><img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">」的重點就只是正交而已，構成正交的筆劃是否傾斜或彎曲並不重要。（特別區分出<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫">只是因為這個字根實際上是個中文字（罕用字），而特別區分出<img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">只是想強調即使正交的筆劃傾斜或彎曲它仍然是字根碼 4- 的基本筆形字根）<br>
+                字根「<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫"><img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂">艹卄廾卅」，都是由純粹由基本筆形「正交」構成，也可以理解成是基本筆形「正交」衍生出來的，所以歸到基本筆形字根。這些字根重點只是正交，而構成正交的筆劃是否傾斜或彎曲並不重要。<br>
+                字根「<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫">」表示上下兩個正交。例如出現在「奉」、「筆」、「用」、「井」等字中（筆的末三筆、井的前三筆）。<br>
+                字根「<img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂">」表示上中下三個正交，構成正交的筆劃是否傾斜或彎曲並不重要。例如出現在「峰」、「承」、「丰」、「耘」等字中（筆的末三筆、井的前三筆）。<br>
+                字根「卄」和「廾」都表示上下左右兩個正交。如同上面所說，構成正交的筆劃是否傾斜或彎曲並不重要。區分這兩個字根只是因為兩個字根實際上都是中文字。例如出現在「奉」、「筆」、「用」、「井」等字中（筆的末三筆、井的前三筆）。<br>
+                字根「卄」，例如出現在「冊」、「噴」、「倫」等字中。
+                字根「廾」，例如出現在「弊」、「卉」、「開」、「升」等字中。
+                字根「卅」基本上只有「卅」字會用到。
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">5-</span> 的基本筆形字根全部有：「㇡㇉㇞㇖㇆㇕」<br>
+                這些字根全部都因為筆畫最後「順彎」，符合基本筆形「順彎 5」，所以歸到基本筆形字根。
+            </p>
+            <p>
+                字根「㇡」，例如出現在「乃」字中。<br>
+                字根「㇉」，例如出現在「弓」、「姊」、「弟」、「號」等字中。<br>
+                字根「㇞」，例如出現在「吳」字中。<br>
+                字根「㇖」，例如出現在「也」字中。<br>
+                字根「㇆」，例如出現在「局」字中。<br>
+                字根「㇕」，誰告訴我有什麼例子＞＜<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">6-</span> 的基本筆形字根全部有：「丶⺀」<br>
+                這兩個字根都是基本筆形「點 6」，只是一個或兩個點的差別，歸到基本筆形字根。
+            </p>
+            <p>
+                字根「丶」，例如出現在「犬」、「刃」、「班」等字中。<br>
+                字根「⺀」，例如出現在「斗」、「於」等字中。<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">7-</span> 的基本筆形字根全部有：「冂冖⺈<img src="img/array30-root/7-久.png" class="root" alt="行列字根 7-，「久」去掉最末筆畫">刀卩」<br>                
+                這些字根全部都因為形狀像一個蓋字，符合基本筆形「蓋 7」，所以歸到基本筆形字根。
+            </p>
+            <p>
+                字根「冂」，例如出現在「巾」、「丙」、「冊」等字中。「冂」筆畫是否傾斜或彎曲不重要，例如「典」、「用」等字也算使用此字根。<br>
+                字根「冖」，本身是常用部首，例如出現在「冠」字中。。<br>
+                字根「⺈」，例如出現在「你」、「兔」、「龜」等字中。<br>
+                字根「<img src="img/array30-root/7-久.png" class="root" alt="行列字根 7-，「久」去掉最末筆畫">」，例如出現在「久」字中。<br>
+                字根「刀」，本身是常用字，還有例如出現在「刃」、「召」等字中。<br>
+                字根「卩」，本身是常用部首，例如出現在「卻」、「卵」等字中。<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">8-</span> 的基本筆形字根全部有：「八ㄦ<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">人入亻冫<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分"><img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">㇏」<br>
+                字根「八ㄦ<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">人入亻冫<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分"><img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">」全部都符合基本筆形「八 8」，所以歸到基本筆形字根。字根「㇏」則是基本筆形「捺 8」，理所當然也歸到基本筆形字根。
+            </p>
+            <p>
+                字根「八」，本身是常用字，還有例如出現在「只」、「分」、「恭」、「爸」等字中。<br>
+                字根「ㄦ」，例如出現在「匹」、「熱」、「窗」、「俊」等字中。<br>
+                字根「<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">」，例如出現在「漆」字中。<br>
+                字根「人」，本身是常用字，還有例如出現在「丙」字中。<br>
+                字根「入」，本身是常用字，還有例如出現在「兩」字中。<br>
+                字根「亻」，本身是常用部首偏旁，例如出現在「你」字中。<br>
+                字根「冫」，本身是常用部首，還有例如出現在「弱」字中。<br>
+                字根「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">」，例如出現在「旁」、「齊」等字中。<br>
+                字根「<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">」，例如出現在「承」、「飛」、「旅」字中。<br>
+            </p>
+            <p>                
+                字根「㇏」，例如出現在「瓜」、「尺」、「久」等字中。<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">9-</span> 的基本筆形字根僅有：「㇒」。<br>
+                此字根是基本筆形「撇 9」，理所當然歸到基本筆形字根。例如出現在「禾」、「及」、「老」等字中。<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>
+                字根碼為 <span class="root-nb">0-</span> 的基本筆形字根僅有：「口」。<br>
+                此字根是基本筆形「方框 0」，理所當然歸到基本筆形字根。例如出現在「哇」、「足」等字中。<br>
+            </p>
+        </div>
+        <p class="comment">行列輸入法可以算是有一個隱藏版的基本筆形字根「卌」，字根碼是 <span class="root-nb">4-</span>，只使用於罕用字「卌」，所以並不是很重要。</p>
+
+        <p>以上就是基本筆形字根的所有說明，第一次閱讀時千萬不要花心思去硬記這些字根或例字，重點是「看過這些字根與例字」以留下印象，以及「理解為甚麼這個字根對應到這個基本筆形、為什麼這個例字有用到這個字根」，這才是最重要的！</p>
+
+        <div class="example">
+            <p>這裡額外解釋您實際使用基本筆形字根時，可能會遇到的疑惑。<br>如果您是第一次閱讀此教學，建議您<u>跳過這部分，直接往下繼續學習首尾筆形字根</u>，因為此處額外的資訊，可能會造成您的混淆，對第一次學習造成反效果。</p>
+            <p>在行列新手時期，您可能會搞混幾個字根碼為 <span class="root-nb">2-</span> 的基本筆形字根和字根碼為 <span class="root-nb">8-</span> 的基本筆形，這裡特別把它集中在一起說明、比較。它們是字根「几<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">儿<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖">ㄦ」，前四個字根的字根碼是 <span class="root-nb">2-</span> 而最後一個的是 <span class="root-nb">8-</span>。其實前兩個字根沒問題，因為它們本來就不像「八」有兩個分開的筆形。不過不做任何思考，這幾個字根最方便的判斷就是：</p>
+            <p>只要是逆彎，字根碼就是 <span class="root-nb">2-</span>，但是字根「ㄦ」例外歸到字根碼 <span class="root-nb">8-</span>。</p>
+
+            <p>
+                最後，再把前面寫過的例字一起放在這裡，讓您一次比較。<br>
+                字根「几」，本身是常用字，還有例如出現在「凡」字中。<br>
+                字根「<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">」，例如出現在「投」、「段」等字中。<br>
+                字根「儿」，例如出現在「元」、「兒」字中。<br>
+                字根「<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖">」，例如出現在「沈」、「免」等字中。<br>
+                字根「ㄦ」，例如出現在「匹」、「熱」、「窗」、「俊」等字中。
+            </p>
+        </div>
+
+        <h3>首尾筆形字根</h3>
+        <p>現在要來介紹「首尾筆形字根」。行列輸入法大多數的字根都是「首尾筆形字根」，這類字根的字根碼是依據書寫字根時的「首筆形」和「尾筆形」得出來二位數字，所以🤩<b>不需死記</b>🤩就能知道字根碼。</p>
+        <p>由於首尾筆形字根數量相當多，以下僅列出並說明一部份的首尾筆形字根。本站的<a href="/array30root.html" target="_blank">字根表</a>有完整列出所有字根，絕對是您之後學習行列的好夥伴！不過現在您不必急著研究這本站的字根表頁面，因為本行列教學設計成您不需要先具備任何知識，也不需要在閱讀此教學的過程去網路上或是別的網頁中搜尋資料，就能夠順暢且不帶疑惑地從頭讀到尾！</p>
+        <p class="comment">看了行列的字根表，不必被行列的字根數量嚇到！因為大多數的字根都是科學地編碼（首尾筆形字根），而且拆字也是科學地拆字。易學、幾乎不用死記，這就是行列輸入法地特色！</p>
+
+        <p>我們首先來看一些本身就是常見中文字的首尾筆形字根。</p>
+        <div class="example">
+            <p>先來看 10 個字根：</p>
+            <p>                
+                字根「七」的首筆形是「一：橫 1」，尾筆形是「㇗：逆彎 2」，所以字根碼是 <span class="root-nb">12</span>。<br>
+                字根「女」的首筆形是「㇛：逆彎 2」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">21</span>。<br>
+                字根「小」的首筆形是「丨：直 3」，尾筆形是「八：八 8」，所以字根碼是 <span class="root-nb">38</span>。<br>
+                字根「土」的首筆形是「十：正交 4」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">41</span>。<br>
+                字根「力」的首筆形是「㇆：順彎 5」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">59</span>。<br>
+                字根「心」的首筆形是「丶：點 6」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">66</span>。<br>
+                字根「月」的首筆形是「冂：蓋 7」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">71</span>。<br>
+                字根「金」的首筆形是「<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">：八 8」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">81</span>。<br>
+                字根「身」的首筆形是「㇒：撇 9」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">99</span>。<br>
+                字根「虫」的首筆形是「口：方框 0」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">06</span>。
+            </p>
+            <p>了解首尾筆形字根的原理了嗎？再來看 10 個字根：</p>
+            <p>
+                字根「匕」的首筆形是「一：橫 1」，尾筆形是「乚：逆彎 2」，所以字根碼是 <span class="root-nb">12</span>。<br>
+                字根「車」的首筆形是「一：橫 1」，尾筆形是「十：正交 4」，所以字根碼是 <span class="root-nb">14</span>。<br>
+                字根「夫」的首筆形是「一：橫 1」，尾筆形是「人：八 8」，所以字根碼是 <span class="root-nb">18</span>。<br>
+                字根「水」的首筆形是「亅：直 3」，尾筆形是「㇏：捺 8」或「<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">：八 8」，所以字根碼是 <span class="root-nb">38</span>。<br>
+                字根「廿」的首筆形是「十：正交 4」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">41</span>。<br>
+                字根「木」的首筆形是「十：正交 4」，尾筆形是「八：八 8」，所以字根碼是 <span class="root-nb">48</span>。<br>
+                字根「立」的首筆形是「丶：點 6」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">61</span>。<br>
+                字根「日」的首筆形是「囗：方框 0」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">01</span>。<br>
+                字根「曰」的首筆形是「囗：方框 0」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">01</span>。<br>
+                字根「田」的首筆形是「囗：方框 0」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">01</span>。
+            </p>
+            <p>想必您已經了解首尾筆形字根是怎麼取字根碼的，這邊是另外 10 個例子，試試看您是不是自己能夠得出它們字根碼：</p>
+            <p>
+                字根「工」的首筆形是「一：橫 1」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">11</span>。<br>
+                字根「不」的首筆形是「一：橫 1」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">16</span>。<br>
+                字根「糸」的首筆形是「㇛：逆彎 2」，尾筆形是「八：八 8」，所以字根碼是 <span class="root-nb">28</span>。<br>
+                字根「片」的首筆形是「丿：直 3」，尾筆形是「㇕：順彎 5」，所以字根碼是 <span class="root-nb">35</span>。<br>
+                字根「士」的首筆形是「十：正交 4」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">41</span>。<br>
+                字根「又」的首筆形是「フ：順彎 5」，尾筆形是「㇏：捺 8」，所以字根碼是 <span class="root-nb">58</span>。<br>
+                字根「言」的首筆形是「丶：點 6」，尾筆形是「口：方框 0」，所以字根碼是 <span class="root-nb">60</span>。<br>
+                字根「之」的首筆形是「丶：點 6」，尾筆形是「㇏：捺 8」，所以字根碼是 <span class="root-nb">68</span>。<br>
+                字根「皿」的首筆形是「ㄇ：蓋 7」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">71</span>。<br>
+                字根「斤」的首筆形是「㇒：撇 9」，尾筆形是「丨：直 3」，所以字根碼是 <span class="root-nb">93</span>。
+            </p>
+            <p>最後再給您幾個首尾筆形字根，一樣讓您更熟悉取字根碼的原理：</p>
+            <p>
+                字根「大」的首筆形是「一：橫 1」，尾筆形是「人：八 8」，所以字根碼是 <span class="root-nb">18</span>。<br>
+                字根「雨」的首筆形是「一：橫 1」，尾筆形是「<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">：八 8」，所以字根碼是 <span class="root-nb">18</span>。<br>
+                字根「止」的首筆形是「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">31</span>。<br>
+                字根「卜」的首筆形是「丨：直 3」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">36</span>。<br>
+                字根「方」的首筆形是「丶：點 6」，尾筆形是「㇆：順彎 5」，所以字根碼是 <span class="root-nb">65</span>。<br>  
+                字根「夕」的首筆形是「ク：蓋 7」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">76</span>。<br>
+                字根「半」的首筆形是「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">：八 8」，尾筆形是「十：正交 4」，所以字根碼是 <span class="root-nb">84</span>。<br>
+                字根「火」的首筆形是「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">：八 8」，尾筆形是「人：八 8」，所以字根碼是 <span class="root-nb">88</span>。<br>
+                字根「米」的首筆形是「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">：八 8」，尾筆形是「八：八 8」，所以字根碼是 <span class="root-nb">88</span>。<br>
+                字根「臼」的首筆形是「㇒：撇 9」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">91</span>。<br>
+                字根「手」的首筆形是「㇒：撇 9」，尾筆形是「<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫">：正交 4」，所以字根碼是 <span class="root-nb">94</span>。<br>
+                字根「四」的首筆形是「口：方框 0」，尾筆形是「ㄦ：八 8」，所以字根碼是 <span class="root-nb">08</span>。
+            </p>
+            <p>
+                字根「風」也是首尾筆形字根，它的首筆形要看作「𠘨：逆彎 2」。當然，它的尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">26</span>。<br>
+                另外，有個罕用的中文字「<img src="img/array30-root/98乑.png" class="root" alt="行列字根 98，「乑」">」也是一個首尾筆形字根。它的首筆形是「㇒：撇 9」，尾筆形是「<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">：八 8」，所以字根碼是 <span class="root-nb">98</span>。            
+            </p> 
+        </div>
+        <p>閱讀完上面的首尾筆形字根範例，您基本上已經完全理解首尾筆形字根的原理了。這裡再列出一些一樣也是中文字、但比較少見或通常作為偏旁出現的首尾筆形字根。</p>
+        <div class="example">
+            <p>
+                字根「匚」的首筆形是「一：橫 1」，尾筆形是「㇗：逆彎 2」，所以字根碼是 <span class="root-nb">12</span>。<br>
+                字根「镸」的首筆形是「一：橫 1」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">16</span>。<br>
+                字根「ㄠ」的首筆形是「㇛：逆彎 2」，尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">26</span>。<br>
+                字根「爿」的首筆形是「㇗：逆彎 2」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">29</span>。<br>
+                字根「虍」的首筆形是「丨：直 3」，尾筆形是「㇗：逆彎 2」，所以字根碼是 <span class="root-nb">32</span>。<br>
+                字根「刂」的首筆形是「丨：直 3」，尾筆形是「亅：直 3」，所以字根碼是 <span class="root-nb">33</span>。<br>
+                字根「阝」的首筆形是「㇖：順彎 5」，尾筆形是「丨：直 3」，所以字根碼是 <span class="root-nb">53</span>。<br>
+                字根「尸」的首筆形是「㇕：順彎 5」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">59</span>。<br>
+                字根「亠」的首筆形是「丶：點 6」，尾筆形是「一：橫 1」，所以字根碼是 <span class="root-nb">61</span>。<br>
+                字根「<img src="img/array30-root/66忄.png" class="root" alt="行列字根 66，「忄」">」的首筆形是「ˊ：點 6」（不是「㇒：撇 9」），尾筆形是「丶：點 6」，所以字根碼是 <span class="root-nb">66</span>。<br>
+                字根「宀」的首筆形是「丶：點 6」，尾筆形是「冖：蓋 7」，所以字根碼是 <span class="root-nb">67</span>。<br>
+                字根「辶」的首筆形是「丶：點 6」，尾筆形是「㇏：捺 8」，所以字根碼是 <span class="root-nb">68</span>。<br>
+                字根「广」的首筆形是「丶：點 6」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">69</span>。<br>
+                字根「<img src="img/array30-root/88㡀.png" class="root" alt="行列字根 88，「敝」左半部">」的首筆形是「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">：八 8」，尾筆形是「八：八 8」，所以字根碼是 <span class="root-nb">88</span>。<br>
+                字根「气」的首筆形是「㇒：撇 9」，尾筆形是「⺄：逆彎 2」，所以字根碼是 <span class="root-nb">92</span>。<br>
+                字根「勹」的首筆形是「㇒：撇 9」，尾筆形是「㇆：順彎 5」，所以字根碼是 <span class="root-nb">95</span>。<br>
+                字根「彳」的首筆形是「㇒：撇 9」，尾筆形是「亻：八 8」，所以字根碼是 <span class="root-nb">98</span>。<br>            
+                字根「攵」的首筆形是「㇒：撇 9」，尾筆形是「㇏：捺 8」，所以字根碼是 <span class="root-nb">98</span>。<br>
+                字根「豸」的首筆形是「㇒：撇 9」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">99</span>。<br>
+                字根「<img src="img/array30-root/99犭.png" class="root" alt="行列字根 99，「犭」">」的首筆形是「㇒：撇 9」，尾筆形是「㇒：撇 9」，所以字根碼是 <span class="root-nb">99</span>。<br>
+            </p>            
+        </div>
+
+        <p>看完上面一些本身是常用中文字或部首偏旁的首尾筆形字根後，我們繼續來看一些「時常只是字的一部份，但您一看就可以想到在哪些中文字會出現」的首尾筆形字根。相信您已經完全了解字根碼的原理了，下面就直接寫出首尾筆形字根的字根碼，而不說明過程。</p>
+
+        <div class="example">
+            <p>
+                字根「<img src="img/array30-root/11長.png" class="root" alt="行列字根 11，「長」去掉最末三筆畫">」，字根碼為 <span class="root-nb">11</span>。例如它出現在「長」字中。<br>
+                字根「<img src="img/array30-root/11龍.png" class="root" alt="行列字根 11，「龍」右半部">」，字根碼為 <span class="root-nb">11</span>。例如它出現在「龍」字中。<br>
+                字根「<img src="img/array30-root/12瓦.png" class="root" alt="行列字根 12，「瓦」去掉點">」，字根碼為 <span class="root-nb">12</span>。例如它出現在「瓦」字中。<br>
+                字根「<img src="img/array30-root/14甫.png" class="root" alt="行列字根 14，「甫」去掉點">」，字根碼為 <span class="root-nb">14</span>。例如它出現在「甫」字中。<br>
+                字根「<img src="img/array30-root/14曹.png" class="root" alt="行列字根 14，「曹」去掉日">」，字根碼為 <span class="root-nb">14</span>。例如它出現在「曹」字中。<br>                
+                字根「<img src="img/array30-root/16惠.png" class="root" alt="行列字根 16，「惠」去掉心">」，字根碼為 <span class="root-nb">16</span>。例如它出現在「惠」、「專」等字字中。<br>
+                字根「ㄊ」，字根碼為 <span class="root-nb">16</span>。例如它出現在「充」、「育」等字中。<br>
+                字根「<img src="img/array30-root/18春.png" class="root" alt="行列字根 18，「春」去掉日">」，字根碼為 <span class="root-nb">18</span>。例如它出現在「春」、「秦」等字中。<br>
+                字根「<img src="img/array30-root/19與.png" class="root" alt="行列字根 19，「與」上半部中間">」，字根碼為 <span class="root-nb">19</span>。例如它出現在「與」字中。<br>
+                字根「彑」，字根碼為 <span class="root-nb">21</span>。例如它出現在「互」、「彙」等字中。<br>
+                字根「<img src="img/array30-root/22巛.png" class="root" alt="行列字根 22，「巛」">」，字根碼為 <span class="root-nb">22</span>。例如它出現在「巡」、「巢」、「蠟」等字中。<br>
+                字根「<img src="img/array30-root/22鼠.png" class="root" alt="行列字根 22，「鼠」下半部">」，字根碼為 <span class="root-nb">22</span>。例如它出現在「鼠」、「蠟」字中。<br>
+                字根「<img src="img/array30-root/22巜.png" class="root" alt="行列字根 22，「巜」">」，字根碼為 <span class="root-nb">22</span>。例如它出現在波光粼粼的「粼」字中。<br>
+                字根「<img src="img/array30-root/25母.png" class="root" alt="行列字根 25，「母」前兩筆畫">」，字根碼為 <span class="root-nb">25</span>。例如它出現在「母」字中。<br>
+                字根「厶」，字根碼為 <span class="root-nb">26</span>。例如它出現在「私」、「云」、「允」等字中。<br>                
+                字根「<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線">」，字根碼為 <span class="root-nb">26</span>。例如它出現在「戈」、「我」、「或」等字中。<br>
+                字根「<img src="img/array30-root/26弋.png" class="root" alt="行列字根 26，「弋」去掉橫線">」，字根碼為 <span class="root-nb">26</span>。例如它出現在「弋」、「代」等字中。<br>
+                字根「<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫">」，字根碼為 <span class="root-nb">28</span>。例如它出現在「長」、「衣」、「食」等字中。<br>
+                字根「<img src="img/array30-root/29戈.png" class="root" alt="行列字根 29，「戈」去掉橫線再去掉點">」，字根碼為 <span class="root-nb">29</span>。例如它出現在「洩」、「跩」等字中。<br>                
+                字根「<img src="img/array30-root/31北.png" class="root" alt="行列字根 31，「北」左半邊">」，字根碼為 <span class="root-nb">31</span>。例如它出現在「北」、「乘」等字中。<br>
+                字根「<img src="img/array30-root/31非左.png" class="root" alt="行列字根 31，「非」左半邊">」，字根碼為 <span class="root-nb">31</span>。例如它出現在「非」、「排」等字中。<br>
+                字根「<img src="img/array30-root/31非右.png" class="root" alt="行列字根 31，「非」右半邊">」，字根碼為 <span class="root-nb">31</span>。例如它出現在「非」、「悲」等字中。<br>                
+                字根「<img src="img/array30-root/33淵.png" class="root" alt="行列字根 33，「淵」右半邊">」，字根碼為 <span class="root-nb">33</span>。例如它出現在「淵」、「肅」等字中。<br>
+                字根「<img src="img/array30-root/33亞.png" class="root" alt="行列字根 33，「亞」去掉上下兩橫線">」，字根碼為 <span class="root-nb">33</span>。例如它出現在「亞」、「壺」等字中。<br>                
+                字根「<img src="img/array30-root/35凹.png" class="root" alt="行列字根 35，「凹」去掉底部橫線">」，字根碼為 <span class="root-nb">35</span>。例如它出現在「凹」、「雋」等字中。<br>
+                字根「<img src="img/array30-root/35凸.png" class="root" alt="行列字根 35，「凸」去掉底部橫線">」，字根碼為 <span class="root-nb">35</span>。例如它出現在「凸」字中。<br>
+                字根「⺗」，字根碼為 <span class="root-nb">36</span>。例如它出現在「恭」、「添」等字中。<br>
+                字根「氺」，字根碼為 <span class="root-nb">38</span>。例如它出現在「泰」、「漆」等字中。<br>
+                字根「⺌」，字根碼為 <span class="root-nb">38</span>。例如它出現在「當」、「常」、「肖」等字中。<br>
+                字根「<img src="img/array30-root/38龰.png" class="root" alt="行列字根 38，「龰」">」，字根碼為 <span class="root-nb">38</span>。例如它出現在「走」、「定」等字中。<br>
+                字根「<img src="img/array30-root/39步.png" class="root" alt="行列字根 39，「步」去掉止">」，字根碼為 <span class="root-nb">39</span>。例如它出現在「步」、「少」等字中。<br>
+                字根「<img src="img/array30-root/40革.png" class="root" alt="行列字根 40，「革」去掉最末兩筆畫">」，字根碼為 <span class="root-nb">40</span>。例如它出現在「革」、「難」等字中。<br>
+                字根「<img src="img/array30-root/41黃.png" class="root" alt="行列字根 41，「黃」田上面的部分">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「黃」字中。<br>                
+                字根「<img src="img/array30-root/41其.png" class="root" alt="行列字根 41，「其」去掉末三筆畫">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「其」、「基」等字中。<br>
+                字根「<img src="img/array30-root/41冓.png" class="root" alt="行列字根 41，「冓」上半部">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「講」講」字中。<br>
+                字根「<img src="img/array30-root/42帶.png" class="root" alt="行列字根 42，「帶」冖上面">」，字根碼為 <span class="root-nb">42</span>。例如它出現在「帶」等字中。<br>
+                字根「<img src="img/array30-root/47壺.png" class="root" alt="行列字根 47，「壺」只保留士和冖">」，字根碼為 <span class="root-nb">47</span>。例如它出現在「壺」、「壹」、「殼」等字中。<br>
+                字根「<img src="img/array30-root/48沭.png" class="root" alt="行列字根 48，「述」去掉辶再去掉點">」，字根碼為 <span class="root-nb">48</span>。例如它出現在「述」、「術」等字中。<br>
+                字根「<img src="img/array30-root/53皮.png" class="root" alt="行列字根 53，「皮」去掉又">」，字根碼為 <span class="root-nb">53</span>。例如它出現在「皮」字中。<br>
+                字根「<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目">」，字根碼為 <span class="root-nb">55</span>。例如它出現在「鼎」字中。<br>
+                字根「<img src="img/array30-root/56即.png" class="root" alt="行列字根 56，「即」左半邊">」，字根碼為 <span class="root-nb">56</span>。例如它出現在「即」、「餓」等字中。<br>
+                字根「マ」，字根碼為 <span class="root-nb">56</span>。例如它出現在「令」、「予」等字中。<br>
+                字根「<img src="img/array30-root/58永.png" class="root" alt="行列字根 58，「永」去掉第一筆畫">」，字根碼為 <span class="root-nb">58</span>。例如它出現在「永」字中。<br>
+                字根「癶」，字根碼為 <span class="root-nb">58</span>。例如它出現在「發」字中。<br>
+                字根「<img src="img/array30-root/58羽.png" class="root" alt="行列字根 58，「羽」左半邊">」，字根碼為 <span class="root-nb">58</span>。例如它出現在「羽」字中。<br>                
+                字根「<img src="img/array30-root/59眉.png" class="root" alt="行列字根 59，「眉」去掉目">」，字根碼為 <span class="root-nb">59</span>。例如它出現在「眉」、「聲」等字中。<br>
+                字根「<img src="img/array30-root/60贏.png" class="root" alt="行列字根 60，「贏」只保留亡和口">」，字根碼為 <span class="root-nb">60</span>。例如它出現在「贏」字中。<br>
+                字根「<img src="img/array30-root/61隹.png" class="root" alt="行列字根 61，「隹」去掉亻">」，字根碼為 <span class="root-nb">61</span>。例如它出現在「隹」、「誰」、「隻」等字中。<br>                
+                字根「<img src="img/array30-root/63神.png" class="root" alt="行列字根 63，「礻」去掉最後一筆劃">」，字根碼為 <span class="root-nb">63</span>。例如它出現在u「礻」、「衤」等字中。<br>
+                字根「<img src="img/array30-root/69產.png" class="root" alt="行列字根 69，「產」去掉生">」，字根碼為 <span class="root-nb">69</span>。例如它出現在「產」字中。<br>
+                字根「<img src="img/array30-root/71直.png" class="root" alt="行列字根 71，「直」去掉十再去掉底部橫線" title="行列字根 71，「直」去掉十再去掉底部橫線">」，字根碼為 <span class="root-nb">71</span>。例如它出現在「直」、「縣」等字中。<br>
+                字根「<img src="img/array30-root/71且.png" class="root" alt="行列字根 71，「且」去掉底部橫線">」，字根碼為 <span class="root-nb">71</span>。例如它出現在「且」字中。<br>
+                字根「<img src="img/array30-root/74魚.png" class="root" alt="行列字根 74，「魚」去掉四點">」，字根碼為 <span class="root-nb">74</span>。例如它出現在「魚」字中。<br>
+                字根「<img src="img/array30-root/76祭.png" class="root" alt="行列字根 76，「炙」去掉火">」，字根碼為 <span class="root-nb">76</span>。例如它出現在「炙」字中。<br>                
+                字根「禸」，字根碼為 <span class="root-nb">76</span>。例如它出現在「偶」、「禹」等字中。<br>
+                字根「<img src="img/array30-root/76舟.png" class="root" alt="行列字根 76，「舟」去掉第一筆畫">」，字根碼為 <span class="root-nb">76</span>。例如它出現在「舟」字中。<br>
+                字根「<img src="img/array30-root/78祭.png" class="root" alt="行列字根 78，「祭」去掉示">」，字根碼為 <span class="root-nb">78</span>。例如它出現在「祭」字中。<br>
+                字根「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口">」，字根碼為 <span class="root-nb">81</span>。例如它出現在「合」、「食」、「會」等字中。<br>
+                字根「<img src="img/array30-root/83齒.png" class="root" alt="行列字根 83，「齒」去掉止">」，字根碼為 <span class="root-nb">83</span>。例如它出現在「齒」等字中。<br>
+                字根「<img src="img/array30-root/91段.png" class="root" alt="行列字根 91，「段」左半部">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「段」字中。<br>
+                字根「<img src="img/array30-root/91告.png" class="root" alt="行列字根 91，「告」去掉口">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「告」、「先」等字中。<br>                
+                字根「<img src="img/array30-root/91微.png" class="root" alt="行列字根 91，「微」保留彳山一">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「微」、「徵」等字中。<br>
+                字根「<img src="img/array30-root/92鬼.png" class="root" alt="行列字根 92，「鬼」去掉厶">」，字根碼為 <span class="root-nb">92</span>。例如它出現在「鬼」字中。<br>
+                字根「<img src="img/array30-root/92流.png" class="root" alt="行列字根 92，「流」右下部分">」，字根碼為 <span class="root-nb">92</span>。例如它出現在「流」字中。<br>
+                字根「<img src="img/array30-root/93丘.png" class="root" alt="行列字根 93，「丘」去掉底部橫線">」，字根碼為 <span class="root-nb">93</span>。例如它出現在「丘」、「兵」等字中。<br>
+                字根「<img src="img/array30-root/94拜.png" class="root" alt="行列字根 94，「拜」左半部">」，字根碼為 <span class="root-nb">94</span>。例如它出現在「拜」字中。<br>
+                字根「<img src="img/array30-root/95鳥.png" class="root" alt="行列字根 95，「鳥」去掉四點">」，字根碼為 <span class="root-nb">95</span>。例如它出現在「鳥」字中。<br>
+                字根「<img src="img/array30-root/95烏.png" class="root" alt="行列字根 95，「烏」去掉四點">」，字根碼為 <span class="root-nb">95</span>。例如它出現在「烏」字中。<br>                
+                字根「<img src="img/array30-root/98豕.png" class="root" alt="行列字根 98，「豕」去掉第一筆畫">」，字根碼為 <span class="root-nb">98</span>。例如它出現在「豕」字中。<br>
+                字根「爫」，字根碼為 <span class="root-nb">99</span>。例如它出現在「采」、「愛」等字中。<br>
+                字根「⺁」，字根碼為 <span class="root-nb">99</span>。例如它出現在「瓜」、「爪」、「盾」等字中。<br>
+                字根「彡」，字根碼為 <span class="root-nb">99</span>。例如它出現在「髮」、「顏」、「彩」等字中。<br>
+                字根「<img src="img/array30-root/01酉.png" class="root" alt="行列字根 01，「酉」去掉第一筆畫">」，字根碼為 <span class="root-nb">01</span>。例如它出現在「酉」、「醒」等字中。<br>
+                字根「<img src="img/array30-root/01黑.png" class="root" alt="行列字根 01，「黑」去掉下面四點">」，字根碼為 <span class="root-nb">01</span>。例如它出現在「黑」字中。<br>
+                字根「<img src="img/array30-root/08西.png" class="root" alt="行列字根 08，「西」去掉第一筆畫">」，字根碼為 <span class="root-nb">08</span>。例如它出現在「西」字中。<br>
+            </p>
+        </div>
+        
+        <p>上面看到的首尾筆形字根都是看到大概就能想到實際應用例子的字根。現在舉一些沒有解說的話，您可能第一次看會不知道用在哪裡的首尾筆形字根，或是出現在字裡的方式有可能是您直覺不會想到的字根。
+        
+        <div class="example">
+            <p>
+                字根「<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫">」，字根碼為 <span class="root-nb">10</span>。例如它出現在「可」、「或」、「事」、「豆」等字中。<br> 
+                字根「<img src="img/array30-root/12毛.png" class="root" alt="行列字根 12，「毛」去掉第一筆畫">」，字根碼為 <span class="root-nb">12</span>。例如它出現在「毛」字中。<br>
+                字根「<img src="img/array30-root/12越.png" class="root" alt="行列字根 12，「戉」前兩筆畫">」，字根碼為 <span class="root-nb">12</span>。例如它出現在「越」字中。<br>
+                字根「<img src="img/array30-root/13韋.png" class="root" alt="行列字根 13，「韋」口下面的部分">」，字根碼為 <span class="root-nb">13</span>。例如它出現在「韋」、「舛」等字中。<br>
+                字根「<img src="img/array30-root/14年.png" class="root" alt="行列字根 14，「年」去掉前兩筆畫">」，字根碼為 <span class="root-nb">14</span>。例如它出現在「年」字中。<br>
+                字根「<img src="img/array30-root/16母.png" class="root" alt="行列字根 16，「母」去掉前兩筆畫">」，字根碼為 <span class="root-nb">16</span>。例如它出現在「母」字中。<br>
+                字根「厂」，字根碼為 <span class="root-nb">19</span>。例如它出現在「雁」、「反」、「成」、「藏」等字中。<br>
+                字根「<img src="img/array30-root/19尤.png" class="root" alt="行列字根 19，「尤」前兩筆畫">」，字根碼為 <span class="root-nb">19</span>。例如它出現在「在」、「尤」、「拔」等字中。<br>
+                字根「<img src="img/array30-root/19看.png" class="root" alt="行列字根 19，「看」去掉第一筆畫再去掉目">」，字根碼為 <span class="root-nb">19</span>。例如它出現在「看」字中。<br>
+                字根「丱」，字根碼為 <span class="root-nb">21</span>。例如它出現在「聯」、「關」等字中。<br>
+                字根「<img src="img/array30-root/26瓜.png" class="root" alt="行列字根 26，「瓜」第三四筆畫">」，字根碼為 <span class="root-nb">26</span>。例如它出現在「以」字簡體寫法、「瓜」字中。<br>                
+                字根「<img src="img/array30-root/29亥.png" class="root" alt="行列字根 29，「亥」第三四筆畫">」，字根碼為 <span class="root-nb">29</span>。例如它出現在「亥」、「鄉」等字中。<br>                
+                字根「⺊」，字根碼為 <span class="root-nb">31</span>。例如它出現在「上」、「占」、「鹵」等字中。<br>
+                字根「<img src="img/array30-root/31乍.png" class="root" alt="行列字根 31，「乍」去掉前兩筆畫">」，字根碼為 <span class="root-nb">32</span>。例如它出現在「乍」字中。<br>  
+                字根「<img src="img/array30-root/33介.png" class="root" alt="行列字根 33，「介」去掉前兩筆畫">」，字根碼為 <span class="root-nb">33</span>。例如它出現在「介」、「川」等字中。<br>
+                字根「<img src="img/array30-root/33而.png" class="root" alt="行列字根 33，「而」下半部中間兩直線">」，字根碼為 <span class="root-nb">33</span>。例如它出現在「而」字中。<br>
+                字根「<img src="img/array30-root/38並.png" class="root" alt="行列字根 38，「業」最初四筆畫">」，字根碼為 <span class="root-nb">38</span>。例如它出現在「並」、「業」等字中。<br>
+                字根「<img src="img/array30-root/38亦.png" class="root" alt="行列字根 38，「亦」去掉亠">」，字根碼為 <span class="root-nb">38</span>。例如它出現在「亦」、「兼」等字中。<br>
+                字根「<img src="img/array30-root/38眔.png" class="root" alt="行列字根 38，「眔」去掉罒">」，字根碼為 <span class="root-nb">38</span>。例如它出現在罕用字「眔」中。<br>                
+                字根「<img src="img/array30-root/41青.png" class="root" alt="行列字根 41，「青」去掉月">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「青」、「害」等字中。<br>
+                字根「<img src="img/array30-root/41共.png" class="root" alt="行列字根 41，「共」去掉兩點">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「共」、「恭」、「典」等字中。<br>
+                字根「<img src="img/array30-root/41無.png" class="root" alt="行列字根 41，「無」去掉最初兩筆畫和下面四點">」，字根碼為 <span class="root-nb">41</span>。例如它出現在「無」字中。<br>
+                字根「<img src="img/array30-root/51尹.png" class="root" alt="行列字根 51，「尹」去掉最末一筆劃">」，字根碼為 <span class="root-nb">51</span>。例如它出現在「雪」、「書」、「兼」等字中。<br>
+                字根「彐」，字根碼為 <span class="root-nb">51</span>。例如它出現在「良」字中。<br>
+                字根「<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」">」，字根碼為 <span class="root-nb">51</span>。例如它出現在「假」的右上方、「巴」、「弓」、「臣」、「包」等字中。<br>
+                字根「<img src="img/array30-root/51夬.png" class="root" alt="行列字根 51，「夬」前兩筆畫">」，字根碼為 <span class="root-nb">51</span>。例如它出現在「候」、「快」等字中。<br>
+                字根「𫝀」，字根碼為 <span class="root-nb">51</span>。例如它出現在「韋」、「五」等字中。<br>
+                字根「廴」，字根碼為 <span class="root-nb">58</span>。例如它出現在「延」、「及」等字中。<br>
+                字根「<img src="img/array30-root/61鹿.png" class="root" alt="行列字根 61，「鹿」去掉比">」，字根碼為 <span class="root-nb">61</span>。例如它出現在「鹿」、「慶」等字中。<br>    
+                字根「<img src="img/array30-root/77冎.png" class="root" alt="行列字根 77，「冎」">」，字根碼為 <span class="root-nb">77</span>。例如它出現在「過」、「骨」、「體」等字中。<br>
+                字根「<img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」">」，字根碼為 <span class="root-nb">81</span>。例如它出現在「前」、「並」、「羊」、「養」、「豆」、「幸」、「業」、「達」等字中。<br>
+                字根「<img src="img/array30-root/84平.png" class="root" alt="行列字根 84，「平」去掉第一筆畫">」，字根碼為 <span class="root-nb">84</span>。例如它出現在「平」字中。<br>
+                字根「<img src="img/array30-root/84乎.png" class="root" alt="行列字根 84，「乎」去掉第一筆畫">」，字根碼為 <span class="root-nb">84</span>。例如它出現在「乎」字中。<br>
+                字根「<img src="img/array30-root/88求.png" class="root" alt="行列字根 88，「求」第三到六筆畫">」，字根碼為 <span class="root-nb">88</span>。例如它出現在「求」、「兆」、「率」等字中。<br>                
+                字根「𦥑」，字根碼為 <span class="root-nb">91</span>。例如它出現在「叟」、「搜」等字中。<br>
+                字根「<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「學」、「興」等字中。<br>
+                字根「<img src="img/array30-root/91印.png" class="root" alt="行列字根 91，「印」左半部">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「印」等字中。<br>
+                字根「<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「乞」、「每」、「旅」、「牛」、「特」、「生」、「年」、「乍」、「缺」等字中。<br>
+                字根「<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰">」，字根碼為 <span class="root-nb">91</span>。例如它出現在「重」字中。<br>
+                字根「<img src="img/array30-root/92氏.png" class="root" alt="行列字根 92，「氏」最初兩筆畫">」，字根碼為 <span class="root-nb"></span>。例如它出現在「迎」、「卵」、「留」、「劉」、「氏」、「旅」等字中。<br>
+                字根「<img src="img/array30-root/95方.png" class="root" alt="行列字根 95，「沒」右上方部分">」，字根碼為 <span class="root-nb">95</span>。例如它出現在「沒」字中。<br>
+                字根「乂」，字根碼為 <span class="root-nb">98</span>。例如它出現在「父」、「爽」、「學」、「龜」等字中。<br>
+                字根「<img src="img/array30-root/99勿.png" class="root" alt="行列字根 99，「勿」去掉前兩筆畫">」，字根碼為 <span class="root-nb">99</span>。例如它出現在「勿」字中。<br>
+                字根「<img src="img/array30-root/01婁.png" class="root" alt="行列字根 01，「曰」但中間橫線有凸出兩邊">」，字根碼為 <span class="root-nb">01</span>。例如它出現在「婁」字中。<br>
+                字根「<img src="img/array30-root/03串.png" class="root" alt="行列字根 03，「罒」但中間只有一條豎線">」，字根碼為 <span class="root-nb">03</span>。例如它出現在「象」字中。<br>
+                字根「<img src="img/array30-root/08溫.png" class="root" alt="行列字根 08，「溫」右上部分">」，字根碼為 <span class="root-nb">08</span>。例如它出現在「溫」、「蠟」等字中。<br>
+                字根「<img src="img/array30-root/08曾.png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日">」，字根碼為 <span class="root-nb">08</span>。例如它出現在「會」、「曾」等字中。<br>
+                字根「<img src="img/array30-root/08曾(1).png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日再去掉中間豎線">」，字根碼為 <span class="root-nb">08</span>。例如它出現在「柬」、「練」等字中。<br>
+            </p>            
+        </div>
+        <p class="comment">行列輸入法可以算是有一個隱藏版的首尾筆形字根「乡」，字根碼是 <span class="root-nb">29</span>，例如出現在「鄉」字中。不過以行列輸入法的設計，「乡」應該拆成「㇛ <span class="root-nb">2-</span>、<img src="img/array30-root/29亥.png" class="root" alt="行列字根 29，「亥」第三四筆畫">  <span class="root-nb">29</span>」才對。</p>
+        <p>最後，我們要來看一些首筆形要稍加注意的首尾筆形字根。</p>
+        <p>下面這四個首尾筆形字根的首筆形都是「丨：直 3」，這是行列字根法設計之初的標準筆順，可能與現今標準筆順不同、或是和個人書寫習慣不同。</p>
+
+        
+        <div class="example">
+            <p>
+                字根「門」，首筆形這裡取「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼為 <span class="root-nb">31</span>。<br>
+                字根「<img src="img/array30-root/31假.png" class="root" alt="行列字根 31，「假」中間部分">」，首筆形這裡取「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼為 <span class="root-nb">31</span>。例如它出現在「假」字中。<br>
+                字根「<img src="img/array30-root/31官.png" class="root" alt="行列字根 31，「官」去掉宀">」，首筆形這裡取「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼為 <span class="root-nb">31</span>。例如它出現在「官」、「阜」、「歸」等字中。<br>
+                字根「鬥」，首筆形這裡取「丨：直 3」，尾筆形是「亅：直 3」，所以字根碼為 <span class="root-nb">33</span>。<br>               
+            </p>
+        </div>
+        <p>而下面這兩個首尾筆形字根的尾筆形都是「一：橫 1」，同樣地，這是取於行列字根法設計之初的標準筆順，可能與現今標準筆順不同、或是和個人書寫習慣不同。</p>
+        <div class="example">
+            
+            <p>
+                字根「<img src="img/array30-root/31耳.png" class="root" alt="行列字根 31，「耳」去掉第一筆畫">」，首筆形是「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼為 <span class="root-nb">31</span>。例如它出現在「耳」、「聽」等字中。<br>
+                字根「<img src="img/array30-root/31囬.png" class="root" alt="行列字根 31，「囬」去掉囗">」，首筆形是「丨：直 3」，尾筆形是「一：橫 1」，所以字根碼為 <span class="root-nb">31</span>。例如它出現在「面」、「齊」等字中。
+            </p>
+        </div>
+        <p>以上這六個首尾筆形字根，如果您的書寫筆畫順序和上述不同，那您只好把它們記起來了。不過，上面都特別幫您把原因寫出來幫助您理解，也把這六個字根一起列出來加深您印象，基本上您不用死記任何東西！</p>
+
+        <p>最後，介紹一些首尾筆形類的簡體字根。這些字根的字根碼一樣也是透過首尾筆形產生的，只是這些字根基本上只會在簡體字裡出現。如果您不會使用到簡體字，可以跳過這段不看。</p>
+        <div class="example">
+            <p>首尾筆形類的簡體字根：</p>
+            <p>
+                字根「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線">」，字根碼為 <span class="root-nb">12</span>。例如它出現在「长」字中。<br>
+                字根「<img src="img/array30-root/12東.png" class="root root-sc" alt="行列字根 12，「东」前兩筆畫">」，字根碼為 <span class="root-nb">12</span>。例如它出現在「东」字中。<br>
+                字根「<img src="img/array30-root/19寿.png" class="root root-sc" alt="行列字根 19，「寿」去掉寸">」，字根碼為 <span class="root-nb">19</span>。例如它出現在「寿」字中。<br>
+                字根「<img src="img/array30-root/29發.png" class="root root-sc" alt="行列字根 29，「发」前兩筆畫">」，字根碼為 <span class="root-nb">29</span>。例如它出現在「发」字中。<br>
+                字根「<img src="img/array30-root/33归.png" class="root root-sc" alt="行列字根 33，「归」左半部">」，字根碼為 <span class="root-nb">33</span>。例如它出現在「归」字中。<br>
+                字根「<img src="img/array30-root/51彐日.png" class="root root-sc" alt="行列字根 51，「彐」底部橫線凸出">」，字根碼為 <span class="root-nb">51</span>。例如它出現在「录」字中。<br>
+                字根「<img src="img/array30-root/55马.png" class="root root-sc" alt="行列字根 55，「马」去掉四點">」，字根碼為 <span class="root-nb">55</span>。例如它出現在「马」字中。<br>
+                字根「<img src="img/array30-root/56专.png" class="root root-sc" alt="行列字根 56，「专」去掉兩橫線">」，字根碼為 <span class="root-nb">56</span>。例如它出現在「专」字中。<br>
+                字根「<span class="root-sc">ス</span>」，字根碼為 <span class="root-nb">56</span>。例如它出現在「劲」字中。<br>
+                字根「<img src="img/array30-root/58練.png" class="root root-sc" alt="行列字根 58，「练」最末三筆畫">」，字根碼為 <span class="root-nb">58</span>。例如它出現在「练」字中。<br>
+                字根「<span class="root-sc">讠</span>」，字根碼為 <span class="root-nb">62</span>。<br>
+                字根「<img src="img/array30-root/69产.png" class="root root-sc" alt="行列字根 69，「产」">」，字根碼為 <span class="root-nb">69</span>。<br>
+                字根「<img src="img/array30-root/69兴.png" class="root root-sc" alt="行列字根 69，「兴」前三筆畫">」，字根碼為 <span class="root-nb">69</span>。例如它出現在「兴」字中。<br>
+                字根「<span class="root-sc">贝</span>」，字根碼為 <span class="root-nb">78</span>。<br>
+                字根「<span class="root-sc">钅</span>」，字根碼為 <span class="root-nb">82</span>。<br>
+                字根「<img src="img/array30-root/83齿.png" class="root root-sc" alt="行列字根 83，「齿」去掉止">」，字根碼為 <span class="root-nb">83</span>。例如它出現在「齿」字中。<br>
+                字根「<img src="img/array30-root/92乐.png" class="root root-sc" alt="行列字根 92，「乐」最初兩筆畫">」，字根碼為 <span class="root-nb">92</span>。例如它出現在「乐」字中。<br>
+                字根「<img src="img/array30-root/95鸟.png" class="root root-sc" alt="行列字根 95，「鸟」去掉四點">」，字根碼為 <span class="root-nb">95</span>。例如它出現在「鸟」字中。<br>
+                字根「<img src="img/array30-root/95乌.png" class="root root-sc" alt="行列字根 95，「乌」去掉四點">」，字根碼為 <span class="root-nb">95</span>。例如它出現在「乌」字中。
+            </p>
+            <p>稍微要注意的是，簡體字根「<span class="root-sc">讠</span>」的字根碼 <span class="root-nb">62</span> ，與字根「言」的字根碼 <span class="root-nb">60</span> 不同。同樣地，簡體字根「<span class="root-sc">钅</span>」的字根碼 <span class="root-nb">82</span> ，與字根「金」的字根碼 <span class="root-nb">81</span> 不同。</p>
+        </div>
+
+        <p>以上就是首尾筆形字根的介紹！</p>
+
+        <p class="comment">呃…雖然在一開始介紹首尾筆形字根時，說是因為數量太多所以僅列出一部份介紹，但其實上面是行列輸入法的<b>所有首尾筆形字根</b>（包含所有簡體的首尾筆形字根）。所以如果您有完整閱讀上述說明的話，恭喜您，您不用去字根表找沒介紹到的首尾筆形字根字根，因為您看過了所有尾筆形字根，沒有漏掉任何一個！如果您只是區塊性地快速瀏覽，那也沒關係，上面記載了所有首尾筆形字根的說明，您隨時可以回來複習！</p>
+
+        <h3>特殊歸位字根：</h3>
+        <p>有些字根被稱做「特殊歸位字根」，因為它們不是基礎筆形字根，並且字根碼並不是由首尾筆形得來。</p>
+        <p>有些字根是部首的偏旁型態，於是字根碼參照部首本字的字根碼。這類特殊歸位字根全部共 4 個，其中包含 1 個簡體字根：</p>
+        <div class="example">
+            <p>                
+                字根「<span class="root-special">氵</span>」，為水的偏旁形態，字根碼設為 <span class="root-nb">38</span>。<br>
+                字根「<span class="root-special">灬</span>」，為火的偏旁形態，字根碼設為 <span class="root-nb">88</span>。<br>
+                字根「<img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」">」，為手的偏旁形態，字根碼設為 <span class="root-nb">94</span>。<br>
+                字根「<span class="root-special-sc">纟</span>」，為糸的偏旁形態，字根碼設為 <span class="root-nb">28</span>。（簡體字根）<br>
+            </p>
+        </div>
+        
+        <p>有些字根的字根碼參照形態近似的字根。這類特殊歸位字根全部列出如下：</p>
+        <div class="example">
+            <p>
+                字根「<img src="img/array30-root/12它.png" class="root root-special" alt="行列字根 12，「它」去掉宀">」，因形似字根「匕」，字根碼設為 <span class="root-nb">12</span>。<br>                
+                字根「<img src="img/array30-root/26以.png" class="root root-special" alt="行列字根 26，「以」前三筆畫">」，因形似字根「<img src="img/array30-root/26瓜.png" class="root" alt="行列字根 26，「瓜」第三四筆畫">」，字根碼設為 <span class="root-nb">26</span>。<br>
+                字根「<img src="img/array30-root/4-雈.png" class="root root-special" alt="行列字根 4-，「夢」罒的上面">」，因形似字根「艹」，字根碼設為 <span class="root-nb">4-</span>。<br>
+                字根「<span class="root-special">⺼</span>」，因形似字根「月」，字根碼設為 <span class="root-nb">71</span>。<br>
+                
+                字根「<span class="root-special">夂</span>」，因形似字根「攵」，字根碼設為 <span class="root-nb">98</span>。<br>
+                字根「<span class="root-special">⺜</span>」，因形似字根「曰」，字根碼設為 <span class="root-nb">01</span>。<br>
+                字根「<span class="root-special">囗</span>」裡面會有東西，如外框裡面有東西，字根碼設為 <span class="root-nb">04</span>。<br>                
+                字根「<span class="root-special">罒</span>」，因形似字根「四」，字根碼設為 <span class="root-nb">08</span>。<br>
+                字根「<img src="img/array30-root/08覀.png" class="root root-special" alt="行列字根 08，「賈」去掉第一筆畫再去掉貝">」，因形似字根「<img src="img/array30-root/08西.png" class="root" alt="行列字根 08，「西」去掉第一筆畫">」，字根碼設為 <span class="root-nb">08</span>。<br>  
+                字根「<img src="img/array30-root/16充.png" class="root root-special-sc" alt="行列字根 16，簡體字「充」上半部">」，因形似字根「ㄊ」，字根碼設為 <span class="root-nb">16</span>。（簡體字根）<br>
+                字根「<img src="img/array30-root/81今.png" class="root root-special-sc" alt="行列字根 81，簡體字「今」前三筆畫">」，因形似字根「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口">」，字根碼設為 <span class="root-nb">81</span>。（簡體字根）<br>
+            </p>
+        </div>
+        <p>上面這些字根第一次接觸可能不知道會用在哪些字，這裡都幫您把一些例字列出來：</p>
+        <div class="example">
+            <p>
+                字根「<img src="img/array30-root/12它.png" class="root root-special" alt="行列字根 12，「它」去掉宀"> <span class="root-nb">01</span>」例如出現在「它」字下半部、或是「化」字簡體寫法的右半部。 <br>
+                字根「<img src="img/array30-root/26以.png" class="root root-special" alt="行列字根 26，「以」前三筆畫"> <span class="root-nb">26</span>」例如出現在「以」字前三筆畫。 <br>
+                字根「<img src="img/array30-root/4-雈.png" class="root root-special" alt="行列字根 4-，「夢」罒的上面"> <span class="root-nb">4-</span>」例如出現在「夢」、「敬」等字中。 <br>
+                字根「<span class="root-special">⺼</span> <span class="root-nb">7-</span>」例如出現在「胖」、「臂」等字中。 <br>
+                字根「<span class="root-special">夂</span> <span class="root-nb">98</span>」例如出現在「冬」、「愛」、「傻」等字中。 <br>
+                字根「<span class="root-special">⺜</span> <span class="root-nb">01</span>」例如出現在「冒」、「冕」、「慢」等字中。 <br>
+                字根「<span class="root-special">囗</span> <span class="root-nb">04</span>」例如出現在「困」、「國」、「個」等字中。 <br>
+                字根「<span class="root-special">罒</span> <span class="root-nb">08</span>」例如出現在「買」、「夢」、「德」等字中。 <br>
+                字根「<img src="img/array30-root/08覀.png" class="root root-special" alt="行列字根 08，「賈」去掉第一筆畫再去掉貝"> <span class="root-nb">08</span>」例如出現在「賈」字中。 <br>
+                簡體字根「<img src="img/array30-root/16充.png" class="root root-special-sc" alt="行列字根 16，簡體字「充」上半部"> <span class="root-nb">16</span>」例如出現在簡體字「弃」、「充」字的簡體寫法字中。 <br>
+                簡體字根「<img src="img/array30-root/81今.png" class="root root-special-sc" alt="行列字根 81，簡體字「今」前三筆畫"> <span class="root-nb">81</span>」例如出現在「今」字的簡體寫法字中。 <br>
+            </p>            
+        </div>
+        
+        <p>最後，有些字根的字根碼並無規則、必須記憶。這些字根碼的設計是為了簡化輸入、減少重碼或是讓繁簡體字根互通。此類特別歸位字根全部列出如下：</p>
+        <p>
+        <div class="example">
+            <p>
+                字根「<span class="root-special">𧾷</span>」，它的字根碼是 2-。（記法：2 隻腳）<br>
+                字根「<span class="root-special">山</span>」，它的字根碼是 3-。（記法：山的讀音類似 3）<br>
+                字根「<img src="img/array30-root/3-屮日.png" class="root root-special" alt="行列字根 3-，「屮」中間直線變彎的">」，它的字根碼是 3-<br>
+                字根「<span class="root-special">屮</span>」，它的字根碼是 3-。<br>
+                字根「<span class="root-special">凵</span>」，它的字根碼是 3-。<br>
+                字根「<img src="img/array30-root/5-馬.png" class="root root-special" alt="行列字根 5-，「馬」去掉四點">」，它的字根碼是 5-。（記法：<img src="img/array30-root/5-馬.png" class="root root-special" alt="行列字根 5-，「馬」去掉四點">形狀像 5）<br>
+                
+                字根「<span class="root-special">石</span>」，它的字根碼是 5-。（記法：石有 5 筆畫）<br>
+                字根「<span class="root-special">戶</span>」，它的字根碼是 5-。<br>
+                字根「<span class="root-special">疒</span>」，它的字根碼是 6-。<br>
+                字根「<span class="root-special">目</span>」，它的字根碼是 7-。<br>
+                字根「<span class="root-special">角</span>」，它的字根碼是 7-。<br>                
+                字根「<span class="root-special">貝</span>」，它的字根碼是 78。<br>
+                字根「<span class="root-special">竹</span>」，它的字根碼是 9-。<br>
+                字根「<img src="img/array30-root/7-角.png" class="root root-special-sc" alt="行列字根 7-，簡體字「角」">」，它的字根碼是 7-。（簡體字根）<br>
+            </p>
+        </div>
+        雖然這些字根的字根碼必須特別記憶，但這裡給出這些字根碼背後的設計原因，也許能讓幫助您理解。
+        <div class="example">
+            <p>
+                字根「<span class="root-special">𧾷</span>」的字根碼設定為 <span class="root-nb">2-</span> 是為了減少重碼。<br>
+                字根「<span class="root-special">山</span><img src="img/array30-root/3-屮日.png" class="root root-special" alt="行列字根 3-，「屮」中間直線變彎的"><span class="root-special">屮</span><span class="root-special">凵</span>」的字根碼設定為 <span class="root-nb">3-</span> 是為了取碼容易。例如「出」不論取「<span class="root-special">凵</span> + <span class="root-special">山</span>」或是「<span class="root-special">屮</span> + <span class="root-special">凵</span>」，字根碼都是 <span class="root-nb">3-</span> + <span class="root-nb">3-</span><br>
+                字根「<img src="img/array30-root/5-馬.png" class="root root-special" alt="行列字根 5-，「馬」去掉四點">」的字根碼設定為 <span class="root-nb">5-</span> 是為了和簡體字根「<img src="img/array30-root/55马.png" class="root root-special" alt="行列字根 55，「马」去掉四點"> <span class="root-nb">55</span>」同鍵位。<br>
+                字根「<span class="root-special">石</span>」的字根碼設定為 <span class="root-nb">5-</span> 是為了減少重碼。<br>
+                字根「<span class="root-special">戶</span>」的字根碼設定為 <span class="root-nb">5-</span> 是因為「戶」首筆有寫「㇒（撇）」、「丶（點）」兩種，所以特別以其第二筆畫「㇕（順彎 5）」定位。<br>
+                字根「<span class="root-special">疒</span>」的字根碼特別以首筆「丶（點 6）」定為 <span class="root-nb">6-</span>。<br>
+                字根「<span class="root-special">目</span>」的字根碼設定為 <span class="root-nb">7-</span> 是為了避免與「日 <span class="root-nb">01</span>」重複造成重碼。例如「睛」和「情」、「自」和「白」「眺」和「晁」等等。<br>
+                字根「<span class="root-special">角</span>」的字根碼特別以首筆「⺈（蓋 7）」定為 <span class="root-nb">7-</span>。<br>                
+                字根「<span class="root-special">貝</span>」的字根碼設定為 <span class="root-nb">78</span> 是為了和簡體字根「<span class="root-sc">贝</span> <span class="root-nb">78</span>」同鍵位。另外，您上面才看到「<span class="root-special">目</span>」的字根碼設定為 <span class="root-nb">7-</span>，所以也可將「<span class="root-special">貝</span> <span class="root-nb">78</span>」用首筆形「目」加上尾筆形「八」來理解。<br>
+                字根「<span class="root-special">竹</span>」的字根碼特別以首筆「㇒（撇 9）」定為 <span class="root-nb">9-</span>。<br>
+                簡體字根「<img src="img/array30-root/7-角.png" class="root root-special-sc" alt="行列字根 7-，簡體字「角」">」的字根碼特別以首筆「⺈（蓋 7）」定為 <span class="root-nb">7-</span>。<br>
+            </p>
+        </div>
+        <p>以上就是所有特殊歸位字根！雖然這些字根的字根碼不是由首尾筆形給出，但經過以上解釋後，您可以發現實際要記憶的字根碼數量相當少！另外，您也不妨思考一下為什麼這些特殊歸位字根是「特殊歸位字根」，也就是說您可以試著找出這些字根的首尾筆形，親自確認字根碼不是由首尾筆形給出的。</p>
+
+        <p>字根的所有介紹就到這裡結束！下面我們會複習如何透過字根碼與鍵位的對應，找出任何字根的鍵位。</p>
+    </section>
+    
+
+    <section>
+        <h2>鍵位</h2>
+        <p>在「行列輸入法基本的五件事」中您已經學到每一個字根碼都會對應到一個行列 30 鍵，並也學過了對應規則，所以這裡就不再贅述。但下面還是舉出了幾個例子，您可以自我檢測一下：如果您能理解這幾個例子，那就沒問題！如果您有點忘記規則了，可以點<a href="#">這裡</a>回到前面複習。</p>
+        <div class="example">
+            <p>
+                字根碼 <span class="root-nb">16</span> 對應到鍵位 <span class="keycap keycap-letter">1↓</span>（1 下）<br>
+                字根碼 <span class="root-nb">40</span> 對應到鍵位 <span class="keycap keycap-letter">4↑</span>（4 上）<br>
+                字根碼 <span class="root-nb">5-</span> 對應到鍵位 <span class="keycap keycap-letter">5-</span>（5 中）<br>
+                字根碼 <span class="root-nb">77</span> 對應到鍵位 <span class="keycap keycap-letter">7↓</span>（7 下）<br>
+                字根碼 <span class="root-nb">95</span> 對應到鍵位 <span class="keycap keycap-letter">9-</span>（9 中）<br>
+                字根碼 <span class="root-nb">03</span> 對應到鍵位 <span class="keycap keycap-letter">0↑</span>（0 上）<br>
+            </p>    
+        </div>
+
+        <p>上一部分我們學過了基本筆形字根、首尾筆形字根、特殊歸位字根它們的字根碼，我們結合字根碼與鍵位的對應，就可以得到每個字根的鍵位。</p>
+        <p>這部分的教學就以下面一些例子做結尾，您一樣不必特意去背這些例子，而是「將它們看過留下印象」，以及「理解為什麼是這個字根碼、是這個鍵位」，這才是最重要的。</p>
+        <div class="example">
+            <p>
+                一些基本字形字根：<br>
+                「一」的字根碼為 <span class="root-nb">1-</span>，鍵位是 <span class="keycap keycap-letter">1-</span><br>
+                「乚」的字根碼為 <span class="root-nb">2-</span>，鍵位是 <span class="keycap keycap-letter">2-</span><br>
+                「亅」的字根碼為 <span class="root-nb">3-</span>，鍵位是 <span class="keycap keycap-letter">3-</span><br>                
+                「<img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂">」的字根碼為 <span class="root-nb">4-</span>，鍵位是 <span class="keycap keycap-letter">4-</span><br>
+                「艹」的字根碼為 <span class="root-nb">4-</span>，鍵位是 <span class="keycap keycap-letter">4-</span><br>
+                「㇉」的字根碼為 <span class="root-nb">5-</span>，鍵位是 <span class="keycap keycap-letter">5-</span><br>
+                「丶」的字根碼為 <span class="root-nb">6-</span>，鍵位是 <span class="keycap keycap-letter">6-</span><br>
+                「冖」的字根碼為 <span class="root-nb">7-</span>，鍵位是 <span class="keycap keycap-letter">7-</span><br>
+                「刀」的字根碼為 <span class="root-nb">7-</span>，鍵位是 <span class="keycap keycap-letter">7-</span><br>
+                「亻」的字根碼為 <span class="root-nb">8-</span>，鍵位是 <span class="keycap keycap-letter">8-</span><br>
+                「冫」的字根碼為 <span class="root-nb">8-</span>，鍵位是 <span class="keycap keycap-letter">8-</span><br>
+                「㇏」的字根碼為 <span class="root-nb">8-</span>，鍵位是 <span class="keycap keycap-letter">8-</span><br>
+                「㇒」的字根碼為 <span class="root-nb">9-</span>，鍵位是 <span class="keycap keycap-letter">9-</span><br>
+                「口」的字根碼為 <span class="root-nb">0-</span>，鍵位是 <span class="keycap keycap-letter">0-</span><br>
+
+            </p>
+            <p>
+                一些首尾筆形字根：<br>
+                「工」的字根碼為 <span class="root-nb">11</span>，鍵位是 <span class="keycap keycap-letter">1↓</span><br>
+                「<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線">」的字根碼為 <span class="root-nb">26</span>，鍵位是 <span class="keycap keycap-letter">2↓</span><br>
+                「<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫">」的字根碼為 <span class="root-nb">28</span>，鍵位是 <span class="keycap keycap-letter">2↓</span><br>
+                「<img src="img/array30-root/29發.png" class="root root-sc" alt="行列字根 29，「发」前兩筆畫">」的字根碼為 <span class="root-nb">29</span>，鍵位是 <span class="keycap keycap-letter">2↓</span>（簡體字根）<br>
+                「<img src="img/array30-root/31假.png" class="root" alt="行列字根 31，「假」中間部分">」的字根碼為 <span class="root-nb">31</span>，鍵位是 <span class="keycap keycap-letter">3↑</span><br>
+                「片」的字根碼為 <span class="root-nb">35</span>，鍵位是 <span class="keycap keycap-letter">3-</span><br>
+                「<img src="img/array30-root/47壺.png" class="root" alt="行列字根 47，「壺」只保留士和冖">」的字根碼為 <span class="root-nb">47</span>，鍵位是 <span class="keycap keycap-letter">4↓</span><br>
+                「<img src="img/array30-root/51尹.png" class="root" alt="行列字根 51，「尹」去掉最末一筆劃">」的字根碼為 <span class="root-nb">51</span>，鍵位是 <span class="keycap keycap-letter">5↑</span><br>
+                「<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目">」的字根碼為 <span class="root-nb">55</span>，鍵位是 <span class="keycap keycap-letter">5-</span><br>
+                「<img src="img/array30-root/55马.png" class="root root-sc" alt="行列字根 55，「马」去掉四點">」的字根碼為 <span class="root-nb">55</span>，鍵位是 <span class="keycap keycap-letter">5-</span>（簡體字根）<br>
+                「立」的字根碼為 <span class="root-nb">61</span>，鍵位是 <span class="keycap keycap-letter">6↑</span><br>
+                「<img src="img/array30-root/78祭.png" class="root" alt="行列字根 78，「祭」去掉示">」的字根碼為 <span class="root-nb">78</span>，鍵位是 <span class="keycap keycap-letter">7↓</span><br>
+                「<img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」">」的字根碼為 <span class="root-nb">81</span>，鍵位是 <span class="keycap keycap-letter">8↑</span><br>
+                「<span class="root-sc">钅</span>」的字根碼為 <span class="root-nb">82</span>，鍵位是 <span class="keycap keycap-letter">8↑</span>（簡體字根）<br>
+                「<img src="img/array30-root/88求.png" class="root" alt="行列字根 88，「求」第三到六筆畫">」的字根碼為 <span class="root-nb">88</span>，鍵位是 <span class="keycap keycap-letter">8↓</span><br>
+                「<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫">」的字根碼為 <span class="root-nb">91</span>，鍵位是 <span class="keycap keycap-letter">9↑</span><br>
+                「彳」的字根碼為 <span class="root-nb">98</span>，鍵位是 <span class="keycap keycap-letter">9↓</span><br>
+                「日」的字根碼為 <span class="root-nb">01</span>，鍵位是 <span class="keycap keycap-letter">0↑</span><br>
+                「四」的字根碼為 <span class="root-nb">08</span>，鍵位是 <span class="keycap keycap-letter">0↓</span><br>
+            </p>
+            <p>
+                一些特殊歸位字根：<br>
+                「<span class="root-special">𧾷</span>」的字根碼為 <span class="root-nb">2-</span>，鍵位是 <span class="keycap keycap-letter">2-</span><br>
+                「<span class="root-special-sc">纟</span>」的字根碼為 <span class="root-nb">28</span>，鍵位是 <span class="keycap keycap-letter">2↓</span>（簡體字根）<br>
+                「<span class="root-special">氵</span>」的字根碼為 <span class="root-nb">38</span>，鍵位是 <span class="keycap keycap-letter">3↓</span><br>
+                「<img src="img/array30-root/4-雈.png" class="root root-special" alt="行列字根 4-，「夢」罒的上面">」的字根碼為 <span class="root-nb">4-</span>，鍵位是 <span class="keycap keycap-letter">4-</span><br>
+                「<img src="img/array30-root/5-馬.png" class="root root-special" alt="行列字根 5-，「馬」去掉四點">」的字根碼為 <span class="root-nb">5-</span>，鍵位是 <span class="keycap keycap-letter">5-</span><br>
+                「<span class="root-special">目</span>」的字根碼為 <span class="root-nb">7-</span>，鍵位是 <span class="keycap keycap-letter">7-</span><br>
+                「<span class="root-special">貝</span>」的字根碼為 <span class="root-nb">78</span>，鍵位是 <span class="keycap keycap-letter">7↓</span><br>
+                「<img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」">」的字根碼為 <span class="root-nb">94</span>，鍵位是 <span class="keycap keycap-letter">9↑</span><br>
+                「<span class="root-special">夂</span>」的字根碼為 <span class="root-nb">98</span>，鍵位是 <span class="keycap keycap-letter">9↓</span><br>
+                「<span class="root-special">囗</span> 」的字根碼為 <span class="root-nb">04</span>，鍵位是 <span class="keycap keycap-letter">0↑</span><br>
+                「<span class="root-special">罒</span>」的字根碼為 <span class="root-nb">08</span>，鍵位是 <span class="keycap keycap-letter">0↓</span><br>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>拆字與取碼原則</h2>
+        <p>恭喜您已經了解行列輸入法字根與鍵位的原理了！現在您已經可以將許多字拆碼了！行列輸入法拆字取碼的大原則就是：<u>依照書寫筆順</u>拆字取碼。這就是為什麼說行列輸入法好學易懂，設計相當科學。</p>
+        <p>當然，只有「依照書寫筆順」這個規則是不夠的，它只是大原則。要正確拆字取碼，您必須認識 3 件事，它們分別是<u>前三後一原則</u>、<u>大根先取原則</u>以及<u>跨越筆順的字根</u>。</p>
+
+        <p>這 3 件事情相當重要，同時也非常容易理解。不過，我們現在可以先來看一些簡單的拆字示範，那 3 件重要事後面會詳細為您解說。</p>
+        
+        
+        <div class="example">
+            <p>
+                門：門 <span class="root-nb">31</span><br>
+                月：月 <span class="root-nb">71</span><br>
+                閒：門 <span class="root-nb">31</span> <span class="root-plus">+</span> 月 <span class="root-nb">71</span><br>
+                杜：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span><br>
+                汁：氵</span> <span class="root-nb">38</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span><br>                
+                丁：一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 亅 <span class="root-nb">3-</span><br>
+                自：㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <span class="root-special">目</span> <span class="root-nb">7-</span><br>
+                春：<img src="img/array30-root/18春.png" class="root" alt="行列字根 18，「春」去掉日"> <span class="root-nb">18</span> <span class="root-plus">+</span> 日 <span class="root-nb">01</span><br>
+                
+                胖：<span class="root-special">⺼</span> <span class="root-nb">71</span> <span class="root-plus">+</span> 半 <span class="root-nb">84</span><br>
+                老：土 <span class="root-nb">41</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 匕 <span class="root-nb">12</span><br>
+                也：㇖ <span class="root-nb">5-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 乚 <span class="root-nb">2-</span><br>
+                溫：氵</span> <span class="root-nb">38</span> <span class="root-plus">+</span> <img src="img/array30-root/08溫.png" class="root" alt="行列字根 08，「溫」右上部分"> <span class="root-nb">08</span> <span class="root-plus">+</span> 皿 <span class="root-nb">71</span><br>
+                處：虍 <span class="root-nb">32</span> <span class="root-plus">+</span> <span class="root-special">夂</span> <span class="root-nb">98</span> <span class="root-plus">+</span> 几 <span class="root-nb">2-</span><br>
+                
+                <p>是不是相當簡單？我們再看 15 個簡單的例子：</p>
+                <p>悲：<img src="img/array30-root/31非左.png" class="root" alt="行列字根 31，「非」左半邊"> <span class="root-nb">31</span> <span class="root-plus">+</span> <img src="img/array30-root/31非右.png" class="root" alt="行列字根 31，「非」右半邊"> <span class="root-nb">31</span> <span class="root-plus">+</span> 心 <span class="root-nb">66</span><br>
+                官：宀 <span class="root-nb">67</span> <span class="root-plus">+</span> <img src="img/array30-root/31官.png" class="root" alt="行列字根 31，「官」去掉宀"> <span class="root-nb">31</span><br>
+
+                連：車 <span class="root-nb">14</span> <span class="root-plus">+</span> 辶 <span class="root-nb">68</span><br>
+                
+                氣：气 <span class="root-nb">92</span> <span class="root-plus">+</span> 米 <span class="root-nb">88</span><br>
+                魚：<img src="img/array30-root/74魚.png" class="root" alt="行列字根 74，「魚」去掉四點"> <span class="root-nb">74</span> <span class="root-plus">+</span> <span class="root-special">灬</span> <span class="root-nb">88</span><br>
+                房：戶</span> <span class="root-nb">5-</span> <span class="root-plus">+</span> 方 <span class="root-nb">65</span><br>
+                啟：戶</span> <span class="root-nb">5-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span><br>
+                花：艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 亻 <span class="root-nb">8-</span> <span class="root-plus">+</span> 匕 <span class="root-nb">12</span><br>
+                查：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 日 <span class="root-nb">01</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span><br>
+                假：亻 <span class="root-nb">8-</span> <span class="root-plus">+</span> <img src="img/array30-root/31假.png" class="root" alt="行列字根 31，「假」中間部分"> <span class="root-nb">3-</span> <span class="root-plus">+</span> <img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span> <span class="root-plus">+</span> 又 <span class="root-nb">58</span><br>
+                經：糸 <span class="root-nb">28</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> <img src="img/array30-root/22巛.png" class="root" alt="行列字根 22，「巛」"> <span class="root-nb">22</span> <span class="root-plus">+</span> 工 <span class="root-nb">11</span><br>
+        </div>
+
+        
+
+        <p>然而，中文字形形色色，構字不一定都像上述例子簡單。行列輸入法有<u>前三後一原則</u>、<u>大根先取原則</u>以及<u>跨越筆順的字根</u>這三件事來更詳細地規範拆字取碼過程，接下來為您一一解說。</p>
+        <h3>前三後一原則</h3>
+        <p>第一件事情是，行列輸入法是將字依書寫順序取前三個字根和最後一個字根，不超過四個字根則全取。</p>
+        <p>舉例來說：</p>
+        <div class="example">
+            <p>        
+                「寸」拆成「<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span>、丶 <span class="root-nb">6-</span>」這兩個字根，所以全取；<br>
+                「封」拆成「土 <span class="root-nb">41</span>、土 <span class="root-nb">41</span>、<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span>、丶 <span class="root-nb">6-</span>」這四個字根，所以全取；<br>
+                「帛」拆成「㇒ <span class="root-nb">9-</span>、日 <span class="root-nb">01</span>、 冂 <span class="root-nb">7-</span>、丨 <span class="root-nb">3-</span>」這四個字根，所以全取；<br>
+                「幫」這個字全部拆開，共有八個字根：
+            </p>
+
+            <p style="text-align: center;">土 <span class="root-nb">41</span>、土 <span class="root-nb">41</span>、<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span>、丶 <span class="root-nb">6-</span>、㇒ <span class="root-nb">9-</span>、日 <span class="root-nb">01</span>、 冂 <span class="root-nb">7-</span>、丨 <span class="root-nb">3-</span></p>
+
+            <p>依照前三後一原則，只取字根「土 <span class="root-nb">41</span>、土 <span class="root-nb">41</span>、<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span>、丨 <span class="root-nb">3-</span>」，而字根「丶 <span class="root-nb">6-</span>、㇒ <span class="root-nb">9-</span>、日 <span class="root-nb">01</span>、 冂 <span class="root-nb">7-</span>」則略過不取。</p>
+
+            <hr class="hr-example">
+
+            <p>
+                「我」拆成「㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」"> <span class="root-nb">94</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」這三個字根，所以全取；<br>
+                「鳥」拆成「<img src="img/array30-root/95鳥.png" class="root" alt="行列字根 95，「鳥」去掉四點"> <span class="root-nb">95</span> <span class="root-plus">+</span> <span class="root-special">灬</span> <span class="root-nb">88</span>」這兩個字根，所以全取；<br>
+                「鵝」這個字全部拆開，共有五個字根：
+            </p>
+            <p style="text-align: center;">㇒ <span class="root-nb">9-</span>、<img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」"> <span class="root-nb">94</span>、<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>、<img src="img/array30-root/95鳥.png" class="root" alt="行列字根 95，「鳥」去掉四點"> <span class="root-nb">95</span>、<span class="root-special">灬</span> <span class="root-nb">88</span></p>
+            
+            <p>依照前三後一原則，只取字根「㇒ <span class="root-nb">9-</span>、<img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」"> <span class="root-nb">94</span>、<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>、<span class="root-special">灬</span> <span class="root-nb">88</span>」，而字根「<img src="img/array30-root/95鳥.png" class="root" alt="行列字根 95，「鳥」去掉四點"> <span class="root-nb">95</span>」則略過不取。</p>
+        </div>
+
+        <p>這裡再舉幾個例子：</p>
+        <div class="example">
+            <p>
+                「遠」這個字全部拆開，共有「土 <span class="root-nb">41</span>、口 <span class="root-nb">0-</span>、㇒ <span class="root-nb">9-</span>、<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span>、辶 <span class="root-nb">68</span>」這五個字根。依照前三後一原則，只取字根「土 <span class="root-nb">41</span>、口 <span class="root-nb">0-</span>、㇒ <span class="root-nb">9-</span>、辶 <span class="root-nb">68</span>」，而字根「<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span>」則略過不取。
+            </p>
+            <p>
+                「額」這個字全部拆開，共有「宀 <span class="root-nb">67</span>、<span class="root-special">夂</span> <span class="root-nb">98</span>、口 <span class="root-nb">0-</span>、一 <span class="root-nb">1-</span>、㇒ <span class="root-nb">9-</span>、<span class="root-special">貝</span> <span class="root-nb">78</span>」這六個字根。依照前三後一原則，只取字根「宀 <span class="root-nb">67</span>、<span class="root-special">夂</span> <span class="root-nb">98</span>、口 <span class="root-nb">0-</span>、<span class="root-special">貝</span> <span class="root-nb">78</span>」，而字根「一 <span class="root-nb">1-</span>、㇒ <span class="root-nb">9-</span>」則略過不取。
+            </p>
+            <p>
+                「壓」這個字全部拆開，共有「厂 <span class="root-nb">19</span>、日 <span class="root-nb">01</span>、<span class="root-special">⺼</span> <span class="root-nb">71</span>、大 <span class="root-nb">19</span>、丶 <span class="root-nb">6-</span>、土 <span class="root-nb">41</span>」這六個字根。依照前三後一原則，只取字根「厂 <span class="root-nb">19</span>、日 <span class="root-nb">01</span>、<span class="root-special">⺼</span> <span class="root-nb">71</span>、土 <span class="root-nb">41</span>」，而字根「大 <span class="root-nb">19</span>、丶 <span class="root-nb">6-</span>」則略過不取。
+            </p>
+            <p>
+                「繼」這個字全部拆開，共有「糸 <span class="root-nb">28</span>、ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>、一 <span class="root-nb">1-</span>、ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>、㇗ <span class="root-nb">2-</span>」這七個字根。依照前三後一原則，只取字根「糸 <span class="root-nb">28</span>、ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>、㇗ <span class="root-nb">2-</span>」，而字根「一 <span class="root-nb">1-</span>、ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>」則略過不取。
+            </p>
+            <p>
+                「選」這個字全部拆開，共有「<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>、㇙ <span class="root-nb">2-</span>、<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>、㇗ <span class="root-nb">2-</span>、<img src="img/array30-root/41共.png" class="root" alt="行列字根 41，「共」去掉兩點"> <span class="root-nb">41</span>、八 <span class="root-nb">8-</span>、辶 <span class="root-nb">68</span>」這七個字根。依照前三後一原則，只取字根「<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>、㇙ <span class="root-nb">2-</span>、<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>、辶 <span class="root-nb">68</span>」，而字根「㇗ <span class="root-nb">2-</span>、<img src="img/array30-root/41共.png" class="root" alt="行列字根 41，「共」去掉兩點"> <span class="root-nb">41</span>、八 <span class="root-nb">8-</span>」則略過不取。
+            </p>
+            <p>
+                「釀」這個字全部拆開，共有「一 <span class="root-nb">1-</span>、<img src="img/array30-root/01酉.png" class="root" alt="行列字根 01，「酉」去掉第一筆畫"> <span class="root-nb">01</span>、亠 <span class="root-nb">61</span>、口 <span class="root-nb">0-</span>、口 <span class="root-nb">01</span>、<img src="img/array30-root/41冓.png" class="root" alt="行列字根 41，「冓」上半部"> <span class="root-nb">41</span>、㇒ <span class="root-nb">9-</span>、<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span>」這八個字根。依照前三後一原則，只取字根「一 <span class="root-nb">1-</span>、<img src="img/array30-root/01酉.png" class="root" alt="行列字根 01，「酉」去掉第一筆畫"> <span class="root-nb">01</span>、亠 <span class="root-nb">61</span>、<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span>」，而字根「口 <span class="root-nb">0-</span>、口 <span class="root-nb">01</span>、<img src="img/array30-root/41冓.png" class="root" alt="行列字根 41，「冓」上半部"> <span class="root-nb">41</span>、㇒ <span class="root-nb">9-</span>」則略過不取。
+            </p>
+            <p>
+                「麵」這個字全部拆開，共有「十 <span class="root-nb">4-</span>、人 <span class="root-nb">8-</span>、人 <span class="root-nb">8-</span>、<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出"> <span class="root-nb">8-</span>、<span class="root-special">夂</span> <span class="root-nb">98</span>、一 <span class="root-nb">1-</span>、㇒ <span class="root-nb">9-</span>、<span class="root-special">囗</span> <span class="root-nb">04</span>、<img src="img/array30-root/31囬.png" class="root" alt="行列字根 31，「囬」去掉囗"> <span class="root-nb">31</span>」這九個字根。依照前三後一原則，只取字根「十 <span class="root-nb">4-</span>、人 <span class="root-nb">8-</span>、人 <span class="root-nb">8-</span>、<img src="img/array30-root/31囬.png" class="root" alt="行列字根 31，「囬」去掉囗"> <span class="root-nb">31</span>」，而字根「<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出"> <span class="root-nb">8-</span>、<span class="root-special">夂</span> <span class="root-nb">98</span>、一 <span class="root-nb">1-</span>、㇒ <span class="root-nb">9-</span>、<span class="root-special">囗</span> <span class="root-nb">04</span>」則略過不取。
+            </p>
+        </div>
+        <p>前三後一原則讓看似複雜的字也能輕鬆取碼！</p>
+        <div class="example">
+            <p>例如：<br>                
+                褻：亠 <span class="root-nb">61</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span> <span class="root-plus">+</span> ㄦ <span class="root-nb">8-</span> <span class="root-plus">+</span> <img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span><br>
+                藏：艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 厂 <span class="root-nb">19</span> <span class="root-plus">+</span> ㇗ <span class="root-nb">2-</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span><br>
+                瓊：一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span> <span class="root-plus">+</span> ⺈ <span class="root-nb">7-</span> <span class="root-plus">+</span> <span class="root-special">夂</span> <span class="root-nb">98</span><br>
+                攜：<img src="img/array30-root/94扌.png" class="root root-special" alt="行列字根 94，「扌」"> <span class="root-nb">94</span> <span class="root-plus">+</span> <span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> 亻 <span class="root-nb">8-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span><br>
+                鹽：匚 <span class="root-nb">12</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> <img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span> <span class="root-plus">+</span> 皿 <span class="root-nb">71</span><br>
+                藝：艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span> <span class="root-plus">+</span> ㄦ <span class="root-nb">8-</span> <span class="root-plus">+</span> 厶 <span class="root-nb">26</span><br>
+                饞：<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口"> <span class="root-nb">81</span> <span class="root-plus">+</span> <img src="img/array30-root/56即.png" class="root" alt="行列字根 56，「即」左半邊"> <span class="root-nb">56</span> <span class="root-plus">+</span> ⺈ <span class="root-nb">7-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span><br>
+                辭：爫 <span class="root-nb">99</span> <span class="root-plus">+</span> マ <span class="root-nb">56</span> <span class="root-plus">+</span> 冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span><br>
+                纖：糸 <span class="root-nb">28</span> <span class="root-plus">+</span> 人 <span class="root-nb">2-</span> <span class="root-plus">+</span> 人 <span class="root-nb">3-</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span><br>
+                犧：<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫"> <span class="root-nb">91</span> <span class="root-plus">+</span> <img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫"> <span class="root-nb">4-</span> <span class="root-plus">+</span> <img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span><br>              
+                囊：<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 冖 <span class="root-nb">7-</span> <span class="root-plus">+</span> <img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span><br>
+                鬱*：木 <span class="root-nb">48</span> <span class="root-plus">+</span> <img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫"> <span class="root-nb">91</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 彡 <span class="root-nb">99</span><br>
+                
+                <p class="comment">依照<a href="https://stroke-order.learningweb.moe.edu.tw/characters.do?lang=zh_TW" target="_blank">教育部國字標準字體筆順</a>，「鬱」字應該先寫「缶」再寫「木」。不過行列當初編碼設計使用的筆順是先寫「木」再寫「缶」，所以才這樣取碼。</p>
+        </div>
+
+        <h3>大根先取原則</h3>
+        <p>行列輸入法每次取碼時，都必須取筆畫較多、涵蓋範圍較廣的字根，這叫做「大根先取原則」。</p>
+        <p>先直接來看一點例子：</p>
+        <div class="example">
+            <p>
+                因為有「<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span>」這個字根，「可」這個字的正確取碼為「<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span> <span class="root-plus">+</span> 亅 <span class="root-nb">3-</span>」，而不是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span> <span class="root-plus">+</span> 亅 <span class="root-nb">3-</span>」。
+            </p>
+            <p>
+                因為有「<img src="img/array30-root/78祭.png" class="root" alt="行列字根 78，「祭」去掉示"> <span class="root-nb">78</span>」這個字根，「祭」這個字的第一個字根要取「<img src="img/array30-root/78祭.png" class="root" alt="行列字根 78，「祭」去掉示"> <span class="root-nb">78</span>」，而不是「<img src="img/array30-root/76祭.png" class="root" alt="行列字根 76，「炙」去掉火"> <span class="root-nb">76</span>」或是「<img src="img/array30-root/7-久.png" class="root" alt="行列字根 7-，「久」去掉最末筆畫"> <span class="root-nb">7-</span>」。
+            </p>
+            <p>
+                因為有「<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目"> <span class="root-nb">55</span>」這個字根，「鼎」這個字取完第一個字根「<span class="root-special">目</span> <span class="root-nb">7-</span>」之後，第二個字根應該直接取「<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目"> <span class="root-nb">55</span>」，而不是取其它比較小的字根。
+            </p>
+            <p>
+                因為有「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口"> <span class="root-nb">81</span>」這個字根，「合」這個字的第一個字根要取「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口"> <span class="root-nb">81</span>」，而不是取「<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出"> <span class="root-nb">8-</span>」。
+            </p>
+        </div>
+        <p>搭配上前一節學過的，「前三後一原則」加上「大根先取原則」就是要在取碼時：</p>
+        <div class="example">
+            <p>
+                依照筆順取第一個字根，您必須取筆畫較多、涵蓋面較廣的大字根；<br>
+                如果還有剩下，依照筆順繼續取第二個字根，您一樣要取筆畫較多、涵蓋面較廣的大字根；<br>
+                如果還有剩下，依照筆順繼續取第三個字根，您一樣要取筆畫較多、涵蓋面較廣的大字根；<br>
+                如果還有剩下，取倒數幾筆畫構成的字根，您必須取筆畫較多、涵蓋面較廣的大字根。
+            </p>
+        </div>        
+        
+        <p>簡單地說，大根先取原則就是：有比較完整的大字根，就不可以取小字根。</p>
+
+        <p>例如「豎」這個字取完前三個字根「匚 <span class="root-nb">12</span>、丨 <span class="root-nb">3-</span>、<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>」，最後應該取「<img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span>」，而不是「一 <span class="root-nb">1-</span>」。「龜」這個字取完前三個字根「⺈ <span class="root-nb">7-</span>、冂 <span class="root-nb">7-</span>、一 <span class="root-nb">1-</span>」，最後應該取「乂 <span class="root-nb">98</span>」，而不是「丶 <span class="root-nb">6-</span>」。「幾」這個字全部拆開直覺上是「ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>、一 <span class="root-nb">1-</span>、人 <span class="root-nb">8-</span>、<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」，但依照大根先取原則，「幾」字中的「一、人」部分應該拆成「厂 <span class="root-nb">19</span>、丶 <span class="root-nb">6-</span>」，所以「幾」全部拆開正確是「ㄠ <span class="root-nb">26</span>、ㄠ <span class="root-nb">26</span>、厂 <span class="root-nb">19</span>、丶 <span class="root-nb">6-</span>、<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」，進而得到拆碼「幾：ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> 厂 <span class="root-nb">19</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」。</p>            
+
+        <p>以下列出更多例子：</p>
+        <div class="example">
+            <p>
+                夫：夫 <span class="root-nb">18</span>（❌ 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 大 <span class="root-nb">18</span>）<br>
+                立：立 <span class="root-nb">61</span>（❌ 亠 <span class="root-nb">61</span> <span class="root-plus">+</span> <img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span>）<br>
+                貝：<span class="root-special">貝</span> <span class="root-nb">78</span>（❌ <span class="root-special">目</span> <span class="root-nb">7-</span> <span class="root-plus">+</span> 八 <span class="root-nb">8-</span>）<br>
+                尺：尸 <span class="root-nb">59</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>（❌ <img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span>）<br>
+                丈：<img src="img/array30-root/19尤.png" class="root" alt="行列字根 19，「尤」前兩筆畫"> <span class="root-nb">19</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>（❌ 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span>）<br>
+                川：<img src="img/array30-root/33介.png" class="root" alt="行列字根 33，「介」去掉前兩筆畫"> <span class="root-nb">33</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>（❌ 丿 <span class="root-nb">3-</span> <span class="root-plus">+</span> <img src="img/array30-root/33而.png" class="root" alt="行列字根 33，「而」下半部中間兩直線"> <span class="root-nb">33</span>）<br>
+                生：<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫"> <span class="root-nb">91</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span>（❌ ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <img src="img/array30-root/41青.png" class="root" alt="行列字根 41，「青」去掉月"> <span class="root-nb">41</span>）<br>
+                革：<img src="img/array30-root/40革.png" class="root" alt="行列字根 40，「革」去掉最末兩筆畫"> <span class="root-nb">40</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span>（❌ 廿 <span class="root-nb">41</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span>）<br>
+                央：冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 大 <span class="root-nb">18</span>（❌ 冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span>）<br>
+                丹：冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 亠 <span class="root-nb">61</span>（❌ 冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span>）<br>
+                垂：<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span> <span class="root-plus">+</span> 艹 <span class="root-nb">4-</span>（❌ <img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span>）<br>
+                平：一 <span class="root-nb">1-</span> <span class="root-plus">+</span> <img src="img/array30-root/84平.png" class="root" alt="行列字根 84，「平」去掉第一筆畫"> <span class="root-nb">84</span>（❌ 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> <img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>）<br>
+                即：<img src="img/array30-root/56即.png" class="root" alt="行列字根 56，「即」左半邊"> <span class="root-nb">56</span> <span class="root-plus">+</span> 卩 <span class="root-nb">7-</span>（❌ 彐 <span class="root-nb">51</span> <span class="root-plus">+</span> <img src="img/array30-root/26瓜.png" class="root" alt="行列字根 26，「瓜」第三四筆畫"> <span class="root-nb">26</span> <span class="root-plus">+</span> 卩 <span class="root-nb">7-</span>）<br>
+                朱：<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫"> <span class="root-nb">91</span> <span class="root-plus">+</span> 木 <span class="root-nb">48</span>（❌ ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫"> <span class="root-nb">4-</span> <span class="root-plus">+</span> 八 <span class="root-nb">8-</span>）<br>
+                及：㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 廴 <span class="root-nb">58</span>（❌ ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> ㇖ <span class="root-nb">5-</span> <span class="root-plus">+</span> 又 <span class="root-nb">58</span>）<br>
+                豆：<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span> <span class="root-plus">+</span> <img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span>（❌ 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span> <span class="root-plus">+</span> <img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分"> <span class="root-nb">8-</span><span class="root-plus">+</span> 一 <span class="root-nb">1-</span>）<br>
+                鬼：<img src="img/array30-root/92鬼.png" class="root" alt="行列字根 92，「鬼」去掉厶"> <span class="root-nb">92</span> <span class="root-plus">+</span> 厶 <span class="root-nb">26</span>（❌ ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 田 <span class="root-nb">04</span> <span class="root-plus">+</span> 儿 <span class="root-nb">2-</span><span class="root-plus">+</span> 厶 <span class="root-nb">26</span>）<br>
+                壹：<img src="img/array30-root/47壺.png" class="root" alt="行列字根 47，「壺」只保留士和冖"> <span class="root-nb">47</span> <span class="root-plus">+</span> <img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span> <span class="root-plus">+</span> <img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span>（❌ 士 <span class="root-nb">41</span> <span class="root-plus">+</span> 冖 <span class="root-nb">7-</span> <span class="root-plus">+</span> …）<br>
+                券：<img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」"> <span class="root-nb">81</span> <span class="root-plus">+</span> 大 <span class="root-nb">18</span> <span class="root-plus">+</span> 刀 <span class="root-nb">7-</span>（❌ <img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分"> <span class="root-nb">8-</span> <span class="root-plus">+</span> 夫 <span class="root-nb">18</span> <span class="root-plus">+</span> 刀 <span class="root-nb">7-</span>）<br>
+                囪：㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> <img src="img/array30-root/99勿.png" class="root" alt="行列字根 99，「勿」去掉前兩筆畫"> <span class="root-nb">99</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span>（❌ ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span>）
+            </p>
+        </div>        
+
+        <p>大根先取原則雖然簡單易懂，但透過上面一些例子可以看到，如果對行列輸入法「存在哪些字根」不熟悉，可能就會犯錯。</p>
+        <p>不過行列輸入法的優點就是您只要知道行列輸入法有什麼字根，就可以科學地輸入所有中文字，而要做到認識行列輸入法的字根非常簡單，您只要之後回來多看幾次這份教學、或是多到本站的<a href="/array30root.html" target="_blank">字根表</a>頁面看字根表以及字根實例就可以了，幾乎不用死記任何事情！</p>
+
+
+        <h3>跨越筆順的字根</h3>
+        
+        <p>這是在拆字與取碼原則中，您必須認識的最後一件事。行列輸入法有 10 個跨越筆順字根，它們可能是文字的外框，或是文字的骨幹。在拆字取碼時若遇到這些字根，則當作一個整體取掉而不拘泥筆順。</p>
+        <div class="example">
+            <p>外框型：<span class="root-special">囗</span> <span class="root-nb">04</span>、匚 <span class="root-nb">12</span>、<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>、廿 <span class="root-nb">41</span>、𦥑 <span class="root-nb">91</span>（<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ"> <span class="root-nb">91</span>）</p>
+            <p>骨幹型：工 <span class="root-nb">11</span>、大 <span class="root-nb">18</span>、儿 <span class="root-nb">2-</span>、木 <span class="root-nb">48</span>、<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span></p>
+        </div>        
+        
+        <p>除了這些跨越筆順的字根，其餘一律按書寫順序取碼。這件事情加上「前三後一原則」以及「大根先取原則」，就完全規範了行列輸入法中所有中文字的拆字取碼，非常科學也簡單好懂。</p>
+        <p>雖然上面說列出了所有跨越筆順的字根，但沒有例子說明可能還是難以應用，所以下面為每個跨越筆順的字根給出一些實例。先來看外框型跨越筆順的字根：</p>
+        <p></p>
+        <div class="example">
+            <p>
+                「<span class="root-special">囗</span> <span class="root-nb">04</span>」<br>
+                困：<span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 木 <span class="root-nb">48</span><br>
+                回：<span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span><br>
+                固：<span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span><br>
+                曲：<span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 卄 <span class="root-nb">4-</span><br>
+                鹵：⺊ <span class="root-nb">31</span> <span class="root-plus">+</span> <span class="root-special">囗</span>  <span class="root-nb">04</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span><br>
+            </p>
+            <p>
+                「匚 <span class="root-nb">12</span>」<br>
+                匠：匚 <span class="root-nb">12</span> <span class="root-plus">+</span> 斤 <span class="root-nb">93</span><br>
+                匹：匚 <span class="root-nb">12</span> <span class="root-plus">+</span> ㄦ <span class="root-nb">8-</span><br>
+                巨：匚 <span class="root-nb">12</span> <span class="root-plus">+</span> <img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span><br>
+                臣：匚 <span class="root-nb">12</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> <img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span><br>
+            </p>
+            <p>
+                「<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span>」<br>
+                巴：<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」"> <span class="root-nb">51</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 乚 <span class="root-nb">2-</span><br>
+
+            </p>
+            <p>
+                「廿 <span class="root-nb">41</span>」<br>
+                甘：廿 <span class="root-nb">41</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span><br>
+            </p>
+            <p>
+                「𦥑 <span class="root-nb">91</span>*」（<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ"> <span class="root-nb">91</span>*）<br>                
+                叟*：𦥑 <span class="root-nb">91</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 又 <span class="root-nb">58</span><br>
+                盥：𦥑 <span class="root-nb">91</span> <span class="root-plus">+</span> 水 <span class="root-nb">38</span> <span class="root-plus">+</span> 皿 <span class="root-nb">7-</span><br>
+                興：<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ"> <span class="root-nb">91</span> <span class="root-plus">+</span> 冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> <img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫"> <span class="root-nb">10</span> <span class="root-plus">+</span> 八 <span class="root-nb">8-</span><br>
+                與：<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ"> <span class="root-nb">91</span> <span class="root-plus">+</span> <img src="img/array30-root/19與.png" class="root" alt="行列字根 19，「與」上半部中間"> <span class="root-nb">19</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 八 <span class="root-nb">8-</span><br>
+                學：<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ"> <span class="root-nb">91</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> <img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span><br>
+            </p>
+            <p class="comment">看到此字根就要先取，再取它裡面的東西，這就是跨越筆畫的意思。當然，有些字例如「叟」這樣取碼本來就符合<a href="https://stroke-order.learningweb.moe.edu.tw/characters.do?lang=zh_TW" target="_blank">教育部國字標準字體筆順</a>，所以實際上並沒有跨筆順。</p>
+        </div>
+        接著來看骨幹型跨越筆順的字根：
+        <div class="example">
+            <p>
+                字根「工 <span class="root-nb">11</span>」<br>
+                巫：工 <span class="root-nb">11</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span><br>
+            </p>
+            <p>
+                字根「大 <span class="root-nb">18</span>」<br>
+                夾：大 <span class="root-nb">18</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span><br>
+                爽：大 <span class="root-nb">18</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span>
+            </p>
+            <p>
+                字根「儿 <span class="root-nb">2-</span>」<br>
+                兆：儿 <span class="root-nb">2-</span> <span class="root-plus">+</span> <img src="img/array30-root/88求.png" class="root" alt="行列字根 88，「求」第三到六筆畫"> <span class="root-nb">88</span>
+            </p>
+            <p>
+                字根「木 <span class="root-nb">48</span>」<br>
+                末：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span><br>
+                東：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 曰 <span class="root-nb">01</span><br>
+                柬：木 <span class="root-nb">48</span> <span class="root-plus">+</span> <img src="img/array30-root/08曾(1).png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日再去掉中間豎線"> <span class="root-nb">08</span><br>
+                來：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span><br>                
+                刺：木 <span class="root-nb">48</span> <span class="root-plus">+</span> 冂 <span class="root-nb">7-</span> <span class="root-plus">+</span> 刂 <span class="root-nb">33</span><br>
+                
+            </p>
+            <p>
+                字根「<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span>」<br>
+                重：<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span> <span class="root-plus">+</span> 曰 <span class="root-nb">01</span><br>
+                垂：<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰"> <span class="root-nb">91</span> <span class="root-plus">+</span> 艹 <span class="root-nb">4-</span><br>
+                乘：㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 木 <span class="root-nb">48</span> <span class="root-plus">+</span> <img src="img/array30-root/31北.png" class="root" alt="行列字根 31，「北」左半邊"> <span class="root-nb">31</span> <span class="root-plus">+</span> 匕 <span class="root-nb">12</span><br>
+            </p>
+        </div>
+        <p>以上就是「拆字與取碼原則」的所有介紹！您只要再閱讀接下來的「罕用字以及簡體字、輸入、重碼」這三節，您就可以透過行列輸入法輸入所有字了！</p>
+    </section>
+    
+
+    <section>
+        <h2>罕用字以及簡體字</h2>
+        <p>上面我們已經學完了行列輸入法如何拆碼，而普通編碼便是透過拆碼而來的一至四個字根（的鍵位），但有三種狀況例外。</p>
+        <div class="example">
+            <p>
+                1. 該字本身是字根或形似字根，但不常用到：這種字的普通編碼設定為該字根重複四次。
+            </p>
+            <p>
+                2. 該字是罕用字，同時也是字根（或形似字根）：這種字的普通編碼設定為該字根重複四次後加上按鍵 <span class="keycap keycap-letter">8↑</span>（也就是英文鍵 <span class="keycap keycap-letter">i</span>）。
+            </p>
+            <p>
+                3. 該字是罕用字，並且不是字根：這種字的普通編碼設定為原本透過拆碼而來的一至四個字根再加上按鍵 <span class="keycap keycap-letter">8↑</span>（也就是英文鍵 <span class="keycap keycap-letter">i</span>）。
+            </p>
+        </div>
+        
+        <p>簡單來說，罕用字的普通編碼會多加上「罕字鍵」  <span class="keycap keycap-letter">8↑</span>。而本身是字根（或形似字根）但不是常用的字，它的普通編碼是字根鍵連續按四次。（所以本身是字根（或形似字根）的罕用字，它的普通編碼是字根鍵連續按四次加上罕字鍵 <span class="keycap keycap-letter">8↑</span>。）</p>
+
+        <p>回到上方列出的三種狀況。前兩種狀況的字數量不多，所以下方全部列出，但因為內容重要性不高，所以將內容隱藏起來。點擊黑色三角形或是文字描述就可以縮合內容。</p>
+        
+        <p class="comment">
+            這一部份的教學涉及到罕用字，有些罕用字可能在您裝置上顯示不出來，主因是您裝置上的字體不支援該罕用字的顯示。由於這些罕用字對於本教學沒有重要性，我並沒有像行列字根一樣，為了確保教學品質將可能無法顯示的字元以圖片的方式呈現。<br>
+            如果要正確顯示多數罕用字，您可以下載免費的字體「思源宋體 Noto Serif CJK」（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）；如果要正確顯示所有罕用字，您可以下載免費的字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/downloads/64385/hanazono-20160201.zip/" target="_blank">點此下載</a>）。<br>
+            另外，顯示不出來的罕用字是確實存在的，只是沒有正確顯示出來，也就是說您依舊可以選取、複製它們，也可以在別處貼上（例如複製貼上到本站的<a href="/dictionary.html" target="_blank">行列查碼</a>來查詢），即使整個過程您都沒看到該字被正確顯示出來。
+        </p>
+        
+        <details>
+            <summary>這裡是所有「本身是字根或形似字根，但不常用到」的字。它們的普通編碼為該字根重複四次。</summary>
+            <div class="example">
+                <p>
+                    <span class="keycap keycap-letter">1↑</span>：匕 <span class="root-nb">12</span>、匚 <span class="root-nb">12</span><br>
+                    <span class="keycap keycap-letter">1↓</span>：厂 <span class="root-nb">19</span><br>
+                    <span class="keycap keycap-letter">2↑</span>：丱 <span class="root-nb">22</span><br>
+                    <span class="keycap keycap-letter">2-</span>：几 <span class="root-nb">2-</span>、儿 <span class="root-nb">2-</span><br>
+                    <span class="keycap keycap-letter">2↓</span>：糸 <span class="root-nb">28</span>、爿 <span class="root-nb">29</span><br>
+                    <span class="keycap keycap-letter">3↑</span>：虍 <span class="root-nb">32</span><br>
+                    <span class="keycap keycap-letter">3-</span>：凵 <span class="root-nb">3-</span>、屮 <span class="root-nb">3-</span><br>
+                    <span class="keycap keycap-letter">3↓</span>：氵 <span class="root-nb">38</span>、氺 <span class="root-nb">38</span>、㣺 <span class="root-nb">36</span><br>
+                    <span class="keycap keycap-letter">4-</span>：廾 <span class="root-nb">4-</span>、丰 <span class="root-nb">4-</span>、卅 <span class="root-nb">4-</span>、卌 <span class="root-nb">4-</span>（可以算是隱藏版字根…）<br>
+                    <span class="keycap keycap-letter">4↓</span>：朩 <span class="root-nb">48</span><br>
+                    <span class="keycap keycap-letter">5↑</span>：彐 <span class="root-nb">51</span>、阝 <span class="root-nb">53</span><br>
+                    <span class="keycap keycap-letter">5-</span>：户 <span class="root-nb">5-</span>、乛 <span class="root-nb">5-</span>、戸 <span class="root-nb">5-</span><br>
+                    <span class="keycap keycap-letter">5↓</span>：尸 <span class="root-nb">59</span><br>
+                    <span class="keycap keycap-letter">6↑</span>：亠 <span class="root-nb">61</span>、讠 <span class="root-nb">62</span>、吂 <span class="root-nb">60</span>、訁 <span class="root-nb">60</span><br>
+                    <span class="keycap keycap-letter">6-</span>：丶 <span class="root-nb">6-</span>、疒 <span class="root-nb">6-</span><br>
+                    <span class="keycap keycap-letter">6↓</span>：产 <span class="root-nb">69</span>、宀 <span class="root-nb">67</span>、广 <span class="root-nb">69</span>、忄 <span class="root-nb">66</span>、辶 <span class="root-nb">68</span>、㣺 <span class="root-nb">66</span>*<br>
+                    <span class="keycap keycap-letter">7-</span>：冂 <span class="root-nb">7-</span>、冖 <span class="root-nb">7-</span>、卩 <span class="root-nb">7-</span><br>
+                    <span class="keycap keycap-letter">7↓</span>：禸 <span class="root-nb">76</span><br>
+                    <span class="keycap keycap-letter">8↑</span>：钅 <span class="root-nb">82</span>、亼 <span class="root-nb">81</span>、亽 <span class="root-nb">81</span>、釒 <span class="root-nb">81</span>、䒑 <span class="root-nb">81</span><br>
+                    <span class="keycap keycap-letter">8-</span>：亻 <span class="root-nb">8-</span>、冫 <span class="root-nb">8-</span>、丷 <span class="root-nb">8-</span>、乀 <span class="root-nb">8-</span>、乁 <span class="root-nb">8-</span><br>                        
+                    <span class="keycap keycap-letter">9↑</span>：气 <span class="root-nb">92</span><br>
+                    <span class="keycap keycap-letter">9-</span>：丿 <span class="root-nb">9-</span>*、勹 <span class="root-nb">95</span><br>
+                    <span class="keycap keycap-letter">9↓</span>：乂 <span class="root-nb">98</span>、彳 <span class="root-nb">98</span>、豸 <span class="root-nb">99</span><br>
+                    <span class="keycap keycap-letter">0↑</span>：囗 <span class="root-nb">04</span><br>
+                    <span class="keycap keycap-letter">0↓</span>：罒 <span class="root-nb">08</span><br>
+                </p>
+
+                <p>注意到「㣺」字的普通編碼有兩種，<span class="keycap keycap-letter">3↓</span> 按四次或是 <span class="keycap keycap-letter">6↓</span> 按四次，以及「丿」字的普通編碼不是 <span class="keycap keycap-letter">3-</span> 按四次，而是 <span class="keycap keycap-letter">9-</span> 按四次。</p>
+
+                <p class="comment">有些字純粹只是正常拆碼得到的普通編碼是同一顆行列 30 鍵按四次：絫茻㵘㙓朤。</p>
+            </div>
+            
+        </details>
+        <details>
+            <summary>這裡是所有「是罕用字，同時也是字根（或形似字根）」的字。它們的普通編碼為該字根重複四次後加上罕字鍵 <span class="keycap keycap-letter">8↑</span>。</summary>
+            <div class="example">
+                <p>
+                    <span class="keycap keycap-letter">1↑</span>：匸 <span class="root-nb">12</span>、㐄 <span class="root-nb">13</span>、𠤎 <span class="root-nb">12</span>、𠮛 <span class="root-nb">10</span><br>
+                    <span class="keycap keycap-letter">1↓</span>：镸 <span class="root-nb">16</span>、𠂇 <span class="root-nb">19</span>、𠫓 <span class="root-nb">16</span>、𡗗 <span class="root-nb">18</span><br>
+                    <span class="keycap keycap-letter">2↑</span>：巛 <span class="root-nb">22</span>、巜 <span class="root-nb">22</span>、彑 <span class="root-nb">21</span>、𡿦 <span class="root-nb">22</span>、<br>
+                    <span class="keycap keycap-letter">2-</span>：乚、𠃉、𠃊、𠃋、𠄌、𠘧、𠘨、𡿨、𧾷 <span class="root-nb">2-</span><br>
+                    <span class="keycap keycap-letter">2↓</span>：乡 <span class="root-nb">29</span>（可以算是隱藏版字根…）、厶 <span class="root-nb">26</span>、幺 <span class="root-nb">26</span>、纟 <span class="root-nb">28</span>、糹 <span class="root-nb">28</span>、<br>
+                    <span class="keycap keycap-letter">3↑</span>：刂 <span class="root-nb">33</span>、𣶒 <span class="root-nb">33</span><br>
+                    <span class="keycap keycap-letter">3-</span>：丨、亅 <span class="root-nb">3-</span><br>
+                    <span class="keycap keycap-letter">3↓</span>：𡭔 <span class="root-nb">38</span>、𣥂 <span class="root-nb">39</span><br>
+                    <span class="keycap keycap-letter">4↑</span>：𬻂 <span class="root-nb">42</span><br>
+                    <span class="keycap keycap-letter">4-</span>：艹、卄、丯、卝、𠀆、𬂛、𬺰 <span class="root-nb">4-</span><br>
+                    <span class="keycap keycap-letter">4↓</span>：𣎳 <span class="root-nb">48</span><br>
+                    <span class="keycap keycap-letter">5↑</span>：𫝀 <span class="root-nb">51</span><br>
+                    <span class="keycap keycap-letter">5-</span>：𠃌、𠃍、𠃑、𠄎 <span class="root-nb">5-</span>、𢎘 <span class="root-nb">55</span><br>
+                    <span class="keycap keycap-letter">5↓</span>：习 <span class="root-nb">58</span>、廴 <span class="root-nb"></span>、癶 <span class="root-nb">58</span>、𠃜 <span class="root-nb">59</span><br>
+                    <span class="keycap keycap-letter">6↓</span>：𭕄 <span class="root-nb">69</span>、<br>
+                    <span class="keycap keycap-letter">7-</span>：𠂊 <span class="root-nb">7-</span><br>
+                    <span class="keycap keycap-letter">7↓</span>：贝 <span class="root-nb">78</span>、冎 <span class="root-nb">77</span><br>
+                    <span class="keycap keycap-letter">8↑</span>：𠚕 <span class="root-nb">83</span><br>
+                    <span class="keycap keycap-letter">8-</span>：𠆢 <span class="root-nb">8-</span><br>
+                    <span class="keycap keycap-letter">8↓</span>：灬 <span class="root-nb">88</span>、㡀 <span class="root-nb">88</span><br>
+                    <span class="keycap keycap-letter">9↑</span>：扌 <span class="root-nb">94</span>、𠀉 <span class="root-nb">91</span>、𠂉 <span class="root-nb">91</span>、𠂒 <span class="root-nb">91</span>、𦥑 <span class="root-nb">91</span>、𫶧 <span class="root-nb">92</span><br>
+                    <span class="keycap keycap-letter">9-</span>：𥫗 <span class="root-nb">9-</span><br>
+                    <span class="keycap keycap-letter">9↓</span>：夂 <span class="root-nb">98</span>、彡 <span class="root-nb">99</span>、攵 <span class="root-nb">98</span>、犭 <span class="root-nb">99</span>、乑 <span class="root-nb">98</span>、夊 <span class="root-nb">98</span>、爫 <span class="root-nb">99</span>、㐅 <span class="root-nb">98</span>、𠂆 <span class="root-nb">99</span>、𧰨 <span class="root-nb">98</span><br>
+                    <span class="keycap keycap-letter">0↑</span>：𫩏 <span class="root-nb">03</span><br>
+                    <span class="keycap keycap-letter">0↓</span>：𠁤 <span class="root-nb">08</span><br>
+                </p>
+                <p class="comment">有些罕用字（見下一段要說明的第三點）純粹只是正常拆碼後得到的普通編碼是同一顆行列 30 鍵按四次加上罕字鍵 <span class="keycap keycap-letter">8↑</span>：㠭𠥓𣬅𨏿𬼖𠫬𦅍𩙡𬘁𠟞𨷾𭭴𡵅𡮐𣾜𠀎𣛧𣡕𣡽𥗉𥗐敠叕𢻚𢾪𢿺𤿵𤿵𧮦𢠋𠜌𥋬𨰻𠂹𠈌𠉭𡚆𦠪𨥄𬾀𥷹㸚𢼫𣊫𣊭𤳳𤴐𤴑𪉀𪱈𠾅。</p>
+            </div>            
+        </details>        
+
+        <p>前面的三種狀況中，比較重要的是第三點，也就是<u>是罕用字，並且不是字根</u>。這種字的普通編碼為「原本透過拆碼而來的一至四個字根再加上罕字鍵 <span class="keycap keycap-letter">8↑</span>」。</p>
+        
+        <div class="example">
+            <p>舉例來說：</p>
+            <p>
+                「𠆣」這個字拆碼應當是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span>」，但是因為它是罕用字，它的普通編碼不是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span>」而是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+            <p>
+                「𡭯」這個字拆碼應當是「小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span>」，但是因為它是罕用字，它的普通編碼不是「小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span>」而是「小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+            <p>
+                「𢼫」這個字拆碼應當是「乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span>」，但是因為它是罕用字，它的普通編碼不是「乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span>」而是「乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+        </div>
+        <p>
+            至於怎樣判斷一個本身不是字根的字「是不是罕用字」呢？其實沒有什麼特別的方法，靠直覺！您如果覺得是罕用字，就加按 <span class="keycap keycap-letter">8↑</span> = <span class="keycap keycap-letter">i</span>，最後如果發現找不到字，那就代表它不是罕用字；反之，您如果覺得不是罕用字，那就不用額外加按 <span class="keycap keycap-letter">8↑</span>，最後如果發現找不到字，那就代表它是罕用字。
+        </p>
+
+        下面再舉幾個例子：
+        <div class="example">
+            <p>
+                「峯」這個字拆碼應當是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> <span class="root-special">夂</span> <span class="root-nb">98</span> <span class="root-plus">+</span> <img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span>」，但是因為它是罕用字，它的普通編碼不是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> <span class="root-special">夂</span> <span class="root-nb">98</span> <span class="root-plus">+</span> <img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span>」而是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> <span class="root-special">夂</span> <span class="root-nb">98</span> <span class="root-plus">+</span> <img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+            <p>
+                「𡵲」這個字拆碼應當是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span>」，但是因為它是罕用字，它的普通編碼不是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span>」而是「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> 攵 <span class="root-nb">98</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+            <p>
+                「马」這個字拆碼應當是「<img src="img/array30-root/55马.png" class="root root-sc" alt="行列字根 55，「马」去掉四點"> <span class="root-nb">55</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span>」，但是因為它是罕用字，它的普通編碼不是「<img src="img/array30-root/55马.png" class="root root-sc" alt="行列字根 55，「马」去掉四點"> <span class="root-nb">55</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span>」而是「<img src="img/array30-root/55马.png" class="root root-sc" alt="行列字根 55，「马」去掉四點"> <span class="root-nb">55</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。
+            </p>
+        </div>
+
+        <p>以上就是罕用字的全部教學。另外，行列輸入法的拆碼完全適用於簡體字，也就是說將簡體字拆碼就跟將繁體字拆碼的方法一樣。更廣義地來說，任何<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E9%9F%93%E7%B5%B1%E4%B8%80%E8%A1%A8%E6%84%8F%E6%96%87%E5%AD%97" target="_blank">統一漢字</a>的拆碼方式都一樣，不論是來自繁體中文、簡體中文、日文、韓文、越南文、壯文、琉球文等。只是<u>在繁體中文中不常用的字，在行列輸入法中很有可能被歸為罕用字</u>，這就是為什麼許多簡體字或日文漢字可能在簡體中文或日文中相當常用，但在行列輸入法內被歸到罕用字，使得普通編碼要加上罕字鍵 <span class="keycap keycap-letter">8↑</span>。</p>
+
+        
+        <div class="comment">
+            嚴格說起來，拆碼後得到的普通編碼需不需要再加上罕字鍵 <span class="keycap keycap-letter">8↑</span> = <span class="keycap keycap-letter">i</span>，不單單只取決於該字是否為罕用字：有些罕用字拆碼後得到的普通編碼，因為重碼數量少（意思是幾乎沒什麼其它字的編碼跟這個編碼一樣），所以不加上罕字鍵。這種狀況主要發生在一些簡體字的普通編碼上。
+            <p>例如，簡體字「画」、「对」、「讲」的普通編碼分別是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 田 <span class="root-nb">04</span> <span class="root-plus">+</span> <span class="root-special">凵</span> <span class="root-nb">3-</span>」、「又 <span class="root-nb">58</span> <span class="root-plus">+</span> <img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫"> <span class="root-nb">4-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span>」、「<span class="root-sc">讠</span> <span class="root-nb">62</span> <span class="root-plus">+</span> <img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫"> <span class="root-nb">4-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>」，都沒有罕字鍵 <span class="keycap keycap-letter">8↑</span>。</p>
+            <p>簡體字「长」的正確筆順是先寫「㇒ <span class="root-nb">9-</span>」、再寫「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span>」，有些人則可能順序相反。正確筆順會得到拆碼「㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>」、而另一種筆順會得到拆碼「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> <img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫"> <span class="root-nb">8-</span>」（或是「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>」，不過這不符合大根先取原則）。行列輸入法設定是第一種和第三種拆碼不加罕字鍵，也就是普通編碼為「㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> <img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>」、「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> ㇏ <span class="root-nb">8-</span>」，但是第二種拆碼要加罕字鍵，也就是普通編碼為「<img src="img/array30-root/12长.png" class="root root-sc" alt="行列字根 12，「长」去掉兩斜線"> <span class="root-nb">12</span> <span class="root-plus">+</span> <img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫"> <span class="root-nb">8-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。因為行列輸入法的容錯設計（本教學後面會說明什麼是容錯），以上三種普通編碼都可以輸入「长」字。</p>
+            <p>又例如簡體字「这」因為算是罕用字，所以普通編碼是「亠 <span class="root-nb">61</span> <span class="root-plus">+</span> 乂 <span class="root-nb">2-</span> <span class="root-plus">+</span> 辶 <span class="root-nb">68</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。不過行列輸入法也有為「这」加了一個沒有罕字鍵的普通編碼「亠 <span class="root-nb">61</span> <span class="root-plus">+</span> 乂 <span class="root-nb">2-</span> <span class="root-plus">+</span> 辶 <span class="root-nb">68</span>」。以上兩種普通編碼都可以輸入「这」字。</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2>輸入</h2>
+        <p>這一部份主要要介紹普通編碼的輸入，至於簡碼、特別碼以及符號的輸入，在後面相對應的單元會說明。</p>
+        <p>普通編碼是拆字、取碼後，判斷是否是不常用字根或是否為罕用字後，得到的一或多顆要依序輸入的行列 30 鍵。在輸入這些鍵位之後，<u>要再按一下空白鍵。如果該編碼沒有重碼，則輸入完成，否則會需要面對重碼的問題。</u></p>有重碼的意思就是該編碼同時是兩個字以上的普通編碼，下一部份會詳細介紹。
+        <div class="example">
+            <p>
+                例如「奻」字的普通編碼是「女 <span class="root-nb">21</span> <span class="root-plus">+</span> 女 <span class="root-nb">21</span>」，依序鍵入 <span class="keycap keycap-letter">2↑</span>、<span class="keycap keycap-letter">2↑</span> 後，還要再按一下空白鍵 <span class="keycap keycap-space">Space</span>。此時因為編碼 <span class="keycap keycap-letter">2↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">2↑</span> 沒有重碼所以「奻」字輸入完成。
+            </p>
+            <p>
+                「元」字的普通編碼是「一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 儿 <span class="root-nb">2-</span>」。依序鍵入 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">2-</span> 後，還要再按一下空白鍵 <span class="keycap keycap-space">Space</span>。此時因為編碼 <span class="keycap keycap-letter">1-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">1-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">2-</span> 沒有重碼所以「元」字輸入完成。
+            </p>
+            <p>
+                「气」字的普通編碼是「气 <span class="root-nb">92</span> <span class="root-plus">+</span> 气 <span class="root-nb">92</span> <span class="root-plus">+</span> 气 <span class="root-nb">92</span> <span class="root-plus">+</span> 气 <span class="root-nb">92</span>」。依序鍵入 <span class="keycap keycap-letter">9↑</span>、<span class="keycap keycap-letter">9↑</span>、<span class="keycap keycap-letter">9↑</span>、<span class="keycap keycap-letter">9↑</span> 後，還要再按一下空白鍵 <span class="keycap keycap-space">Space</span>。此時因為編碼 <span class="keycap keycap-letter">9↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">9↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">9↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">9↑</span> 沒有重碼所以「气」字輸入完成。
+            </p>
+            <p>
+                「艹」字的普通編碼是「艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> 艹 <span class="root-nb">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。依序鍵入 <span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">8↑</span> 後，還要再按一下空白鍵 <span class="keycap keycap-space">Space</span>。此時因為編碼 <span class="keycap keycap-letter">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">4-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span> 沒有重碼所以「艹」字輸入完成。
+            </p>
+            <p>簡體字「发」的普通編碼是「<img src="img/array30-root/29發.png" class="root root-sc" alt="行列字根 29，「发」前兩筆畫"> <span class="root-nb">29</span> <span class="root-plus">+</span> 又 <span class="root-nb">58</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。依序鍵入 <span class="keycap keycap-letter">2↓</span>、<span class="keycap keycap-letter">5↓</span>、<span class="keycap keycap-letter">6-</span>、<span class="keycap keycap-letter">8↑</span> 後，還要再按一下空白鍵 <span class="keycap keycap-space">Space</span>。此時因為編碼 <span class="keycap keycap-letter">2↓</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">5↓</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">6-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span> 沒有重碼所以「发」字輸入完成。</p>
+        </div>
+
+        不過在鍵入一或多顆行列 30 鍵的過程中（還沒有按空白鍵），您只要在行列視窗看到了您想輸入的字，就可以直接用數字鍵選擇完成輸入。（這是行列輸入法的「預視」功能，本教學尾聲會再說明一次。唯一例外是，按 <span class="keycap keycap-letter">2↑</span> 後，行列視窗只顯示「女」字，但如果接著按數字鍵 <span class="keycap keycap-number">1</span> 想要選擇「女」，反而會進入標點符號列表而沒有輸入「女」。這是因為鍵位 <span class="keycap keycap-letter">2↑</span> 保留給符號輸入了。輸入「女」字的正確方法為按 <span class="keycap keycap-letter">2↑</span> 後，再按空白鍵完成輸入。）
+    </section>
+
+    <section>
+        <h2>重碼</h2>
+        <p>如果一個普通編碼有重碼，那麼在鍵入一或數顆行列 30 鍵並按下空白鍵後，輸入不會完成，但行列視窗上會顯示出重碼字列表。看到想要的字以數字鍵選擇完成輸入。（如果重碼字超過 10 個，可以使用空白鍵翻至選單下一頁，或使用方向鍵翻至選單上/下一頁。然後一樣，看到想要的字以數字鍵選擇完成輸入。）</p>
+        <p>不過如果想要的字重碼位是 1，有額外兩種不使用數字鍵的方法完成輸入。在鍵入一或數顆行列 30 鍵並按下空白鍵後，輸入沒有完成，此時您可以：</p>
+        <ol>
+            <li>按下空白鍵，原本那個重碼位1的字會自動完成輸入。此方法僅限於重碼數量不超過 10 個的情況，否則按下空白鍵是將重碼字選單翻到下一頁。</li>
+            <li>直接開始打下一個字（按下的鍵必須是行列 30 鍵），原本那個重碼位 1 的字會自動完成輸入。此方法不管重碼數量超不超過 10 都適用。</li>            
+        </ol>
+            
+            
+            
+        <p class="comment">當普通編碼只有一顆行列 30 鍵，並且此普通編碼沒有重碼，本站稱之為<u>單鍵碼</u>，也就是說按一顆行列 30 鍵後再按一下空白鍵即可完成輸入。包括以下八字：一十方竹乙木女風。另外，由於中文字「的」太常用，行列輸入法也為它編了一個單鍵碼：鍵入 <span class="keycap keycap-letter">5↑</span> 後再按一下空白鍵即可輸入「的」。所以行列輸入法中一共有 9 個字有單鍵碼。</p>
+    </section>
+
+    <section>
+        <h2>容錯</h2>
+        
+        <p>有些字因為每個人書寫筆順、寫法不完全相同，導致了不同的拆碼。有些字則是因為寫錯、或是因為不熟悉行列字根與拆字取碼原則，而產生了不同的拆碼。將這類拆碼納入行列輸入法，就叫做「容錯」。</p>
+        <p>行列輸入法有良好的容錯設計，讓您在打字的過程更輕鬆、順暢。下面就來舉一些行列的容錯設計。</p>
+        <h3>筆順上的容錯</h3>
+        
+        <div class="example">
+            <p>
+                「九」字有人先寫撇，有人則是後寫撇。這兩種筆順分別會得到「㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> ⺄ <span class="root-nb">2-</span>」以及「⺄ <span class="root-nb">2-</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span>」。行列的容錯設計讓這兩種編碼都可以輸入「九」字。
+            </p>
+            <hr class="hr-example">
+            <p>
+                「樂」字應該先寫「白」，但有些人習慣先寫「ㄠ」，這兩種寫法分別會得到「㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 日 <span class="root-nb">01</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> 木 <span class="root-nb">48</span>」以及「 ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 日 <span class="root-nb">01</span> <span class="root-plus">+ </span>木 <span class="root-nb">48</span>」。行列的容錯設計讓這兩種編碼都可以輸入「樂」字。
+            </p>
+            <hr class="hr-example">
+            <p>
+                簡體字「义」字有人先寫點「丶」，有人則是後寫。這兩種筆順分別會得到「乂 <span class="root-nb">98</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」以及「丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」。行列的容錯設計讓這兩種編碼都可以輸入「义」字。
+            </p>
+        </div>
+
+        <h3>寫法上的容錯</h3>        
+
+        <div class="example">
+            <p>
+                「免」字的正確寫法會給出拆碼「⺈ <span class="root-nb">7-</span> <span class="root-plus">+</span> 口 <span class="root-nb">0-</span> <span class="root-plus">+</span> <img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖"> <span class="root-nb">2-</span>」，但如果有人寫法是「⺈ <span class="root-nb">7-</span> <span class="root-plus">+</span> <img src="img/array30-root/03串.png" class="root" alt="行列字根 03，「罒」但中間只有一條豎線"> <span class="root-nb">03</span> <span class="root-plus">+</span> 儿 <span class="root-nb">2-</span>」，因為行列輸入法的容錯設計，這個編碼還是能可以輸入「免」字。當然，「兔」也是相同道理。<br>
+            </p>
+            <!-- <hr class="hr-example"> -->
+            <p>
+                「巤」字中間方框的內部是「ㄨ」，所以正確拆碼為「<img src="img/array30-root/22巛.png" class="root" alt="行列字根 22，「巛」"> <span class="root-nb">22</span> <span class="root-plus">+</span> <span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 乂 <span class="root-nb">98</span> <span class="root-plus">+</span> <img src="img/array30-root/22鼠.png" class="root" alt="行列字根 22，「鼠」下半部"> <span class="root-nb">22</span>」，但因為這個字很像「蠟」字的右半部，容易誤以為方框的內部是「人」。因為行列輸入法的容錯設計，「<img src="img/array30-root/22巛.png" class="root" alt="行列字根 22，「巛」"> <span class="root-nb">22</span> <span class="root-plus">+</span> <img src="img/array30-root/08溫.png" class="root" alt="行列字根 08，「溫」右上部分"> <span class="root-nb">08</span> <span class="root-plus">+</span> <img src="img/array30-root/22鼠.png" class="root" alt="行列字根 22，「鼠」下半部"> <span class="root-nb">22</span>」也可以輸入「巤」字。
+            </p>
+        </div>
+        
+
+        <h3>拆字、取碼上的容錯</h3>
+        <div class="example">
+            <p>
+                「曲」字的正確拆碼為「<span class="root-special">囗</span> <span class="root-nb">04</span> <span class="root-plus">+</span> 卄 <span class="root-nb">4-</span>」而不是「曰 <span class="root-nb">01</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>」，因為「曰 <span class="root-nb">01</span>」不是跨越筆順的字根。但因為行列輸入法的容錯設計，這兩種拆碼都能輸入「曲」字。 
+            </p>
+            <p>
+                「麥」字的下面取成「夕 <span class="root-nb">76</span>」或是「<span class="root-special">夂</span> <span class="root-nb">98</span>」都可以，也就是「十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 夕 <span class="root-nb">76</span>」以及「十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 夂 <span class="root-nb">98</span>」這兩種拆碼都能輸入「麥」字。 
+            </p>
+            <p>
+                「卍」字筆畫共六筆，前三筆畫寫類似數字 2 的部分（視為字根「乙 <span class="root-nb">2-</span>」），其餘部分由後三筆畫完成。所以正確拆碼為「乙 <span class="root-nb">2-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>」。但如果您先拆出中間的正交，會得到「十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>」。因為行列輸入法的容錯設計，這兩種拆碼都能夠輸入「卍」字。 
+            </p>
+            <p>
+                「卐」字筆畫共六筆，前三筆畫寫「㇞」，其餘部分由後三筆畫完成。所以正確拆碼為「㇞ <span class="root-nb">5-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span>」。。但如果您先拆出中間的正交，會得到「十 <span class="root-nb">4-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span>」。因為行列輸入法的容錯設計，這兩種拆碼都能夠輸入「卐」字。
+            </p>
+            <p>
+                「承」字的正確拆碼為「㇖ <span class="root-nb">5-</span> <span class="root-plus">+</span> <img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span> <span class="root-plus">+</span> ㇖ <span class="root-nb">5-</span> <span class="root-plus">+</span> <img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫"> <span class="root-nb">8-</span>」。如果誤以為取掉前兩個字根「㇖ <span class="root-nb">5-</span>、<img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span>」後剩下的部分是一個字根碼為 <span class="root-nb">58</span> 的字根，那麼會得到「㇖ <span class="root-nb">5-</span> <span class="root-plus">+</span> <img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂"> <span class="root-nb">4-</span> <span class="root-plus">+</span> フ<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫"> <span class="root-nb">58</span>」這個錯誤的拆碼。但因為行列輸入法的容錯設計，這兩種拆碼都能輸入「承」字。
+            </p>
+            <p>
+                在大根先取原則的說明中看過，「幾」這個字拆碼應該是「ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> 厂 <span class="root-nb">19</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」，但因為將「幾」字中「厂 <span class="root-nb">19</span>、丶 <span class="root-nb">6-</span>」部分拆成「一、人」相當直覺，所以「ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> 一 <span class="root-nb">1-</span> <span class="root-plus">+</span> <img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線"> <span class="root-nb">26</span>」這個拆碼也能輸入「幾」字。 
+            </p>
+            <p>
+                在先前的教學看過兩個隱藏版字根：「乡」、「卌」。它們的普通編碼分別是「㇛ <span class="root-nb">2-</span> <span class="root-plus">+</span> <img src="img/array30-root/29亥.png" class="root" alt="行列字根 29，「亥」第三四筆畫"> <span class="root-nb">29</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」、「卅 <span class="root-nb">4-</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span>」（或是「廾 <span class="root-nb">4-</span> <span class="root-plus">+</span> <img src="img/array30-root/33而.png" class="root" alt="行列字根 33，「而」下半部中間兩直線"> <span class="root-nb">3-</span>」，此編碼不符合大根先取原則，但因為行列輸入法的容錯設計，它也可以輸入「卌」字。）<br>
+                但它們以字根的身分也分別會得到的普通編碼「乡 <span class="root-nb">29</span> <span class="root-plus">+</span> 乡 <span class="root-nb">29</span> <span class="root-plus">+</span> 乡 <span class="root-nb">29</span> <span class="root-plus">+</span> 乡 <span class="root-nb">29</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」、「卌 <span class="root-nb">4-</span> <span class="root-plus">+</span> 卌 <span class="root-nb">4-</span> <span class="root-plus">+</span> 卌 <span class="root-nb">4</span> <span class="root-plus">+</span> 卌 <span class="root-nb">4-</span>」。此外，「鄉」、「響」這類包含偏旁「乡」的字，「乡」的部分應該拆成「㇛ <span class="root-nb">2-</span>、<img src="img/array30-root/29亥.png" class="root" alt="行列字根 29，「亥」第三四筆畫"> <span class="root-nb">29</span>」，但直接用隱藏字根「乡 <span class="root-nb">29</span>」取掉也可以。
+            </p>
+        </div>
+
+        當然，有些字的容錯不是只有「筆順上、寫法上或拆字、取碼上」的其中一種，而是有多類型的容錯。例如：
+        <div class="example">
+            <p>
+                「幽」字應該先寫中間直筆再寫左邊的「ㄠ」，但有些人先寫左邊的「ㄠ」再寫中間直筆。這兩種筆順分別會得到「丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> <span class="root-special">凵</span> <span class="root-nb">3-</span>」以及「ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> 丨 <span class="root-nb">3-</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> <span class="root-special">凵</span> <span class="root-nb">3-</span>」。行列的容錯設計讓這兩種編碼都可以輸入「幽」字。<br>
+                而拆碼「<span class="root-special">山</span> <span class="root-nb">3-</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span> <span class="root-plus">+</span> ㄠ <span class="root-nb">26</span>」並不正確，因為「<span class="root-special">山</span> <span class="root-nb">3-</span>」並不是跨越筆順的字根，但因為行列輸入法的容錯設計，此拆碼也能輸入此字。
+            </p>
+            <hr class="hr-example">
+            <p>
+                「卵」字在寫完「<img src="img/array30-root/92氏.png" class="root" alt="行列字根 92，「氏」最初兩筆畫"> <span class="root-nb">92</span>」後應該先寫「丿 <span class="root-nb">3-</span>」再寫「丶 <span class="root-nb">6-</span>」，但有些人順序相反。這兩種筆順分別會得到「<img src="img/array30-root/92氏.png" class="root" alt="行列字根 92，「氏」最初兩筆畫"> <span class="root-nb">92</span> <span class="root-plus">+</span> 丿 <span class="root-nb">3-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span>」以及「<img src="img/array30-root/92氏.png" class="root" alt="行列字根 92，「氏」最初兩筆畫"> <span class="root-nb">92</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span> <span class="root-plus">+</span> 丿 <span class="root-nb">3-</span> <span class="root-plus">+</span> 丶 <span class="root-nb">6-</span>」。行列的容錯設計讓這兩種編碼都可以輸入「卵」字。<br>
+                另外，上述兩種編碼中，如果將筆畫「丿 <span class="root-nb">3-</span>」視為撇「㇒ <span class="root-nb">9-</span>」，一樣能輸入「卵」。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>下載行列</h2>
+        <p>恭喜您讀到了這裡！從一開始的<a href="#">行列輸入法的基本五件事</a>至此處，您已經把行列輸入法的核心重點都學完了！</p>
+        <p>行列輸入法的教學還沒結束，後面依序還剩下「查詢功能」、「簡碼」、「符號」、「特別碼」、「預視」以及「其他」這幾個章節。但此時您已經可以到本站的<a href="/download.html" target="_blank">下載頁面</a>下載行列輸入法來實際體驗它的功能以及介面。</p>
+
+        <div class="w3-center" style="margin-top:40px; margin-bottom: 60px;">
+            <a href="/download.html" target="_blank" class="w3-button w3-round-xlarge" style="background-color: sandybrown;"><i class="fa fa-external-link" aria-hidden="true"></i> 前往下載適合您裝置的行列輸入法</a>
+        </div>
+
+        
+
+        <p>您當然也可以直接繼續閱讀本教學，先略過行列輸入法的下載，在閱讀完整份教學後或是任何您想要的時間再來下載行列輸入法。</p>
+
+        <p class="comment">Windows 系統雖然有內建行列輸入法可以直接使用，但是介面設計不佳且不支援多數罕用字，使用體驗整體來說相當糟糕，所以建議下載其它版本的行列輸入法，例如 DIME 行列。檔案小（不到 1 Mb）、安裝容易且沒有安全性的疑慮，重點是介面好用且支援大量的罕用字。</p>
+    </section>
+    <section>
+        <h2>查詢功能</h2>
+        <p>行列輸入法本身具有查詢功能，實際使用於您沒辦法完整拆字的時候。查詢鍵有兩種，問號 <span class="keycap keycap-letter">?</span> 以及星號 <span class="keycap keycap-letter">*</span>，下面依序為您介紹。</p>
+        <h3>問號「?」</h3>
+        <p>在鍵入行列 30 鍵時，輸入 <span class="keycap keycap-letter">?</span> 代表任意一顆行列 30 鍵。輸入 <span class="keycap keycap-letter">?</span> 的方法為按住 <span class="keycap keycap-letter">Shift</span> 同時按下 <span class="keycap keycap-letter">/</span>。</p>
+        
+        <p>舉例來說，依序鍵入 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">?</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 2 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">1-</span> 的字。</p>
+        <p class="comment">
+            有些版本的行列輸入法不用按空白鍵來進入查詢結果，行列視窗會即時顯示查詢結果，例如 DIME 行列。後面不再贅述。
+        </p>
+        <p>如果符合的字超過 10 個，可以按空白鍵到下一頁，或是按方向鍵切換上一頁/下一頁。看到想要的字以數字鍵選擇完成輸入。</p>
+        <p class="comment">
+            如果使用的行列版本不需要按空白鍵進入查詢結果，查詢結果可能不能使用空白鍵翻頁，例如 DIME 行列。
+        </p>
+
+        <p>又例如依序鍵入 <span class="keycap keycap-letter">3↑</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">4-</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 3 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">3↑</span>、第三顆鍵是 <span class="keycap keycap-letter">4-</span> 的字。</p>
+        <p>以下舉出更多例子：</p>
+        <div class="example">
+            <p>依序鍵入 <span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">5↑</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 2 顆行列 30 鍵並且第二顆鍵是 <span class="keycap keycap-letter">5↑</span> 的字；</p>
+
+            <p>依序鍵入 <span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">5↑</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 3 顆行列 30 鍵並且第三顆鍵是 <span class="keycap keycap-letter">5↑</span> 的字；</p>
+
+            <p>依序鍵入 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">?</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 3 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">1-</span>、第二顆鍵是 <span class="keycap keycap-letter">5-</span> 的字；</p>
+
+            <p>依序鍵入 <span class="keycap keycap-letter">6↓</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">3-</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 4 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">6↓</span>、第四顆鍵是 <span class="keycap keycap-letter">3-</span> 的字；</p>
+
+            <p>依序鍵入 <span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">7↑</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">1-</span>，再按下空白鍵，行列視窗就會顯示所有剛好只有 4 顆行列 30 鍵並且第二顆鍵是 <span class="keycap keycap-letter">7↑</span>、第四顆鍵是 <span class="keycap keycap-letter">1-</span> 的字；</p>
+
+            <p>依序鍵入 <span class="keycap keycap-letter">2↑</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>，再按下空白鍵，行列視窗就會顯示所有剛好有 5 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">2↑</span> 的字，也就是所有普通輸入第一顆鍵是 <span class="keycap keycap-letter">2↑</span> 的罕用字！</p>
+        </div>
+
+        <p class="comment">
+            有些版本的行列支援只有鍵入一或多顆 <span class="keycap keycap-letter">?</span> 而沒有任何行列 30 鍵的查詢，但也有些版本不支援，例如 DIME 行列。
+        </p>
+        
+        <p class="comment">
+            如果依序鍵入 <span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">8↑</span>，行列輸入法會搜索剛好只有 4 顆行列 30 鍵並且第四顆鍵是 <span class="keycap keycap-letter">8↑</span> 的字；<br>
+            同理如果依序鍵入 <span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">?</span>、<span class="keycap keycap-letter">8↑</span>，行列輸入法會搜索剛好只有 5 顆行列 30 鍵並且第五顆鍵是 <span class="keycap keycap-letter">8↑</span> 的字。<br>
+            由於罕用字的特色是要多按鍵位 <span class="keycap keycap-letter">8↑</span>，所以有非常大量的字符合以上兩種查詢條件，尤其是第二種查詢條件。有些版本的行列輸入法對這種有大量結果的查詢，可能會使您的電腦當機一下！
+        </p>
+        <h3>星號「*」</h3>
+
+        <p>在鍵入行列 30 鍵時，輸入 <span class="keycap keycap-letter">*</span> 代表任意一或多顆行列 30 鍵。輸入 <span class="keycap keycap-letter">*</span> 的方法為按住 <span class="keycap keycap-letter">Shift</span> 同時按下 <span class="keycap keycap-number">8</span>。</p>        
+               
+        <p>舉例來說，依序鍵入 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">*</span>，再按下空白鍵，行列視窗就會顯示所有至少有 2 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">1-</span> 的字。</p>
+        <p class="comment">
+            有些版本的行列輸入法不用按空白鍵來進入查詢結果，行列視窗會即時顯示查詢結果，例如 DIME 行列。後面不再贅述。
+        </p>
+        <p>如果符合的字超過 10 個，可以按空白鍵到下一頁，或是按方向鍵切換上一頁/下一頁。看到想要的字以數字鍵選擇完成輸入。</p>
+        <p class="comment">
+            如果使用的行列版本不需要按空白鍵進入查詢結果，查詢結果可能不能使用空白鍵翻頁，例如 DIME 行列。
+        </p>
+
+        <p>又例如依序鍵入 <span class="keycap keycap-letter">3↑</span>、<span class="keycap keycap-letter">*</span>、<span class="keycap keycap-letter">4-</span>，再按下空白鍵，行列視窗就會顯示所有至少有 3 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">3↑</span>、最後一顆鍵是 <span class="keycap keycap-letter">4-</span> 的字。</p>
+        <p>以下舉出更多例子：</p>
+
+        <div class="example">
+            <p>依序鍵入 <span class="keycap keycap-letter">*</span>、<span class="keycap keycap-letter">5↑</span>，再按下空白鍵，行列視窗就會顯示所有至少有 2 顆行列 30 鍵並且最後一顆鍵是 <span class="keycap keycap-letter">5↑</span> 的字；</p>
+
+            
+            <p>依序鍵入 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">*</span>，再按下空白鍵，行列視窗就會顯示所有至少有 3 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">1-</span>、第二顆鍵是 <span class="keycap keycap-letter">5-</span> 的字。</p>
+        </div>
+        <p class="comment">
+            有些版本的行列支援只有鍵入一顆 <span class="keycap keycap-letter">*</span> 而沒有任何行列 30 鍵的查詢，也就是查詢結果包含所有字。但也有些版本不支援，例如 DIME 行列。
+        </p>
+        
+        
+        <h3>實際應用</h3>
+        <p>以上介紹完行列查詢功能，這裡舉幾個實際應用的例子。</p>
+        <p>例如要輸入「劑」這個字，但您可能還不熟悉行列拆碼。除了查碼這個選項外（網路查碼首選本網站的 <a href="/dictionary.html" target="_blank">FISH UP 行列查碼</a>😍），如果您知道這個字第一個字根是「亠 <span class="root-nb">61</span>」、最後一個字根是「刂 <span class="root-nb">33</span>」，而中間應該會有兩個字根，您就可以輸入 <span class="keycap keycap-letter">6↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">?</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">?</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">3↑</span>，此時行列視窗就會顯示所有剛好只有 4 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">6↑</span>、第四顆鍵是 <span class="keycap keycap-letter">3↑</span> 的字：1 刻 2 端 3 齊 4 劑…，這時按下數字鍵 <span class="keycap keycap-number">4</span> 就可以完成「劑」的輸入。</p>
+        <p class="comment">不同版本的行列，查詢結果排序可能會不一樣。</p>
+        <p>如果您只知道第一個字根是「亠 <span class="root-nb">61</span>」、最後一個字根是「刂 <span class="root-nb">33</span>」，而中間至少一個字根但不確定有幾個，您就可以輸入 <span class="keycap keycap-letter">6↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">*</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">3↑</span>，此時行列視窗就會顯示至少有 3 顆行列 30 鍵並且第一顆鍵是 <span class="keycap keycap-letter">6↑</span>、最後一顆鍵是 <span class="keycap keycap-letter">3↑</span> 的字：1 刻 2 端 3 齊 4 証 5 劑…，這時按下數字鍵 <span class="keycap keycap-number">5</span> 就可以完成「劑」的輸入。</p>
+        <div class="example">
+            <p>例如您不會拆「檻」，不過您知道第一個字根是「木 <span class="root-nb">48</span>」、最後一個字根是「皿 <span class="root-nb">71</span>」，中間有兩個字根，您可以輸入 <span class="keycap keycap-letter">4↓</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">?</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">?</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">7↑</span>；如果知道中間至少一個但不確定有幾個字根，輸入 <span class="keycap keycap-letter">4↓</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">*</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">7↑</span>。</p>
+        </div>        
+        
+    </section>
+
+    <section>
+        <h2>簡碼</h2>
+        <h3>一級簡碼</h3>
+        <p>一級簡碼的通則為<u>按完 1 顆行列 30 鍵後按一顆數字鍵</u>完成輸入。</p>
+        <p>當您按了 1 顆行列 30 鍵之後，行列視窗會出現 10 個字。這不是重碼字，而是常用的「一級簡碼字」，只要按對應的數字鍵就能把它選上。</p>
+        <div class="example">
+            <p>例如按下 <span class="keycap keycap-letter">7-</span>，行列視窗會顯示「1 目 2 刀 3 角 4 周 5 眼 6 運 7 解 8 肉 9 色 10 免」，如果接著按數字鍵 <span class="keycap keycap-number">5</span> ，便會打出「眼」字。</p>
+        </div>
+        <p>唯一例外是按下 <span class="keycap keycap-letter">2↑</span>，行列視窗只會出現 1 個字「女」，並且如果接著按數字鍵 <span class="keycap keycap-number">1</span> 想要選擇「女」，反而會進入標點符號列表而沒有輸入「女」。這是因為鍵位 <span class="keycap keycap-letter">2↑</span> = <span class="keycap keycap-letter">w</span> 保留給符號輸入了。輸入「女」字的正確方法為按 <span class="keycap keycap-letter">2↑</span> 後，再按 <span class="keycap keycap-space">Space</span> 完成輸入。</p>
+        
+        <p>一級簡碼的第一顆鍵，行列 30 鍵，一定是普通編碼的第一顆鍵；而第二顆鍵，數字鍵，多數是普通編碼第二顆鍵的行數（也就是第二字根碼的第一個數字），不過仍有不少一級簡碼字，一級簡碼的數字鍵不符合上述規則。</p>
+        <div class="example">
+            <p><span class="keycap keycap-letter">7-</span> <span class="root-plus">+</span> <span class="keycap keycap-number">5</span> 打出「眼」字，「眼」的普通編碼是「<span class="root-special">目</span> <span class="root-nb">7-</span> <span class="root-plus">+</span> 彐 <span class="root-nb">51</span> <span class="root-plus">+</span> <img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫"> <span class="root-nb">28</span>」，第二顆鍵的行數為 5，正是一級簡碼的數字鍵。按下 <span class="keycap keycap-letter">7-</span> 出現的「4 周、7 解、8 肉、0 免」也都是相同的道理。<br>
+            但像是「運」字的一級簡碼 <span class="keycap keycap-letter">7-</span> <span class="root-plus">+</span> <span class="keycap keycap-number">6</span> 就不符合此規則，因為它的普通編碼為「冖 <span class="root-nb">7-</span> <span class="root-plus">+</span> 車 <span class="root-nb">14</span> <span class="root-plus">+</span> 辶 <span class="root-nb">68</span>」，第二顆鍵的行數 1 並不是一級簡碼的數字鍵。
+            </p>
+        </div>
+        <p>實際使用上，輸入一顆行列 30 鍵後，在行列視窗上有看到想要的字就可以用數字鍵選擇完成輸入，所以一級簡碼可以透過經驗習得。當然一級簡碼也可以特別去記憶，但<b>一開始學習行列輸入法時，不建議特別花心力去記哪些字有一級簡碼也不建議特別去記它們一級簡碼的數字鍵</b>，應先熟悉字的取碼（也就是普通編碼）。</p>
+        <p>另外，有 20 個全形符號有一級簡碼，包括常用的全形標點符號。這些符號的一級簡碼在後面<a href="#">符號</a>部分會詳細介紹。</p>
+
+
+        <h3>二級簡碼</h3>
+        <p>二級簡碼的通則為<u>按完 2 顆行列 30 鍵後按一顆數字鍵</u>完成輸入。</p>
+        <p>當您按了 2 顆行列 30 鍵之後，行列視窗會出現一些字。這不是重碼字，而是「二級簡碼字」，只要按對應的數字鍵就能把它選上。</p>
+        <p>二級簡碼的頭兩顆鍵，行列 30 鍵，一定是普通編碼的前兩顆鍵；而第三顆鍵，數字鍵，<b>一定</b>是普通編碼第三顆鍵的行數（也就是第三字根碼的第一個數字）。也就是說如果知道一個字是二級簡碼字，就可以知道它二級簡碼的數字鍵，因為二級簡碼數字鍵完全遵循上述規則，無一例外。</p>
+        <div class="example">
+            <p>例如依序按下 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">7-</span>，行列視窗會顯示「4 再 6 麗 8 丙」，如果接著按數字鍵 <span class="keycap keycap-number">4</span> ，便會打出「再」字。</p>
+        </div>
+        <p class="comment">鍵入兩顆行列 30 鍵，行列視窗上可能會出現一些「圓圈」或「方框」，看起來很像缺字。這是行列輸入法本身的設計，屬正常現象。同樣的狀況也出現在鍵入單一一顆行列 30 鍵 <span class="keycap keycap-letter">2↑</span> 時。</p>
+
+        <h3>小結</h3>
+        <p>鍵入一或二顆行列 30 鍵，行列視窗上就會顯示出簡碼字，有看到想要的字就可以用數字鍵選擇完成輸入。而打字經驗多了之後，時常就能不看行列視窗輸入簡碼字，因為熟悉了數字鍵的規則或把數字鍵記起來了。</p>
+        <p class="comment">
+            總共有 270 個字有一級簡碼，有 20 個符號有一級簡碼。<br>
+            總共有 3037 個字有二級簡碼，沒有任何符號有二級簡碼。
+        </p>
+    </section>
+
+    <section>
+        <h2>符號</h2>
+        <h3 id="symbol-list">符號選單</h3>
+        <p>先按 <span class="keycap keycap-letter">2↑</span> （也就是英文鍵 <span class="keycap keycap-letter">w</span>），再按任意一顆數字鍵便會進到符號選單（不同的數字鍵依照下方說明對應到不同類型的選單）。進入選單後可以按空白鍵到下一頁，或是按方向鍵切換上一頁/下一頁，看到想要的符號以數字鍵選擇完成輸入。</p>
+        <div class="example">
+            <p>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">1</span>：標點符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">2</span>：括號符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">3</span>：一般符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">4</span>：數學符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">5</span>：方向符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">6</span>：單位符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">7</span>：圖表符號選單<br><span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">8</span>：順序符號選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">9</span>：希臘字母選單<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">0</span>：注音符號選單
+            </p>
+        </div>
+        
+        <p>以下列出各選單詳細內容：</p>
+        <div class="example">
+            <p>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">1</span>（標點符號選單）<br>
+                ， 、 。 ． ‧ ； ： ？ ！ ︰ … ‥ ﹐ ﹑ ﹒ · ﹔ ﹕ ﹖ ﹗ ｜ – ︱ — ︳ ╴ ︴ ﹏<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">2</span>（括號符號選單）<br>
+                （ ） ︵ ︶ ｛ ｝ ︷ ︸ 〔 〕 ︹ ︺ 【 】 ︻ ︼ 《 》 ︽ ︾ 〈 〉 ︿ ﹀ 「 」 ﹁ ﹂ 『 』 ﹃ ﹄ ﹙ ﹚ ﹛ ﹜ ﹝ ﹞ ‘ ’ “ ” 〝 〞 ‵ ′<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">3</span>（一般符號選單）<br>
+                ＃ ＆ ＊ ※ § 〃 ○ ● △ ▲ ◎ ☆ ★ ◇ ◆ □ ■ ▽ ▼ ㊣ ℅ ¯ ￣ ＿ ˍ ﹉ ﹊ ﹍ ﹎ ﹋ ﹌ ﹟ ﹠ ﹡ ＋ － × ÷ ± √ ＜ ＞ ＝ ≦ ≧ ≠ ∞ ≒ ≡<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">4</span>（數學符號選單）<br>
+                ﹢ ﹣ ﹤ ﹥ ﹦ ～ ∩ ∪ ⊥ ∠ ∟ ⊿ ㏒ ㏑ ∫ ∮ ∵ ∴<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">5</span>（方向符號選單）<br>
+                ♀ ♂ ⊕ ⊙ ↑ ↓ ← → ↖ ↗ ↙ ↘ ∥ ∣ ／ ＼ ∕ ﹨ ＄ ￥ 〒 ￠ ￡ ％ ＠ ℃ ℉<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">6</span>（單位符號選單）<br>
+                ﹩ ﹪ ﹫ ㏕ ㎜ ㎝ ㎞ ㏎ ㎡ ㎎ ㎏ ㏄ ° 兙 兛 兞 兝 兡 兣 嗧 瓩 糎<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">7</span>（圖表符號選單）<br>
+                ▁ ▂ ▃ ▄ ▅ ▆ ▇ █ ▏ ▎ ▍ ▌ ▋ ▊ ▉ ┼ ┴ ┬ ┤ ├ ▔ ─ │ ▕ ┌ ┐ └ ┘ ╭ ╮ ╰ ╯ ═ ╞ ╪ ╡ ◢ ◣ ◥ ◤ ╱ ╲ ╳ ╔ ╦ ╗ ╠ ╬ ╣ ╚ ╩ ╝ ╒ ╤ ╕ ╘ ╧ ╛ ╓ ╥ ╖ ╟ ╫ ╢ ╙ ╨ ╜ ║ ▓<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">8</span>（順序符號選單）<br>
+                ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⅰ ⅱ ⅲ ⅳ ⅴ ⅵ ⅶ ⅷ ⅸ ⅹ Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ 〡 〢 〣 〤 〥 〦 〧 〨 〩 〸 〹 〺<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">9</span>（希臘字母選單）<br>
+                Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω<br>
+                <span class="keycap keycap-letter">2↑</span> + <span class="keycap keycap-number">0</span>（注音符號選單）<br>
+                ㄅ ㄆ ㄇ ㄈ ㄉ ㄊ ㄋ ㄌ ㄍ ㄎ ㄏ ㄐ ㄑ ㄒ ㄓ ㄔ ㄕ ㄖ ㄗ ㄘ ㄙ ㄚ ㄛ ㄜ ㄝ ㄞ ㄟ ㄠ ㄡ ㄢ ㄣ ㄤ ㄥ ㄦ ㄧ ㄨ ㄩ ˙ ˉ ˊ ˇ ˋ
+            </p>
+        </div>
+        <h3>有一級簡碼的符號</h3>
+        <p>除了透過進入符號選單來輸入符號，行列輸入法將一些常用的符號安排了一級簡碼。</p>
+        <p>全形的逗號、句號、冒號以及分號這 4 個符號，它們一級簡碼的行列 30 鍵，就是英文鍵盤上印有該符號的按鍵。</p>
+        <div class="example">
+            <p>
+                全形逗號「，」：<span class="keycap keycap-letter">,</span> + <span class="keycap keycap-number">1</span>（也就是 <span class="keycap keycap-letter">8↓</span> + <span class="keycap keycap-number">1</span>）<br>
+                全形句號「。」：<span class="keycap keycap-letter">.</span> + <span class="keycap keycap-number">1</span>（也就是 <span class="keycap keycap-letter">9↓</span> + <span class="keycap keycap-number">1</span>）<br>
+                全形冒號「：」：<span class="keycap keycap-letter">;</span> + <span class="keycap keycap-number">2</span>（也就是 <span class="keycap keycap-letter">0-</span> + <span class="keycap keycap-number">2</span>）<br>
+                全形分號「；」：<span class="keycap keycap-letter">;</span> + <span class="keycap keycap-number">3</span>（也就是 <span class="keycap keycap-letter">0-</span> + <span class="keycap keycap-number">3</span>）<br>
+            </p>
+        </div>
+        
+        
+
+        <p>另外 <span class="keycap keycap-letter">d</span> 和 <span class="keycap keycap-letter">/</span>，也就是鍵位 <span class="keycap keycap-letter">3-</span> 和 <span class="keycap keycap-letter">0↓</span>，這兩顆行列 30 鍵各自提供了 8 個符號的一級簡碼。</p>
+        <div class="example">
+            <p>按鍵 <span class="keycap keycap-letter">d</span> = <span class="keycap keycap-letter">3-</span> 提供的 8 個符號：</p>
+            <p>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">3</span>：！&emsp;&emsp;（全形驚嘆號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">4</span>：「&emsp;&emsp;（全形單引號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">5</span>：」&emsp;&emsp;（全形單引號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">6</span>：、&emsp;&emsp;（全形頓號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">7</span>：“&emsp;&emsp;&ensp;（半形雙引號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">8</span>：”&emsp;&emsp;&ensp;（半形雙引號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">9</span>：（&emsp;&emsp;（全形左括號）<br>
+                <span class="keycap keycap-letter">d</span> + <span class="keycap keycap-number">0</span>：）&emsp;&emsp;（全形右括號）<br>
+            </p>
+        </div>
+        <div class="example">
+            <p>按鍵 <span class="keycap keycap-letter">/</span> = <span class="keycap keycap-letter">0↓</span> 提供的 8 個符號：</p>
+            <p class="example">            
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">3</span>：？&emsp;&emsp;（全形問號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">4</span>：『&emsp;&emsp;（全形雙引號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">5</span>：』&emsp;&emsp;（全形雙引號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">6</span>：．&emsp;&emsp;（全形間隔號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">7</span>：–&emsp;&emsp;&ensp;（半形連字號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">8</span>：＊&emsp;&emsp;（全形星號）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">9</span>：／&emsp;&emsp;（全形斜線）<br>
+                <span class="keycap keycap-letter">/</span> + <span class="keycap keycap-number">0</span>：…&emsp;&emsp;（全形刪節號）<br>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>特別碼</h2>
+        <p>行列輸入法特別為一些使用頻率很高的字設計了「特別碼」：按下 2 顆行列 30 鍵再按下 <span class="keycap keycap-space">Space</span> 完成輸入。總共有 398 個字有特別碼，並且沒有任何符號有特別碼。</p>
+        <p>雖然有些特別碼是依照特定規則設計的（例如普通編碼的第一顆和最後一顆鍵、第一顆和第二顆鍵等等），但總體來說，<u>特別碼的 2 顆行列 30 鍵都必須特別記憶</u>。</p>
+        <div class="example">
+            <p>下面舉出一些有特別碼的字：</p>
+            <p>
+                「我」字有特別碼 <span class="keycap keycap-letter">9-</span> + <span class="keycap keycap-letter">9↑</span><br>
+                「雨」字有特別碼 <span class="keycap keycap-letter">1-</span> + <span class="keycap keycap-letter">8↓</span><br>
+                「等」字有特別碼 <span class="keycap keycap-letter">9-</span> + <span class="keycap keycap-letter">9-</span><br>
+                「實」字有特別碼 <span class="keycap keycap-letter">4-</span> + <span class="keycap keycap-letter">7↓</span><br>
+            </p>
+        </div>
+
+        <p>有一些字同時有特別碼和一級簡碼（共 12 個：大、不、小、是、個、我、在、你、那、家、會、雨）。</p>
+
+        <p><u>強烈不建議行列新手一開始花時間研究或記憶特別碼，應該等用行列打字達到一定速度後再考慮學習特別碼。</u>因為在本身打字速度不快的狀況下，使用特別碼幾乎不會提升打字速度，而且花時間學習特別碼完全不會讓您一般拆字取碼的速度變快，不如把時間花在反覆閱讀此教學或本站<a href="/array30root.html" target="_blank"?>字根表</a>的字根實例以及<a href="/typing.html" target="_blank">練習打字</a>上。</p>
+
+        <!-- 可以透過本站的<a href="/dictionary.html" target="_blank">行列查碼</a>查詢它們的特別碼與一級簡碼， -->
+
+        <p class="comment">「敦」、「雇」兩字的特別碼有重碼，重碼位都是 1。</p>
+    </section>
+
+    <section>
+        <h2>預視</h2>
+        <p>在鍵入一顆或多顆行列 30 鍵後（沒有按空白鍵），行列視窗可能會顯示一些候選字。這是行列輸入法的「預視」功能。此時只要看到想要的字以數字鍵選擇就能完成輸入。</p>
+        <p>鍵入 1 顆行列 30 鍵，行列視窗會顯示一級簡碼字。出現的字以及順序都是固定的。</p>
+        <p class="comment">前面已經提過，按下 <span class="keycap keycap-letter">2↑</span>，行列視窗內預視的「女」不能透過按數字鍵 <span class="keycap keycap-number">1</span> 輸入。輸入「女」字的正確方法為按 <span class="keycap keycap-letter">2↑</span> 後，再按 <span class="keycap keycap-space">Space</span> 完成輸入。</p>
+        <p>鍵入 2 顆行列 30 鍵，行列視窗會顯示二級簡碼字。出現的字以及順序都是固定的。</p>
+        <p>鍵入 3 顆行列 30 鍵，行列視窗會顯示普通編碼恰好是這 3 顆鍵的字。</p>
+        <p>鍵入 4 顆行列 30 鍵，行列視窗會顯示普通編碼恰好是這 4 顆鍵的字。</p>
+        <p>鍵入 5 顆行列 30 鍵，行列視窗會顯示普通編碼恰好是這 5 顆鍵的字。</p>
+        <p>也就是說，當普通編碼至少有 3 顆行列 30 鍵，將它們全部鍵入之後，行列視窗中的預視字就會出現想要的字，此時可以不用按空白鍵，直接透過數字鍵選擇完成輸入。</p>
+    </section>
+    
+    <section>
+        <h2>雜項</h2>
+        <p>按 <span class="keycap keycap-space">Esc</span> 可以取消當下字元的輸入。</p>
+        
+        <p>使用行列輸入法時，鍵盤上只要不是行列 30 鍵的按鍵都保有原本按鍵功能，包括 10 顆數字鍵 <span class="keycap keycap-number">1</span>、<span class="keycap keycap-number">2</span>、<span class="keycap keycap-number">3</span>、<span class="keycap keycap-number">4</span>、<span class="keycap keycap-number">5</span>、<span class="keycap keycap-number">6</span>、<span class="keycap keycap-number">7</span>、<span class="keycap keycap-number">8</span>、<span class="keycap keycap-number">9</span>、<span class="keycap keycap-number">0</span>，以及 <span class="keycap keycap-letter">`</span>、<span class="keycap keycap-letter">-</span>、<span class="keycap keycap-letter">=</span>、<span class="keycap keycap-letter">[</span>、<span class="keycap keycap-letter">]</span>、<span class="keycap keycap-letter">\</span>、<span class="keycap keycap-letter">'</span>。
+        <p>「○」身為文字的普通編碼為 <span class="keycap keycap-letter">0-</span>（有重碼，重碼位為 4），或是 <span class="keycap keycap-letter">9↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">7↑</span>（有重碼，重碼位為 1），後者以英文鍵來說是 ou。身為符號，「○」是 <span class="keycap keycap-letter">2↑</span> <span class="root-plus">+</span> <span class="keycap keycap-number">3</span> 一般符號選單的第 7 個符號。 </p>
+        <p>行列鍵位的「↑」、「↓」符號常用「^」、「v」代替。例如 <span class="keycap keycap-letter">7↑</span> 寫成「7^」， <span class="keycap keycap-letter">3↓</span> 寫成「3v」。鍵位間表示順序的加號「<span class="root-plus">+</span>」一般也省略不寫，例如「洪」字的普通編碼 <span class="keycap keycap-letter">3↓</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">4↑</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8-</span> 一般會寫成「3v4^8-」。</p>
+        <p class="comment">輸入「^」方式為 <span class="keycap keycap-space">Shift</span> 鍵按住不放的同時按下 <span class="keycap keycap-number">6</span>。</p>
+    </section>
+
+    <section>
+        <h2>其它</h2>
+        <h3>聯想字詞</h3>
+        <p>每次輸入完成後，行列視窗可能會顯示一些聯想字詞。看到想要的聯想字詞可以透過按下 <span class="keycap keycap-space">Shift</span> 同時按下數字鍵選擇以完成輸入（有些版本可能不用按 <span class="keycap keycap-space">Shift</span>）。</p>
+        <p>聯想字詞非行列輸入法標準設計的一部份，所以不同版本的行列可能會有不同的聯想字詞以及聯想字詞排序。</p>
+
+        <h3>繁轉簡、簡轉繁</h3>
+        <p>有些版本的行列輸入法可以設定輸繁轉簡或輸簡轉繁，例如 <a href="/download.html" target="_blank">DIME 行列</a>、<a href="/download.html" target="_blank">萊姆輸入法</a>等等。</p>
+
+        <h3>行列反查</h3>
+        <p>有些中文輸入法軟體包含好幾種輸入法，並且提供行列反查，例如用注音輸入時會提示該字的行列編碼。例如 <a href="/download.html" target="_blank">DIME 輸入法</a>、<a href="/download.html" target="_blank">萊姆輸入法</a>等等。</p>
+
+        <h3>詞彙輸入</h3>
+        <p>行列輸入法當初設計是能夠輸入詞彙的，也就是一些兩個字以上的常見詞彙也有普通編碼。但不同版本的行列輸入法在詞彙輸入上支援程度不一，有些也許不支援詞彙輸入，有些也許沒有內建詞彙輸入但支援自建詞彙。</p>
+        <p>行列輸入法對於詞彙的普通編碼的設計如下。</p>
+        <p> # add</p>
+        <!-- <p>兩字詞：取第一個字的首、尾字根，和第二個字的首、尾字根</p>
+        <p>三字詞：取第一個字的首、尾字根，第二個字及第三個字的首根 </p>
+        <p>四字詞或超過四字：取前面四個字的首根</p>
+        <p>關於輸入，需要'</p> -->
+
+        <h3>行列 40</h3>
+        <p>早期行列輸入法（1989 年發明）的編碼設計，除了使用現在的 30 顆鍵，還使用了上排的 10 顆數字鍵，一共 40 顆鍵，所以被稱為「行列 40」。而現在所謂的行列輸入法，一般都是指「行列 30」（1992 年推出），是行列 40 改良後的設計，不再占用上排 10 顆數字鍵。現在已不推薦學習行列 40。（但當然非常推薦學習行列 30！）</p>
+
+        <h3 id="array10">行列 10</h3>
+        <p>在行動裝置上，除了一般的行列 30 外，還有一種變體「行列 30 數字版」可以使用，它更充分發揮了行動裝置可以觸控選字的功能，也解決了行動裝置螢幕較小衍生的問題。
+
+        <p>「行列 30 數字版」一般又稱為「行列 10」，使用 10 顆數字鍵輸入字符，通常以電話鍵盤呈現。只需要知道以下 3 點，就能夠輕鬆使用行列 10：</p>
+
+        <ol>
+            <li>拆字取碼後，字根碼如果是一個二位數字，則依序輸入這兩個數字；字根碼如果是一個數字加上連字號 -，則僅輸入該數字。罕字鍵直接忽略不做相關任何輸入，因此任何字在行列 10 的編碼最多為 8 個數字。
+            <div class="example">
+                <p>
+                    例如：<br>
+                    「老」字的編碼為「土 <span class="root-nb">41</span> <span class="root-plus">+</span> ㇒ <span class="root-nb">9-</span> <span class="root-plus">+</span> 匕 <span class="root-nb">12</span>」，所以使用行列 10 要輸入 41912；<br>
+                    「纏」字的編碼為「糸 <span class="root-nb">28</span> <span class="root-plus">+</span> 广 <span class="root-nb">69</span> <span class="root-plus">+</span> 曰 <span class="root-nb">01</span> <span class="root-plus">+</span> 土 <span class="root-nb">41</span>」，所以使用行列 10 要輸入 28690141；<br>
+                    「卅」字的編碼為「卅 <span class="root-nb">4-</span> <span class="root-plus">+</span> 卅 <span class="root-nb">4-</span> <span class="root-plus">+</span> 卅 <span class="root-nb">4-</span> <span class="root-plus">+</span> 卅 <span class="root-nb">4-</span>」，所以使用行列 10 要輸入 4444；<br>
+                    「东」字的編碼為「<img src="img/array30-root/12東.png" class="root root-sc" alt="行列字根 12，「东」前兩筆畫"> <span class="root-nb">12</span> <span class="root-plus">+</span> 小 <span class="root-nb">38</span> <span class="root-plus">+</span> <span class="keycap keycap-letter">8↑</span>」，所以使用行列 10 要輸入 1238。
+                </p>
+            </div></li>
+            <li>行列 10 以輸入 <span class="root-nb">23</span> 代替鍵入符號鍵 <span class="keycap keycap-letter">2↑</span>。
+            <div class="example">
+                <p>
+                    例如輸入 232 進入括號符號選單、輸入 234 進入數學符號選單、輸入 230 進入注音符號選單等等。
+                </p>
+            </div>
+            如果再鍵入 1 則候選字窗出現該符號選單的第 1 到 10 個符號，也就是符號選單的第一頁。</li>
+            <div class="example">
+                <p>
+                    例如輸入 2321 進入括號符號選單第一頁、輸入 2341 進入數學符號選單第一頁、輸入 2301 進入注音符號選單第一頁等等。
+                </p>
+            </div>
+            同理，如果是再鍵入 2 則候選字窗出現該符號選單的第 11 到 20 個符號，也就是符號選單的第二頁，依此類推。
+            <div class="example">
+                <p>
+                    例如輸入 2322 進入括號符號選單第二頁、輸入 2343 進入數學符號選單第三頁、輸入 2304 進入注音符號選單第四頁等等。
+                </p>
+            </div>
+            <li id="array10-255">
+                行列 10 還多了輸入全形英文字母以及全形數字的功能。
+                <div class="example">
+                    <p>輸入 255 後進入全形英文字母及全形數字選單。如果再鍵入：</p>
+                    <p>
+                        1，候選字窗出現大寫全形英文字母 A 到 J，也就是第 1 到 10 個字母。<br>
+                        2，候選字窗出現大寫全形英文字母 K 到 T，也就是第 11 到 20 個字母。<br>
+                        3，候選字窗出現大寫全形英文字母 U 到 Z，也就是第 21 到 26 個字母。<br>
+                        4，候選字窗出現小寫全形英文字母 a 到 j，也就是第 1 到 10 個字母。<br>
+                        5，候選字窗出現小寫全形英文字母 k 到 t，也就是第 11 到 20 個字母。<br>
+                        6，候選字窗出現小寫全形英文字母 u 到 z，也就是第 21 到 26 個字母。<br>
+                        0，候選字窗出現全形數字 0 到 9。
+                    </p>
+                </div>
+            </li>
+        </ol>
+        <p>使用 10 顆數字鍵鍵入數字的過程中，候選字窗出現想要的字就可以點擊選取以完成輸入，或是鍵入空白鍵來輸入候選字窗中鎖定住的字（通常是第一個字，但有時會鎖定輸入中的數字）。候選字窗出現聯想字也是點擊選取以完成輸入。</p>
+
+        <p>行列 10 的電話鍵盤布局使得按鍵面積大、容易找且不容易按錯。並且實際使用上，時常還沒輸完數字，甚至只輸入 3、4 個數字，候選字窗就會出現想要的字了，使得行列 10 相當方便並容易上手。<u>行動裝置上非常推薦使用行列 10。</u></p>
+
+        <p class="comment"><a href="http://hyperrate.com/thread.php?tid=21760" target="_blank">實測時</a>，90% 以上的日常用字只要 3 到 5 個數字即可輸入。</p>
+    </section>
+    
+    <!-- <section>
+        <h2>小結論</h2>
+        行列輸入法是最容易學的字形輸入法之一，因為透過本站的行列教學，我們可以歸納出要能夠使用行列輸入法打字僅需要：
+        閱讀本站的行列教學至少到此處
+        記住 10 個基本筆形 (只有直 3 需要死記，其它在本教學中都有記法)
+        記住少數幾個特殊歸位字根(的存在)以及他們的字根碼
+        瀏覽過所有字根，並建議瀏覽過一次本站字根表裡面的實例(主要是為了知道有哪些字根存在以及如何拆字和取碼，這是為了取碼三原則)
+    記得 w 鍵+數字鍵進入符號列表
+        That’s all
+
+    </section> -->
+
+
+
+
+    <!-- <article>
+        <h1>行列輸入法學習方法</h1>
+        <h5>最科學且無陣痛期的學習方法</h5>
+        <p>不用一開始就上機使用行列打字以下幾個步驟</p>
+        看到字能夠正確拆出字根，甚至有些字根拆出來同時馬上知道字根碼的第一位數
+
+        當您看到絕大多數的字都可以馬上正確拆出字根（甚至有些字根拆出來同時馬上知道字根碼的第一位數），您就可以進入下一個階段。
+
+        看到字能夠正確拆出字根，並且同時知道這些字根的字根碼
+
+        當您看到絕大多數的字都可以馬上正確拆出字根，並馬上知道這些字根的字根碼，您就可以進入下一個階段。
+
+
+        看到字能夠正確拆出字根，並且手指可以去按（空按，如果沒）字根的鍵位
+
+
+        當您看到絕大多數的字都可以馬上正確拆出字根，並且手指可以快速地移動到字根的鍵位（空白鍵，恭喜您，您可以開始上鍵盤用行列輸入法打字了！
+
+
+        上鍵盤後花時間習慣輸入行列 30 鍵後按空白鍵這件事情
+        要處理重碼的問題
+        慢慢學習常用符號的一級簡碼
+        記一些符號列表中您常用的符號
+        充分使用行列輸入法的預視功能
+        活用行列輸入法的聯想字詞功能
+
+        一陣子的練習後，您的打字速度很快就可以突破每分鐘 60 字了
+
+        此時您已經相當熟悉行列，並且也因為經驗熟悉了一些一二級簡碼。
+        您可以考慮熟悉或是特別去記一些一級簡碼
+        繼續練習打字
+
+        等到您覺得相當滿意您的打字速度，您可以開始練習一些特別碼，它們可以進一步加快打字速度。
+
+        FISH UP 行列查碼
+        FISH UP 行列打字練習：
+        FISH UP 字根表：有字根總覽與字根表。每個字根有 3 到 5 個例字。
+
+        同時花時間
+    </article> -->
+
+    <!-- <article>
+        <h1>索引</h1>
+        <div class="w3-row">
+            <div class="w3-third">
+                <p><a href="#">行列 30 鍵</a></p>
+                <p><a href="#">字根</a></p>
+                <p><a href="#">字根碼</a></p>
+                <p><a href="#">鍵位</a></p>
+                <p>
+                    <a href="#">拆碼原則</a><br>
+                    &emsp;- <a href="#">前三後一原則</a><br>
+                    &emsp;- <a href="#">大根先取原則</a><br>
+                    &emsp;- <a href="#">跨越筆順的字根</a><br>
+                </p>
+                <p><a href="#">罕用字</a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+
+            </div>
+            <div class="w3-third">
+                <p><a href="#">行列 10</a></p>
+                <p><a href="#">行列 30 數字版</a></p>
+                <p><a href="#">行列 40</a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                
+            </div>
+            <div class="w3-third">
+                <p><a href="#">特別碼</a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+                <p><a href="#"></a></p>
+
+            </div>
+        </div>
+    </article> -->
+</div>
+
+    <!-- Footer -->
+    <footer class="footer-fish-up">
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
+        </div>
+        <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
+    </footer>
+    
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/display.js"></script>

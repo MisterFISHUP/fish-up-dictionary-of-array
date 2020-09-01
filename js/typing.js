@@ -7,8 +7,7 @@
     - enter Key action
     - eng Key Toggle
     - fetch data
-    - 6 createLne functions
-    - page scroll
+    - 6 createLine functions
     - content display
 */
 
@@ -665,7 +664,7 @@ function createBlock(character, block_id_name, id_name) {
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
     resultBlock.id = block_id_name;
-    resultBlock.className = 'w3-card w3-white w3-hover-shadow w3-hover-border-black w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
+    resultBlock.className = 'w3-white w3-round-xlarge w3-padding w3-padding-16 w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock
@@ -685,7 +684,7 @@ function createBlockAnotherStyle(character, block_id_name, id_name) {
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
     resultBlock.id = block_id_name;
-    resultBlock.className = 'w3-white w3-padding w3-margin-top'; // w3 css
+    resultBlock.className = 'w3-white w3-round-xlarge w3-padding w3-margin-top'; // w3 css
     elem.appendChild(resultBlock);
 
     // add character to resultBlock
@@ -774,7 +773,7 @@ function createList(character, list_id_name, id_name) {
 }
 
 // ----------------------------------------------------------------------
-// 6 createLne functions (output depending on engKeyActiveElem.checked)
+// 6 createLine functions (output depending on engKeyActiveElem.checked)
 // ----------------------------------------------------------------------
 // create lineSG from encodingSG and add it to some elem #id_name
 function createLineSG(encodingSG, id_name) {
@@ -964,7 +963,7 @@ function createLineSYM(encodingSYM, id_name) {
     // create plusLast and keySelect, insert them into elem
     const plusLast = document.createTextNode(' + ');
     let keySelect = document.createElement("span");
-    keySelect.className = 'keycap keycap-number';
+    keySelect.className = 'keycap keycap-cc';
     keySelect.textContent = String(position % 10);
     elem.appendChild(plusLast);
     elem.appendChild(keySelect);
@@ -1078,14 +1077,6 @@ function createLineNL(encodingNl, id_name) {
     }
 }
 
-// page scroll
-
-// scroll to page_content
-$(document).ready(function() {
-    $(function() { $('#to_page_content').click(function() {
-        $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});
-    });
-});
 $(document).ready(function() {
     $(function() { $('#to_page_content_small').click(function() {
         $('html,body').animate({scrollTop:$('#page_content').offset().top}, 500);});

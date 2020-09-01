@@ -5,7 +5,6 @@
     - filter with checkboxes
     - fetch data
     - eng Key Toggle
-    - accordion
 */
 
 // get html DOMS
@@ -39,13 +38,13 @@ function search() {
     // inputElem.value = '';
     if (input.length === 0) {
         const hintDiv = document.createElement('div');
-        hintDiv.className = 'w3-card w3-white w3-padding';
-        hintDiv.innerHTML='<p>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特別碼和一級簡碼的字！</p>';
+        hintDiv.className = 'dict-block-hint';
+        hintDiv.innerHTML='<span>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特別碼和一級簡碼的字！</span>';
         resultAreaElem.appendChild(hintDiv);
     } else if ([...input].length > maxInputChar) {
         const hintDiv = document.createElement('div');
-        hintDiv.className = 'w3-card w3-white w3-padding';
-        hintDiv.innerHTML="<p>不要輸入超過 " + String(maxInputChar) + " 字啦！</p>";
+        hintDiv.className = 'dict-block-hint';
+        hintDiv.innerHTML="<span>不要輸入超過 " + String(maxInputChar) + " 字啦！</span>";
         resultAreaElem.appendChild(hintDiv);
     } else printResults(input);
 }
@@ -55,7 +54,7 @@ function printResults(input) {
     // create resultDescription, put it into the result area
     let resultDescription = document.createElement('div');
     resultDescription.id = 'result_description';
-    resultDescription.className = 'w3-card w3-padding w3-white';
+    resultDescription.className = 'dict-block-result-description';
     resultAreaElem.appendChild(resultDescription);
 
     // add the descriptive sentence to resultDescription
@@ -64,8 +63,7 @@ function printResults(input) {
     // create resultCharList, put it into the resultDescription
     let resultCharList = document.createElement('div');
     resultCharList.id = 'result_char_list';
-    resultCharList.className = 'w3-card w3-sand w3-padding w3-margin-bottom'; // w3 css
-    resultCharList.style = "font-size: 1.3em"; // bigger font size
+    resultCharList.className = 'dict-block-result-char-list';
     resultDescription.appendChild(resultCharList);
 
     // create resultBlocks, put it into the result area 
@@ -83,8 +81,7 @@ function printResults(input) {
             // add characters with link in resultCharList
             const charLink = document.createElement('a');
             charLink.textContent = `${character}`;
-            charLink.className = "w3-hover-text-brown";
-            charLink.style = "text-decoration: none;"
+            charLink.className = "dict-link-char";
             charLink.href = '#result_' + String(num+1);
             const aSpace = document.createTextNode(' ');
             resultCharList.appendChild(charLink);
@@ -201,7 +198,7 @@ function createBlock(character, block_id_name, id_name) {
     // create resultBlock, put it into elem
     let resultBlock = document.createElement('div');
     resultBlock.id = block_id_name;
-    resultBlock.className = 'w3-card w3-white w3-hover-shadow w3-hover-border-black w3-border-dark-gray w3-padding w3-margin-top'; // w3 css
+    resultBlock.className = 'dict-block-result';
     elem.appendChild(resultBlock);
 
     // add character and comma to resultBlock
@@ -451,7 +448,7 @@ function createLineSYM(encodingSYM, id_name) {
     // create plusLast and keySelect, insert them into elem
     const plusLast = document.createTextNode(' + ');
     let keySelect = document.createElement("span");
-    keySelect.className = 'keycap keycap-number';
+    keySelect.className = 'keycap keycap-cc';
     keySelect.textContent = String(position % 10);
     elem.appendChild(plusLast);
     elem.appendChild(keySelect);
@@ -597,19 +594,4 @@ function ccTriviaEngKeyToggle() {
 // perform ccTrivia eng key toggle when loading the page
 if (!document.getElementById('cb_eng_key_active').checked) {
     ccTriviaEngKeyToggle();
-}
-
-// accordion
-let acc = document.getElementsByClassName("accordion");
-for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    });
-    acc[i].click();
 }

@@ -1,43 +1,389 @@
+/* Structure: 
+    - general settings
+    - index page
+    - dictionary page
+    - typing page
+    - tutorial page
+    - array30root page
+    - faq page
+    
+    - array30 root display
+    - keycap styling
+    - checkbox switch
+    - back to top
+*/
+    
+/* general settings */
+
 html * 
 {
-    font-family: 'Georgia','Noto Serif TC', serif;
+    font-family: 'Georgia', 'Noto Serif', 'Noto Serif TC', 'Noto Serif CJK TC', 'Noto Serif CJK SC', serif;
 }
-hr {
-    border-top: 1px solid lightslategray;
+html {
+    scroll-behavior: smooth;
 }
-/* background images */
-.bgimg-index {
-    background-position: center;
-    background-size: cover;
-    /* background-image: url("../img/header-index.png"); */
-    background-color: tan;
+.bold-center {
+    text-align: center;
+    font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
+    font-weight: 700;
+}
+b {
+    font-family: 'Georgia', 'Noto Serif CJK TC Bold', 'Noto Serif CJK TC SemiBold', 'Noto Serif CJK SC Bold', 'Noto Serif CJK SC SemiBold', 'Noto Serif TC';
+    font-weight: 700;
+    color: rgb(56, 139, 75);
+}
+
+hr.short {
+    width: 5%;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid lightslategray;
+}
+hr.hr-example {
+    width: 15%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+u {
+    text-decoration: none;
+    border-bottom: 5px solid lightsalmon;
+}
+summary {
+    cursor: pointer;
+}
+
+section {
+    padding: 16px;
+    max-width: 750px;
+    margin-left:auto;
+    margin-right:auto;
+}
+article {
+    padding: 16px;
+    max-width: 750px;
+    margin-left:auto;
+    margin-right:auto;
+}
+article h1, article h5 {
+    text-align: center;
+}
+section h2 {
+    padding: 16px 0 0 0;
+    color: rgb(163, 103, 25);
+}
+section h3 {
+    padding: 16px 0 0 0;
+    color: rgb(202, 162, 86);
+}
+.footer-fish-up {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    padding:8px 16px;
+    text-align: center;
+}
+/* ----- index page ----- */
+.index-header {
     min-height: 100%;
-    alt: "Header image of the main page ";
-}
-.bgimg-dictionary {
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)), url("../img/header-search.jpg");
-    alt: "Header image of dictionary page";
-}
-.bgimg-typing { 
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.719)), url("../img/header-typing.jpg");
-    alt: "Header image of typing page";
+    background-color: #6d695c;
+    background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
 }
 
-/* for array30root images */
-img.root {
+.page-content {
+    padding-top: 100px;
+    font-size: large;
+    line-height: 1.8;
+}
+
+
+/* dictionary page */
+/* header */
+.dict-header {
+    padding:40px 16px 0px 16px;
+    background-color: #57342D;
+    background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+}
+.dict-tag-selected {
+    background-color: #3f2520;
+    color: white;
+}
+.dict-tag-not-selected {
+    background-color: #81574f;
+    color: white;
+}
+.dict-button {
+    background-color: #57342D;
+    color: white;
+    border-radius: 4px;
+}
+/* below header */
+.dict-page-content-bg {
+    background-color: #f8e5cf;
+}
+.dict-page-content {
+    padding: 24px 16px;
+    max-width: 750px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #f8e5cf;
+}
+.dict-block-comment {
+    line-height: 1.8;
+    padding: 16px 24px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.dict-example {
+    padding: 1px 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 25px;
+}
+
+
+/* element created by js */
+.dict-block-hint {
+    font-size: 1.1em;
+    padding: 16px 24px;
+    background-color: white;
+    border-radius: 16px;
+}
+.dict-block-result-description {
+    font-size: 1.1em;
+    padding:12px 24px;
+    background-color: white;
+    border-radius: 16px;
+}
+.dict-block-result-char-list {
+    font-size: 1.3em;
+    border-radius: 16px;
+    background-color: rgb(243, 243, 243);
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+.dict-link-char {
+    text-decoration: none;
+}
+.dict-link-char:hover {
+    color:#9e7055;
+}
+.dict-block-result {
+    border-radius: 16px;
+    background-color: white;
+    padding: 16px 24px;
+    margin-top: 16px;
+}
+.dict-block-result:hover {
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+}
+/* ----- typing page ----- */
+
+.typing-header {
+    padding:50px 16px 24px 16px;
+    background-color: #335544;
+    background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+}
+.typing-header-title {
+    cursor: pointer;
+    background-color: rgba(100, 199, 158, 0.3);
+    border-radius: 20px;
+    padding: 12px 24px;
+}
+.typing-header-title:hover {
+    background-color: rgba(61, 172, 125, 0.8);
+}
+
+.typing-bg {
+    background-color: #beebbe;
+}
+.typing-block-close-me {
+    background-color: #335544;
+    color: whitesmoke;
+    border-radius: 15px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position:relative;
+}
+.typing-btn-close-me {
+    position:absolute;
+    right:0;
+    top:0;
+    border-radius: 0 15px 0 0;
+}
+#sentence_current {
+    font-size: 1.8em;
+    min-height: 2.2em;
+    padding: 8px 16px;
+    border-radius: 32px;
+    background-color: rgb(245, 245, 245);
+}
+.typing-results {
+    line-height: 1.6;
+    padding: 24px;
+    border-radius:16px;
+    background-color: white;
+}
+.correct {
+    color: green;
+}  
+.incorrect {
+    color: red;
+}
+.typing-block-cust-exer-hint {
+    padding:0 16px;
+}
+.typing-input-field {
+    font-size: 1.2em; border:none; clear: both;
+    border: 1.5px solid transparent;
+}
+.typing-input-field:focus {
+    border: 1.5px solid rgb(17, 71, 26);
+    outline: none;
+}
+
+/* choosing exercises */
+.typing-dtls-first {
+    margin:10px;
+}
+.typing-dtls-first summary {
+    font-size: 1.1em;
+}
+.typing-block-dtls-first {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.typing-exer-series-title {
+    color: brown;
+}
+.typing-dtls-second {
+    margin:5px;
+}
+.typing-dtls-second summary {
+    font-size: 0.9em;
+    color: rgb(37, 6, 6);
+}
+.btn-built-in-exer {
+    font-size: 12px;
+    cursor:pointer;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    background-color:#f1f1f1;
+    border:none;
     display:inline-block;
-    width: 1em;
-    height: 1em;
-    vertical-align: text-top;
+    padding:8px 16px;
+    vertical-align:middle;
+    text-decoration:none;
+    text-align:center;
+    overflow:hidden;
 }
 
-/* for array30root.html */
+/* ----- tutorial page ----- */
+.comment {
+    font-size: medium;
+    padding: 5px 15px;
+    border-left: 6px solid rgb(202, 202, 202);
+}
+.comment::before {
+    content: "註：";
+}
+.example {
+    padding: 1px 20px;
+    margin: 30px 0;
+    background-color: rgb(240, 240, 240);
+    border-radius: 25px;
+}
+#tutorial-page-content a:hover {
+    color: rgb(63, 167, 207);
+}
+
+/* ----- array30root page ----- */
+
+/* root table */
+.root-table-page-bg {
+    background: white;
+    /* background: linear-gradient(#e66465, #9198e5); */
+}
+.root-table-cell {
+    background-color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+}
+.root-table-cell:hover {
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.5),0 4px 20px 0 rgba(0,0,0,0.3);
+    background-color: rgb(255, 255, 255);
+}
+.root-table-nb {
+    color:palevioletred;
+}
+/* .root-table-li {
+    font-size: large;
+} */
+.root-table-li:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.container-root-example {
+    padding: 10px 16px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.root-example-ul-block {
+    padding:8px;
+    margin:5px 10px 16px 10px;
+    border: 2px dashed transparent;
+}
+.root-example-ul-block:hover {
+    border: 2px dashed rgb(185, 185, 185);
+}
+.root-example-ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+}
+.root-example-ul li{
+    padding:8px 16px;
+    border-bottom:1px solid #ddd;
+}
+.root-example-ul li:last-child {
+    border-bottom:none;
+}
+.root-example-ul li:hover {
+    background-color:rgb(235, 235, 235);
+}
 li.root-example-title {
-    background-color: wheat;
+    /* background-color:rgb(255, 246, 226); */
+    background: linear-gradient(0.25turn,#ffebd6, #ffffff);
+    border-left: 7px solid #ffb260;
+    border-bottom: none;
+}
+li.root-example-title:hover {
+    background-color: rgb(255, 246, 226);
 }
 a.root-table-box {
     text-decoration: none;
@@ -45,23 +391,52 @@ a.root-table-box {
 a.root-example-column-title {
     text-decoration: none;
 }
-/* https://codepen.io/sosuke/pen/Pjoqqp */
-.root-special {
-    filter: invert(99%) sepia(69%) saturate(916%) hue-rotate(100deg) brightness(87%) contrast(88%);
-}
-.root-sc {
-    filter: invert(59%) sepia(69%) saturate(916%) hue-rotate(100deg) brightness(87%) contrast(88%);
-}
 .root-recap-nb {
     color: palevioletred;
     font-size: 1.8em;
     text-decoration: none;
 }
-.root-table-nb {
-    color:palevioletred;
-}
+
 .root-recap-nb:hover {
-    color: rgb(148, 53, 85);
+    color: #943555;
+}
+
+/* ----- faq page ----- */
+.question {
+    display: block;
+}
+.question::before {
+    content: "問：";
+}
+.answer {
+    display: block;
+}
+.answer::before {
+    content: "答：";
+}
+.block-qa {
+    /* border: 2px solid; */
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+
+
+/* ----- array30 root display ----- */
+img.root {
+    display:inline-block;
+    width: 1em;
+    vertical-align: text-top;
+}
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+.root-special {
+    filter: invert(71%) sepia(93%) saturate(387%) hue-rotate(78deg) brightness(96%) contrast(94%);
+}
+.root-sc {
+    filter: invert(77%) sepia(1%) saturate(0%) hue-rotate(22deg) brightness(89%) contrast(87%);
+}
+.root-special-sc {
+    filter: invert(27%) sepia(34%) saturate(1466%) hue-rotate(293deg) brightness(93%) contrast(90%);
 }
 .root-nb {
     color:palevioletred;
@@ -69,17 +444,15 @@ a.root-example-column-title {
 .root-plus {
     color: rgb(148, 148, 148);
 }
-li.root-table:hover {
-    background-color: rgb(255, 220, 189);
-  }
-/* ----- KeyCap Style ----- */
+
+/* ----- keycap styling ----- */
 .keycap {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
     -khtml-border-radius: 4px;
     white-space: nowrap;
-    border: 1px solid #aaa;
+    border: 1.5px solid #aaa;
     border-style: outset;
     border-radius: 4px;
     padding: 0px 3px 1px 3px;
@@ -132,7 +505,7 @@ li.root-table:hover {
     color: white;
 }
 
-/* checkbox_switch */
+/* ----- checkbox switch ----- */
 .btn-toggle-box {
     display:inline-block;
     vertical-align:middle;
@@ -141,7 +514,7 @@ li.root-table:hover {
     border-radius:100px;
     background-color: #ccc;
     box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
-  }
+}
 .btn-toggle-box .btn-toggle {
     display:inline-block;
     width: 15px;
@@ -152,18 +525,19 @@ li.root-table:hover {
     margin-bottom: 2px;
     transition: .5s;
     box-shadow:1px 2px 5px rgba(0,0,0,.3);
-  }
+}
 .checkbox {
     position:absolute;
     opacity:0;
-  }
+}
 .checkbox:checked + .btn-toggle-box {
     background-color: rgb(113, 230, 113);
-  }
+}
 .checkbox:checked + .btn-toggle-box .btn-toggle {
     margin-left: 15px;
-  }
+}
 
+/* ----- back to top ----- */
 /* https://ezbox.idv.tw/131/back-to-top-button-without-images/ */
 .toTop-arrow {
     width: 3rem;
@@ -197,11 +571,3 @@ li.root-table:hover {
     right: 0.35rem;
 }
 .toTop-arrow:focus {outline: none;}
-
-/* for script_typing.js */
-.correct {
-    color: green;
-}  
-.incorrect {
-    color: red;
-}

@@ -10,7 +10,7 @@ function menuToggle() {
 // back to top button
 $(function() {
 	$('#to_top').click(function() { 
-		$('html,body').animate({ scrollTop:0 }, 333);
+		$('html,body').animate({ scrollTop:0 }, 150);
 	});
 	$(window).scroll(function() {
 		if ( $(this).scrollTop() > 300 ) {

@@ -81,7 +81,7 @@
                         <li><a href="#Array-key">行列 30 鍵</a></li>
                         <li><a href="#character-and-symbol">字與符號</a></li>
                         <li><a href="#fundamental-stroke-shape-and-stuff">基本筆形、字根、字根碼、鍵位</a></li>                    
-                        <li><a href="#decomposition-encoding">拆字、拆碼、取碼</a></li>
+                        <li><a href="#decomposition-encoding">拆字/拆碼/取碼</a></li>
                         <li><a href="#standard-vs-special-or-short-code">普通編碼 vs. 特別碼、簡碼</a></li>
                     </ul>
                 </li>
@@ -159,7 +159,7 @@
                     <li><a href="#Array-key">行列 30 鍵</a></li>
                     <li><a href="#character-and-symbol">字與符號</a></li>
                     <li><a href="#fundamental-stroke-shape-and-stuff">基本筆形、字根、字根碼、鍵位</a></li>                    
-                    <li><a href="#decomposition-encoding">拆字、拆碼、取碼</a></li>
+                    <li><a href="#decomposition-encoding">拆字/拆碼/取碼</a></li>
                     <li><a href="#standard-vs-special-or-short-code">普通編碼 vs. 特別碼、簡碼</a></li>
                 </ul>
             </li>
@@ -231,7 +231,7 @@
     <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
         <h1>行列教學 - 最完整的行列輸入法教學</h1>
         <h6><a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a> 撰</h6>
-        <p class="w3-pale-red" style="padding:8px 16px; border-left: 5px solid red;"><i class="fa fa-info-circle" aria-hidden="true"></i> 使用 chrome 或 edge 瀏覽器瀏覽此頁好像有嚴重問題... 請嘗試把側邊欄目錄闔起，或改用別的瀏覽器像是 firefox。</p>
+        <p class="w3-pale-red" style="padding:8px 16px; border-left: 5px solid red;"><i class="fa fa-info-circle" aria-hidden="true"></i> 電腦上使用 chrome 或 edge 瀏覽器瀏覽此頁好像有嚴重問題... 請把側邊欄目錄闔起，或改用別的瀏覽器像是 firefox。（行動裝置瀏覽沒問題。）</p>
         <hr>
         <p style="padding: 0 24px;">歡迎來到行列教學！如果您是第一次接觸到<a href="/index.html#introduction" target="_blank">行列輸入法</a>，恭喜您，您非常幸運，同時遇見了最科學、最好學的字形輸入法，以及最完整、最深入淺出的行列教學。如果您使用行列沒多久，這個行列教學絕對能讓您更快速地往行列老手邁進。而如果您已經是行列老手了，也推薦您閱讀此教學，不但能讓您複習行列，說不定您也能在此教學中學到以前不認識的新知！</p>
         <hr>
@@ -353,9 +353,9 @@
                 <p>如果您將上述幾個知識結合在一起，就可以發現每個字根都可以對應到一個鍵位！例如字根「工」的字根碼是 <span class="root-nb">11</span>，對應到鍵位 <span class="keycap keycap-letter">1↑</span>，我們就會說字根「工」的鍵位是 <span class="keycap keycap-letter">1↑</span>（1 上）；字根「力」的字根碼是 <span class="root-nb">59</span>，對應到鍵位 <span class="keycap keycap-letter">5↓</span>，我們就會說字根「力」的鍵位是 <span class="keycap keycap-letter">5↓</span>（5 下）。</p>
                 <p>又例如字根「口」的字根碼是 <span class="root-nb">0-</span>，所以鍵位是 <span class="keycap keycap-letter">0-</span>（0 中）；字根「木」的字根碼是 <span class="root-nb">48</span>，所以鍵位是 <span class="keycap keycap-letter">4↓</span>（4 下）。綜上所述，行列輸入法中，每一個字根都會對應到一顆行列 30 鍵（即每一個字根都會對應到一個鍵位）。</p>
             </section>
-            <!-- 4. 拆字、拆碼、取碼 -->
+            <!-- 4. 拆字/拆碼/取碼 -->
             <section id="decomposition-encoding">
-                <h2>4. 拆字、拆碼、取碼</h2>
+                <h2>4. 拆字/拆碼/取碼</h2>
                 <p>我們將一個字拆成一至數個字根，這個叫做「拆字」。例如將「功」這個字拆成「工、力」這兩個字根、「架」拆成「力、口、木」這三個字根等等。</p>
                 <p>但真正輸入時並不一定會使用到所有字根，可能只會取一部分字根來輸入。得到這些字根、或這些字根的字根碼、或是這些字根的鍵位，這個叫做「拆碼」或「取碼」。</p>
                 <p>實際溝通上，我們常混淆使用「拆字」、「拆碼」、「取碼」這三個詞彙。</p>
@@ -375,17 +375,23 @@
                 <p>至於普通編碼，它則是按一或多顆行列 30 鍵後，再按一下空白鍵。如果該編碼沒有重碼*，則輸入完成，否則會需要面對重碼的問題（解決方法很簡單，例如用數字鍵選字完成輸入）。</p>
                 <p class="comment">一個編碼有重碼的意思是，它是不只一個字的普通編碼。</p>
             </section>
-            <p>以上就是「行列輸入法基本 5 件事」所有內容。您可以休息一下，但不要忘記繼續閱讀下方的「行列輸入法完整教學」！</p>
-            <div class="w3-center" style="margin: 80px auto;">
-                <a href="/download.html" target="_blank" class="w3-btn w3-round-xlarge w3-brown"><i class="fa fa-external-link" aria-hidden="true"></i> 下載行列輸入法</a>
+            <br>
+            <p>以上就是「行列輸入法基本 5 件事」所有內容。您接著可以到本站的打字練習去玩玩看、實際體驗行列輸入法：雖然只看完上面的基本 5 件事，您還沒辦法自己用行列輸入法打字，但本站的打字練習幫您附上了行列拆碼 ❤️，您完全照著按就可以輸入，像是玩遊戲一樣！</p>
+            <p>如果您還沒有行列輸入法，先到本站的<a href="/download.html#array-IME">下載頁面</a>下載適合您系統的行列輸入法就可以了！</p>
+            <div class="w3-center" style="margin: 40px auto;">
+                <a href="/typing.html" target="_blank" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> 體驗行列打字 <<</a>
             </div>
+            <!-- <i class="fa fa-external-link" aria-hidden="true"></i> -->
+
+            <p>之後不要忘記回來繼續閱讀下方的「行列輸入法完整教學」呦！</p>
+            
         </section>
         <br><br>
         <section id="complete-guide-to-Array">  
             <h1>行列輸入法完整教學</h1>
             <p>這份行列輸入法完整教學，將教會您所有關於行列輸入法的知識。內容特別設計成線性的，依照順序看就能輕鬆學會！</p>
             <p>總閱讀時間以完全初學者來說大約是一個半小時至兩小時，內容深入淺出而且都有附上許多例子，非常容易閱讀！</p>
-            <p class="comment">請先看過上面<a href="#five-things-you-should-know-about-Array">行列輸入法基本 5 件事</a>呦 ❤️</p>
+            <p class="comment">請先看過上面的<a href="#five-things-you-should-know-about-Array">行列輸入法基本 5 件事</a> 😉</p>
             <!-- 基本筆形 -->
             <section id="fundamental-stroke-shape">
                 <h2>基本筆形</h2>
@@ -449,10 +455,18 @@
                     </p>
                     <p>
                         <div class="w3-row">
-                            <div class="w3-col" style="width: 2em;">八㇏</div>
-                            <div class="w3-col" style="width: 4em;">（八捺）</div>
+                            <div class="w3-col" style="width: 2em;">八</div>
+                            <div class="w3-col" style="width: 4em;">（八）</div>
                             <div class="w3-col" style="width: 1em;">：</div>
-                            <div class="w3-rest">「八」這種由兩個不同方向筆畫構成的基本筆形，最典型的例子就是中文字「八」，所以用數字 8 來代表。而基本筆形「㇏（捺）」就是中文字「八」末筆的筆形，所以也用數字 8 來代表。口訣是「八捺 8」。</div>
+                            <div class="w3-rest">「八」這種由兩個不同方向筆畫構成的基本筆形，最典型的例子就是中文字「八」，所以用數字 8 來代表。</div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row">
+                            <div class="w3-col" style="width: 2em;">㇏</div>
+                            <div class="w3-col" style="width: 4em;">（捺）</div>
+                            <div class="w3-col" style="width: 1em;">：</div>
+                            <div class="w3-rest">中文字「八」的末筆就是基本筆形「㇏（捺）」，所以也用數字 8 來代表。口訣是「捺 8」。</div>
                         </div>
                     </p>
                     <p>
@@ -474,14 +488,14 @@
                 </div>
                 <p>如果您認真讀完上面基本筆形的說明，您會發現兩件事：</p>
                 <div class="example">
-                    <p>第一，嚴格說起來行列輸入法的基本筆形有「11」個才對。「八」這種由兩個不同方向筆畫構成的基本筆形，和「㇏（捺）」當然是兩種不同的筆形，但是因為這兩個基本筆形都用數字 8 來代表，所以大家時常把它們看成一個叫做「八捺」的基本筆形。這就是為什麼說行列輸入法有 10 個基本筆形。</p>
+                    <p>第一，嚴格說起來行列輸入法的基本筆形有「11」個才對。「八」這種由兩個不同方向筆畫構成的基本筆形，和「㇏（捺）」當然是兩種不同的筆形，但是因為這兩個基本筆形都用數字 8 來代表，所以大家時常把它們看成一個叫做「八捺」的基本筆形（口訣「八捺 8」）。這就是為什麼說行列輸入法有 10 個基本筆形。</p>
                     <p>第二，其實只有「丨（直）」這個基本筆形對應到數字 3 這件事情需要死記。其它的基本筆形和所對應到的數字，都可以用上面的說明來「理解」，甚至可以說不使用上述提供的口訣也能輕鬆記憶。不過有趣的是，在本教學特別點出「因為『直 3』沒有好記的方法所以『直 3』這個基本筆形需要特別用『直 3』這個口訣來記」之後，您大概也不會忘記「直 3」這個基本筆形了。</p>
                 </div>
                 <p>這十個基本筆形，現在以數字的角度看會變得非常好記：</p>
                 <div class="example">
                     <p>1 對應到基本筆形「一（橫）」，因為 1 的中文字就是這個筆形。口訣「橫 1」。</p>
                     <p>2 對應到基本筆形「㇗（逆彎）」，因為 2 的尾部就是這個筆形。口訣「逆彎 2」。</p>
-                    <p>3 對應到基本筆形「丨（直）」，您必須特別記憶。口訣「橫 3」</p>
+                    <p>3 對應到基本筆形「丨（直）」，您必須特別記憶。口訣「直 3」</p>
                     <p>4 對應到基本筆形「十（正交）」，因為 4 的裡面就是這個筆形。口訣「正交 4」。</p>
                     <p>5 對應到基本筆形「㇕（順彎）」，因為 5 的尾部就是這個筆形。口訣「順彎 5」。</p>
                     <p>6 對應到基本筆形「丶（點）」，因為 6 的中文字首筆就是這個筆形。口訣「點 6」。</p>

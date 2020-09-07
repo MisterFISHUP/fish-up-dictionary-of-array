@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/typing.css">
 </head>
 <body>
     <!-- Navbar -->
     <div class="w3-bar w3-black w3-card w3-left-align">
-        <a class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black" href="javascript:void(0);" onclick="menuToggle()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
+        <button id="btnToggleNavMenu" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
 
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
         <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
         <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>
         <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
@@ -141,6 +142,93 @@
                 <!-- 內建題目 -->
                 <details class="typing-dtls-first">
                     <summary>選擇內建題目</summary>
+                    <!-- 字詞系列 -->
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">字詞系列</span>
+                        <!-- 教育部 4808 個常用字 -->
+                        <details class="typing-dtls-second">
+                            <summary>教育部 4808 個常用字</summary>
+                            <div>
+                                <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 不是依照使用頻率排序</p>
+                                <button class="btn-built-in-exer" id='common-char-400'>1-400</button>
+                                <button class="btn-built-in-exer" id='common-char-800'>401-800</button>
+                                <button class="btn-built-in-exer" id='common-char-1200'>801-1200</button>
+                                <button class="btn-built-in-exer" id='common-char-1600'>1201-1600</button>
+                                <button class="btn-built-in-exer" id='common-char-2000'>1601-2000</button>
+                                <button class="btn-built-in-exer" id='common-char-2400'>2001-2400</button>
+                                <button class="btn-built-in-exer" id='common-char-2800'>2401-2800</button>
+                                <button class="btn-built-in-exer" id='common-char-3200'>2801-3200</button>
+                                <button class="btn-built-in-exer" id='common-char-3600'>3201-3600</button>
+                                <button class="btn-built-in-exer" id='common-char-4000'>3601-4000</button>
+                                <button class="btn-built-in-exer" id='common-char-4400'>4001-4400</button>
+                                <button class="btn-built-in-exer" id='common-char-4808'>4401-4808</button>
+                            </div>
+                        </details>
+                        <!-- 教育部 6341 個次常用字 -->
+                        <details class="typing-dtls-second">
+                            <summary>教育部 6341 個次常用字</summary>
+                            <div>
+                                <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 不是依照使用頻率排序</p>
+                                <button class="btn-built-in-exer" id='uncommon-char-400'>1-400</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-800'>401-800</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-1200'>801-1200</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-1600'>1201-1600</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-2000'>1601-2000</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-2400'>2001-2400</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-2800'>2401-2800</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-3200'>2801-3200</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-3600'>3201-3600</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-4000'>3601-4000</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-4400'>4001-4400</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-4808'>4401-4800</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-5200'>4801-5200</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-5600'>5201-5600</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-6000'>5601-6000</button>
+                                <button class="btn-built-in-exer" id='uncommon-char-6341'>6001-6341</button>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- 歌詞 -->
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">歌詞系列</span>
+                        <!-- 2016-2020 -->
+                        <details class="typing-dtls-second">
+                            <summary>2016-2020</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="mojito">Mojito</button>
+                                <button class="btn-built-in-exer" id="光年之外">光年之外</button>
+                                <button class="btn-built-in-exer" id="漂向北方">漂向北方</button>
+                                <button class="btn-built-in-exer" id="告白氣球">告白氣球</button>
+                            </div>
+                        </details>
+                        <!-- 2011-2015 -->
+                        <details class="typing-dtls-second">
+                            <summary>2011-2015</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="那些年">那些年</button>
+                                <button class="btn-built-in-exer" id="小幸運">小幸運</button>
+                                <button class="btn-built-in-exer" id="不為誰而作的歌">不為誰而作的歌</button>
+                            </div>
+                        </details>
+                            
+
+                    <!-- 文章系列 -->                    
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">文章系列</span>
+                        
+                        <!-- 古文 -->
+                        <details class="typing-dtls-second">
+                            <summary>古文</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id='hundred'>百家姓</button>
+                                <button class="btn-built-in-exer" id='thousand'>千字文（含標點）</button>
+                                <button class="btn-built-in-exer" id='赤壁賦'>（前）赤壁賦</button>
+                                <button class="btn-built-in-exer" id='出師表'>（前）出師表</button>
+                                <button class="btn-built-in-exer" id='蘭亭集序'>蘭亭集序</button>
+                                <button class="btn-built-in-exer" id='岳陽樓記'>岳陽樓記</button>
+                            </div>
+                        </details>
+                    </div>
                     <!-- 字根運用練習系列 -->
                     <div class="typing-block-dtls-first">
                         <span class="typing-exer-series-title">字根運用練習系列</span>
@@ -162,7 +250,7 @@
                             </div>
                         </details>
                         <!-- 本站字根表實例 -->
-                        <details class="typing-dtls-second">
+                        <!-- <details class="typing-dtls-second">
                             <summary>本站字根表實例（未開放）</summary>
                             <div>
                                 <button class="btn-built-in-exer" id="my_example_col_1" disabled>行 1</button>
@@ -177,7 +265,7 @@
                                 <button class="btn-built-in-exer" id="my_example_col_0" disabled>行 0</button>
                                 <button class="btn-built-in-exer" id="my_example_col_all" disabled>全部</button>
                             </div>
-                        </details>
+                        </details> -->
                         <!-- 中文部首 -->
                         <details class="typing-dtls-second">
                             <summary>中文部首</summary>
@@ -203,34 +291,7 @@
                         
                         
                         </details>
-                    </div>
-
-                    <!-- 常用字詞系列（未開放） -->
-                    <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">常用字詞系列（未開放）</span>
-                        <!-- 常用 2000 字 -->
-                        <details class="typing-dtls-second">
-                            <summary>常用 2000 字</summary>
-                            <div>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
-                            </div>
-                        </details>
-                        <!-- 常用 2000 詞 -->
-                        <details class="typing-dtls-second">
-                            <summary>常用 2000 詞</summary>
-                            <div>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1-400</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>401-800</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>801-1200</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1201-1600</button>
-                                <button class="w3-button w3-small w3-light-gray" style="margin-bottom: 4px;" disabled>1601-2000</button>
-                            </div>
-                        </details>
-                    </div>
+                    </div>                    
                     
                     <!-- 一般拆碼系列 -->                    
                     <div class="typing-block-dtls-first">
@@ -341,19 +402,7 @@
                         </div>
                         </details>
                     </div>
-
-                    <!-- 文章系列 -->                    
-                    <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">文章系列</span>
-                        <!-- 古文 -->
-                        <details class="typing-dtls-second">
-                            <summary>古文</summary>
-                            <div>
-                                <button class="btn-built-in-exer" id='hundred'>百家姓</button>
-                                <button class="btn-built-in-exer" id='thousand'>千字文（含標點）</button>
-                            </div>
-                        </details>
-                    </div>
+                    
                 </details>
 
                 <!-- 自製題目 -->
@@ -389,21 +438,15 @@
                         <details class="typing-dtls-second">
                             <summary>關於字元顯示</summary>
                             <p>
-                                本站使用<u>網頁版</u>思源宋體 Noto Serif CJK TC，僅支援到中日韓統一表意文字擴充區 A 區、以及 B 區中部分常用字。
+                                本站使用<b>網頁版</b>思源宋體 Noto Serif CJK TC，僅支援到中日韓統一表意文字擴充區 A 區、以及 B 區中部分常用字。
                             </p>
                             <p>
-                                如果要正確顯示多數罕用字以及網頁上的粗體，您可以免費下載此字體的<u>完整版</u>（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）。
+                                如果要正確顯示多數罕用字以及網頁上的粗體，您可以免費下載此字體的<b>完整版</b>（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）。
                             </p>
                             <p>
                                 如果要正確顯示所有罕用字，您可以下載免費字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/downloads/64385/hanazono-20160201.zip/" target="_blank">點此下載</a>），此字體能夠完整支援到擴充區 F，不過一般來說不會有這個需求，下載完整版的思源宋體就足夠了。
                             </p>
                         </details>
-                        <!-- <details class="typing-dtls-second">
-                            <summary></summary>
-                            <div>
-                                
-                            </div>
-                        </details> -->
                     </div>
                 </details>
             </div>

@@ -1,0 +1,90 @@
+/* ----- root recap ----- */
+#array30-root-recap {
+    padding: 16px 24px;    
+    margin: 16px;
+    line-height: 1.6;
+    background-color: rgb(233, 233, 233);
+    border-radius: 25px;    
+}
+.root-recap-nb {
+    color: rgb(50, 109, 199);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+.root-recap-nb:hover {
+    color: rgb(82, 150, 253);
+}
+
+/* ----- root table ----- */
+.root-table-page-bg {
+    background: white;
+    /* background: linear-gradient(#e66465, #9198e5); */
+}
+.root-table-cell {
+    background-color: white;
+    background-color: rgb(226, 243, 255);
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+}
+.root-table-cell:hover {
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.5),0 4px 20px 0 rgba(0,0,0,0.3);
+    background-color: rgb(221, 241, 252);
+}
+.root-table-nb {
+    color:rgb(50, 109, 199);
+}
+/* .root-table-li {
+    font-size: large;
+} */
+.root-table-li:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+/* ----- examples ----- */
+.container-root-example {
+    padding: 10px 16px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.root-example-ul-block {
+    padding:8px;
+    margin:5px 10px 16px 10px;
+    border: 2px dashed transparent;
+}
+.root-example-ul-block:hover {
+    border: 2px dashed rgb(185, 185, 185);
+}
+.root-example-ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+}
+.root-example-ul li{
+    padding:8px 16px;
+    border-bottom:1px solid #ddd;
+}
+.root-example-ul li:last-child {
+    border-bottom:none;
+}
+.root-example-ul li:hover {
+    background-color:rgb(235, 235, 235);
+}
+li.root-example-title {
+    background: linear-gradient(0.25turn,rgb(252, 228, 221), #ffffff);
+    border-left: 7px solid rgb(247, 114, 96);
+    border-bottom: none;
+}
+/* li.root-example-title:hover {
+    background-color: rgb(255, 246, 226);
+} */
+a.root-table-box {
+    text-decoration: none;
+}
+a.root-example-column-title {
+    text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+}

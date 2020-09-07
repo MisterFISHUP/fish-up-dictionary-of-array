@@ -125,175 +125,143 @@ function custExerCreator() {
 }
 
 // built-in exer
+// articles
+$("#thousand").click(function() {builtInExerCreator(stringThousand)});
+$("#hundred").click(function() {builtInExerCreator(stringHundred)});
+$("#赤壁賦").click(function() {builtInExerCreator(string赤壁賦)});
+$("#出師表").click(function() {builtInExerCreator(string出師表)});
+$("#蘭亭集序").click(function() {builtInExerCreator(string蘭亭集序)});
+$("#岳陽樓記").click(function() {builtInExerCreator(string岳陽樓記)});
+
+//lyrics
+$("#mojito").click(function() {builtInExerCreator(stringMojito)});
+$("#光年之外").click(function() {builtInExerCreator(string光年之外)});
+$("#漂向北方").click(function() {builtInExerCreator(string漂向北方)});
+$("#那些年").click(function() {builtInExerCreator(string那些年)});
+$("#告白氣球").click(function() {builtInExerCreator(string告白氣球)});
+$("#小幸運").click(function() {builtInExerCreator(string小幸運)});
+$("#不為誰而作的歌").click(function() {builtInExerCreator(string不為誰而作的歌)});
 
 // root example arcai
-const arcaiExampleCol1Elem = document.getElementById('arcai_example_col_1');
-const arcaiExampleCol2Elem = document.getElementById('arcai_example_col_2');
-const arcaiExampleCol3Elem = document.getElementById('arcai_example_col_3');
-const arcaiExampleCol4Elem = document.getElementById('arcai_example_col_4');
-const arcaiExampleCol5Elem = document.getElementById('arcai_example_col_5');
-const arcaiExampleCol6Elem = document.getElementById('arcai_example_col_6');
-const arcaiExampleCol7Elem = document.getElementById('arcai_example_col_7');
-const arcaiExampleCol8Elem = document.getElementById('arcai_example_col_8');
-const arcaiExampleCol9Elem = document.getElementById('arcai_example_col_9');
-const arcaiExampleCol0Elem = document.getElementById('arcai_example_col_0');
-const arcaiExampleColAllElem = document.getElementById('arcai_example_col_all');
-arcaiExampleCol1Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo1)});
-arcaiExampleCol2Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo2)});
-arcaiExampleCol3Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo3)});
-arcaiExampleCol4Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo4)});
-arcaiExampleCol5Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo5)});
-arcaiExampleCol6Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo6)});
-arcaiExampleCol7Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo7)});
-arcaiExampleCol8Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo8)});
-arcaiExampleCol9Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo9)});
-arcaiExampleCol0Elem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCo0)});
-arcaiExampleColAllElem.addEventListener('click',function() {builtInExerCreator(stringArcaiExampleCoAll)});
-
-
+$("#arcai_example_col_1").click(function() {builtInExerCreator(stringArcaiExampleCo1)});
+$("#arcai_example_col_2").click(function() {builtInExerCreator(stringArcaiExampleCo2)});
+$("#arcai_example_col_3").click(function() {builtInExerCreator(stringArcaiExampleCo3)});
+$("#arcai_example_col_4").click(function() {builtInExerCreator(stringArcaiExampleCo4)});
+$("#arcai_example_col_5").click(function() {builtInExerCreator(stringArcaiExampleCo5)});
+$("#arcai_example_col_6").click(function() {builtInExerCreator(stringArcaiExampleCo6)});
+$("#arcai_example_col_7").click(function() {builtInExerCreator(stringArcaiExampleCo7)});
+$("#arcai_example_col_8").click(function() {builtInExerCreator(stringArcaiExampleCo8)});
+$("#arcai_example_col_9").click(function() {builtInExerCreator(stringArcaiExampleCo9)});
+$("#arcai_example_col_0").click(function() {builtInExerCreator(stringArcaiExampleCo0)});
+$("#arcai_example_col_all").click(function() {builtInExerCreator(stringArcaiExampleCoAll)});
 // radicals
-const radical1Elem = document.getElementById('radical_1');
-const radical2Elem = document.getElementById('radical_2');
-const radical3Elem = document.getElementById('radical_3');
-const radical4Elem = document.getElementById('radical_4');
-const radical5Elem = document.getElementById('radical_5');
-const radical6Elem = document.getElementById('radical_6');
-const radical7Elem = document.getElementById('radical_7');
-const radical8Elem = document.getElementById('radical_8');
-const radical9Elem = document.getElementById('radical_9');
-const radical10Elem = document.getElementById('radical_10');
-const radical11Elem = document.getElementById('radical_11');
-const radical12Elem = document.getElementById('radical_12');
-const radical13Elem = document.getElementById('radical_13');
-const radical14Elem = document.getElementById('radical_14');
-const radical15Elem = document.getElementById('radical_15');
-const radical16Elem = document.getElementById('radical_16');
-const radical17Elem = document.getElementById('radical_17');
-radical1Elem.addEventListener('click',function() {builtInExerCreator(stringRadical1)});
-radical2Elem.addEventListener('click',function() {builtInExerCreator(stringRadical2)});
-radical3Elem.addEventListener('click',function() {builtInExerCreator(stringRadical3)});
-radical4Elem.addEventListener('click',function() {builtInExerCreator(stringRadical4)});
-radical5Elem.addEventListener('click',function() {builtInExerCreator(stringRadical5)});
-radical6Elem.addEventListener('click',function() {builtInExerCreator(stringRadical6)});
-radical7Elem.addEventListener('click',function() {builtInExerCreator(stringRadical7)});
-radical8Elem.addEventListener('click',function() {builtInExerCreator(stringRadical8)});
-radical9Elem.addEventListener('click',function() {builtInExerCreator(stringRadical9)});
-radical10Elem.addEventListener('click',function() {builtInExerCreator(stringRadical10)});
-radical11Elem.addEventListener('click',function() {builtInExerCreator(stringRadical11)});
-radical12Elem.addEventListener('click',function() {builtInExerCreator(stringRadical12)});
-radical13Elem.addEventListener('click',function() {builtInExerCreator(stringRadical13)});
-radical14Elem.addEventListener('click',function() {builtInExerCreator(stringRadical14)});
-radical15Elem.addEventListener('click',function() {builtInExerCreator(stringRadical15)});
-radical16Elem.addEventListener('click',function() {builtInExerCreator(stringRadical16)});
-radical17Elem.addEventListener('click',function() {builtInExerCreator(stringRadical17)});
+$("#radical_1").click(function() {builtInExerCreator(stringRadical1)});
+$("#radical_2").click(function() {builtInExerCreator(stringRadical2)});
+$("#radical_3").click(function() {builtInExerCreator(stringRadical3)});
+$("#radical_4").click(function() {builtInExerCreator(stringRadical4)});
+$("#radical_5").click(function() {builtInExerCreator(stringRadical5)});
+$("#radical_6").click(function() {builtInExerCreator(stringRadical6)});
+$("#radical_7").click(function() {builtInExerCreator(stringRadical7)});
+$("#radical_8").click(function() {builtInExerCreator(stringRadical8)});
+$("#radical_9").click(function() {builtInExerCreator(stringRadical9)});
+$("#radical_10").click(function() {builtInExerCreator(stringRadical10)});
+$("#radical_11").click(function() {builtInExerCreator(stringRadical11)});
+$("#radical_12").click(function() {builtInExerCreator(stringRadical12)});
+$("#radical_13").click(function() {builtInExerCreator(stringRadical13)});
+$("#radical_14").click(function() {builtInExerCreator(stringRadical14)});
+$("#radical_15").click(function() {builtInExerCreator(stringRadical15)});
+$("#radical_16").click(function() {builtInExerCreator(stringRadical16)});
+$("#radical_17").click(function() {builtInExerCreator(stringRadical17)});
+
 // common char
+$("#common-char-400").click(function() {builtInExerCreator(stringCommonChar400)});
+$("#common-char-800").click(function() {builtInExerCreator(stringCommonChar800)});
+$("#common-char-1200").click(function() {builtInExerCreator(stringCommonChar1200)});
+$("#common-char-1600").click(function() {builtInExerCreator(stringCommonChar1600)});
+$("#common-char-2000").click(function() {builtInExerCreator(stringCommonChar2000)});
+$("#common-char-2400").click(function() {builtInExerCreator(stringCommonChar2400)});
+$("#common-char-2800").click(function() {builtInExerCreator(stringCommonChar2800)});
+$("#common-char-3200").click(function() {builtInExerCreator(stringCommonChar3200)});
+$("#common-char-3600").click(function() {builtInExerCreator(stringCommonChar3600)});
+$("#common-char-4000").click(function() {builtInExerCreator(stringCommonChar4000)});
+$("#common-char-4400").click(function() {builtInExerCreator(stringCommonChar4400)});
+$("#common-char-4808").click(function() {builtInExerCreator(stringCommonChar4808)});
+
+// uncommon char
+$("#uncommon-char-400").click(function() {builtInExerCreator(stringUncommonChar400)});
+$("#uncommon-char-800").click(function() {builtInExerCreator(stringUncommonChar800)});
+$("#uncommon-char-1200").click(function() {builtInExerCreator(stringUncommonChar1200)});
+$("#uncommon-char-1600").click(function() {builtInExerCreator(stringUncommonChar1600)});
+$("#uncommon-char-2000").click(function() {builtInExerCreator(stringUncommonChar2000)});
+$("#uncommon-char-2400").click(function() {builtInExerCreator(stringUncommonChar2400)});
+$("#uncommon-char-2800").click(function() {builtInExerCreator(stringUncommonChar2800)});
+$("#uncommon-char-3200").click(function() {builtInExerCreator(stringUncommonChar3200)});
+$("#uncommon-char-3600").click(function() {builtInExerCreator(stringUncommonChar3600)});
+$("#uncommon-char-4000").click(function() {builtInExerCreator(stringUncommonChar4000)});
+$("#uncommon-char-4400").click(function() {builtInExerCreator(stringUncommonChar4400)});
+$("#uncommon-char-4800").click(function() {builtInExerCreator(stringUncommonChar4800)});
+$("#uncommon-char-5200").click(function() {builtInExerCreator(stringUncommonChar5200)});
+$("#uncommon-char-5600").click(function() {builtInExerCreator(stringUncommonChar5600)});
+$("#uncommon-char-6000").click(function() {builtInExerCreator(stringUncommonChar6000)});
+$("#uncommon-char-6341").click(function() {builtInExerCreator(stringUncommonChar6341)});
 
 // key1
-const key1NoCCElem = document.getElementById('key1_no_cc');
-const key1CCFirstElem = document.getElementById('key1_cc_first');
-key1NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey1NoCC)});
-key1CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey1CCFirst)});
-
+$("#key1_no_cc").click(function() {builtInExerCreator(stringKey1NoCC)});
+$("#key1_cc_first").click(function() {builtInExerCreator(stringKey1CCFirst)});
 //key2
-const key2NoCCElem = document.getElementById('key2_no_cc');
-const key2CCFirstElem = document.getElementById('key2_cc_first');
-const key2CCSecondElem = document.getElementById('key2_cc_second');
-const key2CCThirdElem = document.getElementById('key2_cc_third');
-const key2CommonSC2Elem = document.getElementById('key2_common_sc2');
-key2NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey2NoCC)});
-key2CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCFirst)});
-key2CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCSecond)});
-key2CCThirdElem.addEventListener('click',function() {builtInExerCreator(stringKey2CCThird)});
-key2CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey2CommonSC2)});
+$("#key2_no_cc").click(function() {builtInExerCreator(stringKey2NoCC)});
+$("#key2_cc_first").click(function() {builtInExerCreator(stringKey2CCFirst)});
+$("#key2_cc_second").click(function() {builtInExerCreator(stringKey2CCSecond)});
+$("#key2_cc_third").click(function() {builtInExerCreator(stringKey2CCThird)});
+$("#key2_common_sc2").click(function() {builtInExerCreator(stringKey2CommonSC2)});
 
 //key3
-const key3NoCCElem = document.getElementById('key3_no_cc');
-const key3CCFirstElem = document.getElementById('key3_cc_first');
-const key3CCSecondElem = document.getElementById('key3_cc_second');
-const key3CommonSC2Elem = document.getElementById('key3_common_sc2');
-key3NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey3NoCC)});
-key3CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey3CCFirst)});
-key3CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey3CCSecond)});
-key3CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey3CommonSC2)});
+$("#key3_no_cc").click(function() {builtInExerCreator(stringKey3NoCC)});
+$("#key3_cc_first").click(function() {builtInExerCreator(stringKey3CCFirst)});
+$("#key3_cc_second").click(function() {builtInExerCreator(stringKey3CCSecond)});
+$("#key3_common_sc2").click(function() {builtInExerCreator(stringKey3CommonSC2)});
 
 //key4
-const key4NoCCElem = document.getElementById('key4_no_cc');
-const key4CCFirstElem = document.getElementById('key4_cc_first');
-const key4CCSecondElem = document.getElementById('key4_cc_second');
-const key4CCThirdElem = document.getElementById('key4_cc_third');
-const key4CommonSC2Elem = document.getElementById('key4_common_sc2');
-key4NoCCElem.addEventListener('click',function() {builtInExerCreator(stringKey4NoCC)});
-key4CCFirstElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCFirst)});
-key4CCSecondElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCSecond)});
-key4CCThirdElem.addEventListener('click',function() {builtInExerCreator(stringKey4CCThird)});
-key4CommonSC2Elem.addEventListener('click',function() {builtInExerCreator(stringKey4CommonSC2)});
+$("#key4_no_cc").click(function() {builtInExerCreator(stringKey4NoCC)});
+$("#key4_cc_first").click(function() {builtInExerCreator(stringKey4CCFirst)});
+$("#key4_cc_second").click(function() {builtInExerCreator(stringKey4CCSecond)});
+$("#key4_cc_third").click(function() {builtInExerCreator(stringKey4CCThird)});
+$("#key4_common_sc2").click(function() {builtInExerCreator(stringKey4CommonSC2)});
 
 // sp
-const spAllElem = document.getElementById("sp_all");
-const spIrregularElem = document.getElementById("sp_irregular");
-const spKey412Elem = document.getElementById("sp_key4_12");
-const spKey413Elem = document.getElementById("sp_key4_13");
-const spKey414Elem = document.getElementById("sp_key4_14");
-const spKey423Elem = document.getElementById("sp_key4_23");
-const spKey424Elem = document.getElementById("sp_key4_24");
-const spKey434Elem = document.getElementById("sp_key4_34");
-const spKey312Elem = document.getElementById("sp_key3_12");
-const spKey313Elem = document.getElementById("sp_key3_13");
-const spKey323Elem = document.getElementById("sp_key3_23");
-const sp96NormalElem = document.getElementById("sp_96_normal");
-const sp96ReversedElem = document.getElementById("sp_96_reversed");
-const spSC1Elem = document.getElementById("sp_sc1");
-const spNoSC1Elem = document.getElementById("sp_no_sc1");
-spAllElem.addEventListener('click',function() {builtInExerCreator(stringSPAll)});
-spIrregularElem.addEventListener('click',function() {builtInExerCreator(stringSPIrregular)});
-spKey412Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey412)});
-spKey413Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey413)});
-spKey414Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey414)});
-spKey423Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey423)});
-spKey424Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey424)});
-spKey434Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey434)});
-spKey312Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey312)});
-spKey313Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey313)});
-spKey323Elem.addEventListener('click',function() {builtInExerCreator(stringSPKey323)});
-sp96NormalElem.addEventListener('click',function() {builtInExerCreator(stringSP96Normal)});
-sp96ReversedElem.addEventListener('click',function() {builtInExerCreator(stringSP96Reversed)});
-spSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSC1SP)});
-spNoSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSPNoSC1)});
+$("#sp_all").click(function() {builtInExerCreator(stringSPAll)});
+$("#sp_irregular").click(function() {builtInExerCreator(stringSPIrregular)});
+$("#sp_key4_12").click(function() {builtInExerCreator(stringSPKey412)});
+$("#sp_key4_13").click(function() {builtInExerCreator(stringSPKey413)});
+$("#sp_key4_14").click(function() {builtInExerCreator(stringSPKey414)});
+$("#sp_key4_23").click(function() {builtInExerCreator(stringSPKey423)});
+$("#sp_key4_24").click(function() {builtInExerCreator(stringSPKey424)});
+$("#sp_key4_34").click(function() {builtInExerCreator(stringSPKey434)});
+$("#sp_key3_12").click(function() {builtInExerCreator(stringSPKey312)});
+$("#sp_key3_13").click(function() {builtInExerCreator(stringSPKey313)});
+$("#sp_key3_23").click(function() {builtInExerCreator(stringSPKey323)});
+$("#sp_96_normal").click(function() {builtInExerCreator(stringSP96Normal)});
+$("#sp_96_reversed").click(function() {builtInExerCreator(stringSP96Reversed)});
+$("#sp_sc1").click(function() {builtInExerCreator(stringSC1SP)});
+$("#sp_no_sc1").click(function() {builtInExerCreator(stringSPNoSC1)});
 
 // shortcode 1
-const sc1AllElem = document.getElementById('sc1_all');
-const sc1CharElem = document.getElementById('sc1_char');
-const sc1SymElem = document.getElementById('sc1_sym');
-const sc1SpElem = document.getElementById('sc1_sp');
-sc1AllElem.addEventListener('click',function() {builtInExerCreator(stringSC1All)});
-sc1CharElem.addEventListener('click',function() {builtInExerCreator(stringSC1Char)});
-sc1SymElem.addEventListener('click',function() {builtInExerCreator(stringSymbolSC1)});
-sc1SpElem.addEventListener('click',function() {builtInExerCreator(stringSC1SP)});
+$("#sc1_all").click(function() {builtInExerCreator(stringSC1All)});
+$("#sc1_char").click(function() {builtInExerCreator(stringSC1Char)});
+$("#sc1_sym").click(function() {builtInExerCreator(stringSymbolSC1)});
+$("#sc1_sp").click(function() {builtInExerCreator(stringSC1SP)});
 
 // symbol
-const symbolSC1Elem = document.getElementById("symbol_sc1");
-const symbolBopomofoElem = document.getElementById("symbol_bopomofo");
-const symbolGreekUpperElem = document.getElementById("symbol_greek_upper");
-const symbolGreekLowerElem = document.getElementById("symbol_greek_lower");
-symbolSC1Elem.addEventListener('click',function() {builtInExerCreator(stringSymbolSC1)});
-symbolBopomofoElem.addEventListener('click',function() {builtInExerCreator(stringSymbolBopomofo)});
-symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(string)});
-symbolGreekUpperElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekUpper)});
-symbolGreekLowerElem.addEventListener('click',function() {builtInExerCreator(stringSymbolGreekLower)});
+$("#symbol_sc1").click(function() {builtInExerCreator(stringSymbolSC1)});
+$("#symbol_bopomofo").click(function() {builtInExerCreator(stringSymbolBopomofo)});
+$("#symbol_greek_upper").click(function() {builtInExerCreator(stringSymbolGreekUpper)});
+$("#symbol_greek_lower").click(function() {builtInExerCreator(stringSymbolGreekLower)});
 
 // emoji
-const emojiHappyElem = document.getElementById("emoji_happy");
-const emojiAngryElem = document.getElementById("emoji_angry");
-const emojiGuroElem = document.getElementById("emoji_guro");
-emojiHappyElem.addEventListener('click',function() {builtInExerCreator(stringEmojiHappy)});
-emojiAngryElem.addEventListener('click',function() {builtInExerCreator(stringEmojiAngry)});
-emojiGuroElem.addEventListener('click',function() {builtInExerCreator(stringEmojiGuro)});
+$("#emoji_happy").click(function() {builtInExerCreator(stringEmojiHappy)});
+$("#emoji_angry").click(function() {builtInExerCreator(stringEmojiAngry)});
+$("#emoji_guro").click(function() {builtInExerCreator(stringEmojiGuro)});
 
-// articles
-const thousandElem = document.getElementById("thousand");
-const hundredElem = document.getElementById("hundred");
-hundredElem.addEventListener('click',function() {builtInExerCreator(stringHundred)});
-thousandElem.addEventListener('click',function() {builtInExerCreator(stringThousand)});
 
 // create the array 'lines' from a string according to selected options
 function createArrayLines(str) {

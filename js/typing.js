@@ -96,6 +96,7 @@ function prepareExer() {
 
     // focus typing input
     $('#typing_input').focus();
+    document.getElementById("sentence_current").scrollIntoView();
 }
 
 // reset the exercise w.r.t to current 'lines'

@@ -98,6 +98,8 @@ function printResults(input) {
 
     // show engKey if asked
     if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
+    // scroll into view
+    resultDescription.scrollIntoView();
 }
 
 //------------------------

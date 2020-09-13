@@ -1,6 +1,11 @@
-// toggle the menu on small screens when clicking on the menu button
-$("#btnToggleNavMenu").click(function(){
+// navigation menu on small screens
+$("#toggleNavSmall").click(function() {
     $("#navSmall").toggleClass("w3-hide");
+});
+$("#toggleNavSmallTutorial").click(function() {
+    $("#navSmallTutorial").toggleClass("w3-hide");
+    $("#openNavSmallTutorial").toggleClass("w3-hide");
+    $("#closeNavSmallTutorial").toggleClass("w3-hide");
 });
 
 // back to top button

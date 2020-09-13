@@ -1,5 +1,6 @@
 /* Structure: 
     - general settings
+    - navigation menu on small screens
     - sticky toc
     - index page
     - array30root page
@@ -9,7 +10,7 @@
     - checkbox switch
     - back to top
 */
-    
+
 /* general settings */
 html * 
 {
@@ -75,16 +76,27 @@ summary {
     padding:8px 16px;
     text-align: center;
 }
+/* navigation menu on small screens */
+#navSmall {background-color: #fdf5e6;}
+.nav-small-item-hover:hover{background-color: rgb(255, 235, 154)!important;}
+.nav-small-icon {width: 1rem}
+
 /* ----- sticky toc ----- */
+.absoluteBottom {
+    position: absolute;
+    bottom: 0px; /* Height of the footer element, plus some extra pixels if needed */
+}
+.sticky40 {
+    position: fixed;
+    top: 40px;
+}
 aside {
-/*     position: sticky; */
-    top: 2rem;
+    width: 15em;
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 20px;
     border-right: 1px solid #cecece;
     font-size: small;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
 }
 aside a {
@@ -110,15 +122,13 @@ aside li.active > a {
     font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
     font-weight: 700;
 }
-#btnToggleStickyTOC {
-/*     position:sticky; */
-    top: 50vh;
+#toggleStickyTOC {
     padding: 0;
     cursor: pointer;
 }
 
 /* ----- mobile toc ----- */
-#mobileTOCWrapper {
+#tocSmallWrapper {
     position: fixed;
     bottom: 5rem;
     left: 10vw;
@@ -129,7 +139,7 @@ aside li.active > a {
     box-shadow:0 4px 10px 0 rgba(0, 0, 0, 0.3),0 4px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 25px;
 }
-#mobileTOC {
+#tocSmall {
     position: relative;
     top: 16px;
     left:16px;
@@ -139,11 +149,10 @@ aside li.active > a {
     width: calc(80vw - 32px);
     overflow-y: auto;
     z-index: 3;
-    background-color: rgb(255, 255, 255);
-    
+    background-color: rgb(255, 255, 255);    
     line-height: 1.7;
 }
-#closeMobileTOC {
+#closeTOCSmall {
     position: absolute;
     top: -8px;
     right: -8px;
@@ -155,33 +164,33 @@ aside li.active > a {
     background-color: rgb(192, 124, 57);
     color: white;
 }
-#closeMobileTOC:hover{
+#closeTOCSmall:hover{
     background-color: rgb(116, 47, 47);
 }
-#mobileTOC a {
+#tocSmall a {
     text-decoration: none;
     /* display: block; */
     padding: .125rem 0;
     color: rgb(180, 180, 180);
     transition: all 50ms ease-in-out;
 }
-#mobileTOC a:hover, aside a:focus {
+#tocSmall a:hover, aside a:focus {
     color: rgb(87, 75, 75);
 }
-#mobileTOC ul, #mobileTOC ol {
+#tocSmall ul, #tocSmall ol {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#mobileTOC li {
+#tocSmall li {
     margin-left: 1rem;
 }
-#mobileTOC li.active > a {
+#tocSmall li.active > a {
     color: rgb(138, 79, 79);
     font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
     font-weight: 700;
 }
-#btnToggleMobileTOC {
+#toggleTOCSmall {
     position:fixed;
     left: 1rem;
     bottom: 1rem;
@@ -195,6 +204,7 @@ aside li.active > a {
     background: rgb(120, 120, 120);
     color: white;
     cursor: pointer;
+    z-index: 3;
 }
 
 /* ----- index page ----- */
@@ -209,11 +219,6 @@ aside li.active > a {
     background-size: 70px 120px;
 }
 
-.page-content {
-    padding-top: 100px;
-    font-size: large;
-    line-height: 1.8;
-}
 
 
 /* ----- array30 root display ----- */

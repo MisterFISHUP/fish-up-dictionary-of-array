@@ -10,22 +10,22 @@
 
         gtag('config', 'UA-173562145-1');
     </script>
-    <title>下載 | FISH UP 行列查碼</title>
+    <title>下載行列輸入法、字根表、字符與編碼表 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For google -->
     <meta name="author" content="Mister FISH UP">
-    <meta name="description" content="免費下載各作業系統上的行列輸入法、行列字根表以及行列編碼表">
-    <meta name="keywords" content="行列,行列輸入法,下載行列輸入法,iOS 行列輸入法, linux 行列輸入法, windows 行列輸入法">
+    <meta name="description" content="免費下載各作業系統上的行列輸入法，以及字根表圖片、字符表與編碼表、字型">
+    <meta name="keywords" content="行列,行列輸入法,下載行列輸入法,iOS 行列輸入法, linux 行列輸入法, windows 行列輸入法, 行列字根表">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="下載 | FISH UP 行列查碼">
+    <meta itemprop="name" content="下載行列輸入法、字根表、字符與編碼表 | FISH UP 行列查碼">
     <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
-    <meta itemprop="description" content="免費下載各作業系統上的行列輸入法、行列字根表以及行列編碼表">
+    <meta itemprop="description" content="免費下載各作業系統上的行列輸入法，以及字根表圖片、字符表與編碼表、字型">
     
     <!-- For facebook Open Graph -->
-    <meta property="og:title" content="下載 | FISH UP 行列查碼">
-    <meta property="og:description" content="免費下載各作業系統上的行列輸入法、行列字根表以及行列編碼表">
+    <meta property="og:title" content="下載行列輸入法、字根表、字符與編碼表 | FISH UP 行列查碼">
+    <meta property="og:description" content="免費下載各作業系統上的行列輸入法，以及字根表圖片、字符表與編碼表、字型">
     <meta property="og:type" content="網站">
     <meta property="og:url" content="https://array30.misterfishup.com/download.html">
     <meta property="og:image" content="https://array30.misterfishup.com/img/screenshot_search.jpg"/>
@@ -44,39 +44,77 @@
 <body>
     <!-- Navbar -->
     <div class="w3-bar w3-black w3-card w3-left-align">
-        <button id="btnToggleNavMenu" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-
+        <!-- always there -->
         <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white">行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">打字練習</a>
-        <a href="tutorial.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">行列教學</a>
-        <a href="array30root.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white">字根表</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">關於本站</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">常見問題</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-small  w3-padding-large w3-hover-white w3-right">下載</a>
+        <!-- small screens (toggle button)-->
+        <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
+        <!-- large screens -->
+        <div class="w3-hide-medium w3-hide-small">
+            <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
+            <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
+                <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
+                  <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
+                  <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
+                  <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
+                </div>
+            </div>
+            <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
+            <div class="w3-right">
+                <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
+                <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
+                <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
+                <!-- <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-padding-large"><i class="fa fa-language" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
+                      <a href="#" class="w3-bar-item w3-button">繁中</a>
+                      <a href="#" class="w3-bar-item w3-button">EN</a>
+                      <a href="#" class="w3-bar-item w3-button">FR</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </div>
-
     <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-sand w3-hide w3-hide-large ">
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large">行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large">打字練習</a>
-        <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large">行列教學</a>
-        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large">字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large">下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large">常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large">關於本站</a>
+    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
+        <!-- <div class="w3-center w3-small w3-padding-16">
+            <a href="#" style="text-decoration: none;">繁中</a>&emsp;|&emsp;
+            <a href="#" style="text-decoration: none;">EN</a>&emsp;|&emsp;
+            <a href="#" style="text-decoration: none;">FR</a>
+        </div> -->
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
+        <div class="w3-padding-large nav-small-item-hover">
+            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
+            <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
+                &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
+            </div>
+        </div>
+        <div id="navSmallTutorial" class="w3-hide">
+            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
+            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
+            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
+        </div>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
+        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
     </div>
-        <!-- btn for toggling Mobile TOC -->
-    <button id="btnToggleMobileTOC" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
-    <!-- mobile toc -->
-    <div id="mobileTOCWrapper" class="w3-hide-large w3-hide">
-        <button id="closeMobileTOC"><i class="fa fa-times" aria-hidden="true"></i></button>
-        <div id="mobileTOC">
+    
+    <!-- btn for toggling toc on small screens -->
+    <button id="toggleTOCSmall" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
+    <!-- toc on small screens -->
+    <div id="tocSmallWrapper" class="w3-hide-large w3-hide">
+        <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <div id="tocSmall">
             <ol>
-                <li><a href="#array-IME">下載行列</a>
-                    <ul>
+                <li><span class="w3-right toggleStickyTOCArrayIME" style="cursor: pointer;">&emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true"></i></li>
+                <li><a href="#array-IME">下載行列</a></span>
+                    <ul class="w3-hide">
+                        <li><span class="w3-right toggleStickyTOCWindows" style="cursor: pointer;">&emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true"></i></li>
                         <li><a href="#windows">Windows</a>
-                            <ul>
+                            <ul class="w3-hide">
                                 <li><a href="#windows-built-in">內建</a></li>
                                 <li><a href="#new-Array">新行列輸入法</a></li>
                                 <li><a href="#dime">DIME 行列</a></li>
@@ -96,40 +134,49 @@
             <br>
         </div>
     </div>
-<div class="w3-row" style="width: 95%; margin: 60px auto;">
-    <!-- sticky toc (hide-medium & hide-small) -->
-    <aside class="w3-col w3-hide-small w3-hide-medium" style="width: 16em;">
-        <ol>
-            <li><a href="#array-IME">下載行列</a>
-                <ul>
-                    <li><a href="#windows">Windows</a>
-                        <ul>
-                            <li><a href="#windows-built-in">內建</a></li>
-                            <li><a href="#new-Array">新行列輸入法</a></li>
-                            <li><a href="#dime">DIME 行列</a></li>
-                            <li><a href="#windows-others">其它</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#linux">Linux</a></li>
-                    <li><a href="#mac-os">Mac OS</a></li>                    
-                    <li><a href="#android">Android</a></li>
-                    <li><a href="#ios">iOS</a></li>
-                </ul>
-            </li>            
-            <li><a href="#picture">下載圖片</a></li>
-            <li><a href="#data">下載字符表與編碼表</a></li>
-            <li><a href="#font">下載字型</a></li>
-        </ol>
-    </aside>
-    <!-- btn for toggling sticky toc -->
-    <span id="btnToggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-angle-double-left" aria-hidden="true" id="leftArrow"></i><i class="fa fa-angle-double-right w3-hide" aria-hidden="true" id="rightArrow"></i></span>
+
+<div class="w3-row" style="width: 95%; margin: 60px auto; position: relative;">
+    <!-- sticky toc warpper -->
+    <div class="w3-col w3-hide-small w3-hide-medium" style="width: 15em; font-size: small; margin-right: 10px;" id="stickyTOCWrapper">
+        <br>
+        <!-- sticky toc (hide-medium & hide-small) -->
+        <aside>
+            <ol>
+                <li><span class="w3-right toggleStickyTOCArrayIME" style="cursor: pointer;">&emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true"></i></li>
+                <li><a href="#array-IME">下載行列</a></span>
+                    <ul class="w3-hide">
+                        <li><span class="w3-right toggleStickyTOCWindows" style="cursor: pointer;">&emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true"></i></li>
+                        <li><a href="#windows">Windows</a>
+                            <ul class="w3-hide">
+                                <li><a href="#windows-built-in">內建</a></li>
+                                <li><a href="#new-Array">新行列輸入法</a></li>
+                                <li><a href="#dime">DIME 行列</a></li>
+                                <li><a href="#windows-others">其它</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#linux">Linux</a></li>
+                        <li><a href="#mac-os">Mac OS</a></li>                    
+                        <li><a href="#android">Android</a></li>
+                        <li><a href="#ios">iOS</a></li>
+                    </ul>
+                </li>            
+                <li><a href="#picture">下載圖片</a></li>
+                <li><a href="#data">下載字符表與編碼表</a></li>
+                <li><a href="#font">下載字型</a></li>
+            </ol>
+        </aside>
+    </div>
+    <!-- toggling sticky toc (hide-medium & hide-small) -->
+    <div class="w3-col w3-hide-small w3-hide-medium" style="width: 1em;">
+        <br>
+        <span id="toggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-list w3-hide" aria-hidden="true"></i></span>
+    </div>
     
     <!-- page content -->
     <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
         <h1>下載</h1>
-        <p class="w3-pale-red" style="padding:8px 16px; border-left: 5px solid red;"><i class="fa fa-info-circle" aria-hidden="true"></i> 使用 chrome 瀏覽器瀏覽此頁好像有嚴重問題... 請嘗試把側邊欄目錄闔起，或改用別的瀏覽器像是 firefox。</p>
         <hr>
-        <p style="padding: 0 24px;">免費下載各作業系統上的行列輸入法、圖片、字符表與編碼表以及字型</p>
+        <p style="padding: 0 24px;">免費下載各作業系統上的行列輸入法，以及字根表圖片、字符表與編碼表、字型</p>
         <hr>
         <section id="array-IME">
             <h2>下載行列</h2>
@@ -160,7 +207,7 @@
                         <p>✔️ 中英切換：除了按住 <span class="keycap keycap-space">Ctrl</span> 不放同時按下 <span class="keycap keycap-space">space</span> 之外，還可以使用 <span class="keycap keycap-space">Shift</span> 鍵（可到設定調整）。</p>
                         <p>✔️ 特別碼提示：默認關閉，要進入輸入法設定勾選「提示特別碼」。</p>
                         <p>✔️ 詞彙輸入：內建詞彙輸入功能，不但已內建 17 萬 8400 條詞彙，還能自行新增詞彙。詞彙輸入功能預設是關閉，必須進入新行列輸入法的設定>>進階，勾選「啟用詞彙輸入」。</p>
-                        <p class="comment">不認識行列輸入法的詞彙輸入？在本站的行列教學有<a href="/tutorial.html#entering-words" target="_blank">詳細的說明</a>！</p>
+                        <p class="comment">不認識行列輸入法的詞彙輸入？在本站的行列教學有<a href="/tutorial-complete.html#entering-words" target="_blank">詳細的說明</a>！</p>
                     </div>
                     <p>新行列輸入法還有以下功能：</p>
                     <div class="example">
@@ -184,19 +231,20 @@
                         <p>✔️ 中英切換：除了按住 <span class="keycap keycap-space">Ctrl</span> 不放同時按下 <span class="keycap keycap-space">space</span> 之外，還可以使用 <span class="keycap keycap-space">Shift</span> 鍵（需到設定啟用）。</p>
                         <p>✔️ 輸出字元：可以選擇繁體中文或簡體中文。</p>
                         <p>✔️ 詞彙輸入：DIME 行列有詞彙輸入功能但不是正統詞彙輸入功能。詞彙以如同字的方式輸入，也就是說最後要按空白鍵，而不是 <span class="keycap keycap-space">Enter</span> 旁邊的<span class="keycap keycap-letter">'</span> 鍵。缺點就是可能導致重碼數量變多，並且可能改變重碼排序。DIME 行列本身無內建詞彙，要到設定的「自建詞庫」自行新增詞彙編碼。可以到本頁面的<a href="/download.html#data">下載字符表與編碼表</a>下載<a href="#new-Array">新行列輸入法</a>中的詞彙檔，直接使用 DIME 行列設定中的「匯入自訂詞庫」新增詞庫。</p>
-                        <p class="comment">不認識行列輸入法的詞彙輸入？在本站的行列教學有<a href="/tutorial.html#entering-words" target="_blank">詳細的說明</a>！</p>
+                        <p class="comment">不認識行列輸入法的詞彙輸入？在本站的行列教學有<a href="/tutorial-complete.html#entering-words" target="_blank">詳細的說明</a>！</p>
                         <p>✔️ 行列反查：使用 DIME 其它輸入法（自建、注音、大易）時，可以顯示行列編碼。需進入設定啟用。
                     </div>
                 </section>
                 <section id="windows-others">
                     <h4>其它</h4>
-                    <p><a href="https://rime.im/download/" target="_blank">RIME 輸入法</a>（小狼毫 Weasel）、<a href="https://github.com/EasyIME/PIME/releases" target="_blank">PIME 輸入法</a>。</p>
+                    <p><a href="https://rime.im/download/" target="_blank">RIME 輸入法</a>（小狼毫 Weasel）、<a href="https://github.com/EasyIME/PIME/releases" target="_blank">PIME 輸入法</a>、<a href="https://hyperrate.com/dir.php?eid=215" target="_blank">gcin for Windows</a>。</p>
                 </section>
             </section>
             <section id="linux">                
                 <h3>Linux 作業系統</h3>
                 <p>如果您的 linux 系統沒有內建行列輸入法，可以安裝 ibus-array。</p>
-                <p>在終端機輸入 <span class="code">sudo apt update</span> 後，輸入 <span class="code">sudo apt install ibus-array</span> 即可完成安裝。可以透過在終端機輸入 <span class="code">ibus-setup</span> 進入 ibus 偏好設定。</p>
+                <p>對於 Debian/Ubuntu 這一類採用 .deb 安裝套件的發行版本，在終端機輸入 <span class="code">sudo apt update</span> 後，輸入 <span class="code">sudo apt install ibus-array</span> 即可完成安裝。可以透過在終端機輸入 <span class="code">ibus-setup</span> 進入 ibus 偏好設定。</p>
+                <p>至於 Fedora/RHEL、CentOS 這類採用 .rpm 安裝套件的發行版本，安裝 ibus-array 方法與上述不同，可參考這幾篇文章：<a href="https://tinyurl.com/y6qbzwte" target="_blank">Fedora</a>、<a href="https://tinyurl.com/yxu8okxm" target="_blank">CentOS</a>。</p>
             </section>
             <section id="mac-os">
                 <h3>Mac OS 作業系統</h3>
@@ -207,14 +255,18 @@
                 <p>Android 系統上沒有內建行列輸入法，推薦下載萊姆輸入法。不僅有行列 30 也有行列 10，並且支援繁簡轉換、字根反查等功能。</p>
                 <p>到 Play 商店搜尋「萊姆中文輸入法」，或是<a href="https://play.google.com/store/apps/details?id=net.toload.main.hd&hl=zh_TW" target="_blank">點此</a>直接進入下載頁面。</p>
                 <p>在萊姆輸入法頁面上方點擊齒輪圖示可以進入設定頁面。設定頁面中，可以開啟反查功能。例如到注音字根反查選擇行列 10，在使用萊姆注音輸入時，系統就會提示輸入字的行列 10 編碼。另外，使用萊姆輸入法時，左右滑動鍵盤中的空白鍵可以快速切換不同的輸入法。</p>
-                <p class="comment">本站的<a href="/tutorial.html#Array10" target="_blank">行列教學</a>有完整行列 10 的教學以及功能介紹呦！</p>
+                <p class="comment">本站的<a href="/tutorial-complete.html#Array10" target="_blank">行列教學</a>有完整行列 10 的教學以及功能介紹呦！</p>
                 </section>
+
+                <p>另外還有 <a href="https://hyperrate.com/thread.php?tid=28692" target="_blank">gcin for Android</a> 可以使用。</p>
             </section>
             <section id="ios">
                 <h3>iOS</h3>
                 <p>iOS 系統上沒有內建行列輸入法，推薦下載 OkidoKey。不僅有行列 30 也有行列 10，並且支援繁簡轉換、字根反查等功能。</p>
                 <p>到 App Store 搜尋「OkidoKey」，或是<a href="https://apps.apple.com/tw/app/okidokey/id990935790" target="_blank">點此</a>直接進入下載頁面。</p>
-                <p class="comment">本站的<a href="/tutorial.html#Array10" target="_blank">行列教學</a>有完整行列 10 的教學以及功能介紹呦！</p>
+                
+                <p>另外 iOS 系統上還有付費但功能更完整的 Frankie，能在不同輸入法之間快速切換（OkidoKey 一次只能載入一種輸入法）並且沒有廣告（OkidoKey 功能設定頁面可能會出現廣告）。到 App Store 搜尋「Frankie」，或是<a href="https://apps.apple.com/tw/app/frankie-by-creativecrap/id945116579" target="_blank">點此</a>直接進入下載頁面。</p>
+                <p class="comment">現在付費的 Frankie 原名為 OkidoKey，而現在免費的 OkidoKey 原名為 OkidoKey Lite。</p>
             </section>
         </section>
         <section id="picture">
@@ -229,7 +281,6 @@
         <section id="data">
             <h2>下載字符表與編碼表</h2>
             <p>此部分的檔案皆為 .txt 檔。</p>
-            <p>詞彙編碼來自於新行列輸入法。</p>
             <h3>簡碼、特別碼</h3>
             <p>
                 <a href="/array30_data/shortcode1_DIME.txt" download="一級簡碼.txt" class="btn-dl">一級簡碼</a>
@@ -246,7 +297,6 @@
                 <a href="/array30_data/extension_B_DIME.txt" download="擴充區 B 字元編碼.txt" class="btn-dl">擴充區 B</a>
                 <a href="/array30_data/extension_CD_DIME.txt" download="擴充區 CD 字元編碼.txt" class="btn-dl">擴充區 CD</a>
             </p>
-            <p class="comment">至擴充區 A 的檔案只含普通編碼。</p>
 
             <h3>常用字表</h3>
             <p>
@@ -257,6 +307,7 @@
             <p>
                 <a href="/array30_data/words.txt" download="詞彙編碼.txt" class="btn-dl">17 萬 8400 條詞彙編碼</a>
             </p>
+            <p class="comment">此詞彙編碼檔由新行列輸入法內的檔案抓出而來。</p>
 
         </section>
         <section id="font">
@@ -273,6 +324,7 @@
         </section>
     </div>
 </div>
+
     <!-- Footer -->
     <footer class="footer-fish-up">
         <div class="w3-xlarge w3-section">

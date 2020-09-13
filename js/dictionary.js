@@ -162,7 +162,7 @@ function array30Filter() {
     // add result recap sentence to filterResultRecap
     if (checkedCouldOnlyBeSC2) {
         if (sc2.checked) {
-            filterResultRecapSpan.textContent = '總共有 3037 個字有二級簡碼。實在是太多了，所以…';
+            filterResultRecapSpan.textContent = '總共有 3037 個字有二級簡碼，實在是太多了，請和其它條件搭配篩選 😉';
         } else  filterResultRecapSpan.textContent = '您似乎甚麼都沒選，所以…';
     } else {
         filterResultRecapSpan.textContent = `總共有 ${outputArray.length} 個`;

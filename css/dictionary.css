@@ -17,6 +17,14 @@
     background-color: #81574f;
     color: white;
 }
+#inputCharacters {
+    width: 80%;
+    margin: 8px;
+    border-radius: 20px;
+}
+#inputCharacters:focus {
+    outline: none;
+}
 .dict-button {
     background-color: #57342D;
     color: white;

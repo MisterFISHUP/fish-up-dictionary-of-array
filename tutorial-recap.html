@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page-with-sticky-toc.css">
     <link rel="stylesheet" href="css/tutorial-recap.css">
     
 </head>
@@ -103,85 +104,576 @@
         <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
     </div>
 
-    <div class="w3-center w3-xxlarge" style="padding-top: 30vh;">
-        網頁努力建構中 (´･ω･｀)
+    <!-- btn for toggling toc on small screens -->
+    <button id="toggleTOCSmall" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
+    <!-- toc on small screens -->
+    <div id="tocSmallWrapper" class="w3-hide-large w3-hide">
+        <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <div id="tocSmall">
+            <ol>
+                <li><a href="#recap">複習</a></li>
+                <li><a href="#test">測驗</a>
+                    <ul>
+                        <li><a href="#test-fss">基本筆形</a></li>
+                        <li><a href="#test-radical">字根</a></li>
+                        <li><a href="#test-radical-sc">簡體字根</a></li>
+                    </ul>
+                </li>
+            </ol>
+            <br>
+        </div>
     </div>
+<div class="w3-row" style="width: 95%; margin: 60px auto; position: relative;">
+    <!-- sticky toc warpper -->
+    <div class="w3-col w3-hide-small w3-hide-medium" style="width: 15em; font-size: small; margin-right: 10px;" id="stickyTOCWrapper">
+        <br>
+        <!-- sticky toc (hide-medium & hide-small) -->
+        <aside>
+            <ol>
+                <li><a href="#recap">複習</a></li>
+                <li><span class="w3-right toggleStickyTOCTest" style="cursor: pointer;">&emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true"></i></li>
+                <li><a href="#test">測驗</a>
+                    <ul class="w3-hide">
+                        <li><a href="#test-fss">基本筆形</a></li>
+                        <li><a href="#test-radical">字根</a></li>
+                        <li><a href="#test-radical-sc">簡體字根</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </aside>
+    </div>
+    <!-- toggling sticky toc (hide-medium & hide-small) -->
+    <div class="w3-col w3-hide-small w3-hide-medium" style="width: 1em;">
+        <br>
+        <span id="toggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-list w3-hide" aria-hidden="true"></i></span>
+    </div>
+    
+    <!-- page content -->
+    <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
+        <h1>複習與測驗</h1>
+        <hr>
+        <p style="padding: 0 24px;">歡迎來到行列教學的複習與測驗頁面！本頁面前半部將帶您快速複習行列輸入法的所有知識，而後半部的測驗將幫助您鞏固所有有關基本筆形以及字根的知識。</p>
+        <hr>
+        <p class="w3-pale-green w3-round-large w3-padding">請先閱讀過<a href="/tutorial.html" target="_blank">快速入門</a>以及<a href="/tutorial-complete.html" target="_blank">完整教學</a>，再來閱讀與使用此頁面。</p>
+        <section id="recap">
+            <h2>複習</h2>
+            <p>以下重點式複習行列輸入法的所有知識。</p>
 
-<div class="page-content w3-hide">
-    <article>
-        <h1>行列教學複習</h1>
-        <p>嗨！歡迎來到行列教學複習！我設計了這個頁面來幫助您複習行列輸入法的基礎知識。請確保您已經完整看過本站的<a href="/tutorial.html" target="_blank">行列教學</a>後再來使用這個頁面。</p>
-        <p>這個頁面一開始幫您快速總結本站<a href="/tutorial.html" target="_blank">行列教學</a>的重點，後半部則是我設計的小測驗，用來幫助您強化知識。</p>
-        <p>小測驗分為五個部分，點擊句子中的灰色方塊就能夠顯示答案。</p>
-    </article>
-    <section>
-        <p>正式進入行列教學之前，我要快速告訴您行列輸入法基本的五件事。這花您最多 10 分鐘，並且看完後您就會了解行列輸入法的原理。</p>
-    </section>
+            <h4>核心原理</h4>
+            <p>行列輸入法有 10 個<a href="/tutorial-complete.html#fundamental-stroke-shape" target="_blank">基本筆形</a>，也就是由一或多個完整筆畫構成的基本形狀。每個基本筆形對應到一個數字。</p>
+            <p>字根依照字根碼的設計可以分為三種：<a href="/tutorial-complete.html#FSS-radical" target="_blank">基本筆形字根</a>、<a href="/tutorial-complete.html#SESS-radical" target="_blank">首尾筆形字根</a>、<a href="/tutorial-complete.html#specially-mapped-radical" target="_blank">特殊歸位字根</a>。符合基本筆形的描述或是由基本筆形衍生而來的字根，叫做基本筆形字根，字根碼由基本筆形數字給出。首尾筆形字根的字根碼由首尾筆形給出。特殊歸位字根的字根碼雖然不是由首尾筆形給出，但多數可以透過歸位原因或是口訣來記憶。</p>
+            <p>字根碼<a href="/tutorial.html#fundamental-stroke-shape-and-stuff" target="_blank">可以得到鍵位</a>。</p>
+            <p>拆字取碼除了依照書寫筆順，還要認識<a href="/tutorial-complete.html#first-three-and-last-principle" target="_blank">前三後一原則</a>、<a href="/tutorial-complete.html#big-radical-principle" target="_blank">大根先取原則</a>以及<a href="/tutorial-complete.html#radicals-beyond-stroke-order" target="_blank">跨越筆順的字根</a>。完整拆字後若得到超過 4 個字根，則只取前三個和最後一個字根，這是前三後一原則。每一次取字根都要取筆畫較多、涵蓋範圍較廣的字根，這是大根先取原則。在拆字取碼時若遇到跨越筆順的字根，必須當作一個整體取掉而不拘泥筆順。</p>
+            <p><a href="/tutorial-complete.html#error-tolerance" target="_blank">容錯功能</a>讓取碼打字的過程更輕鬆，並且取碼有疑慮時可以使用<a href="/tutorial-complete.html#wild-card" target="_blank">查詢功能</a>（問號「?」或星號「*」）。</p>
 
-    <section>
-        <h3>字根、字根碼</h3>
-        <p>字根是組成中文字的各種零件，也就是說每個中文字可以拆解成一至數個字根。行列輸入法的每一個字根都對應到一個字根碼。</p>
-        <p>依照字根碼的規則，行列輸入法的字根可以分為三類種：基本筆形字根、首尾筆形字根以及特殊歸位字根。</p>
-    </section>
+            <h4>普通編碼的輸入</h4>
+            <p>普通編碼是拆字取碼後，判斷是否為<a href="#rarely-used-character" target="_blank">不常用字根（要重複該字根鍵四次）或是否為罕用字（要加上罕字鍵）</a>後，得到的一或多顆要依序輸入的行列 30 鍵。輸入普通編碼之後，要再按一下空白鍵（如果沒有重碼那麼輸入直接完成，否則要處理<a href="/tutorial-complete.html#coincident-code" target="_blank">重碼問題</a>），但輸入過程中在視窗看到想要的字，就可以直接用數字鍵選字完成輸入（<a href="/tutorial-complete.html#preview" target="_blank">預視功能</a>）。</p>
 
+            <h4>簡碼</h4>
+            <p>為加快打字速度，行列輸入法設計了<a href="/tutorial-complete.html#short-code-I" target="_blank">一級簡碼</a>以及<a href="/tutorial-complete.html#short-code-II" target="_blank">二級簡碼</a>。</p>
+            <p>按 1 顆行列 30 鍵後，行列視窗出現的 10 個字便是一級簡碼字，按對應的數字鍵就能選字並完成輸入。唯一要注意的是，按 <span class="keycap keycap-letter">2↑</span> 鍵後視窗出現的「女」字不能透過數字鍵 <span class="keycap keycap-number">1</span> 選擇而完成輸入：輸入「女」字的正確方法為按 <span class="keycap keycap-letter">2↑</span> 後，再按 <span class="keycap keycap-space">Space</span> 完成輸入。一級簡碼的行列 30 鍵一律是該字普通編碼的第一顆鍵，而一級簡碼的數字鍵不一定有規則，但時常是該字普通編碼第二顆鍵的行數。另外，有 <a href="/tutorial-complete.html#symbol-with-short-code-I" target="_blank">20 個常用標點符號</a>能夠透過一級簡碼輸入。</p>
+            <p>按 2 顆行列 30 鍵後，行列視窗出現的字便是二級簡碼字（畫面有時看起來像有缺字，是正常現象），接著按對應的數字鍵就能選字並完成輸入。二級簡碼的兩顆行列 30 鍵一律是該字普通編碼的前兩顆鍵，而二級簡碼的數字鍵一律是該字普通編碼第三顆鍵的行數。</p>
 
+            <p class="comment">您可以使用本站<a href="/dictionary.html" target="_blank">行列查碼</a>的列表功能、<a href="/typing.html" target="_blank">打字練習</a>的內建題目以及<a href="/download.html#data" target="_blank">下載頁面</a>來取得或練習一級簡碼。</p>
 
-    <section>
-        <h2>3. 基本筆形、字根、字根碼、鍵位</h2>
-        <h3>基本筆形</h3>
-        <p>行列輸入法建立在 <u>10 個基本筆形</u>上，每一個基本筆形對應到一個數字。</p>
-        <p>舉例來說，有一個基本筆形叫逆彎：㇗，此基本筆形對應的數字是 2；有另一個基本筆形叫撇：㇒，此基本筆形對應的數字是 9。</p>
-        <p class="comment">如同字面上的意思，基本筆形是一個形狀，不一定是單一一個筆畫。比如說有一個基本筆形叫正交：十（對應的數字是 4），是橫豎兩線交叉的筆形</p>
-        <h3>字根</h3>
-        <p>字根是組成中文字的各種零件，也就是說每個中文字可以拆解成一至數個字根。例如中文字「功」在行列輸入法中拆成「工、力」這兩個字根，中文字「想」可以拆成「木、目、心」這三個字根。</p>
-        <p class="comment">行列的字根不一定是中文的部首或偏旁，可能是單位更大或更小的零件，例如 中文字「微」在行列輸入法中拆成「」這兩個字根、「鼎」拆成「、目」這兩個字根，又或者中文字「代」拆成「」這三個字根、看拆成「」這三個字根。</p>
-        <h3>字根碼</h3>
-        <p>行列輸入法的每一個字根都會對應到一個字根碼，絕大多數的狀況這個對應遵循著簡單的規則。字根碼是一個二位數字（例如 16、71、08 等），或是一個數字加上連字號 – （例如 2-、6-、0- 等，此時字根碼讀做「2 單」、「6 單」「0 單」）。舉例來說，字根「艹」的字根碼是 4-、字根「力」的字根碼是 59。</p>
-        <h3>鍵位</h3>
-        <p>所謂的「鍵位」就是行列 30 鍵各鍵（的名稱），像是 <span class="keycap keycap-letter">7↑</span>（7 上）、<span class="keycap keycap-letter">3-</span>（3 中）、<span class="keycap keycap-letter">0↓</span>（0 下）。依照相當簡單的規則，行列輸入法的每一個字根碼都會對應到一個鍵位。例如「59」這個字根碼的鍵位是 5 下，「4-」這個字根碼的鍵位是 4 中。</p>
-        <p>這個相當簡單的規則就是</p>
-        <p>字根碼如果是一個二位數字，則第一位數對應到行列 30 鍵的行，而第二位數依照下述規則對應到行列 30 鍵的列：</p>
-        <p>0,1,2,3,4 -> 上   5-> 中  6,7,8,9,0 -> 下</p>
-        <p>例：
-            字根碼如果是一個數字加上連字號 –，則數字對應到的行列 30 鍵的行，連字號 –對應到上中下的中
-            </p>
-        <p>因為字根「力」的字根碼是 59，我們說字根「力」的鍵位是5下；lafglkajj。綜上所述，行列輸入法中，每一個字根都會對應到一顆行列 30 鍵(即每一個字根都會對應到一個鍵位)</p>
-    </section>
+            <h4>特別碼</h4>
+            <p>行列輸入法特別為一些使用頻率很高的字設計了<a href="/tutorial-complete.html#special-code" target="_blank">特別碼</a>：按下 2 顆行列 30 鍵再按下 <span class="keycap keycap-space">Space</span> 完成輸入。總共有 398 個字有特別碼，沒有任何符號有特別碼。雖然有些特別碼是依照特定規則設計的，但總體來說，特別碼的 2 顆行列 30 鍵都必須特別記憶。行列新手一開始不建議特別花時間研究或記憶特別碼。</p>
 
-    <section>
-        <h2>4. 拆字、拆碼、取碼</h2>
-        <p>我們將一個字拆成一至數個字根，這個叫做「拆字」。但真正輸入並不一定會使用到所有字根，可能只會取一部分字根來輸入。得到這些字根、或這些字根的字根碼、或是這些字根的鍵位，這個叫做「拆碼」或「取碼」。實際溝通上，我們常混淆使用「拆字」、「拆碼」、「取碼」這三個詞彙。</p>
-        <p class="comment">行列輸入法每個字最多只會取 4 個字根來輸入。</p>
-    </section>
+            <p class="comment">您可以使用本站<a href="/dictionary.html" target="_blank">行列查碼</a>的列表功能、<a href="/typing.html" target="_blank">打字練習</a>的內建題目以及<a href="/download.html#data" target="_blank">下載頁面</a>來取得或練習特別碼。</p>
 
-    <article>
-        <h1>小測驗</h1>
-    </article>
-    <section>
-        <h2>基本筆形</h2>
-        1 對應到基本筆形 <span class="test test-blank">一：橫 1</span><br>
-        2
-    </section>
-    <section>
-        <h2>字根</h2>
-        字根「日」是<span class="test test-blank">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test test-blank">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test test-blank">0↑</span></span>。例如它出現在「日」、「旦」等字。<br>
-        <h3>簡體字根</h3>
-        <!-- 模板 -->
-        字根「」是<span class="test test-blank">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test test-blank">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test test-blank">0↑</span></span>。例如它出現在「」、「」等字。<br>
-        字根「」是<span class="test test-blank">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test test-blank">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test test-blank">0↑</span></span>。例如它出現在「」、「」等字。<br>
-        字根「」是<span class="test test-blank">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test test-blank">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test test-blank">0↑</span></span>。例如它出現在「」、「」等字。<br>
+            <h4>符號</h4>
+            <p>按下 <span class="keycap keycap-letter">2↑</span> 鍵（即英文鍵 <span class="keycap keycap-letter">w</span>）再按下不同的數字鍵會進入<a href="/tutorial-complete.html#symbol-list" target="_blank">不同的符號選單</a>，而其中 <a href="/tutorial-complete.html#symbol-with-short-code-I" target="_blank">20 個常用標點符號有一級簡碼</a>。</p>
+
+            <p class="comment">您可以使用本站<a href="/dictionary.html" target="_blank">行列查碼</a>的列表功能、<a href="/typing.html" target="_blank">打字練習</a>的內建題目以及<a href="/download.html#data" target="_blank">下載頁面</a>來取得或練習符號編碼。</p>
+
+            <h4>其他實用功能</h4>
+            <p>許多版本的行列輸入法提供<a href="/tutorial-complete.html#word-association" target="_blank">聯想字詞</a>、<a href="/tutorial-complete.html#traditional-simplified-chinese-conversion" target="_blank">繁轉簡或簡轉繁</a>、<a href="/tutorial-complete.html#reverse-lookup" target="_blank">行列反查</a>、<a href="/tutorial-complete.html#entering-words" target="_blank">詞彙輸入</a>等等實用功能，其中詞彙輸入功能顧名思義可以一次輸入多個字。</p>
+
+            <h4>行動裝置</h4>
+            <p>行列輸入法在行動裝置上，除了一般的行列 30 外還有<a href="/tutorial-complete.html#Array10" target="_blank">行列 10</a> 可以使用。</p>
+        </section>
+        <section id="test">
+            <h2>測驗</h2>
+            <p>測驗分為 3 個部分：<a href="#test-fss">基本筆形</a>、<a href="#test-radical">字根</a>、<a href="#test-radical-sc">簡體字根</a>，並且皆是採自我檢測方式，透過點擊灰色欄位來顯示/隱藏答案。</p>
+            <p>第一部分「基本筆形」包含了全部 10 個基本筆形，第二部分「字根」包含了行列輸入法所有非簡體的字根，第三部分「簡體字根」包含了行列輸入法所有簡體字根。僅使用繁體的學習者可以忽略第三部分「簡體字根」。</p>
+            <section id="test-fss">
+                <h3>基本筆形</h3>
+                <p>此測驗幫助您鞏固有關 10 個基本筆形的知識。點擊灰色欄位顯示/隱藏答案，可針對的對您不會、或是有疑慮的部分做重點複習。本站的<a href="/tutorial-complete.html#fundamental-stroke-shape" target="_blank">行列教學</a>有 10 基本筆形的完整解說。</p>
+                <span class="w3-medium">數字視角</span>
+                <span id="togglePointOfView">
+                    <i class="fa fa-toggle-on w3-text-green" aria-hidden="true"></i>
+                    <i class="fa fa-toggle-off w3-text-gray w3-hide" aria-hidden="true"></i>
+                </span>
+                <div id="blockTestFSSNumber">
+                    <div>1 對應到基本筆形 <span class="test_blank mask">一：橫 1&emsp;&emsp;</span></div>
+                    <div>2 對應到基本筆形 <span class="test_blank mask">㇗：逆彎 2&emsp;</span></div>
+                    <div>3 對應到基本筆形 <span class="test_blank mask">丨：直 3&emsp;&emsp;</span></div>
+                    <div>4 對應到基本筆形 <span class="test_blank mask">十：正交 4&emsp;</span></div>
+                    <div>5 對應到基本筆形 <span class="test_blank mask">㇕：順彎 5&emsp;</span></div>
+                    <div>6 對應到基本筆形 <span class="test_blank mask">丶：點 6&emsp;&emsp;</span></div>
+                    <div>7 對應到基本筆形 <span class="test_blank mask">ㄇ：蓋 7&emsp;&emsp;</span></div>
+                    <div>8 對應到基本筆形 <span class="test_blank mask">八㇏：八捺 8</span></div>
+                    <div>9 對應到基本筆形 <span class="test_blank mask">㇒：撇 9&emsp;&emsp;</span></div>
+                    <div>0 對應到基本筆形 <span class="test_blank mask">口：方框 0&emsp;</span></div>
+                </div>
+                <div id="blockTestFSS" class="w3-hide">
+                    <div>基本筆形「一：橫」對應到數字 <span class="test_blank mask"> 1&emsp;</span></div>
+                    <div>基本筆形「㇗：逆彎」對應到數字 <span class="test_blank mask"> 2&emsp;</span></div>
+                    <div>基本筆形「丨：直」對應到數字 <span class="test_blank mask"> 3&emsp;</span></div>
+                    <div>基本筆形「十：正交」對應到數字 <span class="test_blank mask"> 4&emsp;</span></div>
+                    <div>基本筆形「㇕：順彎」對應到數字 <span class="test_blank mask"> 5&emsp;</span></div>
+                    <div>基本筆形「丶：點」對應到數字 <span class="test_blank mask"> 6&emsp;</span></div>
+                    <div>基本筆形「ㄇ：蓋」對應到數字 <span class="test_blank mask"> 7&emsp;</span></div>
+                    <div>基本筆形「八㇏：八捺」對應到數字 <span class="test_blank mask"> 8&emsp;</span></div>
+                    <div>基本筆形「㇒：撇」對應到數字 <span class="test_blank mask"> 9&emsp;</span></div>
+                    <div>基本筆形「口：方框」對應到數字 <span class="test_blank mask"> 0&emsp;</span></div>
+                </div>
+            </section>
+            <section id="test-radical">
+                <h3>字根</h3>
+                <p>此測驗幫助您鞏固有關行列輸入法所有非簡體的字根的知識。點擊灰色欄位顯示/隱藏答案，可針對的對您不會、或是有疑慮的部分做重點複習。本站的<a href="/tutorial-complete.html#radical" target="_blank">行列教學</a>有全部字根的完整解說。</p>
+                <p>下方字根目前依照字根碼排列，點擊打亂題目按鈕可將題目順序打亂。</p>
+                <!-- buttons -->
+                <div class="w3-medium w3-margin-bottom" >
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-pink w3-round-xlarge w3-padding-small" id="shuffleTestRadical"><i class="fa fa-random" aria-hidden="true"></i> 打亂題目</button>
+                    </div>
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_show_all_radical_type"><i class="fa fa-eye" aria-hidden="true"></i> 字根類型</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_show_all_radical_code"><i class="fa fa-eye" aria-hidden="true"></i> 字根碼</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_show_all_radical_key"><i class="fa fa-eye" aria-hidden="true"></i> 鍵位</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_show_all"><i class="fa fa-eye" aria-hidden="true"></i> 全部</button>
+                    </div>
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_hide_all_radical_type"><i class="fa fa-eye-slash" aria-hidden="true"></i> 字根類型</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_hide_all_radical_code"><i class="fa fa-eye-slash" aria-hidden="true"></i> 字根碼</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_hide_all_radical_key"><i class="fa fa-eye-slash" aria-hidden="true"></i> 鍵位</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_hide_all"><i class="fa fa-eye-slash" aria-hidden="true"></i> 全部</button>
+                    </div>
+                </div>
+                <!-- block test radical -->
+                <div id="block_test_radical">
+                    <!-- 10 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/10可.png" class="root" alt="行列字根 10，「可」去掉最末筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">10</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「豆」、「可」、「或」、「事」等字。</div>
+                    <!-- 11 -->
+                    <div class="test-radical">字根「工」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">11</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「工」、「汞」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/11長.png" class="root" alt="行列字根 11，「長」去掉最末三筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">11</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「長」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/11龍.png" class="root" alt="行列字根 11，「龍」右半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">11</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「龍」字。</div>
+                    <!-- 12 -->
+                    <div class="test-radical">字根「七」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「七」、「切」等字。</div>
+                    <div class="test-radical">字根「匕」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「匕」、「化」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/12它.png" class="root" alt="行列字根 12，「它」去掉宀">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「它」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/12毛.png" class="root" alt="行列字根 12，「毛」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「毛」字。</div>
+                    <div class="test-radical">字根「匚」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「區」、「牙」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/12越.png" class="root" alt="行列字根 12，「戉」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「越」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/12瓦.png" class="root" alt="行列字根 12，「瓦」去掉點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「瓦」字。</div>
+                    <!-- 13 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/13韋.png" class="root" alt="行列字根 13，「韋」口下面的部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">13</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「韋」、「舞」等字。</div>
+                    <!-- 14 -->
+                    <div class="test-radical">字根「車」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">14</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「車」、「連」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/14甫.png" class="root" alt="行列字根 14，「甫」去掉點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">14</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「甫」、「博」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/14曹.png" class="root" alt="行列字根 14，「曹」去掉日">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">14</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「曹」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/14年.png" class="root" alt="行列字根 14，「年」去掉前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">14</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「年」字。</div>
+                    <!-- 1- -->
+                    <div class="test-radical">字根「一」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">1-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1-</span></span>。例如它出現在「一」、「天」等字。</div>
+                    <div class="test-radical">字根「㇀」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">1-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1-</span></span>。例如它出現在「刁」、「或」等字。</div>
+                    <!-- 16 -->
+                    <div class="test-radical">字根「不」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「不」、「胚」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/16母.png" class="root" alt="行列字根 16，「母」去掉前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「母」字。</div>
+                    <div class="test-radical">字根「镸」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「套」、「髮」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/16惠.png" class="root" alt="行列字根 16，「惠」去掉心">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「惠」、「專」等字。</div>
+                    <div class="test-radical">字根「ㄊ」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「育」、「充」等字。</div>
+                    <!-- 18 -->
+                    <div class="test-radical">字根「大」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">18</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「大」、「夾」等字。</div>
+                    <div class="test-radical">字根「夫」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">18</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「夫」、「難」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/18春.png" class="root" alt="行列字根 18，「春」去掉日">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">18</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「春」、「秦」等字。</div>
+                    <div class="test-radical">字根「雨」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">18</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「雨」、「雪」等字。</div>
+                    <!-- 19 -->
+                    <div class="test-radical">字根「厂」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">19</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「反」、「成」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/19尤.png" class="root" alt="行列字根 19，「尤」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">19</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「在」、「丈」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/19看.png" class="root" alt="行列字根 19，「看」去掉第一筆畫再去掉目">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">19</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「看」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/19與.png" class="root" alt="行列字根 19，「與」上半部中間">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">19</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「與」字。</div>
+                    <!-- 21 -->
+                    <div class="test-radical">字根「女」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">21</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「女」、「如」等字。</div>
+                    <div class="test-radical">字根「彑」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">21</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「互」、「彙」、「綠」等字。</div>
+                    <div class="test-radical">字根「丱」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">21</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「關」、「聯」等字。</div>
+                    <!-- 22 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/22巛.png" class="root" alt="行列字根 22，「巛」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">22</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「巢」、「巡」、「經」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/22鼠.png" class="root" alt="行列字根 22，「鼠」下半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">22</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「鼠」、「蠟」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/22巜.png" class="root" alt="行列字根 22，「巜」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">22</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↑</span></span>。例如它出現在「粼」字。</div>
+                    <!-- 2- -->
+                    <div class="test-radical">字根「乙」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「乙」、「乾」等字。</div>
+                    <div class="test-radical">字根「⺄」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「九」、「飛」等字。</div>
+                    <div class="test-radical">字根「乚」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「已」、「宅」等字。</div>
+                    <div class="test-radical">字根「㇗」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「世」、「繼」等字。</div>
+                    <div class="test-radical">字根「㇛」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「鄉」字。</div>
+                    <div class="test-radical">字根「㇙」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「民」字。</div>
+                    <div class="test-radical">字根「㇂」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「氏」字。</div>
+                    <div class="test-radical">字根「几」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「几」、「凡」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/2-殳.png" class="root" alt="行列字根 2-，「殳」上半部">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「投」字。</div>
+                    <div class="test-radical">字根「儿」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「允」、「兆」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/2-冘.png" class="root" alt="行列字根 2-，「冘」去掉冖">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「枕」、「免」等字。</div>
+                    <div class="test-radical">字根「𧾷」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">2-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「跟」字。</div>
+                    <!-- 25 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/25母.png" class="root" alt="行列字根 25，「母」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">25</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2-</span></span>。例如它出現在「母」字。</div>
+                    <!-- 26 -->
+                    <div class="test-radical">字根「風」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「風」、「颱」等字。</div>
+                    <div class="test-radical">字根「ㄠ」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「幾」、「牽」等字。</div>
+                    <div class="test-radical">字根「厶」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「允」、「去」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/26戈.png" class="root" alt="行列字根 26，「戈」去掉橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「或」、「找」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/26弋.png" class="root" alt="行列字根 26，「弋」去掉橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「代」、「式」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/26瓜.png" class="root" alt="行列字根 26，「瓜」第三四筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「瓜」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/26以.png" class="root" alt="行列字根 26，「以」前三筆畫">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">26</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「以」字。</div>
+                    <!-- 28 -->
+                    <div class="test-radical">字根「糸」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">28</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「絲」、「線」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/28衣.png" class="root" alt="行列字根 28，「衣」去掉前三筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">28</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「衣」、「食」等字。</div>
+                    <!-- 29 -->
+                    <div class="test-radical">字根「爿」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">29</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「壯」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/29亥.png" class="root" alt="行列字根 29，「亥」第三四筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">29</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「亥」、「鄉」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/29戈.png" class="root" alt="行列字根 29，「戈」去掉橫線再去掉點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">29</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「曳」字。</div>
+                    <!-- 31 -->
+                    <div class="test-radical">字根「門」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「門」、「開」等字。</div>
+                    <div class="test-radical">字根「止」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「止」、「步」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31耳.png" class="root" alt="行列字根 31，「耳」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「耳」、「聽」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31囬.png" class="root" alt="行列字根 31，「囬」去掉囗">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「面」、「齊」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31假.png" class="root" alt="行列字根 31，「假」中間部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「假」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31官.png" class="root" alt="行列字根 31，「官」去掉宀">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「官」、「歸」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31北.png" class="root" alt="行列字根 31，「北」左半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「北」、「乘」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31非左.png" class="root" alt="行列字根 31，「非」左半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「非」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31非右.png" class="root" alt="行列字根 31，「非」右半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「非」字。</div>
+                    <div class="test-radical">字根「⺊」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「占」、「餐」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/31乍.png" class="root" alt="行列字根 31，「乍」去掉前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">31</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「乍」字。</div>
+                    <!-- 32 -->
+                    <div class="test-radical">字根「虍」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">32</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「虎」、「慮」等字。</div>
+                    <!-- 33 -->
+                    <div class="test-radical">字根「鬥」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「鬥」、「鬧」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/33淵.png" class="root" alt="行列字根 33，「淵」右半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「淵」、「肅」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/33亞.png" class="root" alt="行列字根 33，「亞」去掉上下兩橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「亞」、「壺」等字。</div>
+                    <div class="test-radical">字根「刂」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「利」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/33介.png" class="root" alt="行列字根 33，「介」去掉前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「川」、「介」、「弗」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/33而.png" class="root" alt="行列字根 33，「而」下半部中間兩直線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↑</span></span>。例如它出現在「而」字。</div>
+                    <!-- 3- -->
+                    <div class="test-radical">字根「丨」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「攸」、「巾」等字。</div>
+                    <div class="test-radical">字根「丿」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「卯」、「州」等字。</div>
+                    <div class="test-radical">字根「亅」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「了」、「丁」等字。</div>
+                    <div class="test-radical">字根「山」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「山」、「岔」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/3-屮日.png" class="root" alt="行列字根 3-，「屮」中間直線變彎的">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「朔」、「艸」等字。</div>
+                    <div class="test-radical">字根「屮」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「出」、「艸」等字。</div>
+                    <div class="test-radical">字根「凵」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">3-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「屯」、「缺」等字。</div>
+                    <!-- 35 -->
+                    <div class="test-radical">字根「片」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">35</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「片」、「版」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/35凹.png" class="root" alt="行列字根 35，「凹」去掉底部橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">35</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「凹」、「雋」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/35凸.png" class="root" alt="行列字根 35，「凸」去掉底部橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">35</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3-</span></span>。例如它出現在「凸」字。</div>
+                    <!-- 36 -->
+                    <div class="test-radical">字根「卜」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">36</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「卜」、「下」等字。</div>
+                    <div class="test-radical">字根「⺗」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">36</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「恭」、「添」等字。</div>
+                    <!-- 38 -->
+                    <div class="test-radical">字根「水」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「水」、「丞」等字。</div>
+                    <div class="test-radical">字根「氵」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「決」字。</div>
+                    <div class="test-radical">字根「氺」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「泰」、「遲」、「康」等字。</div>
+                    <div class="test-radical">字根「小」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「小」、「示」等字。</div>
+                    <div class="test-radical">字根「⺌」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「肖」、「常」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/38並.png" class="root" alt="行列字根 38，「業」最初四筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「並」、「業」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/38亦.png" class="root" alt="行列字根 38，「亦」去掉亠">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「亦」、「兼」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/38眔.png" class="root" alt="行列字根 38，「眔」去掉罒">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「眔」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/38龰.png" class="root" alt="行列字根 38，「龰」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">38</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「走」、「捷」等字。</div>
+                    <!-- 39 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/39步.png" class="root" alt="行列字根 39，「步」去掉止">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">39</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「步」、「賓」等字。</div>
+                    <!-- 40 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/40革.png" class="root" alt="行列字根 40，「革」去掉最末兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">40</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「革」、「難」等字。</div>
+                    <!-- 41 -->
+                    <div class="test-radical">字根「土」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「土」、「主」等字。</div>
+                    <div class="test-radical">字根「士」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「士」、「吉」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41青.png" class="root" alt="行列字根 41，「青」去掉月">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「青」、「害」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41黃.png" class="root" alt="行列字根 41，「黃」田上面的部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「黃」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41共.png" class="root" alt="行列字根 41，「共」去掉兩點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「共」、「典」等字。</div>
+                    <div class="test-radical">字根「廿」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「廿」、「甘」、「世」、「滿」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41其.png" class="root" alt="行列字根 41，「其」去掉末三筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「其」、「甚」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41冓.png" class="root" alt="行列字根 41，「冓」上半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「講」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/41無.png" class="root" alt="行列字根 41，「無」去掉最初兩筆畫和下面四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">41</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「無」、「舞」等字。</div>
+                    <!-- 42 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/42帶.png" class="root" alt="行列字根 42，「帶」冖上面">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">42</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↑</span></span>。例如它出現在「帶」字。</div>
+                    <!-- 4- -->
+                    <div class="test-radical">字根「十」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「十」、「汁」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/4-奉.png" class="root" alt="行列字根 4-，「奉」末三筆畫">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「奉」、「筆」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/4-丰簡.png" class="root" alt="行列字根 4-，「峰」去掉山再去掉夂">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「逢」、「藉」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/4-子.png" class="root" alt="行列字根 4-，「子」末兩筆畫">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「子」、「求」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/4-孑.png" class="root" alt="行列字根 4-，「孑」末兩筆畫">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「孔」、「特」等字。</div>
+                    <div class="test-radical">字根「艹」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「花」、「垂」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/4-雈.png" class="root" alt="行列字根 4-，「夢」罒的上面">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「夢」、「敬」等字。</div>
+                    <div class="test-radical">字根「卄」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「侖」、「噴」等字。</div>
+                    <div class="test-radical">字根「廾」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「升」字。</div>
+                    <div class="test-radical">字根「卅」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">4-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4-</span></span>。例如它出現在「卅」字。</div>
+                    <!-- 47 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/47壺.png" class="root" alt="行列字根 47，「壺」只保留士和冖">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">47</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↓</span></span>。例如它出現在「壹」、「殼」等字。</div>
+                    <!-- 48 -->
+                    <div class="test-radical">字根「木」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">48</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↓</span></span>。例如它出現在「木」、「查」、「來」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/48沭.png" class="root" alt="行列字根 48，「述」去掉辶再去掉點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">48</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">4↓</span></span>。例如它出現在「述」、「術」等字。</div>
+                    <!-- 51 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/51尹.png" class="root" alt="行列字根 51，「尹」去掉最末一筆劃">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「君」、「書」等字。</div>
+                    <div class="test-radical">字根「彐」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「很」、「良」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/51巳.png" class="root" alt="行列字根 51，「巳去掉最末筆畫」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「巨」、「巴」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/51夬.png" class="root" alt="行列字根 51，「夬」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「巨」、「快」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/51五.png" class="root" alt="行列字根 51，「五」去掉首筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「五」、「偉」等字。</div>
+                    <!-- 53 -->
+                    <div class="test-radical">字根「阝」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">53</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「阿」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/53皮.png" class="root" alt="行列字根 53，「皮」去掉又">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">53</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「皮」字。</div>
+                    <!-- 5- -->
+                    <div class="test-radical">字根「㇡」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「乃」字。</div>
+                    <div class="test-radical">字根「㇉」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「弓」、「疆」等字。</div>
+                    <div class="test-radical">字根「㇞」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「吳」、「卐」等字。</div>
+                    <div class="test-radical">字根「㇖」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「也」、「為」、「慶」等字。</div>
+                    <div class="test-radical">字根「㇆」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「成」、「局」等字。</div>
+                    <div class="test-radical">字根「㇕」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「丑」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/5-馬.png" class="root" alt="行列字根 5-，「馬」去掉四點">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「馬」字。</div>
+                    <div class="test-radical">字根「石」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「石」、「砂」等字。</div>
+                    <div class="test-radical">字根「戶」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">5-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「戶」、「啟」等字。</div>
+                    <!-- 55 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/55鼎.png" class="root" alt="行列字根 55，「鼎」去掉目">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">55</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「鼎」字。</div>
+                    <!-- 56 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/56即.png" class="root" alt="行列字根 56，「即」左半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">56</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「即」、「飲」等字。</div>
+                    <div class="test-radical">字根「マ」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">56</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「予」、「令」等字。</div>
+                    <!-- 58 -->
+                    <div class="test-radical">字根「又」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「又」、「支」等字。</div>
+                    <div class="test-radical">字根「廴」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「延」、「及」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/58永.png" class="root" alt="行列字根 58，「永」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「永」字。</div>
+                    <div class="test-radical">字根「癶」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「發」、「登」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/58羽.png" class="root" alt="行列字根 58，「羽」左半邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「羽」、「習」等字。</div>
+                    <!-- 59 -->
+                    <div class="test-radical">字根「力」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">59</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「力」、「功」等字。</div>
+                    <div class="test-radical">字根「尸」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">59</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「屋」、「局」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/59眉.png" class="root" alt="行列字根 59，「眉」去掉目">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">59</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「眉」、「聲」等字。</div>
+                    <!-- 60 -->
+                    <div class="test-radical">字根「言」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">60</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「言」、「話」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/60贏.png" class="root" alt="行列字根 60，「贏」只保留亡和口">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">60</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「贏」字。</div>
+                    <!-- 61 -->
+                    <div class="test-radical">字根「立」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">61</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「立」、「辛」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/61隹.png" class="root" alt="行列字根 61，「隹」去掉亻">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">61</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「隹」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/61鹿.png" class="root" alt="行列字根 61，「鹿」去掉比">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">61</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「鹿」、「慶」等字。</div>
+                    <div class="test-radical">字根「亠」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">61</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「文」、「卒」等字。</div>
+                    <!-- 63 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/63神.png" class="root" alt="行列字根 63，「礻」去掉最後一筆劃">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">63</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「社」、「袖」等字。</div>
+                    <!-- 6- -->
+                    <div class="test-radical">字根「丶」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">6-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6-</span></span>。例如它出現在「寸」、「犬」等字。</div>
+                    <div class="test-radical">字根「⺀」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">6-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6-</span></span>。例如它出現在「斗」、「於」等字。</div>
+                    <div class="test-radical">字根「疒」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">6-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6-</span></span>。例如它出現在「病」字。</div>
+                    <!-- 65 -->
+                    <div class="test-radical">字根「方」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">65</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6-</span></span>。例如它出現在「方」、「放」等字。</div>
+                    <!-- 66 -->
+                    <div class="test-radical">字根「心」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">66</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「心」、「必」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/66忄.png" class="root" alt="行列字根 66，「忄」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">66</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「情」字。</div>
+                    <!-- 67 -->
+                    <div class="test-radical">字根「宀」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">67</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「字」、「穿」等字。</div>
+                    <!-- 68 -->
+                    <div class="test-radical">字根「之」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">68</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「之」、「乏」等字。</div>
+                    <div class="test-radical">字根「辶」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">68</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「退」字。</div>
+                    <!-- 69 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/69產.png" class="root" alt="行列字根 69，「產」去掉生">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">69</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「產」、「彥」等字。</div>
+                    <div class="test-radical">字根「广」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">69</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「廣」、「唐」等字。</div>
+                    <!-- 71 -->
+                    <div class="test-radical">字根「月」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">71</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「月」、「明」等字。</div>
+                    <div class="test-radical">字根「⺼」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">71</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「育」、「胖」等字。</div>
+                    <div class="test-radical">字根「皿」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">71</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「皿」、「血」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/71直.png" class="root" alt="行列字根 71，「直」去掉十再去掉底部橫線" title="行列字根 71，「直」去掉十再去掉底部橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">71</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「直」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/71且.png" class="root" alt="行列字根 71，「且」去掉底部橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">71</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「且」字。</div>
+                    <!-- 74 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/74魚.png" class="root" alt="行列字根 74，「魚」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">74</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↑</span></span>。例如它出現在「魚」字。</div>
+                    <!-- 7- -->
+                    <div class="test-radical">字根「冂」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「同」、「用」等字。</div>
+                    <div class="test-radical">字根「冖」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「冠」、「睿」等字。</div>
+                    <div class="test-radical">字根「⺈」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「急」、「免」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/7-久.png" class="root" alt="行列字根 7-，「久」去掉最末筆畫">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「久」字。</div>
+                    <div class="test-radical">字根「刀」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「刀」、「刃」等字。</div>
+                    <div class="test-radical">字根「卩」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「卻」、「卯」等字。</div>
+                    <div class="test-radical">字根「目」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「目」、「自」等字。</div>
+                    <div class="test-radical">字根「角」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「角」、「解」等字。</div>
+                    <!-- 76 -->
+                    <div class="test-radical">字根「夕」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">76</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「夕」、「死」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/76祭.png" class="root" alt="行列字根 76，「炙」去掉火">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">76</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「然」、「將」等字。</div>
+                    <div class="test-radical">字根「禸」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">76</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「偶」、「禹」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/76舟.png" class="root" alt="行列字根 76，「舟」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">76</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「舟」字。</div>
+                    <!-- 77 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/77冎.png" class="root" alt="行列字根 77，「冎」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">77</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「過」、「骨」等字。</div>
+                    <!-- 78 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/78祭.png" class="root" alt="行列字根 78，「祭」去掉示">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">78</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「祭」字。</div>
+                    <div class="test-radical">字根「貝」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">78</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「貝」、「頁」等字。</div>
+                    <!-- 81 -->
+                    <div class="test-radical">字根「金」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">81</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「金」、「銀」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/81合.png" class="root" alt="行列字根 81，「合」去掉口">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">81</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「合」、「余」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/81䒑.png" class="root" alt="行列字根 81，「䒑」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">81</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「前」、「養」等字。</div>
+                    <!-- 83 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/83齒.png" class="root" alt="行列字根 83，「齒」去掉止">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">83</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「齒」字。</div>
+                    <!-- 84 -->
+                    <div class="test-radical">字根「半」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">84</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「半」、「判」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/84平.png" class="root" alt="行列字根 84，「平」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">84</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「平」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/84乎.png" class="root" alt="行列字根 84，「乎」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">84</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「乎」字。</div>
+                    <!-- 8- -->
+                    <div class="test-radical">字根「八」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「八」、「」等字。</div>
+                    <div class="test-radical">字根「ㄦ」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「俊」、「窗」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/8-全簡.png" class="root" alt="行列字根 8-，「人」但兩筆畫都沒有凸出">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「膝」字。</div>
+                    <div class="test-radical">字根「人」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「人」、「丙」等字。</div>
+                    <div class="test-radical">字根「入」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「入」、「兩」等字。</div>
+                    <div class="test-radical">字根「亻」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「你」字。</div>
+                    <div class="test-radical">字根「冫」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「冰」、「弱」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/8-立.png" class="root" alt="行列字根 8-，「旁」亠和冖之間的部分">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「弟」、「旁」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/8-承.png" class="root" alt="行列字根 8-，「承」最末兩筆畫">」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「旅」、「飛」等字。</div>
+                    <div class="test-radical">字根「㇏」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「尺」字。</div>
+                    <!-- 88 -->
+                    <div class="test-radical">字根「火」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">88</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↓</span></span>。例如它出現在「火」、「燈」等字。</div>
+                    <div class="test-radical">字根「灬」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">88</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↓</span></span>。例如它出現在「杰」字。</div>
+                    <div class="test-radical">字根「米」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">88</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↓</span></span>。例如它出現在「米」、「悉」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/88㡀.png" class="root" alt="行列字根 88，「敝」左半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">88</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↓</span></span>。例如它出現在「敝」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/88求.png" class="root" alt="行列字根 88，「求」第三到六筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">88</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↓</span></span>。例如它出現在「求」、「率」、「兆」等字。</div>
+                    <!-- 91 -->
+                    <div class="test-radical">字根「臼」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「臼」、「舅」等字。</div>
+                    <div class="test-radical">字根「𦥑」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「叟」、「盥」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91與.png" class="root" alt="行列字根 91，「學」冖上面部分去掉兩個ㄨ">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「學」、「興」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91段.png" class="root" alt="行列字根 91，「段」左半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「段」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91印.png" class="root" alt="行列字根 91，「印」左半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「印」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91生.png" class="root" alt="行列字根 91，「生」最初兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「生」、「物」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91告.png" class="root" alt="行列字根 91，「告」去掉口">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「告」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91重.png" class="root" alt="行列字根 91，「重」去掉中間的曰">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「垂」、「重」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/91微.png" class="root" alt="行列字根 91，「微」保留彳山一">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">91</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「微」、「徵」等字。</div>
+                    <!-- 92 -->
+                    <div class="test-radical">字根「气」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">92</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「氣」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/92鬼.png" class="root" alt="行列字根 92，「鬼」去掉厶">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">92</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「鬼」、「魁」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/92流.png" class="root" alt="行列字根 92，「流」右下部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">92</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「流」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/92氏.png" class="root" alt="行列字根 92，「氏」最初兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">92</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「氏」、「迎」等字。</div>
+                    <!-- 93 -->
+                    <div class="test-radical">字根「斤」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">93</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「斤」、「新」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/93丘.png" class="root" alt="行列字根 93，「丘」去掉底部橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">93</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「丘」字。</div>
+                    <!-- 94 -->
+                    <div class="test-radical">字根「手」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">94</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「手」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/94扌.png" class="root" alt="行列字根 94，「扌」">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">94</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「把」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/94拜.png" class="root" alt="行列字根 94，「拜」左半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">94</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「拜」字。</div>
+                    <!-- 9- -->
+                    <div class="test-radical">字根「㇒」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">9-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「禾」、「考」等字。</div>
+                    <div class="test-radical">字根「竹」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">9-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「竹」、「符」等字。</div>
+                    <!-- 95  -->
+                    <div class="test-radical">字根「<img src="img/array30-root/95鳥.png" class="root" alt="行列字根 95，「鳥」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「鳥」、「島」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/95烏.png" class="root" alt="行列字根 95，「烏」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「烏」字。</div>
+                    <div class="test-radical">字根「勹」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「句」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/95方.png" class="root" alt="行列字根 95，「沒」右上方部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「沒」、「万」等字。</div>
+                    <!-- 98 -->
+                    <div class="test-radical">字根「彳」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「往」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/98豕.png" class="root" alt="行列字根 98，「豕」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「豬」、「家」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/98乑.png" class="root" alt="行列字根 98，「乑」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「<img src="img/array30-root/98乑.png" class="root" alt="行列字根 98，「乑」">」字。</div>
+                    <div class="test-radical">字根「攵」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「放」字。</div>
+                    <div class="test-radical">字根「夂」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「冬」、「處」等字。</div>
+                    <div class="test-radical">字根「乂」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">98</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「父」、「爽」等字。</div>
+                    <!-- 99 -->
+                    <div class="test-radical">字根「身」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「身」、「謝」等字。</div>
+                    <div class="test-radical">字根「豸」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「貓」字。</div>
+                    <div class="test-radical">字根「爫」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「采」、「愛」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/99犭.png" class="root" alt="行列字根 99，「犭」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「狗」字。</div>
+                    <div class="test-radical">字根「⺁」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「爪」、「盾」等字。</div>
+                    <div class="test-radical">字根「彡」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「彩」、「髮」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/99勿.png" class="root" alt="行列字根 99，「勿」去掉前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">99</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↓</span></span>。例如它出現在「勿」、「囪」等字。</div>
+                    <!-- 01 -->
+                    <div class="test-radical">字根「日」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「日」、「但」等字。</div>
+                    <div class="test-radical">字根「曰」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「曰」、「曳」等字。</div>
+                    <div class="test-radical">字根「⺜」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「冒」、「慢」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/01婁.png" class="root" alt="行列字根 01，「曰」但中間橫線有凸出兩邊">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「樓」、「衰」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/01酉.png" class="root" alt="行列字根 01，「酉」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「醒」、「酒」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/01黑.png" class="root" alt="行列字根 01，「黑」去掉下面四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">01</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「黑」、「默」等字。</div>
+                    <!-- 03 -->
+                    <div class="test-radical">字根「<img src="img/array30-root/03串.png" class="root" alt="行列字根 03，「罒」但中間只有一條豎線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">03</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「象」字。</div>
+                    <!-- 04 -->
+                    <div class="test-radical">字根「田」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">04</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「田」、「累」等字。</div>
+                    <div class="test-radical">字根「囗」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">04</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↑</span></span>。例如它出現在「因」、「鹵」等字。</div>
+                    <!-- 0- -->
+                    <div class="test-radical">字根「口」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">0-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0-</span></span>。例如它出現在「口」、「中」等字。</div>
+                    <!-- 06 -->
+                    <div class="test-radical">字根「虫」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">06</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「蛋」、「蝶」等字。</div>
+                    <!-- 08 -->
+                    <div class="test-radical">字根「四」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「四」、「駟」等字。</div>
+                    <div class="test-radical">字根「罒」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「買」、「德」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/08西.png" class="root" alt="行列字根 08，「西」去掉第一筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「西」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/08覀.png" class="root" alt="行列字根 08，「賈」去掉第一筆畫再去掉貝">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「賈」字。</div>
+                    
         
-    </section>
-
+                    <div class="test-radical">字根「<img src="img/array30-root/08溫.png" class="root" alt="行列字根 08，「溫」右上部分">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「溫」、「獵」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/08曾(1).png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日再去掉中間豎線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「柬」、「練」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/08曾.png" class="root" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「會」、「曾」等字。</div>
+                </div>
+            </section>
+            <section id="test-radical-sc">
+                <h2>簡體字根</h2>
+                <p>此測驗幫助您鞏固有關行列輸入法所有簡體字根的知識，僅使用繁體的學習者可以略過此部分。點擊灰色欄位顯示/隱藏答案，可針對的對您不會、或是有疑慮的部分做重點複習。本站的<a href="/tutorial-complete.html#radical" target="_blank">行列教學</a>有全部字根的完整解說。</p>
+                <p>下方字根目前依照字根碼排列，點擊打亂題目按鈕可將題目順序打亂。</p>
+                <!-- buttons -->
+                <div class="w3-medium">
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-pink w3-round-xlarge w3-padding-small" id="shuffleTestRadicalSC"><i class="fa fa-random" aria-hidden="true"></i> 打亂題目</button>
+                    </div>
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_sc_show_all_radical_type"><i class="fa fa-eye" aria-hidden="true"></i> 字根類型</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_sc_show_all_radical_code"><i class="fa fa-eye" aria-hidden="true"></i> 字根碼</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_sc_show_all_radical_key"><i class="fa fa-eye" aria-hidden="true"></i> 鍵位</button>
+                        <button class="w3-button w3-amber w3-round-xlarge w3-padding-small" id="test_radical_sc_show_all"><i class="fa fa-eye" aria-hidden="true"></i> 全部</button>
+                    </div>
+                    <div style="padding: 4px 0;">
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_sc_hide_all_radical_type"><i class="fa fa-eye-slash" aria-hidden="true"></i> 字根類型</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_sc_hide_all_radical_code"><i class="fa fa-eye-slash" aria-hidden="true"></i> 字根碼</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_sc_hide_all_radical_key"><i class="fa fa-eye-slash" aria-hidden="true"></i> 鍵位</button>
+                        <button class="w3-button w3-khaki w3-round-xlarge w3-padding-small" id="test_radical_sc_hide_all"><i class="fa fa-eye-slash" aria-hidden="true"></i> 全部</button>
+                    </div>
+                </div>
+                <!-- block test radical sc -->
+                <div id="block_test_radical_sc">
+                    <div class="test-radical">字根「<img src="img/array30-root/12长.png" class="root" alt="行列字根 12，「长」去掉兩斜線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「长」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/12東.png" class="root" alt="行列字根 12，「东」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">12</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↑</span></span>。例如它出現在「东」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/16充.png" class="root" alt="行列字根 16，簡體字「充」上半部">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">16</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「弃」字、「充」字的簡體寫法等。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/19寿.png" class="root" alt="行列字根 19，「寿」去掉寸">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">19</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">1↓</span></span>。例如它出現在「寿」字。</div>
+                    <div class="test-radical">字根「纟」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">28</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「缐」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/29發.png" class="root" alt="行列字根 29，「发」前兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">29</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">2↓</span></span>。例如它出現在「发」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/33归.png" class="root" alt="行列字根 33，「归」左半部">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">33</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">3↓</span></span>。例如它出現在「归」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/51彐日.png" class="root" alt="行列字根 51，「彐」底部橫線凸出">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">51</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↑</span></span>。例如它出現在「录」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/55马.png" class="root" alt="行列字根 55，「马」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">55</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5-</span></span>。例如它出現在「马」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/56专.png" class="root" alt="行列字根 56，「专」去掉兩橫線">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">56</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「专」字。</div>
+                    <div class="test-radical">字根「ス」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">56</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「劲」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/58練.png" class="root" alt="行列字根 58，「练」最末三筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">58</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">5↓</span></span>。例如它出現在「练」字。</div>
+                    <div class="test-radical">字根「讠」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">62</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↑</span></span>。例如它出現在「计」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/69产.png" class="root" alt="行列字根 69，「产」">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">69</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「产」、「萨」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/69兴.png" class="root" alt="行列字根 69，「兴」前三筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">69</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">6↓</span></span>。例如它出現在「兴」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/7-角.png" class="root" alt="行列字根 7-，簡體字「角」">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">7-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7-</span></span>。例如它出現在「角」字的簡體寫法。</div>
+                    <div class="test-radical">字根「贝」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">78</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">7↓</span></span>。例如它出現在「贝」、「财」等字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/81今.png" class="root" alt="行列字根 81，簡體字「今」前三筆畫">」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">81</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「今」字的簡體寫法。</div>
+                    <div class="test-radical">字根「钅」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">82</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「铁」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/83齿.png" class="root" alt="行列字根 83，「齿」去掉止">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">83</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8↑</span></span>。例如它出現在「齿」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/92乐.png" class="root" alt="行列字根 92，「乐」最初兩筆畫">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">92</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9↑</span></span>。例如它出現在「乐」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/95鸟.png" class="root" alt="行列字根 95，「鸟」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「鸟」字。</div>
+                    <div class="test-radical">字根「<img src="img/array30-root/95乌.png" class="root" alt="行列字根 95，「乌」去掉四點">」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">95</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">9-</span></span>。例如它出現在「乌」字。</div>
+                </div>
+            </section>
+        </section>
+    </div>
 </div>
+    <!-- 模板
+    <div class="test-radical">字根「」是<span class="test_blank mask">首尾筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">06</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「」、「」等字。</div>
+
+    <div class="test-radical">字根「」是<span class="test_blank mask">基本筆形</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">8-</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">8-</span></span>。例如它出現在「」、「」等字。</div>
+    
+    <div class="test-radical">字根「」是<span class="test_blank mask">特殊歸位</span>字根，字根碼是 <span class="root-nb"><span class="test_blank mask">08</span></span>，鍵位是 <span class="keycap keycap-letter"><span class="test_blank mask">0↓</span></span>。例如它出現在「」、「」等字。</div>
+    -->
+
+    <!-- Footer -->
+    <footer class="footer-fish-up">
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
+            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
+        </div>
+        <p>Copyright &copy; 2020 <a href="/index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
+    </footer>
+    
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/display.js"></script>
-    <script>
-        $('.test').click(function() {
-            $(this).toggleClass("test-blank");
-        });
-    </script>
+    <script type="text/javascript" src="js/toc.js"></script>
+    <script type="text/javascript" src="js/tutorial-recap.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </body>
 </html>

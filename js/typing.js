@@ -696,6 +696,12 @@ function createList(character, list_id_name, id_name) {
 
         // add content of itemSP
         createLineSP(objectSpecial[character], itemSP.id);
+
+        // 敦雇 coincidence rank 1
+        if (["敦","雇"].includes(character)) {
+            const ccHint =  document.createTextNode("，重碼位 1");
+            itemSP.appendChild(ccHint);
+        }
     }
     if (objectShortcode1.hasOwnProperty(character)) {
         // create itemSC1, add it into resultList

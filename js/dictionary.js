@@ -241,6 +241,12 @@ function createList(character, list_id_name, id_name) {
 
         // add content of itemSP
         createLineSP(objectSpecial[character], itemSP.id);
+
+        // 敦雇 coincidence rank 1
+        if (["敦","雇"].includes(character)) {
+            const ccHint =  document.createTextNode("，重碼位 1");
+            itemSP.appendChild(ccHint);
+        }
     }
     if (objectShortcode1.hasOwnProperty(character)) {
         // create itemSC1, add it into resultList
@@ -431,7 +437,7 @@ function createLineSYM(encodingSYM, id_name) {
     elem.appendChild(plus1);
 
     // create keyNum, insert it into elem
-    let keyNum = document.createElement("span");     
+    let keyNum = document.createElement("span");
     keyNum.className = 'keycap keycap-number';
     keyNum.textContent = encodingSYM[0][1];   
     elem.appendChild(keyNum);

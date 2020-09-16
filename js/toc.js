@@ -81,7 +81,11 @@ $(".toggleStickyTOCOthers").click(function() {
     $("a[href='#others']").next().toggleClass("w3-hide");
     $(this).children().toggleClass("w3-hide");
 });
-
+// tutorial-recap.html
+$(".toggleStickyTOCTest").click(function() {
+    $("a[href='#test']").next().toggleClass("w3-hide");
+    $(this).children().toggleClass("w3-hide");
+});
 // download.html
 $(".toggleStickyTOCArrayIME").click(function() {
     $("a[href='#array-IME']").next().toggleClass("w3-hide");

@@ -183,7 +183,7 @@
             <section id="windows">
                 <h3>Windows 作業系統</h3>
                 <p>Windows 作業系統有內建行列輸入法，但若電腦可以安裝軟體，建議下載<a href="#new-Array">新行列輸入法</a>或是 <a href="#dime">DIME</a> 行列來使用。</p>
-                <p class="w3-pale-red" style="padding:8px 16px; border-left: 5px solid red;"><i class="fa fa-question-circle" aria-hidden="true"></i> 有人願意提供 Windows 免安裝行列嗎？</p>
+                <!-- <p class="w3-pale-red" style="padding:8px 16px; border-left: 5px solid red;"><i class="fa fa-question-circle" aria-hidden="true"></i> 有人願意提供 Windows 免安裝行列嗎？</p> -->
                 <section id="windows-built-in">
                     <h4>Windows 內建的行列輸入法</h4>
                     <p>直接到控制台>>語言>>中文>>選項>>新增鍵盤，加上行列就可以了。</p>
@@ -239,11 +239,17 @@
                     <p><a href="https://rime.im/download/" target="_blank">RIME 輸入法</a>（小狼毫 Weasel）、<a href="https://github.com/EasyIME/PIME/releases" target="_blank">PIME 輸入法</a>、<a href="https://hyperrate.com/dir.php?eid=215" target="_blank">gcin for Windows</a>。</p>
                 </section>
             </section>
-            <section id="linux">                
+            <section id="linux">
                 <h3>Linux 作業系統</h3>
-                <p>如果您的 linux 系統沒有內建行列輸入法，可以安裝 ibus-array。</p>
-                <p>對於 Debian/Ubuntu 這一類採用 .deb 安裝套件的發行版本，在終端機輸入 <span class="code">sudo apt update</span> 後，輸入 <span class="code">sudo apt install ibus-array</span> 即可完成安裝。可以透過在終端機輸入 <span class="code">ibus-setup</span> 進入 ibus 偏好設定。</p>
-                <p>至於 Fedora/RHEL、CentOS 這類採用 .rpm 安裝套件的發行版本，安裝 ibus-array 方法與上述不同，可參考這幾篇文章：<a href="https://tinyurl.com/y6qbzwte" target="_blank">Fedora</a>、<a href="https://tinyurl.com/yxu8okxm" target="_blank">CentOS</a>。</p>
+                <p>Linux 系統預設使用 iBus 做為系統輸入法框架，但因 iBus 的行列輸入法引擎（input engine，即 ibus-table-chinese-array）有缺陷，所以建議不使用該引擎而改用 ibus-array 輸入法引擎。</p>
+                <p>安裝 ibus-array 的方式，依照您採用的 Linux Distribution 而有所不同：</p>
+                <h4>Debian/Ubuntu</h4>
+                <p>Debian/Ubuntu 內建 ibus-array：在終端機輸入 <span class="code">sudo apt update</span> 後，輸入 <span class="code">sudo apt install ibus-array</span> 即可完成安裝。可以透過在終端機輸入 <span class="code">ibus-setup</span> 進入 ibus 偏好設定。</p>
+                
+                <h4>Fedora/RHEL/CentOS</h4>                
+                <p>Fedora/RHEL/CentOS 雖然沒有內建 ibus-array，但 bluebat 已將 ibus-array 打包好並置於<a href="https://rpmsphere.github.io/" target="_blank">第三方 RPM Sphere 的安裝套件庫</a>中，請參照其說明，先載入 RPM Fusion 套件庫，然後安裝 rpmsphere-release 套件；此套件安裝好後，在終端機輸入 <span class="code">sudo dnf install ibus-array</span> 即可完成 ibus-array 的安裝。
+                <p>重新開機後，請在「設定值」的「地區和語言」中點選輸入來源的「+」按鈕，就可在「中文（臺灣）」中找到「中文(Array)」，最後點選「加入」，以將 ibus-array 加到您的輸入法清單中。 </p>
+                <p>另外，Ubuntu 使用者除了 iBus 也可使用 <a href="https://samwhelp.github.io/note-about-gcin/ubuntu/18.04/" target="_blank">gcin for Linux</a>（已內建行列輸入法模組的輸入法框架）。由於系統架構的緣故，目前 gcin 無法安裝於 Fedora。</p>
             </section>
             <section id="mac-os">
                 <h3>Mac OS 作業系統</h3>
@@ -304,7 +310,7 @@
             <p>
                 <a href="/array30_data/words.txt" download="詞彙編碼.txt" class="btn-dl">17 萬 8400 條詞彙編碼</a>
             </p>
-            <p class="comment">此詞彙編碼檔由新行列輸入法內的檔案抓出而來。</p>
+            <p class="comment">此詞彙編碼檔由<a href="/download.html#new-Array" target="_blank">新行列輸入法</a>內的檔案抓出而來。</p>
 
         </section>
         <section id="font">
@@ -316,7 +322,7 @@
                 如果要正確顯示多數罕用字以及網頁上的粗體，您可以免費下載此字體的<b>完整版</b>（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）。
             </p>
             <p>
-                如果要正確顯示所有罕用字，您可以下載免費字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/downloads/64385/hanazono-20160201.zip/" target="_blank">點此下載</a>），此字體能夠完整支援到擴充區 F，不過一般來說不會有這個需求，下載完整版的思源宋體就足夠了。
+                如果要正確顯示所有罕用字，您可以下載免費字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/releases/p12900" target="_blank">點此前往下載頁</a>），此字體能夠完整支援到擴充區 F，不過一般來說不會有這個需求，下載完整版的思源宋體就足夠了。
             </p>
         </section>
     </div>

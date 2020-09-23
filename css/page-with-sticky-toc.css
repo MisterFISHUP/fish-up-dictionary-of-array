@@ -75,11 +75,11 @@ h5 {
 .code {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(247, 247, 247);
     border: 1px solid rgb(187, 187, 187);
     padding: 4px 8px;
     border-radius: 5px;
-    color: rgb(236, 117, 157);
+    color: rgb(240, 90, 140);
 }
 .question {
     display: block;

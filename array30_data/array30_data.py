@@ -10,7 +10,7 @@
 
 import os, json
 from pathlib import Path
-data_folder = Path("data-raw/")
+data_folder = Path("array30_data/")
 js_folder = Path("data/")
 
 # get special_dict 

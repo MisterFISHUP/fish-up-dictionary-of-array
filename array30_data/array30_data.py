@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # author: Mister FISH UP
-# create js/objectXXX.js and js/keys.js files
+# create data/objectXXX.js and data/keys.js files
 
 # Steps: Read data from .txt files -> data processing
 # -> convert data into js object -> write into js files
@@ -10,8 +10,8 @@
 
 import os, json
 from pathlib import Path
-data_folder = Path("array30_data/")
-js_folder = Path("js/")
+data_folder = Path("data-raw/")
+js_folder = Path("data/")
 
 # get special_dict 
 # structure: char: encoding

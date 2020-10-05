@@ -33,20 +33,16 @@ $(window).on('keypress',function(e) {
 
 // clear the result area, and if input is not too long, call printResults
 function search() {
-    resultAreaElem.innerHTML="";
     let input = inputElem.value;
-    // inputElem.value = '';
-    if (input.length === 0) {
-        const hintDiv = document.createElement('div');
-        hintDiv.className = 'dict-block-hint';
-        hintDiv.innerHTML='<span>您沒有輸入任何字呦！<br>您可以試試看查詢「㐃㫈嘂㠩㦰」，或是透過「我想看列表」查看所有同時有特別碼和一級簡碼的字！</span>';
-        resultAreaElem.appendChild(hintDiv);
-    } else if ([...input].length > maxInputChar) {
+    if (input.length > 0) {
+        resultAreaElem.innerHTML="";
+        if ([...input].length > maxInputChar) {
         const hintDiv = document.createElement('div');
         hintDiv.className = 'dict-block-hint';
         hintDiv.innerHTML="<span>不要輸入超過 " + String(maxInputChar) + " 字啦！</span>";
         resultAreaElem.appendChild(hintDiv);
-    } else printResults(input);
+        } else printResults(input);
+    }
 }
 
 // create resultCharList, resultBlocks in the result area

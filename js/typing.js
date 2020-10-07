@@ -112,26 +112,26 @@ var durationSecond;
 // timer and CPM (characters per minute)
 // --------------------------------------
 
-setInterval(function() {
+setInterval(function () {
   if (isTimerActive) {
     durationSecond = Math.floor((Date.now() - timeStart) / 1000);
-  }  
+  }
 }, 100); // update about every 100ms
-setInterval(function() {
+setInterval(function () {
   if (isTimerActive) {
     const minute = Math.floor(durationSecond / 60);
     const second = durationSecond - minute * 60;
-    timeLengthSpan.textContent =  second < 10 ? minute + ':0' +second : minute + ':' + second;
+    timeLengthSpan.textContent = second < 10 ? minute + ':0' + second : minute + ':' + second;
   }
 }, 100); // update about every 100ms
-setInterval(function() {
+setInterval(function () {
   if (isTimerActive && durationSecond >= 2) {
     const numTotalCorrectChars = parseInt(numTotalCorrectCharsSpan.textContent);
     const numTotalIncorrectChars = parseInt(numTotalIncorrectCharsSpan.textContent);
     cpmCorrectSpan.textContent = ((60 * numTotalCorrectChars) / durationSecond).toFixed();
     cpmTypedSpan.textContent = ((60 * (numTotalCorrectChars + numTotalIncorrectChars) / durationSecond)).toFixed();
   }
-}, 100); 
+}, 100);
 
 // ----------------------------------------------
 // prepare or reset exercise according to 'lines'
@@ -419,11 +419,11 @@ function printHintNext(character) {
 
 typingInputElem.addEventListener('input', instantVerification);
 // if timer is not active, activate it and set timeStart
-typingInputElem.addEventListener('input', function() {
+typingInputElem.addEventListener('input', function () {
   if (!isTimerActive) {
-      isTimerActive = true;
-      timeStart = Date.now();
-    }
+    isTimerActive = true;
+    timeStart = Date.now();
+  }
 });
 
 function instantVerification() {

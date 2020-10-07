@@ -508,8 +508,9 @@
             <br>
             <div class="typing-block-close-me">
                 <span onclick="this.parentElement.style.display='none'" class="typing-btn-close-me w3-button w3-large">&times;</span>
-                <h5>了解後關閉我</h5>
-                <p>您可以點擊本頁的標題，將畫面移動至打字練習的區塊。另外，打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，尤其是關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a></p>                
+                <h4>我知道了！</h4>
+                <p>還沒有行列輸入法？本站<a href="download.html" target="_blank">下載頁面</a>可以免費下載！</p>
+                <p>另外，點擊本頁的標題，可以將畫面移動至打字練習的區塊。打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，例如關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a></p>
             </div>
             <br>
             <span class="w3-large">已打句子</span>
@@ -543,7 +544,7 @@
         <!-- Right Column -->
         <div class='w3-quarter'>
             <div id="result_display">
-                <h5>結果</h5>
+                <!-- <h5>結果</h5> -->
                 <div id="results" class="typing-results">
                     <div style="font-size: large;">句數</div>
                     <hr style="margin: 0 0 8px 0;">
@@ -564,10 +565,30 @@
                     <span style="float: left;"><span style="color: green;">正確</span>/<span style="color: red;">錯誤</span></span>
                     <span style="float: right;"><span id='num_total_correct_chars' style="color: green;"></span>/<span id="num_total_incorrect_chars" style="color: red;"></span></span>
                     <p style="clear: both;"></p>
+
+                    <span style="float: left;">正確率</span>
+                    <span style="float: right;"><span id='accuracy' style="color: green;"></span> %</span>
+                    <p style="clear: both;"></p>
                     
                     <span style="float: left;">剩餘</span>
                     <span style="float: right;"><span id='num_total_untouched_chars'></span></span>
                     <p style="clear: both;"></p>
+                    <hr style="clear: both; margin: 1em; border-color: transparent;">
+
+                    <div style="font-size: large;">速度（每分鐘字）</div>
+                    <hr style="margin: 0 0 8px 0;">
+
+                    <span style="float: left;">時間</span>
+                    <span style="float: right;"><span id='time_length'></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">正確</span>
+                    <span style="float: right;"><span style="color: green;" id='cpm_correct'></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">已打</span>
+                    <span style="float: right;"><span id='cpm_typed'></span></span>
+                    <p style="clear: both;"></p>                    
                 </div>
             </div>
             <br>

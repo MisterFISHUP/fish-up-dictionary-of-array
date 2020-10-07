@@ -545,23 +545,27 @@
             <div id="result_display">
                 <h5>結果</h5>
                 <div id="results" class="typing-results">
-                    <span style="float: left;">總共句數</span>
+                    <div style="font-size: large;">句數</div>
+                    <hr style="margin: 0 0 8px 0;">
+                    <span style="float: left;">全部</span>
                     <span style="float: right;"><span id='num_total_sentences'></span></span>
                     <p style="clear: both;"></p>
 
-                    <span style="float: left;">總共字數</span>
+                    <span style="float: left;">當前/剩於</span>
+                    <span style="float: right;"><span id='pos_line'></span>/<span id='num_remaining_lines'></span></span>
+                    <hr style="clear: both; margin: 1em; border-color: transparent;">
+
+                    <div style="font-size: large;">字數</div>
+                    <hr style="margin: 0 0 8px 0;">
+                    <span style="float: left;">全部</span>
                     <span style="float: right;"><span id='num_total_chars'></span></span>
                     <p style="clear: both;"></p>
-
-                    <span style="float: left;">目前第幾句/剩幾句</span>
-                    <span style="float: right;"><span id='pos_line'></span>/<span id='num_remaining_lines'></span></span>
-                    <p style="clear: both;"></p>
-
-                    <span style="float: left;"><span style="color: green;">正確</span>/<span style="color: red;">錯誤</span>字數</span>
+                    
+                    <span style="float: left;"><span style="color: green;">正確</span>/<span style="color: red;">錯誤</span></span>
                     <span style="float: right;"><span id='num_total_correct_chars' style="color: green;"></span>/<span id="num_total_incorrect_chars" style="color: red;"></span></span>
                     <p style="clear: both;"></p>
                     
-                    <span style="float: left;">剩餘字數</span>
+                    <span style="float: left;">剩餘</span>
                     <span style="float: right;"><span id='num_total_untouched_chars'></span></span>
                     <p style="clear: both;"></p>
                 </div>

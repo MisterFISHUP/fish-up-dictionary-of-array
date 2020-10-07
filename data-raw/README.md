@@ -10,7 +10,8 @@
 2. 我特別將 key_mapping.txt 中的英文鍵 v 改成 +，只是讓取代行列 30 鍵「下」的符號時，英文鍵 v 不會被取代掉
 3. 使用 python 將數據整理，接著轉換成 js 物件的字串，最後寫入本專案 data 資料夾中的 js 檔
 4. coincident_code.txt 是我手動寫的檔，純粹記載資訊讓有興趣的人可以觀看，文件內的行列編碼並沒有在此網站中使用
-5. special_explanation.txt 以及 words.txt 皆是從新行列輸入法內的檔案抓出來了，分別是附有說明的特別碼編碼檔（拿掉「的」字）以及詞彙的行列編碼檔
+5. special_explanation.txt 以及 words.txt 皆是從新行列輸入法內的檔案抓出來了，分別是附有說明的特別碼編碼檔以及詞彙的行列編碼檔
+6. special_explanation.txt 不含「的」字（被我手動拿掉了）
 
 ### 感謝
 

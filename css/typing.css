@@ -1,111 +1,147 @@
+input:focus, textarea:focus, select:focus, details>summary:focus{
+  outline: none;
+}
 .typing-header {
-    padding:50px 16px 24px 16px;
-    background-color: #335544;
-    background-image:
-    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-    background-size: 70px 120px;
+  padding: 50px 16px 24px 16px;
+  background-color: #335544;
+  background-image: repeating-linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 60px
+  ),
+  repeating-linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 60px
+  ),
+  linear-gradient(
+    60deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 75%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0.1)
+  ),
+  linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 75%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0.1)
+  );
+  background-size: 70px 120px;
 }
 .typing-header-title {
-    cursor: pointer;
-    background-color: rgba(100, 199, 158, 0.3);
-    border-radius: 20px;
-    padding: 12px 24px;
+  cursor: pointer;
+  background-color: rgba(100, 199, 158, 0.3);
+  border-radius: 20px;
+  padding: 12px 24px;
 }
 .typing-header-title:hover {
-    background-color: rgba(61, 172, 125, 0.8);
+  background-color: rgba(61, 172, 125, 0.8);
 }
 
 .typing-bg {
-    background-color: #beebbe;
+  background-color: #beebbe;
 }
 .typing-block-close-me {
-    background-color: #335544;
-    color: whitesmoke;
-    border-radius: 15px;
-    padding: 8px 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    position:relative;
+  background-color: #335544;
+  color: whitesmoke;
+  border-radius: 15px;
+  padding: 8px 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  position: relative;
 }
 .typing-btn-close-me {
-    position:absolute;
-    right:0;
-    top:0;
-    border-radius: 0 15px 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 15px 0 0;
 }
 #sentence_current {
-    font-size: 1.8em;
-    min-height: 2.2em;
-    padding: 8px 16px;
-    border-radius: 32px;
-    background-color: rgb(245, 245, 245);
+  font-size: 1.8em;
+  min-height: 2.2em;
+  padding: 8px 16px;
+  border-radius: 32px;
+  background-color: rgb(245, 245, 245);
+  user-select: none;
+}
+#sentence_next {
+  font-size: 1.4em;
+  min-height: 2.2em;
+  color: gray;
+  user-select: none;
 }
 .typing-results {
-    line-height: 1.6;
-    padding: 24px;
-    border-radius:16px;
-    background-color: white;
+  line-height: 1.6;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: white;
 }
 .correct {
-    color: green;
-}  
+  color: green;
+}
 .incorrect {
-    color: red;
+  color: red;
 }
 .typing-block-cust-exer-hint {
-    padding:0 16px;
+  padding: 0 16px;
 }
 .typing-input-field {
-    font-size: 1.2em; border:none; clear: both;
-    border: 1.5px solid transparent;
+  font-size: 1.2em;
+  border: none;
+  clear: both;
+  border: 1.5px solid transparent;
 }
 .typing-input-field:focus {
-    border: 1.5px solid rgb(17, 71, 26);
-    outline: none;
+  border: 1.5px solid rgb(17, 71, 26);
 }
 
 /* choosing exercises */
 .typing-dtls-first {
-    margin:10px;
+  margin: 10px;
 }
 .typing-dtls-first summary {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 .typing-block-dtls-first {
-    margin-top: 10px;
-    margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .typing-exer-series-title {
-    color: brown;
+  color: brown;
 }
 .typing-dtls-second {
-    margin:5px;
+  margin: 5px;
 }
 .typing-dtls-second summary {
-    font-size: 0.9em;
-    color: rgb(37, 6, 6);
+  font-size: 0.9em;
+  color: rgb(37, 6, 6);
 }
 .typing-block-dtls-second {
-    margin-top: 10px;
-    margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .typing-dtls-third {
-    margin:5px;
+  margin: 5px;
 }
 .btn-built-in-exer {
-    font-size: 12px;
-    cursor:pointer;
-    margin-bottom: 4px;
-    border-radius: 10px;
-    background-color:#f1f1f1;
-    border:none;
-    display:inline-block;
-    padding:8px 16px;
-    vertical-align:middle;
-    text-decoration:none;
-    text-align:center;
-    overflow:hidden;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
 }

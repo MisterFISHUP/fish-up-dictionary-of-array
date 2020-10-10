@@ -167,7 +167,7 @@ function prepareExer() {
 
   // focus typing input
   $('#typing_input').focus();
-  document.getElementById("sentence_current").scrollIntoView();
+  document.getElementById("hr_above_sentence_current").scrollIntoView();
 }
 // execute prepareExer for the 1st time js with default 'lines'
 prepareExer();

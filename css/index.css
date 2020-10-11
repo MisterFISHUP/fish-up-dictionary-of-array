@@ -1,0 +1,21 @@
+/* ----- index page ----- */
+header {
+  min-height: 100%;
+  border: 1px solid transparent;
+  background-color: #9fcdff;
+  background-image: linear-gradient(45deg, #96c9ff 0%, #b6d8ff 100%);
+}
+#site-name {
+  text-align: center;
+  margin: 20px 0 15px;
+  color: rgb(12, 10, 41);
+}
+
+#introduction {
+  max-width:800px;
+  line-height: 1.8;
+  font-size: large;
+  text-align: center;
+  padding: 48px 16px;
+  margin: auto;
+}

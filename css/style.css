@@ -1,373 +1,370 @@
 /* Structure: 
-    - general settings
-    - navigation menu on small screens
-    - sticky toc
-    - index page
-    - array30root page
-
-    - array30 root display
-    - keycap styling
-    - checkbox switch
-    - back to top
+  - general settings
+  - navigation menu on small screens
+  - sticky toc
+  - mobile toc
+  - array30 root display
+  - keycap styling
+  - checkbox switch
+  - back to top
 */
 
-/* general settings */
-html * 
-{
-    font-family: 'Georgia', 'Noto Serif', 'Noto Serif TC', 'Noto Serif CJK TC', 'Noto Serif CJK SC', serif;
+/*------- general settings -------*/
+html * {
+  font-family: "Georgia", "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
 }
 html, body {
-    height: 100%;
-    min-height: 100%;
+  height: 100%;
+  min-height: 100%;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 .bold-center {
-    text-align: center;
-    font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
-    font-weight: 700;
+  text-align: center;
+  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold", "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
+  font-weight: 700;
 }
 b {
-    font-family: 'Georgia', 'Noto Serif CJK TC Bold', 'Noto Serif CJK TC SemiBold', 'Noto Serif CJK SC Bold', 'Noto Serif CJK SC SemiBold', 'Noto Serif TC';
-    font-weight: 700;
-    color: rgb(56, 139, 75);
+  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold", "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
+  font-weight: 700;
+  color: rgb(56, 139, 75);
 }
 hr.short {
-    width: 5%;
-    margin-top:20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 2px solid lightslategray;
+  width: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 2px solid lightslategray;
 }
 hr.hr-example {
-    width: 15%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgb(201, 201, 201);
+  width: 15%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgb(201, 201, 201);
 }
 u {
-    text-decoration: none;
-    border-bottom: 5px solid rgb(193, 225, 255);
+  text-decoration: none;
+  border-bottom: 5px solid rgb(193, 225, 255);
 }
 u > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 summary {
-    cursor: pointer;
+  cursor: pointer;
 }
 .example {
-    padding: 1px 20px;
-    margin: 30px 0;
-    background-color: rgb(240, 240, 240);
-    border-radius: 25px;
+  padding: 1px 20px;
+  margin: 30px 0;
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
 }
 .buy-me-a-coffee-block {
-    text-align: center;
-    padding: 20px;
-    background-color: rgb(255, 248, 228);
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(255, 248, 228);
 }
 .footer-fish-up {
-    background-color: rgb(128, 128, 128);
-    color: white;
-    padding:8px 16px;
-    text-align: center;
+  background-color: rgb(128, 128, 128);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
 }
-/* navigation menu on small screens */
-#navSmall {background-color: #fdf5e6;}
-.nav-small-item-hover:hover{background-color: rgb(255, 235, 154)!important;}
-.nav-small-icon {width: 1rem}
+/*------- navigation menu on small screens -------*/
+#navSmall {
+  background-color: #fdf5e6;
+}
+.nav-small-item-hover:hover {
+  background-color: rgb(255, 235, 154) !important;
+}
+.nav-small-icon {
+  width: 1rem;
+}
 
-/* ----- sticky toc ----- */
+/*------- sticky toc -------*/
 .absoluteBottom {
-    position: absolute;
-    bottom: 0px; /* Height of the footer element, plus some extra pixels if needed */
+  position: absolute;
+  bottom: 0px; /* Height of the footer element, plus some extra pixels if needed */
 }
 .sticky40 {
-    position: fixed;
-    top: 40px;
+  position: fixed;
+  top: 40px;
 }
 aside {
-    width: 15em;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-right: 1px solid #cecece;
-    font-size: small;
-    max-height: 85vh;
-    overflow-y: auto;
+  width: 15em;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #cecece;
+  font-size: small;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 aside a {
-    text-decoration: none;
-    display: block;
-    padding: .125rem 0;
-    color: rgb(180, 180, 180);
-    transition: all 50ms ease-in-out;
+  text-decoration: none;
+  display: block;
+  padding: 0.125rem 0;
+  color: rgb(180, 180, 180);
+  transition: all 50ms ease-in-out;
 }
 aside a:hover, aside a:focus {
-    color: rgb(87, 75, 75);
+  color: rgb(87, 75, 75);
 }
 aside ul, aside ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 aside li {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 aside li.active > a {
-    color: rgb(138, 79, 79);
-    font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
-    font-weight: 700;
+  color: rgb(138, 79, 79);
+  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
+    "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
+  font-weight: 700;
 }
 #toggleStickyTOC {
-    padding: 0;
-    cursor: pointer;
+  padding: 0;
+  cursor: pointer;
 }
 
-/* ----- mobile toc ----- */
+/*------- mobile toc -------*/
 #tocSmallWrapper {
-    position: fixed;
-    bottom: 5rem;
-    left: 10vw;
-    height: 75vh;
-    width: 80vw;
-    z-index: 3;
-    background-color: rgb(209, 209, 209);
-    box-shadow:0 4px 10px 0 rgba(0, 0, 0, 0.3),0 4px 20px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 25px;
+  position: fixed;
+  bottom: 5rem;
+  left: 10vw;
+  height: 75vh;
+  width: 80vw;
+  z-index: 3;
+  background-color: rgb(209, 209, 209);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3), 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
 }
 #tocSmall {
-    position: relative;
-    top: 16px;
-    left:16px;
-    border-radius: 20px;
-    padding: 16px;
-    height: calc(75vh - 32px);
-    width: calc(80vw - 32px);
-    overflow-y: auto;
-    z-index: 3;
-    background-color: rgb(255, 255, 255);    
-    line-height: 1.7;
+  position: relative;
+  top: 16px;
+  left: 16px;
+  border-radius: 20px;
+  padding: 16px;
+  height: calc(75vh - 32px);
+  width: calc(80vw - 32px);
+  overflow-y: auto;
+  z-index: 3;
+  background-color: rgb(255, 255, 255);
+  line-height: 1.7;
 }
 #closeTOCSmall {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    z-index: 4;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: rgb(192, 124, 57);
-    color: white;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 4;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: rgb(192, 124, 57);
+  color: white;
 }
-#closeTOCSmall:hover{
-    background-color: rgb(116, 47, 47);
+#closeTOCSmall:hover {
+  background-color: rgb(116, 47, 47);
 }
 #tocSmall a {
-    text-decoration: none;
-    /* display: block; */
-    padding: .125rem 0;
-    color: rgb(180, 180, 180);
-    transition: all 50ms ease-in-out;
+  text-decoration: none;
+  /* display: block; */
+  padding: 0.125rem 0;
+  color: rgb(180, 180, 180);
+  transition: all 50ms ease-in-out;
 }
-#tocSmall a:hover, aside a:focus {
-    color: rgb(87, 75, 75);
+#tocSmall a:hover,
+aside a:focus {
+  color: rgb(87, 75, 75);
 }
 #tocSmall ul, #tocSmall ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 #tocSmall li {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 #tocSmall li.active > a {
-    color: rgb(138, 79, 79);
-    font-family: 'Georgia', 'Noto Serif CJK TC Black', 'Noto Serif CJK TC Bold', 'Noto Serif CJK SC Black', 'Noto Serif CJK SC Bold', 'Noto Serif TC';
-    font-weight: 700;
+  color: rgb(138, 79, 79);
+  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
+    "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
+  font-weight: 700;
 }
 #toggleTOCSmall {
-    position:fixed;
-    left: 1rem;
-    bottom: 1rem;
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    border-radius: 25%;
-    opacity: 0.6;
-    background: rgb(120, 120, 120);
-    color: white;
-    cursor: pointer;
-    z-index: 3;
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 25%;
+  opacity: 0.6;
+  background: rgb(120, 120, 120);
+  color: white;
+  cursor: pointer;
+  z-index: 3;
 }
-
-/* ----- index page ----- */
-.index-header {
-    min-height: 100%;
-    background-color: #6d695c;
-    background-image:
-    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-    background-size: 70px 120px;
-}
-
-
 
 /* ----- array30 root display ----- */
 img.root {
-    display:inline-block;
-    width: 1em;
-    vertical-align: text-top;
+  display: inline-block;
+  width: 1em;
+  vertical-align: text-top;
 }
 /* https://codepen.io/sosuke/pen/Pjoqqp */
 .root-special {
-    filter: invert(65%) sepia(23%) saturate(1262%) hue-rotate(297deg) brightness(86%) contrast(97%);
+  filter: invert(65%) sepia(23%) saturate(1262%) hue-rotate(297deg)
+    brightness(86%) contrast(97%);
 }
 .root-sc {
-    filter: invert(66%) sepia(0%) saturate(1%) hue-rotate(100deg) brightness(93%) contrast(91%);
+  filter: invert(66%) sepia(0%) saturate(1%) hue-rotate(100deg) brightness(93%)
+    contrast(91%);
 }
 .root-special-sc {
-    filter: invert(71%) sepia(27%) saturate(725%) hue-rotate(63deg) brightness(93%) contrast(89%);
-    /* color: #76c563; */
+  filter: invert(71%) sepia(27%) saturate(725%) hue-rotate(63deg)
+    brightness(93%) contrast(89%);
+  /* color: #76c563; */
 }
 .root-nb {
-    color:rgb(50, 109, 199);
+  color: rgb(50, 109, 199);
 }
 .root-plus {
-    color: rgb(148, 148, 148);
+  color: rgb(148, 148, 148);
 }
 
 /* ----- keycap styling ----- */
 .keycap {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -khtml-border-radius: 4px;
-    white-space: nowrap;
-    border: 1.5px solid #aaa;
-    border-style: outset;
-    border-radius: 4px;
-    padding: 0px 3px 1px 3px;
-    margin: 0px 0px 0px 0px;
-    vertical-align: baseline;
-    line-height: 1.8em;    
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  white-space: nowrap;
+  border: 1.5px solid #aaa;
+  border-style: outset;
+  border-radius: 4px;
+  padding: 0px 3px 1px 3px;
+  margin: 0px 0px 0px 0px;
+  vertical-align: baseline;
+  line-height: 1.8em;
 }
 .keycap-letter {
-    background: rgb(235, 235, 235);
-    font-family: 'Courier New', Courier, monospace;
+  background: rgb(235, 235, 235);
+  font-family: "Courier New", Courier, monospace;
 }
 .keycap-number {
-    background: rgb(141, 141, 141);
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  background: rgb(141, 141, 141);
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 .keycap-cc {
-    background: black;
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  background: black;
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 .keycap-cc-trivia {
-    background: rgb(235, 235, 235);
-    font-family: 'Courier New', Courier, monospace;
+  background: rgb(235, 235, 235);
+  font-family: "Courier New", Courier, monospace;
 }
 .keycap-space {
-    background: rgb(235, 235, 235);
-    font-family: 'Courier New', Courier, monospace;
+  background: rgb(235, 235, 235);
+  font-family: "Courier New", Courier, monospace;
 }
 .title-single {
-    background: rgb(253, 94, 94);
-    color: white;
+  background: rgb(253, 94, 94);
+  color: white;
 }
 .title-special {
-    background: rgb(253, 171, 94);
+  background: rgb(253, 171, 94);
 }
 .title-shortcode1 {
-    background: rgb(145, 238, 122);
+  background: rgb(145, 238, 122);
 }
 .title-shortcode2 {
-    background: rgb(121, 233, 253);
+  background: rgb(121, 233, 253);
 }
 .title-normal {
-    background: rgb(235, 235, 235);
+  background: rgb(235, 235, 235);
 }
 .title-symbol {
-    background: rgb(160, 80, 218);
-    color: white;
+  background: rgb(160, 80, 218);
+  color: white;
 }
 
 /* ----- checkbox switch ----- */
 .btn-toggle-box {
-    display:inline-block;
-    vertical-align:middle;
-    width: 30px;
-    height: 15px;
-    border-radius:100px;
-    background-color: #ccc;
-    box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: #ccc;
+  box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.13) inset;
 }
 .btn-toggle-box .btn-toggle {
-    display:inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius:50%;
-    background-color: #fff;
-    margin-left: 0;
-    margin-bottom: 2px;
-    transition: .5s;
-    box-shadow:1px 2px 5px rgba(0,0,0,.3);
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-left: 0;
+  margin-bottom: 2px;
+  transition: 0.5s;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .checkbox {
-    position:absolute;
-    opacity:0;
+  position: absolute;
+  opacity: 0;
 }
 .checkbox:checked + .btn-toggle-box {
-    background-color: rgb(113, 230, 113);
+  background-color: rgb(113, 230, 113);
 }
 .checkbox:checked + .btn-toggle-box .btn-toggle {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 /* ----- back to top ----- */
 /* https://ezbox.idv.tw/131/back-to-top-button-without-images/ */
 .toTop-arrow {
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    border-radius: 25%;
-    opacity: 0.6;
-    background: rgb(120, 120, 120);
-    cursor: pointer;
-    position:fixed;
-    right: 1rem;
-    bottom: 1rem;
-    display: none;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 25%;
+  opacity: 0.6;
+  background: rgb(120, 120, 120);
+  cursor: pointer;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
 }
 .toTop-arrow::before, .toTop-arrow::after {
-    width: 25px;
-    height: 6px;
-    border-radius: 3px;
-    background: whitesmoke;
-    position: absolute;
-    content: "";
+  width: 25px;
+  height: 6px;
+  border-radius: 3px;
+  background: whitesmoke;
+  position: absolute;
+  content: "";
 }
 .toTop-arrow::before {
-    transform: rotate(-45deg) translate(0, -50%);
-    left: 0.35rem;
+  transform: rotate(-45deg) translate(0, -50%);
+  left: 0.35rem;
 }
 .toTop-arrow::after {
-    transform: rotate(45deg) translate(0, -50%);
-    right: 0.35rem;
+  transform: rotate(45deg) translate(0, -50%);
+  right: 0.35rem;
 }
-.toTop-arrow:focus {outline: none;}
+.toTop-arrow:focus {
+  outline: none;
+}

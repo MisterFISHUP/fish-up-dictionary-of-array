@@ -1,0 +1,196 @@
+/* Structure:
+  - game area 
+  - keyboard base
+  - general keycap setting
+  - keycap design
+  - key width
+  - game field
+  - rgb
+*/
+
+/* inspired by https://codepen.io/P233/pen/qEagi */
+/*------- game area -------*/
+#game-area {
+  width: 905px;
+  margin: 0px auto 30px;
+  box-sizing: content-box;
+}
+
+/*------- keyboard base -------*/
+#keyboard {
+  padding: 30px 15px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(0,0,0,0.3);
+  margin: 0 auto;
+  background: linear-gradient(to left, #b1b1b1, #c0c0c0, #b1b1b1);
+}
+#keyboard a {
+  text-decoration: none;
+}
+#keyboard-wrapper {
+  background-color: rgb(145, 141, 141);
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: 0px 0px 3px 1px rgba(43, 43, 43, 0.3);
+}
+
+/*------- general keycap setting -------*/
+.key, .f_key, .s_key {
+  width: 40px;
+  height: 44px;
+  margin: 2px;
+  border-width: 3px 7px 10px;
+  border-style: solid;
+  border-radius: 4px;
+  float: left;
+  box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.3);
+}
+/* pressed key */
+.key.pressed, .f_key.pressed, .s_key.pressed {
+  transform: scale(0.95, 0.95);
+}
+.keyboard-keycap {
+  user-select: none;
+  border-radius: 4px;
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+}
+
+/*------- keycap design -------*/
+.key .keyboard-keycap {
+  width: 33px;
+  height: 40px;
+  padding: 5px 0 0 7px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  background: rgb(250, 250, 250);
+  background: linear-gradient(to left, rgb(248, 248, 248), rgb(253, 253, 253), rgb(248, 248, 248));
+}
+.key {
+  background: #d3cfcc;
+  border-color: #f0edea #e6e3e0 #d1cccc;
+}
+.f_key .keyboard-keycap {
+  width: inherit;
+  height: inherit;
+  background: #cdd3de;
+  text-align: center;
+  line-height: 40px;
+  background:#c5e0fd;
+  background: linear-gradient(to left, #c5e0fd, #d5e9ff, #c5e0fd);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);  
+  cursor: pointer;
+}
+.f_key {
+  background: #a7c8eb;
+  border-color: #c6dcf3 #adcef1 #69a4d9;
+}
+.s_key .keyboard-keycap {
+  width: inherit;
+  height: inherit;
+  font-size: 15px;
+  line-height: 45px;
+  color: rgb(54, 54, 54);
+  text-align: center;
+  background:  #f8cbd6;
+  background: linear-gradient(to left, #f8cbd6, #ffd9e2, #f8cbd6);
+}
+.s_key {
+  background: #eba7cd;
+  border-color: #fddfe7 #eebfca #db8a9d;
+}
+
+/*------- key width -------*/
+/* tab */
+.k9 {
+  width: 66px;
+  border-right-width: 10px;
+}
+/* backspace */
+.k8 {
+  width: 96px;
+  border-left-width: 9px;
+}
+/* \| (under backspace) */
+.k220 {
+  width: 67px;
+  border-left-width: 9px;
+  }
+.k220>.keyboard-keycap {
+  width: 60px;
+}
+/* caps lock */
+.k20 {
+  width: 87px;
+  border-right-width: 10px;
+}
+/* enter */
+.k13 {
+  width: 103px;
+  border-left-width: 10px;
+}
+/* left shift */
+.left-shift {
+  width: 113px;
+  border-right-width: 10px;
+}
+/* right shift */
+.right-shift {
+  width: 135px;
+  border-left-width: 10px;
+}
+/* space */
+.k32{
+  width: 326px;
+  border-width: 3px 8px 10px;
+}
+.k32>.keyboard-keycap {
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  position: relative;
+}
+.k32.pressed {
+  transform: scale(0.98, 0.95);
+}
+.key-href {
+  width: 95px;
+}
+.key-array {
+  width: 278px;
+  border-left-width: 10px;
+}
+
+/*------- game field -------*/
+#game-field {
+  font-size: large;
+  border: 1px solid none;
+  min-height: 2em;
+}
+
+/*------- rgb -------*/
+.rgb {
+  animation: allTheColors 1.5s infinite;
+}    
+@keyframes allTheColors {  
+  0% {
+    color: #ff4ea0;
+    box-shadow: 0px 0px 6px 1px #ff4ea0;
+  }
+  60% {
+    color: #ff4ea0;
+    box-shadow: 0px 0px 6px 1px#ff4ea0;
+  }
+}
+
+/* green */
+/* 0% {
+  color: #47e25c;
+  box-shadow: 0px 0px 6px 1px #47e25c;
+}
+60% {
+  color: #47e25c;
+  box-shadow: 0px 0px 6px 1px#47e25c;
+} */

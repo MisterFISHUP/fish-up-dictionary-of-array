@@ -39,12 +39,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/virtual-keyboard.css">
     <link rel="stylesheet" href="/css/style.css">
-    <style>
-        html, body {
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -60,9 +57,9 @@
             <div class="w3-dropdown-hover">
                 <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
                 <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                  <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                  <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                  <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
+                    <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
+                    <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
+                    <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
                 </div>
             </div>
             <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
@@ -70,24 +67,11 @@
                 <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
                 <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
                 <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
-                <!-- <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large"><i class="fa fa-language" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                      <a href="#" class="w3-bar-item w3-button">繁中</a>
-                      <a href="#" class="w3-bar-item w3-button">EN</a>
-                      <a href="#" class="w3-bar-item w3-button">FR</a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
     <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <!-- <div class="w3-center w3-small w3-padding-16">
-            <a href="#" style="text-decoration: none;">繁中</a>&emsp;|&emsp;
-            <a href="#" style="text-decoration: none;">EN</a>&emsp;|&emsp;
-            <a href="#" style="text-decoration: none;">FR</a>
-        </div> -->
+    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">        
         <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
         <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
         <div class="w3-padding-large nav-small-item-hover">
@@ -108,42 +92,247 @@
     </div>
 
     <!-- Header -->
-    <header class="index-header" id="home">
-        <div class="w3-center w3-margin-bottom" style="padding-top:  15%;">
-            <div class=" w3-hide-small">
-                <span class="w3-jumbo w3-padding-large w3-text-white">FISH UP 行列查碼</span>
-                <br><br>
-                <span class=" w3-xlarge w3-padding w3-margin-top w3-text-white">- 網路上最好的行列查碼網站 -</span>
-            </div>
-        </div>
-        <!-- Same thing but on small screen -->
-        <div class="w3-center w3-margin-bottom w3-hide-large w3-hide-medium w3-text-white" style="padding-top: 15%;">            
-            <span class="w3-xxlarge w3-padding-small">FISH UP 行列查碼</span>
+    <header>        
+        <div id='site-name'>
+            <span class="w3-xxlarge">FISH UP 行列查碼</span>
             <br>
-            <span class=" w3-large w3-padding">網路上最好的行列查碼網站</span>
+            <span class="w3-large">學習行列輸入法的首選網站</span>
         </div>
-        <!-- two blocks -->
-        <div class="w3-row-padding">
-            <div class="w3-col l2 w3-hide-medium w3-hide-small">&nbsp;</div>
+        <!-- game area (large screen)-->        
+        <div id='game-area' class="w3-hide-small w3-hide-medium">
+            <!-- virtual keyboard -->
+            <div id="keyboard">
+                <div id='keyboard-wrapper'>
+                    <!-- first row -->
+                    <div>
+                        <!-- ~<br>` -->
+                        <div class="k192 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="k49 key" name='49'>
+                            <div class="keyboard-keycap">!<br>1</div>
+                        </div>
+                        <div class="k50 key" name='50'>
+                            <div class="keyboard-keycap">@<br>2</div>
+                        </div>
+                        <div class="k51 key" name='51'>
+                            <div class="keyboard-keycap">#<br>3</div>
+                        </div>
+                        <div class="k52 key" name='52'>
+                            <div class="keyboard-keycap">$<br>4</div>
+                        </div>
+                        <div class="k53 key" name='53'>
+                            <div class="keyboard-keycap">%<br>5</div>
+                        </div>
+                        <div class="k54 key" name='54'>
+                            <div class="keyboard-keycap">^<br>6</div>
+                        </div>
+                        <div class="k55 key" name='55'>
+                            <div class="keyboard-keycap">&<br>7</div>
+                        </div>
+                        <div class="k56 key" name='56'>
+                            <div class="keyboard-keycap">*<br>8</div>
+                        </div>
+                        <div class="k57 key" name='57'>
+                            <div class="keyboard-keycap">(<br>9</div>
+                        </div>
+                        <div class="k48 key" name='48'>
+                            <div class="keyboard-keycap">)<br>0</div>
+                        </div>
+                        <!-- _<br>- -->
+                        <div class="k173 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <!-- +<br>= -->
+                        <div class="k61 key">
+                            
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <!-- backspace -->
+                        <div class="k8 f_key" name='8'>
+                            <div class="keyboard-keycap">&#10229;</div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- second row -->
+                    <div>
+                        <!-- tab -->
+                        <div class="k9 f_key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="k81 key" name='81'>
+                            <div class="keyboard-keycap">1↑</div>
+                        </div>
+                        <div class="k87 key" name='87'>
+                            <div class="keyboard-keycap">2↑</div>
+                        </div>
+                        <div class="k69 key" name='69'>
+                            <div class="keyboard-keycap">3↑</div>
+                        </div>
+                        <div class="k82 key" name='82'>
+                            <div class="keyboard-keycap">4↑</div>
+                        </div>
+                        <div class="k84 key" name='84'>
+                            <div class="keyboard-keycap">5↑</div>
+                        </div>
+                        <div class="k89 key" name='89'>
+                            <div class="keyboard-keycap">6↑</div>
+                        </div>
+                        <div class="k85 key" name='85'>
+                            <div class="keyboard-keycap">7↑</div>
+                        </div>
+                        <div class="k73 key" name='73'>
+                            <div class="keyboard-keycap">8↑</div>
+                        </div>
+                        <div class="k79 key" name='79'>
+                            <div class="keyboard-keycap">9↑</div>
+                        </div>
+                        <div class="k80 key" name='80'>
+                            <div class="keyboard-keycap">0↑</div>
+                        </div>
+                        <!-- left bracket -->
+                        <div class="k219 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <!-- right bracket -->
+                        <div class="k221 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <!-- |<br>\ -->
+                        <div class="k220 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- third row -->
+                    <div>
+                        <!-- caps -->
+                        <div class="k20 f_key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="k65 key" name='65'>
+                            <div class="keyboard-keycap">1-</div>
+                        </div>
+                        <div class="k83 key" name='83'>
+                            <div class="keyboard-keycap">2-</div>
+                        </div>
+                        <div class="k68 key" name='68'>
+                            <div class="keyboard-keycap">3-</div>
+                        </div>
+                        <div class="k70 key" name='70'>
+                            <div class="keyboard-keycap">4-</div>
+                        </div>
+                        <div class="k71 key" name='71'>
+                            <div class="keyboard-keycap">5-</div>
+                        </div>
+                        <div class="k72 key" name='72'>
+                            <div class="keyboard-keycap">6-</div>
+                        </div>
+                        <div class="k74 key" name='74'>
+                            <div class="keyboard-keycap">7-</div>
+                        </div>
+                        <div class="k75 key" name='75'>
+                            <div class="keyboard-keycap">8-</div>
+                        </div>
+                        <div class="k76 key" name='76'>
+                            <div class="keyboard-keycap">9-</div>
+                        </div>
+                        <div class="k59 key" name='59'>
+                            <div class="keyboard-keycap">0-</div>
+                        </div>
+                        <!-- "<br>' -->
+                        <div class="k222 key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <!-- enter k13 -->
+                        <div class="k13 f_key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- fourth row -->
+                    <div>
+                        <!-- left shift -->
+                        <div class="k16 left-shift f_key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="k90 key" name='90'>
+                            <div class="keyboard-keycap">1↓</div>
+                        </div>
+                        <div class="k88 key" name='88'>
+                            <div class="keyboard-keycap">2↓</div>
+                        </div>
+                        <div class="k67 key" name='67'>
+                            <div class="keyboard-keycap">3↓</div>
+                        </div>
+                        <div class="k86 key" name='86'>
+                            <div class="keyboard-keycap">4↓</div>
+                        </div>
+                        <div class="k66 key" name='66'>
+                            <div class="keyboard-keycap">5↓</div>
+                        </div>
+                        <div class="k78 key" name='78'>
+                            <div class="keyboard-keycap">6↓</div>
+                        </div>
+                        <div class="k77 key" name='77'>
+                            <div class="keyboard-keycap">7↓</div>
+                        </div>
+                        <div class="k188 key" name='188'>
+                            <div class="keyboard-keycap">8↓</div>
+                        </div>
+                        <div class="k190 key" name='190'>
+                            <div class="keyboard-keycap">9↓</div>
+                        </div>
+                        <div class="k191 key" name='191'>
+                            <div class="keyboard-keycap">0↓</div>
+                        </div>
+                        <!-- right shift -->
+                        <div class="k16 right-shift f_key">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- last row -->
+                    <div>
+                        <div class="key-href s_key">
+                            <div class="keyboard-keycap"><a href="dictionary.html">查碼去</a></div>
+                        </div>
+                        <div class="key-href s_key">
+                            <div class="keyboard-keycap"><a href="typing.html">打字去</a></div>
+                        </div>
+                        <div class="k32 key" name='32'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key-array right s_key">
+                            <div class="keyboard-keycap"><a href="#introduction">什麼是行列輸入法</a></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                </div>
+            </div>
+            <!-- game field -->
+            <div id='game-field'></div>
+        </div>
+        <!-- two blocks (medium, small screen)-->
+        <div class="w3-row-padding w3-hide-large">            
             <div class="w3-col l4 m12 s12 w3-center" >
                 <div class="w3-padding-large w3-margin-bottom">
-                    <p class="w3-text-white">還不認識中文最快的免費輸入法？</p>
-                    <a href="#introduction" class="w3-btn w3-round-xxlarge w3-teal w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> 馬上認識行列 <i class="fa fa-angle-double-left"></i>&emsp;</a>
+                    <p>還不認識中文最快的免費輸入法？</p>
+                    <a href="#introduction" class="w3-btn w3-round-xxlarge w3-indigo w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> 馬上認識行列 <i class="fa fa-angle-double-left"></i>&emsp;</a>
                 </div>
             </div>
             <div class="w3-col l4 m12 s12 w3-center">
                 <div class=" w3-padding-large w3-margin-bottom" >
-                    <p class="w3-text-white">直接開始使用本站熱門功能</p>
-                    <p><a href="dictionary.html" class="w3-btn w3-teal w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;查碼去&emsp;</a>&nbsp;
-                    <a href="typing.html" class="w3-btn w3-teal w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
+                    <p>直接開始使用本站熱門功能</p>
+                    <p><a href="dictionary.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;查碼去&emsp;</a>&nbsp;
+                    <a href="typing.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
                 </div>
             </div>
-            <div class="w3-col l2 w3-hide-medium w3-hide-small">&nbsp;</div>
         </div>
     </header>
 
     <!-- Introduction -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px; line-height: 1.8;" id="introduction">
+    <div id="introduction">
         <h2 class="w3-wide w3-text-gray">行列輸入法</h2>
         <p class="w3-justify">行列，或稱行列 30，是一套免費授權、具有開放理念的字根式中文輸入法，為倚天資訊共同創辦人<a href="https://zh.wikipedia.org/zh-tw/%E8%A1%8C%E5%88%97%E8%BC%B8%E5%85%A5%E6%B3%95" target="_blank" class="w3-hover-text-red" title="行列輸入法維基頁面">廖明德</a>先生所發明。不僅能輸入繁體中文和簡體中文，亦可輸入 Unicode 當中的中日韓統一表意文字，總數超過 7 萬字。</p>
         <p class="w3-justify">行列輸入法使用科學的方法分配字根，學習容易並輸入快速。行列輸入法是字根輸入法中最容易學習的輸入法之一，並且行列輸入法為免費中文輸入法中輸入最快的，最高紀錄達每分鐘 215.5 字。</p>
@@ -275,7 +464,7 @@
     </div>
     
     <!-- FAQ -->
-    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px" id="FAQ">
+    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px; font-size: large;" id="FAQ">
         <h2 class="w3-wide w3-center">常見問題節選</h2>
         <p class="w3-opacity w3-center">初次接觸行列常有的疑惑</p>
         
@@ -440,7 +629,7 @@
             </div>        
         </div>
     </div>
-    <div class="w3-padding w3-center w3-margin">
+    <div class="w3-padding w3-center w3-margin w3-large">
         <p>此網站所提供的服務（行列查碼、打字練習、教學）皆是免費的！</p>
         <p>如果您覺得本網站對您很有幫助，可以考慮透過下方按鈕贊助本站作者 FISH UP ^^</p>
         <a href="https://www.buymeacoffee.com/misterfishup" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" class="w3-margin-top"></a>
@@ -461,6 +650,10 @@
 
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/data/object-key-short-code-i.js"></script>
+    <script type="text/javascript" src="/data/object-key-short-code-ii.js"></script>
+    <script type="text/javascript" src="/js/object-drop-coincident-code.js"></script>
+    <script type="text/javascript" src="/js/keyboard.js"></script>
     <script type="text/javascript" src="/js/display.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>

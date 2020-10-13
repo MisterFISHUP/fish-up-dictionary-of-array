@@ -438,12 +438,16 @@ const easterEggForColor = {
   'array': 'special',
   'tableau': 'special',
   'tqblequ': 'special',
+  '.3ame ': 'special', // 行列 行列 Start
+  '.aad ame ': 'special', // 行列 行列 End
   // trolling
   '1234567890': 'trolling', // 0987654321 to turn off
-  'trolling': 'trolling',  
+  'trolling': 'trolling',
   // disappearing
   'qwertyuiop': 'disappearing', // /.,mnbvcxz to turn off
+  'azertyuiop': 'disappearing', // /poiuytreza to turn off
   'disappearing': 'disappearing',
+  'disappeared': 'disappearing',
   'cc7oz1': 'disappearing', // 行列 消失 Start
   'cc7oz ': 'disappearing',
   'ccu oz1': 'disappearing',
@@ -457,6 +461,7 @@ const easterEggForColor = {
   'yin cang': 'disappearing', // 拼音 隱藏
   // flashing
   'asdfghjkl;': 'flashing', // ;lkjhgfdsa to turn off
+  'qsdfghjklm': 'flashing', // mlkjhgfdsq to turn off
   'flashing': 'flashing',
   'ek1,lpv ': 'flashing', // 行列 閃爍 Start
   'ek1,xlv ': 'flashing',
@@ -465,12 +470,27 @@ const easterEggForColor = {
   'g03gji4': 'flashing', // 注音 閃爍
   'shan shuo': 'flashing', // 拼音 閃爍
   // blurred
-  'zxcvbnm,./': 'blurred', // /.,mnbvcxz tu turn off
+  'zxcvbnm,./': 'blurred', // /.,mnbvcxz to turn off
+  'wxcvbn,;:!': 'blurred', // !:;,nbvcxw to turn off
   'blurred': 'blurred',
-  'vfpz ,f0': 'blurred', // 行列 Start
-  'vfpz ,f;u ': 'blurred', // 行列 End
+  'vfpz ,f0': 'blurred', // 行列 模糊 Start
+  'vfpz ,f;u ': 'blurred', // 行列 模糊 End
   'ai6cj6': 'blurred', // 注音 模糊
   'mo hu': 'blurred', // 拼音 模糊
+  'g,1nm f;2': 'blurred', // 行列 馬賽克 Start
+  'g,1nm f;s ': 'blurred',
+  'g,1nr8f;2': 'blurred',
+  'g,1nr8f;s ': 'blurred',
+  'g,1nrkm f;2': 'blurred',
+  'g,1nrkm f;s ': 'blurred',
+  'g, nm f;2': 'blurred',
+  'g, nm f;s ': 'blurred',
+  'g, nr8f;2': 'blurred',
+  'g, nr8f;s ': 'blurred',
+  'g, nrkm f;2': 'blurred',
+  'g, nrkm f;s ': 'blurred', // 行列 馬賽克 End  
+  'a83n94dk4': 'blurred', // 注音 馬賽克
+  'ma sai ke': 'blurred', // 拼音 馬賽克
   // blue
   'blue': 'blue',
   'bleu': 'blue',
@@ -516,10 +536,13 @@ const easterEggForColor = {
   // pink
   '0987654321': 'pink', // turn off trolling
   'poiuytrewq': 'pink', // turn off disappearing
+  'poiuytreza': 'pink', // turn off disappearing
   'vu03g4': 'pink', // turn off disappearing (注音 顯示)
   'xian shi': 'pink', // turn off disappearing (拼音 顯示)
   ';lkjhgfdsa': 'pink', // turn off flashing
+  'mlkjhgfdsq': 'pink', // turn off flashing
   '/.,mnbvcxz': 'pink', // turn off blurred  
+  '!:;,nbvcxw': 'pink', // turn off blurred  
   'pink': 'pink',
   'rose': 'pink',
   ',k7j9': 'pink', // 行列 粉色 Start

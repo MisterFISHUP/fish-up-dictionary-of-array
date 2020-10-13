@@ -483,6 +483,7 @@ const easterEggForColor = {
   // yellow
   'yellow': 'yellow',
   'jaune': 'yellow',
+  'jqune': 'yellow',
   'rp8j9': 'yellow', // 行列 Start
   'rp8jt3': 'yellow',
   'rp8jtds ': 'yellow',

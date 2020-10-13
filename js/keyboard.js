@@ -575,16 +575,19 @@ function getEasterEggForColor(letter) {
   }
 }
 
-// prevent Space bar from scrolling page (and Slash, Quote from searching in firefox)
+// prevent Space bar from scrolling page (and Slash, Quote, from searching, Backspace from going to previous page in firefox)
 let gameFieldBottom = document.getElementById('game-field').offsetTop + document.getElementById('game-field').offsetHeight
 window.addEventListener('keydown', function (e) {
-  if (e.code == "Space" && gameFieldBottom > window.pageYOffset) {
+  if ((e.code == "Space" || e.key == ' ') && gameFieldBottom > window.pageYOffset) {
     e.preventDefault();
   }
   if (e.code == "Slash" && gameFieldBottom > window.pageYOffset) {
     e.preventDefault();
   }
   if (e.code == "Quote" && gameFieldBottom > window.pageYOffset) {
+    e.preventDefault();
+  }
+  if ((e.code == "Backspace" || e.key == 'Backspace') && gameFieldBottom > window.pageYOffset) {
     e.preventDefault();
   }
 });

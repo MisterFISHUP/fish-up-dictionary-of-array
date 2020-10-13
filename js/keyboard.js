@@ -361,10 +361,6 @@ function gameAutoClear() {
     for (let i = 0; i < children.length; i++) {
       gameFieldElem.removeChild(children[i]);
     }
-    // reset all color easter eggs' state
-    for (const command in easterEggForColorState) {
-      easterEggForColorState[command] = '';
-    }
   }
 };
 

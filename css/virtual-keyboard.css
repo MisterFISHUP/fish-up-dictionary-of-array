@@ -194,6 +194,10 @@
 .rgb_trolling {
   color: #ffffff;
   box-shadow: 0px 0px 6px 1px#ffffff;
+}
+.rgb_special {
+  color: #ffffff;
+  box-shadow: 0px 0px 6px 1px#ffffff;
   border-color:  #c5e0fd #f8cbd6;
 }
 .rgb_blurred {

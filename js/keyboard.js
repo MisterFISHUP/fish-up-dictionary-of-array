@@ -2,6 +2,7 @@
   - two objects
   - functions that change game status
   - user interaction
+  - color easter eggs
 */
 
 // ------------
@@ -352,13 +353,17 @@ function gameAutoClear() {
   let gameFieldWidth = 0;
   for (let i = 0; i < children.length; i++) {
     gameFieldWidth += children[i].offsetWidth;
-    gameFieldWidth += 4; //  margin-right of each child
+    gameFieldWidth += 4; // margin-right of each child
   }
-  // clear field if too wide
+  // if game field too wide
   if (gameFieldWidth > 910) {
-    currentGameStatus = [];
+    // clear game field 
     for (let i = 0; i < children.length; i++) {
       gameFieldElem.removeChild(children[i]);
+    }
+    // reset all color easter eggs' state
+    for (const command in easterEggForColorState) {
+      easterEggForColorState[command] = '';
     }
   }
 };
@@ -367,11 +372,14 @@ function gameAutoClear() {
 // user interaction
 //------------------
 
-// remove RGB
+// set default backlit color
+let rgbColor = 'pink';
+
+// remove RGB (backlit color) in 1000 ms
 var objectRemoveRGB = {};
 function removeRGB(keyc, jqueryObject) {
   objectRemoveRGB[keyc] = setTimeout(function () {
-    jqueryObject.removeClass('rgb')
+    jqueryObject.removeClass('rgb_pink rgb_green rgb_yellow rgb_blue rgb_purple rgb_trolling rgb_flashing rgb_disappearing rgb_blurred')
   }, 1000);
 }
 
@@ -381,38 +389,202 @@ $(window).on({
     var pressedKey = $('.k' + e.keyCode);
     // clear current rgb removal setTimeout
     clearTimeout(objectRemoveRGB[e.keyCode.toString()]);
-    pressedKey.addClass('pressed rgb');
+    // become pressed, add rgb color
+    pressedKey.addClass('pressed rgb_' + rgbColor);
     // change game status
     changeGameStatus(e.keyCode.toString());
+    // check and update easter egg states
+    getEasterEggForColor(e.key);
   },
   'keyup': function (e) {
     var pressedKey = $('.k' + e.keyCode);
+    // not pressed anymore
     pressedKey.removeClass('pressed');
     // rgb removal setTimeout
     removeRGB(e.keyCode.toString(), pressedKey);
   }
 });
 
-// click keys on the vitrual keyboard
+// click keys on the virtual keyboard
 $(".keyboard-keycap").mousedown(function () {
   let clickedKey = $(this).parent();
-  clickedKey.addClass('pressed rgb');
+  // clear current rgb removal setTimeout
   clearTimeout(objectRemoveRGB[clickedKey.attr('name')]);
+  // become pressed, add rgb color
+  clickedKey.addClass('pressed rgb_' + rgbColor);
+  // change game status
   changeGameStatus(clickedKey.attr('name'));
+  // check and update easter egg states
+  getEasterEggForColor(String.fromCharCode(clickedKey.attr('name')).toLowerCase().toLowerCase())
 }).mouseup(function () {
   let clickedKey = $(this).parent();
+  // not pressed anymore
   clickedKey.removeClass('pressed');
+  // rgb removal setTimeout
   removeRGB(clickedKey.attr('name'), clickedKey);
 }).mouseleave(function () {
   let clickedKey = $(this).parent();
+  // not pressed anymore
   clickedKey.removeClass('pressed');
+  // rgb removal setTimeout
   removeRGB(clickedKey.attr('name'), clickedKey);
 })
 
-// prevent Space bar from scrolling page
+// ------------------
+// color easter eggs
+// ------------------
+
+// 9 colors (modes)
+// green, pink, yellow, blue, purple, trolling, flashing, blurred, disappearing
+const easterEggForColor = {
+  // trolling
+  '1234567890': 'trolling', // 0987654321 to turn off
+  'trolling': 'trolling',
+  'fish up': 'trolling',
+  'array': 'trolling',
+  // disappearing
+  'qwertyuiop': 'disappearing', // /.,mnbvcxz to turn off
+  'disappearing': 'disappearing',
+  'cc7oz1': 'disappearing', // 行列 消失 Start
+  'cc7oz ': 'disappearing',
+  'ccu oz1': 'disappearing',
+  'ccu oz ': 'disappearing', // 行列 消失 End
+  'vul g ': 'disappearing', // 注音 消失
+  'xiao shi': 'disappearing', // 拚音 消失
+  't.qn faxx ': 'disappearing', // 行列 隱藏 Start
+  't.qn fxax ': 'disappearing',
+  't.qn fzsx': 'disappearing', // 行列 隱藏 End
+  'up3h;6': 'disappearing', // 注音 隱藏
+  'yin cang': 'disappearing', // 拼音 隱藏
+  // flashing
+  'asdfghjkl;': 'flashing', // ;lkjhgfdsa to turn off
+  'flashing': 'flashing',
+  'ek1,lpv ': 'flashing', // 行列 閃爍 Start
+  'ek1,xlv ': 'flashing',
+  'ek ,lpv ': 'flashing',
+  'ek ,xlv ': 'flashing', // 行列 閃爍 End
+  'g03gji4': 'flashing', // 注音 閃爍
+  'shan shuo': 'flashing', // 拼音 閃爍
+  // blurred
+  'zxcvbnm,./': 'blurred', // /.,mnbvcxz tu turn off
+  'blurred': 'blurred',
+  'vfpz ,f0': 'blurred', // 行列 Start
+  'vfpz ,f;u ': 'blurred', // 行列 End
+  'ai6cj6': 'blurred', // 注音 模糊
+  'mo hu': 'blurred', // 拼音 模糊
+  // blue
+  'blue': 'blue',
+  'bleu': 'blue',
+  'fqdu j9': 'blue', // 行列 Start
+  'fqdu jt3': 'blue',
+  'fqdu jtds ': 'blue', // 行列 End
+  'x06nk4': 'blue', // 注音
+  'lan se': 'blue', // 拼音
+  // yellow
+  'yellow': 'yellow',
+  'jaune': 'yellow',
+  'rp8j9': 'yellow', // 行列 Start
+  'rp8jt3': 'yellow',
+  'rp8jtds ': 'yellow',
+  'rpfk j9': 'yellow',
+  'rpfk jt3': 'yellow',
+  'rpfk jtds ': 'yellow',
+  'rpk j9': 'yellow',
+  'rpk jt3': 'yellow',
+  'rpk jtds ': 'yellow', // 行列 End
+  'cj;6nk4': 'yellow', // 注音
+  'huang se': 'yellow', // 拼音
+  // purple
+  'purple': 'purple',
+  'violet': 'purple',
+  'eqx j9': 'purple', // 行列 Start
+  'eqx jt3': 'purple',
+  'eqx jtds ': 'purple', // 行列 End
+  'y3nk4': 'purple', // 注音
+  'zi se': 'purple', // 拼音
+  // green
+  'green': 'green',
+  'vert': 'green',
+  'xw3j9': 'green', // 行列 Start
+  'xw3jt3': 'green',
+  'xw3jtds ': 'green',
+  'xwc j9': 'green',
+  'xwc jt3': 'green',
+  'xwc jtds ': 'green', // 行列 End
+  'xm4nk4': 'green', // 注音
+  'lu se': 'green', // 拼音
+  // pink
+  '0987654321': 'pink', // turn off trolling
+  'poiuytrewq': 'pink', // turn off disappearing
+  'vu03g4': 'pink', // turn off disappearing (注音 顯示)
+  'xian shi': 'pink', // turn off disappearing (拼音 顯示)
+  ';lkjhgfdsa': 'pink', // turn off flashing
+  '/.,mnbvcxz': 'pink', // turn off blurred  
+  'pink': 'pink',
+  'rose': 'pink',
+  ',k7j9': 'pink', // 行列 粉色 Start
+  ',k7jt3': 'pink',
+  ',k7jtds ': 'pink',
+  ',k7j9': 'pink',
+  ',k7jt3': 'pink',
+  ',k7jtds ': 'pink',
+  ',kj j9': 'pink',
+  ',kj jt3': 'pink',
+  ',kj jtds ': 'pink',
+  ',kj j9': 'pink',
+  ',kj jt3': 'pink',
+  ',kj jtds ': 'pink', // 行列 粉色 End
+  'zp3nk4': 'pink', // 注音 粉色
+  'fen se': 'pink', // 拼音 粉色
+  ',k7xq1j9': 'pink', // 行列 粉紅色 Start
+  ',k7xq1jt3': 'pink',
+  ',k7xq1jtds ': 'pink',
+  ',k7xq j9': 'pink',
+  ',k7xq jt3': 'pink',
+  ',k7xq jtds ': 'pink',
+  ',kj xq1j9': 'pink',
+  ',kj xq1jt3': 'pink',
+  ',kj xq1jtds ': 'pink',
+  ',kj xq j9': 'pink',
+  ',kj xq jt3': 'pink',
+  ',kj xq jtds ': 'pink', // 行列 粉紅色 End
+  'zp3cj/6nk4': 'pink', // 注音 粉紅色
+  'fen hong se': 'pink', // 拼音 粉紅色
+}
+
+// initialise color easter egg states 
+let easterEggForColorState = {};
+for (const command in easterEggForColor) {
+  easterEggForColorState[command] = '';
+}
+
+// check and update color easter egg states
+function getEasterEggForColor(letter) {
+  for (const command in easterEggForColorState) {
+    // update state
+    if (letter == command[easterEggForColorState[command].length]) {
+      easterEggForColorState[command] += letter;
+    } else {
+      letter == command[0] ? easterEggForColorState[command] += letter : easterEggForColorState[command] = '';
+    }
+    // if easter egg is found
+    if (easterEggForColorState[command] == command) {
+      easterEggForColorState[command] = '';
+      rgbColor = easterEggForColor[command];
+    }
+  }
+}
+
+// prevent Space bar from scrolling page (and Slash, Quote from searching in firefox)
 let gameFieldBottom = document.getElementById('game-field').offsetTop + document.getElementById('game-field').offsetHeight
 window.addEventListener('keydown', function (e) {
   if (e.code == "Space" && gameFieldBottom > window.pageYOffset) {
+    e.preventDefault();
+  }
+  if (e.code == "Slash" && gameFieldBottom > window.pageYOffset) {
+    e.preventDefault();
+  }
+  if (e.code == "Quote" && gameFieldBottom > window.pageYOffset) {
     e.preventDefault();
   }
 });

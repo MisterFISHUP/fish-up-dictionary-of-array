@@ -171,26 +171,47 @@
 }
 
 /*------- rgb -------*/
-.rgb {
-  animation: allTheColors 1.5s infinite;
-}    
-@keyframes allTheColors {  
+.rgb_pink {
+  color: #ff4ea0;
+  box-shadow: 0px 0px 6px 1px #ff4ea0;
+}
+.rgb_yellow {  
+  color: #ffd64e;
+  box-shadow: 0px 0px 6px 1px #ffd64e;
+}  
+.rgb_blue {  
+  color:#6bb0ff;
+  box-shadow: 0px 0px 7px 1px #6bb0ff;
+}
+.rgb_green {
+  color: #47e25c;
+  box-shadow: 0px 0px 6px 1px #47e25c;
+}
+.rgb_purple {
+  color: #be76ee;
+  box-shadow: 0px 0px 5px 2px#be76ee;
+}
+.rgb_trolling {
+  color: #ffffff;
+  box-shadow: 0px 0px 6px 1px#ffffff;
+  border-color:  #c5e0fd #f8cbd6;
+}
+.rgb_blurred {
+  filter: blur(2.5px);
+}
+.rgb_flashing {
+  animation: flashing 0.2s infinite;
+}
+.rgb_disappearing {
+  opacity: 0;
+}
+@keyframes flashing {  
   0% {
-    color: #ff4ea0;
-    box-shadow: 0px 0px 6px 1px #ff4ea0;
+    color:  #47e25c;
+    box-shadow: 0px 0px 6px 1px  #47e25c;
   }
   100% {
     color: #ff4ea0;
     box-shadow: 0px 0px 6px 1px#ff4ea0;
   }
 }
-
-/* green */
-/* 0% {
-  color: #47e25c;
-  box-shadow: 0px 0px 6px 1px #47e25c;
-}
-60% {
-  color: #47e25c;
-  box-shadow: 0px 0px 6px 1px#47e25c;
-} */

@@ -379,7 +379,7 @@ let rgbColor = 'pink';
 var objectRemoveRGB = {};
 function removeRGB(keyc, jqueryObject) {
   objectRemoveRGB[keyc] = setTimeout(function () {
-    jqueryObject.removeClass('rgb_pink rgb_green rgb_yellow rgb_blue rgb_purple rgb_trolling rgb_flashing rgb_disappearing rgb_blurred')
+    jqueryObject.removeClass('rgb_pink rgb_green rgb_yellow rgb_blue rgb_purple rgb_trolling rgb_flashing rgb_disappearing rgb_blurred rgb_special')
   }, 1000);
 }
 
@@ -434,14 +434,17 @@ $(".keyboard-keycap").mousedown(function () {
 // color easter eggs
 // ------------------
 
-// 9 colors (modes)
-// green, pink, yellow, blue, purple, trolling, flashing, blurred, disappearing
+// 10 colors (modes)
+// green, pink, yellow, blue, purple, trolling, flashing, blurred, disappearing, special
 const easterEggForColor = {
+  // special
+  'fish up': 'special',
+  'array': 'special',
+  'tableau': 'special',
+  'tqblequ': 'special',
   // trolling
   '1234567890': 'trolling', // 0987654321 to turn off
-  'trolling': 'trolling',
-  'fish up': 'trolling',
-  'array': 'trolling',
+  'trolling': 'trolling',  
   // disappearing
   'qwertyuiop': 'disappearing', // /.,mnbvcxz to turn off
   'disappearing': 'disappearing',

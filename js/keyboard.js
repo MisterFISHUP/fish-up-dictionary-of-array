@@ -1,99 +1,110 @@
 /* structure:
-  - two objects
-  - functions that change game status
-  - user interaction
-  - color easter eggs
+  - three objects as dictionaries
+  - functions that change game's output status
+  - code examples
+  - detect code examples
+  - keyboard style and their commands
+  - detect commands for style
+  - interaction with the Array keyboard
+  - game instructions things
 */
 
 // ------------
-// two objects
+// three objects as dictionaries
 // ------------
 
 const array30ToLetterDict = { '1-': 'a', '5↓': 'b', '3↓': 'c', '3-': 'd', '3↑': 'e', '4-': 'f', '5-': 'g', '6-': 'h', '8↑': 'i', '7-': 'j', '8-': 'k', '9-': 'l', '7↓': 'm', '6↓': 'n', '9↑': 'o', '0↑': 'p', '1↑': 'q', '4↑': 'r', '2-': 's', '5↑': 't', '7↑': 'u', '4↓': 'v', '2↑': 'w', '2↓': 'x', '6↑': 'y', '1↓': 'z', '9↓': '.', '0↓': '/', '0-': ';', '8↓': ',' };
+const letterToArray30Dict = { 'a': '1-', 'b': '5↓', 'c': '3↓', 'd': '3-', 'e': '3↑', 'f': '4-', 'g': '5-', 'h': '6-', 'i': '8↑', 'j': '7-', 'k': '8-', 'l': '9-', 'm': '7↓', 'n': '6↓', 'o': '9↑', 'p': '0↑', 'q': '1↑', 'r': '4↑', 's': '2-', 't': '5↑', 'u': '7↑', 'v': '4↓', 'w': '2↑', 'x': '2↓', 'y': '6↑', 'z': '1↓', '.': '9↓', '/': '0↓', ';': '0-', ',': '8↓' };
+// 40 keys (4 x 10) + 1 space key
 const keyCodeTable = {
-  // keys are automatically converted into string
-  32: { 'array30': 'Space', 'type': 'space' },
-  48: { 'array30': '0', 'type': 'number' },
-  49: { 'array30': '1', 'type': 'number' },
-  50: { 'array30': '2', 'type': 'number' },
-  51: { 'array30': '3', 'type': 'number' },
-  52: { 'array30': '4', 'type': 'number' },
-  53: { 'array30': '5', 'type': 'number' },
-  54: { 'array30': '6', 'type': 'number' },
-  55: { 'array30': '7', 'type': 'number' },
-  56: { 'array30': '8', 'type': 'number' },
-  57: { 'array30': '9', 'type': 'number' },
-  65: { 'array30': '1-', 'type': 'letter' },
-  66: { 'array30': '5↓', 'type': 'letter' },
-  67: { 'array30': '3↓', 'type': 'letter' },
-  68: { 'array30': '3-', 'type': 'letter' },
-  69: { 'array30': '3↑', 'type': 'letter' },
-  70: { 'array30': '4-', 'type': 'letter' },
-  71: { 'array30': '5-', 'type': 'letter' },
-  72: { 'array30': '6-', 'type': 'letter' },
-  73: { 'array30': '8↑', 'type': 'letter' },
-  74: { 'array30': '7-', 'type': 'letter' },
-  75: { 'array30': '8-', 'type': 'letter' },
-  76: { 'array30': '9-', 'type': 'letter' },
-  77: { 'array30': '7↓', 'type': 'letter' },
-  78: { 'array30': '6↓', 'type': 'letter' },
-  79: { 'array30': '9↑', 'type': 'letter' },
-  80: { 'array30': '0↑', 'type': 'letter' },
-  81: { 'array30': '1↑', 'type': 'letter' },
-  82: { 'array30': '4↑', 'type': 'letter' },
-  83: { 'array30': '2-', 'type': 'letter' },
-  84: { 'array30': '5↑', 'type': 'letter' },
-  85: { 'array30': '7↑', 'type': 'letter' },
-  86: { 'array30': '4↓', 'type': 'letter' },
-  87: { 'array30': '2↑', 'type': 'letter' },
-  88: { 'array30': '2↓', 'type': 'letter' },
-  89: { 'array30': '6↑', 'type': 'letter' },
-  90: { 'array30': '1↓', 'type': 'letter' },
-  59: { 'array30': '0-', 'type': 'letter' },
-  188: { 'array30': '8↓', 'type': 'letter' },
-  190: { 'array30': '9↓', 'type': 'letter' },
-  191: { 'array30': '0↓', 'type': 'letter' },
+  space: { 'array30': 'Space', 'type': 'space', 'char': ' ' },
+  digit0: { 'array30': '0', 'type': 'number', 'char': '0' },
+  digit1: { 'array30': '1', 'type': 'number', 'char': '1' },
+  digit2: { 'array30': '2', 'type': 'number', 'char': '2' },
+  digit3: { 'array30': '3', 'type': 'number', 'char': '3' },
+  digit4: { 'array30': '4', 'type': 'number', 'char': '4' },
+  digit5: { 'array30': '5', 'type': 'number', 'char': '5' },
+  digit6: { 'array30': '6', 'type': 'number', 'char': '6' },
+  digit7: { 'array30': '7', 'type': 'number', 'char': '7' },
+  digit8: { 'array30': '8', 'type': 'number', 'char': '8' },
+  digit9: { 'array30': '9', 'type': 'number', 'char': '9' },
+  keya: { 'array30': '1-', 'type': 'letter', 'char': 'a' },
+  keyb: { 'array30': '5↓', 'type': 'letter', 'char': 'b' },
+  keyc: { 'array30': '3↓', 'type': 'letter', 'char': 'c' },
+  keyd: { 'array30': '3-', 'type': 'letter', 'char': 'd' },
+  keye: { 'array30': '3↑', 'type': 'letter', 'char': 'e' },
+  keyf: { 'array30': '4-', 'type': 'letter', 'char': 'f' },
+  keyg: { 'array30': '5-', 'type': 'letter', 'char': 'g' },
+  keyh: { 'array30': '6-', 'type': 'letter', 'char': 'h' },
+  keyi: { 'array30': '8↑', 'type': 'letter', 'char': 'i' },
+  keyj: { 'array30': '7-', 'type': 'letter', 'char': 'j' },
+  keyk: { 'array30': '8-', 'type': 'letter', 'char': 'k' },
+  keyl: { 'array30': '9-', 'type': 'letter', 'char': 'l' },
+  keym: { 'array30': '7↓', 'type': 'letter', 'char': 'm' },
+  keyn: { 'array30': '6↓', 'type': 'letter', 'char': 'n' },
+  keyo: { 'array30': '9↑', 'type': 'letter', 'char': 'o' },
+  keyp: { 'array30': '0↑', 'type': 'letter', 'char': 'p' },
+  keyq: { 'array30': '1↑', 'type': 'letter', 'char': 'q' },
+  keyr: { 'array30': '4↑', 'type': 'letter', 'char': 'r' },
+  keys: { 'array30': '2-', 'type': 'letter', 'char': 's' },
+  keyt: { 'array30': '5↑', 'type': 'letter', 'char': 't' },
+  keyu: { 'array30': '7↑', 'type': 'letter', 'char': 'u' },
+  keyv: { 'array30': '4↓', 'type': 'letter', 'char': 'v' },
+  keyw: { 'array30': '2↑', 'type': 'letter', 'char': 'w' },
+  keyx: { 'array30': '2↓', 'type': 'letter', 'char': 'x' },
+  keyy: { 'array30': '6↑', 'type': 'letter', 'char': 'y' },
+  keyz: { 'array30': '1↓', 'type': 'letter', 'char': 'z' },
+  semicolon: { 'array30': '0-', 'type': 'letter', 'char': ';' },
+  comma: { 'array30': '8↓', 'type': 'letter', 'char': ',' },
+  period: { 'array30': '9↓', 'type': 'letter', 'char': '.' },
+  slash: { 'array30': '0↓', 'type': 'letter', 'char': '/' },
 }
 
-// -------------------
-// functions that change game status
-// -------------------
+// -------------------------------------------
+// functions that change game's output status
+// -------------------------------------------
 
-var gameFieldElem = document.getElementById('game-field');
-function changeGameStatus(code) {
+// get game output field DOM
+var gameOutputFieldElem = document.getElementById('game-output-field');
+
+// change game's output status
+function changeGameOutputStatus(eventCodeLowerCase) {
   // backspace
-  if (code == '8') { gameBackspace(); }
-  // execute only when code is in keyCodeTable
-  if (keyCodeTable.hasOwnProperty(code)) {
-    gameAdd(code);
-    gameDetectShortCode(code);
-    gameDetectCode(code);
+  if (eventCodeLowerCase == 'backspace') {
+    gameBackspace();
+  }
+  // execute only when eventCodeLowerCase is in keyCodeTable
+  if (keyCodeTable.hasOwnProperty(eventCodeLowerCase)) {
+    gameAdd(eventCodeLowerCase);
+    gameDetectShortCode(eventCodeLowerCase);
+    gameDetectCode(eventCodeLowerCase);
   }
   // auto clear
   gameAutoClear();
 }
 
-// delete last elem (if existing) in the game field
+// delete last elem (if existing) in the game output field
 function gameBackspace() {
-  if (gameFieldElem.lastChild) {
-    gameFieldElem.removeChild(gameFieldElem.lastChild);
+  if (gameOutputFieldElem.lastChild) {
+    gameOutputFieldElem.removeChild(gameOutputFieldElem.lastChild);
   }
 };
 
-// add key
-function gameAdd(code) {
-  const keyArray = keyCodeTable[code]['array30'];
-  const keyType = keyCodeTable[code]['type'];
-  $('#game-field').append('<span style="margin-right: 4px" class="w3-animate-right keycap keycap-' + keyType + '">' + keyArray + '</span>');
+// add key to the output field
+function gameAdd(eventCodeLowerCase) {
+  const keyArray = keyCodeTable[eventCodeLowerCase]['array30'];
+  const keyType = keyCodeTable[eventCodeLowerCase]['type'];
+  $('#game-output-field').append('<span style="margin-right: 4px" class="w3-animate-right keycap keycap-' + keyType + '">' + keyArray + '</span>');
 };
 
-const characterColor = 'black'
-// detect short codes and transfer into character
-function gameDetectShortCode(code) {
-  // function executed only when code type is number
-  if (keyCodeTable[code]['type'] == 'number') {
-    let numberString = keyCodeTable[code]['array30'];
-    let children = $('#game-field span');
+const characterColor = 'white';
+
+// detect short codes and transform into character
+function gameDetectShortCode(eventCodeLowerCase) {
+  // function executed only when entry is a number key
+  if (keyCodeTable[eventCodeLowerCase]['type'] == 'number') {
+    let numberString = eventCodeLowerCase.slice(-1);
+    let children = $('#game-output-field span');
     let hasNoShortCode2 = true;
 
     // detect short code 2
@@ -150,11 +161,11 @@ function gameDetectShortCode(code) {
   }
 };
 
-// detect codes and transfer into character
-function gameDetectCode(code) {
-  // function executed only when code type is space
-  if (keyCodeTable[code]['type'] == 'space') {
-    let children = $('#game-field span');
+// detect codes and transform into character
+function gameDetectCode(eventCodeLowerCase) {
+  // function executed only when entry is space
+  if (eventCodeLowerCase == 'space') {
+    let children = $('#game-output-field span');
     let hasNoCodeLength5 = true;
     let hasNoCodeLength4 = true;
     let hasNoCodeLength3 = true;
@@ -345,272 +356,565 @@ function gameDetectCode(code) {
   }
 };
 
-// clear the game field when it's too wide
+// clear the game output field when it's too wide
 function gameAutoClear() {
   // static children
-  let children = document.querySelectorAll('#game-field span');
-  // calculate gameField width
-  let gameFieldWidth = 0;
+  let children = document.querySelectorAll('#game-output-field span');
+  // calculate gameOutputField width
+  let gameOutputFieldWidth = 0;
   for (let i = 0; i < children.length; i++) {
-    gameFieldWidth += children[i].offsetWidth;
-    gameFieldWidth += 4; // margin-right of each child
+    gameOutputFieldWidth += children[i].offsetWidth;
+    gameOutputFieldWidth += 4; // margin-right of each child
   }
-  // if game field too wide
-  if (gameFieldWidth > 910) {
-    // clear game field 
+  // if game output field too wide
+  // 845 = 895 (~= keyboard width) - 50 (~=game instrucitons open button)
+  if (gameOutputFieldWidth > 845) {
+    // clear game output field 
     for (let i = 0; i < children.length; i++) {
-      gameFieldElem.removeChild(children[i]);
+      gameOutputFieldElem.removeChild(children[i]);
     }
+    // clear all code example states
+    codeExamplesState = codeExamples.reduce((a, b) => (a[b] = '', a), {});
   }
 };
 
-// -----------------
-// user interaction
-//------------------
+// --------------
+// code examples
+// --------------
 
-// set default backlit color
-let rgbColor = 'pink';
+// The order of codes in the list is important.
+// If code A is a suffix of code B, code A needs to be placed before code B
+// See the function 'detectCodeExamples'
+// format: code + character (use only utf-8 characters, don't include utf-16, i.e. very rare characters)
+const codeExamples = [
+  // 1 Array key + number
+  'l9我', 'k7你', 'a0要', 'k0個', ',1，', '/3？', '.1。', 'd6、', // '.7愛', 'c8對',
+  // 2 Array key + number
+  'k.5爸', 'it9創', 'vi4樣', 'ir8養', 'eq8戲', 'na4寶', // 'fd4豐', 'lj6邊', '.f0德', 'kf7值',
+  // 1 Array key + space
+  'a 一', 't 的', 'f 十', 'w 女', // 'v 木', 'x 風', 'h 方', 's 乙',  
+  // 2 Array key + space (special)
+  'ba 喔', 'np 廣', 'hi 禮', 'wk 玩', // '.c 貓', 's; 觀',
+  // 2 Array key + space (not special)
+  'w; 如', 'lj 自', 'or 生', 'b; 加', 'ib 令', 'xk 以', 'kj 分', 'gd 了', // 'h. 放', 'qj 确',  
+  // 3 Array key + space
+  'lvp 香', 'alm 頁', ';;; 品', 'pav 昧', // ',yx 炫', 'crk 洪',
+  'oci 乐', 'xqb 练', 'hbh 为', 'nak 兴', 'nhz 实', 'aab 专', // 'cri 尘', 'azs 无',
+  'ce, 渋', 'sei 凪', 'kni 込', 'pr, 黒', 'ecl 歩', ';iz 咲', // 'fni 辻', 'lrs 笹',
+  'ark 兲', 'qbz 巭', 'eak 仧', 'aan 忈',
+  // 4 Array key + space
+  'p.ab 暖', 'kd.. 修', ';pzn 嗯', 'ofix 犧', 'vof. 鬱', 'li;m 籲', // ';coz 嗨',  'rlgf 孝',
+  'xbhi 发', 'feou 蓝', 'qqdh 书', 'yfgz 读', 'njgf 学', 'zlpn 愿',
+  'lp,v 楽', 'vlsf 枠', 'vyhd 榊', '.irz 躾', 'ozds 観', 'olfp 挿',
+  'wgfn 恏', 'kgdn 怹', 'za/w 嫑', 'tg;b 勥', ';kaw 嘦', 'azpu 奣', // ';v;v 槑', ';;s; 嘂', 'pkae 圙', 'cbb; 瀥',
+  // 5 Array key + space
+  'arlci 瓈', 't,xfi 彞',
+  '.almi 须', 'xaasi 线', // 'cj;mi 赏', 'baaxi 层',
+  'vi;ki 検', 'crjdi 満', // 'ezaxi 歳', '.f/ni 徳' 
+];
 
-// remove RGB (backlit color) in 1000 ms
-var objectRemoveRGB = {};
-function removeRGB(keyc, jqueryObject) {
-  objectRemoveRGB[keyc] = setTimeout(function () {
-    jqueryObject.removeClass('rgb_pink rgb_green rgb_yellow rgb_blue rgb_purple rgb_trolling rgb_flashing rgb_disappearing rgb_blurred rgb_special')
-  }, 1000);
+// function that creates code example div of codeWithCharacter inside #elemID, and its id is the code with space replaced by underscore
+function addCodeExamples(codeWithCharacter, elemId) {
+  const character = codeWithCharacter.slice(-1);
+  const codeLength = codeWithCharacter.length - 1;
+  g = document.createElement('div');
+  // DOM's ID is the code with space replaced by underscore
+  g.id = codeWithCharacter.replace(/ /g, "_");
+  icon = document.createElement('span');
+  icon.className = 'codeExampleIcon';
+  icon.textContent = '🕹️'; // could be change by detectCommandForKeyPressedStyle
+  g.appendChild(icon);
+  g.innerHTML += '&nbsp;';
+  for (i = 0; i < codeLength - 1; i++) {
+    arrayKey = document.createElement('span');
+    arrayKey.className = 'keycap keycap-letter';
+    arrayKey.textContent = letterToArray30Dict[codeWithCharacter[i]];
+    g.appendChild(arrayKey);
+    plus = document.createTextNode(" + ");
+    g.appendChild(plus)
+  }
+  if (codeWithCharacter[codeLength - 1] == ' ') {
+    arrayKey = document.createElement('span');
+    arrayKey.className = 'keycap keycap-space';
+    arrayKey.textContent = 'Space';
+    g.appendChild(arrayKey);
+  } else {
+    arrayKey = document.createElement('span');
+    arrayKey.className = 'keycap keycap-number';
+    arrayKey.textContent = codeWithCharacter[codeLength - 1];
+    g.appendChild(arrayKey);
+  }
+  become = document.createTextNode(' = ' + character)
+  g.appendChild(become);
+  document.getElementById(elemId).appendChild(g)
+}
+
+// create code examples on the web page
+codeExamples.forEach(function (code, index) {
+  if (index % 2 === 0) {
+    addCodeExamples(code, 'code_examples_left');
+  } else {
+    addCodeExamples(code, 'code_examples_right');
+  }
+});
+
+// toggle code examples block
+$('#code_examples_toggle').click(function () {
+  $('#code_examples_block').toggleClass('w3-hide');
+  $(this).children().toggleClass('w3-hide');
+})
+
+// ---------------------
+// detect code examples
+// ---------------------
+
+// initialise codeExamplesState (string object)
+let codeExamplesState = codeExamples.reduce((a, b) => (a[b] = '', a), {});
+
+// detect code examples
+function detectcodeExamples(eventCodeLowerCase) {
+  if (keyCodeTable.hasOwnProperty(eventCodeLowerCase)) {
+    const letter = keyCodeTable[eventCodeLowerCase].char;
+    // initialisation    
+    let isAnyCodeExampleDetected = false;
+    let codeExampleDetected = '';
+
+    // update states and set isAnyCodeExampleDetected to true if code deteced
+    for (const codeExample of codeExamples) {
+      // first update code example state
+      if (letter == codeExample[codeExamplesState[codeExample].length]) {
+        codeExamplesState[codeExample] += letter;
+      } else {
+        letter == codeExample[0] ? codeExamplesState[codeExample] += letter : codeExamplesState[codeExample] = '';
+      }
+      // then check if it's completed
+      if (codeExamplesState[codeExample] == codeExample.slice(0, -1)) {
+        isAnyCodeExampleDetected = true;
+        // update codeExampleDetected
+        codeExampleDetected = codeExample
+      }
+    }
+    // if at least one example code is detected
+    if (isAnyCodeExampleDetected) {
+      // make the example code's DOM a bit transparent
+      // DOM's ID is the code with space replaced by underscore
+      document.getElementById(codeExampleDetected.replace(/ /g, "_")).style.opacity = "0.25";
+      // clear the state of the code example (last looped)
+      codeExamplesState[codeExampleDetected] = '';
+    }
+  } else {
+    // i.e. eventCodeLowerCase not a key in keyCodeTable
+    // in this case, reinitialise codeExamplesState
+    codeExamplesState = codeExamples.reduce((a, b) => (a[b] = '', a), {});
+  }
+}
+
+// ---------------------------------
+// keyboard style and their commands
+// ---------------------------------
+
+// The order of items in these lists is be important.
+// If command A is a suffix of command B, the corresponding
+// style A needs to be placed before style B
+// See the function 'detectCommandForKeyPressedStyle'
+
+// pressed key: [keycap]_[backlight] 
+const easterEggKeyPressedStyleOptions = ['default_pink', 'default_green', 'default_yellow', 'default_blue', 'default_purple', 'default_white', 'hidden_none', 'default_flashing', 'blurred_none', 'array-special_white'];
+const otherKeyPressedStyleOptions = ['default_bright-red', 'alien_green', 'sakura_pink', 'banana_yellow', 'turtle_green'];
+const allKeyPressedStyleOptions = easterEggKeyPressedStyleOptions.concat(otherKeyPressedStyleOptions);
+
+// keycaps of the keyboard, format to define
+// const easterEggKeycapStyleOptions = [];
+// const allKeycapStyleOptions = easterEggKeycapOptions.concat([]);
+
+// backlight of the keyboard, format to define
+// const easterEggBackLightStyleOptions = [];
+// const allBacklightStyleOptions = easterEggBackLightOptions.concat([]);
+
+// set default style
+let keyPressedStyle = 'default_pink';
+// let keycapStyle = '???';
+// let backlightStyle = '???';
+
+// commands for pressed key style
+// any style of allKeyPressedStyleOptions needs to have at least one command
+const commandForKeyPressedStyle = {
+  'array-special_white': [
+    'fish up', 'array', 'tableau', 'tqblequ',
+    '.3ame ', '.aad ame ' // 行列 行列
+  ],
+  /* Hey, you're NOT supposed to be reading these commands,
+  try finding them ON YOUR OWN! (You'll be well guided) */
+  'default_white': [
+    '1234567890', // 0987654321 to turn off
+    'all white', 'tout blanc', 'tout blqnc', 'toute blanche', 'toute blqnche',
+    'ir1lp1', 'ir1lp ', 'ir lp1', 'ir lp ', // 行列 全白
+    'fm06196', 'quan bai'// 注音拼音 全白
+  ],
+  'hidden_none': [
+    'qwertyuiop', 'azertyuiop', // poiuytrewq poiuytreza to turn off
+    'disappearing', 'disappeared', 'disparu', 'dispqru',
+    'hidden', 'cache', 'cqch2',
+    'cc7oz1', 'cc7oz ', 'ccu oz1', 'ccu oz ', // 行列 消失
+    't.qn faxx ', 't.qn fxax ', 't.qn fzsx', // 行列 隱藏
+    'vul g ', 'xiao shi', // 注音拼音 消失
+    'up3h;6', 'yin cang' // 注音拼音 隱藏
+  ],
+  'default_flashing': [
+    'asdfghjkl;', 'qsdfghjklm', // ;lkjhgfdsa mlkjhgfdsq to turn off
+    'flashing', 'clignotant', 'clignotqnt',
+    'ek1,lpv ', 'ek1,xlv ', 'ek ,lpv ', 'ek ,xlv ', // 行列 閃爍
+    'g03gji4', 'shan shuo'  // 注音拼音 閃爍
+  ],
+  /* Hey, you're NOT supposed to be reading these commands,
+  try finding them ON YOUR OWN!  (You'll be well guided) */
+  'blurred_none': [
+    'zxcvbnm,./', 'wxcvbn,;:!', // /.,mnbvcxz !:;,nbvcxw to turn off
+    'blurred', 'flou',
+    'vfpz ,f0', 'vfpz ,f;u ', // 行列 模糊
+    'ai6cj6', 'mo hu',// 注音拼音 模糊
+    'g,1nm f;2', 'g,1nm f;s ', 'g,1nr8f;2', 'g,1nr8f;s ', 'g,1nrkm f;2', 'g,1nrkm f;s ', 'g, nm f;2', 'g, nm f;s ', 'g, nr8f;2', 'g, nr8f;s ', 'g, nrkm f;2', 'g, nrkm f;s ', // 行列 馬賽克
+    'a83n94dk4', 'ma sai ke' // 注音拼音 馬賽克
+  ],
+  'default_pink': [
+    '0987654321', // turn off allwhite
+    'poiuytrewq', 'poiuytreza', // turn off disappearing
+    'showing', 'montre', ';ontr2', // turn off disappearing
+    'pxxm aac ', // turn off disappearing (行列 顯示)
+    'vu03g4', // turn off disappearing (注音 顯示)
+    'xian shi', // turn off disappearing (拼音 顯示)
+    ';lkjhgfdsa', 'mlkjhgfdsq', // turn off flashing
+    '/.,mnbvcxz', '!:;,nbvcxw', // turn off blurred  
+    'pink', 'rose',
+    ',k7j9', ',k7jt3', ',k7jtds ', ',k7j9', ',k7jt3', ',k7jtds ', ',kj j9', ',kj jt3', ',kj jtds ', ',kj j9', ',kj jt3', ',kj jtds ', // 行列 粉色
+    'zp3nk4', 'fen se', // 注音拼音 粉色
+    ',k7xq1j9', ',k7xq1jt3', ',k7xq1jtds ', ',k7xq j9', ',k7xq jt3', ',k7xq jtds ', ',kj xq1j9', ',kj xq1jt3', ',kj xq1jtds ', ',kj xq j9', ',kj xq jt3', ',kj xq jtds ', // 行列 粉紅色
+    'zp3cj/6nk4', 'fen hong se' // 注音拼音 粉紅色
+  ],
+  /* Hey, you're NOT supposed to be reading these commands,
+  try finding them ON YOUR OWN!  (You'll be well guided) */
+  'default_blue': [
+    'blue', 'bleu',
+    'fqdu j9', 'fqdu jt3', 'fqdu jtds ', // 行列
+    'x06nk4', 'lan se' // 注音拼音
+  ],
+  'default_yellow': [
+    'yellow', 'jaune', 'jqune',
+    'rp8j9', 'rp8jt3', 'rp8jtds ', 'rpfk j9', 'rpfk jt3', 'rpfk jtds ', 'rpk j9', 'rpk jt3', 'rpk jtds ', // 行列
+    'cj;6nk4', 'huang se' // 注音拼音
+  ],
+  'default_purple': [
+    'purple', 'violet',
+    'eqx j9', 'eqx jt3', 'eqx jtds ', // 行列
+    'y3nk4', 'zi se', // 注音拼音
+  ],
+  /* Hey, you're NOT supposed to be reading these commands,
+  try finding them ON YOUR OWN!  (You'll be well guided) */
+  'default_green': [
+    'green', 'vert',
+    'xw3j9', 'xw3jt3', 'xw3jtds ', 'xwc j9', 'xwc jt3', 'xwc jtds ', // 行列
+    'xm4nk4', 'lu se' // 注音拼音
+  ],
+  // ↑ easter eggs
+  // ↓ not easter eggs
+  'default_bright-red': [
+    'bright red', 'rouge vif',
+    'y;js xq jtds ' // 行列 亮紅色
+  ],
+  'alien_green': [
+    'alien', 'qlien', 'extraterrestre', 'extrqterrestre',
+    'mc por k ' // 行列 外星人
+  ],
+  /* Hey, you're NOT supposed to be reading these commands,
+  try finding them ON YOUR OWN!  (You'll be well guided) */
+  'sakura_pink': [
+    'sakura', 'cherry blossom', 'sqkurq', 'fleur de cerisier',
+    'vmmw fkq ' // 行列 櫻花
+  ],
+  'banana_yellow': [
+    'banana', 'banane', 'bqnqne',
+    'lvp fky, ' // 行列 香蕉
+  ],
+  'turtle_green': [
+    'turtle', 'tortue',
+    'l,2jj1' // 行列 烏龜 (二級簡碼)
+  ]
+}
+
+// --------------------------
+// detect commands for style
+// --------------------------
+
+// remove/add href in keyboard
+function removeHrefInKeyboard() { $('.s_key a').removeAttr('href') };
+function addHrefInKeyboard() {
+  $(".key-dictionary a").attr("href", "dictionary.html");
+  $(".key-typing a").attr("href", "typing.html");
+  $(".key-array a").attr("href", "#introduction");
+}
+
+// initialise state of commands for pressed key style
+// it's basically commandForKeyPressedStyle, but with all strings being empty
+let commandForKeyPressedStyleState = {};
+for (const style in commandForKeyPressedStyle) {
+  commandForKeyPressedStyleState[style] = Array(commandForKeyPressedStyle[style].length).fill('');
+}
+
+// initialise hasFoundEasterEggKeyPressedStyle (boolean object)
+let hasFoundEasterEggKeyPressedStyle = easterEggKeyPressedStyleOptions.reduce((a, b) => (a[b] = false, a), {});
+
+function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
+  if (keyCodeTable.hasOwnProperty(eventCodeLowerCase)) {
+    const letter = keyCodeTable[eventCodeLowerCase].char;
+    const hasFoundAllEasterEggKeyPressedStyleBefore = Object.values(hasFoundEasterEggKeyPressedStyle).every(Boolean); // fixed boolean value (before detecting commands)
+    // initialisation    
+    let isAnyCommandDetected = false;
+    let styleOfDetectedCommand = ''
+    let indexOfDetectedCommand = 1000;
+
+    // the following block: loop through every command state to update it and check if it's completed
+    // if several commands are completed, only the last one looped is taken into account
+    for (const style of allKeyPressedStyleOptions) {
+      const numberOfCommands = commandForKeyPressedStyleState[style].length;
+      // loop through all commands of the style      
+      for (var i = 0; i < numberOfCommands; i++) {
+        const command = commandForKeyPressedStyle[style][i];
+        // first update command state
+        if (letter == command[commandForKeyPressedStyleState[style][i].length]) {
+          commandForKeyPressedStyleState[style][i] += letter;
+        } else {
+          letter == command[0] ? commandForKeyPressedStyleState[style][i] += letter : commandForKeyPressedStyleState[style][i] = '';
+        }
+        // then check if the command is complete
+        if (commandForKeyPressedStyleState[style][i] == command) {
+          // update things
+          isAnyCommandDetected = true;
+          styleOfDetectedCommand = style;
+          indexOfDetectedCommand = i;
+        }
+      }
+    }
+
+    // the following block: update pressed key style if at least one is completed, and deal with easter egg related things
+    if (isAnyCommandDetected) {
+      // update pressed key style
+      keyPressedStyle = styleOfDetectedCommand;
+      // clear the state of the completed command (last looped)
+      commandForKeyPressedStyleState[styleOfDetectedCommand][indexOfDetectedCommand] = '';
+      // remove href in the keyboard if styleOfDetectedCommand is array-special_white
+      // or in otherKeyPressedStyleOptions, otherwise add href
+      styleOfDetectedCommand == 'array-special_white' || otherKeyPressedStyleOptions.includes(styleOfDetectedCommand) ? removeHrefInKeyboard() : addHrefInKeyboard()
+      // change code example icon
+      switch (styleOfDetectedCommand) {
+        case 'default_bright-red':
+          $('.codeExampleIcon').text('🔴');
+          break;
+        case 'banana_yellow':
+          $('.codeExampleIcon').text('🍌');
+          break;
+        case 'sakura_pink':
+          $('.codeExampleIcon').text('🌸');
+          break;
+        case 'alien_green':
+          $('.codeExampleIcon').text('👽');
+          break;
+        case 'turtle_green':
+          $('.codeExampleIcon').text('🐢');
+          break;
+        default:
+          $('.codeExampleIcon').text('🕹️');
+      }
+      // if this style is used for the first time and is an Easter egg
+      if (!hasFoundEasterEggKeyPressedStyle[styleOfDetectedCommand] && easterEggKeyPressedStyleOptions.includes(styleOfDetectedCommand)) {
+        // update hasFound for the style
+        hasFoundEasterEggKeyPressedStyle[styleOfDetectedCommand] = true;
+        // show the div of this Easter egg in game instructions
+        document.getElementById('div_key_pressed_' + styleOfDetectedCommand).classList.remove("w3-hide");
+        document.getElementById('div_key_pressed_' + styleOfDetectedCommand).scrollIntoView({ block: 'center' });
+        // show the game notification icon if game instructions are close
+        if (!areGameInstructionsOpen) {
+          document.getElementById('game-notification').classList.remove('w3-hide');
+        }
+      }
+      // remove all game commments
+      $('.game-comment').remove()
+    }
+    // if before detecting, some easter eggs are still not found
+    if (!hasFoundAllEasterEggKeyPressedStyleBefore) {
+      // if backlight easter eggs are now all found, remove #hint_for_easter_egg_backlight
+      if (hasFoundEasterEggKeyPressedStyle.default_blue && hasFoundEasterEggKeyPressedStyle.default_purple && hasFoundEasterEggKeyPressedStyle.default_yellow && hasFoundEasterEggKeyPressedStyle.default_green && hasFoundEasterEggKeyPressedStyle.default_pink) {
+        $('#hint_for_easter_egg_backlight').remove();
+      }
+      // if mode easter eggs are now all found, remove #hint_for_easter_egg_mode
+      // otherwise (show the hint if all backlight easter eggs are all found)
+      if (hasFoundEasterEggKeyPressedStyle.default_white && hasFoundEasterEggKeyPressedStyle.blurred_none && hasFoundEasterEggKeyPressedStyle.default_flashing && hasFoundEasterEggKeyPressedStyle.hidden_none) {
+        $('#hint_for_easter_egg_mode').remove();
+      } else {
+        if (hasFoundEasterEggKeyPressedStyle.default_blue && hasFoundEasterEggKeyPressedStyle.default_purple && hasFoundEasterEggKeyPressedStyle.default_yellow && hasFoundEasterEggKeyPressedStyle.default_green && hasFoundEasterEggKeyPressedStyle.default_pink) {
+          $('#hint_for_easter_egg_mode').removeClass('w3-hide');
+        }
+      }
+      // if special egg is now found, remove #hint_for_easter_egg_special
+      // otherwise (show the hint if all other easter eggs are all found)
+      if (hasFoundEasterEggKeyPressedStyle['array-special_white']) {
+        $('#hint_for_easter_egg_special').remove();
+      } else {
+        // temporarily assume the special egg is found
+        hasFoundEasterEggKeyPressedStyle['array-special_white'] = true;
+        // if all Easter eggs are found, show the hint ()
+        if (Object.values(hasFoundEasterEggKeyPressedStyle).every(Boolean)) {
+          $('#hint_for_easter_egg_special').removeClass('w3-hide');
+        }
+        // of course, special egg is not found
+        hasFoundEasterEggKeyPressedStyle['array-special_white'] = false;
+      }
+      // if all Easter eggs for pressed key style are found now
+      // i.e. for the first time all Easter eggs for pressed key style are found 
+      if (Object.values(hasFoundEasterEggKeyPressedStyle).every(Boolean)) {
+        // show congrats message
+        $("#modal_congratulations_message").removeClass('w3-hide');
+        $("#modal_bg_congratulations_message").removeClass('w3-hide');
+        // after 6500ms, do:
+        setTimeout(function () {
+          // fade out congrats messaage in 1500ms and remove it
+          $("#modal_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
+          $("#modal_bg_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
+          // title: 'find easter eggs' -> congrats 
+          $('#game-instructions-easter-egg').text('恭喜您找到了全部 10 顆彩蛋！');
+          // show all other commands (in game instructions)// show all other commands (in game instructions)
+          document.getElementById('all_other_commands').classList.remove('w3-hide');
+          // change game instructions open button icon
+          $('#game-instructions-icon').addClass('fa-gift').removeClass('fa-gamepad');
+        }, 6500);
+      }
+    }
+  } else {
+    // i.e. eventCodeLowerCase not a key in keyCodeTable
+    // in this case, reinitialise commandForKeyPressedStyleState
+    for (const style in commandForKeyPressedStyle) {
+      commandForKeyPressedStyleState[style] = Array(commandForKeyPressedStyle[style].length).fill('');
+    }
+  }
+}
+
+// ------------------------------------
+// interaction with the Array keyboard
+// ------------------------------------
+
+// remove any(every) pressed key style from jquery object in 1200 ms
+var objectRemoveKeyPressedStyle = {};
+function removeKeyPressedStyle(eventCodeLowerCase, jqueryObject) {
+  objectRemoveKeyPressedStyle[eventCodeLowerCase] = setTimeout(function () {
+    for (const keyPressedStyle of allKeyPressedStyleOptions) {
+      jqueryObject.removeClass('key_pressed_' + keyPressedStyle)
+    }
+  }, 1200);
 }
 
 // press keys on user's real keyboard
 $(window).on({
   'keydown': function (e) {
-    var pressedKey = $('.k' + e.keyCode);
-    // clear current rgb removal setTimeout
-    clearTimeout(objectRemoveRGB[e.keyCode.toString()]);
-    // become pressed, add rgb color
-    pressedKey.addClass('pressed rgb_' + rgbColor);
-    // change game status
-    changeGameStatus(e.keyCode.toString());
-    // check and update easter egg states
-    getEasterEggForColor(e.key);
+    const eventCodeLowerCase = e.code.toLowerCase();
+    var pressedKey = $('.' + eventCodeLowerCase);
+    // clear timeout of removing pressed key style on this key
+    clearTimeout(objectRemoveKeyPressedStyle[eventCodeLowerCase]);
+    // become pressed, add pressed key style
+    pressedKey.addClass('pressed');
+    pressedKey.addClass('key_pressed_' + keyPressedStyle);
+    // change game's output status
+    changeGameOutputStatus(eventCodeLowerCase);
+    // detect code examples
+    detectcodeExamples(eventCodeLowerCase);
+    // detect command for pressed key style
+    detectCommandForKeyPressedStyle(eventCodeLowerCase);
   },
   'keyup': function (e) {
-    var pressedKey = $('.k' + e.keyCode);
+    const eventCodeLowerCase = e.code.toLowerCase();
+    var pressedKey = $('.' + eventCodeLowerCase);
     // not pressed anymore
     pressedKey.removeClass('pressed');
-    // rgb removal setTimeout
-    removeRGB(e.keyCode.toString(), pressedKey);
+    // set timeout for removing pressed key style
+    removeKeyPressedStyle(eventCodeLowerCase, pressedKey);
   }
 });
 
 // click keys on the virtual keyboard
-$(".keyboard-keycap").mousedown(function () {
+$("#keyboard .key .keyboard-keycap, #keyboard .f_key .keyboard-keycap, #keyboard a").mousedown(function () {
   let clickedKey = $(this).parent();
-  // clear current rgb removal setTimeout
-  clearTimeout(objectRemoveRGB[clickedKey.attr('name')]);
-  // become pressed, add rgb color
-  clickedKey.addClass('pressed rgb_' + rgbColor);
-  // change game status
-  changeGameStatus(clickedKey.attr('name'));
-  // check and update easter egg states
-  getEasterEggForColor(String.fromCharCode(clickedKey.attr('name')).toLowerCase().toLowerCase())
+  // clear timeout of removing pressed key style on this key
+  clearTimeout(objectRemoveKeyPressedStyle[clickedKey.attr('name')]);
+  // become pressed,, add pressed key style
+  clickedKey.addClass('pressed');
+  clickedKey.addClass('key_pressed_' + keyPressedStyle);
+  // change game's output status
+  changeGameOutputStatus(clickedKey.attr('name'));
+  // detect code examples
+  detectcodeExamples(clickedKey.attr('name'));
+  // detect command for pressed key style
+  detectCommandForKeyPressedStyle(clickedKey.attr('name'));
 }).mouseup(function () {
   let clickedKey = $(this).parent();
   // not pressed anymore
   clickedKey.removeClass('pressed');
-  // rgb removal setTimeout
-  removeRGB(clickedKey.attr('name'), clickedKey);
+  // set timeout for removing pressed key style
+  removeKeyPressedStyle(clickedKey.attr('name'), clickedKey);
 }).mouseleave(function () {
   let clickedKey = $(this).parent();
   // not pressed anymore
   clickedKey.removeClass('pressed');
-  // rgb removal setTimeout
-  removeRGB(clickedKey.attr('name'), clickedKey);
+  // set timeout for removing pressed key style
+  removeKeyPressedStyle(clickedKey.attr('name'), clickedKey);
 })
 
-// ------------------
-// color easter eggs
-// ------------------
-
-// 10 colors (modes)
-// green, pink, yellow, blue, purple, trolling, flashing, blurred, disappearing, special
-const easterEggForColor = {
-  // special
-  'fish up': 'special',
-  'array': 'special',
-  'tableau': 'special',
-  'tqblequ': 'special',
-  '.3ame ': 'special', // 行列 行列 Start
-  '.aad ame ': 'special', // 行列 行列 End
-  // trolling
-  '1234567890': 'trolling', // 0987654321 to turn off
-  'trolling': 'trolling',
-  // disappearing
-  'qwertyuiop': 'disappearing', // /.,mnbvcxz to turn off
-  'azertyuiop': 'disappearing', // /poiuytreza to turn off
-  'disappearing': 'disappearing',
-  'disappeared': 'disappearing',
-  'cc7oz1': 'disappearing', // 行列 消失 Start
-  'cc7oz ': 'disappearing',
-  'ccu oz1': 'disappearing',
-  'ccu oz ': 'disappearing', // 行列 消失 End
-  'vul g ': 'disappearing', // 注音 消失
-  'xiao shi': 'disappearing', // 拚音 消失
-  't.qn faxx ': 'disappearing', // 行列 隱藏 Start
-  't.qn fxax ': 'disappearing',
-  't.qn fzsx': 'disappearing', // 行列 隱藏 End
-  'up3h;6': 'disappearing', // 注音 隱藏
-  'yin cang': 'disappearing', // 拼音 隱藏
-  // flashing
-  'asdfghjkl;': 'flashing', // ;lkjhgfdsa to turn off
-  'qsdfghjklm': 'flashing', // mlkjhgfdsq to turn off
-  'flashing': 'flashing',
-  'ek1,lpv ': 'flashing', // 行列 閃爍 Start
-  'ek1,xlv ': 'flashing',
-  'ek ,lpv ': 'flashing',
-  'ek ,xlv ': 'flashing', // 行列 閃爍 End
-  'g03gji4': 'flashing', // 注音 閃爍
-  'shan shuo': 'flashing', // 拼音 閃爍
-  // blurred
-  'zxcvbnm,./': 'blurred', // /.,mnbvcxz to turn off
-  'wxcvbn,;:!': 'blurred', // !:;,nbvcxw to turn off
-  'blurred': 'blurred',
-  'vfpz ,f0': 'blurred', // 行列 模糊 Start
-  'vfpz ,f;u ': 'blurred', // 行列 模糊 End
-  'ai6cj6': 'blurred', // 注音 模糊
-  'mo hu': 'blurred', // 拼音 模糊
-  'g,1nm f;2': 'blurred', // 行列 馬賽克 Start
-  'g,1nm f;s ': 'blurred',
-  'g,1nr8f;2': 'blurred',
-  'g,1nr8f;s ': 'blurred',
-  'g,1nrkm f;2': 'blurred',
-  'g,1nrkm f;s ': 'blurred',
-  'g, nm f;2': 'blurred',
-  'g, nm f;s ': 'blurred',
-  'g, nr8f;2': 'blurred',
-  'g, nr8f;s ': 'blurred',
-  'g, nrkm f;2': 'blurred',
-  'g, nrkm f;s ': 'blurred', // 行列 馬賽克 End  
-  'a83n94dk4': 'blurred', // 注音 馬賽克
-  'ma sai ke': 'blurred', // 拼音 馬賽克
-  // blue
-  'blue': 'blue',
-  'bleu': 'blue',
-  'fqdu j9': 'blue', // 行列 Start
-  'fqdu jt3': 'blue',
-  'fqdu jtds ': 'blue', // 行列 End
-  'x06nk4': 'blue', // 注音
-  'lan se': 'blue', // 拼音
-  // yellow
-  'yellow': 'yellow',
-  'jaune': 'yellow',
-  'jqune': 'yellow',
-  'rp8j9': 'yellow', // 行列 Start
-  'rp8jt3': 'yellow',
-  'rp8jtds ': 'yellow',
-  'rpfk j9': 'yellow',
-  'rpfk jt3': 'yellow',
-  'rpfk jtds ': 'yellow',
-  'rpk j9': 'yellow',
-  'rpk jt3': 'yellow',
-  'rpk jtds ': 'yellow', // 行列 End
-  'cj;6nk4': 'yellow', // 注音
-  'huang se': 'yellow', // 拼音
-  // purple
-  'purple': 'purple',
-  'violet': 'purple',
-  'eqx j9': 'purple', // 行列 Start
-  'eqx jt3': 'purple',
-  'eqx jtds ': 'purple', // 行列 End
-  'y3nk4': 'purple', // 注音
-  'zi se': 'purple', // 拼音
-  // green
-  'green': 'green',
-  'vert': 'green',
-  'xw3j9': 'green', // 行列 Start
-  'xw3jt3': 'green',
-  'xw3jtds ': 'green',
-  'xwc j9': 'green',
-  'xwc jt3': 'green',
-  'xwc jtds ': 'green', // 行列 End
-  'xm4nk4': 'green', // 注音
-  'lu se': 'green', // 拼音
-  // pink
-  '0987654321': 'pink', // turn off trolling
-  'poiuytrewq': 'pink', // turn off disappearing
-  'poiuytreza': 'pink', // turn off disappearing
-  'vu03g4': 'pink', // turn off disappearing (注音 顯示)
-  'xian shi': 'pink', // turn off disappearing (拼音 顯示)
-  ';lkjhgfdsa': 'pink', // turn off flashing
-  'mlkjhgfdsq': 'pink', // turn off flashing
-  '/.,mnbvcxz': 'pink', // turn off blurred  
-  '!:;,nbvcxw': 'pink', // turn off blurred  
-  'pink': 'pink',
-  'rose': 'pink',
-  ',k7j9': 'pink', // 行列 粉色 Start
-  ',k7jt3': 'pink',
-  ',k7jtds ': 'pink',
-  ',k7j9': 'pink',
-  ',k7jt3': 'pink',
-  ',k7jtds ': 'pink',
-  ',kj j9': 'pink',
-  ',kj jt3': 'pink',
-  ',kj jtds ': 'pink',
-  ',kj j9': 'pink',
-  ',kj jt3': 'pink',
-  ',kj jtds ': 'pink', // 行列 粉色 End
-  'zp3nk4': 'pink', // 注音 粉色
-  'fen se': 'pink', // 拼音 粉色
-  ',k7xq1j9': 'pink', // 行列 粉紅色 Start
-  ',k7xq1jt3': 'pink',
-  ',k7xq1jtds ': 'pink',
-  ',k7xq j9': 'pink',
-  ',k7xq jt3': 'pink',
-  ',k7xq jtds ': 'pink',
-  ',kj xq1j9': 'pink',
-  ',kj xq1jt3': 'pink',
-  ',kj xq1jtds ': 'pink',
-  ',kj xq j9': 'pink',
-  ',kj xq jt3': 'pink',
-  ',kj xq jtds ': 'pink', // 行列 粉紅色 End
-  'zp3cj/6nk4': 'pink', // 注音 粉紅色
-  'fen hong se': 'pink', // 拼音 粉紅色
-}
-
-// initialise color easter egg states 
-let easterEggForColorState = {};
-for (const command in easterEggForColor) {
-  easterEggForColorState[command] = '';
-}
-
-// check and update color easter egg states
-function getEasterEggForColor(letter) {
-  for (const command in easterEggForColorState) {
-    // update state
-    if (letter == command[easterEggForColorState[command].length]) {
-      easterEggForColorState[command] += letter;
-    } else {
-      letter == command[0] ? easterEggForColorState[command] += letter : easterEggForColorState[command] = '';
-    }
-    // if easter egg is found
-    if (easterEggForColorState[command] == command) {
-      easterEggForColorState[command] = '';
-      rgbColor = easterEggForColor[command];
-    }
-  }
-}
-
-// prevent Space bar from scrolling page (and Slash, Quote, from searching, Backspace from going to previous page in firefox)
-let gameFieldBottom = document.getElementById('game-field').offsetTop + document.getElementById('game-field').offsetHeight
+// prevent Space bar from scrolling page, Tab from going to next thing in browsers, Slash, Quote, from searching, Backspace from going to previous page in firefox)
+let gameOutputFieldBottom = gameOutputFieldElem.offsetTop + gameOutputFieldElem.offsetHeight
 window.addEventListener('keydown', function (e) {
-  if ((e.code == "Space" || e.key == ' ') && gameFieldBottom > window.pageYOffset) {
-    e.preventDefault();
-  }
-  if (e.code == "Slash" && gameFieldBottom > window.pageYOffset) {
-    e.preventDefault();
-  }
-  if (e.code == "Quote" && gameFieldBottom > window.pageYOffset) {
-    e.preventDefault();
-  }
-  if ((e.code == "Backspace" || e.key == 'Backspace') && gameFieldBottom > window.pageYOffset) {
+  if ((e.code == "Space" || e.key == ' ' || e.code == "Tab" || e.key == "/" || e.key == "'" || e.code == "Backspace" || e.key == 'Backspace') && gameOutputFieldBottom > window.pageYOffset) {
     e.preventDefault();
   }
 });
+
+// ------------------
+// game instructions things
+// ------------------
+
+let areGameInstructionsOpen = false;
+// click game instructions open btn
+$("#game-instructions-open").click(function () {
+  // remove new easter egg notification icon 
+  document.getElementById('game-notification').classList.add('w3-hide');
+  // show easter egg collection
+  document.getElementById('game-instructions-wrapper').classList.remove('w3-hide');
+  areGameInstructionsOpen = true;
+});
+// close game instructions (by clicking close button)
+$("#game-instructions-close").click(function () {
+  document.getElementById('game-instructions-wrapper').classList.add('w3-hide');
+  areGameInstructionsOpen = false;
+})
+// close game instructions (by Esc)
+$(window).on({
+  'keydown': function (e) {
+    if (areGameInstructionsOpen && e.code == 'Escape') {
+      document.getElementById('game-instructions-wrapper').classList.add('w3-hide');
+      areGameInstructionsOpen = false;
+    }
+  }
+});
+// click to get hints for easter eggs
+$('.easter-egg-hint').click(function () {
+  $(this).next().removeClass('w3-hide');
+  $(this).remove()
+})
+
+// key press effect (click only) in game instructions
+$("#game-instructions .keyboard-keycap").mousedown(function () {
+  // become pressed, add rgb color
+  $(this).parent().addClass('pressed');
+}).mouseup(function () {
+  // not pressed anymore
+  $(this).parent().removeClass('pressed');
+}).mouseleave(function () {
+  // not pressed anymore
+  $(this).parent().removeClass('pressed');
+})

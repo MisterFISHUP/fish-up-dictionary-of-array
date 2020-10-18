@@ -92,64 +92,340 @@
     </div>
 
     <!-- Header -->
-    <header>        
+    <header class="header-color-style">
         <div id='site-name'>
             <span class="w3-xxlarge">FISH UP 行列查碼</span>
             <br>
             <span class="w3-large">學習行列輸入法的首選網站</span>
         </div>
-        <!-- game area (large screen)-->        
+        <!-- game area (only on large screens)-->        
         <div id='game-area' class="w3-hide-small w3-hide-medium">
+            <!-- game instructions block-->
+            <div id='game-instructions-wrapper' class="w3-hide">
+                <!-- game instructions close button -->
+                <button id='game-instructions-close'><i class="fa fa-times" aria-hidden="true"></i></button>
+                <!-- game instructions -->
+                <div id='game-instructions'>
+                    <!-- game title -->
+                    <h2 class="bold-center" style="line-height: 0.9; margin-top: 24px;">行列輸入法互動鍵盤</h2>
+                    <h5 class="w3-center">🎮 透過虛擬行列鍵盤來視覺化行列輸入法的小遊戲 🎮</h5>
+
+                    <!-- game description -->
+                    <hr style="width: 420px; margin: 25px auto 0;">
+                    <h5 class="w3-center">第一次聽到行列輸入法？您按鍵儘管隨便亂按<br>如果剛好鍵入了字的編碼，編碼就會變成字 🤩</h5>
+                    <hr style="width: 420px; margin: 0 auto 25px;">
+
+                    <p class="w3-large w3-center">不用下載行列輸入法就能直接體驗行列輸入法，並且支援超過兩萬八千字的輸入<span class="class='game-comment">*</span>！<br>另外，透過觸發一連串的按鍵可以獲得彩蛋，總共有十顆彩蛋等您來收集！</p>
+                    <br>
+                    <h4 class="bold-center" id='game-instructions-easter-egg'>尋找彩蛋</h4>
+                    <!-- hints for easter eggs -->
+                    <div class="w3-center" style="line-height: 1.8; font-size: 16px;">
+                        <div id='hint_for_easter_egg_backlight'>
+                            <span class="easter-egg-hint" >🔑 提示</span>
+                            <span class="w3-hide">
+                                這十顆彩蛋包含五顆按鍵背光顏色彩蛋，所以跟顏色有些關係…
+                                <br>
+                                <span class="easter-egg-hint">🔑 我發誓我已經試過了，我需要提示！</span>
+                                <span class="w3-hide">按下顏色中文或英文名稱的鍵位，有中的話背光顏色就會切換（例如「綠色」）</span>
+                            </span>
+                        </div>
+                        <div id='hint_for_easter_egg_mode' class="w3-hide">
+                            除了五顆背光顏色彩蛋外，還有四顆彩蛋對應到四種不同神秘模式，剩下最後一顆則是特別彩蛋<br>
+                            <span class="easter-egg-hint">🔑 神秘模式提示</span>
+                            
+                            <span class="w3-hide">
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                四種不同神秘模式要用神秘但不難的方法進入，或是按下神秘模式中文或英文名稱的鍵位也可以...<br>
+                                <span class="easter-egg-hint" id='easterEggFourModesHint'>🔑 我自願放棄找神秘模式彩蛋的樂趣，FISH UP 請給我提示吧！</span>
+                                <span class="w3-hide">除了空白鍵那一排，行列鍵盤剛好有 4 排，從左至右有 10 顆<br>而神秘模式有 4 種... 是巧合嗎？我不這麼認為。</span>
+                            </span>
+                        </div>
+                        <div id='hint_for_easter_egg_special' class="w3-hide">
+                            您只剩下特別彩蛋沒找到了！<br>
+                            <span class="easter-egg-hint">🔑 特別彩蛋提示</span>
+                            <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                            <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                            <span class="w3-hide">這網站誰寫的？（或這網站主題是什麼？）</span>
+                        </div>
+                    </div>
+                    <!-- easter egg collection -->
+                    <div>
+                        <div id='div_key_pressed_default_pink' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_pink keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">粉紅色背光（預設）</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「粉紅色」三字或「粉色」兩字的鍵位、無失誤地按下英文字 'pink' 的鍵位</div>
+                            </div>                        
+                        </div>
+                        <div id='div_key_pressed_default_yellow' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_yellow keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">黃色背光</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「黃色」兩字的鍵位、無失誤地按下英文字 'yellow' 的鍵位</div>
+                            </div>                        
+                        </div>
+                        <div id='div_key_pressed_default_green' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_green keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">綠色背光</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「綠色」兩字的鍵位、無失誤地按下英文字 'green' 的鍵位</div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_default_blue' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_blue keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">藍色背光</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「藍色」兩字的鍵位、無失誤地按下英文字 'blue' 的鍵位</div>
+                            </div>
+                        </div>                    
+                        <div id='div_key_pressed_default_purple' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_purple keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">紫色背光</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「紫色」兩字的鍵位、無失誤地按下英文字 'purple' 的鍵位</div>
+                            </div>
+                        </div>                    
+                        <div id='div_key_pressed_default_white' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_white keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">全白</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>照順序按下數字鍵 1234567890（若順序顛倒地按下則恢復預設狀態）</li>
+                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「全白」兩字的鍵位、無失誤地按下英文字 'all white' 的鍵位</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_hidden_none' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_hidden_none keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">消失/隱藏</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>照順序按下行列 30 鍵 1 上到 0 上這十顆鍵，即英文鍵 qwertyuiop（若順序顛倒地按下則恢復預設狀態）</li>
+                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「消失」或「隱藏」兩字的鍵位（「顯示」兩字則恢復預設狀態）、無失誤地按下英文字 'hidden' 或 'disappearing' 或 'disappeared' 的鍵位（'showing' 則恢復預設狀態）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_default_flashing' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_flashing keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">閃爍</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>照順序按下行列 30 鍵 1 中到 0 中這十顆鍵，即英文鍵 asdfghjkl;（若順序顛倒地按則恢復預設狀態）</li>
+                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「閃爍」兩字的鍵位、無失誤地按下英文字 'flashing' 的鍵位</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_blurred_none' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_blurred_none keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">模糊</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>照順序按下行列 30 鍵 1 下到 0 下這十顆鍵，即英文鍵 zxcvbnm,./（若順序顛倒地按則恢復預設狀態）</li>
+                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「模糊」兩字或「馬賽克」三字的鍵位、無失誤地按下英文字 'blurred' 的鍵位</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_array-special_white' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_array-special_white keycap_white_sky_sakura">
+                                <div class="keyboard-keycap"></div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">特別彩蛋</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <span>註：此時點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉</span>
+                                    <ul>
+                                        <li>無失誤地按下行列輸入法中「行列」兩字的鍵位、無失誤地按下英文字 'array' 的鍵位</li>
+                                        <li>無失誤地按下英文字 'fish up' 的鍵位</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- all other commands -->
+                    <div class="fade-in w3-hide" id='all_other_commands'>
+                        <br><br>
+                        <h3 class="bold-center">所有其他樣式</h3>
+                        <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                        <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                        <h5 class="w3-center"> Version 1.0</h5>
+                        <div class="w3-center" style="font-size: 16px;">
+                            <p>剛推出所以只有少數其它樣式，未來會加上更多有趣的東西！<br>所以記得時常回來玩，可能會增加酷炫的功能 😉</p>
+                            <p>可以使用 <a href="dictionary.html" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>查詢結果中有標籤 <span class="keycap title-normal">普</span> 的那一行就是「普通編碼」</p>
+                            <p>最後，喜歡這個小遊戲或這個網站的話，請不要客氣踴躍分享給身邊的親朋好友！<br>希望讓越來越多人認識行列輸入法 🥰</p>
+                        </div>
+                        
+                        <br>
+                        <h4 class="bold-center">單顆按鍵樣式</h4>
+                        <p class="w3-center" style="font-size: 16px;">進入下列任一模式時，點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉</p>                        
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_default_bright-red">
+                            <div class="keyboard-keycap">行</div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">亮紅色背光</div>
+                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「亮紅色」三字的鍵位（限普通編碼）、無失誤地按下英文字 'bright red' 的鍵位</div>
+                        </div>
+                        
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_sakura_pink">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">櫻花</div>
+                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「櫻花」兩字的鍵位（限普通編碼）、無失誤地按下英文字 'sakura' 或 'cherry blossom' 的鍵位</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_banana_yellow">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">香蕉</div>
+                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「香蕉」兩字的鍵位（限普通編碼）、無失誤地按下英文字 'banana' 的鍵位</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_turtle_green">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">烏龜</div>
+                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「烏龜」兩字的鍵位（限二級簡碼）、無失誤地按下英文字 'turtle' 的鍵位</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_alien_green ">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">外星人</div>
+                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「外星人」三字的鍵位（限普通編碼）、無失誤地按下英文字 'alien' 的鍵位</div>
+                        </div>
+                        <br>
+                        <h4 class="bold-center">全鍵盤樣式</h4>
+                        <p class="w3-center" style="font-size: 16px;">尚無樣式，敬請期待</p>
+                    </div>
+                    <!-- game comments -->
+                    <div class="game-comment" style="margin-top: 60px; font-size: 16px;">
+                        <hr>
+                        <p>註 1：此虛擬行列鍵盤除了可用滑鼠點擊，也可使用實際鍵盤操控。</p>
+                        <p>註 2：重碼自動選取重碼位 1 的字，所以不支援重碼位 2 以後的字，除此限制外支援到中日韓統一表意文字 A 區。支援簡碼、特別碼。無符號列表功能。</p>
+                    </div>                    
+                    <div class="w3-center" style="margin: 24px auto;">Copyright © 2020 FISH UP 行列查碼</div>
+                </div>
+            </div>
+            <!-- congratulations message -->
+            <div id='modal_bg_congratulations_message' class=" fade-in w3-hide">
+                <div id='modal_congratulations_message' class="fade-in w3-hide">
+                    <h1>🎉 恭喜您搜集到了所有彩蛋 🥳</h1>
+                    <h4>獎勵：您在搜集箱底部獲得了所有其他指令！</h4>
+                    <h6>- 喜歡這個小遊戲的話，請踴躍分享給所有身邊的親朋好友 -</h6>
+                </div>
+            </div>
             <!-- virtual keyboard -->
             <div id="keyboard">
                 <div id='keyboard-wrapper'>
                     <!-- first row -->
                     <div>
                         <!-- ~<br>` -->
-                        <div class="k192 key">
+                        <div class="backquote key keycap_white_sky_sakura" name='backquote'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <div class="k49 key" name='49'>
+                        <div class="digit1 key keycap_white_sky_sakura" name='digit1'>
                             <div class="keyboard-keycap">!<br>1</div>
                         </div>
-                        <div class="k50 key" name='50'>
+                        <div class="digit2 key keycap_white_sky_sakura" name='digit2'>
                             <div class="keyboard-keycap">@<br>2</div>
                         </div>
-                        <div class="k51 key" name='51'>
+                        <div class="digit3 key keycap_white_sky_sakura" name='digit3'>
                             <div class="keyboard-keycap">#<br>3</div>
                         </div>
-                        <div class="k52 key" name='52'>
+                        <div class="digit4 key keycap_white_sky_sakura" name='digit4'>
                             <div class="keyboard-keycap">$<br>4</div>
                         </div>
-                        <div class="k53 key" name='53'>
+                        <div class="digit5 key keycap_white_sky_sakura" name='digit5'>
                             <div class="keyboard-keycap">%<br>5</div>
                         </div>
-                        <div class="k54 key" name='54'>
+                        <div class="digit6 key keycap_white_sky_sakura" name='digit6'>
                             <div class="keyboard-keycap">^<br>6</div>
                         </div>
-                        <div class="k55 key" name='55'>
+                        <div class="digit7 key keycap_white_sky_sakura" name='digit7'>
                             <div class="keyboard-keycap">&<br>7</div>
                         </div>
-                        <div class="k56 key" name='56'>
+                        <div class="digit8 key keycap_white_sky_sakura" name='digit8'>
                             <div class="keyboard-keycap">*<br>8</div>
                         </div>
-                        <div class="k57 key" name='57'>
+                        <div class="digit9 key keycap_white_sky_sakura" name='digit9'>
                             <div class="keyboard-keycap">(<br>9</div>
                         </div>
-                        <div class="k48 key" name='48'>
+                        <div class="digit0 key keycap_white_sky_sakura" name='digit0'>
                             <div class="keyboard-keycap">)<br>0</div>
                         </div>
-                        <!-- _<br>- -->
-                        <div class="k173 key">
+                        <div class="minus key keycap_white_sky_sakura" name='minus'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <!-- +<br>= -->
-                        <div class="k61 key">
-                            
+                        <div class="equal key keycap_white_sky_sakura" name='equal'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <!-- backspace -->
-                        <div class="k8 f_key" name='8'>
+                        <div class="backspace f_key keycap_white_sky_sakura" name='backspace'>
                             <div class="keyboard-keycap">&#10229;</div>
                         </div>
                         <br style="clear: both;">
@@ -157,49 +433,46 @@
                     <!-- second row -->
                     <div>
                         <!-- tab -->
-                        <div class="k9 f_key">
+                        <div class="tab f_key keycap_white_sky_sakura" name='tab'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <div class="k81 key" name='81'>
+                        <div class="keyq key keycap_white_sky_sakura" name='keyq'>
                             <div class="keyboard-keycap">1↑</div>
                         </div>
-                        <div class="k87 key" name='87'>
+                        <div class="keyw key keycap_white_sky_sakura" name='keyw'>
                             <div class="keyboard-keycap">2↑</div>
                         </div>
-                        <div class="k69 key" name='69'>
+                        <div class="keye key keycap_white_sky_sakura" name='keye'>
                             <div class="keyboard-keycap">3↑</div>
                         </div>
-                        <div class="k82 key" name='82'>
+                        <div class="keyr key keycap_white_sky_sakura" name='keyr'>
                             <div class="keyboard-keycap">4↑</div>
                         </div>
-                        <div class="k84 key" name='84'>
+                        <div class="keyt key keycap_white_sky_sakura" name='keyt'>
                             <div class="keyboard-keycap">5↑</div>
                         </div>
-                        <div class="k89 key" name='89'>
+                        <div class="keyy key keycap_white_sky_sakura" name='keyy'>
                             <div class="keyboard-keycap">6↑</div>
                         </div>
-                        <div class="k85 key" name='85'>
+                        <div class="keyu key keycap_white_sky_sakura" name='keyu'>
                             <div class="keyboard-keycap">7↑</div>
                         </div>
-                        <div class="k73 key" name='73'>
+                        <div class="keyi key keycap_white_sky_sakura" name='keyi'>
                             <div class="keyboard-keycap">8↑</div>
                         </div>
-                        <div class="k79 key" name='79'>
+                        <div class="keyo key keycap_white_sky_sakura" name='keyo'>
                             <div class="keyboard-keycap">9↑</div>
                         </div>
-                        <div class="k80 key" name='80'>
+                        <div class="keyp key keycap_white_sky_sakura" name='keyp'>
                             <div class="keyboard-keycap">0↑</div>
                         </div>
-                        <!-- left bracket -->
-                        <div class="k219 key">
+                        <div class="bracketleft key keycap_white_sky_sakura" name='bracketleft'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <!-- right bracket -->
-                        <div class="k221 key">
+                        <div class="bracketright key keycap_white_sky_sakura" name='bracketright'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <!-- |<br>\ -->
-                        <div class="k220 key">
+                        <div class="backslash key keycap_white_sky_sakura" name='backslash'>
                             <div class="keyboard-keycap"></div>
                         </div>
                         <br style="clear: both;">
@@ -207,134 +480,146 @@
                     <!-- third row -->
                     <div>
                         <!-- caps -->
-                        <div class="k20 f_key">
+                        <div class="capslock f_key keycap_white_sky_sakura" name='capslock'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <div class="k65 key" name='65'>
+                        <div class="keya key keycap_white_sky_sakura" name='keya'>
                             <div class="keyboard-keycap">1-</div>
                         </div>
-                        <div class="k83 key" name='83'>
+                        <div class="keys key keycap_white_sky_sakura" name='keys'>
                             <div class="keyboard-keycap">2-</div>
                         </div>
-                        <div class="k68 key" name='68'>
+                        <div class="keyd key keycap_white_sky_sakura" name='keyd'>
                             <div class="keyboard-keycap">3-</div>
                         </div>
-                        <div class="k70 key" name='70'>
+                        <div class="keyf key keycap_white_sky_sakura" name='keyf'>
                             <div class="keyboard-keycap">4-</div>
                         </div>
-                        <div class="k71 key" name='71'>
+                        <div class="keyg key keycap_white_sky_sakura" name='keyg'>
                             <div class="keyboard-keycap">5-</div>
                         </div>
-                        <div class="k72 key" name='72'>
+                        <div class="keyh key keycap_white_sky_sakura" name='keyh'>
                             <div class="keyboard-keycap">6-</div>
                         </div>
-                        <div class="k74 key" name='74'>
+                        <div class="keyj key keycap_white_sky_sakura" name='keyj'>
                             <div class="keyboard-keycap">7-</div>
                         </div>
-                        <div class="k75 key" name='75'>
+                        <div class="keyk key keycap_white_sky_sakura" name='keyk'>
                             <div class="keyboard-keycap">8-</div>
                         </div>
-                        <div class="k76 key" name='76'>
+                        <div class="keyl key keycap_white_sky_sakura" name='keyl'>
                             <div class="keyboard-keycap">9-</div>
                         </div>
-                        <div class="k59 key" name='59'>
+                        <div class="semicolon key keycap_white_sky_sakura" name='semicolon'>
                             <div class="keyboard-keycap">0-</div>
                         </div>
-                        <!-- "<br>' -->
-                        <div class="k222 key">
+                        <div class="quote key keycap_white_sky_sakura" name='quote'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <!-- enter k13 -->
-                        <div class="k13 f_key">
+                        <div class="enter f_key keycap_white_sky_sakura" name='enter'>
                             <div class="keyboard-keycap"></div>
                         </div>
                         <br style="clear: both;">
                     </div>
                     <!-- fourth row -->
                     <div>
-                        <!-- left shift -->
-                        <div class="k16 left-shift f_key">
+                        <div class="shiftleft f_key keycap_white_sky_sakura" name='shiftleft'>
                             <div class="keyboard-keycap"></div>
                         </div>
-                        <div class="k90 key" name='90'>
+                        <div class="keyz key keycap_white_sky_sakura" name='keyz'>
                             <div class="keyboard-keycap">1↓</div>
                         </div>
-                        <div class="k88 key" name='88'>
+                        <div class="keyx key keycap_white_sky_sakura" name='keyx'>
                             <div class="keyboard-keycap">2↓</div>
                         </div>
-                        <div class="k67 key" name='67'>
+                        <div class="keyc key keycap_white_sky_sakura" name='keyc'>
                             <div class="keyboard-keycap">3↓</div>
                         </div>
-                        <div class="k86 key" name='86'>
+                        <div class="keyv key keycap_white_sky_sakura" name='keyv'>
                             <div class="keyboard-keycap">4↓</div>
                         </div>
-                        <div class="k66 key" name='66'>
+                        <div class="keyb key keycap_white_sky_sakura" name='keyb'>
                             <div class="keyboard-keycap">5↓</div>
                         </div>
-                        <div class="k78 key" name='78'>
+                        <div class="keyn key keycap_white_sky_sakura" name='keyn'>
                             <div class="keyboard-keycap">6↓</div>
                         </div>
-                        <div class="k77 key" name='77'>
+                        <div class="keym key keycap_white_sky_sakura" name='keym'>
                             <div class="keyboard-keycap">7↓</div>
                         </div>
-                        <div class="k188 key" name='188'>
+                        <div class="comma key keycap_white_sky_sakura" name='comma'>
                             <div class="keyboard-keycap">8↓</div>
                         </div>
-                        <div class="k190 key" name='190'>
+                        <div class="period key keycap_white_sky_sakura" name='period'>
                             <div class="keyboard-keycap">9↓</div>
                         </div>
-                        <div class="k191 key" name='191'>
+                        <div class="slash key keycap_white_sky_sakura" name='slash'>
                             <div class="keyboard-keycap">0↓</div>
                         </div>
-                        <!-- right shift -->
-                        <div class="k16 right-shift f_key">
+                        <div class="shiftright f_key keycap_white_sky_sakura" name='shiftright'>
                             <div class="keyboard-keycap"></div>
                         </div>
                         <br style="clear: both;">
                     </div>
                     <!-- last row -->
                     <div>
-                        <a href="dictionary.html">
-                            <div class="key-href s_key">
-                                <div class="keyboard-keycap">查碼去</div>
-                            </div>
-                        </a>
-                        <a href="typing.html">
-                            <div class="key-href s_key">
-                                <div class="keyboard-keycap">打字去</div>
-                            </div>
-                        </a>
-                        <div class="k32 key" name='32'>
-                            <div class="keyboard-keycap"></div>
+                        <div class="key-dictionary s_key keycap_white_sky_sakura" name='dictionary'>
+                            <a href="dictionary.html">
+                                <div class="keyboard-keycap"><span>查碼去</span></div>
+                            </a>
                         </div>
-                        <a href="#introduction">
-                            <div class="key-array right s_key">
-                                <div class="keyboard-keycap">什麼是行列輸入法</div>
-                            </div>
-                        </a>
+                        <div class="key-typing s_key keycap_white_sky_sakura" name='typing'>
+                            <a href="typing.html">
+                                <div class="keyboard-keycap"><span>打字去</span></div>
+                            </a>
+                        </div>
+                        <div class="space key keycap_white_sky_sakura" name='space'>
+                            <div class="keyboard-keycap"></div>
+                        </div>                        
+                        <div class="key-array s_key keycap_white_sky_sakura" name='intro'>
+                            <a href="#introduction">
+                                <div class="keyboard-keycap"><span>什麼是行列輸入法</span></div>
+                            </a>
+                        </div>
                         <br style="clear: both;">
                     </div>
                 </div>
             </div>
-            <!-- game field -->
-            <div id='game-field'></div>
+            <!-- icon for game instructions and notification -->
+            <div id='game-instructions-open'>
+                <i class="fa fa-gamepad fa-fw fa-2x" aria-hidden="true" id="game-instructions-icon"></i><i class="fa fa-exclamation" aria-hidden="true" id="game-notification"></i>
+            </div>
+            <!-- game output field -->
+            <div id='game-output-field'></div>
+            <div style="clear: both;"></div>
+            <!-- examples -->
+            <h4 class="bold-center w3-wide w3-text-white">您可以試試這些例子 <span id='code_examples_toggle'><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-eye w3-hide" aria-hidden="true"></i></span></h4>
+            <div id='code_examples_block' class="w3-hide">
+                <div id='code_examples_wrapper'>
+                    <div id='code_examples_left'></div>
+                    <div id='code_examples_right'></div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
         </div>
-        <!-- two blocks (medium, small screen)-->
-        <div class="w3-row-padding w3-hide-large">            
-            <div class="w3-col l4 m12 s12 w3-center" >
+
+        <!-- two blocks (only on medium, small screens)-->
+        <div class="w3-row-padding w3-hide-large w3-text-white">            
+            <div class="w3-col m12 s12 w3-center" >
                 <div class="w3-padding-large w3-margin-bottom">
                     <p>還不認識中文最快的免費輸入法？</p>
                     <a href="#introduction" class="w3-btn w3-round-xxlarge w3-indigo w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> 馬上認識行列 <i class="fa fa-angle-double-left"></i>&emsp;</a>
                 </div>
             </div>
-            <div class="w3-col l4 m12 s12 w3-center">
+            <div class="w3-col m12 s12 w3-center">
                 <div class=" w3-padding-large w3-margin-bottom" >
                     <p>直接開始使用本站熱門功能</p>
                     <p><a href="dictionary.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;查碼去&emsp;</a>&nbsp;
                     <a href="typing.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
                 </div>
             </div>
-        </div>
+            <div class="w3-center" style="margin-bottom: 32px;">電腦版的首頁有很讚的行列互動小遊戲，用電腦時記得回來首頁玩！</div>
+        </div>        
     </header>
 
     <!-- Introduction -->

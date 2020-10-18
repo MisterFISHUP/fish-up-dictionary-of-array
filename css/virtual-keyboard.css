@@ -1,40 +1,53 @@
 /* Structure:
   - game area 
   - keyboard base
-  - general keycap setting
-  - keycap design
+  - key general setting
   - key width
-  - game field
-  - rgb
+  - key design
+  - pressed key
+  - game output field
+  - game instructions open
+  - game instructions
+  - congratulations message
+  - code examples
 */
 
-/* inspired by https://codepen.io/P233/pen/qEagi */
-/*------- game area -------*/
+/* ------ game area ------ */
 #game-area {
   width: 905px;
   margin: 0px auto 30px;
   box-sizing: content-box;
 }
 
-/*------- keyboard base -------*/
+/* ------ keyboard base ------ */
 #keyboard {
-  padding: 30px 15px 15px;
+  padding: 20px 15px 15px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.5), inset 0 0 3px rgba(0,0,0,0.3);
   margin: 0 auto;
-  background: linear-gradient(to left, #b1b1b1, #c0c0c0, #b1b1b1);
+	animation: keyboard-brush-metal 10s ease infinite;
+  background: linear-gradient(30deg, #ebe5e5, #acacac, #dfdfdf, #c2c2c2);
+	background-size: 400% 400%;
 }
-#keyboard a {
-  text-decoration: none;
+@keyframes keyboard-brush-metal {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 #keyboard-wrapper {
-  background-color: rgb(145, 141, 141);
+  background-color: #808080!important;
   border-radius: 6px;
   padding: 2px;
-  box-shadow: 0px 0px 3px 1px rgba(43, 43, 43, 0.3);
 }
 
-/*------- general keycap setting -------*/
+/* ------ key general setting ------ */
+/* inspired by https://codepen.io/P233/pen/qEagi */
 .key, .f_key, .s_key {
   width: 40px;
   height: 44px;
@@ -45,117 +58,90 @@
   float: left;
   box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.3);
 }
-/* pressed key */
-.key.pressed, .f_key.pressed, .s_key.pressed {
-  transform: scale(0.95, 0.95);
-}
 .keyboard-keycap {
   user-select: none;
   border-radius: 4px;
-  /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
-/*------- keycap design -------*/
 .key .keyboard-keycap {
   width: 33px;
   height: 40px;
   padding: 5px 0 0 7px;
   font-size: 18px;
   line-height: 1;
-  cursor: pointer;
-  background: rgb(250, 250, 250);
-  background: linear-gradient(to left, rgb(248, 248, 248), rgb(253, 253, 253), rgb(248, 248, 248));
-}
-.key {
-  background: #d3cfcc;
-  border-color: #f0edea #e6e3e0 #d1cccc;
 }
 .f_key .keyboard-keycap {
   width: inherit;
   height: inherit;
   background: #cdd3de;
-  text-align: center;
+  text-align: center;  
+  font-size: 18px;
   line-height: 40px;
-  background:#c5e0fd;
-  background: linear-gradient(to left, #c5e0fd, #d5e9ff, #c5e0fd);
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);  
-  cursor: pointer;
-}
-.f_key {
-  background: #a7c8eb;
-  border-color: #c6dcf3 #adcef1 #69a4d9;
 }
 .s_key .keyboard-keycap {
   width: inherit;
   height: inherit;
   font-size: 15px;
-  line-height: 45px;
-  color: rgb(54, 54, 54);
+  line-height: 45px;  
   text-align: center;
-  background:  #f8cbd6;
-  background: linear-gradient(to left, #f8cbd6, #ffd9e2, #f8cbd6);
+  padding: 0;
 }
-.s_key {
-  background: #eba7cd;
-  border-color: #fddfe7 #eebfca #db8a9d;
+/* pressed key */
+.key.pressed, .f_key.pressed, .s_key.pressed {
+  transform: scale(0.95, 0.95);
 }
-
-/*------- key width -------*/
-/* tab */
-.k9 {
+#keyboard a {
+  text-decoration: none;
+}
+/* ------ key width ------ */
+.tab {
   width: 66px;
   border-right-width: 10px;
 }
-/* backspace */
-.k8 {
+.backspace {
   width: 96px;
   border-left-width: 9px;
 }
-/* \| (under backspace) */
-.k220 {
+.backslash {
   width: 67px;
   border-left-width: 9px;
   }
-.k220>.keyboard-keycap {
+.backslash>.keyboard-keycap {
   width: 60px;
 }
-/* caps lock */
-.k20 {
+.capslock {
   width: 87px;
   border-right-width: 10px;
 }
-/* enter */
-.k13 {
+.enter {
   width: 103px;
   border-left-width: 10px;
 }
-/* left shift */
-.left-shift {
+.shiftleft {
   width: 113px;
   border-right-width: 10px;
 }
-/* right shift */
-.right-shift {
+.shiftright {
   width: 135px;
   border-left-width: 10px;
 }
-/* space */
-.k32{
+.space{
   width: 326px;
   border-width: 3px 8px 10px;
 }
-.k32>.keyboard-keycap {
+.space>.keyboard-keycap {
   width: inherit;
   height: inherit;
   padding: 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  border-radius: 4px;
-  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);  
+  line-height: 45px;
+  text-align: center;
 }
-.k32.pressed {
+.space.pressed {
   transform: scale(0.98, 0.95);
 }
-.key-href {
+.key-dictionary, .key-typing {
   width: 95px;
 }
 .key-array {
@@ -163,59 +149,318 @@
   border-left-width: 10px;
 }
 
-/*------- game field -------*/
-#game-field {
-  font-size: large;
-  border: 1px solid none;
-  min-height: 2em;
+/* ------ key design ------ */
+.key.keycap_white_sky_sakura {
+  background: #d3cfcc;
+  border-color: #f0edea #e6e3e0 #d1cccc;
+}
+.key.keycap_white_sky_sakura .keyboard-keycap {
+  background: #fafafa;
+  background: linear-gradient(to left, #f8f8f8, #fdfdfd, #f8f8f8);
+}
+.f_key.keycap_white_sky_sakura {
+  background: #a7c8eb;
+  border-color: #c6dcf3 #adcef1 #69a4d9;
+}
+.f_key.keycap_white_sky_sakura .keyboard-keycap {
+  background:#c5e0fd;
+  background: linear-gradient(to left, #c5e0fd, #d5e8fd, #c5e0fd);
+}
+.s_key.keycap_white_sky_sakura {
+  background: #eba7cd;
+  border-color: #fddfe7 #eebfca #db8a9d;
+}
+.s_key.keycap_white_sky_sakura .keyboard-keycap {
+  color: #363636;
+  background:  #f8cbd6;
+  background: linear-gradient(to left, #f8cbd6, #ffdde5, #f8cbd6);
 }
 
-/*------- rgb -------*/
-.rgb_pink {
+/* ------ pressed key ------ */
+/* key_pressed_[keycap]_[backlight] */
+
+/* ↓ not easter eggs */
+.key_pressed_default_bright-red {
+  color: #ff1818;
+  box-shadow: 0px 0px 6px 1px #ff1818;
+}
+
+.key_pressed_sakura_pink {
+  color: transparent!important;
+  box-shadow: 0px 0px 10px 1px  #ff5580;
+  background: #eba7cd!important;
+  border-color: #fddfe7 #eebfca #db8a9d!important;
+}
+.key_pressed_sakura_pink .keyboard-keycap {background: #f8cbd6!important;}
+.key_pressed_sakura_pink.key .keyboard-keycap:before {content: '櫻'; color: #ffffff;}
+.key_pressed_sakura_pink.space .keyboard-keycap:before {content: 'sakura'; color: #ffffff;}
+.key_pressed_sakura_pink.s_key span {display: none;}
+.key_pressed_sakura_pink.key-dictionary .keyboard-keycap:before {content: '🌸🌸';}
+.key_pressed_sakura_pink.key-typing .keyboard-keycap:before {content: '🌸🌸';}
+.key_pressed_sakura_pink.key-array .keyboard-keycap:before {content: "🌸 I'm a beautiful sakura"; color: #4d1a1a;}
+
+.key_pressed_banana_yellow {
+  color: transparent!important;
+  box-shadow: 0px 0px 3px 1px  #ffd64e;
+  background: #ccc8a0!important;
+  border-color:  #e6e3c7 #cfca94 #afae71!important;
+}
+.key_pressed_banana_yellow .keyboard-keycap {background: #ffec96!important;}
+.key_pressed_banana_yellow.key .keyboard-keycap:before {content: '🍌'; color: white;}
+.key_pressed_banana_yellow.s_key span {display: none;}
+.key_pressed_banana_yellow.key-dictionary .keyboard-keycap:before {content: '🍌🍌';}
+.key_pressed_banana_yellow.key-typing .keyboard-keycap:before {content: '🍌🍌';}
+.key_pressed_banana_yellow.key-array .keyboard-keycap:before {content: "🍌 I'm a healthy banana"; color: #796217;}
+
+.key_pressed_turtle_green {
+  color: transparent!important;
+  box-shadow: 0px 0px 3px 1px  #91ffa0;
+  background: #77aa6a!important;
+  border-color:  #c1e0b8 #79ca77 #57aa56!important;
+}
+.key_pressed_turtle_green .keyboard-keycap {background: #d4f8cb!important;}
+.key_pressed_turtle_green.key .keyboard-keycap:before {content: '🐢'; color: white;}
+.key_pressed_turtle_green.s_key span {display: none;}
+.key_pressed_turtle_green.key-dictionary .keyboard-keycap:before {content: '🐢🐢';}
+.key_pressed_turtle_green.key-typing .keyboard-keycap:before {content: '🐢🐢';}
+.key_pressed_turtle_green.key-array .keyboard-keycap:before {content: "🐢 I'm a cute turtle 💚"; color: #114e19;}
+
+.key_pressed_alien_green {
+  color: transparent;
+  animation: alien_backlight 0.8s infinite;
+  background: #8abe9a!important;
+  border-color: #8bd4b1 #e3ffef #64a385!important;
+}
+@keyframes alien_backlight {
+  0% {
+    box-shadow: 0px 0px 10px 1px #e24747;
+  }
+  33% {
+    box-shadow: 0px 0px 10px 1px #fdff8a;
+  }
+  67% {
+    box-shadow: 0px 0px 10px 1px #8aff9a;
+  }
+  100% {
+    box-shadow: 0px 0px 10px 1px #e24747;
+  }
+}
+.key_pressed_alien_green .keyboard-keycap {background: #0e633b!important;}
+.key_pressed_alien_green.key .keyboard-keycap:before {content: '👽'; color: white;}
+.key_pressed_alien_green.s_key span {display: none;}
+.key_pressed_alien_green.key-dictionary .keyboard-keycap:before {content: '👽👽'; color: white;}
+.key_pressed_alien_green.key-typing .keyboard-keycap:before {content: '👽👽'; color: white;}
+.key_pressed_alien_green.key-array .keyboard-keycap:before {content: "👽 I'm an alien LOL"; color: white;}
+
+/* under development */
+/* .key_pressed_christmas_flashing {
+  color: transparent!important;
+  background: #ccc8a0!important;
+  border-color:  #e6e3c7 #cfca94 #afae71!important;
+  animation: christmas 0.2s infinite;
+}
+@keyframes christmas {0% {box-shadow: 0px 0px 6px 1px  #47e25c;} 100% {box-shadow: 0px 0px 6px 1px#ff4ea0;}}
+.key_pressed_christmas_flashing .keyboard-keycap {background: rgb(255, 236, 150)!important;}
+.key_pressed_christmas_flashing.key .keyboard-keycap:before {content: '🎄'; color: white;}
+.key_pressed_christmas_flashing.space .keyboard-keycap:before {content: '⛄ Merry Christmas ⛄'; color: white;}
+.key_pressed_christmas_flashing.s_key span {display: none;}
+.key_pressed_christmas_flashing.key-dictionary .keyboard-keycap:before {content: '🎁';}
+.key_pressed_christmas_flashing.key-typing .keyboard-keycap:before {content: '💝';}
+.key_pressed_christmas_flashing.key-array .keyboard-keycap:before {content: "🎅 Ho-Ho-Ho 🤶"; font-size: 17px; color: #796217;} */
+
+/* ↓ 10 easter eggs ↑ not easter eggs */
+.key_pressed_default_pink {
   color: #ff4ea0;
   box-shadow: 0px 0px 6px 1px #ff4ea0;
 }
-.rgb_yellow {  
-  color: #ffd64e;
-  box-shadow: 0px 0px 6px 1px #ffd64e;
-}  
-.rgb_blue {  
-  color:#6bb0ff;
-  box-shadow: 0px 0px 7px 1px #6bb0ff;
-}
-.rgb_green {
+.key_pressed_default_green {
   color: #47e25c;
   box-shadow: 0px 0px 6px 1px #47e25c;
 }
-.rgb_purple {
+.key_pressed_default_yellow {
+  color: #ffd64e;
+  box-shadow: 0px 0px 6px 1px #ffd64e;
+}
+.key_pressed_default_blue {
+  color: #6bb0ff;
+  box-shadow: 0px 0px 7px 1px #6bb0ff;
+}
+.key_pressed_default_purple {
   color: #be76ee;
-  box-shadow: 0px 0px 5px 2px#be76ee;
+  box-shadow: 0px 0px 5px 2px #be76ee;
 }
-.rgb_trolling {
+.key_pressed_default_white {
   color: #ffffff;
   box-shadow: 0px 0px 6px 1px#ffffff;
 }
-.rgb_special {
-  color: #ffffff;
-  box-shadow: 0px 0px 6px 1px#ffffff;
-  border-color:  #c5e0fd #f8cbd6;
-}
-.rgb_blurred {
-  filter: blur(2.5px);
-}
-.rgb_flashing {
-  animation: flashing 0.2s infinite;
-}
-.rgb_disappearing {
+.key_pressed_hidden_none {
   opacity: 0;
+}
+.key_pressed_default_flashing {
+  animation: flashing 0.4s infinite;
 }
 @keyframes flashing {  
   0% {
     color:  #47e25c;
-    box-shadow: 0px 0px 6px 1px  #47e25c;
+    box-shadow: 0px 0px 10px 1px  #47e25c;
+  }
+  50% {
+    color: #ff4ea0;
+    box-shadow: 0px 0px 10px 1px#ff4ea0;
   }
   100% {
-    color: #ff4ea0;
-    box-shadow: 0px 0px 6px 1px#ff4ea0;
+    color:  #47e25c;
+    box-shadow: 0px 0px 10px 1px  #47e25c;
   }
+}
+.key_pressed_blurred_none {
+  filter: blur(2.5px);
+}
+.key_pressed_array-special_white {
+  box-shadow: 0px 0px 10px 1px#ffffff!important;
+  background: #808080!important;
+  border-color: #9e9e9e #696969 #000000!important;
+}
+.key_pressed_array-special_white .keyboard-keycap {
+  color: transparent;
+  background: #2d383d!important;
+  background: linear-gradient(135deg,#2e2e2e 0%, #5e5e5e 35%, #474747 55%, #2e2e2e)!important;
+}
+.key_pressed_array-special_white.key .keyboard-keycap:before {content: '行'; color: #ffffff;}
+.key_pressed_array-special_white.space .keyboard-keycap:before {content: '← Check These Buttons →'; color: #ffffff;}
+.key_pressed_array-special_white.s_key span {display: none;}
+.key_pressed_array-special_white.key-dictionary .keyboard-keycap:before {content: 'This'; font-size: 18px; color: #ffffff;}
+.key_pressed_array-special_white.key-typing .keyboard-keycap:before {content: 'Is'; font-size: 18px; color: #ffffff;}
+.key_pressed_array-special_white.key-array .keyboard-keycap:before {content: 'Designed by FISH UP'; font-size: 18px; color: #ffffff;}
+/* ↑ 10 easter eggs END*/
+
+/* ------ game output field ------ */
+#game-output-field {
+  font-size: large;
+  border: 1px solid none;
+  min-height: 2em;
+  margin: 12px auto;
+}
+
+
+/* ------ game instructions open ------ */
+#game-instructions-open {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  float: left;
+  margin: 12px 4px 0;  
+}
+#game-instructions-icon {
+  background: white;  
+  background: linear-gradient(#ffffff, #ffffffb3 80%);  
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#game-notification {
+  position: absolute;
+  animation: notification 1.5s infinite;  
+  left: 75%;
+  top: 0%
+}
+@keyframes notification { 0% { color: white; } 50% { color:transparent } 100% { color: white; }}
+
+/* ------ game instructions ------ */
+.fade-in { animation: opaci 1.2s }
+@keyframes opaci { from { opacity:0 } to { opacity:1 }}
+
+#game-instructions-wrapper {
+  position: fixed;
+  width: 70vw;
+  left: 15vw;
+  height: 70vh;
+  top: 15vh;
+  z-index: 3;
+  border-radius: 20px;  
+  background: linear-gradient(25deg, #864f33, #4d2312, #9e6346);
+}
+#game-instructions {
+  padding: 16px 32px;
+  position: fixed;
+  width: calc(66vw - 64px);
+  left: 17vw;
+  height: calc(66vh - 32px);
+  top: 17vh;
+  overflow-y: scroll;
+  color: rgb(46, 22, 8);
+  background: #e9d9c6;
+}
+.easter-egg-hint {
+  cursor: pointer;
+}
+#game-instructions-close {
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  background-color: #ffc4ce;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  padding: 0;
+}
+#game-instructions hr {
+  margin: 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.key_pressed_style-description {
+  margin-left: 90px;
+}
+.key_pressed_style-name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.key_pressed_style-instructions {
+  font-size: 16px;  
+}
+
+/* ------ congratulations message ------ */
+#modal_congratulations_message {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  padding: 24px 48px;
+  border-radius: 30px;
+  text-align: center;
+  z-index: 100;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
+  color: white;  
+  background: linear-gradient(to right, #96c93d, #00b09b);
+}
+#modal_bg_congratulations_message {
+  position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
+/* ------ code examples ------ */
+#code_examples_toggle {
+  cursor: pointer;
+}
+#code_examples_block {
+  padding: 16px;  
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+#code_examples_wrapper {
+  font-size: large;
+  height: 250px;
+  height: max(250px, 100vh - 570px);
+  overflow-y: auto;
+}
+#code_examples_left {
+  width: 50%;
+  padding: 8px 16px;
+  margin-right: 16px;
+  border-right: 1px solid black;
+  float: left;
+  box-sizing: border-box;
+}
+#code_examples_right {
+  padding: 8px 16px;
 }

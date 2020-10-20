@@ -3,7 +3,7 @@
   - navigation menu on small screens
   - sticky toc
   - mobile toc
-  - array30 root display
+  - Array radcial display
   - keycap styling
   - checkbox switch
   - back to top
@@ -11,9 +11,11 @@
 
 /*------- general settings -------*/
 html * {
-  font-family: "Georgia", "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Georgia", "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100%;
 }
@@ -22,11 +24,13 @@ html {
 }
 .bold-center {
   text-align: center;
-  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold", "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
+  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
+    "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
   font-weight: 700;
 }
 b {
-  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold", "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
+  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+    "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
   font-weight: 700;
   color: rgb(56, 139, 75);
 }
@@ -76,22 +80,23 @@ summary {
 /*------- navigation menu on small screens -------*/
 #navSmall {
   background-color: #fdf5e6;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 45px;
 }
 .nav-small-item-hover:hover {
   background-color: rgb(255, 235, 154) !important;
-}
-.nav-small-icon {
-  width: 1rem;
 }
 
 /*------- sticky toc -------*/
 .absoluteBottom {
   position: absolute;
-  bottom: 0px; /* Height of the footer element, plus some extra pixels if needed */
+  bottom: 00px; /* Height of the footer element, plus some extra pixels if needed */
 }
-.sticky40 {
+.sticky85 {
   position: fixed;
-  top: 40px;
+  top: 85px;
 }
 aside {
   width: 15em;
@@ -99,7 +104,7 @@ aside {
   padding-right: 10px;
   border-right: 1px solid #cecece;
   font-size: small;
-  max-height: 85vh;
+  max-height: calc(85vh - 40px);
   overflow-y: auto;
 }
 aside a {
@@ -109,10 +114,12 @@ aside a {
   color: rgb(180, 180, 180);
   transition: all 50ms ease-in-out;
 }
-aside a:hover, aside a:focus {
+aside a:hover,
+aside a:focus {
   color: rgb(87, 75, 75);
 }
-aside ul, aside ol {
+aside ul,
+aside ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -182,7 +189,8 @@ aside li.active > a {
 aside a:focus {
   color: rgb(87, 75, 75);
 }
-#tocSmall ul, #tocSmall ol {
+#tocSmall ul,
+#tocSmall ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -213,7 +221,7 @@ aside a:focus {
   z-index: 3;
 }
 
-/* ----- array30 root display ----- */
+/* ----- Array radcial display ----- */
 img.root {
   display: inline-block;
   width: 1em;
@@ -349,7 +357,8 @@ img.root {
   bottom: 1rem;
   display: none;
 }
-.toTop-arrow::before, .toTop-arrow::after {
+.toTop-arrow::before,
+.toTop-arrow::after {
   width: 25px;
   height: 6px;
   border-radius: 3px;

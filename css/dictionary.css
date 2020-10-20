@@ -1,95 +1,99 @@
 /* header */
 .dict-header {
-    padding:40px 16px 0px 16px;
-    background-color: #57342D;
-    background-image:
+  padding: 40px 16px 0px 16px;
+  background-color: #57342d;
+  background-image:
     repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
     repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
     linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
     linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
-    background-size: 70px 120px;
+  background-size: 70px 120px;
+  margin-top: 45px;
 }
 .dict-tag-selected {
-    background-color: #3f2520;
-    color: white;
+  background-color: #3f2520;
+  color: white;
 }
 .dict-tag-not-selected {
-    background-color: #81574f;
-    color: white;
+  background-color: #81574f;
+  color: white;
 }
 #inputCharacters {
-    width: 80%;
-    margin: 8px;
-    border-radius: 20px;
+  width: 80%;
+  margin: 8px;
+  border-radius: 20px;
 }
 #inputCharacters:focus {
-    outline: none;
+  outline: none;
 }
 .dict-button {
-    background-color: #57342D;
-    color: white;
-    border-radius: 20px;
+  background-color: #57342d;
+  color: white;
+  border-radius: 20px;
 }
 
 /* below header */
 .dict-page-content-bg {
-    background-color: #f8e5cf;
+  background-color: #f8e5cf;
 }
 .dict-page-content {
-    padding: 24px 16px;
-    max-width: 750px;
-    margin-left:auto;
-    margin-right:auto;
-    background-color: #f8e5cf;
+  padding: 24px 16px;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8e5cf;
 }
 .dict-block-comment {
-    line-height: 1.8;
-    padding: 16px 24px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+  line-height: 1.8;
+  padding: 16px 24px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .dict-example {
-    padding: 1px 20px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 25px;
+  padding: 1px 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
 }
 
 /* element created by js */
 .dict-block-hint {
-    font-size: 1.1em;
-    padding: 16px 24px;
-    background-color: white;
-    border-radius: 16px;
+  font-size: 1.1em;
+  padding: 16px 24px;
+  background-color: white;
+  border-radius: 16px;
 }
 .dict-block-result-description {
-    font-size: 1.1em;
-    padding:12px 24px;
-    background-color: white;
-    border-radius: 16px;
+  font-size: 1.1em;
+  padding: 12px 24px;
+  background-color: white;
+  border-radius: 16px;
+  scroll-margin-top: 69px; /* 45 + 24 (margin top) */
 }
 .dict-block-result-char-list {
-    font-size: 1.3em;
-    border-radius: 16px;
-    background-color: rgb(243, 243, 243);
-    padding: 8px 16px;
-    margin-bottom: 16px;
+  font-size: 1.3em;
+  border-radius: 16px;
+  background-color: rgb(243, 243, 243);
+  padding: 8px 16px;
+  margin-bottom: 16px;
 }
 .dict-link-char {
-    text-decoration: none;
+  text-decoration: none;
 }
 .dict-link-char:hover {
-    color:#9e7055;
+  color: #9e7055;
 }
 .dict-block-result {
-    border-radius: 16px;
-    background-color: white;
-    padding: 16px 24px;
-    margin-top: 16px;
+  border-radius: 16px;
+  background-color: white;
+  padding: 16px 24px;
+  margin-top: 16px;
+  scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .dict-block-result:hover {
-    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 }

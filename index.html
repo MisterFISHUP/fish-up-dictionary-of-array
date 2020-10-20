@@ -45,50 +45,53 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="w3-bar w3-black w3-card w3-left-align">
-        <!-- always there -->
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-        <!-- small screens (toggle button)-->
-        <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-        <!-- large screens -->
-        <div class="w3-hide-medium w3-hide-small">
-            <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-            <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                    <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                    <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                    <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card w3-left-align">
+            <!-- always there -->
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
+            <!-- small screens (toggle button)-->
+            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
+            <!-- large screens -->
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
+                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
+                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
+                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
+                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
+                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
+                    </div>
                 </div>
-            </div>
-            <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-            <div class="w3-right">
-                <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
+                <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
+                <div class="w3-right">
+                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
+                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
+                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
+                </div>
             </div>
         </div>
     </div>
+    
     <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">        
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
+    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
         <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
+            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
             <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
                 &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
             </div>
         </div>
         <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
+            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
+            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
+            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
         </div>
-        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
+        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
     </div>
 
     <!-- Header -->

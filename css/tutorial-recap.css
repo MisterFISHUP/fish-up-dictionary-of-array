@@ -1,16 +1,16 @@
 /* tutorial-recap */
 .test_blank {
-    cursor: pointer;
-    font-family: inherit;
+  cursor: pointer;
+  font-family: inherit;
 }
 .mask {
-    color: lightgray;
-    background-color:lightgray;
-    border-radius: 5px;
+  color: lightgray;
+  background-color: lightgray;
+  border-radius: 5px;
 }
-.mask::-moz-selection { 
-    color: lightgray;
+.mask::-moz-selection {
+  color: lightgray;
 }
-.mask::selection { 
-    color: lightgray;
+.mask::selection {
+  color: lightgray;
 }

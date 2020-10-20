@@ -167,7 +167,8 @@ function prepareExer() {
 
   // focus typing input
   $('#typing_input').focus();
-  document.getElementById("hr_above_sentence_current").scrollIntoView();
+  // document.getElementById("hr_above_sentence_current").scrollIntoView();
+  document.getElementById("middle_column").scrollIntoView();
 }
 // execute prepareExer for the 1st time js with default 'lines'
 prepareExer();
@@ -715,6 +716,7 @@ function createBlock(character, block_id_name, id_name) {
   let resultBlock = document.createElement('div');
   resultBlock.id = block_id_name;
   resultBlock.className = 'w3-white w3-round-xlarge w3-padding w3-padding-16 w3-margin-top'; // w3 css
+  resultBlock.style.cssText = 'scroll-margin-top: 61px;'; // 45 + 16 (margin top)
   elem.appendChild(resultBlock);
 
   // add character and comma to resultBlock
@@ -1132,14 +1134,6 @@ function createLineNL(encodingNl, id_name) {
     }
   }
 }
-
-$(document).ready(function () {
-  $(function () {
-    $('#to_page_content_small').click(function () {
-      $('html,body').animate({ scrollTop: $('#page_content').offset().top }, 500);
-    });
-  });
-});
 
 // ----------------
 // content display

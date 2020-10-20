@@ -43,64 +43,55 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="w3-bar w3-black w3-card w3-left-align">
-        <!-- always there -->
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-        <!-- small screens (toggle button)-->
-        <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-        <!-- large screens -->
-        <div class="w3-hide-medium w3-hide-small">
-            <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-            <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                  <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                  <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                  <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
-                </div>
-            </div>
-            <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-            <div class="w3-right">
-                <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
-                <!-- <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large"><i class="fa fa-language" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card w3-left-align">
+            <!-- always there -->
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
+            <!-- small screens (toggle button)-->
+            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
+            <!-- large screens -->
+            <div class="w3-hide-medium w3-hide-small">
+                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
+                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
                     <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                      <a href="#" class="w3-bar-item w3-button">繁中</a>
-                      <a href="#" class="w3-bar-item w3-button">EN</a>
-                      <a href="#" class="w3-bar-item w3-button">FR</a>
+                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
+                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
+                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
                     </div>
-                </div> -->
+                </div>
+                <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
+                <div class="w3-right">
+                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
+                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
+                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
+                </div>
             </div>
         </div>
     </div>
+    
     <!-- Navbar on small screens -->
     <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <!-- <div class="w3-center w3-small w3-padding-16">
-            <a href="#" style="text-decoration: none;">繁中</a>&emsp;|&emsp;
-            <a href="#" style="text-decoration: none;">EN</a>&emsp;|&emsp;
-            <a href="#" style="text-decoration: none;">FR</a>
-        </div> -->
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
+        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
+        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
         <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
+            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
             <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
                 &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
             </div>
         </div>
         <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key nav-small-icon" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
+            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
+            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
+            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
         </div>
-        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle nav-small-icon" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
+        <a href="array30root.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
+        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
+        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
     </div>
+
     <!-- btn for toggling toc on small screens -->
     <button id="toggleTOCSmall"><i class="fa fa-list" aria-hidden="true"></i></button>
     <!-- toc on small screens -->    
@@ -108,7 +99,7 @@
         <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
         <div id="tocSmall" style="font-size: large; text-align: center;">
             <h3 class="bold-center w3-center">頁面導覽</h3>
-            <p>                   
+            <p>
                 <a href="#array30-root-recap">字根總覽</a> |
                 <a href="#array30-root-table">字根表</a> |
                 <a href="#array30-root-example">字根實例</a>
@@ -248,8 +239,8 @@
         </div>
     </div>
 
-<!-- array30 root recap -->
-<div style="max-width: 1000px; margin: 60px auto;">
+<!-- array30 root recap (margin top = 45 + 60) -->
+<div style="max-width: 1000px; margin: 105px auto;"> 
     <div id='array30-root-recap'>
         <!-- recap description -->
         <h2 class="w3-wide bold-center">字根總覽</h2>        
@@ -870,14 +861,11 @@
     </div> -->
 </div>
 
-    
-    
-
     <!-- array30 root example description -->
-    <div id="array30-root-example" class="w3-padding" style="max-width:700px; margin: 40px auto; line-height: 1.6;">
+    <div id="array30-root-example">
         <h2 class="w3-wide bold-center">字根實例</h2>
         <hr>
-        <div style="padding: 0 16px;">
+        <div style="padding: 0 16px; font-size: 16px; line-height: 1.8;">
             <p>這部分除了作為行列學習者的學習資源外，也是您不會拆碼時的救星。</p>
             <p>這裡的字根實例都經過精心設計，例字完全沒有重複，除了有基礎的例字外，也列出了許多行列使用者不太會拆的字：請使用瀏覽器的查詢功能來搜尋您不會拆的字、或是跟該字有相同偏旁的常用字，您有極高的機率可以在此找到拆碼。</p>
             <p>如果您還沒有閱讀過本站的<a href="/tutorial.html" target="_blank">行列教學</a>，建議您花一點時間完整閱讀過一次，甚至鼓勵您重複閱讀它。閱讀完本站的行列教學以及此頁面的所有字根實例所得到的經驗，基本上可以讓您有能力自行輸入一切中文字，將拆字的疑惑或需要查碼的狀況降到 0。</p>
@@ -895,7 +883,7 @@
         <!-- array30 root example 1 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 1 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-1-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-1-top">
                 <h3 class="w3-center"><a href="#array30-root-table-1-top" class="root-example-column-title">1 上</a></h3>
                 <!-- 10 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-10">
@@ -931,7 +919,7 @@
                             <div class="w3-col" style="width: 2em;">巫：</div>
                             <div class="w3-rest">工 <span class="root-nb">11</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span> <span class="root-plus">+</span> 人 <span class="root-nb">8-</span></div>
                         </li>
-                    </ul>                    
+                    </ul>
                     <ul class="root-example-ul">
                         <li class="root-example-title"><img src="/img/array30-root/11長.png" class="root" alt="行列字根 11，「長」去掉最末三筆畫"> 11</li>
                         <li>
@@ -1110,7 +1098,7 @@
             </div>
 
             <!-- 1 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-1-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-1-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-1-middle" class="root-example-column-title">1 中</a></h3>
                 <!-- 1- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-1-">
@@ -1132,7 +1120,7 @@
             </div>
 
             <!-- 1 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-1-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-1-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-1-bottom" class="root-example-column-title">1 下</a></h3>
                 <!-- 16 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-16">
@@ -1306,7 +1294,7 @@
         <!-- array30 root example 2 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 2 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-2-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-2-top">
                 <h3 class="w3-center"><a href="#array30-root-table-2-top" class="root-example-column-title">2 上</a></h3>
                 <!-- 21 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-21">
@@ -1433,7 +1421,7 @@
                 </div>
             </div>
             <!-- 2 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-2-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-2-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-2-middle" class="root-example-column-title">2 中</a></h3>
                 <!-- 2- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-2-">
@@ -1578,7 +1566,7 @@
 
             </div>
             <!-- 2 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-2-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-2-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-2-bottom" class="root-example-column-title">2 下</a></h3>
                 <!-- 26 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-26">
@@ -1722,7 +1710,6 @@
             </div>
         </div>
     </div>
-           
     
     <!-- array30 root example 3 -->
     <div class="container-root-example" id="array30-root-example-3">
@@ -1734,7 +1721,7 @@
         <!-- array30 root example 3 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 3 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-3-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-3-top">
                 <h3 class="w3-center"><a href="#array30-root-table-3-top" class="root-example-column-title">3 上</a></h3>
                 <!-- 31 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-31">
@@ -1920,7 +1907,7 @@
                 </div>
             </div>
             <!-- 3 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-3-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-3-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-3-middle" class="root-example-column-title">3 中</a></h3>
                 <!-- 3- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-3-">
@@ -2025,7 +2012,7 @@
 
             </div>
             <!-- 3 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-3-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-3-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-3-bottom" class="root-example-column-title">3 下</a></h3>
                 <!-- 36 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-36">
@@ -2180,7 +2167,7 @@
         <!-- array30 root example 4 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 4 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-4-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-4-top">
                 <h3 class="w3-center"><a href="#array30-root-table-4-top" class="root-example-column-title">4 上</a></h3>
                 <!-- 40 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-40">
@@ -2298,7 +2285,7 @@
                 </div>
             </div>
             <!-- 4 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-4-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-4-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-4-middle" class="root-example-column-title">4 中</a></h3>
                 <!-- 4- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-4-">
@@ -2415,7 +2402,7 @@
                 </div>
             </div>
             <!-- 4 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-4-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-4-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-4-bottom" class="root-example-column-title">4 下</a></h3>
                 <!-- 47 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-47">
@@ -2478,7 +2465,7 @@
         <!-- array30 root example 5 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 5 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-5-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-5-top">
                 <h3 class="w3-center"><a href="#array30-root-table-5-top" class="root-example-column-title">5 上</a></h3>
                 <!-- 51 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-51">
@@ -2568,7 +2555,7 @@
                 </div>
             </div>
             <!-- 5 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-5-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-5-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-5-middle" class="root-example-column-title">5 中</a></h3>
                 <!-- 5- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-5-">
@@ -2672,7 +2659,7 @@
 
             </div>
             <!-- 5 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-5-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-5-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-5-bottom" class="root-example-column-title">5 下</a></h3>
                 <!-- 56 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-56">
@@ -2798,7 +2785,7 @@
         <!-- array30 root example 6 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 3 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-6-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-6-top">
                 <h3 class="w3-center"><a href="#array30-root-table-6-top" class="root-example-column-title">6 上</a></h3>
                 <!-- 60 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-60">
@@ -2886,7 +2873,7 @@
                 </div>
             </div>
             <!-- 6 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-6-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-6-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-6-middle" class="root-example-column-title">6 中</a></h3>
                 <!-- 6- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-6-">
@@ -2932,7 +2919,7 @@
                 </div>
             </div>
             <!-- 6 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-6-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-6-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-6-bottom" class="root-example-column-title">6 下</a></h3>
                 <!-- 66 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-66">
@@ -3037,7 +3024,7 @@
         <!-- array30 root example 7 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 7 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-7-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-7-top">
                 <h3 class="w3-center"><a href="#array30-root-table-7-top" class="root-example-column-title">7 上</a></h3>
                 <!-- 71 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-71">
@@ -3105,7 +3092,7 @@
                 </div>
             </div>
             <!-- 7 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-7-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-7-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-7-middle" class="root-example-column-title">7 中</a></h3>
                 <!-- 7- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-7-">
@@ -3191,7 +3178,7 @@
                 </div>
             </div>
             <!-- 7 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-7-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-7-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-7-bottom" class="root-example-column-title">7 下</a></h3>
                 <!-- 76 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-76">
@@ -3297,7 +3284,7 @@
         <!-- array30 root example 8 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 8 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-8-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-8-top">
                 <h3 class="w3-center"><a href="#array30-root-table-8-top" class="root-example-column-title">8 上</a></h3>
                 <!-- 81 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-81">
@@ -3397,7 +3384,7 @@
                 </div>
             </div>
             <!-- 8 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-8-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-8-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-8-middle" class="root-example-column-title">8 中</a></h3>
                 <!-- 8- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-8-">
@@ -3506,7 +3493,7 @@
                 </div>
             </div>
             <!-- 8 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-8-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-8-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-8-bottom" class="root-example-column-title">8 下</a></h3>
                 <!-- 88 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-88">
@@ -3589,7 +3576,7 @@
         <!-- array30 root example 9 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 9 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-9-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-9-top">
                 <h3 class="w3-center"><a href="#array30-root-table-9-top" class="root-example-column-title">9 上</a></h3>
                 <!-- 91 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-91">
@@ -3763,7 +3750,7 @@
                 </div>
             </div>
             <!-- 9 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-9-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-9-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-9-middle" class="root-example-column-title">9 中</a></h3>
                 <!-- 9- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-9-">
@@ -3830,7 +3817,7 @@
                 </div>
             </div>
             <!-- 9 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-9-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-9-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-3-bottom" class="root-example-column-title">9 下</a></h3>
                 <!-- 98 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-98">
@@ -3984,7 +3971,7 @@
         <!-- array30 root example 0 grid -->
         <div class="w3-row" style="font-size: large;">
             <!-- 0 上字根實例 -->
-            <div class="w3-third" id="array30-root-example-0-top">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-0-top">
                 <h3 class="w3-center"><a href="#array30-root-table-0-top" class="root-example-column-title">0 上</a></h3>
                 <!-- 01 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-01">
@@ -4094,7 +4081,7 @@
                 </div>
             </div>
             <!-- 0 中字根實例 -->
-            <div class="w3-third" id="array30-root-example-0-middle">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-0-middle">
                 <h3 class="w3-center"><a href="#array30-root-table-0-middle" class="root-example-column-title">0 中</a></h3>
                 <!-- 0- 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-0-">
@@ -4108,7 +4095,7 @@
                 </div>
             </div>
             <!-- 0 下字根實例 -->
-            <div class="w3-third" id="array30-root-example-0-bottom">
+            <div class="w3-third array30-radical-example-key" id="array30-root-example-0-bottom">
                 <h3 class="w3-center"><a href="#array30-root-table-0-bottom" class="root-example-column-title">0 下</a></h3>
                 <!-- 06 字根實例 -->
                 <div class="root-example-ul-block" id="array30-root-example-06">

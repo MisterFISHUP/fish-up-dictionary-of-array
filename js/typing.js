@@ -230,7 +230,7 @@ $("#告白氣球").click(function () { builtInExerCreator(string告白氣球) })
 $("#小幸運").click(function () { builtInExerCreator(string小幸運) });
 $("#不為誰而作的歌").click(function () { builtInExerCreator(string不為誰而作的歌) });
 
-// root example arcai
+// radical example arcai
 $("#arcai_example_col_1").click(function () { builtInExerCreator(stringArcaiExampleCo1) });
 $("#arcai_example_col_2").click(function () { builtInExerCreator(stringArcaiExampleCo2) });
 $("#arcai_example_col_3").click(function () { builtInExerCreator(stringArcaiExampleCo3) });

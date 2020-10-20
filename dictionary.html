@@ -99,9 +99,7 @@
             <h1 class="w3-margin w3-xxlarge"><a href="/dictionary.html" style="text-decoration: none;">FISH UP 行列查碼</a></h1>
             <p class="w3-large">最好用、最實用的行列輸入法查碼</p>
         </div>
-
-        <!-- width 80% area -->
-        <div class= 'w3-container' style ='width: 80%; margin: auto;'>
+        <div style='margin: 0 24px;'>
             <!-- tab area -->
             <div style="border-radius: 20px; overflow: hidden;">
                 <div class="w3-row">
@@ -109,13 +107,13 @@
                     <button onclick="openSearchTag(event, 'search_tab_content_2');" class="w3-half w3-btn dict-tag-not-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-hide">●</span> 我想看列表</button>
                 </div>    
                 <!-- tab content -->
-                <div id="search_tab_content_1" class="w3-container search-type w3-card w3-white w3-show">
+                <div id="search_tab_content_1" class="search-type w3-card w3-white w3-show">
                     <div class='w3-container w3-padding-24 w3-center'>
                         <input type="text" id="inputCharacters" name="characters" placeholder="可同時查 500 個字！" class="w3-input w3-border" autofocus>
                         <button type="submit" id="btn_submit" value="Submit" class="w3-button dict-button"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
-                <div id="search_tab_content_2" class="w3-container search-type w3-card w3-white w3-hide">
+                <div id="search_tab_content_2" class="search-type w3-card w3-white w3-hide">
                     <div class='w3-container w3-padding-24 w3-center w3-animate-left'>
                         <label class="w3-margin-right"><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll"> 單鍵碼</label>
                         <label class="w3-margin-right"><input type="checkbox" id='checkbox--sp' name="special" value="spAll"> 特別碼</label>
@@ -136,6 +134,7 @@
                     </span>
                 </label>
             </div>
+            <div style="clear: both;"></div>
         </div>
         <br>
     </header>

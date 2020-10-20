@@ -1,40 +1,47 @@
-input:focus, textarea:focus, select:focus, details>summary:focus{
+input:focus,
+textarea:focus,
+select:focus,
+details > summary:focus {
   outline: none;
+}
+#middle_column {
+  scroll-margin-top: 69px; /* 45 + 24 (margin top) */
 }
 .typing-header {
   padding: 50px 16px 24px 16px;
   background-color: #335544;
   background-image: repeating-linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 1px,
-    transparent 60px
-  ),
-  repeating-linear-gradient(
-    60deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 1px,
-    transparent 60px
-  ),
-  linear-gradient(
-    60deg,
-    rgba(0, 0, 0, 0.1) 25%,
-    transparent 25%,
-    transparent 75%,
-    rgba(0, 0, 0, 0.1) 75%,
-    rgba(0, 0, 0, 0.1)
-  ),
-  linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.1) 25%,
-    transparent 25%,
-    transparent 75%,
-    rgba(0, 0, 0, 0.1) 75%,
-    rgba(0, 0, 0, 0.1)
-  );
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    );
   background-size: 70px 120px;
+  margin-top: 45px;
 }
 .typing-header-title {
   cursor: pointer;
@@ -63,6 +70,13 @@ input:focus, textarea:focus, select:focus, details>summary:focus{
   right: 0;
   top: 0;
   border-radius: 0 15px 0 0;
+}
+
+#hr_above_sentence_current {
+  clear: both;
+  border: none;
+  border-top: 1px solid rgb(165, 177, 164);
+  margin: 15px 0;
 }
 #sentence_current {
   font-size: 1.8em;

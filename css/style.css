@@ -222,29 +222,29 @@ aside a:focus {
 }
 
 /* ----- Array radcial display ----- */
-img.root {
+img.radical {
   display: inline-block;
   width: 1em;
   vertical-align: text-top;
 }
 /* https://codepen.io/sosuke/pen/Pjoqqp */
-.root-special {
+.radical-special {
   filter: invert(65%) sepia(23%) saturate(1262%) hue-rotate(297deg)
     brightness(86%) contrast(97%);
 }
-.root-sc {
+.radical-sc {
   filter: invert(66%) sepia(0%) saturate(1%) hue-rotate(100deg) brightness(93%)
     contrast(91%);
 }
-.root-special-sc {
+.radical-special-sc {
   filter: invert(71%) sepia(27%) saturate(725%) hue-rotate(63deg)
     brightness(93%) contrast(89%);
   /* color: #76c563; */
 }
-.root-nb {
+.radical-code {
   color: rgb(50, 109, 199);
 }
-.root-plus {
+.radical-plus {
   color: rgb(148, 148, 148);
 }
 

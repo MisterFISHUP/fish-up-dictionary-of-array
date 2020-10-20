@@ -143,7 +143,7 @@ aside li.active > a {
   position: fixed;
   bottom: 5rem;
   left: 10vw;
-  height: 75vh;
+  height: calc(100vh - 6em - 45px); /* 45px + 1em for top, 5em for bottom */
   width: 80vw;
   z-index: 3;
   background-color: rgb(209, 209, 209);
@@ -156,7 +156,7 @@ aside li.active > a {
   left: 16px;
   border-radius: 20px;
   padding: 16px;
-  height: calc(75vh - 32px);
+  height: calc(100vh - 6em - 45px - 32px);
   width: calc(80vw - 32px);
   overflow-y: auto;
   z-index: 3;

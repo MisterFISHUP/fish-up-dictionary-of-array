@@ -92,6 +92,7 @@
   background-color: white;
   padding: 16px 24px;
   margin-top: 16px;
+  font-size: large;
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .dict-block-result:hover {

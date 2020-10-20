@@ -104,7 +104,7 @@
         <!-- game area (only on large screens)-->        
         <div id='game-area' class="w3-hide-small w3-hide-medium">
             <!-- game instructions block-->
-            <div id='game-instructions-wrapper' class="w3-hide">
+            <div id='game-instructions-wrapper' class="not-visible">
                 <!-- game instructions close button -->
                 <button id='game-instructions-close'><i class="fa fa-times" aria-hidden="true"></i></button>
                 <!-- game instructions -->
@@ -121,6 +121,8 @@
                     <p class="w3-large w3-center">不用下載行列輸入法就能直接體驗行列輸入法，並且支援超過兩萬八千字的輸入<span class="class='game-comment">*</span>！<br>另外，透過觸發一連串的按鍵可以獲得彩蛋，總共有十顆彩蛋等您來收集！</p>
                     <br>
                     <h4 class="bold-center" id='game-instructions-easter-egg'>尋找彩蛋</h4>
+                    <h6 class='w3-center w3-hide' id='check_all_other_commands'>獎勵：您在搜集箱底部獲得了所有其他指令！</h6>
+                    
                     <!-- hints for easter eggs -->
                     <div class="w3-center" style="line-height: 1.8; font-size: 16px;">
                         <div id='hint_for_easter_egg_backlight'>
@@ -378,6 +380,7 @@
             <!-- congratulations message -->
             <div id='modal_bg_congratulations_message' class=" fade-in w3-hide">
                 <div id='modal_congratulations_message' class="fade-in w3-hide">
+                    <button id='modal_congratulations_message_close' class="fade-in w3-hide"><i class="fa fa-times" aria-hidden="true"></i></button>
                     <h1>🎉 恭喜您搜集到了所有彩蛋 🥳</h1>
                     <h4>獎勵：您在搜集箱底部獲得了所有其他指令！</h4>
                     <h6>- 喜歡這個小遊戲的話，請踴躍分享給所有身邊的親朋好友 -</h6>

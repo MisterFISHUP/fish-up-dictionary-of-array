@@ -5,6 +5,7 @@
   - detect code examples
   - keyboard style and their commands
   - detect commands for style
+  - close congratulation messages
   - interaction with the Array keyboard
   - game instructions things
 */
@@ -774,18 +775,10 @@ function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
         // show congrats message
         $("#modal_congratulations_message").removeClass('w3-hide');
         $("#modal_bg_congratulations_message").removeClass('w3-hide');
-        // after 6500ms, do:
+        // show close button after 2000ms
         setTimeout(function () {
-          // fade out congrats messaage in 1500ms and remove it
-          $("#modal_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
-          $("#modal_bg_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
-          // title: 'find easter eggs' -> congrats 
-          $('#game-instructions-easter-egg').text('恭喜您找到了全部 10 顆彩蛋！');
-          // show all other commands (in game instructions)// show all other commands (in game instructions)
-          document.getElementById('all_other_commands').classList.remove('w3-hide');
-          // change game instructions open button icon
-          $('#game-instructions-icon').addClass('fa-gift').removeClass('fa-gamepad');
-        }, 6500);
+          $('#modal_congratulations_message_close').removeClass('w3-hide');
+        }, 2000);
       }
     }
   } else {
@@ -796,6 +789,27 @@ function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
     }
   }
 }
+
+// ------------------------------
+// close congratulation messages
+// ------------------------------
+
+function closeCongratulationMessages() {
+  // fade out congrats messaage in 1500ms and remove it
+  $("#modal_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
+  $("#modal_bg_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
+  // title: 'find easter eggs' -> congrats 
+  $('#game-instructions-easter-egg').text('恭喜您找到了全部 10 顆彩蛋！');
+  $('#check_all_other_commands').removeClass('w3-hide');
+  // show all other commands (in game instructions)// show all other commands (in game instructions)
+  document.getElementById('all_other_commands').classList.remove('w3-hide');
+  // change game instructions open button icon
+  $('#game-instructions-icon').addClass('fa-gift').removeClass('fa-gamepad');
+  // scroll into view
+  document.getElementById('game-instructions-easter-egg').scrollIntoView({ block: 'center' });  
+}
+
+$('#modal_congratulations_message_close').click(closeCongratulationMessages);
 
 // ------------------------------------
 // interaction with the Array keyboard
@@ -884,19 +898,19 @@ $("#game-instructions-open").click(function () {
   // remove new easter egg notification icon 
   document.getElementById('game-notification').classList.add('w3-hide');
   // show easter egg collection
-  document.getElementById('game-instructions-wrapper').classList.remove('w3-hide');
+  document.getElementById('game-instructions-wrapper').classList.remove('not-visible');
   areGameInstructionsOpen = true;
 });
 // close game instructions (by clicking close button)
 $("#game-instructions-close").click(function () {
-  document.getElementById('game-instructions-wrapper').classList.add('w3-hide');
+  document.getElementById('game-instructions-wrapper').classList.add('not-visible');
   areGameInstructionsOpen = false;
 })
 // close game instructions (by Esc)
 $(window).on({
   'keydown': function (e) {
     if (areGameInstructionsOpen && e.code == 'Escape') {
-      document.getElementById('game-instructions-wrapper').classList.add('w3-hide');
+      document.getElementById('game-instructions-wrapper').classList.add('not-visible');
       areGameInstructionsOpen = false;
     }
   }

@@ -368,6 +368,9 @@
 @keyframes notification { 0% { color: white; } 50% { color:transparent } 100% { color: white; }}
 
 /* ------ game instructions ------ */
+.not-visible {
+  visibility: hidden;
+}
 .fade-in { animation: opaci 1.2s }
 @keyframes opaci { from { opacity:0 } to { opacity:1 }}
 
@@ -437,6 +440,18 @@
   position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 99;
   background-color: rgba(0, 0, 0, 0.2)
 }
+#modal_congratulations_message_close {
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  background-color: #ffc4ce;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  padding: 0;
+}
 
 /* ------ code examples ------ */
 #code_examples_toggle {
@@ -450,7 +465,7 @@
 #code_examples_wrapper {
   font-size: large;
   height: 250px;
-  height: max(250px, 100vh - 570px);
+  height: max(250px, 100vh - 600px);
   overflow-y: auto;
 }
 #code_examples_left {

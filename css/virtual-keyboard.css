@@ -376,8 +376,8 @@
 
 #game-instructions-wrapper {
   position: fixed;
-  width: min(70vw, 900px);
-  left: max(15vw, 50vw - 450px);  
+  width: min(70vw, 1000px);
+  left: max(15vw, 50vw - 500px);  
   height: 70vh;
   top: 15vh;
   z-index: 3;
@@ -387,8 +387,8 @@
 #game-instructions {
   padding: 16px 32px;
   position: fixed;
-  width: min(66vw - 64px, 900px - 4vw - 64px);
-  left: max(17vw, 52vw - 450px);
+  width: min(66vw - 64px, 1000px - 4vw - 64px);
+  left: max(17vw, 52vw - 500px);
   height: calc(66vh - 32px);
   top: 17vh;
   overflow-y: scroll;

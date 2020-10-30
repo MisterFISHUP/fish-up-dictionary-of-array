@@ -148,7 +148,7 @@ details > summary:focus {
 .btn-built-in-exer {
   font-size: 12px;
   cursor: pointer;
-  margin-bottom: 4px;
+  margin: 3px 2px;
   border-radius: 10px;
   background-color: #f1f1f1;
   border: none;

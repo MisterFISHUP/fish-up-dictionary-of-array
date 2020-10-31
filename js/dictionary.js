@@ -99,7 +99,7 @@ function printResults(input) {
   // depending on num, modify the sentence in resultDescription, or remove resultCharList
   document.getElementById('total_num').textContent = num;
   if (num > 0) {
-    document.getElementById('link_hint').innerHTML = `您可以<a id="result_download_btn">點此下載查詢結果</a>，或者透過下面超連結快速跳到該字：<br><br>`;
+    document.getElementById('link_hint').innerHTML = `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：<br><br>`;
     prepareResultFile(num);
   } else resultDescription.removeChild(resultCharList);
 

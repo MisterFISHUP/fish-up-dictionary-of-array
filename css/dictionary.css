@@ -81,6 +81,9 @@
   padding: 8px 16px;
   margin-bottom: 16px;
 }
+#result_download_btn:hover {
+  color: #9e7055;
+}
 .dict-link-char {
   text-decoration: none;
 }

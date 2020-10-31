@@ -1,13 +1,17 @@
 /* Structure: (use search)
-    - get html DOMs
-    - auto focus
-    - search functionality
-    - filter with checkboxes
-    - fetch data
-    - eng Key Toggle
+  - get html DOMs
+  - auto focus for the input area
+  - search functionality
+  - prepare result file
+  - filter with checkboxes
+  - fetch data
+  - eng Key Toggle
 */
 
+// --------------
 // get html DOMS
+// --------------
+
 const resultAreaElem = document.getElementById('result_area');
 const inputElem = document.getElementById('inputCharacters');
 const btnSubmitElem = document.getElementById('btn_submit');
@@ -15,7 +19,10 @@ const btnFilterSubmit = document.getElementById("btn_filter_submit");
 
 const maxInputChar = 500;
 
+// ------------------------------
 // auto focus for the input area
+// ------------------------------
+
 $('#inputCharacters').on('hover, mouseover', function () {
   $('#inputCharacters').focus();
   $('#inputCharacters').select();
@@ -86,16 +93,88 @@ function printResults(input) {
     }
   }
 
+  // show engKey if asked
+  if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
+
   // depending on num, modify the sentence in resultDescription, or remove resultCharList
   document.getElementById('total_num').textContent = num;
   if (num > 0) {
-    document.getElementById('link_hint').innerHTML = "您可以透過下面超連結快速跳到該字：<br><br>";
+    document.getElementById('link_hint').innerHTML = `您可以<a id="result_download_btn">點此下載查詢結果</a>，或者透過下面超連結快速跳到該字：<br><br>`;
+    prepareResultFile(num);
   } else resultDescription.removeChild(resultCharList);
 
-  // show engKey if asked
-  if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
   // scroll into view
   resultDescription.scrollIntoView();
+}
+
+// --------------------
+// prepare result file
+// --------------------
+
+// prepare the file containing 'num' results
+function prepareResultFile(num) {
+  // get DOM
+  let downloadBtnElem = document.getElementById('result_download_btn');
+
+  // set some result-independent strings 
+  const downloadTime = new Date().toLocaleString('zh-Hant', { hour12: false });
+  const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
+  const year = '2020';
+  const siteURL = 'https://array30.misterfishup.com/dictionary.html';
+  const separationLine = '------------------------------------------\n';
+  const fishUp = `
+  ███████╗██╗███████╗██╗  ██╗    ██╗   ██╗██████╗ 
+  ██╔════╝██║██╔════╝██║  ██║    ██║   ██║██╔══██╗
+  █████╗  ██║███████╗███████║    ██║   ██║██████╔╝
+  ██╔══╝  ██║╚════██║██╔══██║    ██║   ██║██╔═══╝ 
+  ██║     ██║███████║██║  ██║    ╚██████╔╝██║     
+  ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═╝     
+
+`;
+
+  // create file content
+  let fileContent = '感謝使用 FISH UP 行列查碼！\n';
+  fileContent += '以下是您在 ' + downloadTime + ' 查詢的結果。\n\n';
+  fileContent += '================ 查詢結果 ================\n\n';
+
+  // add result description
+  fileContent += '總共有 ' + num + ' 筆資料';
+  if (isEngKeyActive) {
+    fileContent += '（行列編碼以英文按鍵顯示）'
+  }
+  fileContent += '：\n\n';
+
+  // display all found characters
+  $('#result_char_list a').each(function (index) {
+    fileContent += $(this).text();
+    // change line for every 20 characters
+    if ((index !== num - 1) && (index % 20 == 19)) {
+      fileContent += '\n';
+    }
+  })
+  fileContent += '\n\n' + separationLine;
+
+  // add Array code results
+  $('#result_blocks').children().each(function () {
+    // add character
+    fileContent += $(this).find(">:first-child").text() + '\n';
+    // add Array codes
+    $(this).find('li').each(function () {
+      fileContent += ' ' + ' ' + ' ' + ' ' + $(this).text() + '\n';
+    })
+    // add separation line
+    fileContent += separationLine;
+  });
+
+  // add website URL
+  fileContent += fishUp;
+  fileContent += 'Copyright © ' + year + ' FISH UP 行列查碼\n';
+  fileContent += siteURL + '\n';
+
+  //finally, bind the attributes 
+  downloadBtnElem.download = '行列查碼結果（共 ' + num + ' 筆資料）.txt';
+  downloadBtnElem.href = 'data:text/plain,' + encodeURI(fileContent);
+  downloadBtnElem.target = "_blank";
 }
 
 //------------------------
@@ -559,7 +638,10 @@ function createLineNL(encodingNl, id_name) {
   }
 }
 
+// ---------------
 // eng Key Toggle
+// ---------------
+
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaEngKeyToggle);
 

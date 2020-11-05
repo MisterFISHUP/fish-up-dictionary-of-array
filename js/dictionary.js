@@ -348,6 +348,18 @@ function createList(character, list_id_name, id_name) {
   elem.appendChild(resultList);
 
   // add items to resultList
+  if (objectNormal.hasOwnProperty(character)) {
+    const nlArray = objectNormal[character];
+    for (let i = 0; i < nlArray.length; i++) {
+      // create itemNL, add it into resultList
+      let itemNL = document.createElement('li');
+      itemNL.id = list_id_name + '_item_NL_' + String(i + 1);
+      resultList.appendChild(itemNL);
+
+      // add content of itemNL
+      createLineNL(nlArray[i], itemNL.id);
+    }
+  }
   if (objectSingle.hasOwnProperty(character)) {
     // create itemSG, add it into resultList
     let itemSG = document.createElement('li');
@@ -401,19 +413,7 @@ function createList(character, list_id_name, id_name) {
 
     // add content of itemSYM
     createLineSYM(objectSymbol[character], itemSYM.id);
-  }
-  if (objectNormal.hasOwnProperty(character)) {
-    const nlArray = objectNormal[character];
-    for (let i = 0; i < nlArray.length; i++) {
-      // create itemNL, add it into resultList
-      let itemNL = document.createElement('li');
-      itemNL.id = list_id_name + '_item_NL_' + String(i + 1);
-      resultList.appendChild(itemNL);
-
-      // add content of itemNL
-      createLineNL(nlArray[i], itemNL.id);
-    }
-  }
+  }  
 }
 
 // create lineSG from encodingSG and add it to some elem #id_name

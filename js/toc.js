@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector(`#tocSmall li a[href="#${id}"]`).parentElement.classList.remove('active');
       }
     });
-  });
+  }, { rootMargin: '-77px 0px 0px 0px' });
   // Track all sections that have an `id` applied
   document.querySelectorAll('section[id]').forEach((section) => {
     observer.observe(section);

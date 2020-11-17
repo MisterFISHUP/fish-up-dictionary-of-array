@@ -250,13 +250,8 @@ img.radical {
 
 /* ----- keycap styling ----- */
 .keycap {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-  -khtml-border-radius: 4px;
   white-space: nowrap;
   border: 1.5px solid #aaa;
-  border-style: outset;
   border-radius: 4px;
   padding: 0px 3px 1px 3px;
   margin: 0px 0px 0px 0px;

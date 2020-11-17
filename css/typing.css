@@ -1,7 +1,4 @@
-input:focus,
-textarea:focus,
-select:focus,
-details > summary:focus {
+*:focus {
   outline: none;
 }
 #middle_column {
@@ -158,4 +155,7 @@ details > summary:focus {
   text-decoration: none;
   text-align: center;
   overflow: hidden;
+}
+.btn-built-in-exer:hover {
+  background-color: #cfcfcf;
 }

@@ -226,6 +226,7 @@ img.radical {
   display: inline-block;
   width: 1em;
   vertical-align: text-top;
+  cursor: text;
 }
 /* https://codepen.io/sosuke/pen/Pjoqqp */
 .radical-special {

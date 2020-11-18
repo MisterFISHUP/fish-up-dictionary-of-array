@@ -1,3 +1,6 @@
+*:focus {
+  outline: none;
+}
 /* header */
 .dict-header {
   padding: 40px 16px 0px 16px;
@@ -22,9 +25,6 @@
   width: 90%;
   margin: 8px;
   border-radius: 20px;
-}
-#inputCharacters:focus {
-  outline: none;
 }
 .dict-button {
   background-color: #57342d;
@@ -52,6 +52,9 @@
   margin-bottom: 16px;
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
+.dict-block-comment a:hover {
+  color: #9e7055;
+}
 .dict-example {
   padding: 1px 20px;
   margin-top: 10px;
@@ -72,7 +75,8 @@
   padding: 12px 24px;
   background-color: white;
   border-radius: 16px;
-  scroll-margin-top: 69px; /* 45 + 24 (margin top) */
+  margin-top: 16px;
+  scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .dict-block-result-char-list {
   font-size: 1.3em;

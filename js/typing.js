@@ -741,7 +741,7 @@ function createBlockAnotherStyle(character, block_id_name, id_name) {
 
   // add character to resultBlock
   let char = document.createElement('div');
-  char.textContent = (character == ' ') ? '空白' : character;
+  char.textContent = (character == ' ') ? '空格' : character;
   char.style = "font-size: 2em; text-align: center;"; // bigger font size
   resultBlock.appendChild(char);
 

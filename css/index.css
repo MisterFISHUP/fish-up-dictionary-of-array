@@ -1,6 +1,6 @@
 /* ------ index page ------ */
 header {
-  min-height: 100%;
+  min-height: 100vh;
   border: 1px solid transparent;
   margin-top: 45px;
 }

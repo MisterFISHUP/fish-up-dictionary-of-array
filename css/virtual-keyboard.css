@@ -1,7 +1,7 @@
-/* Structure:
+/* FILE STRUCTURE
   - game area 
   - keyboard base
-  - key general setting
+  - key general settingS
   - key width
   - key design
   - pressed key
@@ -12,14 +12,20 @@
   - code examples
 */
 
-/* ------ game area ------ */
+/* ===========
+    GAME AREA
+  ============ */
+
 #game-area {
   width: 905px;
   margin: 0px auto 30px;
   box-sizing: content-box;
 }
 
-/* ------ keyboard base ------ */
+/* ===============
+    KEYBOARD BASE
+  ================ */
+
 #keyboard {
   padding: 20px 15px 15px;
   border-radius: 10px;
@@ -45,8 +51,10 @@
   border-radius: 6px;
   padding: 2px;
 }
+/* ======================
+    KEY GENERAL SETTINGS
+  ======================= */
 
-/* ------ key general setting ------ */
 /* inspired by https://codepen.io/P233/pen/qEagi */
 .key, .f_key, .s_key {
   width: 40px;
@@ -87,14 +95,15 @@
   text-align: center;
   padding: 0;
 }
-/* pressed key */
+
+/* =====[ pressed key ]===== */
 .key.pressed, .f_key.pressed, .s_key.pressed {
   transform: scale(0.95, 0.95);
 }
 #keyboard a {
   text-decoration: none;
 }
-/* ------ key width ------ */
+/* =====[ key width ]===== */
 .tab {
   width: 66px;
   border-right-width: 10px;
@@ -149,7 +158,10 @@
   border-left-width: 10px;
 }
 
-/* ------ key design ------ */
+/* ============
+    KEY DESIGN
+  ============= */
+
 .key.keycap_white_sky_sakura {
   background: #d3cfcc;
   border-color: #f0edea #e6e3e0 #d1cccc;
@@ -176,10 +188,13 @@
   background: linear-gradient(to left, #f8cbd6, #ffdde5, #f8cbd6);
 }
 
-/* ------ pressed key ------ */
+/* =============
+    PRESSED KEY
+  ============== */
+
 /* key_pressed_[keycap]_[backlight] */
 
-/* ↓ not easter eggs */
+/* =====[ ↓ not easter eggs ]===== */
 .key_pressed_default_bright-red {
   color: #ff1818;
   box-shadow: 0px 0px 6px 1px #ff1818;
@@ -268,7 +283,8 @@
 .key_pressed_christmas_flashing.key-typing .keyboard-keycap:before {content: '💝';}
 .key_pressed_christmas_flashing.key-array .keyboard-keycap:before {content: "🎅 Ho-Ho-Ho 🤶"; font-size: 17px; color: #796217;} */
 
-/* ↓ 10 easter eggs ↑ not easter eggs */
+/* =====[ ↑ not easter eggs ]===== */
+/* =====[ ↓ 10  easter eggs ]===== */
 .key_pressed_default_pink {
   color: #ff4ea0;
   box-shadow: 0px 0px 6px 1px #ff4ea0;
@@ -332,9 +348,12 @@
 .key_pressed_array-special_white.key-dictionary .keyboard-keycap:before {content: 'This'; font-size: 18px; color: #ffffff;}
 .key_pressed_array-special_white.key-typing .keyboard-keycap:before {content: 'Is'; font-size: 18px; color: #ffffff;}
 .key_pressed_array-special_white.key-array .keyboard-keycap:before {content: 'Designed by FISH UP'; font-size: 18px; color: #ffffff;}
-/* ↑ 10 easter eggs END*/
+/* =====[ ↑ 10 easter eggs END ]===== */
 
-/* ------ game output field ------ */
+/* ===================
+    GAME OUTPUT FIELD
+  ==================== */
+
 #game-output-field {
   font-size: large;
   border: 1px solid none;
@@ -343,7 +362,10 @@
 }
 
 
-/* ------ game instructions open ------ */
+/* ========================
+    GAME INSTRUCTIONS OPEN
+  ========================= */
+
 #game-instructions-open {
   cursor: pointer;
   width: 45px;
@@ -367,7 +389,10 @@
 }
 @keyframes notification { 0% { color: white; } 50% { color:transparent } 100% { color: white; }}
 
-/* ------ game instructions ------ */
+/* ===================
+    GAME INSTRUCTIONS
+  ===================== */
+
 .not-visible {
   visibility: hidden;
 }
@@ -392,7 +417,7 @@
   height: calc(66vh - 32px);
   top: 17vh;
   overflow-y: scroll;
-  color: rgb(46, 22, 8);
+  color: #2e1608;
   background: #e9d9c6;
 }
 .easter-egg-hint {
@@ -425,7 +450,10 @@
   font-size: 16px;  
 }
 
-/* ------ congratulations message ------ */
+/* =========================
+    CONGRATULATIONS MESSAGE
+  ========================== */
+
 #modal_congratulations_message {
   position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
   padding: 24px 48px;
@@ -453,7 +481,10 @@
   padding: 0;
 }
 
-/* ------ code examples ------ */
+/* ===============
+    CODE EXAMPLES
+  ================ */
+
 #code_examples_toggle {
   cursor: pointer;
 }

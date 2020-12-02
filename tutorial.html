@@ -13,298 +13,258 @@
     <title>行列教學：行列輸入法快速入門 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- For google -->
     <meta name="author" content="Mister FISH UP">
     <meta name="description" content="想學習輸入速度最快同時又超好學的中文輸入法？看這裡就對了！十分鐘不到讓你了解「行列」這個開源的免費中文輸入法！">
-    <meta name="keywords" content="行列,行列教學,行列輸入法,行列輸入法教學,中文輸入法,行列輸入法入門">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法,行列查碼">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="行列教學：行列輸入法快速入門 | FISH UP 行列查碼">
-    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
+    <meta itemprop="name" content="行列教學：行列輸入法快速入門 | FISH UP 行列查碼">    
     <meta itemprop="description" content="想學習輸入速度最快同時又超好學的中文輸入法？看這裡就對了！十分鐘不到讓你了解「行列」這個開源的免費中文輸入法！">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
     
     <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="行列教學：行列輸入法快速入門 | FISH UP 行列查碼">
     <meta property="og:description" content="想學習輸入速度最快同時又超好學的中文輸入法？看這裡就對了！十分鐘不到讓你了解「行列」這個開源的免費中文輸入法！">
-    <meta property="og:type" content="網站">
     <meta property="og:url" content="https://array30.misterfishup.com/tutorial.html">
-    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png"/>
-    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
-    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
+    <meta property="og:site_name" content="FISH UP 行列查碼">
+    <meta property="fb:admins" content="106035361278242">
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="行列教學：行列輸入法快速入門 | FISH UP 行列查碼">
+    <meta name="twitter:description" content="想學習輸入速度最快同時又超好學的中文輸入法？看這裡就對了！十分鐘不到讓你了解「行列」這個開源的免費中文輸入法！">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/page-with-sticky-toc.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align">
-            <!-- always there -->
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-            <!-- small screens (toggle button)-->
-            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-            <!-- large screens -->
-            <div class="w3-hide-medium w3-hide-small">
-                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-                <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
+    <div id='app' data-local='tw' data-page-name='tutorial.html'>
+        <!-- Navbar -->
+        <app-nav-bar></app-nav-bar>
+
+        <!-- btn for toggling toc on small screens -->
+        <button id="toggleTOCSmall" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
+        <!-- toc on small screens -->
+        <div id="tocSmallWrapper" class="w3-hide-large w3-hide">
+            <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div id="tocSmall">
+                <h3 class="w3-center">{{ appContent.contents[local] }}</h3>
+                <ol>
+                    <li><a href="#array-key">1. {{ appContent.arrayKey.title[local] }}</a></li>
+                    <li><a href="#character-and-symbol">2. {{ appContent.charactersAndSymbols.title[local] }}</a></li>
+                    <li><a href="#fundamental-stroke-shape-and-stuff">3. {{ appContent.fssAndStuff.title[local] }}</a></li>                    
+                    <li><a href="#decomposition-encoding">4. {{ appContent.decompositionEncoding.title[local] }}</a></li>
+                    <li><a href="#standard-vs-special-or-short-code">5. {{ appContent.standardVsSpecialOrShortCode.title[local] }}</a></li>
+                </ol>
+                <br>
+            </div>
+        </div>
+
+        <div class="w3-row" style="width: 95%; margin: 105px auto 80px; position: relative;">
+            <!-- sticky toc wrapper -->
+            <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 15em; font-size: small; margin-right: 10px;" id="stickyTOCWrapper">
+                <br>
+                <!-- sticky toc (hide-medium & hide-small) -->
+                <aside>
+                    <ol>
+                        <li><a href="#array-key">{{ appContent.arrayKey.title[local] }}</a></li>
+                        <li><a href="#character-and-symbol">{{ appContent.charactersAndSymbols.title[local] }}</a></li>
+                        <li><a href="#fundamental-stroke-shape-and-stuff">{{ appContent.fssAndStuff.title[local] }}</a></li>                    
+                        <li><a href="#decomposition-encoding">{{ appContent.decompositionEncoding.title[local] }}</a></li>
+                        <li><a href="#standard-vs-special-or-short-code">{{ appContent.standardVsSpecialOrShortCode.title[local] }}</a></li>
+                    </ol>
+                </aside>
+            </div>
+            <!-- toggling sticky toc (hide-medium & hide-small) -->
+            <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 1em;">
+                <br>
+                <span id="toggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-list w3-hide" aria-hidden="true"></i></span>
+            </div>
+            
+            <!-- page content -->
+            <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
+                <h1>{{ appContent.title[local] }}</h1>
+                <h6 v-html='appContent.author[local]'></h6>
+
+                <hr>
+                <p style="padding: 0 24px;">{{ appContent.description[local] }}</p>
+                <hr>
+                
+                <p class="w3-pale-green w3-round-large w3-padding" v-html='appContent.alreadyRead[local]'></p>
+
+                <!-- 1. The thirty Array keys -->
+                <section id="array-key">
+                    <h2>1. {{ appContent.arrayKey.title[local] }}</h2>
+                    <p v-html='appContent.arrayKey.lookAtKeyboard[local]'></p>
+                    <div class="w3-center">
+                        <img src="/img/array-keyboard.png" :alt='appContent.img.arrayKeyboardAlt[local]' :title='appContent.img.arrayKeyboardAlt[local]' class="download-image" style="max-width: 95%;">
+                    </div>
+                    <p v-html='appContent.arrayKey.name[local]'></p>
+                    <p v-html='appContent.arrayKey.example[local]'></p>    
+                    <p class="comment">{{ appContent.arrayKey.comPlusSign[local] }}</p>
+                    <br>
+
+                    <p>{{ appContent.arrayKey.typingHabit[local] }}</p>
+                    <h3>{{ appContent.arrayKey.startPosition.title[local] }}</h3>
+                    <p v-html='appContent.arrayKey.startPosition.fingerStartPosition[local]'></p>
+                    <p class="comment" v-html='appContent.arrayKey.startPosition.bumpFJ[local]'></p>
+
+                    <h3>{{ appContent.arrayKey.whileTyping.title[local] }}</h3>
+                    <p style="line-height: 2.2;">
+                        <span class="keycap keycap-letter">1↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">1-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">1↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">1</span> {{ appContent.arrayKey.whileTyping.leftLittle[local] }}<br>
+                        <span class="keycap keycap-letter">2↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">2-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">2↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">2</span> {{ appContent.arrayKey.whileTyping.leftRing[local] }}<br>
+                        <span class="keycap keycap-letter">3↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">3-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">3↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">3</span> {{ appContent.arrayKey.whileTyping.leftMiddle[local] }}<br>
+                        <span class="keycap keycap-letter">4↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">4-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">4↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">4</span> {{ appContent.arrayKey.whileTyping.leftIndex[local] }}<br>
+                        <span class="keycap keycap-letter">5↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">5-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">5↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">5</span> {{ appContent.arrayKey.whileTyping.leftIndex[local] }}<br>
+                        <span class="keycap keycap-letter">6↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">6-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">6↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">6</span> {{ appContent.arrayKey.whileTyping.rightIndex[local] }}<br>
+                        <span class="keycap keycap-letter">7↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">7-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">7↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">7</span> {{ appContent.arrayKey.whileTyping.rightIndex[local] }}<br>
+                        <span class="keycap keycap-letter">8↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">8-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">8↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">8</span> {{ appContent.arrayKey.whileTyping.rightMiddle[local] }}<br>
+                        <span class="keycap keycap-letter">9↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">9-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">9↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">9</span> {{ appContent.arrayKey.whileTyping.rightRing[local] }}<br>
+                        <span class="keycap keycap-letter">0↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">0-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">0↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">0</span> {{ appContent.arrayKey.whileTyping.rightLittle[local] }}<br>
+                        <span class="keycap keycap-space">Space</span> {{ appContent.arrayKey.whileTyping.leftRightThumb[local] }}<br>
+                    </p>
+                    <p>{{ appContent.arrayKey.thatsAll[local] }}</p>
+                </section>
+
+                <!-- 2. Characters and symbols -->
+                <section id="character-and-symbol">
+                    <h2>2. {{ appContent.charactersAndSymbols.title[local] }}</h2>
+                    <p>{{ appContent.charactersAndSymbols.description[local] }}</p>
+                    <p v-html='appContent.charactersAndSymbols.accessSymbolList[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.charactersAndSymbols.symbolListExample[local]'></p>
+                    </div>
+                    <p class="comment" v-html='appContent.charactersAndSymbols.comEmoji[local]'></p>
+                </section>
+
+                <!-- 3. FSS, radicals, radical codes, radical keys -->
+                <section id="fundamental-stroke-shape-and-stuff">
+                    <h2>3. {{ appContent.fssAndStuff.title[local] }}</h2>
+                    <p>{{ appContent.fssAndStuff.description[local] }}</p>
+
+                    <!-- fss -->
+                    <h3>{{ appContent.fssAndStuff.fss.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.fss.description1[local]'></p>
+                    <p>{{ appContent.fssAndStuff.fss.description2[local] }}</p>
+                    <p>{{ appContent.fssAndStuff.fss.example[local] }}</p>
+                    <p class="comment" v-html='appContent.fssAndStuff.fss.comShape[local]'></p>
+
+                    <!-- radicals -->
+                    <h3>{{ appContent.fssAndStuff.radical.title[local] }}</h3>
+                    <p>{{ appContent.fssAndStuff.radical.description[local] }}</p>
+                    <p class="comment" v-html='appContent.fssAndStuff.radical.comNotBushou[local]'></p>
+
+                    <!-- radical codes -->
+                    <h3>{{ appContent.fssAndStuff.radicalCode.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.radicalCode.description1[local]'></p>
+                    <p v-html='appContent.fssAndStuff.radicalCode.description2[local]'></p>
+                    <p v-html='appContent.fssAndStuff.radicalCode.radicalCodeExample[local]'></p>
+                    <p class="comment" v-html='appContent.fssAndStuff.radicalCode.comSESS[local]'></p>
+
+                    <!-- radical keys -->
+                    <h3>{{ appContent.fssAndStuff.radicalKey.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.radicalKey.description[local]'></p>
+                    <p>{{ appContent.fssAndStuff.radicalKey.twoCases[local] }}</p>
+                    <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.description[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar1[local]'></p>
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar2[local]'></p>
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar3[local]'></p>
+                    </div>
+                    <p>{{ appContent.fssAndStuff.radicalKey.twoDigits.putItSimply[local] }}</p>
+                    <p v-html='appContent.fssAndStuff.radicalKey.digitAlone.description[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.fssAndStuff.radicalKey.digitAlone.examplePar1[local]'></p>
+                    </div>
+                    <p>{{ appContent.fssAndStuff.radicalKey.conclusion[local] }}</p>
+                    
+                    <p v-html='appContent.fssAndStuff.conclusionPar1[local]'></p>
+                    <p v-html='appContent.fssAndStuff.conclusionPar2[local]'></p>
+                </section>
+
+                <!-- 4. Decomposition, encoding -->
+                <section id="decomposition-encoding">
+                    <h2>4. {{ appContent.decompositionEncoding.title[local] }}</h2>
+                    <p>{{ appContent.decompositionEncoding.decomposition[local] }}</p>
+                    <p>{{ appContent.decompositionEncoding.code[local] }}</p>
+                    <p>{{ appContent.decompositionEncoding.inPractice[local] }}</p>
+                    <p class="comment">{{ appContent.decompositionEncoding.comAtMostFour[local] }}</p>
+                </section>
+
+                <!-- 5. Standard codes vs. Special or short codes -->
+                <section id="standard-vs-special-or-short-code">
+                    <h2>5. {{ appContent.standardVsSpecialOrShortCode.title[local] }}</h2>
+                    <p v-html='appContent.standardVsSpecialOrShortCode.description1[local]'></p>
+                    <p v-html='appContent.standardVsSpecialOrShortCode.description2[local]'></p>
+                    <p><b>{{ appContent.codeType.specialCode[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionSpecialCode[local] }}</p>
+                    <p><b>{{ appContent.codeType.shortCode[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCode[local] }}</p>
+                    <p>
+                        📌 <b>{{ appContent.codeType.shortCodeI[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCodeI[local] }}
+                        <br>
+                        📌 <b>{{ appContent.codeType.shortCodeII[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCodeII[local] }}
+                    </p>
+                    <p>{{ appContent.standardVsSpecialOrShortCode.standardCode[local] }}</p>
+                    <p>{{ appContent.standardVsSpecialOrShortCode.coincident[local] }}</p>
+                </section>
+
+                <p style="margin: 60px auto ;">{{ appContent.thatsAll[local] }}</p>
+
+                <!-- Call to action -->
+                <div class="example">
+                    <p>{{ appContent.afterThis.typing[local] }}</p>
+                    <p v-html='appContent.afterThis.downloadArray[local]'></p>
+                    <div class="w3-center" style="margin: 40px auto;">
+                        <a href="typing.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> {{ appContent.afterThis.buttonTyping[local] }} <<</a>
+                    </div>
+            
+                    <p>{{ appContent.afterThis.readCompleteGuide[local] }}</p>    
+            
+                    <div class="w3-center" style="margin: 40px auto;">
+                        <a href="tutorial-complete.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> {{ appContent.afterThis.buttonCompleteGuide[local] }} <<</a>
                     </div>
                 </div>
-                <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-                <div class="w3-right">
-                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
+
+                <!-- share button -->
+                <div>
+                    {{ appContent.shareThisPageOn[local] }}
+                    <img class="social-share facebook-share" tabindex="0">
+                    <img class="social-share twitter-share" tabindex="0">
+                    <img class="social-share line-share" tabindex="0">
+                    <img class="social-share telegram-share" tabindex="0">
+                    <img class="social-share linkedIn-share" tabindex="0">
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
-        <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
-            <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
-                &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
-            </div>
-        </div>
-        <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
-        </div>
-        <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
-    </div>
 
-    <!-- btn for toggling toc on small screens -->
-    <button id="toggleTOCSmall" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
-    <!-- toc on small screens -->
-    <div id="tocSmallWrapper" class="w3-hide-large w3-hide">
-        <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
-        <div id="tocSmall">
-            <ol>
-                <li><a href="#Array-key">行列 30 鍵</a></li>
-                <li><a href="#character-and-symbol">字與符號</a></li>
-                <li><a href="#fundamental-stroke-shape-and-stuff">基本筆形、字根、字根碼、鍵位</a></li>                    
-                <li><a href="#decomposition-encoding">拆字/拆碼/取碼</a></li>
-                <li><a href="#standard-vs-special-or-short-code">普通編碼 vs. 特別碼、簡碼</a></li>
-            </ol>
-            <br>
-        </div>
-    </div>
-
-<div class="w3-row" style="width: 95%; margin: 105px auto 80px; position: relative;">
-    <!-- sticky toc warpper -->
-    <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 15em; font-size: small; margin-right: 10px;" id="stickyTOCWrapper">
-        <br>
-        <!-- sticky toc (hide-medium & hide-small) -->
-        <aside>
-            <ol>
-                <li><a href="#Array-key">行列 30 鍵</a></li>
-                <li><a href="#character-and-symbol">字與符號</a></li>
-                <li><a href="#fundamental-stroke-shape-and-stuff">基本筆形、字根、字根碼、鍵位</a></li>                    
-                <li><a href="#decomposition-encoding">拆字/拆碼/取碼</a></li>
-                <li><a href="#standard-vs-special-or-short-code">普通編碼 vs. 特別碼、簡碼</a></li>
-            </ol>
-        </aside>
-    </div>
-    <!-- toggling sticky toc (hide-medium & hide-small) -->
-    <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 1em;">
-        <br>
-        <span id="toggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-list w3-hide" aria-hidden="true"></i></span>
-    </div>
-    
-    <!-- page content -->
-    <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
-        <h1>行列輸入法快速入門</h1>
-        <h6><a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a> 撰</h6>        
-        <hr>
-        <p style="padding: 0 24px;">嗨！想認識行列輸入法對吧？本文將透過介紹行列輸入法的基本 5 件事，讓您了解行列輸入法的核心觀念以及運作原理，不僅僅能夠快速入門行列輸入法，也簡練地展現了行列輸入法的全貌。不用 10 分鐘就可以讀完！</p>
-        <hr>
+        <!-- Footer -->
+        <app-footer></app-footer>
         
-        <p class="w3-pale-green w3-round-large w3-padding">我閱讀過快速入門了，<a href="tutorial-complete.html">點此直接去完整教學頁面</a>。</p>
-
-        <!-- 1. 行列 30 鍵 -->
-        <section id="Array-key">
-            <h2>1. 行列 30 鍵</h2>
-            <p>注意到鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列輸入法分別稱之為「5 上」、「5 中」以及「5 下」，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。</p>   
-            <p>我們將十顆數字鍵下方的這 30 顆鍵稱作<b>行列 30 鍵</b>。每顆鍵依照 10 個數字（行）以及「上、中、下」（列）來定位，這就是<b>行列輸入法</b>或<b>行列 30</b> 這兩個名稱的由來。</p>
-            <p>使用行列輸入法將文字拆碼後對應到的鍵，便是這 30 顆透過數字以及「上、中、下」定位的鍵，這就是為什麼行列輸入法不用像英打或多數其他字根輸入法需要記鍵位。</p>
-            <p>例如中文字「繼」的行列編碼為 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 中，您不必記任何鍵位也不用看鍵盤就可以輸入這四個鍵！</p>
-    
-            <p class="comment">除非有特別說明，否則本站在描述輸入字符的按鍵或編碼時使用的加號「+」，表示依序輸入，並不是要同時按按鍵。</p>
-            <br>
-            <p>使用行列輸入法應該從一開始就養成正確的按鍵方式來鍵入行列 30 鍵，也就是要有正確的「按鍵指法」。</p>
-            <h3>準備狀態</h3>
-            <p>左手的小指、無名指、中指以及食指，應該依序輕放在行列 30 鍵 <span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">2-</span>、<span class="keycap keycap-letter">3-</span>、<span class="keycap keycap-letter">4-</span> 上，也就是英文鍵 <span class="keycap keycap-letter">a</span>、<span class="keycap keycap-letter">s</span>、<span class="keycap keycap-letter">d</span>、<span class="keycap keycap-letter">f</span>；而右手的食指、中指、無名指以及小指，應該依序輕放在行列 30 鍵 <span class="keycap keycap-letter">7-</span>、<span class="keycap keycap-letter">8-</span>、<span class="keycap keycap-letter">9-</span>、<span class="keycap keycap-letter">0-</span> 上，也就是英文鍵 <span class="keycap keycap-letter">j</span>、<span class="keycap keycap-letter">k</span>、<span class="keycap keycap-letter">l</span>、<span class="keycap keycap-letter">;</span>。雙手的拇指則是輕放在空白鍵上。</p>
-            <p class="comment">此時雙手「食指」所在的按鍵上，也就是 <span class="keycap keycap-letter">4-</span> 和 <span class="keycap keycap-letter">7-</span>，會有突起以方便觸摸定位。此兩鍵是行列 30 鍵中唯二有突起的按鍵。</p>
-            <!-- <img src="/image-test/keyboard.png" alt="行列輸入法按鍵指法" width="200px"> -->
-            <h3>打字時</h3>
-            <p style="line-height: 2.2;">
-                <span class="keycap keycap-letter">1↑</span>、<span class="keycap keycap-letter">1-</span>、<span class="keycap keycap-letter">1↓</span> 以及數字鍵 <span class="keycap keycap-number">1</span> 這四顆鍵由左手小指掌管<br>
-                <span class="keycap keycap-letter">2↑</span>、<span class="keycap keycap-letter">2-</span>、<span class="keycap keycap-letter">2↓</span> 以及數字鍵 <span class="keycap keycap-number">2</span> 這四顆鍵由左手無名指掌管<br>
-                <span class="keycap keycap-letter">3↑</span>、<span class="keycap keycap-letter">3-</span>、<span class="keycap keycap-letter">3↓</span> 以及數字鍵 <span class="keycap keycap-number">3</span> 這四顆鍵由左手中指掌管<br>
-                <span class="keycap keycap-letter">4↑</span>、<span class="keycap keycap-letter">4-</span>、<span class="keycap keycap-letter">4↓</span> 以及數字鍵 <span class="keycap keycap-number">4</span> 這四顆鍵由左手食指掌管<br>
-                <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span> 以及數字鍵 <span class="keycap keycap-number">5</span> 這四顆鍵由左手食指掌管<br>
-                <span class="keycap keycap-letter">6↑</span>、<span class="keycap keycap-letter">6-</span>、<span class="keycap keycap-letter">6↓</span> 以及數字鍵 <span class="keycap keycap-number">6</span> 這四顆鍵由右手食指掌管<br>
-                <span class="keycap keycap-letter">7↑</span>、<span class="keycap keycap-letter">7-</span>、<span class="keycap keycap-letter">7↓</span> 以及數字鍵 <span class="keycap keycap-number">7</span> 這四顆鍵由右手食指掌管<br>
-                <span class="keycap keycap-letter">8↑</span>、<span class="keycap keycap-letter">8-</span>、<span class="keycap keycap-letter">8↓</span> 以及數字鍵 <span class="keycap keycap-number">8</span> 這四顆鍵由右手中指掌管<br>
-                <span class="keycap keycap-letter">9↑</span>、<span class="keycap keycap-letter">9-</span>、<span class="keycap keycap-letter">9↓</span> 以及數字鍵 <span class="keycap keycap-number">9</span> 這四顆鍵由右手無名指掌管<br>
-                <span class="keycap keycap-letter">0↑</span>、<span class="keycap keycap-letter">0-</span>、<span class="keycap keycap-letter">0↓</span> 以及數字鍵 <span class="keycap keycap-number">0</span> 這四顆鍵由右手小指掌管<br>
-                <span class="keycap keycap-space">Space</span> 由左手拇指或是右手拇指掌管<br>
-            </p>
-            <p>以上就是行列 30 鍵的所有說明。</p>
-        </section>
-        <!-- 2. 字與符號 -->
-        <section id="character-and-symbol">
-            <h2>2. 字與符號</h2>
-            <p>第二件基礎但重要的事情是，行列輸入法除了能夠輸入中文字外，還能輸入超過四百多個符號，其中包括了所有全形標點符號。</p>
-            <p>先按 <span class="keycap keycap-letter">2↑</span> （也就是英文鍵 <span class="keycap keycap-letter">w</span>），再按任意一顆數字鍵便會進入符號選單（不同的數字鍵對應到不同類型的選單）。進入符號選單後可以按空白鍵到下一頁，或是按方向鍵切換上一頁/下一頁，看到想要的符號以數字鍵選擇完成輸入。</p>
-            <div class="example">
-                <p>
-                    例如：<br>
-                    先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">2</span> 進入括號符號選單，例如有（ ） 「 」等等符號可選<br>
-                    先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">4</span> 進入數學符號選單，例如有÷ ≠ ∞ ≒等等符號可選<br>
-                    先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">8</span> 進入順序符號選單，例如有③ ⑶ ⅲ Ⅲ等等符號可選<br>
-                    先按 <span class="keycap keycap-letter">2↑</span> 再按 <span class="keycap keycap-number">0</span> 進入注音符號選單，例如有ㄅ ˙ ˊ ˇ等等符號可選
-                </p>
-            </div>
-            <p class="comment">有些版本的行列甚至可以輸入 emoji 以及顏文字，例如適用於 Windows 的<a href="download.html#new-Array" target="_blank">新行列輸入法</a>。</p>
-        </section>
-        <!-- 3. 基本筆形、字根、字根碼、鍵位 -->
-        <section id="fundamental-stroke-shape-and-stuff">
-            <h2>3. 基本筆形、字根、字根碼、鍵位</h2>
-            <p>此部分要帶您了解行列輸入法的四個核心名詞，它們分別是基本筆形、字根、字根碼以及鍵位。這四個元素相當重要，同時也簡單易懂，幾乎不太有需要死記的事！</p>
-            <h3>基本筆形</h3>
-            <p>行列輸入法建立在 <u>10 個基本筆形</u>上，每一個基本筆形對應到一個數字。</p>
-            <p>舉例來說，有一個基本筆形叫逆彎：㇗，此基本筆形對應的數字是 2，可以用「寫數字 2 時最後面就是一個逆彎（逆時針的彎曲）」來理解；當然，也有另一個基本筆形叫順彎：㇕，此基本筆形對應的數字是 5，可以用「寫數字 5 時最後面就是一個順彎（順時針的彎曲）」來理解。又例如有一個基本筆形叫撇：㇒，此基本筆形對應的數字是 9，可以用「寫數字 9 時最後面就像是一撇」來理解。</p>
-            <p class="comment">如同字面上的意思，基本筆「形」是一個形狀，不一定是單一一個筆畫！比如說有一個基本筆形叫正交：十，是橫豎兩線交叉的筆形。它對應的數字是 4，可以用「數字 4 裡面有一個正交」來理解。</p>
-            <h3>字根</h3>
-            <p>字根是組成中文字的各種零件，也就是說每個中文字可以拆解成一至數個字根。例如中文字「功」在行列輸入法中拆成「工、力」這兩個字根，中文字「架」拆成「力、口、木」這三個字根。</p>
-            <p class="comment">行列的字根不一定是中文的部首或偏旁，可能是單位更大或更小的零件，例如「長」這個字在行列輸入法中拆成「<img src="/img/array30-radical/11長.png" class="radical" alt="行列字根 11，「長」去掉最末三筆畫">、<img src="/img/array30-radical/28衣.png" class="radical" alt="行列字根 28，「衣」去掉前三筆畫">」這兩個字根、「鼎」拆成「目、<img src="/img/array30-radical/55鼎.png" class="radical" alt="行列字根 55，「鼎」去掉目">」這兩個字根，又或者「代」拆成「亻、一、<img src="/img/array30-radical/26弋.png" class="radical" alt="行列字根 26，「弋」去掉橫線">」這三個字根、「會」拆成「<img src="/img/array30-radical/81合.png" class="radical" alt="行列字根 81，「合」去掉口">、<img src="/img/array30-radical/08曾.png" class="radical" alt="行列字根 08，「曾」去掉最初兩筆畫再去掉日">、日」這三個字根。（只是舉例，您看過去即可，不用特別去記這些例子！）</p>
-            <h3>字根碼</h3>
-            <p>行列輸入法的每一個字根都會對應到一個字根碼，而絕大多數的情況這個對應遵循著<u>非常簡單</u>的規則。這個簡單的規則在<a href="tutorial-complete.html" target="_blank">完整教學</a>就會說明，而上面剛解釋的基本筆形就是用在這個規則裡。</p>
-            <p>字根碼是一個二位數字（例如 <span class="radical-code">16</span>、<span class="radical-code">59</span>、<span class="radical-code">08</span>），或是一個數字加上連字號 - （例如 <span class="radical-code">2-</span>、<span class="radical-code">6-</span>、<span class="radical-code">0-</span> 等，此時字根碼讀做「2 單」、「6 單」「0 單」）。字根碼就只有上述這兩種型態。</p>
-            <p>這裡舉出幾個剛看過的字根為例，字根「工」的字根碼是 <span class="radical-code">11</span>、字根「力」的字根碼是 <span class="radical-code">59</span>、字根「口」的字根碼是 <span class="radical-code">0-</span>（讀做「0 單」）、字根「木」的字根碼是 <span class="radical-code">48</span>。這些只是舉例，您看過去即可，不用特別去記這些例子！</p>
-
-            <p class="comment">也許您有注意到，字根「力」的字根碼 <span class="radical-code">59</span> 就是由字根的首筆形「㇆：順彎 5」和尾筆形「㇒：撇 9」給出的數字。沒錯，行列輸入法大部分字根的字根碼，就是由首筆形和尾筆形得出的，所以學習行列時，幾乎沒有需要死記的知識！</p>
-            <h3>鍵位</h3>
-            <p>所謂的鍵位就是行列 30 鍵各鍵（的名稱），像是 <span class="keycap keycap-letter">7↑</span>（7 上）、<span class="keycap keycap-letter">3-</span>（3 中）、<span class="keycap keycap-letter">0↓</span>（0 下）。依照相當簡單的規則，行列輸入法的每一個字根碼都會對應到一個鍵位。例如「<span class="radical-code">59</span>」這個字根碼的鍵位是 5 下，「<span class="radical-code">0-</span>」這個字根碼的鍵位是 0 中。</p>
-            <p>這個相當簡單的規則如下，依字根碼的型態分為兩種狀況。</p>
-            <p><b>1. 字根碼是一個二位數字</b>：第一位數對應到行列 30 鍵的行，而第二位數依照「0, 1, 2, 3, 4：上&emsp;5：中&emsp;6, 7, 8, 9：下」對應行列 30 鍵的列。</p>
-            <div class="example">
-                <p>
-                    例如：<br>
-                    字根碼 <span class="radical-code">21</span> 對應到鍵位 <span class="keycap keycap-letter">2↑</span>（2 上）<br>
-                    字根碼 <span class="radical-code">25</span> 對應到鍵位 <span class="keycap keycap-letter">2-</span>（2 中）<br>
-                    字根碼 <span class="radical-code">29</span> 對應到鍵位 <span class="keycap keycap-letter">2↓</span>（2 下）<br>
-                </p>
-                <p>
-                    字根碼 <span class="radical-code">60</span> 對應到鍵位 <span class="keycap keycap-letter">6↑</span>（6 上）<br>
-                    字根碼 <span class="radical-code">65</span> 對應到鍵位 <span class="keycap keycap-letter">6-</span>（6 中）<br>
-                    字根碼 <span class="radical-code">66</span> 對應到鍵位 <span class="keycap keycap-letter">6↓</span>（6 下）
-                </p>
-                <p>
-                    字根碼 <span class="radical-code">01</span> 對應到鍵位 <span class="keycap keycap-letter">0↑</span>（0 上）<br>
-                    字根碼 <span class="radical-code">04</span> 對應到鍵位 <span class="keycap keycap-letter">0↑</span>（0 上）<br>
-                    字根碼 <span class="radical-code">06</span> 對應到鍵位 <span class="keycap keycap-letter">0↓</span>（0 下）
-                </p>            
-            </div>
-            <p>簡單來說，字根碼第二位數等於 5 對應到「中」，而小於 5 和大於 5 則分別對應到「上」和「下」。</p>
-            <p><b>2. 字根碼是一個數字加上連字號</b>：數字對應到的行列 30 鍵的行，連字號對應到「上、中、下」的中。</p>
-            <div class="example">
-                <p>
-                    例如：<br>
-                    字根碼 <span class="radical-code">1-</span> 對應到鍵位 <span class="keycap keycap-letter">1-</span>（1 中）<br>
-                    字根碼 <span class="radical-code">5-</span> 對應到鍵位 <span class="keycap keycap-letter">5-</span>（5 中）<br>
-                    字根碼 <span class="radical-code">7-</span> 對應到鍵位 <span class="keycap keycap-letter">7-</span>（7 中）<br>
-                    字根碼 <span class="radical-code">0-</span> 對應到鍵位 <span class="keycap keycap-letter">0-</span>（0 中）<br>
-                </p>
-            </div>
-            <p>字根碼對應到鍵位的規則就這樣！相當簡單易懂！</p>
-            
-            <p>如果您將上述幾個知識結合在一起，就可以發現每個字根都可以對應到一個鍵位！例如字根「工」的字根碼是 <span class="radical-code">11</span>，對應到鍵位 <span class="keycap keycap-letter">1↑</span>，我們就會說字根「工」的鍵位是 <span class="keycap keycap-letter">1↑</span>（1 上）；字根「力」的字根碼是 <span class="radical-code">59</span>，對應到鍵位 <span class="keycap keycap-letter">5↓</span>，我們就會說字根「力」的鍵位是 <span class="keycap keycap-letter">5↓</span>（5 下）。</p>
-            <p>又例如字根「口」的字根碼是 <span class="radical-code">0-</span>，所以鍵位是 <span class="keycap keycap-letter">0-</span>（0 中）；字根「木」的字根碼是 <span class="radical-code">48</span>，所以鍵位是 <span class="keycap keycap-letter">4↓</span>（4 下）。綜上所述，行列輸入法中，每一個字根都會對應到一顆行列 30 鍵（即每一個字根都會對應到一個鍵位）。</p>
-        </section>
-        <!-- 4. 拆字/拆碼/取碼 -->
-        <section id="decomposition-encoding">
-            <h2>4. 拆字/拆碼/取碼</h2>
-            <p>我們將一個字拆成一至數個字根，這個叫做「拆字」。例如將「功」這個字拆成「工、力」這兩個字根、「架」拆成「力、口、木」這三個字根等等。</p>
-            <p>但真正輸入時並不一定會使用到所有字根，可能只會取一部分字根來輸入。得到這些字根、或這些字根的字根碼、或是這些字根的鍵位，這個叫做「拆碼」或「取碼」。</p>
-            <p>實際溝通上，我們常混淆使用「拆字」、「拆碼」、「取碼」這三個詞彙。</p>
-            <p class="comment">行列輸入法每個字最多只會取 4 個字根來輸入。</p>
-        </section>
-        <!-- 5. 普通編碼 vs. 特別碼、簡碼 -->
-        <section id="standard-vs-special-or-short-code">
-            <h2>5. 普通編碼 vs. 特別碼、簡碼</h2>
-            <p>將字拆成一至數個字根，並取其中最多 4 個字根來實際輸入，以這種原理得到字根碼或是鍵位，本站稱之為<u>普通編碼</u>。</p>
-            <p>然而對於常用的字或是符號，行列輸入法提供更簡短的編碼（更少的按鍵數）讓您可以更快速地輸入。分為兩大類：<u>特別碼</u>以及<u>簡碼</u>。</p>
-            <p><b>特別碼</b>：按完兩顆行列 30 鍵後按空白鍵完成輸入。</p>
-            <p><b>簡碼</b>：特色是最後透過按一顆數字鍵來完成輸入，且輸入全程不需要空白鍵。又分為一級簡碼和二級簡碼：</p>
-            <p>
-                &emsp;<b>一級簡碼</b>：按完一顆行列 30 鍵後按一顆數字鍵完成輸入。<br>
-                &emsp;<b>二級簡碼</b>：按完兩顆行列 30 鍵後按一顆數字鍵完成輸入。
-            </p>
-            <p>至於普通編碼，它則是按一或多顆行列 30 鍵後，再按一下空白鍵。如果該編碼沒有重碼*，則輸入完成，否則會需要面對重碼的問題（解決方法很簡單，例如用數字鍵選字完成輸入）。</p>
-            <p class="comment">一個編碼有重碼的意思是，它是不只一個字的普通編碼。</p>
-        </section>
-        <br>
-        <p>以上就是行列輸入法快速入門的所有內容。</p>
-        <br>
-        <div class="example">
-            <p>您接著可以到本站的打字練習去玩玩看、實際體驗行列輸入法：雖然只看完上面的基本 5 件事，您還沒辦法自己用行列輸入法打字，但本站的打字練習幫您附上了行列拆碼 ❤️，您完全照著按就可以輸入，像是玩遊戲一樣！</p>
-            <p>如果您還沒有行列輸入法，先到本站的<a href="download.html#array-IME" target="_blank">下載頁面</a>下載適合您系統的行列輸入法就可以了！</p>
-            <div class="w3-center" style="margin: 40px auto;">
-                <a href="typing.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> 體驗行列打字 <<</a>
-            </div>
-            <!-- <i class="fa fa-external-link" aria-hidden="true"></i> -->
-    
-            <p>之後不要忘記繼續閱讀本站的「行列輸入法完整教學」呦！</p>
-    
-    
-            <div class="w3-center" style="margin: 40px auto;">
-                <a href="tutorial-complete.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> 閱讀完整教學 <<</a>
-            </div>
-        </div>
+        <!-- back to top button -->
+        <button type="button" id="to_top" class="toTop-arrow"></button>
     </div>
-</div>
-    <!-- <div class="buy-me-a-coffee-block">
-        <p>此網站所提供的服務（行列查碼、行列打字練習、行列教學、字根表）皆是免費的！</p>
-        <p>如果您覺得本網站對您很有幫助，可以考慮透過下方按鈕贊助本站作者 FISH UP 😸</p>
-        <a href="https://www.buymeacoffee.com/misterfishup" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" class="w3-margin-top"></a>
-    </div> -->
-
-    <!-- Footer -->
-    <footer class="footer-fish-up">
-        <div class="w3-xlarge w3-section">
-            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
-        </div>
-        <p>Copyright &copy; 2020 <a href="index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
-    </footer>
-    
-    <!-- back to top button -->
-    <button type="button" id="to_top" class="toTop-arrow"></button>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/display.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/app/tutorial.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
     <script type="text/javascript" src="/js/toc.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </body>

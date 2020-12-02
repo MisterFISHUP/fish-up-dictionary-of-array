@@ -1,7 +1,14 @@
+/**
+ * Author: FISH UP
+ * https://array30.misterfishup.com/
+ * Copyright © 2020 FISH UP Dictionary of Array
+ * Date: 2020-12-01
+ */
+
 /* structure:
   - three objects as dictionaries
   - functions that change game's output status
-  - code examples
+  - code examples +
   - detect code examples
   - keyboard style and their commands
   - detect commands for style
@@ -380,7 +387,7 @@ function gameAutoClear() {
 };
 
 // --------------
-// code examples
+// code examples +
 // --------------
 
 // The order of codes in the list is important.
@@ -486,7 +493,9 @@ function detectcodeExamples(eventCodeLowerCase) {
       if (letter == codeExample[codeExamplesState[codeExample].length]) {
         codeExamplesState[codeExample] += letter;
       } else {
-        letter == codeExample[0] ? codeExamplesState[codeExample] += letter : codeExamplesState[codeExample] = '';
+        letter == codeExample[0] ?
+          codeExamplesState[codeExample] += letter :
+          codeExamplesState[codeExample] = '';
       }
       // then check if it's completed
       if (codeExamplesState[codeExample] == codeExample.slice(0, -1)) {
@@ -541,20 +550,20 @@ let keyPressedStyle = 'default_pink';
 // any style of allKeyPressedStyleOptions needs to have at least one command
 const commandForKeyPressedStyle = {
   'array-special_white': [
-    'fish up', 'array', 'tableau', 'tqblequ',
+    'fish up', 'array', 'qrrqy', 'tableau', 'tqblequ',
     '.3ame ', '.aad ame ' // 行列 行列
   ],
   /* Hey, you're NOT supposed to be reading these commands,
   try finding them ON YOUR OWN! (You'll be well guided) */
   'default_white': [
     '1234567890', // 0987654321 to turn off
-    'all white', 'tout blanc', 'tout blqnc', 'toute blanche', 'toute blqnche',
+    'all white', 'qll white', 'tout blanc', 'tout blqnc', 'toute blanche', 'toute blqnche',
     'ir1lp1', 'ir1lp ', 'ir lp1', 'ir lp ', // 行列 全白
     'fm06196', 'quan bai'// 注音拼音 全白
   ],
   'hidden_none': [
     'qwertyuiop', 'azertyuiop', // poiuytrewq poiuytreza to turn off
-    'disappearing', 'disappeared', 'disparu', 'dispqru',
+    'disappearing', 'disqppeqring', 'disqppeqred', 'disappeared', 'disparu', 'dispqru',
     'hidden', 'cache', 'cqch2',
     'cc7oz1', 'cc7oz ', 'ccu oz1', 'ccu oz ', // 行列 消失
     't.qn faxx ', 't.qn fxax ', 't.qn fzsx', // 行列 隱藏
@@ -563,7 +572,7 @@ const commandForKeyPressedStyle = {
   ],
   'default_flashing': [
     'asdfghjkl;', 'qsdfghjklm', // ;lkjhgfdsa mlkjhgfdsq to turn off
-    'flashing', 'clignotant', 'clignotqnt',
+    'flashing', 'flqshing', 'clignotant', 'clignotqnt',
     'ek1,lpv ', 'ek1,xlv ', 'ek ,lpv ', 'ek ,xlv ', // 行列 閃爍
     'g03gji4', 'shan shuo'  // 注音拼音 閃爍
   ],
@@ -633,7 +642,7 @@ const commandForKeyPressedStyle = {
     'vmmw fkq ' // 行列 櫻花
   ],
   'banana_yellow': [
-    'banana', 'banane', 'bqnqne',
+    'banana', 'bqnqnq', 'banane', 'bqnqne',
     'lvp fky, ' // 行列 香蕉
   ],
   'turtle_green': [
@@ -684,7 +693,9 @@ function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
         if (letter == command[commandForKeyPressedStyleState[style][i].length]) {
           commandForKeyPressedStyleState[style][i] += letter;
         } else {
-          letter == command[0] ? commandForKeyPressedStyleState[style][i] += letter : commandForKeyPressedStyleState[style][i] = '';
+          letter == command[0] ?
+            commandForKeyPressedStyleState[style][i] += letter :
+            commandForKeyPressedStyleState[style][i] = '';
         }
         // then check if the command is complete
         if (commandForKeyPressedStyleState[style][i] == command) {
@@ -704,9 +715,14 @@ function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
       commandForKeyPressedStyleState[styleOfDetectedCommand][indexOfDetectedCommand] = '';
       // remove href in the keyboard if styleOfDetectedCommand is array-special_white
       // or in otherKeyPressedStyleOptions, otherwise add href
-      styleOfDetectedCommand == 'array-special_white' || otherKeyPressedStyleOptions.includes(styleOfDetectedCommand) ? removeHrefInKeyboard() : addHrefInKeyboard()
+      styleOfDetectedCommand == 'array-special_white' || otherKeyPressedStyleOptions.includes(styleOfDetectedCommand) ?
+        removeHrefInKeyboard() :
+        addHrefInKeyboard()
       // change code example icon
       switch (styleOfDetectedCommand) {
+        case 'array-special_white':
+          $('.codeExampleIcon').text('🎉');
+          break;
         case 'default_bright-red':
           $('.codeExampleIcon').text('🔴');
           break;
@@ -795,18 +811,22 @@ function detectCommandForKeyPressedStyle(eventCodeLowerCase) {
 // ------------------------------
 
 function closeCongratulationMessages() {
+  const congratsMessage = {
+    tw: '恭喜您找到了全部 10 顆彩蛋！',
+    en: "You've found all the 10 Easter eggs!",
+    fr: "Vous avez trouvé tous les 10 œufs de Pâques !"
+  }
   // fade out congrats messaage in 1500ms and remove it
   $("#modal_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
   $("#modal_bg_congratulations_message").fadeOut(1500, function () { $(this).remove(); });
-  // title: 'find easter eggs' -> congrats 
-  $('#game-instructions-easter-egg').text('恭喜您找到了全部 10 顆彩蛋！');
-  $('#check_all_other_commands').removeClass('w3-hide');
   // show all other commands (in game instructions)// show all other commands (in game instructions)
   document.getElementById('all_other_commands').classList.remove('w3-hide');
   // change game instructions open button icon
   $('#game-instructions-icon').addClass('fa-gift').removeClass('fa-gamepad');
   // scroll into view
-  document.getElementById('game-instructions-easter-egg').scrollIntoView({ block: 'center' });  
+  document.getElementById('div_key_pressed_array-special_white').scrollIntoView();
+  // document.getElementById('all_other_commands').scrollIntoView();
+
 }
 
 $('#modal_congratulations_message_close').click(closeCongratulationMessages);

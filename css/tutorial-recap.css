@@ -14,3 +14,26 @@
 .mask::selection {
   color: lightgray;
 }
+.btn-quiz {
+  border: none;
+  display:inline-block;
+  padding: 6px 12px;
+  margin: 2px;
+  border-radius:30px;
+  text-align:center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-quiz:hover {
+  opacity: 0.8;
+  box-shadow:0 2px 4px 0 rgba(0,0,0,0.2)
+}
+.btn-random {
+  background-color: plum;
+}
+.btn-show {
+  background-color: pink;
+}
+.btn-hide {
+  background-color: moccasin;
+}

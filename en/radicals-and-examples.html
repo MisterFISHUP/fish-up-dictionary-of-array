@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173562145-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173562145-1');
+    </script>
+    <title>Array radical table: Radicals and Character Examples | FISH UP Dictionary of Array</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="Best radical table of the Array input method, with more than 1000 example characters provided! No more worries for character decomposition!">
+    <meta name="keywords" content="Array,Array input method,Array input method tutorial,Chinese input method, Array radicals">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Array radical table: Radicals and Character Examples | FISH UP Dictionary of Array">    
+    <meta itemprop="description" content="Best radical table of the Array input method, with more than 1000 example characters provided! No more worries for character decomposition!">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/array-radicals-en.png">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Array radical table: Radicals and Character Examples | FISH UP Dictionary of Array">
+    <meta property="og:description" content="Best radical table of the Array input method, with more than 1000 example characters provided! No more worries for character decomposition!">
+    <meta property="og:url" content="https://array30.misterfishup.com/en/radicals-and-examples.html">
+    <meta property="og:image" content="https://array30.misterfishup.com/img/array-radicals-en.png">
+    <meta property="og:site_name" content="FISH UP Dictionary of Array">
+    <meta property="fb:admins" content="106035361278242">
+
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="Array radical table: Radicals and Character Examples | FISH UP Dictionary of Array">
+    <meta name="twitter:description" content="Best radical table of the Array input method, with more than 1000 example characters provided! No more worries for character decomposition!">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/array-radicals-en.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/radicals-and-examples.css">
+</head>
+<body>
+    <div id='app' data-local='en' data-page-name='radicals-and-examples.html'>
+        <!-- Navbar -->
+        <app-nav-bar></app-nav-bar>
+
+        <!-- empty aside -->
+        <aside id="toggleStickyTOC"></aside>
+        
+        <!-- btn for toggling toc on small screens -->
+        <button id="toggleTOCSmall"><i class="fa fa-list" aria-hidden="true"></i></button>
+        <!-- toc on small screens -->    
+        <div id="tocSmallWrapper" class="w3-hide">
+            <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div id="tocSmall" style="font-size: large; text-align: center;">
+                <h2 class="bold-center">{{ appContent.contents[local] }}</h2>
+                <div>
+                    <a href="#radical-overview">{{ appContent.radicalOverview[local] }}</a><br>
+                    <a href="#radical-example">{{ appContent.exampleCharacters[local] }}</a>
+                </div>
+                <h4 class="bold-center">{{ appContent.exampleCharacters[local] }}</h4>
+
+                <!-- index column position -->
+                <p>
+                    <div class="bold-center">{{ appContent.columnPosition[local] }}</div>
+                    <a href="#radical-example-1">1</a> |
+                    <a href="#radical-example-2">2</a> |
+                    <a href="#radical-example-3">3</a> |
+                    <a href="#radical-example-4">4</a> |
+                    <a href="#radical-example-5">5</a> |
+                    <a href="#radical-example-6">6</a> |
+                    <a href="#radical-example-7">7</a> |
+                    <a href="#radical-example-8">8</a> |
+                    <a href="#radical-example-9">9</a> |
+                    <a href="#radical-example-0">0</a>
+                </p>
+
+                <!-- index radical key -->
+                <p id="index-radical-key"></p>
+
+                <!-- index radical code -->
+                <p id="index-radical-code"></p>
+            </div>
+        </div>
+
+        <!-- radical recap -->
+        <div id="radical-overview-wrapper"> 
+            <div id="radical-overview">
+                <h1 class="w3-wide bold-center">{{ appContent.radicalOverview[local] }}</h1>
+                <div class="w3-center w3-padding-small">
+                    <span class="radical-special">■</span>&nbsp;{{ appContent.specialRadical[local] }}&emsp;
+                    <span class="radical-sc">■</span>&nbsp;{{ appContent.scRadical[local] }}&emsp;
+                    <span class="radical-special-sc">■</span>&nbsp;{{ appContent.specialSCRadical[local] }}
+                </div>
+                <div id="overview"></div>
+            </div>
+            
+            <!-- share button & support -->
+            <div style="margin: 4px 20px; text-align: center; font-size: large" id='share-and-support'>
+                {{ appContent.shareOn[local] }}
+                <img class="social-share facebook-share" tabindex="0">
+                <img class="social-share twitter-share" tabindex="0">
+                <img class="social-share line-share" tabindex="0">
+                <img class="social-share telegram-share" tabindex="0">
+                <img class="social-share linkedIn-share" tabindex="0">
+                &emsp;
+                <!-- buy me a cake -->
+                <span v-html='appContent.buyMeACake[local]'></span>
+            </div>
+        </div>
+
+        <!-- radical example -->
+        <div id="radical-example">
+            <h1 class="w3-wide bold-center">{{ appContent.exampleCharacters[local] }}</h1>
+        </div>
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+
+        <!-- back to top button -->
+        <button type="button" id="to_top" class="toTop-arrow"></button>
+    </div>
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/data/radicals.js"></script>
+    <script type="text/javascript" src="/data/object-radical-examples.js"></script>
+    <script type="text/javascript" src="/data/object-decomposition.js"></script>
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/app/radicals-and-examples.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/decomposition-generator.js"></script>
+    <script type="text/javascript" src="/js/radicals-and-examples.js"></script>
+    <script type="text/javascript" src="/js/toc.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>

@@ -1,3 +1,10 @@
+/**
+ * Author: FISH UP
+ * https://array30.misterfishup.com/
+ * Copyright © 2020 FISH UP Dictionary of Array
+ * Date: 2020-12-01
+ */
+
 /* Structure: (use search)
   - get html DOMs
   - general functions
@@ -98,7 +105,7 @@ function createArrayLines(str) {
 // ---------------
 // initialisation
 // ---------------
-let lines = createArrayLines(defaultString);
+let lines = createArrayLines(defaultExercise[stringLocal]);
 let indexCurrentLine = 0;
 let numCurrentCorrectChars = 0;
 let numAlreadyCorrectChars = 0;
@@ -187,7 +194,12 @@ function custExerCreator() {
   const inputString = inputCustExerElem.value.trim();
   if (inputString) {
     if ([...inputString].length > 3000) {
-      custExerHintElem.textContent = '提醒：您的輸入超過了 3000 字元！';
+      const tooMany = {
+        tw: '提醒：您的輸入超過了 3000 字元！',
+        en: "You've entered more than 3000 characters!",
+        fr: 'Vous avez saisi plus de 3000 caractères !'
+      };
+      custExerHintElem.textContent = tooMany[stringLocal];
     } else {
       // create and overwrite lines (arrays)
       lines = createArrayLines(inputString);
@@ -196,7 +208,12 @@ function custExerCreator() {
       prepareExer();
     }
   } else {
-    custExerHintElem.textContent = '提醒：您的輸入為空白！';
+    const emptyInput = {
+      tw: '提醒：您的輸入為空白！',
+      en: 'Nothing is entered!',
+      fr: "Rien n'est entré !"
+    };
+    custExerHintElem.textContent = emptyInput[stringLocal];
   }
 }
 
@@ -213,142 +230,17 @@ function builtInExerCreator(str) {
   // call prepareExer to prepare the exercise w.r.t 'lines'
   prepareExer();
 }
-// articles
-$("#thousand").click(function () { builtInExerCreator(stringThousand) });
-$("#hundred").click(function () { builtInExerCreator(stringHundred) });
-$("#赤壁賦").click(function () { builtInExerCreator(string赤壁賦) });
-$("#出師表").click(function () { builtInExerCreator(string出師表) });
-$("#蘭亭集序").click(function () { builtInExerCreator(string蘭亭集序) });
-$("#岳陽樓記").click(function () { builtInExerCreator(string岳陽樓記) });
+const snakeToCamel = str => str.replace(/([-_]\w)/g, g => g[1].toUpperCase());
 
-//lyrics
-$("#mojito").click(function () { builtInExerCreator(stringMojito) });
-$("#光年之外").click(function () { builtInExerCreator(string光年之外) });
-$("#漂向北方").click(function () { builtInExerCreator(string漂向北方) });
-$("#那些年").click(function () { builtInExerCreator(string那些年) });
-$("#告白氣球").click(function () { builtInExerCreator(string告白氣球) });
-$("#小幸運").click(function () { builtInExerCreator(string小幸運) });
-$("#不為誰而作的歌").click(function () { builtInExerCreator(string不為誰而作的歌) });
-
-// radical example arcai
-$("#arcai_example_col_1").click(function () { builtInExerCreator(stringArcaiExampleCo1) });
-$("#arcai_example_col_2").click(function () { builtInExerCreator(stringArcaiExampleCo2) });
-$("#arcai_example_col_3").click(function () { builtInExerCreator(stringArcaiExampleCo3) });
-$("#arcai_example_col_4").click(function () { builtInExerCreator(stringArcaiExampleCo4) });
-$("#arcai_example_col_5").click(function () { builtInExerCreator(stringArcaiExampleCo5) });
-$("#arcai_example_col_6").click(function () { builtInExerCreator(stringArcaiExampleCo6) });
-$("#arcai_example_col_7").click(function () { builtInExerCreator(stringArcaiExampleCo7) });
-$("#arcai_example_col_8").click(function () { builtInExerCreator(stringArcaiExampleCo8) });
-$("#arcai_example_col_9").click(function () { builtInExerCreator(stringArcaiExampleCo9) });
-$("#arcai_example_col_0").click(function () { builtInExerCreator(stringArcaiExampleCo0) });
-$("#arcai_example_col_all").click(function () { builtInExerCreator(stringArcaiExampleCoAll) });
-// radicals
-$("#radical_1").click(function () { builtInExerCreator(stringRadical1) });
-$("#radical_2").click(function () { builtInExerCreator(stringRadical2) });
-$("#radical_3").click(function () { builtInExerCreator(stringRadical3) });
-$("#radical_4").click(function () { builtInExerCreator(stringRadical4) });
-$("#radical_5").click(function () { builtInExerCreator(stringRadical5) });
-$("#radical_6").click(function () { builtInExerCreator(stringRadical6) });
-$("#radical_7").click(function () { builtInExerCreator(stringRadical7) });
-$("#radical_8").click(function () { builtInExerCreator(stringRadical8) });
-$("#radical_9").click(function () { builtInExerCreator(stringRadical9) });
-$("#radical_10").click(function () { builtInExerCreator(stringRadical10) });
-$("#radical_11").click(function () { builtInExerCreator(stringRadical11) });
-$("#radical_12").click(function () { builtInExerCreator(stringRadical12) });
-$("#radical_13").click(function () { builtInExerCreator(stringRadical13) });
-$("#radical_14").click(function () { builtInExerCreator(stringRadical14) });
-$("#radical_15").click(function () { builtInExerCreator(stringRadical15) });
-$("#radical_16").click(function () { builtInExerCreator(stringRadical16) });
-$("#radical_17").click(function () { builtInExerCreator(stringRadical17) });
-
-// common char
-$("#common-char-400").click(function () { builtInExerCreator(stringCommonChar400) });
-$("#common-char-800").click(function () { builtInExerCreator(stringCommonChar800) });
-$("#common-char-1200").click(function () { builtInExerCreator(stringCommonChar1200) });
-$("#common-char-1600").click(function () { builtInExerCreator(stringCommonChar1600) });
-$("#common-char-2000").click(function () { builtInExerCreator(stringCommonChar2000) });
-$("#common-char-2400").click(function () { builtInExerCreator(stringCommonChar2400) });
-$("#common-char-2800").click(function () { builtInExerCreator(stringCommonChar2800) });
-$("#common-char-3200").click(function () { builtInExerCreator(stringCommonChar3200) });
-$("#common-char-3600").click(function () { builtInExerCreator(stringCommonChar3600) });
-$("#common-char-4000").click(function () { builtInExerCreator(stringCommonChar4000) });
-$("#common-char-4400").click(function () { builtInExerCreator(stringCommonChar4400) });
-$("#common-char-4808").click(function () { builtInExerCreator(stringCommonChar4808) });
-
-// uncommon char
-$("#uncommon-char-400").click(function () { builtInExerCreator(stringUncommonChar400) });
-$("#uncommon-char-800").click(function () { builtInExerCreator(stringUncommonChar800) });
-$("#uncommon-char-1200").click(function () { builtInExerCreator(stringUncommonChar1200) });
-$("#uncommon-char-1600").click(function () { builtInExerCreator(stringUncommonChar1600) });
-$("#uncommon-char-2000").click(function () { builtInExerCreator(stringUncommonChar2000) });
-$("#uncommon-char-2400").click(function () { builtInExerCreator(stringUncommonChar2400) });
-$("#uncommon-char-2800").click(function () { builtInExerCreator(stringUncommonChar2800) });
-$("#uncommon-char-3200").click(function () { builtInExerCreator(stringUncommonChar3200) });
-$("#uncommon-char-3600").click(function () { builtInExerCreator(stringUncommonChar3600) });
-$("#uncommon-char-4000").click(function () { builtInExerCreator(stringUncommonChar4000) });
-$("#uncommon-char-4400").click(function () { builtInExerCreator(stringUncommonChar4400) });
-$("#uncommon-char-4800").click(function () { builtInExerCreator(stringUncommonChar4800) });
-$("#uncommon-char-5200").click(function () { builtInExerCreator(stringUncommonChar5200) });
-$("#uncommon-char-5600").click(function () { builtInExerCreator(stringUncommonChar5600) });
-$("#uncommon-char-6000").click(function () { builtInExerCreator(stringUncommonChar6000) });
-$("#uncommon-char-6341").click(function () { builtInExerCreator(stringUncommonChar6341) });
-
-// key1
-$("#key1_no_cc").click(function () { builtInExerCreator(stringKey1NoCC) });
-$("#key1_cc_first").click(function () { builtInExerCreator(stringKey1CCFirst) });
-//key2
-$("#key2_no_cc").click(function () { builtInExerCreator(stringKey2NoCC) });
-$("#key2_cc_first").click(function () { builtInExerCreator(stringKey2CCFirst) });
-$("#key2_cc_second").click(function () { builtInExerCreator(stringKey2CCSecond) });
-$("#key2_cc_third").click(function () { builtInExerCreator(stringKey2CCThird) });
-$("#key2_common_sc2").click(function () { builtInExerCreator(stringKey2CommonSC2) });
-
-//key3
-$("#key3_no_cc").click(function () { builtInExerCreator(stringKey3NoCC) });
-$("#key3_cc_first").click(function () { builtInExerCreator(stringKey3CCFirst) });
-$("#key3_cc_second").click(function () { builtInExerCreator(stringKey3CCSecond) });
-$("#key3_common_sc2").click(function () { builtInExerCreator(stringKey3CommonSC2) });
-
-//key4
-$("#key4_no_cc").click(function () { builtInExerCreator(stringKey4NoCC) });
-$("#key4_cc_first").click(function () { builtInExerCreator(stringKey4CCFirst) });
-$("#key4_cc_second").click(function () { builtInExerCreator(stringKey4CCSecond) });
-$("#key4_cc_third").click(function () { builtInExerCreator(stringKey4CCThird) });
-$("#key4_common_sc2").click(function () { builtInExerCreator(stringKey4CommonSC2) });
-
-// sp
-$("#sp_all").click(function () { builtInExerCreator(stringSPAll) });
-$("#sp_irregular").click(function () { builtInExerCreator(stringSPIrregular) });
-$("#sp_key4_12").click(function () { builtInExerCreator(stringSPKey412) });
-$("#sp_key4_13").click(function () { builtInExerCreator(stringSPKey413) });
-$("#sp_key4_14").click(function () { builtInExerCreator(stringSPKey414) });
-$("#sp_key4_23").click(function () { builtInExerCreator(stringSPKey423) });
-$("#sp_key4_24").click(function () { builtInExerCreator(stringSPKey424) });
-$("#sp_key4_34").click(function () { builtInExerCreator(stringSPKey434) });
-$("#sp_key3_12").click(function () { builtInExerCreator(stringSPKey312) });
-$("#sp_key3_13").click(function () { builtInExerCreator(stringSPKey313) });
-$("#sp_key3_23").click(function () { builtInExerCreator(stringSPKey323) });
-$("#sp_96_normal").click(function () { builtInExerCreator(stringSP96Normal) });
-$("#sp_96_reversed").click(function () { builtInExerCreator(stringSP96Reversed) });
-$("#sp_sc1").click(function () { builtInExerCreator(stringSC1SP) });
-$("#sp_no_sc1").click(function () { builtInExerCreator(stringSPNoSC1) });
-
-// shortcode 1
-$("#sc1_all").click(function () { builtInExerCreator(stringSC1All) });
-$("#sc1_char").click(function () { builtInExerCreator(stringSC1Char) });
-$("#sc1_sym").click(function () { builtInExerCreator(stringSymbolSC1) });
-$("#sc1_sp").click(function () { builtInExerCreator(stringSC1SP) });
-
-// symbol
-$("#symbol_sc1").click(function () { builtInExerCreator(stringSymbolSC1) });
-$("#symbol_bopomofo").click(function () { builtInExerCreator(stringSymbolBopomofo) });
-$("#symbol_greek_upper").click(function () { builtInExerCreator(stringSymbolGreekUpper) });
-$("#symbol_greek_lower").click(function () { builtInExerCreator(stringSymbolGreekLower) });
-
-// emoji
-$("#emoji_happy").click(function () { builtInExerCreator(stringEmojiHappy) });
-$("#emoji_angry").click(function () { builtInExerCreator(stringEmojiAngry) });
-$("#emoji_guro").click(function () { builtInExerCreator(stringEmojiGuro) });
+$("#built-in-exercise button").click(function () {
+  // if buttonId is 'example-category__example-exercise_name', then
+  // category is 'exampleCategory'
+  // exerciseName is 'exampleExerciseName'
+  const buttonId = $(this).attr('id');
+  const category = snakeToCamel(buttonId.substring(0, buttonId.indexOf('__')))
+  const exerciseName = snakeToCamel(buttonId.substring(buttonId.indexOf('__') + 2))
+  builtInExerCreator(objectBuiltInTypingExercise[category][exerciseName])
+})
 
 // ------------------------------------
 // prepare sentences, hints and results
@@ -550,8 +442,7 @@ function changeLine() {
       if (objectCharSet.hasOwnProperty(character)) {
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
-        linkElem.className = "w3-hover-text-green";
-        linkElem.style = "text-decoration: none;"
+        linkElem.className = "wrong-character-anchor";
         linkElem.href = '#line_' + String(indexCurrentLine + 1) + '_pos_' + String(index + 1);
         wrongCharsAlreadyLinkElem.appendChild(linkElem);
         const aSpace = document.createTextNode(' ');
@@ -566,8 +457,7 @@ function changeLine() {
         addWrongCharAlready(character, index + 1);
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
-        linkElem.className = "w3-hover-text-green";
-        linkElem.style = "text-decoration: none;"
+        linkElem.className = "wrong-character-anchor";
         linkElem.href = '#line_' + String(indexCurrentLine + 1) + '_pos_' + String(index + 1);
         wrongCharsAlreadyLinkElem.appendChild(linkElem);
         const aSpace = document.createTextNode(' ');
@@ -619,8 +509,7 @@ function finalise() {
       if (objectCharSet.hasOwnProperty(character)) {
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
-        linkElem.className = "w3-hover-text-green";
-        linkElem.style = "text-decoration: none;"
+        linkElem.className = "wrong-character-anchor";
         linkElem.href = '#line_' + String(indexCurrentLine + 1) + '_pos_' + String(index + 1);
         wrongCharsAlreadyLinkElem.appendChild(linkElem);
         const aSpace = document.createTextNode(' ');
@@ -635,8 +524,7 @@ function finalise() {
         addWrongCharAlready(character, index + 1);
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
-        linkElem.className = "w3-hover-text-green";
-        linkElem.style = "text-decoration: none;"
+        linkElem.className = "wrong-character-anchor";
         linkElem.href = '#line_' + String(indexCurrentLine + 1) + '_pos_' + String(index + 1);
         wrongCharsAlreadyLinkElem.appendChild(linkElem);
         const aSpace = document.createTextNode(' ');
@@ -678,8 +566,29 @@ function finalise() {
   typingInputElem.value = '';
 
   // prompt in sentence Current & Next
-  sentenceCurrentElem.textContent = `恭喜打完以上 ${lines.length} 句！ \\^o^/`;
-  sentenceNextElem.innerHTML = "您可以透過「題目選擇」繼續練習！ "; // sentenceNext was empty
+  const promptLocal = {
+    congratsSingle: {
+      tw: `恭喜打完以上 1 句！🥳`,
+      en: `Congratulations! You've finised typing the line! 🥳`,
+      fr: `Félicitations d'avoir fini la saisie de la ligne ! 🥳`,
+    },
+    congratsPlural: {
+      tw: `恭喜打完以上 ${lines.length} 句！🥳`,
+      en: `Congratulations! You've finised typing the ${lines.length} lines! 🥳`,
+      fr: `Félicitations d'avoir fini la saisie des ${lines.length} lignes ! 🥳`,
+    },
+    continueTyping: {
+      tw: "您可以透過「題目選擇」繼續練習！",
+      en: "Go to 'Exercises' to choose your next exercise!",
+      fr: "Rendez-vous à « Exercices » pour choisir votre exercice suivant !"
+    }
+  };
+  if (lines.length > 1) {
+    sentenceCurrentElem.textContent = promptLocal.congratsPlural[stringLocal];
+  } else {
+    sentenceCurrentElem.textContent = promptLocal.congratsSingle[stringLocal];
+  }
+  sentenceNextElem.innerHTML = promptLocal.continueTyping[stringLocal]; // while sentenceNext was and is empty
   // hintCurrentElem.textContent = '打字練習結束啦！';
 
   // update indexCurrentLine (so that it exceeds the index range)
@@ -740,8 +649,9 @@ function createBlockAnotherStyle(character, block_id_name, id_name) {
   elem.appendChild(resultBlock);
 
   // add character to resultBlock
+  const spaceLocal = { tw: '空白', en: 'Space', fr: 'Espace' };
   let char = document.createElement('div');
-  char.textContent = (character == ' ') ? '空格' : character;
+  char.textContent = (character == ' ') ? spaceLocal[stringLocal] : character;
   char.style = "font-size: 2em; text-align: center;"; // bigger font size
   resultBlock.appendChild(char);
 
@@ -793,8 +703,13 @@ function createList(character, list_id_name, id_name) {
     createLineSP(objectSpecial[character], itemSP.id);
 
     // 敦雇 coincidence rank 1
+    const coincidenceRankOne = {
+      tw: '，重碼位 1',
+      en: ', coincidence rank equal to 1',
+      fr: ', rang de coïncidence égal à 1'
+    };
     if (["敦", "雇"].includes(character)) {
-      const ccHint = document.createTextNode("，重碼位 1");
+      const ccHint = document.createTextNode(coincidenceRankOne[stringLocal]);
       itemSP.appendChild(ccHint);
     }
   }
@@ -827,7 +742,7 @@ function createList(character, list_id_name, id_name) {
 
     // add content of itemSYM
     createLineSYM(objectSymbol[character], itemSYM.id);
-  }  
+  }
 }
 
 // ----------------------------------------------------------------------
@@ -1096,38 +1011,57 @@ function createLineNL(encodingNl, id_name) {
     elem.appendChild(numberCC);
   }
   if (encodingNl[1] === 1) {
+    // hint for coincident codes
+    const hintCC = {
+      coincidenceRankOne: {
+        tw: '，重碼位 1',
+        en: ', coincidence rank equal to 1',
+        fr: ', rang de coïncidence égal à 1'
+      },
+      coincidenceRankOneIfExtB: {
+        tw: '，若啟用擴充區 B 則重碼位 1，否則無重碼',
+        en: ', coincidence rank equal to 1 if Extension B (CJK Unified Ideographs) activated, otherwise non-coincident code',
+        fr: ', rang de coïncidence égal à 1 si Supplément B (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
+      },
+      coincidenceRankOneIfExtCD: {
+        tw: '，若啟用擴充區 CD 則重碼位 1，否則無重碼',
+        en: ', coincidence rank equal to 1 if Extension CD (CJK Unified Ideographs) activated, otherwise non-coincident code',
+        fr: ', rang de coïncidence égal à 1 si Suppléments CD (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
+      },
+    };
+
     // get coincidence code data
     ccData = objectEncoding[encodingNl[0]];
     if (ccData[0] > 1) {
       // cc pos = 1
-      const ccHint = document.createTextNode('，重碼位 1');
+      const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
       elem.appendChild(ccHint);
     }
     if (ccData[0] === 1) {
       if (ccData[1] > 0) {
-        const ccHint = document.createTextNode('，若啟用擴充區 B 則重碼位 1，否則無重碼');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtB[stringLocal]);
         elem.appendChild(ccHint);
       } else if (ccData[2] > 0) {
-        const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
         elem.appendChild(ccHint);
       }
     }
     if (ccData[0] === 0) {
       if (ccData[1] > 1) {
         // cc pos = 1
-        const ccHint = document.createTextNode('，重碼位 1');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
         elem.appendChild(ccHint);
       }
       if (ccData[1] === 1) {
         if (ccData[2] > 0) {
-          const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
+          const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
           elem.appendChild(ccHint);
         }
       }
       if (ccData[1] === 0) {
         if (ccData[2] > 1) {
           // cc pos = 1
-          const ccHint = document.createTextNode('，重碼位 1');
+          const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
           elem.appendChild(ccHint);
         }
       }

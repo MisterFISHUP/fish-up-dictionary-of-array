@@ -35,3 +35,12 @@ header {
   margin: auto;
   scroll-margin-top: 45px;
 }
+#contact-support {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  font-size: 1.2em;
+}
+#contact-support a:hover {
+  color: goldenrod;
+}

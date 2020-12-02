@@ -13,122 +13,87 @@
     <title>行列查碼：最好用的行列輸入法查碼網站 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- For google -->
     <meta name="author" content="Mister FISH UP">
-    <meta name="description" content="最好用、最實用的行列輸入法查碼網站。支援多字查詢、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵">
-    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法">
+    <meta name="description" content="最好用且最實用的行列輸入法查碼網站。支援多字查詢、常見字拆碼、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵、以及其他多種實用功能！">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法,行列查碼">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="行列查碼：最好用的行列輸入法查碼網站 | FISH UP 行列查碼">
-    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
-    <meta itemprop="description" content="最好用、最實用的行列輸入法查碼網站。支援多字查詢、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵">
+    <meta itemprop="name" content="行列查碼：最好用的行列輸入法查碼網站 | FISH UP 行列查碼">    
+    <meta itemprop="description" content="最好用且最實用的行列輸入法查碼網站。支援多字查詢、常見字拆碼、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵、以及其他多種實用功能！">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/array-dictionary.png">
     
     <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="行列查碼：最好用的行列輸入法查碼網站 | FISH UP 行列查碼">
-    <meta property="og:description" content="最好用、最實用的行列輸入法查碼網站。支援多字查詢、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵">
-    <meta property="og:type" content="網站">
+    <meta property="og:description" content="最好用且最實用的行列輸入法查碼網站。支援多字查詢、常見字拆碼、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵、以及其他多種實用功能！">
     <meta property="og:url" content="https://array30.misterfishup.com/dictionary.html">
-    <meta property="og:image" content="https://array30.misterfishup.com/img/array-dictionary.png"/>
-    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
-    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+    <meta property="og:image" content="https://array30.misterfishup.com/img/array-dictionary.png">
+    <meta property="og:site_name" content="FISH UP 行列查碼">
+    <meta property="fb:admins" content="106035361278242">
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="行列查碼：最好用的行列輸入法查碼網站 | FISH UP 行列查碼">
+    <meta name="twitter:description" content="最好用且最實用的行列輸入法查碼網站。支援多字查詢、常見字拆碼、標示各種簡碼、按鍵能顯示英文鍵或行列 30 鍵、以及其他多種實用功能！">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/array-dictionary.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/dictionary.css">
 </head>
 <body>
+    <div id='app' data-local='tw' data-page-name='dictionary.html'>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align">
-            <!-- always there -->
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-            <!-- small screens (toggle button)-->
-            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-            <!-- large screens -->
-            <div class="w3-hide-medium w3-hide-small">
-                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-                <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
-                    </div>
-                </div>
-                <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-                <div class="w3-right">
-                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
-        <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
-            <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
-                &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
-            </div>
-        </div>
-        <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
-        </div>
-        <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
-    </div>
+    <app-nav-bar></app-nav-bar>
 
     <!-- Header -->
     <header class="dict-header">
         <div class="w3-center w3-text-white">
-            <h1 class="w3-margin w3-xxlarge"><a href="dictionary.html" style="text-decoration: none;">FISH UP 行列查碼</a></h1>
-            <p class="w3-large">最好用、最實用的行列輸入法查碼</p>
+            <h1 class="w3-margin w3-xxlarge"><a href="dictionary.html" style="text-decoration: none;">{{ appContent.title[local] }}</a></h1>
+            <p class="w3-large">{{ appContent.description[local] }}</p>
         </div>
         <div style='padding: 0 24px; margin: auto; max-width: 1000px;'>
             <!-- tab area -->
             <div style="border-radius: 20px; overflow: hidden;">
                 <div class="w3-row">
-                    <button onclick="openSearchTag(event, 'search_tab_content_1');" class="w3-half w3-btn dict-tag-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-show-inline-block">●</span> 我想要查碼</button>
-                    <button onclick="openSearchTag(event, 'search_tab_content_2');" class="w3-half w3-btn dict-tag-not-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-hide">●</span> 我想看列表</button>
-                </div>    
+                    <button onclick="openSearchTag(event, 'search_tab_content_1');" class="w3-half w3-btn dict-tag-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-show-inline-block">●</span>&nbsp;{{ appContent.tab1Title[local] }}</button>
+                    <button onclick="openSearchTag(event, 'search_tab_content_2');" class="w3-half w3-btn dict-tag-not-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-hide">●</span>&nbsp;{{ appContent.tab2Title[local] }}</button>
+                </div>
                 <!-- tab content -->
                 <div id="search_tab_content_1" class="search-type w3-card w3-white w3-show">
                     <div class='w3-container w3-padding-24 w3-center'>
-                        <input type="text" id="inputCharacters" name="characters" placeholder="可同時查 500 個字！" class="w3-input" autofocus>
+                        <input type="text" id="inputCharacters" name="characters" :placeholder='appContent.searchPlaceholder[local]' class="w3-input" autofocus>
                         <button type="submit" id="btn_submit" value="Submit" class="w3-button dict-button"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div id="search_tab_content_2" class="search-type w3-card w3-white w3-hide">
                     <div class='w3-container w3-padding-24 w3-center w3-animate-left'>
-                        <label class="w3-margin-right"><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll"> 單鍵碼</label>
-                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sp' name="special" value="spAll"> 特別碼</label>
-                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc1' name="shortcode1" value="sc1All"> 一級簡碼</label>
-                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc2' name="shortcode2" value="sc2All"> 二級簡碼</label>
-                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll"> 符號</label>
+                        <label class="w3-margin-right"><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll">&nbsp;{{ appContent.singleCode[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sp' name="special" value="spAll">&nbsp;{{ appContent.specialCode[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc1' name="shortcode1" value="sc1All">&nbsp;{{ appContent.shortCodeI[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc2' name="shortcode2" value="sc2All">&nbsp;{{ appContent.shortCodeII[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll">&nbsp;{{ appContent.symbol[local] }}</label>
                         <button type="submit" id="btn_filter_submit" value="somevalue" class="w3-button dict-button" style="margin: 8px;"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
             <!-- eng key toggle -->
             <div class="w3-right" style="margin-top: 6px;">
-                <span class="w3-text-white">按鍵顯示為英文鍵</span>
+                <span class="w3-text-white">{{ appContent.toggleEngKey[local] }}</span>&nbsp;
                 <label>
-                    <input type="checkbox" id="cb_eng_key_active" class="checkbox" >
+                    <input type="checkbox" id="cb_eng_key_active" class="checkbox">
                     <span class="btn-toggle-box">
                         <span class="btn-toggle"></span>
                     </span>
@@ -141,71 +106,89 @@
 
 <div class="dict-page-content-bg">
     <div class="dict-page-content">
+        <!-- share button -->
+        <div>
+            {{ appContent.shareOn[local] }}
+            <img class="social-share facebook-share" tabindex="0">
+            <img class="social-share twitter-share" tabindex="0">
+            <img class="social-share line-share" tabindex="0">
+            <img class="social-share telegram-share" tabindex="0">
+            <img class="social-share linkedIn-share" tabindex="0">
+        </div>
+        
+        <!-- result area -->
         <div id='result_area'>
-            <!-- <div class="dict-block-comment">
-                <h3 class="bold-center">頁面宗旨</h3>
-                <p>嘿！這是一個查詢行列輸入法編碼的頁面！如果您還不認識行列輸入法，<a href="index.html#introduction" target="_blank">行列輸入法</a>是字根輸入法中<b>最容易學習的輸入法</b>之一，完全免費且開源，並且行列輸入法是免費中文輸入法中速度最快的，最高紀錄為每分鐘 215.5 字。</p>
-                <div class="w3-center">
-                    <a href="index.html#introduction" target="_blank" class="w3-button w3-brown w3-round-large">認識行列輸入法</a>
-                </div>
-            </div> -->
+            <!-- main functions -->
             <div class="dict-block-comment">
-                <h3 class="bold-center">兩大功能</h3>
-                <h5 class="w3-center">- 我想要查碼 -</h5>
+                <h3 class="bold-center">{{ appContent.mainFunctions.title[local] }}</h3>
+                <h5 class="w3-center">- {{ appContent.mainFunctions.sec1Title[local] }} -</h5>
                 <div class="dict-example">
-                    <p>🔍 查詢範圍涵蓋至中日韓統一表意文字擴充區 D，總共 74956 字符提供查詢。</p>
-                    <p>🔍 支援多字查詢，一次最多可查詢 500 字。</p>
+                    <p>🔍 {{ appContent.mainFunctions.sec1Point1[local] }}</p>
+                    <p>🔍 {{ appContent.mainFunctions.sec1Point2[local] }}</p>
                 </div>
-                <h5 class="w3-center">- 我想看列表 -</h5>
+                <h5 class="w3-center">- {{ appContent.mainFunctions.sec2Title[local] }} -</h5>
                 <div class="dict-example">
-                    <p>📜 列出單鍵碼、特別碼、一級簡碼、二級簡碼（因太多字不提供）及符號的列表</p>
-                    <p>📜 能夠隨意混篩，找出擁有上述編碼的字，不僅實用也滿足您的好奇心。</p>
-                </div>
-            </div>
-            <div class="dict-block-comment">
-                <h3 class="bold-center">實用特色</h3>
-                <p>✔️ 支援行動裝置瀏覽，手機、平板、筆電、桌電都能良好顯示</p>
-                <p>✔️ 按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</p>
-                <p>✔️ 標註 <span class="keycap title-normal">普</span> 普通編碼、<span class="keycap title-single">單</span> 單鍵碼、<span class="keycap title-special">特</span> 特別碼、<span class="keycap title-shortcode1">一</span> 一級簡碼、<span class="keycap title-shortcode2">二</span> 二級簡碼、<span class="keycap title-symbol">符</span> 符號</p>
-                <p>✔️ 提示是否需要按 <span class="keycap keycap-space">Space</span> 空白鍵</p>
-                <p>✔️ 一級與二級簡碼給出數字鍵</p>
-                <p>✔️ 普通編碼提示重碼位置</p>
-                <p>✔️ 給出符號在行列符號選單中的位置</p>
-                <p>✔️ 查詢結果提供超連結，多筆資料時能方便地快速移動</p>
-            </div>
-            <div class="dict-block-comment">
-                <h3 class="bold-center">想看更多列表</h3>
-                <p>想看更多分類？例如想看普通編碼有 3 鍵且無重碼的字？或想了解特別碼的取碼邏輯？</p>
-                <p class="w3-margin-bottom">千萬要記得到本站<a href="typing.html" target="_blank">打字練習</a>頁面的「題目選擇」挖寶！</p>
-                <div class="w3-center">
-                    <a href="typing.html" target="_blank" class="w3-button w3-round-large w3-brown">前往打字練習</a>
+                    <p>📜 {{ appContent.mainFunctions.sec2Point1[local] }}</p>
+                    <p>📜 {{ appContent.mainFunctions.sec2Point2[local] }}</p>
                 </div>
             </div>
             
-            <div class="dict-block-comment" id="about-coincident-codes">
-                <h3 class="bold-center">關於普通編碼的重碼</h3>
-                <h5 class="w3-center">- 無重碼，或是有重碼且重碼位大於 1 -</h5>
-                <div class="dict-example">
-                    <p>本網站都幫您把按鍵寫出來了，完全照著輸入即可（黑色按鍵負責選擇重碼）。</p>
+            <!-- practical features -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">{{ appContent.practicalFeatures.title[local] }}</h3>
+                <p>{{ appContent.practicalFeatures.par1[local] }}</p>
+                <p>{{ appContent.practicalFeatures.downloadable[local] }}</p>
+                <p v-html='appContent.practicalFeatures.decomposition[local]'></p>
+                <p v-html='appContent.practicalFeatures.codeType[local]'></p>
+                <p>{{ appContent.practicalFeatures.englishKey[local] }}</p>
+                <p v-html='appContent.practicalFeatures.spaceBar[local]'></p>
+                <p>{{ appContent.practicalFeatures.numberKey[local] }}</p>
+                <p>{{ appContent.practicalFeatures.coincidenceRank[local] }}</p>
+                <p>{{ appContent.practicalFeatures.symbolList[local] }}</p>
+                <p>{{ appContent.practicalFeatures.hyperlink[local] }}</p>
+                <p style="margin-top: 24px; color: #7c7c7c;">{{ appContent.practicalFeatures.oneKeyCode[local] }}</p>
+            </div>
+
+            <!-- see more lists -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">{{ appContent.seeMoreLists.title[local] }}</h3>
+                <p>{{ appContent.seeMoreLists.par1[local] }}</p>
+                <p class="w3-margin-bottom" v-html='appContent.seeMoreLists.par2[local]'></p>
+                <div class="w3-center">
+                    <a href="typing.html" target="_blank" class="w3-button w3-round-large w3-brown">{{ appContent.seeMoreLists.goTyping[local] }}</a>
                 </div>
-                
-                <h5 class="w3-center">- 有重碼且重碼位為 1 -</h5>
+            </div>
+            <!-- about coincident codes-->            
+            <div class="dict-block-comment" id="about-coincident-codes">
+                <h3 class="bold-center">{{ appContent.aboutCC.title[local] }}</h3>
+
+                <!-- not CC -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec1Title[local] }}</h5>
                 <div class="dict-example">
-                    <p>查碼結果後面會加上「，重碼位 1」。沒有直接像重碼位大於 1 時寫出黑色按鍵，是因為重碼位等於 1 有<b>至少兩種</b>輸入方法：</p>
-                    <p>按完本網站給出的按鍵後（即一到數顆行列 30 鍵 + 空白鍵後），您可以</p>
+                    <p>{{ appContent.aboutCC.sec1Par1[local] }}</p>
+                </div>
+
+                <!-- coincidence rank = 1 -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec2Title[local] }}</h5>
+                <div class="dict-example">
+                    <p v-html='appContent.aboutCC.sec2Par1[local]'></p>
+                    <p>{{ appContent.aboutCC.sec2Par2[local] }}</p>
                     <ol>
-                        <li class="w3-margin-bottom">按下數字鍵 <span class="keycap keycap-cc">1</span> ，即可完成輸入。</li>
-                        <li class="w3-margin-bottom">直接開始打下一個字（按下的鍵必須是行列 30 鍵），原本那個重碼位 1 的字會自動完成輸入。</li>
-                        <li class="w3-margin-bottom">按下 <span class="keycap keycap-space">Space</span> 即可完成輸入，但此方法僅限於重碼數量不超過 10 個的情況。</li>
+                        <li class="w3-margin-bottom" v-html='appContent.aboutCC.sec2LI1[local]'></li>
+                        <li class="w3-margin-bottom">{{ appContent.aboutCC.sec2LI2[local] }}</li>
+                        <li class="w3-margin-bottom" v-html='appContent.aboutCC.sec2LI3[local]'></li>
                     </ol>
                 </div>
 
-                <h5 class="w3-center">- 無重碼變為有重碼 -</h5>
+                <!-- coincidence rank > 1 -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec3Title[local] }}</h5>
                 <div class="dict-example">
-                    <p>有些字可能原本沒有重碼，但因為您啟用了更廣的中日韓統一表意文字擴充區，導致變成有重碼。本網站會貼心地標示出這種狀況。一般來說，有這種狀況的字多數是罕用字。</p>
+                    <p>{{ appContent.aboutCC.sec3Par1[local] }}</p>
                 </div>
             </div>
-            <div class="dict-block-comment" id="coincident_code_trivia">
+
+            <!-- coincident code trivia (hidden)-->
+            <div class="dict-block-comment w3-hide" id="coincident_code_trivia">
                 <h3 class="bold-center">重碼冷知識</h3>
                 <p>註：可用上方按鈕切換為英文鍵或行列 30 鍵</p>
                 <details>
@@ -253,46 +236,48 @@
                     </ul>
                 </details>
             </div>
-        </div>        
 
+            <!-- notice -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">⚠️ {{ appContent.notice.title[local] }} ⚠️</h3>
+                <details>
+                    <summary>{{ appContent.notice.aboutDictionaryTitle[local] }}</summary>
+                    <div class="dict-example">
+                        <p>{{ appContent.notice.aboutDictionaryPar1[local] }}</p>
+                    </div>                
+                </details>
+                <details>
+                    <summary>{{ appContent.notice.characterDisplay.title[local] }}</summary>
+                    <div class="dict-example">
+                        <p v-html='appContent.notice.characterDisplay.par1[local]'></p>
+                        <p v-html='appContent.notice.characterDisplay.par2[local]'></p>
+                        <p v-html='appContent.notice.characterDisplay.par3[local]'></p>
+                    </div>
+                </details>            
+            </div>
+        </div>
+
+        <!-- contact & donation -->
         <div class="dict-block-comment">
-            <h3 class="bold-center">⚠️ 注意事項 ⚠️</h3>
-            <details>
-                <summary>關於行列查碼</summary>
-                <div class="dict-example">
-                    <p>由於中日韓統一表意文字擴充區 D 之後的字相當罕用，本站僅供查詢至擴充區 D，並且普通編碼的重碼提示建立在沒有啟用擴充區 EF 的條件下。另外，本站使用的資料庫來自 DIME 行列輸入法，所以有可能和其他版本的行列輸入法稍有不同。</p>
-                </div>
-                
-            </details>
-            <details>
-                <summary>關於字元顯示</summary>
-                <div class="dict-example">
-                    <p>本站使用<u>網頁版</u>思源宋體 Noto Serif CJK TC，僅支援到中日韓統一表意文字擴充區 A 區、以及 B 區中部分常用字。</p>
-                    <p>如果要正確顯示多數罕用字以及網頁上的粗體，您可以免費下載此字體的<u>完整版</u>（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）。</p>
-                    <p>如果要正確顯示所有罕用字，您可以下載免費字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/releases/p12900" target="_blank">點此前往下載頁</a>），此字體能夠完整支援到擴充區 F，不過一般來說不會有這個需求，下載完整版的思源宋體就足夠了。</p>
-                </div>
-            </details>
+            <p v-html='appContent.contactMe[local]' style="font-size: 1.1em;"></p>
+            <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" style="text-align: center; display: block; margin: 32px;"><img src="/img/buy-me-a-cake-brown.png" :alt='appContent.buyMeACake[local]' :title='appContent.buyMeACake[local]'class="buy-me-a-coffee"></a>
         </div>
     </div>
 </div>
 
     <!-- Footer -->
-    <footer class="footer-fish-up">
-        <div class="w3-xlarge w3-section">
-            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
-        </div>
-        <p>Copyright &copy; 2020 <a href="index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
-    </footer>
+    <app-footer></app-footer>
 
     <!-- back to top button -->
     <button type="button" id="to_top" class="toTop-arrow"></button>
 
+    </div>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/display.js"></script>
-    <script type="text/javascript" src="/js/search_or_list.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/data/radicals.js"></script>
     <script type="text/javascript" src="/data/object-char-set.js"></script>
     <script type="text/javascript" src="/data/object-normal.js"></script>
     <script type="text/javascript" src="/data/object-short-code-i.js"></script>
@@ -300,8 +285,14 @@
     <script type="text/javascript" src="/data/object-single.js"></script>
     <script type="text/javascript" src="/data/object-special.js"></script>
     <script type="text/javascript" src="/data/object-symbol.js"></script>
+    <script type="text/javascript" src="/data/object-decomposition.js"></script>
     <script type="text/javascript" src="/data/keys.js"></script>
+    <script type="text/javascript" src="/app/dictionary.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/search_or_list.js"></script>
+    <script type="text/javascript" src="/js/decomposition-generator.js"></script>
     <script type="text/javascript" src="/js/dictionary.js"></script>
+    <!-- <script type="text/javascript" src="/js/decomposition-checker.js"></script> -->
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>
 </html>

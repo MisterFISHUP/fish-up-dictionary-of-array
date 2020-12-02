@@ -2,7 +2,7 @@
 
 行列輸入法為開源的輸入法，編碼資料皆可在網路找到。
 
-本站的數據來自 jrywu 在 GitHub 上的 [DIME 專案](https://github.com/jrywu/DIME/tree/master/Tables)（ .cin 檔）以及[新行列輸入法](https://www.ptt.cc/bbs/Array/M.1554494219.A.F95.html)的檔案內容。
+行列編碼數據來自 jrywu 在 GitHub 上的 [DIME 專案](https://github.com/jrywu/DIME/tree/master/Tables)（ .cin 檔）以及[新行列輸入法](https://www.ptt.cc/bbs/Array/M.1554494219.A.F95.html)的檔案內容。
 
 註：修正二級簡碼表 ux 誤植為 wx 的錯誤。（2020/11/05）
 

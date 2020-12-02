@@ -13,30 +13,41 @@
     <title>行列輸入法：超厲害中文輸入法你絕對後悔太晚認識 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- For google -->
     <meta name="author" content="Mister FISH UP">
     <meta name="description" content="找超級好學、免費、同時輸入速度又超快的中文輸入法？有，而且只有行列輸入法。這裡十分鐘不到讓你了解！">
-    <meta name="keywords" content="行列,行列輸入法,行列輸入法查碼,最快的中文輸入法">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法,行列查碼">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="行列輸入法：超厲害中文輸入法你絕對後悔太晚認識 | FISH UP 行列查碼">
-    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
+    <meta itemprop="name" content="行列輸入法：超厲害中文輸入法你絕對後悔太晚認識 | FISH UP 行列查碼">    
     <meta itemprop="description" content="找超級好學、免費、同時輸入速度又超快的中文輸入法？有，而且只有行列輸入法。這裡十分鐘不到讓你了解！">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
     
     <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="行列輸入法：超厲害中文輸入法你絕對後悔太晚認識 | FISH UP 行列查碼">
     <meta property="og:description" content="找超級好學、免費、同時輸入速度又超快的中文輸入法？有，而且只有行列輸入法。這裡十分鐘不到讓你了解！">
-    <meta property="og:type" content="網站">
     <meta property="og:url" content="https://array30.misterfishup.com/">
-    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png"/>
-    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
-    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
+    <meta property="og:site_name" content="FISH UP 行列查碼">
+    <meta property="fb:admins" content="106035361278242">
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="行列輸入法：超厲害中文輸入法你絕對後悔太晚認識 | FISH UP 行列查碼">
+    <meta name="twitter:description" content="找超級好學、免費、同時輸入速度又超快的中文輸入法？有，而且只有行列輸入法。這裡十分鐘不到讓你了解！">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="/css/virtual-keyboard.css">
@@ -44,62 +55,16 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
+    <div id='app' data-local='tw' data-page-name='index.html'>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align">
-            <!-- always there -->
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-            <!-- small screens (toggle button)-->
-            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-            <!-- large screens -->
-            <div class="w3-hide-medium w3-hide-small">
-                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-                <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
-                    </div>
-                </div>
-                <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-                <div class="w3-right">
-                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
-        <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
-            <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
-                &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
-            </div>
-        </div>
-        <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
-        </div>
-        <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
-    </div>
+    <app-nav-bar></app-nav-bar>
 
     <!-- Header -->
     <header class="header-color-style">
         <div id='site-name'>
-            <span class="w3-xxlarge">FISH UP 行列查碼</span>
+            <span class="w3-xxlarge">{{ appContent.title[local] }}</span>
             <br>
-            <span class="w3-large">學習行列輸入法的首選網站</span>
+            <span class="w3-large">{{ appContent.subtitle[local] }}</span>
         </div>
         <!-- game area (only on large screens)-->        
         <div id='game-area' class="w3-hide-small w3-hide-medium">
@@ -110,49 +75,48 @@
                 <!-- game instructions -->
                 <div id='game-instructions'>
                     <!-- game title -->
-                    <h2 class="bold-center" style="margin-top: 24px;">行列輸入法互動鍵盤</h2>
-                    <h5 class="w3-center">🎮 透過虛擬行列鍵盤來視覺化行列輸入法的小遊戲 🎮</h5>
+                    <h2 class="bold-center" style="margin-top: 24px;">{{ appContent.game.title[local] }}</h2>
+                    <h5 class="w3-center">🎮 {{ appContent.game.subtitle[local] }} 🎮</h5>
                     
                     <!-- game description -->
                     <hr style="width: 420px; margin: 25px auto 0;">
-                    <h5 class="w3-center">第一次聽到行列輸入法？您按鍵儘管隨便亂按<br>如果剛好鍵入了字的編碼，編碼就會變成字 🤩</h5>
+                    <h5 class="w3-center" v-html='appContent.game.description1[local]'></h5>
                     <hr style="width: 420px; margin: 0 auto 25px;">
                     <br>
 
-                    <p class="w3-large w3-center">不用下載行列輸入法就能直接體驗行列輸入法，並且支援超過兩萬八千字的輸入<span class="class='game-comment">*</span>！<br>另外，透過觸發一連串的按鍵可以獲得彩蛋，總共有十顆彩蛋等您來收集！</p>
+                    <p class="w3-large w3-center" v-html='appContent.game.description2[local]'></p>
                     <br><br>
-                    <h4 class="bold-center" id='game-instructions-easter-egg'>尋找彩蛋</h4>
-                    <h6 class='w3-center w3-hide' id='check_all_other_commands'>獎勵：您在搜集箱底部獲得了所有其他指令！</h6>
+                    <h4 class="bold-center" id='game-instructions-easter-egg'>{{ appContent.game.eggHunt[local] }}</h4>
                     
                     <!-- hints for easter eggs -->
                     <div class="w3-center" style="line-height: 1.8; font-size: 16px;">
                         <div id='hint_for_easter_egg_backlight'>
-                            <span class="easter-egg-hint" >🔑 提示</span>
+                            <span class="easter-egg-hint" >🔑 {{ appContent.game.hint.title[local] }}</span>
                             <span class="w3-hide">
-                                這十顆彩蛋包含五顆按鍵背光顏色彩蛋，所以跟顏色有些關係…
+                                {{ appContent.game.hint.backlight1[local] }}
                                 <br>
-                                <span class="easter-egg-hint">🔑 我發誓我已經試過了，我需要提示！</span>
-                                <span class="w3-hide">按下顏色中文或英文名稱的鍵位，有中的話背光顏色就會切換（例如「綠色」）</span>
+                                <span class="easter-egg-hint">🔑 {{ appContent.game.hint.backlight2[local] }}</span>
+                                <span class="w3-hide">{{ appContent.game.hint.backlight3[local] }}</span>
                             </span>
                         </div>
                         <div id='hint_for_easter_egg_mode' class="w3-hide">
-                            除了五顆背光顏色彩蛋外，還有四顆彩蛋對應到四種不同神秘模式，剩下最後一顆則是特別彩蛋<br>
-                            <span class="easter-egg-hint">🔑 神秘模式提示</span>
+                            {{ appContent.game.hint.mysteriousMode1[local] }}<br>
+                            <span class="easter-egg-hint">🔑 {{ appContent.game.hint.mysteriousMode2[local] }}</span>
                             
                             <span class="w3-hide">
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                四種不同神秘模式要用神秘但不難的方法進入，或是按下神秘模式中文或英文名稱的鍵位也可以...<br>
-                                <span class="easter-egg-hint" id='easterEggFourModesHint'>🔑 我自願放棄找神秘模式彩蛋的樂趣，FISH UP 請給我提示吧！</span>
-                                <span class="w3-hide">除了空白鍵那一排，行列鍵盤剛好有 4 排，從左至右有 10 顆<br>而神秘模式有 4 種... 是巧合嗎？我不這麼認為。</span>
+                                {{ appContent.game.hint.mysteriousMode3[local] }}<br>
+                                <span class="easter-egg-hint" id='easterEggFourModesHint'>🔑 {{ appContent.game.hint.mysteriousMode4[local] }}</span>
+                                <span class="w3-hide" v-html='appContent.game.hint.mysteriousMode5[local]'></span>
                             </span>
                         </div>
                         <div id='hint_for_easter_egg_special' class="w3-hide">
-                            您只剩下特別彩蛋沒找到了！<br>
-                            <span class="easter-egg-hint">🔑 特別彩蛋提示</span>
+                            {{ appContent.game.hint.special1[local] }}<br>
+                            <span class="easter-egg-hint">🔑 {{ appContent.game.hint.special2[local] }}</span>
                             <!-- Hey, you're NOT supposed to be reading these descriptions -->
                             <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                            <span class="w3-hide">這網站誰寫的？（或這網站主題是什麼？）</span>
+                            <span class="w3-hide">{{ appContent.game.hint.special3[local] }}</span>
                         </div>
                     </div>
                     <!-- easter egg collection -->
@@ -163,10 +127,10 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">粉紅色背光（預設）</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultPink[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「粉紅色」三字或「粉色」兩字的鍵位、無失誤地按下英文字 'pink' 的鍵位</div>
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultPink[local] }}</div>
                             </div>                        
                         </div>
                         <div id='div_key_pressed_default_yellow' class="fade-in w3-hide">
@@ -175,10 +139,10 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">黃色背光</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultYellow[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「黃色」兩字的鍵位、無失誤地按下英文字 'yellow' 的鍵位</div>
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultYellow[local] }}</div>
                             </div>                        
                         </div>
                         <div id='div_key_pressed_default_green' class="fade-in w3-hide">
@@ -187,10 +151,10 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">綠色背光</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultGreen[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「綠色」兩字的鍵位、無失誤地按下英文字 'green' 的鍵位</div>
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultGreen[local] }}</div>
                             </div>
                         </div>
                         <div id='div_key_pressed_default_blue' class="fade-in w3-hide">
@@ -199,10 +163,10 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">藍色背光</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultBlue[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「藍色」兩字的鍵位、無失誤地按下英文字 'blue' 的鍵位</div>
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultBlue[local] }}</div>
                             </div>
                         </div>                    
                         <div id='div_key_pressed_default_purple' class="fade-in w3-hide">
@@ -211,10 +175,10 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">紫色背光</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultPurple[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                                <div class="key_pressed_style-instructions">無失誤地按下行列（或注音、拼音）輸入法中「紫色」兩字的鍵位、無失誤地按下英文字 'purple' 的鍵位</div>
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultPurple[local] }}</div>
                             </div>
                         </div>                    
                         <div id='div_key_pressed_default_white' class="fade-in w3-hide">
@@ -223,13 +187,13 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">全白</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultWhite[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
                                 <div class="key_pressed_style-instructions">
                                     <ul>
-                                        <li>照順序按下數字鍵 1234567890（若順序顛倒地按下則恢復預設狀態）</li>
-                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「全白」兩字的鍵位、無失誤地按下英文字 'all white' 的鍵位</li>
+                                        <li>{{ appContent.game.styleDescription.defaultWhiteLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.defaultWhiteLI2[local] }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -240,13 +204,13 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">消失/隱藏</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.hiddenNone[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
                                 <div class="key_pressed_style-instructions">
                                     <ul>
-                                        <li>照順序按下行列 30 鍵 1 上到 0 上這十顆鍵，即英文鍵 qwertyuiop（若順序顛倒地按下則恢復預設狀態）</li>
-                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「消失」或「隱藏」兩字的鍵位（「顯示」兩字則恢復預設狀態）、無失誤地按下英文字 'hidden' 或 'disappearing' 或 'disappeared' 的鍵位（'showing' 則恢復預設狀態）</li>
+                                        <li>{{ appContent.game.styleDescription.hiddenNoneLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.hiddenNoneLI2[local] }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -257,13 +221,13 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">閃爍</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultFlashing[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
                                 <div class="key_pressed_style-instructions">
                                     <ul>
-                                        <li>照順序按下行列 30 鍵 1 中到 0 中這十顆鍵，即英文鍵 asdfghjkl;（若順序顛倒地按則恢復預設狀態）</li>
-                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「閃爍」兩字的鍵位、無失誤地按下英文字 'flashing' 的鍵位</li>
+                                        <li>{{ appContent.game.styleDescription.defaultFlashingLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.defaultFlashingLI2[local] }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -274,13 +238,13 @@
                                 <div class="keyboard-keycap">行</div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">模糊</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.blurredNone[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
                                 <div class="key_pressed_style-instructions">
                                     <ul>
-                                        <li>照順序按下行列 30 鍵 1 下到 0 下這十顆鍵，即英文鍵 zxcvbnm,./（若順序顛倒地按則恢復預設狀態）</li>
-                                        <li>無失誤地按下行列（或注音、拼音）輸入法中「模糊」兩字或「馬賽克」三字的鍵位、無失誤地按下英文字 'blurred' 的鍵位</li>
+                                        <li>{{ appContent.game.styleDescription.blurredNoneLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.blurredNoneLI2[local] }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -291,14 +255,14 @@
                                 <div class="keyboard-keycap"></div>
                             </div>
                             <div class="key_pressed_style-description">
-                                <div class="key_pressed_style-name">特別彩蛋</div>
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.arraySpecialWhite[local] }}</div>
                                 <!-- Hey, you're NOT supposed to be reading these descriptions -->
                                 <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
                                 <div class="key_pressed_style-instructions">
-                                    <span>註：此時點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉</span>
+                                    <span>{{ appContent.game.styleDescription.arraySpecialWhiteComment[local] }}</span>
                                     <ul>
-                                        <li>無失誤地按下行列輸入法中「行列」兩字的鍵位、無失誤地按下英文字 'array' 的鍵位</li>
-                                        <li>無失誤地按下英文字 'fish up' 的鍵位</li>
+                                        <li>{{ appContent.game.styleDescription.arraySpecialWhiteLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.arraySpecialWhiteLI2[local] }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -306,28 +270,31 @@
                     </div>
                     <!-- all other commands -->
                     <div class="fade-in w3-hide" id='all_other_commands'>
-                        <br><br>
-                        <h3 class="bold-center">所有其他樣式</h3>
+                        <br>
+                        <h4 class="bold-center">{{ appContent.game.congrats.title[local] }}</h4>
+                        <h6 class='w3-center'>{{ appContent.game.congrats.reward[local] }}</h6>
+                        <br>
+                        <h3 class="bold-center">{{ appContent.game.allOtherCommands.title[local] }}</h3>
                         <!-- Hey, you're NOT supposed to be reading these descriptions -->
                         <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
-                        <h5 class="w3-center"> Version 1.0</h5>
+                        <h5 class="w3-center">Version 1.0</h5>
                         <div class="w3-center" style="font-size: 16px;">
-                            <p>剛推出所以只有少數其它樣式，未來會加上更多有趣的東西！<br>所以記得時常回來玩，可能會增加酷炫的功能 😉</p>
-                            <p>可以使用 <a href="dictionary.html" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>查詢結果中有標籤 <span class="keycap title-normal">普</span> 的那一行就是「普通編碼」</p>
-                            <p>最後，喜歡這個小遊戲或這個網站的話，請不要客氣踴躍分享給身邊的親朋好友！<br>希望讓越來越多人認識行列輸入法 🥰</p>
+                            <p v-html='appContent.game.allOtherCommands.par1[local]'></p>
+                            <p v-html='appContent.game.allOtherCommands.par2[local]'></p>
+                            <p v-html='appContent.game.allOtherCommands.par3[local]'></p>
                         </div>
                         
                         <br>
-                        <h4 class="bold-center">單顆按鍵樣式</h4>
-                        <p class="w3-center" style="font-size: 16px;">進入下列任一模式時，點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉</p>                        
+                        <h4 class="bold-center">{{ appContent.game.styleSingleKey[local] }}</h4>
+                        <p class="w3-center" style="font-size: 16px;">{{ appContent.game.noPageJump[local] }}</p>                        
 
                         <hr>
                         <div class="key keycap_white_sky_sakura key_pressed_default_bright-red">
                             <div class="keyboard-keycap">行</div>
                         </div>
                         <div class="key_pressed_style-description">
-                            <div class="key_pressed_style-name">亮紅色背光</div>
-                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「亮紅色」三字的鍵位（限普通編碼）、無失誤地按下英文字 'bright red' 的鍵位</div>
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultBrightRed[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultBrightRed[local] }}</div>
                         </div>
                         
                         <hr>
@@ -335,8 +302,8 @@
                             <div class="keyboard-keycap"></div>
                         </div>
                         <div class="key_pressed_style-description">
-                            <div class="key_pressed_style-name">櫻花</div>
-                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「櫻花」兩字的鍵位（限普通編碼）、無失誤地按下英文字 'sakura' 或 'cherry blossom' 的鍵位</div>
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.sakuraPink[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.sakuraPink[local] }}</div>
                         </div>
 
                         <hr>
@@ -344,8 +311,8 @@
                             <div class="keyboard-keycap"></div>
                         </div>
                         <div class="key_pressed_style-description">
-                            <div class="key_pressed_style-name">香蕉</div>
-                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「香蕉」兩字的鍵位（限普通編碼）、無失誤地按下英文字 'banana' 的鍵位</div>
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.bananaYellow[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.bananaYellow[local] }}</div>
                         </div>
 
                         <hr>
@@ -353,8 +320,8 @@
                             <div class="keyboard-keycap"></div>
                         </div>
                         <div class="key_pressed_style-description">
-                            <div class="key_pressed_style-name">烏龜</div>
-                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「烏龜」兩字的鍵位（限二級簡碼）、無失誤地按下英文字 'turtle' 的鍵位</div>
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.turtleGreen[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.turtleGreen[local] }}</div>
                         </div>
 
                         <hr>
@@ -362,29 +329,31 @@
                             <div class="keyboard-keycap"></div>
                         </div>
                         <div class="key_pressed_style-description">
-                            <div class="key_pressed_style-name">外星人</div>
-                            <div class="key_pressed_style-instructions">無失誤地按下行列輸入法中「外星人」三字的鍵位（限普通編碼）、無失誤地按下英文字 'alien' 的鍵位</div>
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.alienGreen[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.alienGreen[local] }}</div>
                         </div>
                         <br>
-                        <h4 class="bold-center">全鍵盤樣式</h4>
-                        <p class="w3-center" style="font-size: 16px;">尚無樣式，敬請期待</p>
+                        <h4 class="bold-center">{{ appContent.game.styleWholeKeyboard[local] }}</h4>
+                        <p class="w3-center" style="font-size: 16px;">{{ appContent.game.styleWholeKeyboardComingSoon[local] }}</p>
                     </div>
                     <!-- game comments -->
                     <div class="game-comment" style="margin-top: 60px; font-size: 16px;">
                         <hr>
-                        <p>註 1：此虛擬行列鍵盤除了可用滑鼠點擊，也可使用實際鍵盤操控。</p>
-                        <p>註 2：重碼自動選取重碼位 1 的字，所以不支援重碼位 2 以後的字，除此限制外支援到中日韓統一表意文字 A 區。支援簡碼、特別碼。無符號列表功能。</p>
-                    </div>                    
-                    <div class="w3-center" style="margin: 24px auto;">Copyright © 2020 FISH UP 行列查碼</div>
+                        <p>{{ appContent.game.comment[local] }}</p>
+                        <p>{{ appContent.game.nb[local] }}</p>
+                    </div>
+                    <!-- copyright -->
+                    <div class="w3-center" style="margin: 24px auto;">Copyright © {{ appContent.year }} {{ appContent.title[local] }}</div>
                 </div>
             </div>
             <!-- congratulations message -->
-            <div id='modal_bg_congratulations_message' class=" fade-in w3-hide">
+            <div id='modal_bg_congratulations_message' class="fade-in w3-hide">
                 <div id='modal_congratulations_message' class="fade-in w3-hide">
                     <button id='modal_congratulations_message_close' class="fade-in w3-hide"><i class="fa fa-times" aria-hidden="true"></i></button>
-                    <h1>🎉 恭喜您搜集到了所有彩蛋 🥳</h1>
-                    <h4>獎勵：您在搜集箱底部獲得了所有其他指令！</h4>
-                    <h6>- 喜歡這個小遊戲的話，請踴躍分享給所有身邊的親朋好友 -</h6>
+                    <h1>{{ appContent.game.congrats.modalTitle[local] }}</h1>
+                    <h3>{{ appContent.game.congrats.modalSubtitle[local] }}</h3>
+                    <h5>{{ appContent.game.congrats.modalReward[local] }}</h5>
+                    <p>{{ appContent.game.congrats.modalShare[local] }}</p>
                 </div>
             </div>
             <!-- virtual keyboard -->
@@ -572,12 +541,12 @@
                     <div>
                         <div class="key-dictionary s_key keycap_white_sky_sakura" name='dictionary'>
                             <a href="dictionary.html">
-                                <div class="keyboard-keycap"><span>查碼去</span></div>
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyDictionary[local] }}</span></div>
                             </a>
                         </div>
                         <div class="key-typing s_key keycap_white_sky_sakura" name='typing'>
                             <a href="typing.html">
-                                <div class="keyboard-keycap"><span>打字去</span></div>
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyTyping[local] }}</span></div>
                             </a>
                         </div>
                         <div class="space key keycap_white_sky_sakura" name='space'>
@@ -585,13 +554,14 @@
                         </div>                        
                         <div class="key-array s_key keycap_white_sky_sakura" name='intro'>
                             <a href="#introduction">
-                                <div class="keyboard-keycap"><span>什麼是行列輸入法</span></div>
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyArray[local] }}</span></div>
                             </a>
                         </div>
                         <br style="clear: both;">
                     </div>
                 </div>
             </div>
+
             <!-- icon for game instructions and notification -->
             <div id='game-instructions-open'>
                 <i class="fa fa-gamepad fa-fw fa-2x" aria-hidden="true" id="game-instructions-icon"></i><i class="fa fa-exclamation" aria-hidden="true" id="game-notification"></i>
@@ -599,8 +569,11 @@
             <!-- game output field -->
             <div id='game-output-field'></div>
             <div style="clear: both;"></div>
+
+            <!-- Try these examples -->
+            <h4 class="bold-center w3-text-white" :class="{ 'w3-wide': local == 'tw'}">{{ appContent.tryTheseExamples[local] }} （<span id='code_examples_toggle'><i class="fa fa-eye-slash w3-hide" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i> <span>{{ appContent.examplesShow[local] }}</span><span class="w3-hide">{{ appContent.examplesHide[local] }}</span></span>）</h4>
+            
             <!-- examples -->
-            <h4 class="bold-center w3-wide w3-text-white">您可以試試這些例子 （<span id='code_examples_toggle'><i class="fa fa-eye-slash w3-hide" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i> <span>展開</span><span class="w3-hide">收合</span></span>）</h4>
             <div id='code_examples_block' class="w3-hide">
                 <div id='code_examples_wrapper'>
                     <div id='code_examples_left'></div>
@@ -614,53 +587,55 @@
         <div class="w3-row-padding w3-hide-large w3-text-white">            
             <div class="w3-col m12 s12 w3-center" >
                 <div class="w3-padding-large w3-margin-bottom">
-                    <p>還不認識中文最快的免費輸入法？</p>
-                    <a href="#introduction" class="w3-btn w3-round-xxlarge w3-indigo w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> 馬上認識行列 <i class="fa fa-angle-double-left"></i>&emsp;</a>
+                    <p>{{ appContent.callToAction.dontKnowArray[local] }}</p>
+                    <a href="#introduction" class="w3-btn w3-round-xxlarge w3-indigo w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> {{ appContent.callToAction.learnMore[local] }} <i class="fa fa-angle-double-left"></i>&emsp;</a>
                 </div>
             </div>
             <div class="w3-col m12 s12 w3-center">
                 <div class=" w3-padding-large w3-margin-bottom" >
-                    <p>直接開始使用本站熱門功能</p>
-                    <p><a href="dictionary.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;查碼去&emsp;</a>&nbsp;
-                    <a href="typing.html" class="w3-btn w3-indigo w3-opacity-min w3-hover-opacity-off w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
+                    <p>{{ appContent.callToAction.popularFeatures[local] }}</p>
+                    <p><a href="dictionary.html" class="w3-btn w3-indigo w3-opacity-min w3-margin-bottom w3-hover-opacity-off w3-round-xxlarge">&emsp;{{ appContent.callToAction.dictionary[local] }}&emsp;</a>&nbsp;
+                    <a href="typing.html" class="w3-btn w3-indigo w3-opacity-min w3-margin-bottom w3-hover-opacity-off w3-round-xxlarge">&emsp;{{ appContent.callToAction.typing[local] }}&emsp;</a></p>
                 </div>
             </div>
-            <div class="w3-center" style="margin-bottom: 32px;">電腦版的首頁有很讚的行列互動小遊戲，用電腦時記得回來首頁玩！</div>
+            <div class="w3-center" style="margin: 5px 16px 32px;">{{ appContent.callToAction.onTheComputer[local] }}</div>
         </div>        
     </header>
 
     <!-- Introduction -->
     <div id="introduction">
-        <h2 class="w3-wide w3-text-gray">行列輸入法</h2>
-        <p class="w3-justify">行列，或稱行列 30，是一套免費授權、具有開放理念的字根式中文輸入法，為倚天資訊共同創辦人<a href="https://zh.wikipedia.org/zh-tw/%E8%A1%8C%E5%88%97%E8%BC%B8%E5%85%A5%E6%B3%95" target="_blank" class="w3-hover-text-red" title="行列輸入法維基頁面">廖明德</a>先生所發明。不僅能輸入繁體中文和簡體中文，亦可輸入 Unicode 當中的中日韓統一表意文字，總數超過 7 萬字。</p>
-        <p class="w3-justify">行列輸入法使用科學的方法分配字根，學習容易並輸入快速。行列輸入法是字根輸入法中最容易學習的輸入法之一，並且行列輸入法為免費中文輸入法中輸入最快的，最高紀錄達每分鐘 215.5 字。</p>
-        <p class="w3-justify">行列輸入法因為免費授權並且開源，使得各開發者能夠持續維護行列、並讓行列更臻完善。此外，行列輸入法有<a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-hover-text-red" title="行列社群頁面">活躍且友善的社群</a>，有疑惑或想法都能夠在社群中提出。</p>
+        <h2 class="w3-wide w3-text-gray">{{ appContent.array[local] }}</h2>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par1[local]'></p>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par2[local]'></p>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par3[local]'></p>
     </div>
     <!-- Statistics -->
     <div class="w3-container w3-row w3-center w3-dark-gray w3-padding-48">
         <div class="w3-quarter">
             <span class="w3-xxlarge">215.5</span>
-            <br>每分鐘字最高紀錄
+            <br>{{ appContent.cpm[local] }}
         </div>
         <div class="w3-quarter">
             <span class="w3-xxlarge">$ 0</span>
-            <br>安裝與學習花費
+            <br>{{ appContent.cost[local] }}
         </div>
         <div class="w3-quarter">
             <span class="w3-xxlarge">70,000+</span>
-            <br>支援中文字數量
+            <br>{{ appContent.numberCharacters[local] }}
         </div>
         <div class="w3-quarter">
             <span class="w3-xxlarge"><4</span>
-            <br>平均取碼數
+            <br>{{ appContent.averageKeystroke[local] }}
         </div>
     </div>
 
     <!-- Advantages -->
     <div class="w3-center w3-padding-48 w3-content" style="max-width:1000px;">
-        <p class="w3-large"><span class="w3-padding w3-opacity w3-hover-opacity-off w3-text-dark-gray w3-bottombar w3-hover-border-deep-orange">行列輸入法</span></p>
-        <h2 class="w3-wide w3-padding-16" style="margin-top: 0px;" title="行列輸入法是最優秀的中文輸入法之一">最優秀的中文輸入法</h2>
-        <div class="w3-row-padding">
+        <p class="w3-large"><span class="w3-padding w3-opacity w3-hover-opacity-off w3-text-dark-gray w3-bottombar w3-hover-border-deep-orange">{{ appContent.array[local] }}</span></p>
+        <h2 :class="{ 'w3-wide': local == 'tw' }" style="margin-top: 0px; padding: 16px;">{{ appContent.bestIME[local] }}</h2>
+        <div v-if='local == "en"' style="font-size: x-large; margin: 20vh 0;">Section in development 😌</div>
+        <div v-if='local == "fr"' style="font-size: x-large; margin: 20vh 0;">Section en cours de développement 😌</div>
+        <div class="w3-row-padding" v-if='local == "tw"'>
             <div class="w3-col l4 w3-margin-bottom">
                 <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">
                     <li class="w3-brown w3-padding"><h3>價錢與軟體上</h3></li>
@@ -715,7 +690,7 @@
             </div>
         </div>
 
-        <div class="w3-row-padding">
+        <div class="w3-row-padding" v-if='local == "tw"'>
             <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
             <div class="w3-col l4 w3-margin-bottom">
                 <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                
@@ -753,142 +728,138 @@
             <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
         </div>
     </div>
+
     <!-- call to action -->
-    <div class="w3-padding-large w3-padding-24 w3-center w3-sand">
-        <h3>心動不如馬上行動</h3>
-        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">點我開始行列教學</a>
+    <div class="w3-padding-large w3-padding-24 w3-center w3-sand w3-large">
+        <h3>{{ appContent.callToAction.actNow[local] }}</h3>
+        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">{{ appContent.callToAction.startTutorial[local] }}</a>
         <br>
-        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&nbsp; 加入行列輸入法社群</a>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&emsp;{{ appContent.callToAction.community[local] }}</a>
     </div>
     
     <!-- FAQ -->
-    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px; font-size: large;" id="FAQ">
+    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px; font-size: large;" id="FAQ" v-if='local == "tw"'>
         <h2 class="w3-wide w3-center">常見問題節選</h2>
         <p class="w3-opacity w3-center">初次接觸行列常有的疑惑</p>
         
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">我已經能用注音或拼音打字了，為甚麼還要學行列？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">您當然可以不用學，但如果您想學字形輸入法、或是想學一個好學且輸入快速的輸入法，或純粹只是想學一種新的輸入法，那麼行列輸入法絕對是您的首選！</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">我已經有多種語言鍵盤了，行列能夠快速中英切換嗎？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">可以！</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">行列和嘸蝦米哪個比較好？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">都很好！以打字速度、學習曲線上來說沒有一個明顯勝過對方。但如同上表所寫，嘸蝦米須付費，並且在公用電腦（例如公家機關）基本上無法使用。</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">行列和大易哪個比較好？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">打字速度上，一般來說行列較大易快。學習曲線上好像沒太多案例比較。另外，大易目前僅能輸入兩萬到三萬字，並且相較行列，大易的維護社群似乎稍微小一些。結論：兩個都可以學學看，但如果要先選一個，推薦選行列。</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">如何使用各作業系統上的行列輸入法？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">請參考<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。另外，Windows 系統雖已內建行列輸入法，但有其他更好用的行列輸入法如 DIME 行列，如果您使用 Windows 系統請一定要試試！</div>
-        </div>
-        
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">手機上也能使用行列嗎？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">可以。除了行列 30 還有行列 10 可以使用！詳情請見<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。</div>
-        </div>        
-        
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">不知道某個字怎麼輸入怎麼辦？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">有可以練習行列輸入法的資源嗎？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">有的！您可以使用本站的「<a href="typing.html" target="_blank" class="w3-hover-text-red">FISH UP 打字練習</a>」，不僅在打字時提供行列邊碼提示，您還能自製題目來練習。</div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">為什麼說行列不用記鍵位，還有一開始就可盲打？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">
-                鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列輸入法分別稱之為「5 上」、「5 中」以及「5 下」，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。
-                <p>我們將十顆數字鍵下方的這 30 顆鍵稱作<b>行列 30 鍵</b>。每顆鍵依照 10 個數字（行）以及「上、中、下」（列）來定位，這就是<b>行列輸入法</b>或<b>行列 30</b> 這兩個名稱的由來。</p>
-                <p>使用行列輸入法將文字拆碼後對應到的鍵，便是這 30 顆透過數字以及「上、中、下」定位的鍵，這就是為什麼行列輸入法不用像英打或多數其他字根輸入法需要記鍵位。</p>
-                <p>例如中文字「繼」的行列編碼為 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 中，您不必記任何鍵位也不用看鍵盤就可以輸入這四個鍵！</p>
+        <div>
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">我已經能用注音或拼音打字了，為甚麼還要學行列？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">您當然可以不用學，但如果您想學字形輸入法、或是想學一個好學且輸入快速的輸入法，或純粹只是想學一種新的輸入法，那麼行列輸入法絕對是您的首選！</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">我已經有多種語言鍵盤了，行列能夠快速中英切換嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">可以！</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">行列和嘸蝦米哪個比較好？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">都很好！以打字速度、學習曲線上來說沒有一個明顯勝過對方。但如同上表所寫，嘸蝦米須付費，並且在公用電腦（例如公家機關）基本上無法使用。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">行列和大易哪個比較好？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">打字速度上，一般來說行列較大易快。學習曲線上好像沒太多案例比較。另外，大易目前僅能輸入兩萬到三萬字，並且相較行列，大易的維護社群似乎稍微小一些。結論：兩個都可以學學看，但如果要先選一個，推薦選行列。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">如何使用各作業系統上的行列輸入法？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">請參考<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。另外，Windows 系統雖已內建行列輸入法，但有其他更好用的行列輸入法如新行列 30、DIME 行列，如果您使用 Windows 系統請一定要試試！</div>
+            </div>
+            
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">手機上也能使用行列嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">可以。除了行列 30 還有行列 10 可以使用！詳情請見<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。</div>
+            </div>        
+            
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">不知道某個字怎麼輸入怎麼辦？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">有可以練習行列輸入法的資源嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">有的！您可以使用本站的「<a href="typing.html" target="_blank" class="w3-hover-text-red">FISH UP 打字練習</a>」，不僅在打字時提供行列邊碼提示，您還能自製題目來練習。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">為什麼說行列不用記鍵位，還有一開始就可盲打？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">
+                    鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列輸入法分別稱之為「5 上」、「5 中」以及「5 下」，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。
+                    <p>我們將十顆數字鍵下方的這 30 顆鍵稱作<b>行列 30 鍵</b>。每顆鍵依照 10 個數字（行）以及「上、中、下」（列）來定位，這就是<b>行列輸入法</b>或<b>行列 30</b> 這兩個名稱的由來。行列輸入法用這些以「行、列」定位的按鍵來輸入文字，這就是為什麼行列輸入法不用像英打或多數中文輸入法需要記鍵位。</p>
+                    <p>例如中文字「繼」的行列編碼為 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 中，您不必記任何鍵位也不用看鍵盤就可以輸入這四個鍵！</p>
+                </div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">為什麼叫行列？為什麼叫行列 30？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">
+                    正上方的回答有答案！<br>
+                    <p>另外，行列早期的編碼設計，除了使用現在的 30 顆鍵，還使用了上排的 10 顆數字鍵，一共 40 顆鍵，稱為「行列 40」。而現在所謂的行列輸入法，一般都是指行列 30，是行列 40 改良後的設計。</p>
+                </div>
+            </div>
+            <div class="w3-center w3-padding-24">
+                <p class="w3-center">以上為常見問題節選，是特別給第一次接觸行列的讀者。想看更多常見問題，請到「常見問題」的完整頁面（頁面建構中）。</p>
+                <a href="faq.html" target="_blank" class="w3-button w3-deep-purple w3-hover-orange">更多常見問題</a>
             </div>
         </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">為什麼叫行列？為什麼叫行列 30？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">
-                正上方的回答有答案！<br>
-                <p>另外，行列早期的編碼設計，除了使用現在的 30 顆鍵，還使用了上排的 10 顆數字鍵，一共 40 顆鍵，稱為「行列 40」。而現在所謂的行列輸入法，一般都是指行列 30，是行列 40 改良後的設計。</p>
-            </div>
-        </div>
-
-        <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
-            <div class="w3-col" style="width: 2em;">問：</div>
-            <div class="w3-rest">「繼」這個字怎麼拆？</div>
-        </div>
-        <div class="w3-row w3-padding w3-margin-bottom">
-            <div class="w3-col" style="width: 2em;">答：</div>
-            <div class="w3-rest">如果只是要查碼，您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。如果是問拆字，您可以到本站<a href="radicals-and-examples.html" target="_blank" class="w3-hover-text-red">字根表</a>裡面的字根實例找找。（答：糸 <span class="radical-code">28</span> + ㄠ <span class="radical-code">26</span> + ㄠ <span class="radical-code">26</span> + ㇗ <span class="radical-code">2-</span>，所以是 <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2↓</span> + <span class="keycap keycap-letter">2-</span> + <span class="keycap keycap-space">Space</span>。）</div>
-        </div>
-
-        <div class="w3-center w3-padding-24">
-            <p class="w3-center">以上為常見問題節選，是特別給第一次接觸行列的讀者。想看更多常見問題，請到「常見問題」的完整頁面。</p>
-            <a href="faq.html" target="_blank" class="w3-button w3-deep-purple w3-hover-orange">更多常見問題</a>
-        </div>        
+        
     </div>
+
     <!-- call to action -->
-    <div class="w3-padding-large w3-center w3-card w3-sand w3-hover-shadow" style="width: 75%; margin: auto;">
+    <div class="w3-padding-large w3-center w3-card w3-sand w3-hover-shadow" style="width: 75%; margin: auto;" v-if='local == "tw"'>
         <h3>還在等什麼？馬上加入行列輸入法的行列！</h3>
         <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">點我開始行列教學</a>
         <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&nbsp; 加入行列社群</a>
     </div>
-    <div class="w3-container w3-dark-grey" style="padding:80px 16px; margin-top: 48px;">
+
+    <!-- dictionary -->
+    <div class="w3-container w3-dark-grey" style="padding:80px 16px; margin-top: 48px;" v-if='local == "tw"'>
         <div class="w3-row-padding">
-            <div class="w3-col m6">
-                <h2>FISH UP 行列查碼</h2>
-                <p>網路上最好用的行列查碼</p>
+            <div class="w3-half">
+                <h2>{{ appContent.dictionary.title[local] }}</h2>
+                <p>{{ appContent.dictionary.description[local] }}</p>
                 <ul>
                     <li>支援多字查碼，一次最多可查詢 500 字</li>
                     <li>標註單鍵碼、特別碼、一級簡碼、二級簡碼與符號</li>
@@ -900,15 +871,17 @@
                 還有更多功能…等您來使用！
                 <p class="w3-margin-bottom"><a href="dictionary.html" target="_blank" class="w3-btn w3-red w3-opacity-min w3-hover-opacity-off w3-padding-large w3-round-xxlarge">&emsp;查碼去&emsp;</a></p>
             </div>
-            <div class="w3-col m6">
-                <img class="w3-image w3-round-large w3-margin-top" src="/img/array-dictionary.png" alt="Buildings" width="500" height="300">
+            <div class="w3-half">
+                <img class="download-image w3-round-large w3-margin-top" :src='appContent.dictionary.imgPath[local]' alt="FISH UP 行列查碼" title="FISH UP 行列查碼" style="max-width: 90%;">
             </div>
         </div>
     </div>
-    <div class="w3-container w3-light-grey" style="padding:80px 16px">
+
+    <!-- typing practice -->
+    <div class="w3-container w3-light-grey" style="padding:80px 16px" v-if='local == "tw"'>
         <div class="w3-row-padding">
             <div class="w3-col m6">
-                <img class="w3-image w3-round-large w3-margin-bottom" src="/img/screenshot_typing.jpg" alt="Buildings" width="500" height="300">
+                <img class="download-image w3-round-large w3-margin-bottom" src="/img/typing-practice.png" alt="FISH UP 行列打字練習" title="FISH UP 行列打字練習" style="max-width: 90%;">
             </div>
             <div class="w3-col m6">
                 <h2>FISH UP 行列打字練習</h2>
@@ -927,32 +900,37 @@
             </div>        
         </div>
     </div>
-    <div class="w3-padding w3-center w3-margin w3-large">
-        <p>此網站所提供的服務（行列查碼、打字練習、教學）皆是免費的！</p>
-        <p>如果您覺得本網站對您很有幫助，可以考慮透過下方按鈕贊助本站作者 FISH UP ^^</p>
-        <a href="https://www.buymeacoffee.com/misterfishup" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" class="w3-margin-top"></a>
+
+    <div id="contact-support">
+        <div>
+            {{ appContent.shareOn[local] }}
+            <img class="social-share facebook-share" tabindex="0">
+            <img class="social-share twitter-share" tabindex="0">
+            <img class="social-share line-share" tabindex="0">
+            <img class="social-share telegram-share" tabindex="0">
+            <img class="social-share linkedIn-share" tabindex="0">
+        </div>
+        <p v-html='appContent.contactMe[local]' style="font-size: 1.1em;"></p>
+        <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" style="text-align: center; display: block; margin: 32px;"><img src="/img/buy-me-a-cake-brown.png" :alt='appContent.buyMeACake[local]' :title='appContent.buyMeACake[local]'class="buy-me-a-coffee"></a>
     </div>
 
     <!-- Footer -->
-    <footer class="footer-fish-up">
-        <div class="w3-xlarge w3-section">
-            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
-        </div>
-        <p>Copyright &copy; 2020 <a href="index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
-    </footer>
+    <app-footer></app-footer>
 
     <!-- back to top button -->
     <button type="button" id="to_top" class="toTop-arrow"></button>
-
+</div>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>    
     <script type="text/javascript" src="/data/object-key-short-code-i.js"></script>
     <script type="text/javascript" src="/data/object-key-short-code-ii.js"></script>
+    <script type="text/javascript" src="/app/index.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
     <script type="text/javascript" src="/js/object-drop-coincident-code.js"></script>
     <script type="text/javascript" src="/js/keyboard.js"></script>
-    <script type="text/javascript" src="/js/display.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>
 </html>

@@ -1,4 +1,14 @@
-/* header */
+/* FILE STRUCTURE
+	- header
+  - below header
+  - elements created by js
+    > radicals in decompositions
+*/
+
+/* ========
+    HEADER
+  ========= */
+
 .dict-header {
   padding: 40px 16px 0px 16px;
   background-color: #57342d;
@@ -34,7 +44,10 @@
   border-radius: 20px;
 }
 
-/* below header */
+/* ==============
+    BELOW HEADER
+  =============== */
+
 .dict-page-content-bg {
   background-color: #f8e5cf;
 }
@@ -48,7 +61,7 @@
 .dict-block-comment {
   line-height: 1.8;
   padding: 16px 24px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 25px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -61,11 +74,22 @@
   padding: 1px 20px;
   margin-top: 10px;
   margin-bottom: 25px;
-  background-color: rgb(240, 240, 240);
+  background-color: #f0f0f0;
   border-radius: 25px;
 }
+.code-type-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.code-type-list li {
+  padding: 5px 5px 5px 35px;
+}
 
-/* element created by js */
+/* =======================
+    ELEMENTS CREATED BY JS
+  ======================== */
+
 .dict-block-hint {
   font-size: 1.1em;
   padding: 16px 24px;
@@ -83,7 +107,7 @@
 .dict-block-result-char-list {
   font-size: 1.3em;
   border-radius: 16px;
-  background-color: rgb(243, 243, 243);
+  background-color: #f3f3f3;
   padding: 8px 16px;
   margin-bottom: 16px;
 }
@@ -95,6 +119,9 @@
 }
 .dict-link-char:hover {
   color: #9e7055;
+  display: inline-block;
+  transition: 0.1s;
+  transform: scale(1.5);
 }
 .dict-block-result {
   border-radius: 16px;
@@ -106,4 +133,17 @@
 }
 .dict-block-result:hover {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* =====[ radicals in decompositions ]===== */
+#result_area .radical {
+  cursor: text;
+}
+#result_area .radical-special {
+  cursor: default;
+}
+#result_area .radical-special-sc {
+  cursor: default;
+}
+#result_area .radical-sc {
+  cursor: default;
 }

@@ -1,3 +1,10 @@
+/**
+ * Author: FISH UP
+ * https://array30.misterfishup.com/
+ * Copyright © 2020 FISH UP Dictionary of Array
+ * Date: 2020-11-20
+ */
+
 /* Structure: (use search)
   - get html DOMs
   - auto focus for the input area
@@ -5,11 +12,11 @@
   - prepare result file
   - filter with checkboxes
   - fetch data
-  - eng Key Toggle
+  - toggle English key mode
 */
 
 // --------------
-// get html DOMS
+// get html DOMs
 // --------------
 
 const resultAreaElem = document.getElementById('result_area');
@@ -40,13 +47,17 @@ $(window).on('keypress', function (e) {
 
 // clear the result area, and if input is not too long, call printResults
 function search() {
+  // prompt for too many characters
+  const emoticons = ['(͡° ͜ʖ ͡°)', '( ͡• ͜ʖ ͡•)', '(͠≖ ͜ʖ͠≖)👌', '( ´_ゝ`)', 'ヽ(´ー｀)┌', '(´･ω･`)', '(ㆆ_ㆆ)'];
+  const tooMany = { tw: `不要輸入超過 ${String(maxInputChar)} 字 `, en: `Don't type more than ${String(maxInputChar)} characters `, fr: `Ne saisissez pas plus de ${String(maxInputChar)} caractères ` };
+
   let input = inputElem.value;
   if (input.length > 0) {
     resultAreaElem.innerHTML = "";
     if ([...input].length > maxInputChar) {
       const hintDiv = document.createElement('div');
       hintDiv.className = 'dict-block-hint';
-      hintDiv.innerHTML = "<span>不要輸入超過 " + String(maxInputChar) + " 字啦！</span>";
+      hintDiv.innerHTML = "<span>" + tooMany[stringLocal] + emoticons[Math.floor(Math.random() * emoticons.length)] + "</span>";
       resultAreaElem.appendChild(hintDiv);
     } else printResults(input);
   }
@@ -61,7 +72,7 @@ function printResults(input) {
   resultAreaElem.appendChild(resultDescription);
 
   // add the descriptive sentence to resultDescription
-  resultDescription.innerHTML = '以下列出 <span id="total_num"></span> 筆資料。<span id="link_hint"></span>';
+  resultDescription.innerHTML = '<span id="total_num"></span><span id="link_hint"></span>';
 
   // create resultCharList, put it into the resultDescription
   let resultCharList = document.createElement('div');
@@ -97,11 +108,37 @@ function printResults(input) {
   if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
 
   // depending on num, modify the sentence in resultDescription, or remove resultCharList
-  document.getElementById('total_num').textContent = num;
+  const hereIs = {
+    tw: '以下列出 1 筆資料。',
+    en: 'Here is 1 character/symbol hyperlinked to its Array code listed below. ', // space at the end
+    fr: "Voici 1 caractère/symbole qui contient un hyperlien vers son code Tableau affiché ci-dessous. " // space at the end
+  };
+  const hereAre = {
+    tw: `以下列出 ${num} 筆資料。`,
+    en: `Here are ${num} characters/symbols hyperlinked to their Array codes listed below. `, // space at the end
+    fr: `Voici ${num} caractères/symboles qui contiennent des hyperliens vers leurs codes Tableau affichés ci-dessous. ` // space at the end
+  };
+  const hereNone = { tw: `沒有資料可以呈現 `, en: `Nothing to show `, fr: `Rien à afficher ` };
+  const hereNoneEmoticons = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
+  const downloadTheResult = {
+    tw: `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：`,
+    en: `You can also <a id="result_download_btn">click here (.txt file)</a> to download the search result.`,
+    fr: `Vous pouvez aussi <a id="result_download_btn">cliquer ici (fichier .txt)</a> pour télécharger le résultat de recherche.`
+  }
   if (num > 0) {
-    document.getElementById('link_hint').innerHTML = `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：<br><br>`;
+    if (num > 1) {
+      document.getElementById('total_num').textContent = hereAre[stringLocal];
+    } else {
+      // i.e. num == 1
+      document.getElementById('total_num').textContent = hereIs[stringLocal];
+    }
+    document.getElementById('link_hint').innerHTML = downloadTheResult[stringLocal] + '<br><br>';
     prepareResultFile(num);
-  } else resultDescription.removeChild(resultCharList);
+  } else {
+    // in this case, num == 0
+    document.getElementById('total_num').textContent = hereNone[stringLocal] + hereNoneEmoticons[Math.floor(Math.random() * hereNoneEmoticons.length)];
+    resultDescription.removeChild(resultCharList);
+  }
 
   // scroll into view
   resultDescription.scrollIntoView();
@@ -116,14 +153,16 @@ function prepareResultFile(num) {
   // get DOM
   let downloadBtnElem = document.getElementById('result_download_btn');
 
-  // set some result-independent strings 
-  const downloadTime = new Date().toLocaleString('zh-Hant', { hour12: false });
+  // set some result-independent strings
+  const dateLocal = (stringLocal != 'tw') ? stringLocal : 'zh-Hant'
+  const researchTime = new Date().toLocaleString(dateLocal, { hour12: false });
   const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
+  const websiteName = { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dictionnaire FISH UP de Tableau' };
   const year = '2020';
-  const siteURL = 'https://array30.misterfishup.com/dictionary.html';
-  const separationLine = '------------------------------------------\n';
+  const siteURL = 'https://array30.misterfishup.com/'
+  const separationLine = '--------------------------------------------\n';
   const signatures = [
-`
+    `
   ███████╗██╗███████╗██╗  ██╗    ██╗   ██╗██████╗ 
   ██╔════╝██║██╔════╝██║  ██║    ██║   ██║██╔══██╗
   █████╗  ██║███████╗███████║    ██║   ██║██████╔╝
@@ -131,46 +170,46 @@ function prepareResultFile(num) {
   ██║     ██║███████║██║  ██║    ╚██████╔╝██║     
   ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═╝     
 `,
-`
+    `
   ,------. ,--.  ,---.   ,--.  ,--.     ,--. ,--. ,------.  
   |  .---' |  | '   .-'  |  '--'  |     |  | |  | |  .--. ' 
   |  \`--,  |  | \`.  \`-.  |  .--.  |     |  | |  | |  '--' | 
   |  |\`    |  | .-'    | |  |  |  |     '  '-'  ' |  | --'  
   \`--'     \`--' \`-----'  \`--'  \`--'      \`-----'  \`--'      
 `,
-`   _____  _____  _____  _____    _____  _____ 
+    `   _____  _____  _____  _____    _____  _____ 
   |   __||     ||   __||  |  |  |  |  ||  _  |
   |   __||-   -||__   ||     |  |  |  ||   __|
   |__|   |_____||_____||__|__|  |_____||__|   
 `,
-`   ___   ___   ___   _  _     _   _   ___ 
+    `   ___   ___   ___   _  _     _   _   ___ 
   | __| |_ _| / __| | || |   | | | | | _ \\
   | _|   | |  \\__ \\ | __ |   | |_| | |  _/
   |_|   |___| |___/ |_||_|    \\___/  |_|  
 `,
-`       ___  _  ___  _ _   _ _  ___ 
+    `       ___  _  ___  _ _   _ _  ___ 
       | __>| |/ __>| | | | | || . \\
       | _> | |\\__ \\|   | | ' ||  _/
       |_|  |_|<___/|_|_| \`___'|_|  
 `,
-`      ____ _ ____ _  _    _  _ ___  
+    `      ____ _ ____ _  _    _  _ ___  
       |___ | [__  |__|    |  | |__] 
       |    | ___] |  |    |__| |    
 `,
-`       __    __              __  
+    `       __    __              __  
       |_  | (_  |__|   /  \\ |__) 
       |   | __) |  |   \\__/ |    
 `,
-`     ___      __                __  
+    `     ___      __                __  
     (_    /  (    )__/   /  /  /__) 
     /    (  __)  /  /   (__/  /     
 `,
-`   ______ _____  ______   _    _     _    _   ______  
+    `   ______ _____  ______   _    _     _    _   ______  
   | |      | |  / |      | |  | |   | |  | | | |  | \\ 
   | |----  | |  '------. | |--| |   | |  | | | |__|_/ 
   |_|     _|_|_  ____|_/ |_|  |_|   \\_|__|_| |_|      
 `,
-`
+    `
       ,--. ,  ,-.  .  .   .  . ;-.  
       |    | (   \` |  |   |  | |  ) 
       |-   |  \`-.  |--|   |  | |-'  
@@ -180,16 +219,47 @@ function prepareResultFile(num) {
   ]
 
   // create file content
-  let fileContent = '感謝使用 FISH UP 行列查碼！\n';
-  fileContent += '以下是您在 ' + downloadTime + ' 查詢的結果。\n\n';
-  fileContent += '================ 查詢結果 ================\n\n';
+  const thanks = {
+    tw: '感謝使用 FISH UP 行列查碼！',
+    en: 'Thank you for using FISH UP Dictionary of Array!',
+    fr: "Merci d'avoir utilisé le Dictionnaire FISH UP de Tableau !"
+  };
+  const sentenceWithTime = {
+    tw: `以下是您在 ${researchTime} 查詢的結果。`,
+    en: `Here is the result of your search on ${researchTime}.`,
+    fr: `Voici le résultat de votre recherche effectuée le ${researchTime}.`,
+  };
+  const resultStartLine = {
+    tw: '================= 查詢結果 =================',
+    en: '============== Search result ==============',
+    fr: '========== Résultat de recherche =========='
+  };
+  let fileContent = thanks[stringLocal] + '\n';
+  fileContent += sentenceWithTime[stringLocal] + '\n\n';
+  fileContent += resultStartLine[stringLocal] + '\n\n';
 
   // add result description
-  fileContent += '總共有 ' + num + ' 筆資料';
+  const resultInTotalSingular = {
+    tw: `總共有 1 筆資料`,
+    en: `There is 1 character/symbol in total:`,
+    fr: `Il y a 1 caractère/symbole au total :`,
+  };
+  const resultInTotalPlural = {
+    tw: `總共有 ${num} 筆資料`,
+    en: `There are ${num} characters/symbols in total:`,
+    fr: `Il y a ${num} caractères/symboles au total :`,
+  };
+  const shownEnglishKey = {
+    tw: '（行列編碼以英文按鍵顯示）',
+    en: '\n(Array codes written in English keys)',
+    fr: "\n(Codes Tableau écrits en touche anglaise)"
+  };
+  (num > 1) ? fileContent += resultInTotalPlural[stringLocal] : fileContent += resultInTotalSingular[stringLocal]
   if (isEngKeyActive) {
-    fileContent += '（行列編碼以英文按鍵顯示）'
+    fileContent += shownEnglishKey[stringLocal]
   }
-  fileContent += '：\n\n';
+  if (stringLocal == 'tw') fileContent += '：';
+  fileContent += '\n\n';
 
   // display all found characters
   $('#result_char_list a').each(function (index) {
@@ -205,10 +275,14 @@ function prepareResultFile(num) {
   $('#result_blocks').children().each(function () {
     // add character
     fileContent += $(this).find(">:first-child").text() + '\n';
-    // add Array codes
+
+    // add Array codes (except decompositions)
     $(this).find('li').each(function () {
-      fileContent += ' ' + ' ' + ' ' + ' ' + $(this).text() + '\n';
+      if (!$(this).attr('id').includes("DECOMP")) {
+        fileContent += ' ' + ' ' + ' ' + ' ' + $(this).text() + '\n';
+      }
     })
+
     // add separation line
     fileContent += separationLine;
   });
@@ -216,12 +290,18 @@ function prepareResultFile(num) {
   // add a random signature
   fileContent += signatures[Math.floor(Math.random() * signatures.length)];
 
-  // add website URL
-  fileContent += '\nCopyright © ' + year + ' FISH UP 行列查碼\n';
-  fileContent += siteURL + '\n';
+  // add dictionary URL
+  fileContent += `\nCopyright © ${year} ${websiteName[stringLocal]}\n`;
+  if (stringLocal == 'tw') {
+    fileContent += siteURL + 'dictionary.html\n';
+  } else {
+    fileContent += siteURL + stringLocal + '/dictionary.html\n';
+  }
 
-  //finally, bind the attributes 
-  downloadBtnElem.download = '行列查碼結果（共 ' + num + ' 筆資料）.txt';
+  //finally, bind the attributes
+  const fileNameResult = { tw: '行列查碼結果（共 1 筆資料）.txt', en: 'Array codes (1 character).txt', fr: 'Codes Tableau (1 caractère).txt' };
+  const fileNameResults = { tw: `行列查碼結果（共 ${num} 筆資料）.txt`, en: `Array codes (${num} characters).txt`, fr: `Codes Tableau (${num} caractères).txt` };
+  num > 1 ? downloadBtnElem.download = fileNameResults[stringLocal] : downloadBtnElem.download = fileNameResult[stringLocal]
   downloadBtnElem.href = 'data:text/plain,' + encodeURI(fileContent);
   downloadBtnElem.target = "_blank";
 }
@@ -241,11 +321,8 @@ function array30Filter() {
   const sc2 = document.getElementById('checkbox--sc2');
   const sym = document.getElementById('checkbox--sym');
 
-  // true if sp, sc1, sym, sg are not selected
-  const checkedCouldOnlyBeSC2 = !(sp.checked || sc1.checked || sym.checked || sg.checked);
-
   let outputArray = [];
-  if (checkedCouldOnlyBeSC2) {
+  if (~~sp.checked + ~~sc1.checked + ~~sym.checked + ~~sg.checked == 0) {
     outputArray = [];
   } else {
     if (sg.checked) {
@@ -284,30 +361,114 @@ function array30Filter() {
   document.getElementById('result_description').prepend(filterResultRecapSpan);
 
   // add result recap sentence to filterResultRecap
-  if (checkedCouldOnlyBeSC2) {
+  if (~~sp.checked + ~~sc1.checked + ~~sym.checked + ~~sg.checked == 0) {
     if (sc2.checked) {
-      filterResultRecapSpan.textContent = '總共有 3037 個字有二級簡碼，實在是太多了，請和其它條件搭配篩選 😉';
-    } else filterResultRecapSpan.textContent = '您似乎甚麼都沒選，所以…';
-  } else {
-    filterResultRecapSpan.textContent = `總共有 ${outputArray.length} 個`;
-    if (sym.checked) {
-      filterResultRecapSpan.textContent += "符號";
-    } else filterResultRecapSpan.textContent += "字";
-    if ((!(sp.checked) && !(sc1.checked) && !(sc2.checked) && !(sg.checked) && sym.checked)) {
-      filterResultRecapSpan.textContent += '。'; // only sym is checked
-    } else {
-      if (~~sp.checked + ~~sc1.checked + ~~sc2.checked + ~~sg.checked > 1) {
-        filterResultRecapSpan.textContent += "同時";
+      // only sc2 selected in this case
+      const tooManySC2 = {
+        tw: '總共有 3037 個字有二級簡碼，實在是太多了，請和其它條件搭配篩選 😉',
+        en: "Please also tick other types of code to reduce the number of characters 😉. There is a total of 3037 characters having a short code II, which is too many to display, so...",
+        fr: "Merci de cocher aussi d'autres types de code pour réduire le nombre des caractères 😉. Il y a un total de 3037 caractères qui possèdent un code court II, et c'est trop pour montrer, donc" // ???
       }
-      filterResultRecapSpan.textContent += "有";
-      if (sg.checked) filterResultRecapSpan.textContent += "單鍵碼、";
-      if (sp.checked) filterResultRecapSpan.textContent += "特別碼、";
-      if (sc1.checked) filterResultRecapSpan.textContent += "一級簡碼、";
-      if (sc2.checked) filterResultRecapSpan.textContent += "二級簡碼、";
-      if (sp.checked || sc1.checked || sc2.checked || sg.checked) {
-        let sentence = filterResultRecapSpan.textContent;
-        sentence = sentence.replace(/.$/, "。");
-        filterResultRecapSpan.textContent = sentence;
+      filterResultRecapSpan.textContent = tooManySC2[stringLocal];
+    } else {
+      // nothing selected in this case
+      const noTickedBox = {
+        tw: '您似乎甚麼都沒選，所以…',
+        en: "You didn't tick any boxes, so...", // AmE: check
+        fr: "Vous n'avez rien coché, donc..."
+      }
+      filterResultRecapSpan.textContent = noTickedBox[stringLocal];
+    }
+  } else {
+    // at least one type other than sc2 is selected in this case    
+    // first indicate the number of characters/symbols
+    const thereAreNoCharactersOrSymbols = sym.checked
+      ? {
+        tw: `沒有任何符號`,
+        en: `There aren't any symbols`,
+        fr: `Il n'y a pas de symboles`
+      }
+      : {
+        tw: `沒有任何字`,
+        en: `There aren't any characters`,
+        fr: `Il n'y a pas de caractères`
+      };
+    const thereAreCharactersOrSymbols = sym.checked
+      ? {
+        tw: `總共有 ${outputArray.length} 個符號`,
+        en: `There are ${outputArray.length} symbols in total`,
+        fr: `Il y a au total ${outputArray.length} symboles`
+      }
+      : {
+        tw: `總共有 ${outputArray.length} 個字`,
+        en: `There are ${outputArray.length} characters in total`,
+        fr: `Il y a au total ${outputArray.length} caractères`
+      };
+    filterResultRecapSpan.textContent = (outputArray.length > 0)
+      ? thereAreCharactersOrSymbols[stringLocal]
+      : thereAreNoCharactersOrSymbols[stringLocal];
+
+    // then add a complement to the sentence if necessary
+    const aOneKeyCode = { tw: '單鍵碼', en: 'a one-key code', fr: 'un code mono-touche' };
+    const aSpecialCode = { tw: '特別碼', en: 'a special code', fr: 'un code spécial' };
+    const aShortCodeI = { tw: '一級簡碼', en: 'a short code I', fr: 'un code court I' };
+    const aShortCodeII = { tw: '二級簡碼', en: 'a short code II', fr: 'un code court II' };
+    const pause = { tw: '、', en: ', ', fr: ', ' };
+    const period = { tw: '。', en: '.', fr: '.' };
+    const atTheSameTime = { tw: '同時', en: ' at the same time', fr: ' en même temps' };
+    const thatHave = { tw: '有', en: ' that have ', fr: ' qui possèdent ' };
+    const and = { tw: '和', en: ' and ', fr: ' et ' };
+
+    if ((!(sp.checked) && !(sc1.checked) && !(sc2.checked) && !(sg.checked) && sym.checked)) {
+      // only sym is selected in this case (so no complement)
+      filterResultRecapSpan.textContent += period[stringLocal];
+    } else {
+      if (~~sp.checked + ~~sc1.checked + ~~sc2.checked + ~~sg.checked == 1) {
+        // complement has only one type
+        filterResultRecapSpan.textContent += thatHave[stringLocal];
+        if (sg.checked) filterResultRecapSpan.textContent += aOneKeyCode[stringLocal];
+        if (sp.checked) filterResultRecapSpan.textContent += aSpecialCode[stringLocal];
+        if (sc1.checked) filterResultRecapSpan.textContent += aShortCodeI[stringLocal];
+        if (sc2.checked) filterResultRecapSpan.textContent += aShortCodeII[stringLocal];
+        filterResultRecapSpan.textContent += period[stringLocal];
+      } else {
+        // complement has more than one types
+        if (stringLocal == 'tw') {
+          filterResultRecapSpan.textContent += atTheSameTime[stringLocal];
+        }
+        filterResultRecapSpan.textContent += thatHave[stringLocal];
+        if (sg.checked) filterResultRecapSpan.textContent += aOneKeyCode[stringLocal];
+        if (sp.checked) {
+          if (!sc1.checked && !sc2.checked) {
+            // if is the last selected type
+            filterResultRecapSpan.textContent += and[stringLocal];
+          } else if (sg.checked) {
+            // if is not the first selected type
+            filterResultRecapSpan.textContent += pause[stringLocal];
+          }
+          filterResultRecapSpan.textContent += aSpecialCode[stringLocal];
+        }
+        if (sc1.checked) {
+          if (!sc2.checked) {
+            // if is the last selected type
+            filterResultRecapSpan.textContent += and[stringLocal];
+          } else if (sg.checked || sp.checked) {
+            // if is not the first selected type
+            filterResultRecapSpan.textContent += pause[stringLocal];
+          }
+          filterResultRecapSpan.textContent += aShortCodeI[stringLocal];
+        }
+        if (sc2.checked) {
+          filterResultRecapSpan.textContent += and[stringLocal] + aShortCodeII[stringLocal];
+        }
+        if (stringLocal != 'tw') {
+          filterResultRecapSpan.textContent += atTheSameTime[stringLocal];
+        }
+        filterResultRecapSpan.textContent += period[stringLocal];
+        if (outputArray.length == 0) {
+          const therefore = { tw: '所以...', en: ' So...', fr: ' Donc...' };
+          filterResultRecapSpan.textContent += therefore[stringLocal];
+        }
       }
     }
   }
@@ -348,6 +509,30 @@ function createList(character, list_id_name, id_name) {
   elem.appendChild(resultList);
 
   // add items to resultList
+  if (objectDecomposition.hasOwnProperty(character)) {
+    // if only one decomposition (saved in string)
+    if (typeof objectDecomposition[character] === 'string') {
+      // create itemDECOMP, add it into resultList
+      let itemDECOMP = document.createElement('li');
+      itemDECOMP.id = list_id_name + '_item_DECOMP';
+      resultList.appendChild(itemDECOMP);
+
+      // add content of itemDECOMP
+      createLineDecomposition(objectDecomposition[character], itemDECOMP.id);
+    } else if (Array.isArray(objectDecomposition[character])) {
+      // several decompositions possible, saved in array
+      const decompArray = objectDecomposition[character];
+      for (let i = 0; i < decompArray.length; i++) {
+        // create itemDECOMP, add it into resultList
+        let itemDECOMP = document.createElement('li');
+        itemDECOMP.id = list_id_name + '_item_DECOMP_' + String(i + 1);
+        resultList.appendChild(itemDECOMP);
+
+        // add content of itemDECOMP
+        createLineDecomposition(decompArray[i], itemDECOMP.id);
+      }
+    }
+  }
   if (objectNormal.hasOwnProperty(character)) {
     const nlArray = objectNormal[character];
     for (let i = 0; i < nlArray.length; i++) {
@@ -379,8 +564,13 @@ function createList(character, list_id_name, id_name) {
     createLineSP(objectSpecial[character], itemSP.id);
 
     // 敦雇 coincidence rank 1
+    const coincidenceRankOne = {
+      tw: '，重碼位 1',
+      en: ', coincidence rank equal to 1',
+      fr: ', rang de coïncidence égal à 1'
+    };
     if (["敦", "雇"].includes(character)) {
-      const ccHint = document.createTextNode("，重碼位 1");
+      const ccHint = document.createTextNode(coincidenceRankOne[stringLocal]);
       itemSP.appendChild(ccHint);
     }
   }
@@ -413,7 +603,16 @@ function createList(character, list_id_name, id_name) {
 
     // add content of itemSYM
     createLineSYM(objectSymbol[character], itemSYM.id);
-  }  
+  }
+}
+
+// create lineDecomposition from decomp and add it to some elem #id_name
+function createLineDecomposition(decomp, id_name) {
+  // add label
+  document.getElementById(id_name).innerHTML += '<span class="keycap title-decomposition">拆</span>：';
+
+  // from js/decomposition-generator.js
+  createDecomposition(decomp, id_name)
 }
 
 // create lineSG from encodingSG and add it to some elem #id_name
@@ -648,38 +847,57 @@ function createLineNL(encodingNl, id_name) {
     elem.appendChild(numberCC);
   }
   if (encodingNl[1] === 1) {
+    // hint for coincident codes
+    const hintCC = {
+      coincidenceRankOne: {
+        tw: '，重碼位 1',
+        en: ', coincidence rank equal to 1',
+        fr: ', rang de coïncidence égal à 1'
+      },
+      coincidenceRankOneIfExtB: {
+        tw: '，若啟用擴充區 B 則重碼位 1，否則無重碼',
+        en: ', coincidence rank equal to 1 if Extension B (CJK Unified Ideographs) activated, otherwise non-coincident code',
+        fr: ', rang de coïncidence égal à 1 si Supplément B (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
+      },
+      coincidenceRankOneIfExtCD: {
+        tw: '，若啟用擴充區 CD 則重碼位 1，否則無重碼',
+        en: ', coincidence rank equal to 1 if Extensions CD (CJK Unified Ideographs) activated, otherwise non-coincident code',
+        fr: ', rang de coïncidence égal à 1 si Suppléments CD (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
+      },
+    };
+
     // get coincidence code data
     ccData = objectEncoding[encodingNl[0]];
     if (ccData[0] > 1) {
       // cc pos = 1
-      const ccHint = document.createTextNode('，重碼位 1');
+      const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
       elem.appendChild(ccHint);
     }
     if (ccData[0] === 1) {
       if (ccData[1] > 0) {
-        const ccHint = document.createTextNode('，若啟用擴充區 B 則重碼位 1，否則無重碼');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtB[stringLocal]);
         elem.appendChild(ccHint);
       } else if (ccData[2] > 0) {
-        const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
         elem.appendChild(ccHint);
       }
     }
     if (ccData[0] === 0) {
       if (ccData[1] > 1) {
         // cc pos = 1
-        const ccHint = document.createTextNode('，重碼位 1');
+        const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
         elem.appendChild(ccHint);
       }
       if (ccData[1] === 1) {
         if (ccData[2] > 0) {
-          const ccHint = document.createTextNode('，若啟用擴充區 CD 則重碼位 1，否則無重碼');
+          const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
           elem.appendChild(ccHint);
         }
       }
       if (ccData[1] === 0) {
         if (ccData[2] > 1) {
           // cc pos = 1
-          const ccHint = document.createTextNode('，重碼位 1');
+          const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
           elem.appendChild(ccHint);
         }
       }
@@ -688,7 +906,7 @@ function createLineNL(encodingNl, id_name) {
 }
 
 // ---------------
-// eng Key Toggle
+// toggle English key mode
 // ---------------
 
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);

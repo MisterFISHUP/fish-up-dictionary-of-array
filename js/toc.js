@@ -35,12 +35,12 @@ $("#toggleStickyTOC").click(function () {
 });
 
 // simulate position sticky
-window.onscroll = function () { myFunction() };
+window.onscroll = function () { toggleStickyForTOC() };
 
 var stickyTOC = document.getElementsByTagName("aside")[0];
 var toggleStickyTOC = document.getElementById("toggleStickyTOC");
 var stickyDistanceToTop = stickyTOC.offsetTop;
-function myFunction() {
+function toggleStickyForTOC() {
   if (window.pageYOffset >= (stickyDistanceToTop + 25)) {
     stickyTOC.classList.add("sticky85");
     toggleStickyTOC.classList.add("sticky85");

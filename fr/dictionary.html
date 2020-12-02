@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173562145-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173562145-1');
+    </script>
+    <title>Le MEILLEUR dictionnaire de Tableau - méthode de saisie du chinois | Dictionnaire FISH UP de Tableau</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="Le meilleur site pour trouver des codes « Tableau » de caractères chinois. Recherche multi-caractère, mode touche anglaise, codes spéciaux ou courts, listes de symboles et de nombreuses autres fonctions pratiques !">
+    <meta name="keywords" content="Array,Array input method,Tableau,méthode Tableau,méthode de saisie Tableau,tutoriel Tableau,méthode de saisie du chinois">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Le MEILLEUR dictionnaire de Tableau - méthode de saisie du chinois | Dictionnaire FISH UP de Tableau">    
+    <meta itemprop="description" content="Le meilleur site pour trouver des codes « Tableau » de caractères chinois. Recherche multi-caractère, mode touche anglaise, codes spéciaux ou courts, listes de symboles et de nombreuses autres fonctions pratiques !">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/array-dictionary-fr.png">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Le MEILLEUR dictionnaire de Tableau - méthode de saisie du chinois | Dictionnaire FISH UP de Tableau">
+    <meta property="og:description" content="Le meilleur site pour trouver des codes « Tableau » de caractères chinois. Recherche multi-caractère, mode touche anglaise, codes spéciaux ou courts, listes de symboles et de nombreuses autres fonctions pratiques !">
+    <meta property="og:url" content="https://array30.misterfishup.com/fr/dictionary.html">
+    <meta property="og:image" content="https://array30.misterfishup.com/img/array-dictionary-fr.png">
+    <meta property="og:site_name" content="Dictionnaire FISH UP de Tableau">
+    <meta property="fb:admins" content="106035361278242">
+
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="Le MEILLEUR dictionnaire de Tableau - méthode de saisie du chinois | Dictionnaire FISH UP de Tableau">
+    <meta name="twitter:description" content="Le meilleur site pour trouver des codes « Tableau » de caractères chinois. Recherche multi-caractère, mode touche anglaise, codes spéciaux ou courts, listes de symboles et de nombreuses autres fonctions pratiques !">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/array-dictionary-fr.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dictionary.css">
+</head>
+<body>
+    <div id='app' data-local='fr' data-page-name='dictionary.html'>
+    <!-- Navbar -->
+    <app-nav-bar></app-nav-bar>
+
+    <!-- Header -->
+    <header class="dict-header">
+        <div class="w3-center w3-text-white">
+            <h1 class="w3-margin w3-xxlarge"><a href="dictionary.html" style="text-decoration: none;">{{ appContent.title[local] }}</a></h1>
+            <p class="w3-large">{{ appContent.description[local] }}</p>
+        </div>
+        <div style='padding: 0 24px; margin: auto; max-width: 1000px;'>
+            <!-- tab area -->
+            <div style="border-radius: 20px; overflow: hidden;">
+                <div class="w3-row">
+                    <button onclick="openSearchTag(event, 'search_tab_content_1');" class="w3-half w3-btn dict-tag-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-show-inline-block">●</span>&nbsp;{{ appContent.tab1Title[local] }}</button>
+                    <button onclick="openSearchTag(event, 'search_tab_content_2');" class="w3-half w3-btn dict-tag-not-selected w3-padding tablink" style="cursor: pointer;"><span class="w3-hide">●</span>&nbsp;{{ appContent.tab2Title[local] }}</button>
+                </div>
+                <!-- tab content -->
+                <div id="search_tab_content_1" class="search-type w3-card w3-white w3-show">
+                    <div class='w3-container w3-padding-24 w3-center'>
+                        <input type="text" id="inputCharacters" name="characters" :placeholder='appContent.searchPlaceholder[local]' class="w3-input" autofocus>
+                        <button type="submit" id="btn_submit" value="Submit" class="w3-button dict-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div id="search_tab_content_2" class="search-type w3-card w3-white w3-hide">
+                    <div class='w3-container w3-padding-24 w3-center w3-animate-left'>
+                        <label class="w3-margin-right"><input type="checkbox"  id='checkbox--sg' name="single" value="sgAll">&nbsp;{{ appContent.singleCode[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sp' name="special" value="spAll">&nbsp;{{ appContent.specialCode[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc1' name="shortcode1" value="sc1All">&nbsp;{{ appContent.shortCodeI[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sc2' name="shortcode2" value="sc2All">&nbsp;{{ appContent.shortCodeII[local] }}</label>
+                        <label class="w3-margin-right"><input type="checkbox" id='checkbox--sym' name="symbol" value="symAll">&nbsp;{{ appContent.symbol[local] }}</label>
+                        <button type="submit" id="btn_filter_submit" value="somevalue" class="w3-button dict-button" style="margin: 8px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- eng key toggle -->
+            <div class="w3-right" style="margin-top: 6px;">
+                <span class="w3-text-white">{{ appContent.toggleEngKey[local] }}</span>&nbsp;
+                <label>
+                    <input type="checkbox" id="cb_eng_key_active" class="checkbox">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>
+                    </span>
+                </label>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <br>
+    </header>
+
+<div class="dict-page-content-bg">
+    <div class="dict-page-content">
+        <!-- share button -->
+        <div>
+            {{ appContent.shareOn[local] }}
+            <img class="social-share facebook-share" tabindex="0">
+            <img class="social-share twitter-share" tabindex="0">
+            <img class="social-share line-share" tabindex="0">
+            <img class="social-share telegram-share" tabindex="0">
+            <img class="social-share linkedIn-share" tabindex="0">
+        </div>
+        
+        <!-- result area -->
+        <div id='result_area'>
+            <!-- main functions -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">{{ appContent.mainFunctions.title[local] }}</h3>
+                <h5 class="w3-center">- {{ appContent.mainFunctions.sec1Title[local] }} -</h5>
+                <div class="dict-example">
+                    <p>🔍 {{ appContent.mainFunctions.sec1Point1[local] }}</p>
+                    <p>🔍 {{ appContent.mainFunctions.sec1Point2[local] }}</p>
+                </div>
+                <h5 class="w3-center">- {{ appContent.mainFunctions.sec2Title[local] }} -</h5>
+                <div class="dict-example">
+                    <p>📜 {{ appContent.mainFunctions.sec2Point1[local] }}</p>
+                    <p>📜 {{ appContent.mainFunctions.sec2Point2[local] }}</p>
+                </div>
+            </div>
+            
+            <!-- practical features -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">{{ appContent.practicalFeatures.title[local] }}</h3>
+                <p>{{ appContent.practicalFeatures.par1[local] }}</p>
+                <p>{{ appContent.practicalFeatures.downloadable[local] }}</p>
+                <p v-html='appContent.practicalFeatures.decomposition[local]'></p>
+                <p v-html='appContent.practicalFeatures.codeType[local]'></p>
+                <p>{{ appContent.practicalFeatures.englishKey[local] }}</p>
+                <p v-html='appContent.practicalFeatures.spaceBar[local]'></p>
+                <p>{{ appContent.practicalFeatures.numberKey[local] }}</p>
+                <p>{{ appContent.practicalFeatures.coincidenceRank[local] }}</p>
+                <p>{{ appContent.practicalFeatures.symbolList[local] }}</p>
+                <p>{{ appContent.practicalFeatures.hyperlink[local] }}</p>
+                <p style="margin-top: 24px; color: #7c7c7c;">{{ appContent.practicalFeatures.oneKeyCode[local] }}</p>
+            </div>
+
+            <!-- see more lists -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">{{ appContent.seeMoreLists.title[local] }}</h3>
+                <p>{{ appContent.seeMoreLists.par1[local] }}</p>
+                <p class="w3-margin-bottom" v-html='appContent.seeMoreLists.par2[local]'></p>
+                <div class="w3-center">
+                    <a href="typing.html" target="_blank" class="w3-button w3-round-large w3-brown">{{ appContent.seeMoreLists.goTyping[local] }}</a>
+                </div>
+            </div>
+            <!-- about coincident codes-->            
+            <div class="dict-block-comment" id="about-coincident-codes">
+                <h3 class="bold-center">{{ appContent.aboutCC.title[local] }}</h3>
+
+                <!-- not CC -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec1Title[local] }}</h5>
+                <div class="dict-example">
+                    <p>{{ appContent.aboutCC.sec1Par1[local] }}</p>
+                </div>
+
+                <!-- coincidence rank = 1 -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec2Title[local] }}</h5>
+                <div class="dict-example">
+                    <p v-html='appContent.aboutCC.sec2Par1[local]'></p>
+                    <p>{{ appContent.aboutCC.sec2Par2[local] }}</p>
+                    <ol>
+                        <li class="w3-margin-bottom" v-html='appContent.aboutCC.sec2LI1[local]'></li>
+                        <li class="w3-margin-bottom">{{ appContent.aboutCC.sec2LI2[local] }}</li>
+                        <li class="w3-margin-bottom" v-html='appContent.aboutCC.sec2LI3[local]'></li>
+                    </ol>
+                </div>
+
+                <!-- coincidence rank > 1 -->
+                <h5 class="w3-center">{{ appContent.aboutCC.sec3Title[local] }}</h5>
+                <div class="dict-example">
+                    <p>{{ appContent.aboutCC.sec3Par1[local] }}</p>
+                </div>
+            </div>
+
+            <!-- coincident code trivia (hidden)-->
+            <div class="dict-block-comment w3-hide" id="coincident_code_trivia">
+                <h3 class="bold-center">重碼冷知識</h3>
+                <p>註：可用上方按鈕切換為英文鍵或行列 30 鍵</p>
+                <details>
+                    <summary>未啟用擴充區 B 區時</summary>
+                    <ul>
+                        <li class="w3-margin-bottom">重碼數最高是 9 個。僅 1 組編碼：<span class="keycap keycap-cc-trivia">....i</span> 。此編碼下重碼位 9 的字是「㸚」。</li>
+                        <li class="w3-margin-bottom">沒有編碼重碼數恰為 7 或 8 個。</li>
+                        <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 6 個：<span class="keycap keycap-cc-trivia">kqi</span> 以及 <span class="keycap keycap-cc-trivia">nnnn</span>。這兩組編碼下重碼位 6 的字分別是「㒰㣺」。</li>
+                        <li class="w3-margin-bottom">有 14 組編碼的重碼數恰為 5 個：<span class="keycap keycap-cc-trivia">.vi</span>、<span class="keycap keycap-cc-trivia">aaaxi</span>、<span class="keycap keycap-cc-trivia">ar.d</span>、<span class="keycap keycap-cc-trivia">bbbbi</span>、<span class="keycap keycap-cc-trivia">fkkfi</span>、<span class="keycap keycap-cc-trivia">iiii</span>、<span class="keycap keycap-cc-trivia">kkkk</span>、<span class="keycap keycap-cc-trivia">ksi</span>、<span class="keycap keycap-cc-trivia">ooi</span>、<span class="keycap keycap-cc-trivia">r;i;</span>、<span class="keycap keycap-cc-trivia">vkkfi</span>、<span class="keycap keycap-cc-trivia">xxxxi</span>、<span class="keycap keycap-cc-trivia">ykj;</span>、<span class="keycap keycap-cc-trivia">zkkfi</span>。這些編碼下重碼位 5 的字分別是「䝗㦮瑶叕䴽䒑乁㐈㧮囍䴽糹諮䴽」。</li>
+                        <li class="w3-margin-bottom">有 65 組編碼的重碼數恰為 4 個、有 355 組編碼的重碼數恰為 3 個、有 2323 組編碼的重碼數恰為 2 個。最後，有 25459 組編碼沒有重碼。</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>啟用擴充區 B 但未啟用擴充區 CD 時</summary>
+                    <ul>
+                        <li class="w3-margin-bottom">重碼數最高是 17 個。僅 1 組編碼：<span class="keycap keycap-cc-trivia">zkkfi</span> 。此編碼下重碼位 17 的字是「𪍵」。</li>
+                        <li class="w3-margin-bottom">有 3 組編碼的重碼數恰為 16 個：<span class="keycap keycap-cc-trivia">fkk;i</span>、<span class="keycap keycap-cc-trivia">fkkfi</span>、<span class="keycap keycap-cc-trivia">vkkfi</span>。這三組編碼下重碼位 16 的字分別是「𪍼𪍵𪍵」。</li>
+                        <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 15 個：<span class="keycap keycap-cc-trivia">vkk;i</span>。此編碼下重碼位 15 的字是「𪍼」。</li>
+                        <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 14 個：<span class="keycap keycap-cc-trivia">zkkxi</span>。此編碼下重碼位 14 的字是「𪍺」。</li>
+                        <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 13 個：<span class="keycap keycap-cc-trivia">bgd,i</span> 以及 <span class="keycap keycap-cc-trivia">fkkxi</span>。這兩組編碼下重碼位 13 的字分別是「𪈄𪍺」。</li>                            
+                        <li class="w3-margin-bottom">有 9 組編碼的重碼數恰為 12 個： <span class="keycap keycap-cc-trivia">....i</span>、<span class="keycap keycap-cc-trivia">alpsi</span>、<span class="keycap keycap-cc-trivia">bgdmi</span>、<span class="keycap keycap-cc-trivia">ffi</span>、<span class="keycap keycap-cc-trivia">qdjvi</span>、<span class="keycap keycap-cc-trivia">vkk,i</span>、<span class="keycap keycap-cc-trivia">y;jfi</span>、<span class="keycap keycap-cc-trivia">vkkqi</span>、<span class="keycap keycap-cc-trivia">zkkqi</span>。這些編碼下重碼位 12 的字分別是「𢼫𪓱𪍫𦬢𣡪𪒅𩫬𪎀𪎀」。</li>
+                        <li class="w3-margin-bottom">有 9 組編碼的重碼數恰為 11 個： <span class="keycap keycap-cc-trivia">fkk.i</span>、<span class="keycap keycap-cc-trivia">lvl.i</span>、<span class="keycap keycap-cc-trivia">vkksi</span>、<span class="keycap keycap-cc-trivia">vkkxi</span>、<span class="keycap keycap-cc-trivia">yqq;i</span>、<span class="keycap keycap-cc-trivia">yqqbi</span>、<span class="keycap keycap-cc-trivia">zkkki</span>、<span class="keycap keycap-cc-trivia">t;qbi</span>、<span class="keycap keycap-cc-trivia">zkk;i</span>。這些編碼下重碼位 11 的字分別是「𪍸𪚼𪌡𪍺𪋸𪋪𪎂𩏺𪍼」。</li>
+                        <li class="w3-margin-bottom">有 16 組編碼的重碼數恰為 10 個、有 24 組編碼的重碼數恰為 9 個、有 33 組編碼的重碼數恰為 8 個、有 62 組編碼的重碼數恰為 7 個、有 121 組編碼的重碼數恰為 6 個、有 253 組編碼的重碼數恰為 5 個、有 570 組編碼的重碼數恰為 4 個、有 1759 組編碼的重碼數恰為 3 個、有 7450 組編碼的重碼數恰為 2 個。最後，有 54853 組編碼沒有重碼。</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>啟用擴充區 CD 但未啟用擴充區 EF 時</summary>
+                    <ul>
+                        <li class="w3-margin-bottom">重碼數最高是 17 個。有 2 組編碼：<span class="keycap keycap-cc-trivia">fkk;i</span> 以及 <span class="keycap keycap-cc-trivia">zkkfi</span>。這兩組編碼下重碼位 17 的字分別是「𫈅𪍵」。</li>
+                        <li class="w3-margin-bottom">有 2 組編碼的重碼數恰為 16 個：<span class="keycap keycap-cc-trivia">fkkfi</span> 以及 <span class="keycap keycap-cc-trivia">vkkfi</span>。這兩組編碼下重碼位 16 的字分別是「𪍵𪍵」。</li>
+                        <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 15 個：<span class="keycap keycap-cc-trivia">vkk;i</span>。此編碼下重碼位 15 的字是「𪍼」。</li>
+                        <li class="w3-margin-bottom">僅 1 組編碼的重碼數恰為 14 個：<span class="keycap keycap-cc-trivia">zkkxi</span>。此編碼下重碼位 14 的字是「𪍺」。</li>
+                        <li class="w3-margin-bottom">有 4 組編碼的重碼數恰為 13 個： <span class="keycap keycap-cc-trivia">bgd,i</span>、<span class="keycap keycap-cc-trivia">fkkxi</span>、<span class="keycap keycap-cc-trivia">vkksi</span>、<span class="keycap keycap-cc-trivia">y;jfi</span>。這些編碼下重碼位 13 的字分別是「𪈄𪍺𫜐𫘷」。</li>
+                        <li class="w3-margin-bottom">有 12 組編碼的重碼數恰為 12 個： <span class="keycap keycap-cc-trivia">....i</span>、<span class="keycap keycap-cc-trivia">alpsi</span>、<span class="keycap keycap-cc-trivia">bgdmi</span>、<span class="keycap keycap-cc-trivia">ffi</span>、<span class="keycap keycap-cc-trivia">lvl.i</span>、<span class="keycap keycap-cc-trivia">qdjvi</span>、<span class="keycap keycap-cc-trivia">vkk,i</span>、<span class="keycap keycap-cc-trivia">yqq;i</span>、<span class="keycap keycap-cc-trivia">yqqbi</span>、<span class="keycap keycap-cc-trivia">t;qbi</span>、<span class="keycap keycap-cc-trivia">vkkqi</span>、<span class="keycap keycap-cc-trivia">zkkqi</span>。這些編碼下重碼位 12 的字分別是「𢼫𪓱𪍫𦬢𫁇𣡪𪒅𫜍𫜋𫖏𪎀𪎀」。</li>
+                        <li class="w3-margin-bottom">有 7 組編碼的重碼數恰為 11 個： <span class="keycap keycap-cc-trivia">bbi</span>、<span class="keycap keycap-cc-trivia">fkk.i</span>、<span class="keycap keycap-cc-trivia">lvlfi</span>、<span class="keycap keycap-cc-trivia">vkkxi</span>、<span class="keycap keycap-cc-trivia">ykyxi</span>、<span class="keycap keycap-cc-trivia">zkkki</span>、<span class="keycap keycap-cc-trivia">zkk;i</span>。這些編碼下重碼位 11 的字分別是「𪟙𪍸𪺳𪍺𫋴𪎂𪍼」。</li>
+                        <li class="w3-margin-bottom">有 15 組編碼的重碼數恰為 10 個、有 31 組編碼的重碼數恰為 9 個、有 43 組編碼的重碼數恰為 8 個、有 68 組編碼的重碼數恰為 7 個、有 154 組編碼的重碼數恰為 6 個、有 270 組編碼的重碼數恰為 5 個、有 650 組編碼的重碼數恰為 4 個、有 1965 組編碼的重碼數恰為 3 個、有 8061 組編碼的重碼數恰為 2 個。最後，有 57176 組編碼沒有重碼。</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>無重碼變為有重碼</summary>
+                    <ul>
+                        <li class="w3-margin-bottom">有 1203 個擴充區 A （或之前）的字，在輸入法未啟用擴充區 B 時沒有重碼，啟用後有重碼。</li>
+                        <li class="w3-margin-bottom">有 70 個擴充區 A （或之前）的字，在輸入法未啟用擴充區 CD 時沒有重碼，啟用後有重碼。</li>
+                        <li class="w3-margin-bottom">有 831 個擴充區 B 的字，在輸入法未啟用擴充區 CD 時沒有重碼，啟用後有重碼。</li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- notice -->
+            <div class="dict-block-comment">
+                <h3 class="bold-center">⚠️ {{ appContent.notice.title[local] }} ⚠️</h3>
+                <details>
+                    <summary>{{ appContent.notice.aboutDictionaryTitle[local] }}</summary>
+                    <div class="dict-example">
+                        <p>{{ appContent.notice.aboutDictionaryPar1[local] }}</p>
+                    </div>                
+                </details>
+                <details>
+                    <summary>{{ appContent.notice.characterDisplay.title[local] }}</summary>
+                    <div class="dict-example">
+                        <p v-html='appContent.notice.characterDisplay.par1[local]'></p>
+                        <p v-html='appContent.notice.characterDisplay.par2[local]'></p>
+                        <p v-html='appContent.notice.characterDisplay.par3[local]'></p>
+                    </div>
+                </details>            
+            </div>
+        </div>
+
+        <!-- contact & donation -->
+        <div class="dict-block-comment">
+            <p v-html='appContent.contactMe[local]' style="font-size: 1.1em;"></p>
+            <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" style="text-align: center; display: block; margin: 32px;"><img src="/img/buy-me-a-cake-brown.png" :alt='appContent.buyMeACake[local]' :title='appContent.buyMeACake[local]'class="buy-me-a-coffee"></a>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+
+    </div>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/data/radicals.js"></script>
+    <script type="text/javascript" src="/data/object-char-set.js"></script>
+    <script type="text/javascript" src="/data/object-normal.js"></script>
+    <script type="text/javascript" src="/data/object-short-code-i.js"></script>
+    <script type="text/javascript" src="/data/object-short-code-ii.js"></script>
+    <script type="text/javascript" src="/data/object-single.js"></script>
+    <script type="text/javascript" src="/data/object-special.js"></script>
+    <script type="text/javascript" src="/data/object-symbol.js"></script>
+    <script type="text/javascript" src="/data/object-decomposition.js"></script>
+    <script type="text/javascript" src="/data/keys.js"></script>
+    <script type="text/javascript" src="/app/dictionary.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/search_or_list.js"></script>
+    <script type="text/javascript" src="/js/decomposition-generator.js"></script>
+    <script type="text/javascript" src="/js/dictionary.js"></script>
+    <!-- <script type="text/javascript" src="/js/decomposition-checker.js"></script> -->
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>

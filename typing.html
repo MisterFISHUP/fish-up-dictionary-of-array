@@ -13,111 +13,76 @@
     <title>打字練習：最有效的行列輸入法打字練習 | FISH UP 行列查碼</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- For google -->
     <meta name="author" content="Mister FISH UP">
     <meta name="description" content="附有最完整的行列提示，並內建豐富打字題目，還能選擇正反亂序出題，甚至能夠免費自製題目！">
-    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法">
+    <meta name="keywords" content="行列,行列輸入法,行列輸入法練習,中文輸入法,行列查碼,打字練習">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="打字練習：最有效的行列輸入法打字練習 | FISH UP 行列查碼">
-    <!-- <meta itemprop="image" content="要顯示的縮圖網址"> -->
+    <meta itemprop="name" content="打字練習：最有效的行列輸入法打字練習 | FISH UP 行列查碼">    
     <meta itemprop="description" content="附有最完整的行列提示，並內建豐富打字題目，還能選擇正反亂序出題，甚至能夠免費自製題目！">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/typing-practice.png">
     
     <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="打字練習：最有效的行列輸入法打字練習 | FISH UP 行列查碼">
     <meta property="og:description" content="附有最完整的行列提示，並內建豐富打字題目，還能選擇正反亂序出題，甚至能夠免費自製題目！">
-    <meta property="og:type" content="網站">
     <meta property="og:url" content="https://array30.misterfishup.com/typing.html">
-    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array.png"/>
-    <!-- <meta property="og:site_name" content="Site Name, i.e. Moz"/> -->
-    <!-- <meta property="fb:admins" content="Facebook numeric ID" /> -->
+    <meta property="og:image" content="https://array30.misterfishup.com/img/typing-practice.png">
+    <meta property="og:site_name" content="FISH UP 行列查碼">
+    <meta property="fb:admins" content="106035361278242">
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="打字練習：最有效的行列輸入法打字練習 | FISH UP 行列查碼">
+    <meta name="twitter:description" content="附有最完整的行列提示，並內建豐富打字題目，還能選擇正反亂序出題，甚至能夠免費自製題目！">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/typing-practice.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/typing.css">
 </head>
 <body>
+    <div id='app' data-local='tw' data-page-name='typing.html'>
     <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align">
-            <!-- always there -->
-            <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large"></i></a>
-            <!-- small screens (toggle button)-->
-            <button id="toggleNavSmall" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-large w3-hover-sand w3-black"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></button>
-            <!-- large screens -->
-            <div class="w3-hide-medium w3-hide-small">
-                <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">行列查碼</a>
-                <a href="typing.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">打字練習</a>
-                <div class="w3-dropdown-hover">
-                    <button class="w3-button w3-padding-large w3-hover-light-gray"><a href="tutorial.html" style="text-decoration: none;">行列教學 <i class="fa fa-caret-down" aria-hidden="true"></i></a></button>
-                    <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
-                        <a href="tutorial.html" class="w3-bar-item w3-button">快速入門</a>
-                        <a href="tutorial-complete.html" class="w3-bar-item w3-button">完整教學</a>
-                        <a href="tutorial-recap.html" class="w3-bar-item w3-button">複習與測驗</a>
-                    </div>
-                </div>
-                <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">字根表</a>
-                <div class="w3-right">
-                    <a href="download.html" class="w3-bar-item w3-button  w3-padding-large w3-hover-white">下載</a>
-                    <a href="faq.html" class="w3-bar-item w3-button   w3-padding-large w3-hover-white">常見問題</a>
-                    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">關於本站</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Navbar on small screens -->
-    <div id="navSmall" class="w3-bar-block w3-hide-large w3-hide">
-        <a href="dictionary.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列查碼</a>
-        <a href="typing.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-keyboard-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;打字練習</a>
-        <div class="w3-padding-large nav-small-item-hover">
-            <a href="tutorial.html" style="text-decoration: none;"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&emsp;&nbsp;行列教學</a>
-            <div class="w3-right" id="toggleNavSmallTutorial" style="cursor: pointer;">
-                &emsp;&emsp;&emsp;<i class="fa fa-angle-down" aria-hidden="true" id="openNavSmallTutorial"></i><i class="fa fa-angle-up w3-hide" aria-hidden="true" id="closeNavSmallTutorial"></i>
-            </div>
-        </div>
-        <div id="navSmallTutorial" class="w3-hide">
-            <a href="tutorial.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true"></i>&emsp;&nbsp;快速入門</a>
-            <a href="tutorial-complete.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-key fa-fw" aria-hidden="true" ></i>&emsp;&nbsp;完整教學</a>
-            <a href="tutorial-recap.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover">&emsp;&nbsp;<i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&emsp;&nbsp;複習與測驗</a>
-        </div>
-        <a href="radicals-and-examples.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-th-list fa-fw" aria-hidden="true"></i>&emsp;&nbsp;字根表</a>
-        <a href="download.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i>&emsp;&nbsp;下載</a>
-        <a href="faq.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>&emsp;&nbsp;常見問題</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-padding-large nav-small-item-hover"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&emsp;&nbsp;關於本站</a>
-    </div>
+    <app-nav-bar></app-nav-bar>
 
     <!-- Header -->
     <header class="typing-header">
         <div class="w3-center w3-text-white w3-hide-small">
-            <h4 style="font-size: 22px;">最有效的行列輸入法打字練習</h4>
-            <a href="#middle_column" style="text-decoration: none;"><span class="w3-xxlarge typing-header-title">FISH UP 行列打字練習</span></a>
-            <h6 style="margin-top: 15px;">附有最完整的行列提示、豐富的打字題目，甚至可自製打字題目！</h6>
+            <h4 style="font-size: 22px;">{{ appContent.subtitle[local] }}</h4>
+            <a href="#middle_column" style="text-decoration: none;"><span class="w3-xxlarge typing-header-title">{{ appContent.title[local] }}</span></a>
+            <h6 style="margin-top: 15px;">{{ appContent.description[local] }}</h6>
         </div>
 
         <!-- Header on small screen -->
         <div class="w3-center w3-text-white w3-hide-medium w3-hide-large">
-            <h5>最有效的行列輸入法打字練習</h5>
-            <a href="#middle_column" style="text-decoration: none;"><span class=" w3-xlarge typing-header-title">FISH UP 行列打字練習</span></a>
-            <h6 style="font-size: smaller; margin-top: 15px;">附有最完整的行列提示、豐富的打字題目，甚至可自製打字題目！</h6>
+            <h5>{{ appContent.subtitle[local] }}</h5>
+            <a href="#middle_column" style="text-decoration: none;"><span class=" w3-xlarge typing-header-title">{{ appContent.title[local] }}</span></a>
+            <h6 style="font-size: smaller; margin-top: 15px;">{{ appContent.description[local] }}</h6>
             <br>
         </div>
     </header>
 
     <!-- The Grid -->
     <div class="w3-padding-24 w3-row-padding typing-bg">
-
         <!-- Left Column -->
         <div class="w3-quarter" style="margin-bottom: 32px;">
+            <!-- Current character with its Array code -->
             <div id='hint'>
-                <span class="w3-large">當前提示</span>
-                <span class="w3-small">（請關閉</span>
+                <span class="w3-large">{{ appContent.currentCharacter[local] }}</span>
+                <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
                 <label>
                     <input type="checkbox" id="cb_close_hint_current" class="checkbox" autocomplete="off">
                     <span class="btn-toggle-box">
@@ -128,8 +93,8 @@
                 <div id="hint_current"></div>
                 <br>
                 <div style="display:none;">
-                    <span class="w3-large">下一字提示</span>               
-                    <span class="w3-small">（請關閉</span>
+                    <span class="w3-large">下一字提示</span>
+                    <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
                     <label>
                         <input type="checkbox" id="cb_close_hint_next" class="checkbox" autocomplete="off">
                         <span class="btn-toggle-box">
@@ -138,352 +103,453 @@
                     </label>
                     <span class="w3-small">）</span>
                     <div id="hint_next"></div>
-                </div>                
+                </div>
             </div>
 
-            <h5>題目選擇</h5>            
-            <div class="w3-padding w3-white w3-animate-opacity w3-round-xlarge">
-                <!-- 題目產生設定 -->
+            <!-- Exercises -->
+            <h5>{{ appContent.exercises.title[local] }}</h5>
+            <div class="w3-padding w3-white w3-round-xlarge w3-margin-bottom">
+                <!-- Settings -->
                 <details class="typing-dtls-first">
-                    <summary>題目產生設定</summary>
+                    <summary>{{ appContent.exercises.settings[local] }}</summary>
                     <div class="typing-block-dtls-first">
-                        <label for="num_char" class="w3-small">每行最多字數：</label>
-                        <select name='num_char' id="option_num_char" class="w3-select w3-light-gray">
+                        <label for="num_char" class="w3-small">{{ appContent.exercises.maxNumber[local] }}</label>
+                        <select name='num_char' id="option_num_char" class="w3-select w3-light-gray w3-margin-bottom">
                             <option value="4">4</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
-                            <option value="20" selected="selected">20（預設）</option>
+                            <option value="20" selected="selected">20{{ appContent.exercises.defaultInParentheses[local] }}</option>
                         </select>
 
-                        <label for="num_char" class="w3-small">字元順序：</label>
+                        <label for="num_char" class="w3-small">{{ appContent.exercises.characterOrder[local] }}</label>
                         <select name='char_permutation' id="option_permutation" class="w3-select w3-light-gray">
-                            <option value="normal" selected="selected">正常（預設）</option>
-                            <option value="reversed">逆序</option>
-                            <option value="random">隨機打亂</option>
+                            <option value="normal" selected="selected">{{ appContent.exercises.normalDefault[local] }}</option>
+                            <option value="reversed">{{ appContent.exercises.reverse[local] }}</option>
+                            <option value="random">{{ appContent.exercises.random[local] }}</option>
                         </select>
                     </div>
                 </details>
 
-                <!-- 內建題目 -->
-                <details class="typing-dtls-first">
-                    <summary>選擇內建題目</summary>
+                <!-- Choose a built-in exercise -->
+                <details class="typing-dtls-first" id="built-in-exercise">
+                    <summary>{{ appContent.exercises.builtIn.title[local] }}</summary>
                     <hr style="margin: 8px 0 4px;">
                     <div class="w3-text-brown w3-padding-small" style="font-size: 0.9em;">
-                        想打更多題目？像是詩詞、文章、歌詞、格言？歡迎使用自製題目功能！
+                        {{ appContent.exercises.builtIn.description[local] }}
                     </div>
                     <hr style="margin: 4px 0;">
-                    <!-- 字詞系列 -->
+
+                    <!-- Common characters -->
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">字詞系列</span>
-                        <!-- 教育部 4808 個常用字 -->
-                        <details class="typing-dtls-second">
-                            <summary>教育部 4808 個常用字</summary>
-                            <div>
-                                <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 不是依照使用頻率排序</p>
-                                <button class="btn-built-in-exer" id='common-char-400'>1-400</button>
-                                <button class="btn-built-in-exer" id='common-char-800'>401-800</button>
-                                <button class="btn-built-in-exer" id='common-char-1200'>801-1200</button>
-                                <button class="btn-built-in-exer" id='common-char-1600'>1201-1600</button>
-                                <button class="btn-built-in-exer" id='common-char-2000'>1601-2000</button>
-                                <button class="btn-built-in-exer" id='common-char-2400'>2001-2400</button>
-                                <button class="btn-built-in-exer" id='common-char-2800'>2401-2800</button>
-                                <button class="btn-built-in-exer" id='common-char-3200'>2801-3200</button>
-                                <button class="btn-built-in-exer" id='common-char-3600'>3201-3600</button>
-                                <button class="btn-built-in-exer" id='common-char-4000'>3601-4000</button>
-                                <button class="btn-built-in-exer" id='common-char-4400'>4001-4400</button>
-                                <button class="btn-built-in-exer" id='common-char-4808'>4401-4808</button>
-                            </div>
-                        </details>
-                        <!-- 教育部 6341 個次常用字 -->
-                        <details class="typing-dtls-second">
-                            <summary>教育部 6341 個次常用字</summary>
-                            <div>
-                                <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 不是依照使用頻率排序</p>
-                                <button class="btn-built-in-exer" id='uncommon-char-400'>1-400</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-800'>401-800</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-1200'>801-1200</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-1600'>1201-1600</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-2000'>1601-2000</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-2400'>2001-2400</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-2800'>2401-2800</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-3200'>2801-3200</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-3600'>3201-3600</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-4000'>3601-4000</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-4400'>4001-4400</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-4808'>4401-4800</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-5200'>4801-5200</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-5600'>5201-5600</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-6000'>5601-6000</button>
-                                <button class="btn-built-in-exer" id='uncommon-char-6341'>6001-6341</button>
-                            </div>
-                        </details>
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.commonCharacter.title[local] }}</span>
+
+                        <!-- TW -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.tw[local] }}
+                            <!-- 4808 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.twCommon4808[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2100'>1801-2800</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4808'>4501-4808</button>
+                                </div>
+                            </details>
+                            <!-- 6341 個次常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.twLessCommon6341[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4800'>4501-4800</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5100'>4801-5100</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5400'>5101-5400</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5700'>5401-5700</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__6000'>5701-6000</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__6341'>6001-6341</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- CN -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.cn[local] }}
+                            <!-- 3500 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.cnCommon3500[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3500'>3301-3500</button>
+                                </div>
+                            </details>
+                            <!-- 3000 個次用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.cnLessCommon3000[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__3000'>2701-3000</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- HK -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.hk[local] }}
+                            <!-- 4759 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.hkCommon4759[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4759'>4501-4759</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- JP -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.jp[local] }}
+                            <!-- 2136 個常用漢字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.jpCommon2136[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__2136'>1801-2136</button>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <!-- 歌詞 -->
+
+                    <!-- Lyrics -->
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">歌詞系列</span>
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.lyric.title[local] }}</span>
                         <!-- 2016-2020 -->
                         <details class="typing-dtls-second">
                             <summary>2016-2020</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="mojito">Mojito</button>
-                                <button class="btn-built-in-exer" id="光年之外">光年之外</button>
-                                <button class="btn-built-in-exer" id="漂向北方">漂向北方</button>
-                                <button class="btn-built-in-exer" id="告白氣球">告白氣球</button>
+                                <button class="btn-built-in-exer" id="lyrics__mojito">Mojito</button>
+                                <button class="btn-built-in-exer" id="lyrics__光年之外">光年之外</button>
+                                <button class="btn-built-in-exer" id="lyrics__漂向北方">漂向北方</button>
+                                <button class="btn-built-in-exer" id="lyrics__告白氣球">告白氣球</button>
                             </div>
                         </details>
                         <!-- 2011-2015 -->
                         <details class="typing-dtls-second">
                             <summary>2011-2015</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="那些年">那些年</button>
-                                <button class="btn-built-in-exer" id="小幸運">小幸運</button>
-                                <button class="btn-built-in-exer" id="不為誰而作的歌">不為誰而作的歌</button>
-                            </div>
-                        </details>
-                    </div>        
-
-                    <!-- 文章系列 -->                    
-                    <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">文章系列</span>
-                        
-                        <!-- 古文 -->
-                        <details class="typing-dtls-second">
-                            <summary>古文</summary>
-                            <div>
-                                <button class="btn-built-in-exer" id='hundred'>百家姓</button>
-                                <button class="btn-built-in-exer" id='thousand'>千字文（含標點）</button>
-                                <button class="btn-built-in-exer" id='赤壁賦'>（前）赤壁賦</button>
-                                <button class="btn-built-in-exer" id='出師表'>（前）出師表</button>
-                                <button class="btn-built-in-exer" id='蘭亭集序'>蘭亭集序</button>
-                                <button class="btn-built-in-exer" id='岳陽樓記'>岳陽樓記</button>
+                                <button class="btn-built-in-exer" id="lyrics__那些年">那些年</button>
+                                <button class="btn-built-in-exer" id="lyrics__小幸運">小幸運</button>
+                                <button class="btn-built-in-exer" id="lyrics__不為誰而作的歌">不為誰而作的歌</button>
                             </div>
                         </details>
                     </div>
-                    <!-- 字根運用練習系列 -->
+
+                    <!-- Articles -->                    
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">字根運用練習系列</span>
-                        <!-- ARCAI -->
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.article.title[local] }}</span>
+                        
+                        <!-- 古文 -->
                         <details class="typing-dtls-second">
-                            <summary>ARCAI</summary>
+                            <summary>{{ appContent.builtInExercise.article.classic.title[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="arcai_example_col_1">行 1 </button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_2">行 2</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_3">行 3</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_4">行 4</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_5">行 5</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_6">行 6</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_7">行 7</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_8">行 8</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_9">行 9</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_0">行 0</button>
-                                <button class="btn-built-in-exer" id="arcai_example_col_all">全部</button>
+                                <button class="btn-built-in-exer" id='classics__百家姓'>{{ appContent.builtInExercise.article.classic.hundred[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__千字文'>{{ appContent.builtInExercise.article.classic.thousand[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__前赤壁賦'>{{ appContent.builtInExercise.article.classic.赤壁賦[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__前出師表'>{{ appContent.builtInExercise.article.classic.出師表[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__蘭亭集序'>{{ appContent.builtInExercise.article.classic.蘭亭集序[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__岳陽樓記'>{{ appContent.builtInExercise.article.classic.岳陽樓記[local] }}</button>
                             </div>
                         </details>
-                        <!-- 本站字根表實例 -->
-                        <!-- <details class="typing-dtls-second">
-                            <summary>本站字根表實例（未開放）</summary>
-                            <div>
-                                <button class="btn-built-in-exer" id="my_example_col_1" disabled>行 1</button>
-                                <button class="btn-built-in-exer" id="my_example_col_2" disabled>行 2</button>
-                                <button class="btn-built-in-exer" id="my_example_col_3" disabled>行 3</button>
-                                <button class="btn-built-in-exer" id="my_example_col_4" disabled>行 4</button>
-                                <button class="btn-built-in-exer" id="my_example_col_5" disabled>行 5</button>
-                                <button class="btn-built-in-exer" id="my_example_col_6" disabled>行 6</button>
-                                <button class="btn-built-in-exer" id="my_example_col_7" disabled>行 7</button>
-                                <button class="btn-built-in-exer" id="my_example_col_8" disabled>行 8</button>
-                                <button class="btn-built-in-exer" id="my_example_col_9" disabled>行 9</button>
-                                <button class="btn-built-in-exer" id="my_example_col_0" disabled>行 0</button>
-                                <button class="btn-built-in-exer" id="my_example_col_all" disabled>全部</button>
-                            </div>
-                        </details> -->
-                        <!-- 中文部首 -->
-                        <details class="typing-dtls-second">
-                            <summary>中文部首</summary>
-                            <div>
-                                <button class="btn-built-in-exer" id="radical_1">1 畫</button>
-                                <button class="btn-built-in-exer" id="radical_2">2 畫</button>
-                                <button class="btn-built-in-exer" id="radical_3">3 畫</button>
-                                <button class="btn-built-in-exer" id="radical_4">4 畫</button>
-                                <button class="btn-built-in-exer" id="radical_5">5 畫</button>
-                                <button class="btn-built-in-exer" id="radical_6">6 畫</button>
-                                <button class="btn-built-in-exer" id="radical_7">7 畫</button>
-                                <button class="btn-built-in-exer" id="radical_8">8 畫</button>
-                                <button class="btn-built-in-exer" id="radical_9">9 畫</button>
-                                <button class="btn-built-in-exer" id="radical_10">10 畫</button>
-                                <button class="btn-built-in-exer" id="radical_11">11 畫</button>
-                                <button class="btn-built-in-exer" id="radical_12">12 畫</button>
-                                <button class="btn-built-in-exer" id="radical_13">13 畫</button>
-                                <button class="btn-built-in-exer" id="radical_14">14 畫</button>
-                                <button class="btn-built-in-exer" id="radical_15">15 畫</button>
-                                <button class="btn-built-in-exer" id="radical_16">16 畫</button>
-                                <button class="btn-built-in-exer" id="radical_17">17 畫</button>
-                            </div>
-                        
-                        
-                        </details>
-                    </div>                    
-                    
-                    <!-- 一般拆碼系列 -->                    
+                    </div>
+
+                    <!-- Radical applications -->
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">一般拆碼系列</span>
-                        <!-- 單鍵 -->
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.arrayRadical.title[local] }}</span>
+
+                        <!-- examples -->
                         <details class="typing-dtls-second">
-                            <summary>單鍵</summary>
+                            <summary>{{ appContent.builtInExercise.arrayRadical.example[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="key1_no_cc">無重碼</button>
-                                <button class="btn-built-in-exer" id="key1_cc_first">重碼位 1</button>
+                                <button class="btn-built-in-exer" id="radical-application__column1">{{ appContent.builtInExercise.arrayRadical.column[local] }} 1 </button>
+                                <button class="btn-built-in-exer" id="radical-application__column2">{{ appContent.builtInExercise.arrayRadical.column[local] }} 2</button>
+                                <button class="btn-built-in-exer" id="radical-application__column3">{{ appContent.builtInExercise.arrayRadical.column[local] }} 3</button>
+                                <button class="btn-built-in-exer" id="radical-application__column4">{{ appContent.builtInExercise.arrayRadical.column[local] }} 4</button>
+                                <button class="btn-built-in-exer" id="radical-application__column5">{{ appContent.builtInExercise.arrayRadical.column[local] }} 5</button>
+                                <button class="btn-built-in-exer" id="radical-application__column6">{{ appContent.builtInExercise.arrayRadical.column[local] }} 6</button>
+                                <button class="btn-built-in-exer" id="radical-application__column7">{{ appContent.builtInExercise.arrayRadical.column[local] }} 7</button>
+                                <button class="btn-built-in-exer" id="radical-application__column8">{{ appContent.builtInExercise.arrayRadical.column[local] }} 8</button>
+                                <button class="btn-built-in-exer" id="radical-application__column9">{{ appContent.builtInExercise.arrayRadical.column[local] }} 9</button>
+                                <button class="btn-built-in-exer" id="radical-application__column0">{{ appContent.builtInExercise.arrayRadical.column[local] }} 0</button>
+                                <button class="btn-built-in-exer" id="radical-application__columnAll">{{ appContent.builtInExercise.all[local] }}</button>
                             </div>
                         </details>
-                        <!-- 雙鍵 -->
+
+                        <!-- Chinese radicals (Bushou) -->
                         <details class="typing-dtls-second">
-                            <summary>雙鍵</summary>
+                            <summary>{{ appContent.builtInExercise.arrayRadical.chineseRadical[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="key2_no_cc">無重碼</button>
-                                <button class="btn-built-in-exer" id="key2_cc_first">重碼位 1</button>
-                                <button class="btn-built-in-exer" id="key2_cc_second">重碼位 2 但少用，簡碼不用記 </button>
-                                <button class="btn-built-in-exer" id="key2_cc_third">重碼位 3 但少用，簡碼不用記 </button>
-                                <button class="btn-built-in-exer" id="key2_common_sc2">常用且重碼位 = 二級簡碼數字鍵</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke1">1 {{ appContent.builtInExercise.arrayRadical.stroke[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke2">2 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke3">3 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke4">4 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke5">5 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke6">6 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke7">7 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke8">8 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke9">9 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke10">10 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke11">11 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke12">12 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke13">13 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke14">14 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke15">15 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke16">16 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke17">17 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
                             </div>
                         </details>
-                        <!-- 三鍵 -->
+                    </div>
+
+                    <!-- Standard codes -->           
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.standard.title[local] }}</span>
+
+                        <!-- 1 Array key -->
                         <details class="typing-dtls-second">
-                            <summary>三鍵</summary>
+                            <summary>{{ appContent.builtInExercise.standard.keystroke1.title[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="key3_no_cc">無重碼</button>
-                                <button class="btn-built-in-exer" id='key3_cc_first'>重碼位 1</button>
-                                <button class="btn-built-in-exer" id='key3_cc_second'>重碼位 2 但少用，若有簡碼不用記 </button>
-                                <button class="btn-built-in-exer" id='key3_common_sc2'>常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                                <button class="btn-built-in-exer" id="decomposition__key1_no_cc">{{ appContent.builtInExercise.standard.keystroke1.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key1_cc_rank1">{{ appContent.builtInExercise.standard.keystroke1.ccRank1[local] }}</button>
                             </div>
                         </details>
-                        <!-- 四鍵 -->
+
+                        <!-- 2 Array keys -->
                         <details class="typing-dtls-second">
-                            <summary>四鍵</summary>
+                            <summary>{{ appContent.builtInExercise.standard.keystroke2.title[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="key4_no_cc">無重碼</button>
-                                <button class="btn-built-in-exer" id='key4_cc_first'>重碼位 1</button>
-                                <button class="btn-built-in-exer" id="key4_cc_second">重碼位 2 但少用 </button>
-                                <button class="btn-built-in-exer" id='key4_cc_third'>重碼位 3 但少用 </button>
-                                <button class="btn-built-in-exer" id="key4_common_sc2">常用且第三字根數字位 = 二級簡碼數字鍵</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_no_cc">{{ appContent.builtInExercise.standard.keystroke2.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank1">{{ appContent.builtInExercise.standard.keystroke2.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank2">{{ appContent.builtInExercise.standard.keystroke2.ccRank2[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank3">{{ appContent.builtInExercise.standard.keystroke2.ccRank3[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_common_sc2">{{ appContent.builtInExercise.standard.keystroke2.ccCommon[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- 3 Array keys -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke3.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key3_no_cc">{{ appContent.builtInExercise.standard.keystroke3.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_cc_rank1'>{{ appContent.builtInExercise.standard.keystroke3.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_cc_rank2'>{{ appContent.builtInExercise.standard.keystroke3.ccRank2[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_common_sc2'>{{ appContent.builtInExercise.standard.keystroke3.ccCommon[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- 4 Array keys -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke4.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key4_no_cc">{{ appContent.builtInExercise.standard.keystroke4.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key4_cc_rank1'>{{ appContent.builtInExercise.standard.keystroke4.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key4_cc_rank2">{{ appContent.builtInExercise.standard.keystroke4.ccRank2[local] }} </button>
+                                <button class="btn-built-in-exer" id='key4_cc_rank3'>{{ appContent.builtInExercise.standard.keystroke4.ccRank3[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key4_common_sc2">{{ appContent.builtInExercise.standard.keystroke4.ccCommon[local] }}</button>
                             </div>
                         </details>                    
                     </div>
 
-                    <!-- 特別碼、簡碼系列 -->                    
+                    <!-- Special, short codes asdf-->                    
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">特別碼、簡碼系列</span>
-                        <!-- 特別碼 -->
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.specialShort.title[local] }}</span>
+
+                        <!-- Sepcial codes -->
                         <details class="typing-dtls-second">
-                            <summary>特別碼</summary>
+                            <summary>{{ appContent.builtInExercise.specialShort.specialCode[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id='sp_all'>全部</button>
-                                <button class="btn-built-in-exer" id='sp_key4_14'>四鍵取首尾</button>
-                                <button class="btn-built-in-exer" id='sp_key4_12'>四鍵取首二</button>
-                                <button class="btn-built-in-exer" id='sp_key4_13'>四鍵取首三</button>
-                                <button class="btn-built-in-exer" id='sp_key4_23'>四鍵取二三</button>
-                                <button class="btn-built-in-exer" id='sp_key4_24'>四鍵取二尾</button>
-                                <button class="btn-built-in-exer" id='sp_key4_34'>四鍵取三尾</button>
-                                <button class="btn-built-in-exer" id='sp_key3_13'>三鍵取首尾</button>
-                                <button class="btn-built-in-exer" id='sp_key3_12'>三鍵取首中</button>
-                                <button class="btn-built-in-exer" id='sp_key3_23'>三鍵取中尾</button>
-                                <button class="btn-built-in-exer" id='sp_96_normal'>1996 新增（正向取）</button>
-                                <button class="btn-built-in-exer" id='sp_96_reversed'>1996 新增（反向取）</button>
-                                <button class="btn-built-in-exer" id='sp_irregular'>無規則</button>
-                                <button class="btn-built-in-exer" id='sp_sc1'>有一級簡碼</button>
-                                <button class="btn-built-in-exer" id='sp_no_sc1'>無一級簡碼</button>
+                                <button class="btn-built-in-exer" id='special-code__all'>{{ appContent.builtInExercise.all[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_12'>{{ appContent.builtInExercise.specialShort.special412[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_13'>{{ appContent.builtInExercise.specialShort.special413[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_14'>{{ appContent.builtInExercise.specialShort.special414[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_23'>{{ appContent.builtInExercise.specialShort.special423[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_24'>{{ appContent.builtInExercise.specialShort.special424[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_34'>{{ appContent.builtInExercise.specialShort.special434[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key3_12'>{{ appContent.builtInExercise.specialShort.special312[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key3_13'>{{ appContent.builtInExercise.specialShort.special313[local] }}</button> 
+                                <button class="btn-built-in-exer" id='special-code__key3_23'>{{ appContent.builtInExercise.specialShort.special323[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__added96_normal'>{{ appContent.builtInExercise.specialShort.added1996[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__added96_reversed'>{{ appContent.builtInExercise.specialShort.added1996Reverse[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__irregular'>{{ appContent.builtInExercise.specialShort.irregular[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__sc1'>{{ appContent.builtInExercise.specialShort.haveShortCodeI[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__no_sc1'>{{ appContent.builtInExercise.specialShort.withoutShortCodeI[local] }}</button>
                             </div>
                         </details>
-                        <!-- 一級簡碼 -->
+
+                        <!-- Short codes I -->
                         <details class="typing-dtls-second">
-                            <summary>一級簡碼</summary>
+                            <summary>{{ appContent.builtInExercise.specialShort.shortCode[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id='sc1_all'>全部</button>
-                                <button class="btn-built-in-exer" id='sc1_char'>文字</button>
-                                <button class="btn-built-in-exer" id='sc1_sym'>符號</button>
-                                <button class="btn-built-in-exer" id='sc1_sp'>有特別碼</button>
+                                <button class="btn-built-in-exer" id='short_code_1__all'>{{ appContent.builtInExercise.all[local] }}</button>
+                                <button class="btn-built-in-exer" id='short_code_1__character'>{{ appContent.builtInExercise.specialShort.character[local] }}</button>
+                                <button class="btn-built-in-exer" id='symbol__sc1'>{{ appContent.builtInExercise.specialShort.symbol[local] }}</button>
+                                <button class="btn-built-in-exer" id='special_code__sc1'>{{ appContent.builtInExercise.specialShort.haveSpecialCode[local] }}</button>
                             </div>
                         </details>
                     </div>
 
-                    <!-- 符號系列 -->                    
+                    <!-- Symbols -->                    
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">符號系列</span>
-                        <!-- 符號 -->
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.symbol.title[local] }}</span>
+                        <!-- symbol -->
                         <details class="typing-dtls-second">
-                            <summary>符號</summary>
+                            <summary>{{ appContent.builtInExercise.symbol.symbol[local] }}</summary>
                             <div>
-                                <button class="btn-built-in-exer" id="symbol_sc1">有一級簡碼</button>
-                                <button class="btn-built-in-exer" id="symbol_bopomofo">注音符號</button>
-                                <button class="btn-built-in-exer" id="symbol_greek_upper">大寫希臘字母</button>
-                                <button class="btn-built-in-exer" id="symbol_greek_lower">小寫希臘字母</button>
+                                <button class="btn-built-in-exer" id="symbol__sc1">{{ appContent.builtInExercise.symbol.shortCodeI[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__bopomofo">{{ appContent.builtInExercise.symbol.bopomofo[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__greek_upper">{{ appContent.builtInExercise.symbol.greekUpper[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__greek_lower">{{ appContent.builtInExercise.symbol.greekLower[local] }}</button>
                             </div>
                         </details>
                     </div>
 
-                    <!-- 顏文字系列 -->                    
+                    <!-- Emoticons -->                    
                     <div class="typing-block-dtls-first">
-                        <span class="typing-exer-series-title">顏文字系列（每行最多字數請設為 20）</span>
-                        <!-- 顏文字 -->
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.emoticon.title[local] }}</span>
+                        <!-- emoticon -->
                         <details class="typing-dtls-second">
-                        <summary>顏文字</summary>
+                        <summary>{{ appContent.builtInExercise.emoticon.emoticon[local] }}</summary>
                         <div>
-                            <button class="btn-built-in-exer"id="emoji_happy">開心</button>
-                            <button class="btn-built-in-exer"id="emoji_angry">生氣</button>
-                            <button class="btn-built-in-exer"id="emoji_guro">獵奇</button>
+                            <button class="btn-built-in-exer" id="emoticon__happy">{{ appContent.builtInExercise.emoticon.happy[local] }}</button>
+                            <button class="btn-built-in-exer" id="emoticon__angry">{{ appContent.builtInExercise.emoticon.angry[local] }}</button>
+                            <button class="btn-built-in-exer" id="emoticon__wtf">{{ appContent.builtInExercise.emoticon.wtf[local] }}</button>
                         </div>
                         </details>
                     </div>                    
                 </details>
 
-                <!-- 自製題目 -->
+                <!-- Customise an exercise -->
                 <details class="typing-dtls-first">
-                    <summary>使用自製題目</summary>
+                    <summary>{{ appContent.exercises.customisation.title[local] }}</summary>
                     <div class="w3-text-brown w3-padding-small" style="margin: 4px 0; font-size: 0.9em;">
-                        <i class="fa fa-star" aria-hidden="true"></i>&nbsp;到網路上複製想要的文章、歌詞後在下方貼上，輸入中英文都可以！
+                        <i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ appContent.exercises.customisation.description[local] }}
                     </div>
                     <div class="typing-block-dtls-first">
                         <div id='cust_exer_hint' class="typing-block-cust-exer-hint"></div>
-                        <textarea id='input_cust_exer' rows="4" class="w3-border w3-border-dark-gray w3-round-large" style="padding: 8px; width: 95%;" placeholder="最多可以輸入 3000 字元！"></textarea>
-                        <button id="btn_submit_cust_exer" class="btn-built-in-exer w3-margin-bottom">產生題目*</button>
+                        <textarea id='input_cust_exer' rows="4" class="w3-border w3-border-dark-gray w3-round-large" style="padding: 8px; width: 95%;" :placeholder="appContent.exercises.customisation.inputPlaceholder[local]"></textarea>
+                        <button id="btn_submit_cust_exer" class="btn-built-in-exer w3-margin-bottom">{{ appContent.exercises.customisation.creation[local] }}*</button>
                         <br>
                         <div class="w3-round-large w3-margin-bottom" style="font-size: small">
-                            * 輸入自製題目時可以不用換行，系統會依您的選擇字數自動換行來設計題目。但若您輸入自製題目時換行，產生的題目也會換行。
+                            * {{ appContent.exercises.customisation.comment[local] }}
                         </div>
                     </div>
                 </details>
 
-                <!-- 注意事項 -->
+                <!-- Notice -->
                 <details class="typing-dtls-first">
-                    <summary>注意事項</summary>
+                    <summary>{{ appContent.exercises.notice.title[local] }}</summary>
                     <div class="typing-block-dtls-first" style="line-height: 1.8;">
                         <details class="typing-dtls-second">
-                            <summary>關於行列提示</summary>
-                            <p>
-                                由於中日韓統一表意文字擴充區 D 之後的字相當罕用，本站行列編碼僅提示至擴充區 D，並且普通編碼的重碼提示建立在沒有啟用擴充區 EF 的條件下。另外，本站使用的資料庫來自 DIME 行列輸入法，所以有可能和其他版本的行列輸入法稍有不同。
-                            </p>
+                            <summary>{{ appContent.exercises.notice.aboutArrayHintTitle[local] }}</summary>
+                            <p>{{ appContent.exercises.notice.aboutArrayHintPar1[local] }}</p>
                         </details>
                         <details class="typing-dtls-second">
-                            <summary>關於字元顯示</summary>
-                            <p>
-                                本站使用<b>網頁版</b>思源宋體 Noto Serif CJK TC，僅支援到中日韓統一表意文字擴充區 A 區、以及 B 區中部分常用字。
-                            </p>
-                            <p>
-                                如果要正確顯示多數罕用字以及網頁上的粗體，您可以免費下載此字體的<b>完整版</b>（<a href="https://www.google.com/get/noto/#serif-hant" target="_blank">點此前往下載頁</a>）。
-                            </p>
-                            <p>
-                                如果要正確顯示所有罕用字，您可以下載免費字體「花園明朝體 HanaMinB」（<a href="https://zh-tw.osdn.net/projects/hanazono-font/releases/p12900" target="_blank">點此前往下載頁</a>），此字體能夠完整支援到擴充區 F，不過一般來說不會有這個需求，下載完整版的思源宋體就足夠了。
-                            </p>
+                            <summary>{{ appContent.exercises.notice.characterDisplay.title[local] }}</summary>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par1[local]'></p>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par2[local]'></p>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par3[local]'></p>
                         </details>
                     </div>
                 </details>
             </div>
+
+            <!-- Buy me a cake -->
+            <h5>{{ appContent.supportThisWebsite[local] }}</h5>
+            <div class="w3-white w3-round-xlarge w3-margin-bottom" id='buy-me-a-cake-block' v-html='appContent.buyMeACake[local]'></div>
 
         <!-- End Left Column -->
         </div>
 
         <!-- Middle Column -->
         <div class='w3-half w3-padding' id='middle_column'>
-            <div class="w3-right" style="margin: 6px 0;">
-                <span>按鍵顯示為英文鍵 </span>
+            <!-- share button -->
+            <div class="w3-left">
+                <img class="social-share facebook-share" tabindex="0">
+                <img class="social-share twitter-share" tabindex="0">
+                <img class="social-share line-share" tabindex="0">
+                <img class="social-share telegram-share" tabindex="0">
+                <img class="social-share linkedIn-share" tabindex="0">
+            </div>
+
+            <!-- toggle English key mode -->
+            <div class="w3-right" style="margin: 8px 0;">
+                <span>{{ appContent.toggleEngKey[local] }}</span>&nbsp;
                 <label>
                     <input type="checkbox" id="cb_eng_key_active" class="checkbox">
                     <span class="btn-toggle-box">
@@ -496,22 +562,21 @@
                 <div id='sentence_current'></div>
                 <div id='sentence_next' class='w3-padding w3-opacity'></div>
             </div>
-            <label class="w3-small" style="float:left">&ensp;輸入欄</label>
-            <button id="btn_exer_reset" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> 點我重置當前題目&ensp;</button>
+            <label class="w3-small" style="float:left">&ensp;{{ appContent.inputField[local] }}</label>
+            <button id="btn_exer_reset" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> {{ appContent.reset[local] }}&ensp;</button>
             <br>
-            <input type="text" id="typing_input" autofocus placeholder="按 enter 鍵換下一句" class="w3-input w3-padding w3-round-xxlarge typing-input-field">
-            
+            <input type="text" id="typing_input" autofocus :placeholder='appContent.inputPlaceholder[local]' class="w3-input w3-padding w3-round-xxlarge typing-input-field">
             <br>
             <br>
             <div class="typing-block-close-me">
                 <span onclick="this.parentElement.style.display='none'" class="typing-btn-close-me w3-button w3-large">&times;</span>
-                <h4>我知道了！</h4>
-                <p>還沒有行列輸入法？本站<a href="download.html" target="_blank">下載頁面</a>可以免費下載！</p>
-                <p>另外，點擊本頁的標題，可以將畫面移動至打字練習的區塊。打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，例如關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a></p>
+                <h4>{{ appContent.reminder.title[local] }}</h4>
+                <p v-html='appContent.reminder.par1[local]'></p>
+                <p v-html='appContent.reminder.par2[local]'></p>
             </div>
             <br>
-            <span class="w3-large">已打句子</span>
-            <span class="w3-small">（請關閉</span>
+            <span class="w3-large">{{ appContent.typedLines[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
             <label>
                 <input type="checkbox" id="cb_close_sentences_already" class="checkbox" autocomplete="off">
                 <span class="btn-toggle-box">
@@ -521,8 +586,8 @@
             <span class="w3-small">）</span>
             <div id='sentences_already' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off w3-round-xlarge' style="font-size: 1.2em; min-height: 2em;"></div>
             <br>
-            <span class="w3-large">先前行列錯字</span>
-            <span class="w3-small">（請關閉</span>
+            <span class="w3-large">{{ appContent.wrongCharacterPreviousLines[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
             <label>
                 <input type="checkbox" id="cb_close_wrong_chars_already" class="checkbox" autocomplete="off">
                 <span class="btn-toggle-box">
@@ -534,63 +599,60 @@
                 <div id='wrong_chars_already_link' class="w3-round-xlarge w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
                 <div id='wrong_chars_already'></div>
             </div>
-
-        <!-- End Middle Column -->
         </div>
 
         <!-- Right Column -->
         <div class='w3-quarter'>
             <div id="result_display">
-                <!-- <h5>結果</h5> -->
                 <div id="results" class="typing-results">
-                    <div style="font-size: large;">句數</div>
+                    <div style="font-size: large;">{{ appContent.results.lines[local] }}</div>
                     <hr style="margin: 0 0 8px 0;">
-                    <span style="float: left;">全部</span>
+                    <span style="float: left;">{{ appContent.results.total[local] }}</span>
                     <span style="float: right;"><span id='num_total_sentences'></span></span>
                     <p style="clear: both;"></p>
 
-                    <span style="float: left;">當前/剩餘</span>
+                    <span style="float: left;">{{ appContent.results.currentRemaining[local] }}</span>
                     <span style="float: right;"><span id='pos_line'></span>/<span id='num_remaining_lines'></span></span>
                     <hr style="clear: both; margin: 1em; border-color: transparent;">
 
-                    <div style="font-size: large;">字數</div>
+                    <div style="font-size: large;">{{ appContent.results.characters[local] }}</div>
                     <hr style="margin: 0 0 8px 0;">
-                    <span style="float: left;">全部</span>
+                    <span style="float: left;">{{ appContent.results.total[local] }}</span>
                     <span style="float: right;"><span id='num_total_chars'></span></span>
                     <p style="clear: both;"></p>
                     
-                    <span style="float: left;"><span style="color: green;">正確</span>/<span style="color: red;">錯誤</span></span>
+                    <span style="float: left;" v-html='appContent.results.correctWrong[local]'></span>
                     <span style="float: right;"><span id='num_total_correct_chars' style="color: green;"></span>/<span id="num_total_incorrect_chars" style="color: red;"></span></span>
                     <p style="clear: both;"></p>
 
-                    <span style="float: left;">正確率</span>
+                    <span style="float: left;">{{ appContent.results.accuracy[local] }}</span>
                     <span style="float: right;"><span id='accuracy' style="color: green;"></span> %</span>
                     <p style="clear: both;"></p>
                     
-                    <span style="float: left;">剩餘</span>
+                    <span style="float: left;">{{ appContent.results.remaining[local] }}</span>
                     <span style="float: right;"><span id='num_total_untouched_chars'></span></span>
                     <p style="clear: both;"></p>
                     <hr style="clear: both; margin: 1em; border-color: transparent;">
 
-                    <div style="font-size: large;">速度（每分鐘字）</div>
+                    <div style="font-size: large;">{{ appContent.results.speed[local] }}</div>
                     <hr style="margin: 0 0 8px 0;">
 
-                    <span style="float: left;">時間</span>
+                    <span style="float: left;">{{ appContent.results.time[local] }}</span>
                     <span style="float: right;"><span id='time_length'></span></span>
                     <p style="clear: both;"></p>
 
-                    <span style="float: left;">正確</span>
+                    <span style="float: left;">{{ appContent.results.correct[local] }}</span>
                     <span style="float: right;"><span style="color: green;" id='cpm_correct'></span></span>
                     <p style="clear: both;"></p>
 
-                    <span style="float: left;">已打</span>
+                    <span style="float: left;">{{ appContent.results.typed[local] }}</span>
                     <span style="float: right;"><span id='cpm_typed'></span></span>
                     <p style="clear: both;"></p>                    
                 </div>
             </div>
             <br>
-            <span class="w3-large">當句行列錯字</span>
-            <span class="w3-small">（請關閉</span>
+            <span class="w3-large">{{ appContent.wrongCharactersCurrentLine[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
             <label>
                 <input type="checkbox" id="cb_close_wrong_chars_current" class="checkbox" autocomplete="off">
                 <span class="btn-toggle-box">
@@ -599,29 +661,20 @@
             </label>
             <span class="w3-small">）</span>
             <div id="wrong_chars_current" class="w3-white w3-round-xlarge"></div>
-            
-        <!-- End Right Column -->
         </div>
-
-    <!-- End Grid -->
     </div>
 
     <!-- Footer -->
-    <footer class="footer-fish-up">
-        <div class="w3-xlarge w3-section">
-            <a href="https://www.facebook.com/profile.php?id=100000697055529" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"aria-hidden='true'></i></a>
-            <a href="mailto:misterfishup@gmail.com"><i class="fa fa-envelope w3-hover-opacity" aria-hidden="true"></i></a>
-        </div>
-        <p>Copyright &copy; 2020 <a href="index.html" target="_blank">FISH UP 行列查碼</a>&emsp;|&emsp;Powered by <a href="https://www.linkedin.com/in/shang-chun-yu/" target="_blank">FISH UP</a>&emsp;|&emsp;Contact: <a href="mailto:misterfishup@gmail.com">misterfishup@gmail.com</a></p>
-    </footer>
+    <app-footer></app-footer>
     
     <!-- back to top button -->
     <button type="button" id="to_top" class="toTop-arrow"></button>
-
+</div>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/display.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>    
     <script type="text/javascript" src="/data/object-char-set.js"></script>
     <script type="text/javascript" src="/data/object-normal.js"></script>
     <script type="text/javascript" src="/data/object-short-code-i.js"></script>
@@ -630,7 +683,9 @@
     <script type="text/javascript" src="/data/object-special.js"></script>
     <script type="text/javascript" src="/data/object-symbol.js"></script>
     <script type="text/javascript" src="/data/keys.js"></script>
-    <script type="text/javascript" src="/js/built_in_strings.js"></script>
+    <script type="text/javascript" src="/data/object-built-in-typing-exercises.js"></script>
+    <script type="text/javascript" src="/app/typing.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
     <script type="text/javascript" src="/js/typing.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>

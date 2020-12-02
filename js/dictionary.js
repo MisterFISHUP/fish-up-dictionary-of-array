@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-11-20
+ * Date: 2020-12-03
  */
 
 /* Structure: (use search)
@@ -49,7 +49,7 @@ $(window).on('keypress', function (e) {
 function search() {
   // prompt for too many characters
   const emoticons = ['(͡° ͜ʖ ͡°)', '( ͡• ͜ʖ ͡•)', '(͠≖ ͜ʖ͠≖)👌', '( ´_ゝ`)', 'ヽ(´ー｀)┌', '(´･ω･`)', '(ㆆ_ㆆ)'];
-  const tooMany = { tw: `不要輸入超過 ${String(maxInputChar)} 字 `, en: `Don't type more than ${String(maxInputChar)} characters `, fr: `Ne saisissez pas plus de ${String(maxInputChar)} caractères ` };
+  const tooMany = { tw: `不要輸入超過 ${String(maxInputChar)} 字喔 `, en: `Don't type more than ${String(maxInputChar)} characters `, fr: `Ne saisissez pas plus de ${String(maxInputChar)} caractères ` };
 
   let input = inputElem.value;
   if (input.length > 0) {
@@ -122,8 +122,8 @@ function printResults(input) {
   const hereNoneEmoticons = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
   const downloadTheResult = {
     tw: `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：`,
-    en: `You can also <a id="result_download_btn">click here (.txt file)</a> to download the search result.`,
-    fr: `Vous pouvez aussi <a id="result_download_btn">cliquer ici (fichier .txt)</a> pour télécharger le résultat de recherche.`
+    en: `You can also <a id="result_download_btn">click here</a> to download the search result (.txt file).`,
+    fr: `Vous pouvez aussi <a id="result_download_btn">cliquer ici</a> pour télécharger le résultat de recherche (fichier .txt).`
   }
   if (num > 0) {
     if (num > 1) {
@@ -321,40 +321,53 @@ function array30Filter() {
   const sc2 = document.getElementById('checkbox--sc2');
   const sym = document.getElementById('checkbox--sym');
 
-  let outputArray = [];
-  if (~~sp.checked + ~~sc1.checked + ~~sym.checked + ~~sg.checked == 0) {
-    outputArray = [];
-  } else {
-    if (sg.checked) {
-      outputArray = ['一', '十', '方', '竹', '乙', '的', '木', '女', '風'];
-      if (sc1.checked) {
-        outputArray = ['一', '十', '方', '竹', '乙', '的', '木', '風'];
-      }
-      if (sp.checked || sc2.checked || sym.checked) outputArray = [];
-    } else if (sym.checked) {
-      outputArray = [...symAllArray];
-      if (sc1.checked) {
-        outputArray = outputArray.filter(value => sc1AllArray.includes(value));
-      }
-      if (sp.checked || sc2.checked) outputArray = [];
-    } else if (sp.checked) {
-      outputArray = [...spAllArray];
-      if (sc1.checked) {
-        outputArray = outputArray.filter(value => sc1AllArray.includes(value));
-      }
-      if (sc2.checked) {
-        outputArray = outputArray.filter(value => sc2AllArray.includes(value));
-      }
-    } else if (sc1.checked) {
-      outputArray = [...sc1AllArray];
-      if (sc2.checked) {
-        outputArray = outputArray.filter(value => sc2AllArray.includes(value));
-      }
+  let stringToSearch = '';
+  let stringToSearchLength = 0;
+  if (sg.checked) {
+    if (!sp.checked && !sc1.checked && !sc2.checked && !sym.checked) { // only sg ticked
+      stringToSearch = '一女乙風十木的方竹';
+      stringToSearchLength = 9;
+    } else if (!sp.checked && sc1.checked && !sc2.checked && !sym.checked) { // only sg & sc1 ticked
+      stringToSearch = '一乙風十木的方竹';
+      stringToSearchLength = 8;
+    }
+  } else if (sym.checked) {
+    if (!sp.checked && !sc1.checked && !sc2.checked) { // only sym ticked
+      stringToSearch = 
+      `，、。．‧；：？！︰…‥﹐﹑﹒·﹔﹕﹖﹗｜–︱—︳╴︴﹏（）︵︶｛｝︷︸〔〕︹︺【】︻︼《》︽︾〈〉︿﹀「」﹁﹂『』﹃﹄﹙﹚﹛﹜﹝﹞‘’“”〝〞‵′＃＆＊※§〃○●△▲◎☆★◇◆□■▽▼㊣℅¯￣＿ˍ﹉﹊﹍﹎﹋﹌﹟﹠﹡＋－×÷±√＜＞＝≦≧≠∞≒≡﹢﹣﹤﹥﹦～∩∪⊥∠∟⊿㏒㏑∫∮∵∴♀♂⊕⊙↑↓←→↖↗↙↘∥∣／＼∕﹨＄￥〒￠￡％＠℃℉﹩﹪﹫㏕㎜㎝㎞㏎㎡㎎㎏㏄°兙兛兞兝兡兣嗧瓩糎▁▂▃▄▅▆▇█▏▎▍▌▋▊▉┼┴┬┤├▔─│▕┌┐└┘╭╮╰╯═╞╪╡◢◣◥◤╱╲╳╔╦╗╠╬╣╚╩╝╒╤╕╘╧╛╓╥╖╟╫╢╙╨╜║▓①②③④⑤⑥⑦⑧⑨⑩⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ〡〢〣〤〥〦〧〨〩〸〹〺ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ˙ˉˊˇˋ`;
+      stringToSearchLength = 401;
+    } else if (!sp.checked && sc1.checked && !sc2.checked) { // only sym & sc1 ticked
+      stringToSearch = '，。：；！「」、“”（）？『』．–＊／…';
+      stringToSearchLength = 20;
+    }
+  } else if (sp.checked) {
+    if (!sc1.checked && !sc2.checked) { // only sp ticked
+      stringToSearch = '大不小是再個我在雇性段診嘗嘉痕畫孔爪仲妄宇死佛戒享刺叔昏狗秉祇突耐虐倚倒俱倉唐席悔矩租乾堅婚婆敏率盛術陪殘短貸慌源矮跨歉熊厲盤輝輯靜繁魏牙臣沈卓委姿夏容恥息旅框浮祝秦索躬寂崇帳救逢惰插敦期裂貴隆集飾徹漂漲熟遮憲擁謀頸艱騎繪贊辭驅鑒予朗頂普盜視貿榮監網價潤璃鄭據築融乳飯概煤馳端頗儀環臨邀璧繫耀釋飄黨票澄壁禮徜鈉綻幡餿魘等須啊尾淨業深清歲首急憐表姐始紀態語詞衣復罷聖廣室城越跑編裝讀高還單唱展岸直朝葉弟資利度察序賽情物質圍場望改君費選陳材妙姓她妹組被刻部請歷壓番靠遠造廢條聰慶游神社祖剛考遇般航喝範掃退餘候嘴窮呀恐衛科樂與實你那家聲會但雨獨喔取受希假聯活碟球窗謝傳議次沒獎夢例項題轉試光吧晚每觀溫龍妳雄哪鳳嗚隊罵辦標底檔掉調版英歡建基交景件幹何凰哈呵換客程覺板幫訊教理魔至影參讓莫徵星線錢三界提圖保團阿引章究卻啦舍怎者尚速元雲商您整演玩完若惡市感戰冷卡管代歌錄站討許式笑貓需協打灣守意其戀佳統按喜舊';
+      stringToSearchLength = 398;
+    } else if (!sc1.checked && sc2.checked) { // only sp & sc2 ticked
+      stringToSearch = '再個在痕畫刺盛卓容索崇擁繪榮築等須啊尾淨業深清歲急憐表姐始紀語詞衣復罷聖室城跑編裝讀高還唱展岸直葉弟利度察賽情物質圍望改君費選陳材妙姓她妹組被刻部請歷壓靠遠造廢條慶游神社祖剛考遇般航喝範掃退餘候嘴呀恐衛科實聲會獨取受希假活碟球謝傳議次沒夢例項題轉試光吧晚溫龍妳雄哪鳳隊罵辦標底檔掉調版歡建交件凰哈換客程覺板幫訊教理至影參徵星線錢界圖保團阿究卻啦怎者速元商您整完若市感戰冷管代錄站討許式笑需協打灣守意其統按喜舊'
+      stringToSearchLength = 204;
+    }
+    
+    else if (sc1.checked && !sc2.checked) { // only sp & sc1 ticked
+      stringToSearch = '大不小是個我在你那家會雨'
+      stringToSearchLength = 12;
+    } else if (sc1.checked && sc2.checked) { // only sp& sc1 & sc2 ticked
+      stringToSearch = '個在會'
+      stringToSearchLength = 3;
+    }
+  } else if (sc1.checked) {
+    if (!sc2.checked) { // only sc1 ticked
+      stringToSearch = '，火米精燈料鄰勞類營。身行街很往愛從後得四虫？『』．–＊／…口：；叫呢嗎吹別吃號一到聽現政弄兩而面要又力屬居發屋通習務局小卜水法決注當對省常山片！「」、“”（）門止鬥開關鬧些閱處桌十莊落著華萬真花敬故石戶也那破孩遍驗承啟方病施痛良遊族於為旗金半並鎮食拿前美道會目刀角周眼運解肉色免人入八做他進你坐作個竹看師和第種向答我的貝夕貼財夠賠體贈然過之心定麼字忙家應寫空手斤臼無把接興推學動日曰田時最是照點易國工七車哥事較敢頭或區土士廿起地老帶報都臺乙鄉收跳跟響逃飛路踢隨民巴書張院強除群陽月皿縣腦助臉服勝胞腳木機極村根校想來格查風幾經結級將能給總約立言裡新記該認說話就不大夫雨成在布願原電'
+      stringToSearchLength = 290;
+    } else { // only sc1 & sc2 ticked
+      stringToSearch = '精燈料類往愛後得叫嗎別吃號要屬居發屋習局決注常開關鬧閱處莊著華破孩承啟病痛族於為旗拿會運色他進坐作個看師貼財夠賠贈然過忙寫把國事較起地帶臺收跳跟響逃飛踢巴強除腦助臉服胞腳機極村想來格級將約新記該認在布'
+      stringToSearchLength = 100;
     }
   }
 
-  // print outputArray
-  printResults(outputArray.join(""));
+  // print results
+  printResults(stringToSearch);
 
   //create filterResultRecap, put it in the beginning of resultDescription
   const filterResultRecapSpan = document.createElement('p');
@@ -395,16 +408,16 @@ function array30Filter() {
       };
     const thereAreCharactersOrSymbols = sym.checked
       ? {
-        tw: `總共有 ${outputArray.length} 個符號`,
-        en: `There are ${outputArray.length} symbols in total`,
-        fr: `Il y a au total ${outputArray.length} symboles`
+        tw: `總共有 ${stringToSearchLength} 個符號`,
+        en: `There are ${stringToSearchLength} symbols in total`,
+        fr: `Il y a au total ${stringToSearchLength} symboles`
       }
       : {
-        tw: `總共有 ${outputArray.length} 個字`,
-        en: `There are ${outputArray.length} characters in total`,
-        fr: `Il y a au total ${outputArray.length} caractères`
+        tw: `總共有 ${stringToSearchLength} 個字`,
+        en: `There are ${stringToSearchLength} characters in total`,
+        fr: `Il y a au total ${stringToSearchLength} caractères`
       };
-    filterResultRecapSpan.textContent = (outputArray.length > 0)
+    filterResultRecapSpan.textContent = (stringToSearchLength > 0)
       ? thereAreCharactersOrSymbols[stringLocal]
       : thereAreNoCharactersOrSymbols[stringLocal];
 
@@ -465,7 +478,7 @@ function array30Filter() {
           filterResultRecapSpan.textContent += atTheSameTime[stringLocal];
         }
         filterResultRecapSpan.textContent += period[stringLocal];
-        if (outputArray.length == 0) {
+        if (stringToSearchLength == 0) {
           const therefore = { tw: '所以...', en: ' So...', fr: ' Donc...' };
           filterResultRecapSpan.textContent += therefore[stringLocal];
         }

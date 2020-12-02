@@ -1,7 +1,7 @@
 const stringPageName = document.getElementById('app').dataset.pageName;
 const AppContent = {
   title: { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dictionnaire FISH UP de Tableau' },
-  subtitle: { tw: '學習行列輸入法的首選網站', en: '- Best website to learn Array -', fr: '- Le meilleur site web pour apprendre Tableau -' },
+  subtitle: { tw: '- 學習行列輸入法的首選網站 -', en: '- Best website to learn Array -', fr: '- Le meilleur site web pour apprendre Tableau -' },
   year: '2020',
   sKeyDictionary: { tw: '查碼去', en: 'Dictionary', fr: 'Dictionnaire' },
   sKeyTyping: { tw: '打字去', en: 'Typing', fr: 'Exercices' },

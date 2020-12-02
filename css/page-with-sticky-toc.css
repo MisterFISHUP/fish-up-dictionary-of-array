@@ -3,49 +3,41 @@ section {
   scroll-margin-top: 77px; /* 45 + 32 (margin top) */
 }
 h1 {
-  font-family: "Georgia", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
+  font-family: "Domine", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
     "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
   font-weight: 700;
 }
 h2 {
   margin-top: 60px;
-  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+  font-family: "Domine", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
     "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
   font-weight: 700;
-  color: saddlebrown;
+  color: #5d0c0c;
 }
 h3 {
   margin-top: 40px;
-  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+  font-family: "Domine", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
     "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
-  color: rgb(189, 91, 27);
+  color: #c95223;
 }
 h4 {
   margin-top: 30px;
-  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+  font-family: "Domine", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
     "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
-  color: rgb(214, 132, 77);
+  color: #cc9b41;
 }
 h5 {
   margin-top: 30px;
-  font-family: "Georgia", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+  font-family: "Domine", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
     "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
-  color: rgb(155, 109, 77);
+  color: #26a3b9;
 }
 #page-content {
   font-size: large;
   line-height: 1.8;
 }
 #page-content a:hover {
-  color: rgb(80, 150, 52);
-}
-.comment {
-  font-size: medium;
-  padding: 5px 15px;
-  border-left: 6px solid rgb(182, 158, 139);
-}
-.comment::before {
-  content: "註：";
+  color: #d8833d;
 }
 .question {
   display: block;
@@ -67,8 +59,8 @@ h5 {
 .btn-dl {
   cursor: pointer;
   margin: 4px;
-  border-radius: 10px;
-  background-color: #fff6e6;
+  border-radius: 12px;
+  background-color: #ffedcc;
   border: none;
   display: inline-block;
   padding: 8px 16px;
@@ -76,41 +68,24 @@ h5 {
   text-decoration: none;
   text-align: center;
   overflow: hidden;
+  transition: 0.5s;
 }
+
 #page-content .btn-dl:hover {
   background-color: #f8d392;
-  color: rgb(0, 0, 0);
+  color: #000000;
 }
 .code {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  background-color: rgb(247, 247, 247);
-  border: 1px solid rgb(187, 187, 187);
+  background-color: #f7f7f7;
+  border: 1px solid #bbbbbb;
   padding: 4px 8px;
   border-radius: 5px;
-  color: rgb(240, 90, 140);
-}
-.question {
-  display: block;
-}
-.question::before {
-  content: "問：";
-}
-.answer {
-  display: block;
-}
-.answer::before {
-  content: "答：";
-}
-.block-qa {
-  margin-top: 15px;
-  margin-bottom: 35px;
+  color: #f05a8c;
 }
 .comment {
   font-size: medium;
   padding: 5px 15px;
-  border-left: 6px solid rgb(201, 201, 201);
-}
-.comment::before {
-  content: "註：";
+  border-left: 6px solid #c9c9c9;
 }

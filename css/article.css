@@ -1,0 +1,29 @@
+.page-content {
+  max-width: 850px;
+  margin: 100px auto;
+  padding: 24px;
+  font-size: large;
+  line-height: 1.8;
+}
+section {
+  margin: 60px 10px;
+}
+section a:hover {
+  color: darkcyan;
+}
+p {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-family: "Domine", "Noto Serif CJK TC Black", "Noto Serif CJK TC Bold",
+    "Noto Serif CJK SC Black", "Noto Serif CJK SC Bold", "Noto Serif TC";
+  font-weight: 700;
+}
+h2 {
+  margin-top: 60px;
+  font-family: "Domine", "Noto Serif CJK TC Bold", "Noto Serif CJK TC SemiBold",
+    "Noto Serif CJK SC Bold", "Noto Serif CJK SC SemiBold", "Noto Serif TC";
+  font-weight: 700;
+  color: #802222;
+}

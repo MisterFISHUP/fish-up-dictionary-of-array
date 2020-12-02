@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173562145-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173562145-1');
+    </script>
+    <title>Exercices de saisie avec Tableau (LE MEILLEUR SITE) - méthode de saise du chinois | Dictionnaire FISH UP de Tableau</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="Les exercices de saisie les plus efficaces avec des indices de codes Tableau. De nombreux exercices, vous pouvez même en crée de nouveaux.">
+    <meta name="keywords" content="Array,Array input method,Tableau,méthode Tableau,méthode de saisie Tableau,tutoriel Tableau,méthode de saisie du chinois, exercice de saisie">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Exercices de saisie avec Tableau (LE MEILLEUR SITE) - méthode de saise du chinois | Dictionnaire FISH UP de Tableau">    
+    <meta itemprop="description" content="Les exercices de saisie les plus efficaces avec des indices de codes Tableau. De nombreux exercices, vous pouvez même en crée de nouveaux.">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/typing-practice-fr.png">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Exercices de saisie avec Tableau (LE MEILLEUR SITE) - méthode de saise du chinois | Dictionnaire FISH UP de Tableau">
+    <meta property="og:description" content="Les exercices de saisie les plus efficaces avec des indices de codes Tableau. De nombreux exercices, vous pouvez même en crée de nouveaux.">
+    <meta property="og:url" content="https://array30.misterfishup.com/fr/typing.html">
+    <meta property="og:image" content="https://array30.misterfishup.com/img/typing-practice-fr.png">
+    <meta property="og:site_name" content="Dictionnaire FISH UP de Tableau">
+    <meta property="fb:admins" content="106035361278242">
+
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="Exercices de saisie avec Tableau (LE MEILLEUR SITE) - méthode de saise du chinois | Dictionnaire FISH UP de Tableau">
+    <meta name="twitter:description" content="Les exercices de saisie les plus efficaces avec des indices de codes Tableau. De nombreux exercices, vous pouvez même en crée de nouveaux.">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/typing-practice-fr.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/typing.css">
+</head>
+<body>
+    <div id='app' data-local='fr' data-page-name='typing.html'>
+    <!-- Navbar -->
+    <app-nav-bar></app-nav-bar>
+
+    <!-- Header -->
+    <header class="typing-header">
+        <div class="w3-center w3-text-white w3-hide-small">
+            <h4 style="font-size: 22px;">{{ appContent.subtitle[local] }}</h4>
+            <a href="#middle_column" style="text-decoration: none;"><span class="w3-xxlarge typing-header-title">{{ appContent.title[local] }}</span></a>
+            <h6 style="margin-top: 15px;">{{ appContent.description[local] }}</h6>
+        </div>
+
+        <!-- Header on small screen -->
+        <div class="w3-center w3-text-white w3-hide-medium w3-hide-large">
+            <h5>{{ appContent.subtitle[local] }}</h5>
+            <a href="#middle_column" style="text-decoration: none;"><span class=" w3-xlarge typing-header-title">{{ appContent.title[local] }}</span></a>
+            <h6 style="font-size: smaller; margin-top: 15px;">{{ appContent.description[local] }}</h6>
+            <br>
+        </div>
+    </header>
+
+    <!-- The Grid -->
+    <div class="w3-padding-24 w3-row-padding typing-bg">
+        <!-- Left Column -->
+        <div class="w3-quarter" style="margin-bottom: 32px;">
+            <!-- Current character with its Array code -->
+            <div id='hint'>
+                <span class="w3-large">{{ appContent.currentCharacter[local] }}</span>
+                <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+                <label>
+                    <input type="checkbox" id="cb_close_hint_current" class="checkbox" autocomplete="off">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>
+                    </span>
+                </label>
+                <span class="w3-small">）</span>
+                <div id="hint_current"></div>
+                <br>
+                <div style="display:none;">
+                    <span class="w3-large">下一字提示</span>
+                    <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+                    <label>
+                        <input type="checkbox" id="cb_close_hint_next" class="checkbox" autocomplete="off">
+                        <span class="btn-toggle-box">
+                            <span class="btn-toggle"></span>
+                        </span>
+                    </label>
+                    <span class="w3-small">）</span>
+                    <div id="hint_next"></div>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <h5>{{ appContent.exercises.title[local] }}</h5>
+            <div class="w3-padding w3-white w3-round-xlarge w3-margin-bottom">
+                <!-- Settings -->
+                <details class="typing-dtls-first">
+                    <summary>{{ appContent.exercises.settings[local] }}</summary>
+                    <div class="typing-block-dtls-first">
+                        <label for="num_char" class="w3-small">{{ appContent.exercises.maxNumber[local] }}</label>
+                        <select name='num_char' id="option_num_char" class="w3-select w3-light-gray w3-margin-bottom">
+                            <option value="4">4</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20" selected="selected">20{{ appContent.exercises.defaultInParentheses[local] }}</option>
+                        </select>
+
+                        <label for="num_char" class="w3-small">{{ appContent.exercises.characterOrder[local] }}</label>
+                        <select name='char_permutation' id="option_permutation" class="w3-select w3-light-gray">
+                            <option value="normal" selected="selected">{{ appContent.exercises.normalDefault[local] }}</option>
+                            <option value="reversed">{{ appContent.exercises.reverse[local] }}</option>
+                            <option value="random">{{ appContent.exercises.random[local] }}</option>
+                        </select>
+                    </div>
+                </details>
+
+                <!-- Choose a built-in exercise -->
+                <details class="typing-dtls-first" id="built-in-exercise">
+                    <summary>{{ appContent.exercises.builtIn.title[local] }}</summary>
+                    <hr style="margin: 8px 0 4px;">
+                    <div class="w3-text-brown w3-padding-small" style="font-size: 0.9em;">
+                        {{ appContent.exercises.builtIn.description[local] }}
+                    </div>
+                    <hr style="margin: 4px 0;">
+
+                    <!-- Common characters -->
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.commonCharacter.title[local] }}</span>
+
+                        <!-- TW -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.tw[local] }}
+                            <!-- 4808 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.twCommon4808[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2100'>1801-2800</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='tw_common_character_4808__4808'>4501-4808</button>
+                                </div>
+                            </details>
+                            <!-- 6341 個次常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.twLessCommon6341[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__4800'>4501-4800</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5100'>4801-5100</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5400'>5101-5400</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__5700'>5401-5700</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__6000'>5701-6000</button>
+                                    <button class="btn-built-in-exer" id='tw_less_common_character_6341__6341'>6001-6341</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- CN -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.cn[local] }}
+                            <!-- 3500 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.cnCommon3500[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='cn_common_character_3500__3500'>3301-3500</button>
+                                </div>
+                            </details>
+                            <!-- 3000 個次用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.cnLessCommon3000[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='cn_less_common_character_3000__3000'>2701-3000</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- HK -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.hk[local] }}
+                            <!-- 4759 個常用字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.hkCommon4759[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2100'>1801-2100</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2400'>2101-2400</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__2700'>2401-2700</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3000'>2701-3000</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3300'>3001-3300</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3600'>3301-3600</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__3900'>3601-3900</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4200'>3901-4200</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4500'>4201-4500</button>
+                                    <button class="btn-built-in-exer" id='hk_common_character_4759__4759'>4501-4759</button>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- JP -->
+                        <div class="w3-margin-top">
+                            {{ appContent.builtInExercise.commonCharacter.jp[local] }}
+                            <!-- 2136 個常用漢字 -->
+                            <details class="typing-dtls-second">
+                                <summary>{{ appContent.builtInExercise.commonCharacter.jpCommon2136[local] }}</summary>
+                                <div>
+                                    <p class="w3-pale-red" style="font-size: small; padding: 4px 8px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ appContent.builtInExercise.commonCharacter.warning[local] }}</p>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__300'>1-300</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__600'>301-600</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__900'>601-900</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1200'>901-1200</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1500'>1201-1500</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__1800'>1501-1800</button>
+                                    <button class="btn-built-in-exer" id='jp_common_character_2136__2136'>1801-2136</button>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Lyrics -->
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.lyric.title[local] }}</span>
+                        <!-- 2016-2020 -->
+                        <details class="typing-dtls-second">
+                            <summary>2016-2020</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="lyrics__mojito">Mojito</button>
+                                <button class="btn-built-in-exer" id="lyrics__光年之外">光年之外</button>
+                                <button class="btn-built-in-exer" id="lyrics__漂向北方">漂向北方</button>
+                                <button class="btn-built-in-exer" id="lyrics__告白氣球">告白氣球</button>
+                            </div>
+                        </details>
+                        <!-- 2011-2015 -->
+                        <details class="typing-dtls-second">
+                            <summary>2011-2015</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="lyrics__那些年">那些年</button>
+                                <button class="btn-built-in-exer" id="lyrics__小幸運">小幸運</button>
+                                <button class="btn-built-in-exer" id="lyrics__不為誰而作的歌">不為誰而作的歌</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Articles -->                    
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.article.title[local] }}</span>
+                        
+                        <!-- 古文 -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.article.classic.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id='classics__百家姓'>{{ appContent.builtInExercise.article.classic.hundred[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__千字文'>{{ appContent.builtInExercise.article.classic.thousand[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__前赤壁賦'>{{ appContent.builtInExercise.article.classic.赤壁賦[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__前出師表'>{{ appContent.builtInExercise.article.classic.出師表[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__蘭亭集序'>{{ appContent.builtInExercise.article.classic.蘭亭集序[local] }}</button>
+                                <button class="btn-built-in-exer" id='classics__岳陽樓記'>{{ appContent.builtInExercise.article.classic.岳陽樓記[local] }}</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Radical applications -->
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.arrayRadical.title[local] }}</span>
+
+                        <!-- examples -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.arrayRadical.example[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="radical-application__column1">{{ appContent.builtInExercise.arrayRadical.column[local] }} 1 </button>
+                                <button class="btn-built-in-exer" id="radical-application__column2">{{ appContent.builtInExercise.arrayRadical.column[local] }} 2</button>
+                                <button class="btn-built-in-exer" id="radical-application__column3">{{ appContent.builtInExercise.arrayRadical.column[local] }} 3</button>
+                                <button class="btn-built-in-exer" id="radical-application__column4">{{ appContent.builtInExercise.arrayRadical.column[local] }} 4</button>
+                                <button class="btn-built-in-exer" id="radical-application__column5">{{ appContent.builtInExercise.arrayRadical.column[local] }} 5</button>
+                                <button class="btn-built-in-exer" id="radical-application__column6">{{ appContent.builtInExercise.arrayRadical.column[local] }} 6</button>
+                                <button class="btn-built-in-exer" id="radical-application__column7">{{ appContent.builtInExercise.arrayRadical.column[local] }} 7</button>
+                                <button class="btn-built-in-exer" id="radical-application__column8">{{ appContent.builtInExercise.arrayRadical.column[local] }} 8</button>
+                                <button class="btn-built-in-exer" id="radical-application__column9">{{ appContent.builtInExercise.arrayRadical.column[local] }} 9</button>
+                                <button class="btn-built-in-exer" id="radical-application__column0">{{ appContent.builtInExercise.arrayRadical.column[local] }} 0</button>
+                                <button class="btn-built-in-exer" id="radical-application__columnAll">{{ appContent.builtInExercise.all[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- Chinese radicals (Bushou) -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.arrayRadical.chineseRadical[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="bushou__stroke1">1 {{ appContent.builtInExercise.arrayRadical.stroke[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke2">2 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke3">3 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke4">4 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke5">5 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke6">6 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke7">7 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke8">8 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke9">9 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke10">10 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke11">11 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke12">12 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke13">13 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke14">14 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke15">15 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke16">16 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                                <button class="btn-built-in-exer" id="bushou__stroke17">17 {{ appContent.builtInExercise.arrayRadical.strokes[local] }}</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Standard codes -->           
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.standard.title[local] }}</span>
+
+                        <!-- 1 Array key -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke1.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key1_no_cc">{{ appContent.builtInExercise.standard.keystroke1.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key1_cc_rank1">{{ appContent.builtInExercise.standard.keystroke1.ccRank1[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- 2 Array keys -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke2.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key2_no_cc">{{ appContent.builtInExercise.standard.keystroke2.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank1">{{ appContent.builtInExercise.standard.keystroke2.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank2">{{ appContent.builtInExercise.standard.keystroke2.ccRank2[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_cc_rank3">{{ appContent.builtInExercise.standard.keystroke2.ccRank3[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key2_common_sc2">{{ appContent.builtInExercise.standard.keystroke2.ccCommon[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- 3 Array keys -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke3.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key3_no_cc">{{ appContent.builtInExercise.standard.keystroke3.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_cc_rank1'>{{ appContent.builtInExercise.standard.keystroke3.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_cc_rank2'>{{ appContent.builtInExercise.standard.keystroke3.ccRank2[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key3_common_sc2'>{{ appContent.builtInExercise.standard.keystroke3.ccCommon[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- 4 Array keys -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.standard.keystroke4.title[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="decomposition__key4_no_cc">{{ appContent.builtInExercise.standard.keystroke4.nonCC[local] }}</button>
+                                <button class="btn-built-in-exer" id='decomposition__key4_cc_rank1'>{{ appContent.builtInExercise.standard.keystroke4.ccRank1[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key4_cc_rank2">{{ appContent.builtInExercise.standard.keystroke4.ccRank2[local] }} </button>
+                                <button class="btn-built-in-exer" id='key4_cc_rank3'>{{ appContent.builtInExercise.standard.keystroke4.ccRank3[local] }}</button>
+                                <button class="btn-built-in-exer" id="decomposition__key4_common_sc2">{{ appContent.builtInExercise.standard.keystroke4.ccCommon[local] }}</button>
+                            </div>
+                        </details>                    
+                    </div>
+
+                    <!-- Special, short codes asdf-->                    
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.specialShort.title[local] }}</span>
+
+                        <!-- Sepcial codes -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.specialShort.specialCode[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id='special-code__all'>{{ appContent.builtInExercise.all[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_12'>{{ appContent.builtInExercise.specialShort.special412[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_13'>{{ appContent.builtInExercise.specialShort.special413[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_14'>{{ appContent.builtInExercise.specialShort.special414[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_23'>{{ appContent.builtInExercise.specialShort.special423[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_24'>{{ appContent.builtInExercise.specialShort.special424[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key4_34'>{{ appContent.builtInExercise.specialShort.special434[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key3_12'>{{ appContent.builtInExercise.specialShort.special312[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__key3_13'>{{ appContent.builtInExercise.specialShort.special313[local] }}</button> 
+                                <button class="btn-built-in-exer" id='special-code__key3_23'>{{ appContent.builtInExercise.specialShort.special323[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__added96_normal'>{{ appContent.builtInExercise.specialShort.added1996[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__added96_reversed'>{{ appContent.builtInExercise.specialShort.added1996Reverse[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__irregular'>{{ appContent.builtInExercise.specialShort.irregular[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__sc1'>{{ appContent.builtInExercise.specialShort.haveShortCodeI[local] }}</button>
+                                <button class="btn-built-in-exer" id='special-code__no_sc1'>{{ appContent.builtInExercise.specialShort.withoutShortCodeI[local] }}</button>
+                            </div>
+                        </details>
+
+                        <!-- Short codes I -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.specialShort.shortCode[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id='short_code_1__all'>{{ appContent.builtInExercise.all[local] }}</button>
+                                <button class="btn-built-in-exer" id='short_code_1__character'>{{ appContent.builtInExercise.specialShort.character[local] }}</button>
+                                <button class="btn-built-in-exer" id='symbol__sc1'>{{ appContent.builtInExercise.specialShort.symbol[local] }}</button>
+                                <button class="btn-built-in-exer" id='special_code__sc1'>{{ appContent.builtInExercise.specialShort.haveSpecialCode[local] }}</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Symbols -->                    
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.symbol.title[local] }}</span>
+                        <!-- symbol -->
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.builtInExercise.symbol.symbol[local] }}</summary>
+                            <div>
+                                <button class="btn-built-in-exer" id="symbol__sc1">{{ appContent.builtInExercise.symbol.shortCodeI[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__bopomofo">{{ appContent.builtInExercise.symbol.bopomofo[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__greek_upper">{{ appContent.builtInExercise.symbol.greekUpper[local] }}</button>
+                                <button class="btn-built-in-exer" id="symbol__greek_lower">{{ appContent.builtInExercise.symbol.greekLower[local] }}</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Emoticons -->                    
+                    <div class="typing-block-dtls-first">
+                        <span class="typing-exer-series-title">{{ appContent.builtInExercise.emoticon.title[local] }}</span>
+                        <!-- emoticon -->
+                        <details class="typing-dtls-second">
+                        <summary>{{ appContent.builtInExercise.emoticon.emoticon[local] }}</summary>
+                        <div>
+                            <button class="btn-built-in-exer" id="emoticon__happy">{{ appContent.builtInExercise.emoticon.happy[local] }}</button>
+                            <button class="btn-built-in-exer" id="emoticon__angry">{{ appContent.builtInExercise.emoticon.angry[local] }}</button>
+                            <button class="btn-built-in-exer" id="emoticon__wtf">{{ appContent.builtInExercise.emoticon.wtf[local] }}</button>
+                        </div>
+                        </details>
+                    </div>                    
+                </details>
+
+                <!-- Customise an exercise -->
+                <details class="typing-dtls-first">
+                    <summary>{{ appContent.exercises.customisation.title[local] }}</summary>
+                    <div class="w3-text-brown w3-padding-small" style="margin: 4px 0; font-size: 0.9em;">
+                        <i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ appContent.exercises.customisation.description[local] }}
+                    </div>
+                    <div class="typing-block-dtls-first">
+                        <div id='cust_exer_hint' class="typing-block-cust-exer-hint"></div>
+                        <textarea id='input_cust_exer' rows="4" class="w3-border w3-border-dark-gray w3-round-large" style="padding: 8px; width: 95%;" :placeholder="appContent.exercises.customisation.inputPlaceholder[local]"></textarea>
+                        <button id="btn_submit_cust_exer" class="btn-built-in-exer w3-margin-bottom">{{ appContent.exercises.customisation.creation[local] }}*</button>
+                        <br>
+                        <div class="w3-round-large w3-margin-bottom" style="font-size: small">
+                            * {{ appContent.exercises.customisation.comment[local] }}
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Notice -->
+                <details class="typing-dtls-first">
+                    <summary>{{ appContent.exercises.notice.title[local] }}</summary>
+                    <div class="typing-block-dtls-first" style="line-height: 1.8;">
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.exercises.notice.aboutArrayHintTitle[local] }}</summary>
+                            <p>{{ appContent.exercises.notice.aboutArrayHintPar1[local] }}</p>
+                        </details>
+                        <details class="typing-dtls-second">
+                            <summary>{{ appContent.exercises.notice.characterDisplay.title[local] }}</summary>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par1[local]'></p>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par2[local]'></p>
+                            <p v-html='appContent.exercises.notice.characterDisplay.par3[local]'></p>
+                        </details>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Buy me a cake -->
+            <h5>{{ appContent.supportThisWebsite[local] }}</h5>
+            <div class="w3-white w3-round-xlarge w3-margin-bottom" id='buy-me-a-cake-block' v-html='appContent.buyMeACake[local]'></div>
+
+        <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class='w3-half w3-padding' id='middle_column'>
+            <!-- share button -->
+            <div class="w3-left">
+                <img class="social-share facebook-share" tabindex="0">
+                <img class="social-share twitter-share" tabindex="0">
+                <img class="social-share line-share" tabindex="0">
+                <img class="social-share telegram-share" tabindex="0">
+                <img class="social-share linkedIn-share" tabindex="0">
+            </div>
+
+            <!-- toggle English key mode -->
+            <div class="w3-right" style="margin: 8px 0;">
+                <span>{{ appContent.toggleEngKey[local] }}</span>&nbsp;
+                <label>
+                    <input type="checkbox" id="cb_eng_key_active" class="checkbox">
+                    <span class="btn-toggle-box">
+                        <span class="btn-toggle"></span>
+                    </span>
+                </label>
+            </div>
+            <hr id='hr_above_sentence_current'>
+            <div id="sentence_display">
+                <div id='sentence_current'></div>
+                <div id='sentence_next' class='w3-padding w3-opacity'></div>
+            </div>
+            <label class="w3-small" style="float:left">&ensp;{{ appContent.inputField[local] }}</label>
+            <button id="btn_exer_reset" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> {{ appContent.reset[local] }}&ensp;</button>
+            <br>
+            <input type="text" id="typing_input" autofocus :placeholder='appContent.inputPlaceholder[local]' class="w3-input w3-padding w3-round-xxlarge typing-input-field">
+            <br>
+            <br>
+            <div class="typing-block-close-me">
+                <span onclick="this.parentElement.style.display='none'" class="typing-btn-close-me w3-button w3-large">&times;</span>
+                <h4>{{ appContent.reminder.title[local] }}</h4>
+                <p v-html='appContent.reminder.par1[local]'></p>
+                <p v-html='appContent.reminder.par2[local]'></p>
+            </div>
+            <br>
+            <span class="w3-large">{{ appContent.typedLines[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+            <label>
+                <input type="checkbox" id="cb_close_sentences_already" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span>
+            <div id='sentences_already' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off w3-round-xlarge' style="font-size: 1.2em; min-height: 2em;"></div>
+            <br>
+            <span class="w3-large">{{ appContent.wrongCharacterPreviousLines[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+            <label>
+                <input type="checkbox" id="cb_close_wrong_chars_already" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span>
+            <div id='wrong_chars_already_div'>
+                <div id='wrong_chars_already_link' class="w3-round-xlarge w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
+                <div id='wrong_chars_already'></div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class='w3-quarter'>
+            <div id="result_display">
+                <div id="results" class="typing-results">
+                    <div style="font-size: large;">{{ appContent.results.lines[local] }}</div>
+                    <hr style="margin: 0 0 8px 0;">
+                    <span style="float: left;">{{ appContent.results.total[local] }}</span>
+                    <span style="float: right;"><span id='num_total_sentences'></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">{{ appContent.results.currentRemaining[local] }}</span>
+                    <span style="float: right;"><span id='pos_line'></span>/<span id='num_remaining_lines'></span></span>
+                    <hr style="clear: both; margin: 1em; border-color: transparent;">
+
+                    <div style="font-size: large;">{{ appContent.results.characters[local] }}</div>
+                    <hr style="margin: 0 0 8px 0;">
+                    <span style="float: left;">{{ appContent.results.total[local] }}</span>
+                    <span style="float: right;"><span id='num_total_chars'></span></span>
+                    <p style="clear: both;"></p>
+                    
+                    <span style="float: left;" v-html='appContent.results.correctWrong[local]'></span>
+                    <span style="float: right;"><span id='num_total_correct_chars' style="color: green;"></span>/<span id="num_total_incorrect_chars" style="color: red;"></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">{{ appContent.results.accuracy[local] }}</span>
+                    <span style="float: right;"><span id='accuracy' style="color: green;"></span> %</span>
+                    <p style="clear: both;"></p>
+                    
+                    <span style="float: left;">{{ appContent.results.remaining[local] }}</span>
+                    <span style="float: right;"><span id='num_total_untouched_chars'></span></span>
+                    <p style="clear: both;"></p>
+                    <hr style="clear: both; margin: 1em; border-color: transparent;">
+
+                    <div style="font-size: large;">{{ appContent.results.speed[local] }}</div>
+                    <hr style="margin: 0 0 8px 0;">
+
+                    <span style="float: left;">{{ appContent.results.time[local] }}</span>
+                    <span style="float: right;"><span id='time_length'></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">{{ appContent.results.correct[local] }}</span>
+                    <span style="float: right;"><span style="color: green;" id='cpm_correct'></span></span>
+                    <p style="clear: both;"></p>
+
+                    <span style="float: left;">{{ appContent.results.typed[local] }}</span>
+                    <span style="float: right;"><span id='cpm_typed'></span></span>
+                    <p style="clear: both;"></p>                    
+                </div>
+            </div>
+            <br>
+            <span class="w3-large">{{ appContent.wrongCharactersCurrentLine[local] }}</span>
+            <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+            <label>
+                <input type="checkbox" id="cb_close_wrong_chars_current" class="checkbox" autocomplete="off">
+                <span class="btn-toggle-box">
+                    <span class="btn-toggle"></span>
+                </span>
+            </label>
+            <span class="w3-small">）</span>
+            <div id="wrong_chars_current" class="w3-white w3-round-xlarge"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+    
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+</div>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>    
+    <script type="text/javascript" src="/data/object-char-set.js"></script>
+    <script type="text/javascript" src="/data/object-normal.js"></script>
+    <script type="text/javascript" src="/data/object-short-code-i.js"></script>
+    <script type="text/javascript" src="/data/object-short-code-ii.js"></script>
+    <script type="text/javascript" src="/data/object-single.js"></script>
+    <script type="text/javascript" src="/data/object-special.js"></script>
+    <script type="text/javascript" src="/data/object-symbol.js"></script>
+    <script type="text/javascript" src="/data/keys.js"></script>
+    <script type="text/javascript" src="/data/object-built-in-typing-exercises.js"></script>
+    <script type="text/javascript" src="/app/typing.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/typing.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>

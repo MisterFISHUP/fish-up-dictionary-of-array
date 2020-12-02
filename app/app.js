@@ -24,7 +24,7 @@ app.component('app-nav-bar', {
         initiation: { tw: '快速入門', en: 'Introduction to Array', fr: 'Initiation rapide', 'fileName': 'tutorial.html' },
         completeGuide: { tw: '完整教學', en: 'Complete guide', fr: 'Guide complet', 'fileName': 'tutorial-complete.html' },
         recap: { tw: '複習與測驗', en: 'Summary and quizzes', fr: 'Résumé et quiz', 'fileName': 'tutorial-recap.html' },
-        table: { tw: '字根表', en: 'Lookup table', fr: 'Tableau des radicaux', 'fileName': 'radicals-and-examples.html' },
+        table: { tw: '字根表', en: 'Lookup table', fr: 'Table des radicaux', 'fileName': 'radicals-and-examples.html' },
         download: { tw: '下載', en: 'Download', fr: 'Téléchargements', 'fileName': 'download.html' },
         faq: { tw: '常見問題', en: 'FAQ', fr: 'FAQ', 'fileName': 'faq.html' },
         about: { tw: '關於本站', en: 'About', fr: 'À propos', 'fileName': 'about.html' }

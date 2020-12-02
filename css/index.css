@@ -25,6 +25,7 @@ header {
   text-align: center;
   margin: 30px 0 15px;
   color: white;
+  padding: 0 16px;
 }
 #introduction {
   max-width: 800px;
@@ -43,4 +44,16 @@ header {
 }
 #contact-support a:hover {
   color: goldenrod;
+}
+
+.btn--call-to-action {
+  border:none;
+  display:inline-block;
+  padding:12px 24px;
+  margin: 8px 16px;
+  vertical-align:middle;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+  border-radius: 32px;
 }

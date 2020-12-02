@@ -93,7 +93,7 @@ summary {
 }
 .current-language {
   color: lightcoral;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 .footer-fish-up a:hover {
   color: lightskyblue;

@@ -1,4 +1,5 @@
 /* FILE STRUCTURE
+  - loading style
   - general settings
   - social media
   - donate/support
@@ -11,6 +12,22 @@
   - checkbox switch
   - back to top
 */
+
+/* ===============
+    LOADING STYLE
+  ================ */
+
+[v-cloak] > * { display:none; }
+[v-cloak]::before { 
+  content: "Loading...";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+}
+#loading-overlay {display: none;}
 
 /* ==================
     GENERAL SETTINGS
@@ -317,6 +334,7 @@ img.radical {
 /* ================
     KEYCAP STYLING
   ================= */
+
 .keycap {
   white-space: nowrap;
   border: 1.5px solid #aaa;

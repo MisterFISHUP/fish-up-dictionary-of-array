@@ -68,6 +68,7 @@
         <div id='site-name'>
             <span class="w3-xxlarge">{{ appContent.title[local] }}</span>
             <br>
+            <br class="w3-hide-large">
             <span class="w3-large">{{ appContent.subtitle[local] }}</span>
         </div>
         <!-- game area (only on large screens)-->        
@@ -613,6 +614,7 @@
         <p class="w3-justify" v-html='appContent.arrayDescription.par2[local]'></p>
         <p class="w3-justify" v-html='appContent.arrayDescription.par3[local]'></p>
     </div>
+    
     <!-- Statistics -->
     <div class="w3-container w3-row w3-center w3-dark-gray w3-padding-48">
         <div class="w3-quarter">
@@ -736,9 +738,9 @@
     <!-- call to action -->
     <div class="w3-padding-large w3-padding-24 w3-center w3-sand w3-large">
         <h3>{{ appContent.callToAction.actNow[local] }}</h3>
-        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">{{ appContent.callToAction.startTutorial[local] }}</a>
+        <a href="tutorial.html" target="_blank" class="btn--call-to-action w3-blue">{{ appContent.callToAction.startTutorial[local] }}</a>
         <br>
-        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&emsp;{{ appContent.callToAction.community[local] }}</a>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="btn--call-to-action w3-indigo"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&emsp;{{ appContent.callToAction.community[local] }}</a>
     </div>
     
     <!-- FAQ -->

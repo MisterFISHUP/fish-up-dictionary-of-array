@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173562145-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173562145-1');
+    </script>
+    <title>Array Method: Amazing Chinese input method | FISH UP Dictionary of Array</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="Looking for a Chinese input method that is very easy to learn, free and extremely fast? Learn 'Array' in less than 10 minutes!">
+    <meta name="keywords" content="Array,Array input method,Array input method tutorial,Chinese input method">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Array Method: Amazing Chinese input method | FISH UP Dictionary of Array">    
+    <meta itemprop="description" content="Looking for a Chinese input method that is very easy to learn, free and extremely fast? Learn 'Array' in less than 10 minutes!">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Array Method: Amazing Chinese input method | FISH UP Dictionary of Array">
+    <meta property="og:description" content="Looking for a Chinese input method that is very easy to learn, free and extremely fast? Learn 'Array' in less than 10 minutes!">
+    <meta property="og:url" content="https://array30.misterfishup.com/en/">
+    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+    <meta property="og:site_name" content="FISH UP Dictionary of Array">
+    <meta property="fb:admins" content="106035361278242">
+
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="Array Method: Amazing Chinese input method | FISH UP Dictionary of Array">
+    <meta name="twitter:description" content="Looking for a Chinese input method that is very easy to learn, free and extremely fast? Learn 'Array' in less than 10 minutes!">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/virtual-keyboard.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div id='app' data-local='en' data-page-name='index.html'>
+    <!-- Navbar -->
+    <app-nav-bar></app-nav-bar>
+
+    <!-- Header -->
+    <header class="header-color-style">
+        <div id='site-name'>
+            <span class="w3-xxlarge">{{ appContent.title[local] }}</span>
+            <br>
+            <span class="w3-large">{{ appContent.subtitle[local] }}</span>
+        </div>
+        <!-- game area (only on large screens)-->        
+        <div id='game-area' class="w3-hide-small w3-hide-medium">
+            <!-- game instructions block-->
+            <div id='game-instructions-wrapper' class="not-visible">
+                <!-- game instructions close button -->
+                <button id='game-instructions-close'><i class="fa fa-times" aria-hidden="true"></i></button>
+                <!-- game instructions -->
+                <div id='game-instructions'>
+                    <!-- game title -->
+                    <h2 class="bold-center" style="margin-top: 24px;">{{ appContent.game.title[local] }}</h2>
+                    <h5 class="w3-center">🎮 {{ appContent.game.subtitle[local] }} 🎮</h5>
+                    
+                    <!-- game description -->
+                    <hr style="width: 420px; margin: 25px auto 0;">
+                    <h5 class="w3-center" v-html='appContent.game.description1[local]'></h5>
+                    <hr style="width: 420px; margin: 0 auto 25px;">
+                    <br>
+
+                    <p class="w3-large w3-center" v-html='appContent.game.description2[local]'></p>
+                    <br><br>
+                    <h4 class="bold-center" id='game-instructions-easter-egg'>{{ appContent.game.eggHunt[local] }}</h4>
+                    
+                    <!-- hints for easter eggs -->
+                    <div class="w3-center" style="line-height: 1.8; font-size: 16px;">
+                        <div id='hint_for_easter_egg_backlight'>
+                            <span class="easter-egg-hint" >🔑 {{ appContent.game.hint.title[local] }}</span>
+                            <span class="w3-hide">
+                                {{ appContent.game.hint.backlight1[local] }}
+                                <br>
+                                <span class="easter-egg-hint">🔑 {{ appContent.game.hint.backlight2[local] }}</span>
+                                <span class="w3-hide">{{ appContent.game.hint.backlight3[local] }}</span>
+                            </span>
+                        </div>
+                        <div id='hint_for_easter_egg_mode' class="w3-hide">
+                            {{ appContent.game.hint.mysteriousMode1[local] }}<br>
+                            <span class="easter-egg-hint">🔑 {{ appContent.game.hint.mysteriousMode2[local] }}</span>
+                            
+                            <span class="w3-hide">
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                {{ appContent.game.hint.mysteriousMode3[local] }}<br>
+                                <span class="easter-egg-hint" id='easterEggFourModesHint'>🔑 {{ appContent.game.hint.mysteriousMode4[local] }}</span>
+                                <span class="w3-hide" v-html='appContent.game.hint.mysteriousMode5[local]'></span>
+                            </span>
+                        </div>
+                        <div id='hint_for_easter_egg_special' class="w3-hide">
+                            {{ appContent.game.hint.special1[local] }}<br>
+                            <span class="easter-egg-hint">🔑 {{ appContent.game.hint.special2[local] }}</span>
+                            <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                            <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                            <span class="w3-hide">{{ appContent.game.hint.special3[local] }}</span>
+                        </div>
+                    </div>
+                    <!-- easter egg collection -->
+                    <div>
+                        <div id='div_key_pressed_default_pink' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_pink keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultPink[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultPink[local] }}</div>
+                            </div>                        
+                        </div>
+                        <div id='div_key_pressed_default_yellow' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_yellow keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultYellow[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultYellow[local] }}</div>
+                            </div>                        
+                        </div>
+                        <div id='div_key_pressed_default_green' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_green keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultGreen[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultGreen[local] }}</div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_default_blue' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_blue keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultBlue[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultBlue[local] }}</div>
+                            </div>
+                        </div>                    
+                        <div id='div_key_pressed_default_purple' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_purple keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultPurple[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultPurple[local] }}</div>
+                            </div>
+                        </div>                    
+                        <div id='div_key_pressed_default_white' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_white keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultWhite[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>{{ appContent.game.styleDescription.defaultWhiteLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.defaultWhiteLI2[local] }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_hidden_none' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_hidden_none keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.hiddenNone[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>{{ appContent.game.styleDescription.hiddenNoneLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.hiddenNoneLI2[local] }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_default_flashing' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_default_flashing keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultFlashing[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>{{ appContent.game.styleDescription.defaultFlashingLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.defaultFlashingLI2[local] }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_blurred_none' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_blurred_none keycap_white_sky_sakura">
+                                <div class="keyboard-keycap">行</div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.blurredNone[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <ul>
+                                        <li>{{ appContent.game.styleDescription.blurredNoneLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.blurredNoneLI2[local] }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='div_key_pressed_array-special_white' class="fade-in w3-hide">
+                            <hr>
+                            <div class="key key_pressed_array-special_white keycap_white_sky_sakura">
+                                <div class="keyboard-keycap"></div>
+                            </div>
+                            <div class="key_pressed_style-description">
+                                <div class="key_pressed_style-name">{{ appContent.game.styleName.arraySpecialWhite[local] }}</div>
+                                <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                                <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                                <div class="key_pressed_style-instructions">
+                                    <span>{{ appContent.game.styleDescription.arraySpecialWhiteComment[local] }}</span>
+                                    <ul>
+                                        <li>{{ appContent.game.styleDescription.arraySpecialWhiteLI1[local] }}</li>
+                                        <li>{{ appContent.game.styleDescription.arraySpecialWhiteLI2[local] }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- all other commands -->
+                    <div class="fade-in w3-hide" id='all_other_commands'>
+                        <br>
+                        <h4 class="bold-center">{{ appContent.game.congrats.title[local] }}</h4>
+                        <h6 class='w3-center'>{{ appContent.game.congrats.reward[local] }}</h6>
+                        <br>
+                        <h3 class="bold-center">{{ appContent.game.allOtherCommands.title[local] }}</h3>
+                        <!-- Hey, you're NOT supposed to be reading these descriptions -->
+                        <!-- Try finding them ON YOUR OWN! You'll be well guided! -->
+                        <h5 class="w3-center">Version 1.0</h5>
+                        <div class="w3-center" style="font-size: 16px;">
+                            <p v-html='appContent.game.allOtherCommands.par1[local]'></p>
+                            <p v-html='appContent.game.allOtherCommands.par2[local]'></p>
+                            <p v-html='appContent.game.allOtherCommands.par3[local]'></p>
+                        </div>
+                        
+                        <br>
+                        <h4 class="bold-center">{{ appContent.game.styleSingleKey[local] }}</h4>
+                        <p class="w3-center" style="font-size: 16px;">{{ appContent.game.noPageJump[local] }}</p>                        
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_default_bright-red">
+                            <div class="keyboard-keycap">行</div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.defaultBrightRed[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.defaultBrightRed[local] }}</div>
+                        </div>
+                        
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_sakura_pink">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.sakuraPink[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.sakuraPink[local] }}</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_banana_yellow">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.bananaYellow[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.bananaYellow[local] }}</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_turtle_green">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.turtleGreen[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.turtleGreen[local] }}</div>
+                        </div>
+
+                        <hr>
+                        <div class="key keycap_white_sky_sakura key_pressed_alien_green ">
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="key_pressed_style-description">
+                            <div class="key_pressed_style-name">{{ appContent.game.styleName.alienGreen[local] }}</div>
+                            <div class="key_pressed_style-instructions">{{ appContent.game.styleDescription.alienGreen[local] }}</div>
+                        </div>
+                        <br>
+                        <h4 class="bold-center">{{ appContent.game.styleWholeKeyboard[local] }}</h4>
+                        <p class="w3-center" style="font-size: 16px;">{{ appContent.game.styleWholeKeyboardComingSoon[local] }}</p>
+                    </div>
+                    <!-- game comments -->
+                    <div class="game-comment" style="margin-top: 60px; font-size: 16px;">
+                        <hr>
+                        <p>{{ appContent.game.comment[local] }}</p>
+                        <p>{{ appContent.game.nb[local] }}</p>
+                    </div>
+                    <!-- copyright -->
+                    <div class="w3-center" style="margin: 24px auto;">Copyright © {{ appContent.year }} {{ appContent.title[local] }}</div>
+                </div>
+            </div>
+            <!-- congratulations message -->
+            <div id='modal_bg_congratulations_message' class="fade-in w3-hide">
+                <div id='modal_congratulations_message' class="fade-in w3-hide">
+                    <button id='modal_congratulations_message_close' class="fade-in w3-hide"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <h1>{{ appContent.game.congrats.modalTitle[local] }}</h1>
+                    <h3>{{ appContent.game.congrats.modalSubtitle[local] }}</h3>
+                    <h5>{{ appContent.game.congrats.modalReward[local] }}</h5>
+                    <p>{{ appContent.game.congrats.modalShare[local] }}</p>
+                </div>
+            </div>
+            <!-- virtual keyboard -->
+            <div id="keyboard">
+                <div id='keyboard-wrapper'>
+                    <!-- first row -->
+                    <div>
+                        <!-- ~<br>` -->
+                        <div class="backquote key keycap_white_sky_sakura" name='backquote'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="digit1 key keycap_white_sky_sakura" name='digit1'>
+                            <div class="keyboard-keycap">!<br>1</div>
+                        </div>
+                        <div class="digit2 key keycap_white_sky_sakura" name='digit2'>
+                            <div class="keyboard-keycap">@<br>2</div>
+                        </div>
+                        <div class="digit3 key keycap_white_sky_sakura" name='digit3'>
+                            <div class="keyboard-keycap">#<br>3</div>
+                        </div>
+                        <div class="digit4 key keycap_white_sky_sakura" name='digit4'>
+                            <div class="keyboard-keycap">$<br>4</div>
+                        </div>
+                        <div class="digit5 key keycap_white_sky_sakura" name='digit5'>
+                            <div class="keyboard-keycap">%<br>5</div>
+                        </div>
+                        <div class="digit6 key keycap_white_sky_sakura" name='digit6'>
+                            <div class="keyboard-keycap">^<br>6</div>
+                        </div>
+                        <div class="digit7 key keycap_white_sky_sakura" name='digit7'>
+                            <div class="keyboard-keycap">&<br>7</div>
+                        </div>
+                        <div class="digit8 key keycap_white_sky_sakura" name='digit8'>
+                            <div class="keyboard-keycap">*<br>8</div>
+                        </div>
+                        <div class="digit9 key keycap_white_sky_sakura" name='digit9'>
+                            <div class="keyboard-keycap">(<br>9</div>
+                        </div>
+                        <div class="digit0 key keycap_white_sky_sakura" name='digit0'>
+                            <div class="keyboard-keycap">)<br>0</div>
+                        </div>
+                        <div class="minus key keycap_white_sky_sakura" name='minus'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="equal key keycap_white_sky_sakura" name='equal'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="backspace f_key keycap_white_sky_sakura" name='backspace'>
+                            <div class="keyboard-keycap">&#10229;</div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- second row -->
+                    <div>
+                        <!-- tab -->
+                        <div class="tab f_key keycap_white_sky_sakura" name='tab'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="keyq key keycap_white_sky_sakura" name='keyq'>
+                            <div class="keyboard-keycap">1↑</div>
+                        </div>
+                        <div class="keyw key keycap_white_sky_sakura" name='keyw'>
+                            <div class="keyboard-keycap">2↑</div>
+                        </div>
+                        <div class="keye key keycap_white_sky_sakura" name='keye'>
+                            <div class="keyboard-keycap">3↑</div>
+                        </div>
+                        <div class="keyr key keycap_white_sky_sakura" name='keyr'>
+                            <div class="keyboard-keycap">4↑</div>
+                        </div>
+                        <div class="keyt key keycap_white_sky_sakura" name='keyt'>
+                            <div class="keyboard-keycap">5↑</div>
+                        </div>
+                        <div class="keyy key keycap_white_sky_sakura" name='keyy'>
+                            <div class="keyboard-keycap">6↑</div>
+                        </div>
+                        <div class="keyu key keycap_white_sky_sakura" name='keyu'>
+                            <div class="keyboard-keycap">7↑</div>
+                        </div>
+                        <div class="keyi key keycap_white_sky_sakura" name='keyi'>
+                            <div class="keyboard-keycap">8↑</div>
+                        </div>
+                        <div class="keyo key keycap_white_sky_sakura" name='keyo'>
+                            <div class="keyboard-keycap">9↑</div>
+                        </div>
+                        <div class="keyp key keycap_white_sky_sakura" name='keyp'>
+                            <div class="keyboard-keycap">0↑</div>
+                        </div>
+                        <div class="bracketleft key keycap_white_sky_sakura" name='bracketleft'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="bracketright key keycap_white_sky_sakura" name='bracketright'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="backslash key keycap_white_sky_sakura" name='backslash'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- third row -->
+                    <div>
+                        <!-- caps -->
+                        <div class="capslock f_key keycap_white_sky_sakura" name='capslock'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="keya key keycap_white_sky_sakura" name='keya'>
+                            <div class="keyboard-keycap">1-</div>
+                        </div>
+                        <div class="keys key keycap_white_sky_sakura" name='keys'>
+                            <div class="keyboard-keycap">2-</div>
+                        </div>
+                        <div class="keyd key keycap_white_sky_sakura" name='keyd'>
+                            <div class="keyboard-keycap">3-</div>
+                        </div>
+                        <div class="keyf key keycap_white_sky_sakura" name='keyf'>
+                            <div class="keyboard-keycap">4-</div>
+                        </div>
+                        <div class="keyg key keycap_white_sky_sakura" name='keyg'>
+                            <div class="keyboard-keycap">5-</div>
+                        </div>
+                        <div class="keyh key keycap_white_sky_sakura" name='keyh'>
+                            <div class="keyboard-keycap">6-</div>
+                        </div>
+                        <div class="keyj key keycap_white_sky_sakura" name='keyj'>
+                            <div class="keyboard-keycap">7-</div>
+                        </div>
+                        <div class="keyk key keycap_white_sky_sakura" name='keyk'>
+                            <div class="keyboard-keycap">8-</div>
+                        </div>
+                        <div class="keyl key keycap_white_sky_sakura" name='keyl'>
+                            <div class="keyboard-keycap">9-</div>
+                        </div>
+                        <div class="semicolon key keycap_white_sky_sakura" name='semicolon'>
+                            <div class="keyboard-keycap">0-</div>
+                        </div>
+                        <div class="quote key keycap_white_sky_sakura" name='quote'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="enter f_key keycap_white_sky_sakura" name='enter'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- fourth row -->
+                    <div>
+                        <div class="shiftleft f_key keycap_white_sky_sakura" name='shiftleft'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <div class="keyz key keycap_white_sky_sakura" name='keyz'>
+                            <div class="keyboard-keycap">1↓</div>
+                        </div>
+                        <div class="keyx key keycap_white_sky_sakura" name='keyx'>
+                            <div class="keyboard-keycap">2↓</div>
+                        </div>
+                        <div class="keyc key keycap_white_sky_sakura" name='keyc'>
+                            <div class="keyboard-keycap">3↓</div>
+                        </div>
+                        <div class="keyv key keycap_white_sky_sakura" name='keyv'>
+                            <div class="keyboard-keycap">4↓</div>
+                        </div>
+                        <div class="keyb key keycap_white_sky_sakura" name='keyb'>
+                            <div class="keyboard-keycap">5↓</div>
+                        </div>
+                        <div class="keyn key keycap_white_sky_sakura" name='keyn'>
+                            <div class="keyboard-keycap">6↓</div>
+                        </div>
+                        <div class="keym key keycap_white_sky_sakura" name='keym'>
+                            <div class="keyboard-keycap">7↓</div>
+                        </div>
+                        <div class="comma key keycap_white_sky_sakura" name='comma'>
+                            <div class="keyboard-keycap">8↓</div>
+                        </div>
+                        <div class="period key keycap_white_sky_sakura" name='period'>
+                            <div class="keyboard-keycap">9↓</div>
+                        </div>
+                        <div class="slash key keycap_white_sky_sakura" name='slash'>
+                            <div class="keyboard-keycap">0↓</div>
+                        </div>
+                        <div class="shiftright f_key keycap_white_sky_sakura" name='shiftright'>
+                            <div class="keyboard-keycap"></div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                    <!-- last row -->
+                    <div>
+                        <div class="key-dictionary s_key keycap_white_sky_sakura" name='dictionary'>
+                            <a href="dictionary.html">
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyDictionary[local] }}</span></div>
+                            </a>
+                        </div>
+                        <div class="key-typing s_key keycap_white_sky_sakura" name='typing'>
+                            <a href="typing.html">
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyTyping[local] }}</span></div>
+                            </a>
+                        </div>
+                        <div class="space key keycap_white_sky_sakura" name='space'>
+                            <div class="keyboard-keycap"></div>
+                        </div>                        
+                        <div class="key-array s_key keycap_white_sky_sakura" name='intro'>
+                            <a href="#introduction">
+                                <div class="keyboard-keycap"><span>{{ appContent.sKeyArray[local] }}</span></div>
+                            </a>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- icon for game instructions and notification -->
+            <div id='game-instructions-open'>
+                <i class="fa fa-gamepad fa-fw fa-2x" aria-hidden="true" id="game-instructions-icon"></i><i class="fa fa-exclamation" aria-hidden="true" id="game-notification"></i>
+            </div>
+            <!-- game output field -->
+            <div id='game-output-field'></div>
+            <div style="clear: both;"></div>
+
+            <!-- Try these examples -->
+            <h4 class="bold-center w3-text-white" :class="{ 'w3-wide': local == 'tw'}">{{ appContent.tryTheseExamples[local] }} （<span id='code_examples_toggle'><i class="fa fa-eye-slash w3-hide" aria-hidden="true"></i><i class="fa fa-eye" aria-hidden="true"></i> <span>{{ appContent.examplesShow[local] }}</span><span class="w3-hide">{{ appContent.examplesHide[local] }}</span></span>）</h4>
+            
+            <!-- examples -->
+            <div id='code_examples_block' class="w3-hide">
+                <div id='code_examples_wrapper'>
+                    <div id='code_examples_left'></div>
+                    <div id='code_examples_right'></div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- two blocks (only on medium, small screens)-->
+        <div class="w3-row-padding w3-hide-large w3-text-white">            
+            <div class="w3-col m12 s12 w3-center" >
+                <div class="w3-padding-large w3-margin-bottom">
+                    <p>{{ appContent.callToAction.dontKnowArray[local] }}</p>
+                    <a href="#introduction" class="w3-btn w3-round-xxlarge w3-indigo w3-opacity-min w3-hover-opacity-off w3-margin-bottom">&emsp;<i class="fa fa-angle-double-right"></i> {{ appContent.callToAction.learnMore[local] }} <i class="fa fa-angle-double-left"></i>&emsp;</a>
+                </div>
+            </div>
+            <div class="w3-col m12 s12 w3-center">
+                <div class=" w3-padding-large w3-margin-bottom" >
+                    <p>{{ appContent.callToAction.popularFeatures[local] }}</p>
+                    <p><a href="dictionary.html" class="w3-btn w3-indigo w3-opacity-min w3-margin-bottom w3-hover-opacity-off w3-round-xxlarge">&emsp;{{ appContent.callToAction.dictionary[local] }}&emsp;</a>&nbsp;
+                    <a href="typing.html" class="w3-btn w3-indigo w3-opacity-min w3-margin-bottom w3-hover-opacity-off w3-round-xxlarge">&emsp;{{ appContent.callToAction.typing[local] }}&emsp;</a></p>
+                </div>
+            </div>
+            <div class="w3-center" style="margin: 5px 16px 32px;">{{ appContent.callToAction.onTheComputer[local] }}</div>
+        </div>        
+    </header>
+
+    <!-- Introduction -->
+    <div id="introduction">
+        <h2 class="w3-wide w3-text-gray">{{ appContent.array[local] }}</h2>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par1[local]'></p>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par2[local]'></p>
+        <p class="w3-justify" v-html='appContent.arrayDescription.par3[local]'></p>
+    </div>
+    <!-- Statistics -->
+    <div class="w3-container w3-row w3-center w3-dark-gray w3-padding-48">
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">215.5</span>
+            <br>{{ appContent.cpm[local] }}
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">$ 0</span>
+            <br>{{ appContent.cost[local] }}
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge">70,000+</span>
+            <br>{{ appContent.numberCharacters[local] }}
+        </div>
+        <div class="w3-quarter">
+            <span class="w3-xxlarge"><4</span>
+            <br>{{ appContent.averageKeystroke[local] }}
+        </div>
+    </div>
+
+    <!-- Advantages -->
+    <div class="w3-center w3-padding-48 w3-content" style="max-width:1000px;">
+        <p class="w3-large"><span class="w3-padding w3-opacity w3-hover-opacity-off w3-text-dark-gray w3-bottombar w3-hover-border-deep-orange">{{ appContent.array[local] }}</span></p>
+        <h2 :class="{ 'w3-wide': local == 'tw' }" style="margin-top: 0px; padding: 16px;">{{ appContent.bestIME[local] }}</h2>
+        <div v-if='local == "en"' style="font-size: x-large; margin: 20vh 0;">Section in development 😌</div>
+        <div v-if='local == "fr"' style="font-size: x-large; margin: 20vh 0;">Section en cours de développement 😌</div>
+        <div class="w3-row-padding" v-if='local == "tw"'>
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">
+                    <li class="w3-brown w3-padding"><h3>價錢與軟體上</h3></li>
+                    <li class="w3-padding-16">各作業系統上皆有免費、開源版本*<sup>1</sup></li>
+                    <li class="w3-padding-16">支援 Mac、Linux、iOS、Android</li>
+                    <li class="w3-padding-16"> Windows 內建*<sup>1</sup></li>
+                    <li class="w3-padding-16">學習資源免費</li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide">$ 0</h2>
+                        <span class="w3-opacity">安裝、學習、使用行列的價錢</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 1：快速的輸入法如大新倉頡、嘸蝦米皆有版權問題，需付費使用，且在公共電腦不可使用！
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">
+                    <li class="w3-brown w3-padding"><h3>學習上</h3></li>
+                    <li class="w3-padding-16">字形輸入法中最容易學之一*<sup>2</sup></li>
+                    <li class="w3-padding-16">完全不用記鍵位，一開始就可盲打</li>
+                    <li class="w3-padding-16">僅需 10 分鐘就能學會核心概念*<sup>3</sup></li>
+                    <li class="w3-padding-16">僅需 2 小時就能拆碼多數的中文字*<sup>3</sup></li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide">10 min.</h2>
+                        <span class="w3-opacity">學會核心概念所需時間</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 2：例如相較大新倉頡、倉頡、速成、五筆等<br>
+                        註 3：例如透過本站的「行列教學」
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                    
+                    <li class="w3-brown w3-padding"><h3>拆碼上</h3></li>
+                    <li class="w3-padding-16">字根分佈與取碼最科學的輸入法*<sup>4</sup></li>
+                    <li class="w3-padding-16">依書寫拆字，會寫就會打</li>
+                    <li class="w3-padding-16">一般字最多僅 4 碼，且拆碼快速又科學</li>
+                    <li class="w3-padding-16">支援萬用碼、支援容錯*<sup>5</sup></li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide"><4</h2>
+                        <span class="w3-opacity">字的平均取碼數</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 4：幾乎跟任何字根輸入法比，故易學不易忘！<br>
+                        註 5：例如倉頡的一個缺點是容錯率太低
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-row-padding" v-if='local == "tw"'>
+            <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                
+                    <li class="w3-brown w3-padding"><h3>輸入上</h3></li>
+                <li class="w3-padding-16">常用字具有特別碼、一級簡碼*<sup>6</sup></li>
+                <li class="w3-padding-16">輕鬆輸入全形標點符號</li>
+                <li class="w3-padding-16">輕鬆輸入特殊符號、注音符號</li>
+                <li class="w3-padding-16">許多常用字和難字無須完整拆字<br>便出現在選字欄中*<sup>6, 7</sup></li>                
+                <li class="w3-padding-16">
+                    <h2 class="w3-wide"><span class="keycap title-single">單</span> <span class="keycap title-special">特</span> <span class="keycap title-shortcode1">一</span></h2>
+                    <span class="w3-opacity">具不同簡碼來增快打字速度</span>
+                </li>
+                <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                    註 6：加快打字速度&emsp;&ensp;註 7：減輕拆碼的苦惱
+                </li>
+                </ul>
+            </div>        
+            <div class="w3-col l4 w3-margin-bottom">
+                <ul class="w3-ul w3-hoverable w3-border w3-center w3-hover-shadow">                    
+                    <li class="w3-brown w3-padding"><h3>打字速度上</h3></li>
+                    <li class="w3-padding-16">免費中文輸入法速度最快的輸入法</li>
+                    <li class="w3-padding-16">打字速度輕易破每分鐘 100 字*<sup>8</sup></li>
+                    <li class="w3-padding-16">最快紀錄達每分鐘 215.5 字</li>
+                    
+                    <li class="w3-padding-16">透過持續練習<br>每分鐘 150 字以上絕非難事</li>
+                    <li class="w3-padding-16">
+                        <h2 class="w3-wide">215.5</h2>
+                        <span class="w3-opacity">每分鐘字最高紀錄</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24 w3-opacity w3-small">
+                        註 8：透過持續 6 個月到一年左右的練習
+                    </li>
+                </ul>
+            </div>
+            <div class="w3-col l2 w3-margin-bottom w3-hide-medium w3-hide-small">&nbsp;</div>
+        </div>
+    </div>
+
+    <!-- call to action -->
+    <div class="w3-padding-large w3-padding-24 w3-center w3-sand w3-large">
+        <h3>{{ appContent.callToAction.actNow[local] }}</h3>
+        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">{{ appContent.callToAction.startTutorial[local] }}</a>
+        <br>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&emsp;{{ appContent.callToAction.community[local] }}</a>
+    </div>
+    
+    <!-- FAQ -->
+    <div class="w3-container w3-content w3-padding-64 w3-section" style="max-width:900px; font-size: large;" id="FAQ" v-if='local == "tw"'>
+        <h2 class="w3-wide w3-center">常見問題節選</h2>
+        <p class="w3-opacity w3-center">初次接觸行列常有的疑惑</p>
+        
+        <div>
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">我已經能用注音或拼音打字了，為甚麼還要學行列？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">您當然可以不用學，但如果您想學字形輸入法、或是想學一個好學且輸入快速的輸入法，或純粹只是想學一種新的輸入法，那麼行列輸入法絕對是您的首選！</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">我已經有多種語言鍵盤了，行列能夠快速中英切換嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">可以！</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">行列和嘸蝦米哪個比較好？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">都很好！以打字速度、學習曲線上來說沒有一個明顯勝過對方。但如同上表所寫，嘸蝦米須付費，並且在公用電腦（例如公家機關）基本上無法使用。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">行列和大易哪個比較好？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">打字速度上，一般來說行列較大易快。學習曲線上好像沒太多案例比較。另外，大易目前僅能輸入兩萬到三萬字，並且相較行列，大易的維護社群似乎稍微小一些。結論：兩個都可以學學看，但如果要先選一個，推薦選行列。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">如何使用各作業系統上的行列輸入法？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">請參考<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。另外，Windows 系統雖已內建行列輸入法，但有其他更好用的行列輸入法如新行列 30、DIME 行列，如果您使用 Windows 系統請一定要試試！</div>
+            </div>
+            
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">手機上也能使用行列嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">可以。除了行列 30 還有行列 10 可以使用！詳情請見<a href="download.html" target="_blank" class="w3-hover-text-red">下載</a>。</div>
+            </div>        
+            
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">不知道某個字怎麼輸入怎麼辦？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">您可以使用本站的「<a href="dictionary.html" target="_blank" class="w3-hover-text-red">FISH UP 行列查碼</a>」來查詢。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">有可以練習行列輸入法的資源嗎？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">有的！您可以使用本站的「<a href="typing.html" target="_blank" class="w3-hover-text-red">FISH UP 打字練習</a>」，不僅在打字時提供行列邊碼提示，您還能自製題目來練習。</div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">為什麼說行列不用記鍵位，還有一開始就可盲打？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">
+                    鍵盤英文字母區塊上面有一排數字鍵，從左至右分別是 1 到 9 以及 0 ，一共十顆數字鍵。每顆數字鍵下方有三顆鍵，例如數字鍵 <span class="keycap keycap-number">5</span> 下方的三顆鍵是 <span class="keycap keycap-letter">t</span>、<span class="keycap keycap-letter">g</span>、<span class="keycap keycap-letter">b</span>，行列輸入法分別稱之為「5 上」、「5 中」以及「5 下」，並記做 <span class="keycap keycap-letter">5↑</span>、<span class="keycap keycap-letter">5-</span>、<span class="keycap keycap-letter">5↓</span>。
+                    <p>我們將十顆數字鍵下方的這 30 顆鍵稱作<b>行列 30 鍵</b>。每顆鍵依照 10 個數字（行）以及「上、中、下」（列）來定位，這就是<b>行列輸入法</b>或<b>行列 30</b> 這兩個名稱的由來。行列輸入法用這些以「行、列」定位的按鍵來輸入文字，這就是為什麼行列輸入法不用像英打或多數中文輸入法需要記鍵位。</p>
+                    <p>例如中文字「繼」的行列編碼為 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 下 <span class="radical-plus">+</span> 2 中，您不必記任何鍵位也不用看鍵盤就可以輸入這四個鍵！</p>
+                </div>
+            </div>
+    
+            <div class="w3-row w3-padding w3-text-gray w3-hover-text-deep-orange">
+                <div class="w3-col" style="width: 2em;">問：</div>
+                <div class="w3-rest">為什麼叫行列？為什麼叫行列 30？</div>
+            </div>
+            <div class="w3-row w3-padding w3-margin-bottom">
+                <div class="w3-col" style="width: 2em;">答：</div>
+                <div class="w3-rest">
+                    正上方的回答有答案！<br>
+                    <p>另外，行列早期的編碼設計，除了使用現在的 30 顆鍵，還使用了上排的 10 顆數字鍵，一共 40 顆鍵，稱為「行列 40」。而現在所謂的行列輸入法，一般都是指行列 30，是行列 40 改良後的設計。</p>
+                </div>
+            </div>
+            <div class="w3-center w3-padding-24">
+                <p class="w3-center">以上為常見問題節選，是特別給第一次接觸行列的讀者。想看更多常見問題，請到「常見問題」的完整頁面（頁面建構中）。</p>
+                <a href="faq.html" target="_blank" class="w3-button w3-deep-purple w3-hover-orange">更多常見問題</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- call to action -->
+    <div class="w3-padding-large w3-center w3-card w3-sand w3-hover-shadow" style="width: 75%; margin: auto;" v-if='local == "tw"'>
+        <h3>還在等什麼？馬上加入行列輸入法的行列！</h3>
+        <a href="tutorial.html" target="_blank" class="w3-btn w3-blue w3-padding-large w3-round-xxlarge w3-margin">點我開始行列教學</a>
+        <a href="https://www.facebook.com/groups/517104371955479/" target="_blank" class="w3-btn w3-indigo w3-padding-large w3-round-xxlarge w3-margin"><i class="fa fa-facebook w3-large" aria-hidden='true'></i>&nbsp; 加入行列社群</a>
+    </div>
+
+    <!-- dictionary -->
+    <div class="w3-container w3-dark-grey" style="padding:80px 16px; margin-top: 48px;" v-if='local == "tw"'>
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <h2>{{ appContent.dictionary.title[local] }}</h2>
+                <p>{{ appContent.dictionary.description[local] }}</p>
+                <ul>
+                    <li>支援多字查碼，一次最多可查詢 500 字</li>
+                    <li>標註單鍵碼、特別碼、一級簡碼、二級簡碼與符號</li>
+                    <li>標註簡碼、符號的數字鍵以及普通編碼的重碼位置</li>
+                    <li>按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
+                    <li>支援行動裝置瀏覽，手機、平板、筆電、桌電都能良好顯示</li>
+                    <li>查碼支援至中日韓統一表意文字擴充區 D，總數超過七萬四千字</li>
+                </ul>
+                還有更多功能…等您來使用！
+                <p class="w3-margin-bottom"><a href="dictionary.html" target="_blank" class="w3-btn w3-red w3-opacity-min w3-hover-opacity-off w3-padding-large w3-round-xxlarge">&emsp;查碼去&emsp;</a></p>
+            </div>
+            <div class="w3-half">
+                <img class="download-image w3-round-large w3-margin-top" :src='appContent.dictionary.imgPath[local]' alt="FISH UP 行列查碼" title="FISH UP 行列查碼" style="max-width: 90%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- typing practice -->
+    <div class="w3-container w3-light-grey" style="padding:80px 16px" v-if='local == "tw"'>
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <img class="download-image w3-round-large w3-margin-bottom" src="/img/typing-practice.png" alt="FISH UP 行列打字練習" title="FISH UP 行列打字練習" style="max-width: 90%;">
+            </div>
+            <div class="w3-col m6">
+                <h2>FISH UP 行列打字練習</h2>
+                <p>線上最有效的行列輸入法打字練習</p>
+                <ul>
+                    <li>即時性附上最完整的行列提示</li>
+                    <li>追蹤錯字並附上行列編碼</li>                    
+                    <li>眾多內建題庫讓您快速進步</li>
+                    <li>推出免費客製化題目功能</li>
+                    <li>可設定題目字元逆序或隨機打亂</li>
+                    <li>按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵</li>
+                    <li>行列提示支援至中日韓統一表意文字擴充區 D，總數超過七萬四千字</li>
+                </ul>
+                您還在等什麼，趕快來試試！
+                <p><a href="typing.html" target="_blank" class="w3-btn w3-red w3-opacity-min w3-hover-opacity-off w3-padding-large w3-round-xxlarge">&emsp;打字去&emsp;</a></p>
+            </div>        
+        </div>
+    </div>
+
+    <div id="contact-support">
+        <div>
+            {{ appContent.shareOn[local] }}
+            <img class="social-share facebook-share" tabindex="0">
+            <img class="social-share twitter-share" tabindex="0">
+            <img class="social-share line-share" tabindex="0">
+            <img class="social-share telegram-share" tabindex="0">
+            <img class="social-share linkedIn-share" tabindex="0">
+        </div>
+        <p v-html='appContent.contactMe[local]' style="font-size: 1.1em;"></p>
+        <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" style="text-align: center; display: block; margin: 32px;"><img src="/img/buy-me-a-cake-brown.png" :alt='appContent.buyMeACake[local]' :title='appContent.buyMeACake[local]'class="buy-me-a-coffee"></a>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+    <!-- back to top button -->
+    <button type="button" id="to_top" class="toTop-arrow"></button>
+</div>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>    
+    <script type="text/javascript" src="/data/object-key-short-code-i.js"></script>
+    <script type="text/javascript" src="/data/object-key-short-code-ii.js"></script>
+    <script type="text/javascript" src="/app/index.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/object-drop-coincident-code.js"></script>
+    <script type="text/javascript" src="/js/keyboard.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>

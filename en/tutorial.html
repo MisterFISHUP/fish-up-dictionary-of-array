@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173562145-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173562145-1');
+    </script>
+    <title>Array Tutorial: Introduction to the Array input method | FISH UP Dictionary of Array</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google -->
+    <meta name="author" content="Mister FISH UP">
+    <meta name="description" content="Want to learn a very fast Chinese input method that is very easy to learn at the same time? Learn about 'Array' in less than 10 minutes!">
+    <meta name="keywords" content="Array,Array input method,Array input method tutorial,Chinese input method">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Array Tutorial: Introduction to the Array input method | FISH UP Dictionary of Array">    
+    <meta itemprop="description" content="Want to learn a very fast Chinese input method that is very easy to learn at the same time? Learn about 'Array' in less than 10 minutes!">
+    <meta itemprop="image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+    
+    <!-- For facebook Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Array Tutorial: Introduction to the Array input method | FISH UP Dictionary of Array">
+    <meta property="og:description" content="Want to learn a very fast Chinese input method that is very easy to learn at the same time? Learn about 'Array' in less than 10 minutes!">
+    <meta property="og:url" content="https://array30.misterfishup.com/en/tutorial.html">
+    <meta property="og:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+    <meta property="og:site_name" content="FISH UP Dictionary of Array">
+    <meta property="fb:admins" content="106035361278242">
+
+    <!-- For twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@misterfishup">
+    <meta name="twitter:title" content="Array Tutorial: Introduction to the Array input method | FISH UP Dictionary of Array">
+    <meta name="twitter:description" content="Want to learn a very fast Chinese input method that is very easy to learn at the same time? Learn about 'Array' in less than 10 minutes!">
+    <meta name="twitter:creator" content="@misterfishup">
+    <meta name="twitter:image" content="https://array30.misterfishup.com/img/fish-up-dictionary-of-array-en.png">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/page-with-sticky-toc.css">
+</head>
+<body>
+    <div id='app' data-local='en' data-page-name='tutorial.html'>
+        <!-- Navbar -->
+        <app-nav-bar></app-nav-bar>
+
+        <!-- btn for toggling toc on small screens -->
+        <button id="toggleTOCSmall" class="w3-hide-large"><i class="fa fa-list" aria-hidden="true"></i></button>
+        <!-- toc on small screens -->
+        <div id="tocSmallWrapper" class="w3-hide-large w3-hide">
+            <button id="closeTOCSmall"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div id="tocSmall">
+                <h3 class="w3-center">{{ appContent.contents[local] }}</h3>
+                <ol>
+                    <li><a href="#array-key">1. {{ appContent.arrayKey.title[local] }}</a></li>
+                    <li><a href="#character-and-symbol">2. {{ appContent.charactersAndSymbols.title[local] }}</a></li>
+                    <li><a href="#fundamental-stroke-shape-and-stuff">3. {{ appContent.fssAndStuff.title[local] }}</a></li>                    
+                    <li><a href="#decomposition-encoding">4. {{ appContent.decompositionEncoding.title[local] }}</a></li>
+                    <li><a href="#standard-vs-special-or-short-code">5. {{ appContent.standardVsSpecialOrShortCode.title[local] }}</a></li>
+                </ol>
+                <br>
+            </div>
+        </div>
+
+        <div class="w3-row" style="width: 95%; margin: 105px auto 80px; position: relative;">
+            <!-- sticky toc wrapper -->
+            <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 15em; font-size: small; margin-right: 10px;" id="stickyTOCWrapper">
+                <br>
+                <!-- sticky toc (hide-medium & hide-small) -->
+                <aside>
+                    <ol>
+                        <li><a href="#array-key">{{ appContent.arrayKey.title[local] }}</a></li>
+                        <li><a href="#character-and-symbol">{{ appContent.charactersAndSymbols.title[local] }}</a></li>
+                        <li><a href="#fundamental-stroke-shape-and-stuff">{{ appContent.fssAndStuff.title[local] }}</a></li>                    
+                        <li><a href="#decomposition-encoding">{{ appContent.decompositionEncoding.title[local] }}</a></li>
+                        <li><a href="#standard-vs-special-or-short-code">{{ appContent.standardVsSpecialOrShortCode.title[local] }}</a></li>
+                    </ol>
+                </aside>
+            </div>
+            <!-- toggling sticky toc (hide-medium & hide-small) -->
+            <div class="w3-col w3-hide-small w3-hide-medium w3-hide" style="width: 1em;">
+                <br>
+                <span id="toggleStickyTOC" class="w3-hide-small w3-hide-medium w3-opacity w3-hover-opacity-off"><i class="fa fa-eye-slash" aria-hidden="true"></i><i class="fa fa-list w3-hide" aria-hidden="true"></i></span>
+            </div>
+            
+            <!-- page content -->
+            <div class="w3-rest" id="page-content" style="max-width: 750px; margin-left: auto; margin-right: auto; padding: 0 16px;">
+                <h1>{{ appContent.title[local] }}</h1>
+                <h6 v-html='appContent.author[local]'></h6>
+
+                <hr>
+                <p style="padding: 0 24px;">{{ appContent.description[local] }}</p>
+                <hr>
+                
+                <p class="w3-pale-green w3-round-large w3-padding" v-html='appContent.alreadyRead[local]'></p>
+
+                <!-- 1. The thirty Array keys -->
+                <section id="array-key">
+                    <h2>1. {{ appContent.arrayKey.title[local] }}</h2>
+                    <p v-html='appContent.arrayKey.lookAtKeyboard[local]'></p>
+                    <div class="w3-center">
+                        <img src="/img/array-keyboard.png" :alt='appContent.img.arrayKeyboardAlt[local]' :title='appContent.img.arrayKeyboardAlt[local]' class="download-image" style="max-width: 95%;">
+                    </div>
+                    <p v-html='appContent.arrayKey.name[local]'></p>
+                    <p v-html='appContent.arrayKey.example[local]'></p>    
+                    <p class="comment">{{ appContent.arrayKey.comPlusSign[local] }}</p>
+                    <br>
+
+                    <p>{{ appContent.arrayKey.typingHabit[local] }}</p>
+                    <h3>{{ appContent.arrayKey.startPosition.title[local] }}</h3>
+                    <p v-html='appContent.arrayKey.startPosition.fingerStartPosition[local]'></p>
+                    <p class="comment" v-html='appContent.arrayKey.startPosition.bumpFJ[local]'></p>
+
+                    <h3>{{ appContent.arrayKey.whileTyping.title[local] }}</h3>
+                    <p style="line-height: 2.2;">
+                        <span class="keycap keycap-letter">1↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">1-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">1↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">1</span> {{ appContent.arrayKey.whileTyping.leftLittle[local] }}<br>
+                        <span class="keycap keycap-letter">2↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">2-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">2↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">2</span> {{ appContent.arrayKey.whileTyping.leftRing[local] }}<br>
+                        <span class="keycap keycap-letter">3↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">3-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">3↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">3</span> {{ appContent.arrayKey.whileTyping.leftMiddle[local] }}<br>
+                        <span class="keycap keycap-letter">4↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">4-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">4↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">4</span> {{ appContent.arrayKey.whileTyping.leftIndex[local] }}<br>
+                        <span class="keycap keycap-letter">5↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">5-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">5↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">5</span> {{ appContent.arrayKey.whileTyping.leftIndex[local] }}<br>
+                        <span class="keycap keycap-letter">6↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">6-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">6↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">6</span> {{ appContent.arrayKey.whileTyping.rightIndex[local] }}<br>
+                        <span class="keycap keycap-letter">7↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">7-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">7↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">7</span> {{ appContent.arrayKey.whileTyping.rightIndex[local] }}<br>
+                        <span class="keycap keycap-letter">8↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">8-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">8↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">8</span> {{ appContent.arrayKey.whileTyping.rightMiddle[local] }}<br>
+                        <span class="keycap keycap-letter">9↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">9-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">9↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">9</span> {{ appContent.arrayKey.whileTyping.rightRing[local] }}<br>
+                        <span class="keycap keycap-letter">0↑</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">0-</span>{{ appContent.arrayKey.comma[local] }}<span class="keycap keycap-letter">0↓</span> {{ appContent.arrayKey.andTheNumberKey[local] }} <span class="keycap keycap-number">0</span> {{ appContent.arrayKey.whileTyping.rightLittle[local] }}<br>
+                        <span class="keycap keycap-space">Space</span> {{ appContent.arrayKey.whileTyping.leftRightThumb[local] }}<br>
+                    </p>
+                    <p>{{ appContent.arrayKey.thatsAll[local] }}</p>
+                </section>
+
+                <!-- 2. Characters and symbols -->
+                <section id="character-and-symbol">
+                    <h2>2. {{ appContent.charactersAndSymbols.title[local] }}</h2>
+                    <p>{{ appContent.charactersAndSymbols.description[local] }}</p>
+                    <p v-html='appContent.charactersAndSymbols.accessSymbolList[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.charactersAndSymbols.symbolListExample[local]'></p>
+                    </div>
+                    <p class="comment" v-html='appContent.charactersAndSymbols.comEmoji[local]'></p>
+                </section>
+
+                <!-- 3. FSS, radicals, radical codes, radical keys -->
+                <section id="fundamental-stroke-shape-and-stuff">
+                    <h2>3. {{ appContent.fssAndStuff.title[local] }}</h2>
+                    <p>{{ appContent.fssAndStuff.description[local] }}</p>
+
+                    <!-- fss -->
+                    <h3>{{ appContent.fssAndStuff.fss.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.fss.description1[local]'></p>
+                    <p>{{ appContent.fssAndStuff.fss.description2[local] }}</p>
+                    <p>{{ appContent.fssAndStuff.fss.example[local] }}</p>
+                    <p class="comment" v-html='appContent.fssAndStuff.fss.comShape[local]'></p>
+
+                    <!-- radicals -->
+                    <h3>{{ appContent.fssAndStuff.radical.title[local] }}</h3>
+                    <p>{{ appContent.fssAndStuff.radical.description[local] }}</p>
+                    <p class="comment" v-html='appContent.fssAndStuff.radical.comNotBushou[local]'></p>
+
+                    <!-- radical codes -->
+                    <h3>{{ appContent.fssAndStuff.radicalCode.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.radicalCode.description1[local]'></p>
+                    <p v-html='appContent.fssAndStuff.radicalCode.description2[local]'></p>
+                    <p v-html='appContent.fssAndStuff.radicalCode.radicalCodeExample[local]'></p>
+                    <p class="comment" v-html='appContent.fssAndStuff.radicalCode.comSESS[local]'></p>
+
+                    <!-- radical keys -->
+                    <h3>{{ appContent.fssAndStuff.radicalKey.title[local] }}</h3>
+                    <p v-html='appContent.fssAndStuff.radicalKey.description[local]'></p>
+                    <p>{{ appContent.fssAndStuff.radicalKey.twoCases[local] }}</p>
+                    <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.description[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar1[local]'></p>
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar2[local]'></p>
+                        <p v-html='appContent.fssAndStuff.radicalKey.twoDigits.examplePar3[local]'></p>
+                    </div>
+                    <p>{{ appContent.fssAndStuff.radicalKey.twoDigits.putItSimply[local] }}</p>
+                    <p v-html='appContent.fssAndStuff.radicalKey.digitAlone.description[local]'></p>
+                    <div class="example">
+                        <p v-html='appContent.fssAndStuff.radicalKey.digitAlone.examplePar1[local]'></p>
+                    </div>
+                    <p>{{ appContent.fssAndStuff.radicalKey.conclusion[local] }}</p>
+                    
+                    <p v-html='appContent.fssAndStuff.conclusionPar1[local]'></p>
+                    <p v-html='appContent.fssAndStuff.conclusionPar2[local]'></p>
+                </section>
+
+                <!-- 4. Decomposition, encoding -->
+                <section id="decomposition-encoding">
+                    <h2>4. {{ appContent.decompositionEncoding.title[local] }}</h2>
+                    <p>{{ appContent.decompositionEncoding.decomposition[local] }}</p>
+                    <p>{{ appContent.decompositionEncoding.code[local] }}</p>
+                    <p>{{ appContent.decompositionEncoding.inPractice[local] }}</p>
+                    <p class="comment">{{ appContent.decompositionEncoding.comAtMostFour[local] }}</p>
+                </section>
+
+                <!-- 5. Standard codes vs. Special or short codes -->
+                <section id="standard-vs-special-or-short-code">
+                    <h2>5. {{ appContent.standardVsSpecialOrShortCode.title[local] }}</h2>
+                    <p v-html='appContent.standardVsSpecialOrShortCode.description1[local]'></p>
+                    <p v-html='appContent.standardVsSpecialOrShortCode.description2[local]'></p>
+                    <p><b>{{ appContent.codeType.specialCode[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionSpecialCode[local] }}</p>
+                    <p><b>{{ appContent.codeType.shortCode[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCode[local] }}</p>
+                    <p>
+                        📌 <b>{{ appContent.codeType.shortCodeI[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCodeI[local] }}
+                        <br>
+                        📌 <b>{{ appContent.codeType.shortCodeII[local] }}</b>{{ appContent.standardVsSpecialOrShortCode.descriptionShortCodeII[local] }}
+                    </p>
+                    <p>{{ appContent.standardVsSpecialOrShortCode.standardCode[local] }}</p>
+                    <p>{{ appContent.standardVsSpecialOrShortCode.coincident[local] }}</p>
+                </section>
+
+                <p style="margin: 60px auto ;">{{ appContent.thatsAll[local] }}</p>
+
+                <!-- Call to action -->
+                <div class="example">
+                    <p>{{ appContent.afterThis.typing[local] }}</p>
+                    <p v-html='appContent.afterThis.downloadArray[local]'></p>
+                    <div class="w3-center" style="margin: 40px auto;">
+                        <a href="typing.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> {{ appContent.afterThis.buttonTyping[local] }} <<</a>
+                    </div>
+            
+                    <p>{{ appContent.afterThis.readCompleteGuide[local] }}</p>    
+            
+                    <div class="w3-center" style="margin: 40px auto;">
+                        <a href="tutorial-complete.html" class="w3-btn w3-round-xlarge w3-brown w3-margin">>> {{ appContent.afterThis.buttonCompleteGuide[local] }} <<</a>
+                    </div>
+                </div>
+
+                <!-- share button -->
+                <div>
+                    {{ appContent.shareThisPageOn[local] }}
+                    <img class="social-share facebook-share" tabindex="0">
+                    <img class="social-share twitter-share" tabindex="0">
+                    <img class="social-share line-share" tabindex="0">
+                    <img class="social-share telegram-share" tabindex="0">
+                    <img class="social-share linkedIn-share" tabindex="0">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        
+        <!-- back to top button -->
+        <button type="button" id="to_top" class="toTop-arrow"></button>
+    </div>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/app/tutorial.js"></script>
+    <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/toc.js"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>

@@ -28,13 +28,13 @@ const AppContent = {
       title: { tw: '選擇內建題目', en: 'Choose a built-in exercise', fr: 'Choisir un exercice' },
       description: {
         tw: '想打更多題目？像是詩詞、文章、歌詞、格言？歡迎使用自製題目功能！',
-        en: "Want more exercises? Like poems, articles, song lyrics, or proverbs? You can customise your own one in 'Customise your own exercise'!",
-        fr: "Envie de vous entraîner avec plus d'exercices ? Comme des poèmes, des articles, des paroles de chansons, ou des proverbes ? Vous pouvez personnaliser votre propre exercice dans « Personnaliser votre exercice » !"
+        en: "Want more exercises? Like poems, articles, song lyrics, or proverbs? You can create your own one in 'Create your own exercise'!",
+        fr: "Envie de vous entraîner avec plus d'exercices ? Comme des poèmes, des articles, des paroles de chansons, ou des proverbes ? Vous pouvez créer votre propre exercice dans « Créez votre exercice » !"
       },
       // then see builtInExercise object
     },
     customisation: {
-      title: { tw: '使用自製題目', en: 'Customise your own exercise', fr: 'Personnaliser votre exercice' },
+      title: { tw: '使用自製題目', en: 'Create your own exercise', fr: 'Créez votre exercice' },
       description: {
         tw: '到網路上複製想要的文章、歌詞後在下方貼上，輸入中英文都可以！',
         en: "Copy Chinese articles or song lyrics and paste them below. The English alphabet is of course welcome, too!",

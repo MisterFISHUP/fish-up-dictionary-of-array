@@ -578,12 +578,12 @@ function finalise() {
   const promptLocal = {
     congratsSingle: {
       tw: `恭喜打完以上 1 句！🥳`,
-      en: `Congratulations! You've finised typing the line! 🥳`,
+      en: `Congratulations! You've finished typing the line! 🥳`,
       fr: `Félicitations d'avoir fini la saisie de la ligne ! 🥳`,
     },
     congratsPlural: {
       tw: `恭喜打完以上 ${lines.length} 句！🥳`,
-      en: `Congratulations! You've finised typing the ${lines.length} lines! 🥳`,
+      en: `Congratulations! You've finished typing the ${lines.length} lines! 🥳`,
       fr: `Félicitations d'avoir fini la saisie des ${lines.length} lignes ! 🥳`,
     },
     continueTyping: {

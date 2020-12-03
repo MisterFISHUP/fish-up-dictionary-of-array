@@ -89,3 +89,25 @@ h5 {
   padding: 5px 15px;
   border-left: 6px solid #c9c9c9;
 }
+.cta-button {
+  border:none;
+  display:inline-block;
+  padding:10px 20px;
+  margin: 8px 16px;
+  vertical-align:middle;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+  background-color: #795446;
+  color: white!important;
+  border-radius: 30px;
+  transition: 0.15s;
+}
+.cta-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.cta-button:active {
+  transform: scale(0.95);
+  background-color: #552c1d;
+}

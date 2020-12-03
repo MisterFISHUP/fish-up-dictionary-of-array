@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-01
+ * Date: 2020-12-03(04)
  */
 
 /* Structure: (use search)
@@ -256,7 +256,16 @@ function prepareSentencesHintsResults(indexCurrentLine) {
     sentenceCurrentElem.appendChild(charSpan);
   }
   sentenceNextElem.innerHTML = '';
-  if (lines[indexCurrentLine + 1]) sentenceNextElem.textContent = lines[indexCurrentLine + 1];
+  if (lines[indexCurrentLine + 1]) {
+    sentenceNextElem.textContent = lines[indexCurrentLine + 1];
+  } else {
+    const finaliseHint = {
+      tw: '最後記得按 Enter 鍵結束本題。',
+      en: "Don't forget to press Enter to finish the exercise.",
+      fr: "N'oubliez pas d'appuyer sur Entrée pour terminer l'exercice."
+    }
+    sentenceNextElem.textContent = finaliseHint[stringLocal];
+  }
 
   // overwrite current hint via printHintCurrent
   printHintCurrent(currentLineArray[0]);

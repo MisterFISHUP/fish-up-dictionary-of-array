@@ -66,27 +66,34 @@
   top: 0;
   border-radius: 0 15px 0 0;
 }
-
 #hr_above_sentence_current {
   clear: both;
   border: none;
-  border-top: 1px solid #a5b1a4;
+  border-top: 1px solid #105710;
   margin: 15px 0;
 }
-#sentence_current {
-  font-size: 1.8em;
-  min-height: 2.2em;
+
+/* ==================
+    CURRENT EXERCISE
+  =================== */
+
+#sentence_display {
+  margin: 20px 0;
   padding: 8px 16px;
-  border-radius: 32px;
-  background-color: #f5f5f5;
+  border-radius: 24px;
+  background-color: #f8f8f8;
+  font-size: 1.8em;
   user-select: none;
 }
 #sentence_next {
-  font-size: 1.4em;
-  min-height: 2.2em;
-  color: gray;
-  user-select: none;
+  color: #c4c4c4;
 }
+#hr_between_sentences {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #c9c9c9;
+}
+
 .typing-results {
   line-height: 1.6;
   padding: 24px;

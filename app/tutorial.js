@@ -413,7 +413,7 @@ const AppContent = {
       fr: "Ensuite n'oubliez pas de lire le guide complet de Tableau !"
     },
     buttonTyping: { tw: '體驗行列打字', en: 'Typing with Array', fr: 'Saisir avec Tableau' },
-    buttonCompleteGuide: { tw: '閱讀完整教學', en: 'Read the complete guide', fr: 'Lisez le guide complet' },
+    buttonCompleteGuide: { tw: '閱讀完整教學', en: 'Read the complete guide', fr: 'Lire le guide complet' },
   },
   img: {
     arrayKeyboardAlt: { tw: '行列鍵盤與行列 30 鍵', en: 'Array keyboard with the thirty Array keys', fr: 'Clavier Tableau avec les trente touches Tableau' }

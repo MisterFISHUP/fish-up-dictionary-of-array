@@ -193,7 +193,7 @@ const AppContent = {
   toggleEngKey: { tw: '按鍵顯示為英文鍵', en: 'English-key Mode', fr: 'Mode touche anglaise' },
   inputField: { tw: '輸入欄', en: 'Input field', fr: 'Champ de saisie' },
   reset: { tw: '重置當前題目 ', en: 'Reset', fr: "Réinitialiser" },
-  inputPlaceholder: { tw: '按 enter 鍵換下一句', en: 'Press Enter to go to the next line', fr: "Appuyez sur Entrée pour accéder à la ligne suivante" },
+  inputPlaceholder: { tw: '按 Enter 鍵換下一句', en: 'Press Enter to go to the next line', fr: "Appuyez sur Entrée pour accéder à la ligne suivante" },
 
   reminder: {
     title: { tw: '我知道了！', en: 'I got it!', fr: "J'ai compris !" },

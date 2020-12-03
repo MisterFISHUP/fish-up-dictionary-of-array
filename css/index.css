@@ -56,4 +56,9 @@ header {
   text-align:center;
   cursor:pointer;
   border-radius: 32px;
+  transition: 0.2s;
+}
+.btn--call-to-action:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }

@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-11-26
+ * Date: 2020-12-03
  */
 
 // two js objects in this file:
@@ -574,14 +574,14 @@ const arrayRadicalInformation = {
   '凵': { code: '3-', type: 'special', isSimplified: false, isText: true },
   '片': { code: '35', type: 'sess', isSimplified: false, isText: true },
   '凹': {
-    code: '35', type: 'sess', isSimplified: true, isText: false, imgName: '35凹', imgDescription: {
+    code: '35', type: 'sess', isSimplified: false, isText: false, imgName: '35凹', imgDescription: {
       tw: '「凹」去掉底部橫線',
       en: "'凹' without the horizontal stroke at the bottom",
       fr: "« 凹 » sans le trait horizontal en bas",
     }
   },
   '凸': {
-    code: '35', type: 'sess', isSimplified: true, isText: false, imgName: '35凸', imgDescription: {
+    code: '35', type: 'sess', isSimplified: false, isText: false, imgName: '35凸', imgDescription: {
       tw: '「凸」去掉底部橫線',
       en: "'凸' without the horizontal stroke at the bottom",
       fr: "« 凸 » sans le trait horizontal en bas",

@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-03(04)
+ * Date: 2020-12-04
  */
 
 /* Structure: (use search)
@@ -259,12 +259,7 @@ function prepareSentencesHintsResults(indexCurrentLine) {
   if (lines[indexCurrentLine + 1]) {
     sentenceNextElem.textContent = lines[indexCurrentLine + 1];
   } else {
-    const finaliseHint = {
-      tw: '記得按 Enter 鍵以結束本題。',
-      en: "Don't forget to press Enter to finish the exercise.",
-      fr: "N'oubliez pas d'appuyer sur Entrée pour terminer l'exercice."
-    }
-    sentenceNextElem.textContent = finaliseHint[stringLocal];
+    sentenceNextElem.innerHTML = '&nbsp;';
   }
 
   // overwrite current hint via printHintCurrent
@@ -612,12 +607,17 @@ function finalise() {
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 function engKeyToggle() {
   letterList = document.getElementsByClassName("keycap-letter");
-  for (let letter of letterList) {
-    const letter_content = letter.textContent;
-    if (letter_content.length === 1) {
-      letter.textContent = letterToArray30Dict[letter_content];
+  if (letterList.length) {
+    if (letterList[0].textContent.length === 1) {
+      for (let letter of letterList) {
+        const letter_content = letter.textContent;
+        letter.textContent = letterToArray30Dict[letter_content];
+      }
     } else {
-      letter.textContent = array30ToLetterDict[letter_content];
+      for (let letter of letterList) {
+        const letter_content = letter.textContent; 
+        letter.textContent = array30ToLetterDict[letter_content];
+      }
     }
   }
 }

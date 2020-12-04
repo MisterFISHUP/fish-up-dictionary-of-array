@@ -62,16 +62,13 @@
         <!-- Navbar -->
         <app-nav-bar></app-nav-bar>
 
-        <div class="w3-center w3-xlarge w3-margin" style="padding-top: 45vh;" v-if='local != "tw"'>
-            {{ appContent.development[local] }}
-        </div>
-
-        <div class="page-content" v-if='local == "tw"'>
+        <!-- page content -->
+        <div class="page-content">
             <h1>關於本站</h1>
             <hr>
             <section>
                 <h2>本站宗旨</h2>
-                <p><a href="index.html" target="_blank" title="FISH UP 行列查碼網站首頁">FISH UP 行列查碼</a>致力於推廣行列輸入法，包括介紹行列輸入法優點、提供完整且易讀的行列教學與行列字根複習測驗，提供最好用的行列查碼、打字練習、行列字根表與字根實例，提供行列輸入法下載、編碼表下載、字符表下載等等。希望透過本站能夠讓越來越多人接觸行列，並且讓學習行列的過程變得更輕鬆、更快速。</p>
+                <p><a href="index.html" target="_blank" title="FISH UP 行列查碼網站首頁">FISH UP 行列查碼</a>致力於推廣行列輸入法，包括介紹行列輸入法以及其優點、提供完整且易讀的行列教學與行列字根複習測驗，提供最好用的行列查碼、打字練習、行列字根表與字根實例，提供行列輸入法下載、編碼表下載、字符表下載等等。希望透過本站能夠讓越來越多人接觸行列，並且讓學習行列的過程變得更輕鬆、更快速。</p>
             </section>
             <section>
                 <h2>關於站長</h2>
@@ -102,7 +99,7 @@
         </div>
 
         <!-- Footer -->
-        <app-footer v-if='local == "tw"'></app-footer>
+        <app-footer></app-footer>
 
         <!-- back to top button -->
         <button type="button" id="to_top" class="toTop-arrow"></button>

@@ -1,7 +1,9 @@
 /* FILE STRUCTURE
-	- header
+  - header
   - below header
   - elements created by js
+    > load more
+    > character code block
     > radicals in decompositions
 */
 
@@ -123,6 +125,33 @@
   transition: 0.1s;
   transform: scale(1.5);
 }
+/* =====[ load more ]===== */
+.link-load-more {
+  font-size: 0.8em;
+  color: #a8a8a8;
+  cursor: pointer;
+}
+.link-load-more:hover {
+  color: #795548;
+}
+.button-load-more {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 28px;
+  border: none;
+  text-align:center;
+  cursor:pointer;
+  font-size: 1.3em;
+  border-radius: 32px;
+  background-color: #795548;
+  color: white;
+  transition: 0.2s;
+}
+.button-load-more:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+/* =====[ character code block ]===== */
 .dict-block-result {
   border-radius: 16px;
   background-color: white;

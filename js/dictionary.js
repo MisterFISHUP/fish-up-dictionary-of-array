@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-04
+ * Date: 2020-12-04(05)
  */
 
 /* Structure: (use search)
@@ -25,6 +25,7 @@ const btnSubmitElem = document.getElementById('btn_submit');
 const btnFilterSubmit = document.getElementById("btn_filter_submit");
 
 const maxInputChar = 500;
+const maxLoad = 100;
 
 // ------------------------------
 // auto focus for the input area
@@ -51,105 +52,192 @@ function search() {
   const emoticons = ['(͡° ͜ʖ ͡°)', '( ͡• ͜ʖ ͡•)', '(͠≖ ͜ʖ͠≖)👌', '( ´_ゝ`)', 'ヽ(´ー｀)┌', '(´･ω･`)', '(ㆆ_ㆆ)'];
   const tooMany = { tw: `不要輸入超過 ${String(maxInputChar)} 字喔 `, en: `Don't type more than ${String(maxInputChar)} characters `, fr: `Ne saisissez pas plus de ${String(maxInputChar)} caractères ` };
 
-  let input = inputElem.value;
-  if (input.length > 0) {
+  const input = inputElem.value;
+  const charList = [...input];
+  if (charList.length > 0) {
     resultAreaElem.innerHTML = "";
-    if ([...input].length > maxInputChar) {
+    if (charList.length > maxInputChar) {
       const hintDiv = document.createElement('div');
       hintDiv.className = 'dict-block-hint';
       hintDiv.innerHTML = "<span>" + tooMany[stringLocal] + emoticons[Math.floor(Math.random() * emoticons.length)] + "</span>";
       resultAreaElem.appendChild(hintDiv);
-    } else printResults(input);
+    } else {
+      function isInArrayDicitnary(char) {
+        return objectCharSet.hasOwnProperty(char);
+      }
+      printResults(charList.filter(isInArrayDicitnary));
+    }
   }
 }
 
-// create resultCharList, resultBlocks in the result area
-function printResults(input) {
+// create resultCharList (and resultBlocks if at least one character to show) in the result area
+function printResults(list) {
+  const charNumber = list.length;
+
   // create resultDescription, put it into the result area
   let resultDescription = document.createElement('div');
   resultDescription.id = 'result_description';
   resultDescription.className = 'dict-block-result-description';
   resultAreaElem.appendChild(resultDescription);
 
-  // add the descriptive sentence to resultDescription
-  resultDescription.innerHTML = '<span id="total_num"></span><span id="link_hint"></span>';
+  if (!charNumber) {
+    const hereNone = { tw: `沒有資料可以呈現 `, en: `Nothing to show `, fr: `Rien à afficher ` };
+    const hereNoneEmoticons = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
 
-  // create resultCharList, put it into the resultDescription
-  let resultCharList = document.createElement('div');
-  resultCharList.id = 'result_char_list';
-  resultCharList.className = 'dict-block-result-char-list';
-  resultDescription.appendChild(resultCharList);
+    // add the descriptive sentence to resultDescription
+    resultDescription.textContent = hereNone[stringLocal] + hereNoneEmoticons[Math.floor(Math.random() * hereNoneEmoticons.length)];
+  } else {
+    const moreThanMaxLoad = {
+      tw: `總共 ${charNumber} 筆資料，`,
+      en: `There are ${charNumber} results in total. `, // space at the end
+      fr: `Il y a ${charNumber} résultats au total. ` // space at the end
+    };
+    const hereIs = {
+      tw: '以下列出 1 筆資料。',
+      en: 'Here is 1 result hyperlinked to the Array codes listed below. ', // space at the end
+      fr: "Voici 1 résultat qui contient un hyperlien vers les codes Tableau affiché ci-dessous. " // space at the end
+    };
+    const hereAre = {
+      tw: `以下列出<span id='num-already-shown'></span> 筆資料。`,
+      en: `Here are<span id='num-already-shown'></span> results hyperlinked to the Array codes listed below. `, // space at the end
+      fr: `Voici<span id='num-already-shown'></span> résultats qui contiennent des hyperliens vers les codes Tableau affichés ci-dessous. ` // space at the end
+    };
+    const downloadTheResult = {
+      tw: `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：`,
+      en: `You can also <a id="result_download_btn">click here</a> to download the search result (.txt file).`,
+      fr: `Vous pouvez aussi <a id="result_download_btn">cliquer ici</a> pour télécharger le résultat de recherche (fichier .txt).`
+    };
 
-  // create resultBlocks, put it into the result area 
-  let resultBlocks = document.createElement('div');
-  resultBlocks.id = 'result_blocks';
-  resultAreaElem.appendChild(resultBlocks);
+    // add the descriptive sentence to resultDescription
+    if (charNumber > maxLoad) {
+      resultDescription.innerHTML = moreThanMaxLoad[stringLocal] + hereAre[stringLocal];
+    } else if (charNumber > 1) {
+      resultDescription.innerHTML = hereAre[stringLocal];
+    } else {
+      resultDescription.innerText = hereIs[stringLocal];
+    }
+    resultDescription.innerHTML += downloadTheResult[stringLocal] + '<br><br>';
 
-  // loop over characters in input
-  let num = 0; // number of characters in charDict
-  for (let character of input) {
-    if (objectCharSet.hasOwnProperty(character)) {
-      // add the block of that character to resultBlocks #result_blocks
-      createBlock(character, 'result_' + String(num + 1), 'result_blocks');
+    // create resultCharList, put it into resultDescription
+    let resultCharList = document.createElement('div');
+    resultCharList.id = 'result_char_list';
+    resultCharList.className = 'dict-block-result-char-list';
+    resultDescription.appendChild(resultCharList);
 
-      // add characters with link in resultCharList
+    // create resultBlocks, put it into the result area 
+    let resultBlocks = document.createElement('div');
+    resultBlocks.id = 'result_blocks';
+    resultAreaElem.appendChild(resultBlocks);
+
+    // add the code block of the character to resultBlocks
+    // and the character with link to resultCharList
+    function addCharaterBlockAndLink(character, block_id) {
+      createBlock(character, block_id, 'result_blocks');
       const charLink = document.createElement('a');
-      charLink.textContent = `${character}`;
+      charLink.textContent = character;
       charLink.className = "dict-link-char";
-      charLink.href = '#result_' + String(num + 1);
+      charLink.href = '#' + block_id;
       const aSpace = document.createTextNode(' ');
       resultCharList.appendChild(charLink);
       resultCharList.appendChild(aSpace);
-      num += 1;
     }
-  }
-
-  // show engKey if asked
-  if (num > 0 && !document.getElementById('cb_eng_key_active').checked) engKeyToggle();
-
-  // depending on num, modify the sentence in resultDescription, or remove resultCharList
-  const hereIs = {
-    tw: '以下列出 1 筆資料。',
-    en: 'Here is 1 character/symbol hyperlinked to its Array code listed below. ', // space at the end
-    fr: "Voici 1 caractère/symbole qui contient un hyperlien vers son code Tableau affiché ci-dessous. " // space at the end
-  };
-  const hereAre = {
-    tw: `以下列出 ${num} 筆資料。`,
-    en: `Here are ${num} characters/symbols hyperlinked to their Array codes listed below. `, // space at the end
-    fr: `Voici ${num} caractères/symboles qui contiennent des hyperliens vers leurs codes Tableau affichés ci-dessous. ` // space at the end
-  };
-  const hereNone = { tw: `沒有資料可以呈現 `, en: `Nothing to show `, fr: `Rien à afficher ` };
-  const hereNoneEmoticons = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
-  const downloadTheResult = {
-    tw: `您可以<a id="result_download_btn">點此下載查詢結果</a>（.txt 檔），或者透過下面超連結快速跳到該字：`,
-    en: `You can also <a id="result_download_btn">click here</a> to download the search result (.txt file).`,
-    fr: `Vous pouvez aussi <a id="result_download_btn">cliquer ici</a> pour télécharger le résultat de recherche (fichier .txt).`
-  }
-  if (num > 0) {
-    if (num > 1) {
-      document.getElementById('total_num').textContent = hereAre[stringLocal];
-    } else {
-      // i.e. num == 1
-      document.getElementById('total_num').textContent = hereIs[stringLocal];
+    function addResults(listOfCharacters, startNumber) {
+      const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
+      listOfCharacters.forEach(function (character, index) {
+        addCharaterBlockAndLink(character, 'result_' + String(startNumber + index));
+        if (!isEngKeyActive) {
+          const letterList = document.getElementById('result_' + String(startNumber + index)).getElementsByClassName("keycap-letter");
+          for (let letter of letterList) {
+            const letter_content = letter.textContent;
+            letter.textContent = letterToArray30Dict[letter_content];
+          }
+        }
+      })
     }
-    document.getElementById('link_hint').innerHTML = downloadTheResult[stringLocal] + '<br><br>';
-    prepareResultFile(num);
-  } else {
-    // in this case, num == 0
-    document.getElementById('total_num').textContent = hereNone[stringLocal] + hereNoneEmoticons[Math.floor(Math.random() * hereNoneEmoticons.length)];
-    resultDescription.removeChild(resultCharList);
-  }
+    function loadMore(startNumber) {
+      addResults(list.slice(startNumber - 1, startNumber + maxLoad - 1), startNumber);
+      const notYetLoaded = charNumber - startNumber - maxLoad + 1;
+      if (notYetLoaded > 0) {
+        const theFirst = {
+          tw: `前 ${startNumber + maxLoad - 1}`,
+          en: ` the first ${startNumber + maxLoad - 1}`,
+          fr: ` les ${startNumber + maxLoad - 1} premiers`
+        }
+        $('#num-already-shown').text(theFirst[stringLocal]);
+      } else {
+        $('#num-already-shown').text(' ' + charNumber);
+      }
 
-  // scroll into view
-  resultDescription.scrollIntoView();
+      if (notYetLoaded > 0) {
+        const loadMoreResults = {
+          tw: `再顯示 ${maxLoad} 筆資料`,
+          en: `Show ${maxLoad} more results`,
+          fr: `Afficher ${maxLoad} autre résultats`
+        }
+        const loadLastResult = {
+          tw: `顯示最後 1 筆資料`,
+          en: `Show the last result`,
+          fr: `Afficher le dernier résultat`
+        }
+        const loadLastResults = {
+          tw: `顯示最後 ${notYetLoaded} 筆資料`,
+          en: `Show the last ${notYetLoaded} results`,
+          fr: `Afficher les ${notYetLoaded} derniers résultats`
+        }
+
+        // create loadmore link
+        const loadMoreLink = document.createElement('a');
+        loadMoreLink.className = 'link-load-more';
+        resultCharList.appendChild(loadMoreLink);
+
+        //create loadmore button
+        const loadMoreButton = document.createElement('button');
+        loadMoreButton.className = 'button-load-more';
+        resultBlocks.appendChild(loadMoreButton);
+
+        // add content to link/button
+        if (notYetLoaded > maxLoad) {
+          loadMoreLink.textContent = '...' + loadMoreResults[stringLocal];
+          loadMoreButton.textContent = loadMoreResults[stringLocal];
+        } else if (notYetLoaded == 1) {
+          loadMoreLink.textContent = '...' + loadLastResult[stringLocal];
+          loadMoreButton.textContent = loadLastResult[stringLocal];
+        } else {
+          loadMoreLink.textContent = '...' + loadLastResults[stringLocal];
+          loadMoreButton.textContent = loadLastResults[stringLocal];
+        }
+
+        // bind load more function to link/button
+        loadMoreLink.addEventListener('click', function () {
+          loadMoreLink.remove();
+          loadMoreButton.remove();
+          loadMore(startNumber + maxLoad)
+        })
+        loadMoreButton.addEventListener('click', function () {
+          loadMoreLink.remove();
+          loadMoreButton.remove();
+          loadMore(startNumber + maxLoad)
+        })
+      }
+    }
+    loadMore(1);
+
+    // prepare result file for users to download
+    prepareResultFile(list);
+
+    // scroll into view
+    resultDescription.scrollIntoView();
+  }
 }
 
 // --------------------
 // prepare result file
 // --------------------
 
-// prepare the file containing 'num' results
-function prepareResultFile(num) {
+// prepare the file for users to download 
+function prepareResultFile(list) {
+  const num = list.length;
+
   // get DOM
   let downloadBtnElem = document.getElementById('result_download_btn');
 
@@ -261,31 +349,109 @@ function prepareResultFile(num) {
   if (stringLocal == 'tw') fileContent += '：';
   fileContent += '\n\n';
 
-  // display all found characters
-  $('#result_char_list a').each(function (index) {
-    fileContent += $(this).text();
+  // display characters
+  list.forEach(function (char, index) {
+    fileContent += char;
     // change line for every 20 characters
     if ((index !== num - 1) && (index % 20 == 19)) {
       fileContent += '\n';
     }
-  })
+  });
   fileContent += '\n\n' + separationLine;
 
   // add Array code results
-  $('#result_blocks').children().each(function () {
-    // add character
-    fileContent += $(this).find(">:first-child").text() + '\n';
-
-    // add Array codes (except decompositions)
-    $(this).find('li').each(function () {
-      if (!$(this).attr('id').includes("DECOMP")) {
-        fileContent += ' ' + ' ' + ' ' + ' ' + $(this).text() + '\n';
+  list.forEach(function (character) {
+    function toArrayKey(dom) {
+      letterList = dom.getElementsByClassName("keycap-letter");
+      for (let letter of letterList) {
+        const letter_content = letter.textContent;
+        letter.textContent = letterToArray30Dict[letter_content];
       }
-    })
+    }
+
+    // add character
+    fileContent += character + '：\n';
+
+    // add codes
+    if (objectNormal.hasOwnProperty(character)) {
+      const nlArray = objectNormal[character];
+      for (let i = 0; i < nlArray.length; i++) {
+        let temp = document.createElement('div');
+        temp.id = 'temp';
+        temp.className = 'w3-hide';
+        resultAreaElem.appendChild(temp);
+        createLineNL(nlArray[i], 'temp');
+        if (!isEngKeyActive) toArrayKey(temp);
+        fileContent += '    ' + temp.textContent + '\n';
+        temp.remove();
+      }
+    }
+    if (objectSingle.hasOwnProperty(character)) {
+      let temp = document.createElement('div');
+      temp.id = 'temp';
+      temp.className = 'w3-hide';
+      resultAreaElem.appendChild(temp);
+      createLineSG(objectSingle[character], 'temp');
+      if (!isEngKeyActive) toArrayKey(temp);
+      fileContent += '    ' + temp.textContent + '\n';
+      temp.remove();
+    }
+    if (objectSpecial.hasOwnProperty(character)) {
+      let temp = document.createElement('div');
+      temp.id = 'temp';
+      temp.className = 'w3-hide';
+      resultAreaElem.appendChild(temp);
+      createLineSP(objectSpecial[character], 'temp');
+      if (!isEngKeyActive) toArrayKey(temp);
+      fileContent += '    ' + temp.textContent;
+      temp.remove();
+      const coincidenceRankOne = {
+        tw: '，重碼位 1',
+        en: ', coincidence rank equal to 1',
+        fr: ', rang de coïncidence égal à 1'
+      };
+      if (["敦", "雇"].includes(character)) {
+        fileContent += coincidenceRankOne[stringLocal];
+      }
+      fileContent += '\n';
+    }
+    if (objectShortcode1.hasOwnProperty(character)) {
+      let temp = document.createElement('div');
+      temp.id = 'temp';
+      temp.className = 'w3-hide';
+      resultAreaElem.appendChild(temp);
+      createLineSC1(objectShortcode1[character], 'temp');
+      if (!isEngKeyActive) toArrayKey(temp);
+      fileContent += '    ' + temp.textContent + '\n';
+      temp.remove();
+    }
+    if (objectShortcode2.hasOwnProperty(character)) {
+      const sc2Array = objectShortcode2[character];
+      for (let i = 0; i < sc2Array.length; i++) {
+        let temp = document.createElement('div');
+        temp.id = 'temp';
+        temp.className = 'w3-hide';
+        resultAreaElem.appendChild(temp);
+        createLineSC2(sc2Array[i], 'temp');
+        if (!isEngKeyActive) toArrayKey(temp);
+        fileContent += '    ' + temp.textContent + '\n';
+        temp.remove();
+      }
+    }
+    if (objectSymbol.hasOwnProperty(character)) {
+      let temp = document.createElement('div');
+      temp.id = 'temp';
+      temp.className = 'w3-hide';
+      resultAreaElem.appendChild(temp);
+      createLineSYM(objectSymbol[character], 'temp');
+      if (!isEngKeyActive) toArrayKey(temp);
+      fileContent += '    ' + temp.textContent + '\n';
+      temp.remove();
+    }
 
     // add separation line
     fileContent += separationLine;
-  });
+  })
 
   // add a random signature
   fileContent += signatures[Math.floor(Math.random() * signatures.length)];
@@ -301,7 +467,9 @@ function prepareResultFile(num) {
   //finally, bind the attributes
   const fileNameResult = { tw: '行列查碼結果（共 1 筆資料）.txt', en: 'Array codes (1 character).txt', fr: 'Codes Tableau (1 caractère).txt' };
   const fileNameResults = { tw: `行列查碼結果（共 ${num} 筆資料）.txt`, en: `Array codes (${num} characters).txt`, fr: `Codes Tableau (${num} caractères).txt` };
-  num > 1 ? downloadBtnElem.download = fileNameResults[stringLocal] : downloadBtnElem.download = fileNameResult[stringLocal]
+  num > 1 ?
+    downloadBtnElem.download = fileNameResults[stringLocal] :
+    downloadBtnElem.download = fileNameResult[stringLocal];
   downloadBtnElem.href = 'data:text/plain,' + encodeURI(fileContent);
   downloadBtnElem.target = "_blank";
 }
@@ -333,8 +501,8 @@ function array30Filter() {
     }
   } else if (sym.checked) {
     if (!sp.checked && !sc1.checked && !sc2.checked) { // only sym ticked
-      stringToSearch = 
-      `，、。．‧；：？！︰…‥﹐﹑﹒·﹔﹕﹖﹗｜–︱—︳╴︴﹏（）︵︶｛｝︷︸〔〕︹︺【】︻︼《》︽︾〈〉︿﹀「」﹁﹂『』﹃﹄﹙﹚﹛﹜﹝﹞‘’“”〝〞‵′＃＆＊※§〃○●△▲◎☆★◇◆□■▽▼㊣℅¯￣＿ˍ﹉﹊﹍﹎﹋﹌﹟﹠﹡＋－×÷±√＜＞＝≦≧≠∞≒≡﹢﹣﹤﹥﹦～∩∪⊥∠∟⊿㏒㏑∫∮∵∴♀♂⊕⊙↑↓←→↖↗↙↘∥∣／＼∕﹨＄￥〒￠￡％＠℃℉﹩﹪﹫㏕㎜㎝㎞㏎㎡㎎㎏㏄°兙兛兞兝兡兣嗧瓩糎▁▂▃▄▅▆▇█▏▎▍▌▋▊▉┼┴┬┤├▔─│▕┌┐└┘╭╮╰╯═╞╪╡◢◣◥◤╱╲╳╔╦╗╠╬╣╚╩╝╒╤╕╘╧╛╓╥╖╟╫╢╙╨╜║▓①②③④⑤⑥⑦⑧⑨⑩⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ〡〢〣〤〥〦〧〨〩〸〹〺ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ˙ˉˊˇˋ`;
+      stringToSearch =
+        `，、。．‧；：？！︰…‥﹐﹑﹒·﹔﹕﹖﹗｜–︱—︳╴︴﹏（）︵︶｛｝︷︸〔〕︹︺【】︻︼《》︽︾〈〉︿﹀「」﹁﹂『』﹃﹄﹙﹚﹛﹜﹝﹞‘’“”〝〞‵′＃＆＊※§〃○●△▲◎☆★◇◆□■▽▼㊣℅¯￣＿ˍ﹉﹊﹍﹎﹋﹌﹟﹠﹡＋－×÷±√＜＞＝≦≧≠∞≒≡﹢﹣﹤﹥﹦～∩∪⊥∠∟⊿㏒㏑∫∮∵∴♀♂⊕⊙↑↓←→↖↗↙↘∥∣／＼∕﹨＄￥〒￠￡％＠℃℉﹩﹪﹫㏕㎜㎝㎞㏎㎡㎎㎏㏄°兙兛兞兝兡兣嗧瓩糎▁▂▃▄▅▆▇█▏▎▍▌▋▊▉┼┴┬┤├▔─│▕┌┐└┘╭╮╰╯═╞╪╡◢◣◥◤╱╲╳╔╦╗╠╬╣╚╩╝╒╤╕╘╧╛╓╥╖╟╫╢╙╨╜║▓①②③④⑤⑥⑦⑧⑨⑩⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ〡〢〣〤〥〦〧〨〩〸〹〺ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ˙ˉˊˇˋ`;
       stringToSearchLength = 401;
     } else if (!sp.checked && sc1.checked && !sc2.checked) { // only sym & sc1 ticked
       stringToSearch = '，。：；！「」、“”（）？『』．–＊／…';
@@ -348,7 +516,7 @@ function array30Filter() {
       stringToSearch = '再個在痕畫刺盛卓容索崇擁繪榮築等須啊尾淨業深清歲急憐表姐始紀語詞衣復罷聖室城跑編裝讀高還唱展岸直葉弟利度察賽情物質圍望改君費選陳材妙姓她妹組被刻部請歷壓靠遠造廢條慶游神社祖剛考遇般航喝範掃退餘候嘴呀恐衛科實聲會獨取受希假活碟球謝傳議次沒夢例項題轉試光吧晚溫龍妳雄哪鳳隊罵辦標底檔掉調版歡建交件凰哈換客程覺板幫訊教理至影參徵星線錢界圖保團阿究卻啦怎者速元商您整完若市感戰冷管代錄站討許式笑需協打灣守意其統按喜舊'
       stringToSearchLength = 204;
     }
-    
+
     else if (sc1.checked && !sc2.checked) { // only sp & sc1 ticked
       stringToSearch = '大不小是個我在你那家會雨'
       stringToSearchLength = 12;
@@ -367,7 +535,7 @@ function array30Filter() {
   }
 
   // print results
-  printResults(stringToSearch);
+  printResults([...stringToSearch]);
 
   //create filterResultRecap, put it in the beginning of resultDescription
   const filterResultRecapSpan = document.createElement('p');
@@ -923,44 +1091,46 @@ function createLineNL(encodingNl, id_name) {
 // ---------------
 
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
-document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaEngKeyToggle);
+// document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaEngKeyToggle);
 
 function engKeyToggle() {
   letterList = document.getElementsByClassName("keycap-letter");
-  if (letterList[0].textContent.length == 1) {
-    for (let letter of letterList) {
-      const letter_content = letter.textContent;
-      letter.textContent = letterToArray30Dict[letter_content];
-    }
-  } else {
-    for (let letter of letterList) {
-      const letter_content = letter.textContent; 
-      letter.textContent = array30ToLetterDict[letter_content];
+  if (letterList.length) {
+    if (letterList[0].textContent.length === 1) {
+      for (let letter of letterList) {
+        const letter_content = letter.textContent;
+        letter.textContent = letterToArray30Dict[letter_content];
+      }
+    } else {
+      for (let letter of letterList) {
+        const letter_content = letter.textContent;
+        letter.textContent = array30ToLetterDict[letter_content];
+      }
     }
   }
 }
-function ccTriviaEngKeyToggle() {
-  ccTrivia = document.getElementById("coincident_code_trivia");
-  encodingList = ccTrivia.getElementsByClassName("keycap-cc-trivia");
-  for (let encoding of encodingList) {
-    const encodingString = encoding.textContent;
-    // if encoding uses array30 keys
-    if (encodingString[0] >= '0' && encodingString[0] <= '9') {
-      let newTextContent = '';
-      for (var i = 0; i < encodingString.length; i += 2) {
-        newTextContent += array30ToLetterDict[encodingString.slice(i, i + 2)];
-      }
-      encoding.textContent = newTextContent;
-    } else { // if encoding uses eng keys
-      let newTextContent = '';
-      for (char of encodingString) {
-        newTextContent += letterToArray30Dict[char];
-      }
-      encoding.textContent = newTextContent;
-    }
-  }
-}
+// function ccTriviaEngKeyToggle() {
+//   ccTrivia = document.getElementById("coincident_code_trivia");
+//   encodingList = ccTrivia.getElementsByClassName("keycap-cc-trivia");
+//   for (let encoding of encodingList) {
+//     const encodingString = encoding.textContent;
+//     // if encoding uses array30 keys
+//     if (encodingString[0] >= '0' && encodingString[0] <= '9') {
+//       let newTextContent = '';
+//       for (var i = 0; i < encodingString.length; i += 2) {
+//         newTextContent += array30ToLetterDict[encodingString.slice(i, i + 2)];
+//       }
+//       encoding.textContent = newTextContent;
+//     } else { // if encoding uses eng keys
+//       let newTextContent = '';
+//       for (char of encodingString) {
+//         newTextContent += letterToArray30Dict[char];
+//       }
+//       encoding.textContent = newTextContent;
+//     }
+//   }
+// }
 // perform ccTrivia eng key toggle when loading the page
-if (!document.getElementById('cb_eng_key_active').checked) {
-  ccTriviaEngKeyToggle();
-}
+// if (!document.getElementById('cb_eng_key_active').checked) {
+//   ccTriviaEngKeyToggle();
+// }

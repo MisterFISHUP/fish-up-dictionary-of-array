@@ -929,10 +929,12 @@ function engKeyToggle() {
   letterList = document.getElementsByClassName("keycap-letter");
   if (letterList[0].textContent.length == 1) {
     for (let letter of letterList) {
+      const letter_content = letter.textContent;
       letter.textContent = letterToArray30Dict[letter_content];
     }
   } else {
     for (let letter of letterList) {
+      const letter_content = letter.textContent; 
       letter.textContent = array30ToLetterDict[letter_content];
     }
   }

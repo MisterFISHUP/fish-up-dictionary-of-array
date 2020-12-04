@@ -105,7 +105,7 @@ function printResults(input) {
   }
 
   // show engKey if asked
-  if (!document.getElementById('cb_eng_key_active').checked) engKeyToggle();
+  if (num > 0 && !document.getElementById('cb_eng_key_active').checked) engKeyToggle();
 
   // depending on num, modify the sentence in resultDescription, or remove resultCharList
   const hereIs = {

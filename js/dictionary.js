@@ -86,6 +86,7 @@ function printResults(list) {
 
     // add the descriptive sentence to resultDescription
     resultDescription.textContent = hereNone[stringLocal] + hereNoneEmoticons[Math.floor(Math.random() * hereNoneEmoticons.length)];
+    resultDescription.scrollIntoView();
   } else {
     const moreThanMaxLoad = {
       tw: `總共 ${charNumber} 筆資料，`,

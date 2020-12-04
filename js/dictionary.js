@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-03
+ * Date: 2020-12-04
  */
 
 /* Structure: (use search)
@@ -927,11 +927,12 @@ document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaE
 
 function engKeyToggle() {
   letterList = document.getElementsByClassName("keycap-letter");
-  for (let letter of letterList) {
-    const letter_content = letter.textContent;
-    if (letter_content.length === 1) {
+  if (letterList[0].textContent.length == 1) {
+    for (let letter of letterList) {
       letter.textContent = letterToArray30Dict[letter_content];
-    } else {
+    }
+  } else {
+    for (let letter of letterList) {
       letter.textContent = array30ToLetterDict[letter_content];
     }
   }

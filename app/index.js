@@ -279,7 +279,7 @@ const AppContent = {
   },
   callToAction: {
     onTheComputer: {
-      tw: '',
+      tw: '電腦版的首頁有很讚的行列互動小遊戲，用電腦時記得回來首頁玩！',
       en: "This home page has an awesome Array interactive game for PC, so come back here when you're on the computer!",
       fr: "Cette page d'accueil propose un superbe jeu interactif de la méthode Tableau pour PC, alors revenez ici quand vous êtes sur l'ordinateur !"
     },

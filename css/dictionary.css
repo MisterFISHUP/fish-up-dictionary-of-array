@@ -35,6 +35,7 @@
   margin: 8px;
   border-radius: 20px;
   border: 1.5px solid #cccccc;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
 }
 #inputCharacters:focus {
   border: 1.5px solid #333333;

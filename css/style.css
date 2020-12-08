@@ -374,30 +374,27 @@ img.radical {
   ================== */
 
 .title-single {
-  background: #ff8c8c;
-  color: #4b1018;
+  background: #fd5e5e;
+  color: white;
 }
 .title-special {
-  background: #fac283;
-  color: #3a2807;
+  background: #fdab5e;
 }
 .title-shortcode1 {
   background: #91ee7a;
-  color: #0e3305;
 }
 .title-shortcode2 {
-  background: #79e9fd;
-  color: #09203f;
+  background: #86edff;
 }
 .title-normal {
   background: #ebebeb;
 }
 .title-symbol {
-  background: #9c5ec9;
+  background: #a050da;
   color: white;
 }
 .title-decomposition {
-  background: #b83561;
+  background: #ac3059;
   color: white;
 }
 

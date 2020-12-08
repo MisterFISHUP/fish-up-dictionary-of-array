@@ -115,6 +115,7 @@
   font-size: 1.2em;
   clear: both;
   border: 1.5px solid transparent;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
 }
 .typing-input-field:focus {
   border: 1.5px solid #11471a;
@@ -175,6 +176,19 @@
 }
 .btn-built-in-exer:hover {
   background-color: #cfcfcf;
+}
+
+/* create your own exercise */
+#input_cust_exer {
+  padding: 8px;
+  width: 95%;
+  border: 1.5px solid #cccccc;
+  border-radius: 15px;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+}
+#input_cust_exer:focus {
+  border: 1.5px solid #303030;
+  outline: none;
 }
 
 /*------- buy me a cake -------*/

@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-01
+ * Date: 2020-12-13
  */
 
 /* structure:
@@ -417,7 +417,7 @@ const codeExamples = [
   'wgfn 恏', 'kgdn 怹', 'za/w 嫑', 'tg;b 勥', ';kaw 嘦', 'azpu 奣', // ';v;v 槑', ';;s; 嘂', 'pkae 圙', 'cbb; 瀥',
   // 5 Array key + space
   'arlci 瓈', 't,xfi 彞',
-  '.almi 须', 'xaasi 线', // 'cj;mi 赏', 'baaxi 层',
+  '.almi 须', 'xaaxi 线', // 'cj;mi 赏', 'baaxi 层',
   'vi;ki 検', 'crjdi 満', // 'ezaxi 歳', '.f/ni 徳' 
 ];
 

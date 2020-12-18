@@ -128,7 +128,7 @@ app.component('app-footer', {
       local: stringLocal, // from /app/local.js
       pageName: stringPageName, // from /app/xxx.js
       year: 2020,
-      siteName: { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dctionnaire FISH UP de Tableau' },
+      siteName: { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dictionnaire FISH UP de Tableau' },
       contactDescription: { tw: '信箱：', en: 'Contact: ', fr: 'Contact: ' },
       facebookUrl: 'https://www.facebook.com/FISH-UP-%E8%A1%8C%E5%88%97%E6%9F%A5%E7%A2%BC-106035361278242/',
       linkedinUrl: 'https://www.linkedin.com/in/shang-chun-yu/',

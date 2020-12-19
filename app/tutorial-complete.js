@@ -238,7 +238,7 @@ const AppContent = {
   radicalKey: {
     title: { tw: '字根的鍵位', en: 'Radical keys', fr: 'Touches de radical' },
     par1: {
-      tw: `在<a href="#fundamental-stroke-shape-and-stuff">行列輸入法基本 5 件事</a>中您已經學到每一個字根碼都會對應到一個行列 30 鍵，並也學過了對應規則，所以這裡就不再贅述。但下面還是舉出了幾個例子，讓您自我檢測一下：如果您能理解這幾個例子，那就沒問題！如果您有點忘記規則了，可以點<a href="#fundamental-stroke-shape-and-stuff">這裡</a>回到前面複習😉。`,
+      tw: `在<a href="tutorial.html#fundamental-stroke-shape-and-stuff">行列輸入法基本 5 件事</a>中您已經學到每一個字根碼都會對應到一個行列 30 鍵，並也學過了對應規則，所以這裡就不再贅述。但下面還是舉出了幾個例子，讓您自我檢測一下：如果您能理解這幾個例子，那就沒問題！如果您有點忘記規則了，可以點<a href="#fundamental-stroke-shape-and-stuff">這裡</a>回到前面複習😉。`,
       en: ``,
       fr: ``
     },

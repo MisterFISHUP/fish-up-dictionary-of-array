@@ -182,7 +182,7 @@ const AppContent = {
       greekLower: { tw: '小寫希臘字母', en: 'lowercase Greek letters', fr: "lettres grecques minuscules" },
     },
     emoticon: {
-      title: { tw: '顏文字系列（每行最多字數請設為 20）', en: 'Emoticons (Set max 20 characters per line)', fr: "Émoticônes ((Choisir max 20 caractères par ligne)" },
+      title: { tw: '顏文字系列（每行最多字數請設為 20）', en: 'Emoticons (Set max 20 characters per line)', fr: "Émoticônes (Choisir max 20 caractères par ligne)" },
       emoticon: { tw: '顏文字', en: 'Emoticons', fr: "Émoticônes" },
       happy: { tw: '開心', en: 'happy', fr: "joyeux" },
       angry: { tw: '生氣', en: 'angry', fr: "fâché" },

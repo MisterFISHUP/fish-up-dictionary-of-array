@@ -84,7 +84,7 @@
         <!-- Left Column -->
         <div class="w3-quarter" style="margin-bottom: 32px;">
             <!-- Current character with its Array code -->
-            <div id='hint'>
+            <div>
                 <span class="w3-large">{{ appContent.currentCharacter[local] }}</span>
                 <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
                 <label>
@@ -93,21 +93,17 @@
                         <span class="btn-toggle"></span>
                     </span>
                 </label>
-                <span class="w3-small">）</span>
-                <div id="hint_current"></div>
-                <br>
-                <div style="display:none;">
-                    <span class="w3-large">下一字提示</span>
-                    <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
+                <div style="display: inline;" id="toggle-standard-decomp">
+                    <span class="w3-small">&emsp;{{ appContent.showStandardDecomposition[local] }}&nbsp;</span>
                     <label>
-                        <input type="checkbox" id="cb_close_hint_next" class="checkbox" autocomplete="off">
+                        <input type="checkbox" id="cb_decomp_in_hint_current" class="checkbox" autocomplete="off">
                         <span class="btn-toggle-box">
                             <span class="btn-toggle"></span>
                         </span>
                     </label>
-                    <span class="w3-small">）</span>
-                    <div id="hint_next"></div>
                 </div>
+                <span class="w3-small">）</span>
+                <div id="hint_current" class="w3-margin-bottom"></div>
             </div>
 
             <!-- Exercises -->
@@ -522,6 +518,7 @@
                         <details class="typing-dtls-second">
                             <summary>{{ appContent.exercises.notice.aboutArrayHintTitle[local] }}</summary>
                             <p>{{ appContent.exercises.notice.aboutArrayHintPar1[local] }}</p>
+                            <p>{{ appContent.exercises.notice.aboutArrayHintPar2[local] }}</p>
                         </details>
                         <details class="typing-dtls-second">
                             <summary>{{ appContent.exercises.notice.characterDisplay.title[local] }}</summary>
@@ -579,6 +576,7 @@
                 <h4>{{ appContent.reminder.title[local] }}</h4>
                 <p v-html='appContent.reminder.par1[local]'></p>
                 <p v-html='appContent.reminder.par2[local]'></p>
+                <p v-html='appContent.reminder.par3[local]'></p>
             </div>
             <br>
             <span class="w3-large">{{ appContent.typedLines[local] }}</span>
@@ -680,18 +678,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
     <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
-    <script type="text/javascript" src="/app/local.js"></script>    
-    <script type="text/javascript" src="/data/object-char-set.js"></script>
+    <script type="text/javascript" src="/app/local.js"></script>
+    <script type="text/javascript" src="/data/radicals.js"></script>
     <script type="text/javascript" src="/data/object-normal.js"></script>
     <script type="text/javascript" src="/data/object-short-code-i.js"></script>
     <script type="text/javascript" src="/data/object-short-code-ii.js"></script>
     <script type="text/javascript" src="/data/object-single.js"></script>
     <script type="text/javascript" src="/data/object-special.js"></script>
     <script type="text/javascript" src="/data/object-symbol.js"></script>
+    <script type="text/javascript" src="/data/object-decomposition.js"></script>
     <script type="text/javascript" src="/data/keys.js"></script>
     <script type="text/javascript" src="/data/object-built-in-typing-exercises.js"></script>
     <script type="text/javascript" src="/app/typing.js"></script>
     <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/decomposition-generator.js"></script>
     <script type="text/javascript" src="/js/typing.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
     </body>

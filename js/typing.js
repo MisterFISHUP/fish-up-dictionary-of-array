@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-04
+ * Date: 2020-12-22(23)
  */
 
 /* Structure: (use search)
@@ -31,7 +31,7 @@ const engKeyActiveElem = document.getElementById('cb_eng_key_active');
 const sentenceCurrentElem = document.getElementById('sentence_current');
 const sentenceNextElem = document.getElementById('sentence_next');
 const typingInputElem = document.getElementById('typing_input');
-const btnExerReset = document.getElementById('btn_exer_reset')
+const btnExerReset = document.getElementById('btn_exer_reset');
 const sentencesAlreadyElem = document.getElementById('sentences_already');
 const wrongCharsAlreadyLinkElem = document.getElementById('wrong_chars_already_link');
 const wrongCharsAlreadyElem = document.getElementById('wrong_chars_already');
@@ -52,7 +52,6 @@ const cpmTypedSpan = document.getElementById('cpm_typed');
 
 // get html DOMs Left
 const hintCurrentElem = document.getElementById('hint_current');
-const hintNextElem = document.getElementById('hint_next');
 
 // get html DOMs Left Exercises (except built-in exer buttons)
 const numCharElem = document.getElementById('option_num_char');
@@ -102,6 +101,13 @@ function createArrayLines(str) {
   return orderedStr.match(regex).map(x => x.trim()).filter(Boolean)
 }
 
+let checkIfInDatabase = ch => objectNormal.hasOwnProperty(ch)
+  || objectSingle.hasOwnProperty(ch)
+  || objectSymbol.hasOwnProperty(ch);
+// || objectSpecial.hasOwnProperty(ch)
+// || objectShortcode1.hasOwnProperty(ch)
+// || objectShortcode2.hasOwnProperty(ch)
+
 // ---------------
 // initialisation
 // ---------------
@@ -128,7 +134,9 @@ setInterval(function () {
   if (isTimerActive) {
     const minute = Math.floor(durationSecond / 60);
     const second = durationSecond - minute * 60;
-    timeLengthSpan.textContent = second < 10 ? minute + ':0' + second : minute + ':' + second;
+    timeLengthSpan.textContent = second < 10
+      ? minute + ':0' + second
+      : minute + ':' + second;
   }
 }, 100); // update about every 100ms
 setInterval(function () {
@@ -157,7 +165,6 @@ function prepareExer() {
   timeLengthSpan.textContent = '0:00';
   cpmCorrectSpan.textContent = 0;
   cpmTypedSpan.textContent = 0;
-
 
   // clear typing input
   typingInputElem.value = '';
@@ -265,10 +272,6 @@ function prepareSentencesHintsResults(indexCurrentLine) {
   // overwrite current hint via printHintCurrent
   printHintCurrent(currentLineArray[0]);
 
-  // clear next hint, write next hint via printHintNext if exists
-  hintNextElem.innerHTML = '';
-  if (currentLineArray[1]) printHintNext(currentLineArray[1]);
-
   // clear current wrong chars
   wrongCharsCurrentElem.innerHTML = '';
 
@@ -285,7 +288,9 @@ function prepareSentencesHintsResults(indexCurrentLine) {
   numTotalSentencesSpan.textContent = lines.length;
   posLineSpan.textContent = indexCurrentLine + 1;
   numRemainingLinesSpan.textContent = lines.length - indexCurrentLine - 1;
-  accuracySpan.textContent = numTotalCorrectChars ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed() : 0;
+  accuracySpan.textContent = numTotalCorrectChars
+    ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed()
+    : 0;
 }
 
 function printHintCurrent(character) {
@@ -299,25 +304,14 @@ function printHintCurrent(character) {
   createBlockAnotherStyle(character, "hint_current_coding", "hint_current");
 }
 
-function printHintNext(character) {
-  // clear next hint
-  hintNextElem.innerHTML = '';
-
-  /**
-   * append block (another style) #hint_next_coding to #hint_next
-   * character shown even without encoding
-   */
-  createBlockAnotherStyle(character, "hint_next_coding", "hint_next");
-}
-
 // ---------------------
 // instant verification
 // ---------------------
 
 typingInputElem.addEventListener('input', instantVerification);
-// if timer is not active, activate it and set timeStart
+// if timer is not active and the exercise is not over, activate it and set timeStart
 typingInputElem.addEventListener('input', function () {
-  if (!isTimerActive) {
+  if (!isTimerActive && (indexCurrentLine < lines.length)) {
     isTimerActive = true;
     timeStart = Date.now();
   }
@@ -329,10 +323,9 @@ function instantVerification() {
     const arrayCurrentCharsSpan = sentenceCurrentElem.querySelectorAll('span');
     const arrayInput = [...typingInputElem.value];
 
-    // clear current wrong chars, current hint, next hint
+    // clear current wrong chars, current hint
     wrongCharsCurrentElem.innerHTML = '';
     hintCurrentElem.innerHTML = '';
-    hintNextElem.innerHTML = '';
 
     // initialise indexLastCorrect
     let indexLastCorrect = -1;
@@ -374,18 +367,15 @@ function instantVerification() {
       printHintCurrent(currentLineArray[indexLastCorrect + 1]);
     }
 
-    // print (overwrite) hint for next char (if exists and not empty string)
-    if (currentLineArray[indexLastCorrect + 2]) {
-      printHintNext(currentLineArray[indexLastCorrect + 2]);
-    }
-
     // change results
     const numTotalCorrectChars = numCurrentCorrectChars + numAlreadyCorrectChars;
     const numTotalIncorrectChars = numCurrentIncorrectChars + numAlreadyIncorrectChars;
     numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
     numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
     numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars - numTotalIncorrectChars;
-    accuracySpan.textContent = numTotalCorrectChars ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed() : 0;
+    accuracySpan.textContent = numTotalCorrectChars
+      ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed()
+      : 0;
 
     // reset num Current In/correct Chars
     numCurrentCorrectChars = 0;
@@ -412,15 +402,15 @@ $("#typing_input").on('keypress', function (e) {
   }
 });
 
-// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_current if in objectCharSet
+// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_current if in database
 function addWrongCharCurrent(character, pos) {
-  if (objectCharSet.hasOwnProperty(character)) {
+  if (checkIfInDatabase(character)) {
     createBlock(character, 'line_' + String(indexCurrentLine + 1) + '_pos_' + String(pos), 'wrong_chars_current');
   }
 }
-// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_already if in objectCharSet
+// append the block of character #(pos CurrentLine, CurrentString) to wrong_chars_already if in database
 function addWrongCharAlready(character, pos) {
-  if (objectCharSet.hasOwnProperty(character)) { // this line is in fact not necessary
+  if (checkIfInDatabase(character)) { // this line is in fact not necessary
     createBlock(character, 'line_' + String(indexCurrentLine + 1) + '_pos_' + String(pos), 'wrong_chars_already');
   }
 }
@@ -440,10 +430,10 @@ function changeLine() {
       numAlreadyCorrectChars += 1;
     }
 
-    // incorrect: increment num Already Incorrect Chars, add link if in objectCharSet
+    // incorrect: increment num Already Incorrect Chars, add link if in database
     if (characterSpan.className == 'incorrect') {
       numAlreadyIncorrectChars += 1;
-      if (objectCharSet.hasOwnProperty(character)) {
+      if (checkIfInDatabase(character)) {
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
         linkElem.className = "wrong-character-anchor";
@@ -454,10 +444,10 @@ function changeLine() {
       }
     }
 
-    // untouched: increment num Already Incorrect Chars, create block & link (if in objectCharSet), becomes incorrect
+    // untouched: increment num Already Incorrect Chars, create block & link (if in database), becomes incorrect
     if (characterSpan.className == 'untouched') {
       numAlreadyIncorrectChars += 1;
-      if (objectCharSet.hasOwnProperty(character)) {
+      if (checkIfInDatabase(character)) {
         addWrongCharAlready(character, index + 1);
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
@@ -478,7 +468,9 @@ function changeLine() {
   numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
   numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
   numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars - numTotalIncorrectChars;
-  accuracySpan.textContent = numTotalCorrectChars ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed() : 0;
+  accuracySpan.textContent = numTotalCorrectChars
+    ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed()
+    : 0;
 
   // put sentence current to sentence already then line break
   sentencesAlreadyElem.innerHTML += sentenceCurrentElem.innerHTML;
@@ -507,10 +499,10 @@ function finalise() {
       numAlreadyCorrectChars += 1;
     }
 
-    // incorrect: increment num Already Incorrect Chars, add link if in objectCharSet
+    // incorrect: increment num Already Incorrect Chars, add link if in database
     if (characterSpan.className == 'incorrect') {
       numAlreadyIncorrectChars += 1;
-      if (objectCharSet.hasOwnProperty(character)) {
+      if (checkIfInDatabase(character)) {
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
         linkElem.className = "wrong-character-anchor";
@@ -521,10 +513,10 @@ function finalise() {
       }
     }
 
-    // untouched: increment num Already Incorrect Chars, create block & link (if in objectCharSet), becomes incorrect
+    // untouched: increment num Already Incorrect Chars, create block & link (if in database), becomes incorrect
     if (characterSpan.className == 'untouched') {
       numAlreadyIncorrectChars += 1;
-      if (objectCharSet.hasOwnProperty(character)) {
+      if (checkIfInDatabase(character)) {
         addWrongCharAlready(character, index + 1);
         const linkElem = document.createElement('a');
         linkElem.textContent = character;
@@ -545,7 +537,9 @@ function finalise() {
   numTotalCorrectCharsSpan.textContent = numTotalCorrectChars;
   numTotalIncorrectCharsSpan.textContent = numTotalIncorrectChars;
   numTotalUntouchedCharsSpan.textContent = [...lines.join('')].length - numTotalCorrectChars - numTotalIncorrectChars;
-  accuracySpan.textContent = numTotalCorrectChars ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed() : 0;
+  accuracySpan.textContent = numTotalCorrectChars
+    ? ((100 * numTotalCorrectChars) / (numTotalCorrectChars + numTotalIncorrectChars)).toFixed()
+    : 0;
   if (isTimerActive && durationSecond >= 2) {
     cpmCorrectSpan.textContent = ((60 * numTotalCorrectChars) / durationSecond).toFixed();
     cpmTypedSpan.textContent = ((60 * (numTotalCorrectChars + numTotalIncorrectChars) / durationSecond)).toFixed();
@@ -564,7 +558,6 @@ function finalise() {
 
   // clear hints
   hintCurrentElem.innerHTML = '';
-  hintNextElem.innerHTML = '';
 
   // clear input
   typingInputElem.value = '';
@@ -601,9 +594,11 @@ function finalise() {
   // desactive timer
   isTimerActive = false;
 }
+
 // ---------------
 // eng Key Toggle
 // ---------------
+
 document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
 function engKeyToggle() {
   letterList = document.getElementsByClassName("keycap-letter");
@@ -615,7 +610,7 @@ function engKeyToggle() {
       }
     } else {
       for (let letter of letterList) {
-        const letter_content = letter.textContent; 
+        const letter_content = letter.textContent;
         letter.textContent = array30ToLetterDict[letter_content];
       }
     }
@@ -633,8 +628,7 @@ function createBlock(character, block_id_name, id_name) {
   // create resultBlock, put it into elem
   let resultBlock = document.createElement('div');
   resultBlock.id = block_id_name;
-  resultBlock.className = 'w3-white w3-round-xlarge w3-padding w3-padding-16 w3-margin-top'; // w3 css
-  resultBlock.style.cssText = 'scroll-margin-top: 61px;'; // 45 + 16 (margin top)
+  resultBlock.className = 'wrong_char_code_block';
   elem.appendChild(resultBlock);
 
   // add character and comma to resultBlock
@@ -644,7 +638,7 @@ function createBlock(character, block_id_name, id_name) {
   resultBlock.appendChild(char);
 
   // add content to resultBlock
-  createList(character, block_id_name + '_list', block_id_name);
+  createList(character, block_id_name + '_list', block_id_name, false);
 }
 
 // create the block (resultBlock) #block_id_name of another style from character, add it to some elem #id_name
@@ -654,24 +648,26 @@ function createBlockAnotherStyle(character, block_id_name, id_name) {
   // create resultBlock, put it into elem
   let resultBlock = document.createElement('div');
   resultBlock.id = block_id_name;
-  resultBlock.className = 'w3-white w3-round-xlarge w3-padding w3-margin-top'; // w3 css
+  resultBlock.className = 'current_char_code_block';
   elem.appendChild(resultBlock);
 
   // add character to resultBlock
   const spaceLocal = { tw: '空白', en: 'Space', fr: 'Espace' };
   let char = document.createElement('div');
-  char.textContent = (character == ' ') ? spaceLocal[stringLocal] : character;
+  char.textContent = (character == ' ')
+    ? spaceLocal[stringLocal]
+    : character;
   char.style = "font-size: 2em; text-align: center;"; // bigger font size
   resultBlock.appendChild(char);
 
   // add content to resultBlock
-  if (objectCharSet.hasOwnProperty(character)) {
-    createList(character, block_id_name + '_list', block_id_name);
+  if (checkIfInDatabase(character)) {
+    createList(character, block_id_name + '_list', block_id_name, true);
   }
 }
 
 // create the list (resultList) #list_id_name from character, add it to some elem #id_name
-function createList(character, list_id_name, id_name) {
+function createList(character, list_id_name, id_name, shouldStandardDecompIncluded) {
   const elem = document.getElementById(id_name);
 
   // create resultList, put it into elem
@@ -681,6 +677,20 @@ function createList(character, list_id_name, id_name) {
   elem.appendChild(resultList);
 
   // add items to resultList
+  if (shouldStandardDecompIncluded && objectDecomposition.hasOwnProperty(character)) {
+    const decomp = (typeof objectDecomposition[character] === 'string')
+      ? objectDecomposition[character]
+      : objectDecomposition[character][0];
+    let itemStandardDecomp = document.createElement('li');
+    itemStandardDecomp.className = 'current-hint-standard-decomposition';
+    if (!document.getElementById('cb_decomp_in_hint_current').checked) {
+      itemStandardDecomp.style.display = 'none';
+    }
+    itemStandardDecomp.id = list_id_name + '_item_standard_decomposition';
+    itemStandardDecomp.innerHTML = '<span class="keycap title-decomposition">拆</span>：';
+    resultList.appendChild(itemStandardDecomp);
+    createDecomposition(decomp, itemStandardDecomp.id);
+  }
   if (objectNormal.hasOwnProperty(character)) {
     const nlArray = objectNormal[character];
     for (let i = 0; i < nlArray.length; i++) {
@@ -1082,48 +1092,19 @@ function createLineNL(encodingNl, id_name) {
 // content display
 // ----------------
 
-// toggle between display none and block
-function displayToggle(btnElem, id) {
-  const x = document.getElementById(id);
-  const icon = btnElem.getElementsByTagName("i");
-  if (x.classList.contains("w3-show")) {
-    x.classList.remove("w3-show");
-    x.classList.add('w3-hide');
-    icon[0].className = "fa fa-caret-down";
-  } else {
-    x.classList.add("w3-show");
-    x.classList.remove("w3-hide");
-    icon[0].className = "fa fa-caret-up";
-  }
-}
-
-// hide blocks
-const cbCloseHintCurrent = document.getElementById('cb_close_hint_current');
-const cbCloseHintNext = document.getElementById('cb_close_hint_next');
-const cbCloseSentencesAlready = document.getElementById("cb_close_sentences_already");
-const cbCloseWrongCharsAlready = document.getElementById("cb_close_wrong_chars_already");
-const cbCloseWrongCharsCurrent = document.getElementById("cb_close_wrong_chars_current");
-
-cbCloseHintCurrent.addEventListener('click', function () {
-  toggleByCb(this, "hint_current");
+$('#cb_close_hint_current').click(function () {
+  $('#hint_current').toggle(!this.checked)
+  $('#toggle-standard-decomp').toggle(!this.checked)
 })
-cbCloseHintNext.addEventListener('click', function () {
-  toggleByCb(this, "hint_next");
+$('#cb_decomp_in_hint_current').click(function () {
+  $('.current-hint-standard-decomposition').toggle(this.checked)
 })
-cbCloseSentencesAlready.addEventListener('click', function () {
-  toggleByCb(this, "sentences_already");
+$('#cb_close_sentences_already').click(function () {
+  $('#sentences_already').toggle(!this.checked)
 })
-cbCloseWrongCharsAlready.addEventListener('click', function () {
-  toggleByCb(this, "wrong_chars_already_div");
+$('#cb_close_wrong_chars_already').click(function () {
+  $('#wrong_chars_already_div').toggle(!this.checked)
 })
-cbCloseWrongCharsCurrent.addEventListener('click', function () {
-  toggleByCb(this, "wrong_chars_current");
+$('#cb_close_wrong_chars_current').click(function () {
+  $('#wrong_chars_current').toggle(!this.checked)
 })
-
-function toggleByCb(cbElem, id) {
-  if (cbElem.checked) {
-    $("#" + id).hide();
-  } else {
-    $("#" + id).show();
-  }
-}

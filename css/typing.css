@@ -72,6 +72,30 @@
   border-top: 1px solid #105710;
   margin: 15px 0 10px;
 }
+/* ===================
+    CURRENT CHARACTER
+  ==================== */
+
+.current_char_code_block {
+  padding: 8px 16px;
+  margin-top: 16px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+/* =====[ radicals in decompositions ]===== */
+#hint_current .radical {
+  cursor: text;
+}
+#hint_current .radical-special {
+  cursor: default;
+}
+#hint_current .radical-special-sc {
+  cursor: default;
+}
+#hint_current .radical-sc {
+  cursor: default;
+}
 
 /* ==================
     CURRENT EXERCISE
@@ -94,6 +118,25 @@
   min-height: 1.6em;
   user-select: none;
   color: #999999;
+}
+/* ======================
+    WRONG CHARACTER CODE
+  ======================= */
+.wrong_char_code_block {
+  padding: 8px 16px;
+  margin-top: 16px;
+  border-radius: 20px;
+  background-color: white;
+  scroll-margin-top: 61px; /* 45 + 16 (margin top) */
+}
+.wrong-character-anchor {
+  text-decoration: none;
+}
+.wrong-character-anchor:hover {
+  color: #4bb35c;
+  display: inline-block;
+  transition: 0.1s;
+  transform: scale(1.4);
 }
 
 .typing-results {
@@ -121,15 +164,7 @@
   border: 1.5px solid #11471a;
   outline: none;
 }
-.wrong-character-anchor {
-  text-decoration: none;
-}
-.wrong-character-anchor:hover {
-  color: #4bb35c;
-  display: inline-block;
-  transition: 0.1s;
-  transform: scale(1.4);
-}
+
 
 /* choosing exercises */
 .typing-dtls-first {

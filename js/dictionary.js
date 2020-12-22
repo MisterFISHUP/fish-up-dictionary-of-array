@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-04(05)
+ * Date: 2020-12-22(23)
  */
 
 /* Structure: (use search)
@@ -63,7 +63,13 @@ function search() {
       resultAreaElem.appendChild(hintDiv);
     } else {
       function isInArrayDicitnary(char) {
-        return objectCharSet.hasOwnProperty(char);
+        return objectNormal.hasOwnProperty(char)
+          || objectSymbol.hasOwnProperty(char)
+          || objectArray10.hasOwnProperty(char);
+        // || objectSpecial.hasOwnProperty(char)
+        // || objectSingle.hasOwnProperty(char)
+        // || objectShortcode1.hasOwnProperty(char)
+        // || objectShortcode2.hasOwnProperty(char)
       }
       printResults(charList.filter(isInArrayDicitnary));
     }
@@ -115,7 +121,7 @@ function printResults(list) {
     } else if (charNumber > 1) {
       resultDescription.innerHTML = hereAre[stringLocal];
     } else {
-      resultDescription.innerText = hereIs[stringLocal];
+      resultDescription.innerHTML = hereIs[stringLocal];
     }
     resultDescription.innerHTML += downloadTheResult[stringLocal] + '<br><br>';
 
@@ -448,6 +454,9 @@ function prepareResultFile(list) {
       if (!isEngKeyActive) toArrayKey(temp);
       fileContent += '    ' + temp.textContent + '\n';
       temp.remove();
+    }
+    if (objectArray10.hasOwnProperty(character)) {
+      fileContent += '    ' + '數：' + objectArray10[character] + '\n';
     }
 
     // add separation line
@@ -785,6 +794,11 @@ function createList(character, list_id_name, id_name) {
 
     // add content of itemSYM
     createLineSYM(objectSymbol[character], itemSYM.id);
+  }
+  if (objectArray10.hasOwnProperty(character)) {
+    let itemArray10 = document.createElement('li');
+    itemArray10.innerHTML = '<span class="keycap title-array10">數</span>' + "：" + objectArray10[character];
+    resultList.appendChild(itemArray10);
   }
 }
 

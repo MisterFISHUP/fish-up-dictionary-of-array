@@ -22,14 +22,14 @@ const AppContent = {
     title: { tw: '兩大功能', en: 'Two main functions', fr: 'Deux fonctions principales' },
     sec1Title: { tw: '我想要查碼', en: 'Array dictionary', fr: 'Dictionnaire Tableau' },
     sec1Point1: {
-      tw: '查詢範圍涵蓋至中日韓統一表意文字擴充區 D，總共 74956 字符提供查詢',
-      en: "74956 characters et symbols, including all characters in CJK Unified Ideographs until Extension D",
-      fr: "74956 caractères et symboles, y compris tous les caractères dans les sinogrammes unifiés CJC jusqu'au supplément D",
+      tw: '查詢範圍涵蓋至中日韓統一表意文字擴充區 D，總共 75016 字符提供查詢',
+      en: "75016 characters et symbols, including all characters in CJK Unified Ideographs until Extension D",
+      fr: "75016 caractères et symboles, y compris tous les caractères dans les sinogrammes unifiés CJC jusqu'au supplément D",
     },
     sec1Point2: {
-      tw: '支援多字查詢，一次最多可查詢 500 字',
-      en: "Multi-character search: look up the Array codes of up to 500 characters with just one click",
-      fr: "Recherche multi-caractères : rechercher les codes Tableau de 500 caractères maximum en un seul clic",
+      tw: '支援多字查詢，一次最多可查詢 500 字符',
+      en: "Multi-character search: look up the Array codes of up to 500 characters/symbols with just one click",
+      fr: "Recherche multi-caractères : rechercher les codes Tableau de 500 caractères/symboles maximum en un seul clic",
     },
     sec2Title: { tw: '我想看列表', en: 'Code lists', fr: 'Listes de codes' },
     sec2Point1: {
@@ -56,38 +56,41 @@ const AppContent = {
       fr: "✔️ Télécharger gratuitement le résultat de la recherche",
     },
     codeType: {
-      tw: `✔️ 標註編碼類型
+      tw: `✔️ 標註編碼類型：
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span> : 普通編碼</li>
-        <li><span class="keycap title-single">單</span> : 單鍵碼*</li>
-        <li><span class="keycap title-special">特</span> : 特別碼</li>
-        <li><span class="keycap title-shortcode1">一</span> : 一級簡碼</li>
-        <li><span class="keycap title-shortcode2">二</span> : 二級簡碼</li>
-        <li><span class="keycap title-symbol">符</span> : 符號</li>
+        <li><span class="keycap title-normal">普</span>：普通編碼</li>
+        <li><span class="keycap title-single">單</span>：單鍵碼*</li>
+        <li><span class="keycap title-special">特</span>：特別碼</li>
+        <li><span class="keycap title-shortcode1">一</span>：一級簡碼</li>
+        <li><span class="keycap title-shortcode2">二</span>：二級簡碼</li>
+        <li><span class="keycap title-symbol">符</span>：符號</li>
+        <li><span class="keycap title-array10">數</span>：行列 10 編碼 （若有多種輸入方式則以分號分隔）</li>
       </ul>`,
       en: `✔️ Indicates the type of code by
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span> : standard code</li>
-        <li><span class="keycap title-single">單</span> : one-key code*</li>
-        <li><span class="keycap title-special">特</span> : special code</li>
-        <li><span class="keycap title-shortcode1">一</span> : short code I</li>
-        <li><span class="keycap title-shortcode2">二</span> : short code II</li>
-        <li><span class="keycap title-symbol">符</span> : symbol</li>
+        <li><span class="keycap title-normal">普</span>：standard code</li>
+        <li><span class="keycap title-single">單</span>：one-key code*</li>
+        <li><span class="keycap title-special">特</span>：special code</li>
+        <li><span class="keycap title-shortcode1">一</span>：short code I</li>
+        <li><span class="keycap title-shortcode2">二</span>：short code II</li>
+        <li><span class="keycap title-symbol">符</span>：symbol</li>
+        <li><span class="keycap title-array10">數</span>：Array 10 code (semicolons for separating multiple possible codes)</li>
       </ul>`,
       fr: `✔️ Indique le type de code par
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span>  : code standard</li>
-        <li><span class="keycap title-single">單</span>  : code mono-touche*</li>
-        <li><span class="keycap title-special">特</span>  : code spécial</li>
-        <li><span class="keycap title-shortcode1">一</span>  : code court I</li>
-        <li><span class="keycap title-shortcode2">二</span>  : code court II</li>
-        <li><span class="keycap title-symbol">符</span>  : symbole</li>
+        <li><span class="keycap title-normal">普</span>：code standard</li>
+        <li><span class="keycap title-single">單</span>：code mono-touche*</li>
+        <li><span class="keycap title-special">特</span>：code spécial</li>
+        <li><span class="keycap title-shortcode1">一</span>：code court I</li>
+        <li><span class="keycap title-shortcode2">二</span>：code court II</li>
+        <li><span class="keycap title-symbol">符</span>：symbole</li>
+        <li><span class="keycap title-array10">數</span>：Code en Tableau 10 (points-virgules utilisés pour séparer plusieurs codes possibles)</li>
       </ul>`,
     },
     decomposition: {
-      tw: '✔️ 常用字提供拆字：<span class="keycap title-decomposition">拆</span> <span style="color: coral; font-weight: bold;"> 新功能！！持續擴充中！</span>',
-      en: `✔️ Provides <span class="keycap title-decomposition">拆</span> : decomposition of common characters <span style="color: coral; font-style: italic; font-weight: bold;">- New -</span>`,
-      fr: `✔️ Donne <span class="keycap title-decomposition">拆</span> : la décomposition de caractères fréquents <span style="color: coral; font-style: italic; font-weight: bold;">- Nouveau -</span>`,
+      tw: '✔️ 常用字提供 <span class="keycap title-decomposition">拆</span>：行列拆字',
+      en: `✔️ Provides <span class="keycap title-decomposition">拆</span> : decomposition of common characters`,
+      fr: `✔️ Donne <span class="keycap title-decomposition">拆</span> : la décomposition de caractères fréquents`,
     },
     englishKey: {
       tw: '✔️ 按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵',

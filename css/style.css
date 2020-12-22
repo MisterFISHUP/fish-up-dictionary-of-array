@@ -382,9 +382,11 @@ img.radical {
 }
 .title-shortcode1 {
   background: #91ee7a;
+  font-weight: bold;
 }
 .title-shortcode2 {
   background: #86edff;
+  font-weight: bold;
 }
 .title-normal {
   background: #ebebeb;
@@ -395,6 +397,10 @@ img.radical {
 }
 .title-decomposition {
   background: #ac3059;
+  color: white;
+}
+.title-array10 {
+  background: #2a87a3;
   color: white;
 }
 

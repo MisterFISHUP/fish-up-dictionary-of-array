@@ -13,6 +13,7 @@ const AppContent = {
     fr: 'De nombreux exercices. Vous pouvez même en crée de nouveaux.'
   },
   toggleClose: { tw: '請關閉', en: 'Close', fr: 'Fermer' },
+  showStandardDecomposition: { tw: '顯示拆字', en: 'Show decomposition', fr: 'Montrer décomposition' },
   // left column
   currentCharacter: { tw: '當前提示', en: 'Current character', fr: 'Caractère actuel' },
   exercises: {
@@ -55,6 +56,11 @@ const AppContent = {
         tw: '由於中日韓統一表意文字擴充區 D 之後的字相當罕用，本站行列編碼僅提示至擴充區 D，並且普通編碼的重碼提示建立在沒有啟用擴充區 EF 的條件下。',
         en: 'Since the characters in CJK Unified Ideographs Extensions E, F and G are extremely rarely used, their Array code hints are not provided on this website. Besides, coincidence rank hints are based on the presumption that the entry of CJK-E, F and G characters are disabled.',
         fr: "Comme les caractères dans les suppléments E, F et G des sinogrammes unifiés CJC sont extrêmement rarement utilisés, leurs codes Tableau ne sont pas fournis sur ce site. D'ailleurs, les rangs de coïncidence indiqués sont basés sur la présomption que l'entrée des caractères CJC-E, F et G est désactivée."
+      },
+      aboutArrayHintPar2: {
+        tw: '本站在「當前提示」中提供常用字的拆字：若有多種拆法，僅顯示標準拆字，或是標準拆字中的其中一種。此功能預設關閉。',
+        en: "In 'Current character', an Array decomposition is provided for commonly used characters. More precisely, if there are several possible decompositions, only the standard decomposition or one of the standard decompositions is indicated. This function is turned off by default.",
+        fr: "Dans « Caractère actuel », une décomposition Tableau est fournie pour les caractères couramment utilisés. Plus précisément, s'il y a plusieurs décompositions possibles, seule la décomposition standard ou une des décompositions standard est indiquée. Cette fonction est désactivée par défaut."
       },
       characterDisplay: {
         title: { tw: '關於字元顯示', en: 'Character display', fr: "Affichage des caractères" },
@@ -208,7 +214,12 @@ const AppContent = {
       tw: `另外，點擊本頁的標題，可以將畫面移動至打字練習的區塊。打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，例如關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a>`,
       en: `Clicking on the title of this page will move the screen to the exercise area. Also, it is recommended that you read the page 'FISH UP Dictionary of Array' before using this page for a better understanding of Array codes shown here (when dealing with coincident codes for example).&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>Click here to read the page<<</a>`,
       fr: `Par ailleur, le fait de cliquer sur le titre de cette page permet de déplacer l'écran vers la zone d'exercices. Il est recommandé de lire la page « Dictionnaire FISH UP de Tableau » avant d'utiliser cette page, pour mieux comprendre les codes Tableau indiqués ici (pour la saisie des codes coïncidents par exemple). &emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>> Cliquez ici pour lire la page <<</a>`,
-    }
+    },
+    par3: {
+      tw: `🔥🔥 新功能：「當前提示」中現在提供常用字的拆字了！若有多種拆法，僅顯示標準拆字，或是標準拆字中的其中一種。此功能預設關閉。`,
+      en: `🔥🔥 New feature: In 'Current character', an Array decomposition is now provided for commonly used characters! More precisely, if there are several possible decompositions, only the standard decomposition or one of the standard decompositions is indicated. This function is turned off by default.`,
+      fr: `🔥🔥 Nouvelle fonctionnalité : Dans « Caractère actuel », une décomposition Tableau est désormais fournie pour les caractères couramment utilisés ! Plus précisément, s'il y a plusieurs décompositions possibles, seule la décomposition standard ou une des décompositions standard est indiquée. Cette fonction est désactivée par défaut.`,
+    },
   },
   typedLines: { tw: '已打句子', en: 'Typed lines', fr: 'Lignes tapées' },
   wrongCharacterPreviousLines: { tw: '先前行列錯字', en: 'Wrong characters and their Array codes (typed lines)', fr: 'Caractères incorrects avec leurs codes Array (lignes tapées)' },

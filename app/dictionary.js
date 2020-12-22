@@ -88,9 +88,9 @@ const AppContent = {
       </ul>`,
     },
     decomposition: {
-      tw: '✔️ 常用字提供拆字：<span class="keycap title-decomposition">拆</span> <span style="color: coral; font-weight: bold;"> 新功能！！持續擴充中！</span>',
-      en: `✔️ Provides <span class="keycap title-decomposition">拆</span> : decomposition of common characters <span style="color: coral; font-style: italic; font-weight: bold;">- New -</span>`,
-      fr: `✔️ Donne <span class="keycap title-decomposition">拆</span> : la décomposition de caractères fréquents <span style="color: coral; font-style: italic; font-weight: bold;">- Nouveau -</span>`,
+      tw: '✔️ 常用字提供 <span class="keycap title-decomposition">拆</span>：行列拆字',
+      en: `✔️ Provides <span class="keycap title-decomposition">拆</span> : decomposition of common characters`,
+      fr: `✔️ Donne <span class="keycap title-decomposition">拆</span> : la décomposition de caractères fréquents`,
     },
     englishKey: {
       tw: '✔️ 按鍵顯示能自由且即時地切換為英文鍵或行列 30 鍵',

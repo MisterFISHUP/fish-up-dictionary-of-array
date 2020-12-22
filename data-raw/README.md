@@ -3,6 +3,7 @@
 行列輸入法為開源的輸入法，編碼資料皆可在網路找到。
 
 行列編碼數據來自 jrywu 在 GitHub 上的 [DIME 專案](https://github.com/jrywu/DIME/tree/master/Tables)（ .cin 檔）以及[新行列輸入法](https://www.ptt.cc/bbs/Array/M.1554494219.A.F95.html)的檔案內容。
+行列 10 編碼 (array10.txt) 來自 gontera 的 [array10 專案](https://github.com/gontera/array10)中的 array10b-20180830.lime 檔（移除了原文件第 31298 行、編碼 2324 的空白資料）
 
 註：修正二級簡碼表 ux 誤植為 wx 的錯誤。（2020/11/05）
 
@@ -17,4 +18,4 @@
 
 ### 感謝
 
-在此特別感謝行列輸入法發明者廖明德先生開源的精神。
+在此特別感謝行列輸入法發明者廖明德先生開源的精神、以及葉光哲先生（老刀）製作以及開源編碼表。

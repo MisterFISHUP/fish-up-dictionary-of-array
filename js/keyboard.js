@@ -412,7 +412,7 @@ const codeExamples = [
   'ark 兲', 'qbz 巭', 'eak 仧', 'aan 忈',
   // 4 Array key + space
   'p.ab 暖', 'kd.. 修', ';pzn 嗯', 'ofix 犧', 'vof. 鬱', 'li;m 籲', // ';coz 嗨',  'rlgf 孝',
-  'xbhi 发', 'feou 蓝', 'qqdh 书', 'yfgz 读', 'njgf 学', 'zlpn 愿',
+  'xbhi 发', 'feou 蓝', 'ggdh 书', 'yfgz 读', 'njgf 学', 'zlpn 愿',
   'lp,v 楽', 'vlsf 枠', 'vyhd 榊', '.irz 躾', 'ozds 観', 'olfp 挿',
   'wgfn 恏', 'kgdn 怹', 'za/w 嫑', 'tg;b 勥', ';kaw 嘦', 'azpu 奣', // ';v;v 槑', ';;s; 嘂', 'pkae 圙', 'cbb; 瀥',
   // 5 Array key + space

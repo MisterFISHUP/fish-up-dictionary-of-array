@@ -104,12 +104,17 @@ const AppContent = {
         en: '- If you like this game, please share it with your friends -',
         fr: '- Si vous aimez ce jeu, partagez-le avec vos amis -'
       },
-      title: { tw: '恭喜您搜集到了所有彩蛋！', en: "Wow! You've collected all the Easter eggs!", fr: "Ouah ! Vous avez trouvé tous les œufs de Pâques" },
+      title: { tw: '恭喜您搜集到了所有彩蛋！', en: "Wow! You've collected all the Easter eggs!", fr: "Ouah ! Vous avez trouvé tous les œufs de Pâques !" },
       reward: {
         tw: `獎勵：您在下方獲得了所有其他指令！`,
         en: `REWARD: You've got all the other commands below!`,
         fr: `RÉCOMPENSE : Vous avez obtenu toutes les autres commandes ci-dessous !`
       },
+      unlock: {
+        tw: `您下次可以透過按下行列（或注音、拼音）輸入法中「<span class="cmd">解鎖</span>」兩字的鍵位、或英文字 '<span class="cmd">unlock</span>'、或法文字 « <span class="cmd">déverrouiller</span> »（無尖音符也可）來快速解鎖所有彩蛋以及下方所有內容 😉`,
+        en: `Next time you can quickly unlock all the eggs and all the content below by typing the Chinese word '<span class="cmd">解鎖</span>' with the Array input method (or Bopomofo, or Pinyin), or the English word '<span class="cmd">unlock</span>', or the French word '<span class="cmd">déverrouiller</span>' (ok without the acute accent) 😉`,
+        fr: `La prochaine fois, vous pouvez débloquer rapidement tous les œufs et tout le contenu ci-dessous en tapant le mot chinois « <span class="cmd">解鎖</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin), ou le mot anglais « <span class="cmd">unlock</span> », ou le mot français « <span class="cmd">déverrouiller</span> » 😉`
+      }
     },
     allOtherCommands: {
       title: { tw: '所有其他樣式', en: 'All other styles', fr: 'Tous les autres styles' },
@@ -119,9 +124,9 @@ const AppContent = {
         fr: `Plus de 500 combinaisons de styles déjà disponibles !<br>N'oubliez pas de revenir régulièrement pour voir quels nouveaux styles sont ajoutés 😁`
       },
       par2: {
-        tw: `您可以使用 <a href="dictionary.html" target="_blank" class="w3-hover-text-deep-orange w3-text-teal" style="text-decoration: none;"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>例如查詢結果中有標籤 <span class="keycap title-normal">普</span> 的那一行就是「普通編碼」`,
-        en: `You can use <a href="dictionary.html" target="_blank" class="w3-hover-text-deep-orange w3-text-teal" style="text-decoration: none;"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP Dictionary of Array</a> to look up the Array code of any character! For example, results with label <span class="keycap title-normal">普</span> are 'standard codes'.`,
-        fr: `Vous pouvez utiliser <a href="dictionary.html" target="_blank" class="w3-hover-text-deep-orange w3-text-teal" style="text-decoration: none;"><i class="fa fa-external-link" aria-hidden="true"></i> Dictionnaire FISH UP de Tableau</a> pour trouver le code Tableau de tous les caractères ! Par exemple, les résultats avec l'étiquette <span class="keycap title-normal">普</span> sont des « codes standard ».`
+        tw: `您可以使用 <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>例如查詢結果中有標籤 <span class="keycap title-normal">普</span> 的那一行就是「普通編碼」`,
+        en: `You can use <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP Dictionary of Array</a> to look up the Array code of any character! For example, results with label <span class="keycap title-normal">普</span> are 'standard codes'.`,
+        fr: `Vous pouvez utiliser <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> Dictionnaire FISH UP de Tableau</a> pour trouver le code Tableau de tous les caractères ! Par exemple, les résultats avec l'étiquette <span class="keycap title-normal">普</span> sont des « codes standard ».`
       },
       par3: {
         tw: `最後，喜歡這個小遊戲或這個網站的話，請不要客氣踴躍分享給身邊的親朋好友！<br>希望讓越來越多人認識行列輸入法 🥰`,

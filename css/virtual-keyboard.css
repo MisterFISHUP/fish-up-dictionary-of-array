@@ -98,14 +98,14 @@
   border-radius: 10px;
   overflow-y: scroll;
   color: #2e1608;
-  background: #f2f2ff;
+  background: #ffffff;
 }
 #game_instructions-close {
   cursor: pointer;
   position: absolute;
   right: -12px;
   top: -12px;
-  background-color: #ffcbd3;
+  background-color: #eabeff;
   width: 36px;
   height: 36px;
   border-radius: 36px;
@@ -113,7 +113,7 @@
   padding: 0;
 }
 #game_instructions-close:hover {
-  background-color: #ff4467;
+  background-color: #9e2fa8;
   color: white;
 }
 
@@ -137,11 +137,15 @@
   margin-top: 60px;
   font-size: 16px;
 }
+.cmd {
+  color: coral;
+}
 .my_link {
   text-decoration: none;
+  color: darkmagenta;
 }
 .my_link:hover {
-  color: darkorange;
+  color: orchid;
 }
 #hint_for_easter_eggs {
   width: 85%;
@@ -155,6 +159,11 @@
 }
 #egg_hunt-title, #congrats_messages-block, #all_other_commands {
   padding-top: 25px;
+}
+#congrats_messages-block {
+  width: 80%;
+  margin: auto;
+  text-align: center;
 }
 /* preview */
 #egg_collection-preview, #other_pressed_key_style-preview {

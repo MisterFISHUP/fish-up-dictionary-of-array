@@ -1,62 +1,314 @@
 /* FILE STRUCTURE
-  - game area 
-  - keyboard base
-  - key general settingS
-  - key width
-  - key design
-  - pressed key
-  - game output field
+  - game area
   - game instructions open
-  - game instructions
+  - game instructions window
+  - game instructions '
   - congratulations message
   - code examples
+  - keyboard structure
+    ├ keyboard base
+    ├ keys ^
+    └ modify key widths
+  - key press
+  - bg styles
+  - kb base styles
+  - key styles '
+  - text styles
+  - pressed key styles
+  
 */
 
 /* ===========
     GAME AREA
   ============ */
 
-#game-area {
-  width: 905px;
+#game_area {
+  width: 902px;
   margin: 0px auto 30px;
   box-sizing: content-box;
 }
-
-/* ===============
-    KEYBOARD BASE
-  ================ */
-
-#keyboard {
-  padding: 20px 15px 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.5), inset 0 0 3px rgba(0,0,0,0.3);
-  margin: 0 auto;
-	animation: keyboard-brush-metal 9s ease infinite;
-  background: linear-gradient(30deg, #ebe5e5, #acacac, #dfdfdf, #c2c2c2);
-	background-size: 400% 400%;
+#game-output_field {
+  font-size: large;
+  border: 1px solid none;
+  min-height: 2em;
+  margin: 12px auto;
 }
-@keyframes keyboard-brush-metal {
+
+/* ========================
+    GAME INSTRUCTIONS OPEN
+  ========================= */
+
+#game_instructions-open {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  float: left;
+  margin: 12px 4px 0;
+}
+#game_instructions-icon {
+  background: white;
+  background: linear-gradient(#ffffff, #ffffffb3 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#game-notification {
+  position: absolute;
+  animation: notification 1.5s infinite;
+  left: 75%;
+  top: 0%;
+}
+@keyframes notification {
   0% {
-    background-position: 0% 50%;
+    color: white;
   }
   50% {
-    background-position: 100% 50%;
+    color: transparent;
   }
   100% {
-    background-position: 0% 50%;
+    color: white;
   }
 }
-#keyboard-wrapper {
-  background-color: #808080!important;
-  border-radius: 6px;
-  padding: 2px;
-}
-/* ======================
-    KEY GENERAL SETTINGS
-  ======================= */
 
+/* ==========================
+    GAME INSTRUCTIONS WINDOW
+  =========================== */
+
+.not-visible {
+  visibility: hidden;
+}
+#game_instructions-wrapper {
+  position: fixed;
+  width: min(70vw, 1000px);
+  left: max(15vw, 50vw - 500px);
+  height: 70vh;
+  top: 15vh;
+  z-index: 3;
+  border-radius: 20px;
+  background: #596dad;
+}
+#game_instructions {
+  padding: 16px 32px;
+  position: fixed;
+  width: min(70vw - 96px, 1000px - 96px);
+  left: max(15vw + 16px, 50vw - 484px);
+  height: calc(70vh - 64px);
+  top: calc(15vh + 16px);
+  border-radius: 10px;
+  overflow-y: scroll;
+  color: #2e1608;
+  background: #f2f2ff;
+}
+#game_instructions-close {
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  background-color: #ffcbd3;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  padding: 0;
+}
+#game_instructions-close:hover {
+  background-color: #ff4467;
+  color: white;
+}
+
+/* =====================
+    GAME INSTRUCTIONS '
+  ====================== */
+
+.fade-in { animation: opaci 1.2s; }
+@keyframes opaci { from { opacity: 0; } to { opacity: 1; } }
+#game_instructions hr {
+  margin: 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.game-centered_description {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+}
+#game-comment {
+  margin-top: 60px;
+  font-size: 16px;
+}
+.my_link {
+  text-decoration: none;
+}
+.my_link:hover {
+  color: darkorange;
+}
+#hint_for_easter_eggs {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
+}
+.easter-egg-hint {
+  cursor: pointer;
+}
+#egg_hunt-title, #congrats_messages-block, #all_other_commands {
+  padding-top: 25px;
+}
+/* preview */
+#egg_collection-preview, #other_pressed_key_style-preview {
+  margin: 40px auto 45px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.flex-break {
+  flex-basis: 100%;
+  height: 0;
+}
+.container-single_key {
+  margin: 2px;
+  padding: 8px;
+  border-radius: 10px;
+  width: 59px;
+}
+.unknown_egg {
+  width: 35px;
+  height: 50px;
+  border: 1.5px dashed black;
+  border-radius: 50%/60% 60% 40% 40%;
+  line-height: 50px;
+  margin: 4px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+/* detail */
+#egg_collection-detail, #other_pressed_key_style-detail {
+  margin-bottom: 80px;
+}
+.description-pressed_key_style {
+  margin-left: 90px;
+}
+.style_name-pressed_key_style {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.instructions-pressed_key_style {
+  font-size: 16px;
+}
+#table-style_set {
+  margin: 30px auto 40px;
+  width: 75%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 16px;
+}
+#table-style_set tr {
+  border-bottom: 1px solid #2b2b2b;
+}
+#table-style_set tr:last-child {
+  border-bottom: none;
+}
+#table-style_set td, #table-style_set th {
+  padding: 8px;
+  text-align:left;
+  min-width: 5em;
+}
+
+/* =========================
+    CONGRATULATIONS MESSAGE
+  ========================== */
+
+#congrats_messages-modal-block {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px 48px;
+  border-radius: 30px;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: white;
+  background: linear-gradient(to right, #96c93d, #00b09b);
+}
+#congrats_messages-modal_bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#congrats_messages-modal-close {
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  background-color: #ffc4ce;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  padding: 0;
+}
+#congrats_messages-modal-close:hover {
+  background-color: #af7a82;
+  color: white;
+}
+
+/* ===============
+    CODE EXAMPLES
+  ================ */
+
+#code_examples-toggle {
+  cursor: pointer;
+}
+#code_examples-block {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+#code_examples-wrapper {
+  font-size: large;
+  height: 250px;
+  height: max(250px, 100vh - 600px);
+  overflow-y: auto;
+}
+#code_examples-left {
+  width: 50%;
+  padding: 8px 16px;
+  margin-right: 16px;
+  border-right: 1px solid black;
+  float: left;
+  box-sizing: border-box;
+}
+#code_examples-right {
+  padding: 8px 16px;
+}
+
+/* ====================
+    KEYBOARD STRUCTURE
+  ===================== */
+
+/* =====[ keyboard base ]===== */
+#keyboard {
+  padding: 13px;
+  border-radius: 7px;
+  box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+#key_area {
+  border-radius: 6px;
+  box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.5);
+  padding: 2px 0 2px 3px;
+}
+/* =====[ keys ^ ]===== */
 /* inspired by https://codepen.io/P233/pen/qEagi */
-.key, .f_key, .s_key {
+.n_key, .f_key, .s_key, .enter_key, .space_bar, .backspace {
   width: 40px;
   height: 44px;
   margin: 2px;
@@ -64,46 +316,39 @@
   border-style: solid;
   border-radius: 4px;
   float: left;
-  box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.35);
 }
-.keyboard-keycap {
+.kb-keycap {
   user-select: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
-.key .keyboard-keycap {
+.n_key .kb-keycap {
   width: 33px;
   height: 40px;
   padding: 5px 0 0 7px;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 17px;
 }
-.f_key .keyboard-keycap {
+.f_key .kb-keycap, .enter_key .kb-keycap, .backspace .kb-keycap {
   width: inherit;
   height: inherit;
-  background: #cdd3de;
-  text-align: center;  
+  text-align: center;
   font-size: 18px;
   line-height: 40px;
 }
-.s_key .keyboard-keycap {
+.s_key .kb-keycap, .space_bar .kb-keycap {
   width: inherit;
   height: inherit;
-  font-size: 15px;
-  line-height: 45px;  
   text-align: center;
+  font-size: 15px;
+  line-height: 45px;
   padding: 0;
 }
 
-/* =====[ pressed key ]===== */
-.key.pressed, .f_key.pressed, .s_key.pressed {
-  transform: scale(0.95, 0.95);
-}
-#keyboard a {
-  text-decoration: none;
-}
-/* =====[ key width ]===== */
+/* =====[ modify key widths ]===== */
 .tab {
   width: 66px;
   border-right-width: 10px;
@@ -115,15 +360,15 @@
 .backslash {
   width: 67px;
   border-left-width: 9px;
-  }
-.backslash>.keyboard-keycap {
+}
+.backslash > .kb-keycap {
   width: 60px;
 }
 .capslock {
   width: 87px;
   border-right-width: 10px;
 }
-.enter {
+.enter_key {
   width: 103px;
   border-left-width: 10px;
 }
@@ -135,378 +380,963 @@
   width: 135px;
   border-left-width: 10px;
 }
-.space{
-  width: 326px;
-  border-width: 3px 8px 10px;
-}
-.space>.keyboard-keycap {
-  width: inherit;
-  height: inherit;
-  padding: 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);  
-  line-height: 45px;
-  text-align: center;
-}
-.space.pressed {
-  transform: scale(0.98, 0.95);
-}
 .key-dictionary, .key-typing {
   width: 95px;
 }
+.space_bar {
+  width: 326px;
+  border-width: 3px 8px 10px;
+}
 .key-array {
-  width: 278px;
+  width: 277px;
   border-left-width: 10px;
 }
 
-/* ============
-    KEY DESIGN
-  ============= */
+/* ===========
+    KEY PRESS
+  ============ */
 
-.key.keycap_white_sky_sakura {
-  background: #d3cfcc;
-  border-color: #f0edea #e6e3e0 #d1cccc;
+.n_key.pressed, .f_key.pressed, .s_key.pressed, .enter_key.pressed, .backspace.pressed {
+  transform: scale(0.95, 0.95);
 }
-.key.keycap_white_sky_sakura .keyboard-keycap {
-  background: #fafafa;
-  background: linear-gradient(to left, #f8f8f8, #fdfdfd, #f8f8f8);
+.space_bar.pressed {
+  transform: scale(0.98, 0.95);
 }
-.f_key.keycap_white_sky_sakura {
-  background: #a7c8eb;
-  border-color: #c6dcf3 #adcef1 #69a4d9;
-}
-.f_key.keycap_white_sky_sakura .keyboard-keycap {
-  background:#c5e0fd;
-  background: linear-gradient(to left, #c5e0fd, #d5e8fd, #c5e0fd);
-}
-.s_key.keycap_white_sky_sakura {
-  background: #eba7cd;
-  border-color: #fddfe7 #eebfca #db8a9d;
-}
-.s_key.keycap_white_sky_sakura .keyboard-keycap {
-  color: #363636;
-  background:  #f8cbd6;
-  background: linear-gradient(to left, #f8cbd6, #ffdde5, #f8cbd6);
+#keyboard a {
+  text-decoration: none;
 }
 
-/* =============
-    PRESSED KEY
-  ============== */
+/* ===========
+    BG STYLES
+  ============ */
+/*
+  class will be added to header
+  FORMAT: bg_style-[xxx]
+*/
 
-/* key_pressed_[keycap]_[backlight] */
-
-/* =====[ ↓ not easter eggs ]===== */
-.key_pressed_default_bright-red {
-  color: #ff1818;
-  box-shadow: 0px 0px 6px 1px #ff1818;
+/* pink */
+.bg_style-hot_pink {
+  background: #ffa6d2;
 }
-
-.key_pressed_sakura_pink {
-  color: transparent!important;
-  box-shadow: 0px 0px 10px 1px  #ff5580;
-  background: #eba7cd!important;
-  border-color: #fddfe7 #eebfca #db8a9d!important;
+/* yellow */
+.bg_style-shiny_yellow {
+  background: #ffd17c;
 }
-.key_pressed_sakura_pink .keyboard-keycap {background: #f8cbd6!important;}
-.key_pressed_sakura_pink.key .keyboard-keycap:before {content: '櫻'; color: #ffffff;}
-.key_pressed_sakura_pink.space .keyboard-keycap:before {content: 'sakura'; color: #ffffff;}
-.key_pressed_sakura_pink.s_key span {display: none;}
-.key_pressed_sakura_pink.key-dictionary .keyboard-keycap:before {content: '🌸🌸';}
-.key_pressed_sakura_pink.key-typing .keyboard-keycap:before {content: '🌸🌸';}
-.key_pressed_sakura_pink.key-array .keyboard-keycap:before {content: "🌸 I'm a beautiful sakura"; color: #4d1a1a;}
-
-.key_pressed_banana_yellow {
-  color: transparent!important;
-  box-shadow: 0px 0px 3px 1px  #ffd64e;
-  background: #ccc8a0!important;
-  border-color:  #e6e3c7 #cfca94 #afae71!important;
+/* green */
+.bg_style-silver_tree {
+  background: #65b496;
 }
-.key_pressed_banana_yellow .keyboard-keycap {background: #ffec96!important;}
-.key_pressed_banana_yellow.key .keyboard-keycap:before {content: '🍌'; color: white;}
-.key_pressed_banana_yellow.s_key span {display: none;}
-.key_pressed_banana_yellow.key-dictionary .keyboard-keycap:before {content: '🍌🍌';}
-.key_pressed_banana_yellow.key-typing .keyboard-keycap:before {content: '🍌🍌';}
-.key_pressed_banana_yellow.key-array .keyboard-keycap:before {content: "🍌 I'm a healthy banana"; color: #796217;}
-
-.key_pressed_turtle_green {
-  color: transparent!important;
-  box-shadow: 0px 0px 3px 1px  #91ffa0;
-  background: #77aa6a!important;
-  border-color:  #c1e0b8 #79ca77 #57aa56!important;
+/* blue */
+.bg_style-voyage_blue {
+  background: #85ceff;
 }
-.key_pressed_turtle_green .keyboard-keycap {background: #d4f8cb!important;}
-.key_pressed_turtle_green.key .keyboard-keycap:before {content: '🐢'; color: white;}
-.key_pressed_turtle_green.s_key span {display: none;}
-.key_pressed_turtle_green.key-dictionary .keyboard-keycap:before {content: '🐢🐢';}
-.key_pressed_turtle_green.key-typing .keyboard-keycap:before {content: '🐢🐢';}
-.key_pressed_turtle_green.key-array .keyboard-keycap:before {content: "🐢 I'm a cute turtle 💚"; color: #114e19;}
-
-.key_pressed_alien_green {
-  color: transparent;
-  animation: alien_backlight 0.8s infinite;
-  background: #8abe9a!important;
-  border-color: #8bd4b1 #e3ffef #64a385!important;
+.bg_style-good_blue {
+  background: #77afee;
 }
-@keyframes alien_backlight {
-  0% {
-    box-shadow: 0px 0px 10px 1px #e24747;
-  }
-  33% {
-    box-shadow: 0px 0px 10px 1px #fdff8a;
-  }
-  67% {
-    box-shadow: 0px 0px 10px 1px #8aff9a;
-  }
-  100% {
-    box-shadow: 0px 0px 10px 1px #e24747;
-  }
+.bg_style-sf_emerald {
+  background: #00788d;
+  background: linear-gradient(to right, #00788d, #006e81);
 }
-.key_pressed_alien_green .keyboard-keycap {background: #0e633b!important;}
-.key_pressed_alien_green.key .keyboard-keycap:before {content: '👽'; color: white;}
-.key_pressed_alien_green.s_key span {display: none;}
-.key_pressed_alien_green.key-dictionary .keyboard-keycap:before {content: '👽👽'; color: white;}
-.key_pressed_alien_green.key-typing .keyboard-keycap:before {content: '👽👽'; color: white;}
-.key_pressed_alien_green.key-array .keyboard-keycap:before {content: "👽 I'm an alien LOL"; color: white;}
-
-/* under development */
-/* .key_pressed_christmas_flashing {
-  color: transparent!important;
-  background: #ccc8a0!important;
-  border-color:  #e6e3c7 #cfca94 #afae71!important;
-  animation: christmas 0.2s infinite;
+.bg_style-bunting {
+  background: #1e235a;
+  background: linear-gradient(30deg, #1b215e, #1e235a);
 }
-@keyframes christmas {0% {box-shadow: 0px 0px 6px 1px  #47e25c;} 100% {box-shadow: 0px 0px 6px 1px#ff4ea0;}}
-.key_pressed_christmas_flashing .keyboard-keycap {background: rgb(255, 236, 150)!important;}
-.key_pressed_christmas_flashing.key .keyboard-keycap:before {content: '🎄'; color: white;}
-.key_pressed_christmas_flashing.space .keyboard-keycap:before {content: '⛄ Merry Christmas ⛄'; color: white;}
-.key_pressed_christmas_flashing.s_key span {display: none;}
-.key_pressed_christmas_flashing.key-dictionary .keyboard-keycap:before {content: '🎁';}
-.key_pressed_christmas_flashing.key-typing .keyboard-keycap:before {content: '💝';}
-.key_pressed_christmas_flashing.key-array .keyboard-keycap:before {content: "🎅 Ho-Ho-Ho 🤶"; font-size: 17px; color: #796217;} */
-
-/* =====[ ↑ not easter eggs ]===== */
-/* =====[ ↓ 10  easter eggs ]===== */
-.key_pressed_default_pink {
-  color: #ff4ea0;
-  box-shadow: 0px 0px 6px 1px #ff4ea0;
+/* purple */
+.bg_style-creator_purple {
+  background: #c09ad3;
+  background: linear-gradient(to right, #d88cd8, #c09ad3);
 }
-.key_pressed_default_green {
-  color: #47e25c;
-  box-shadow: 0px 0px 6px 1px #47e25c;
+.bg_style-bright_lilac {
+  background: #ddcad9;
+  background: linear-gradient(315deg, #ddcad9, #d1b1cb);
 }
-.key_pressed_default_yellow {
-  color: #ffd64e;
-  box-shadow: 0px 0px 6px 1px #ffd64e;
+/* gray */
+.bg_style-light_gray {
+  background: #c0c0c0
 }
-.key_pressed_default_blue {
-  color: #6bb0ff;
-  box-shadow: 0px 0px 7px 1px #6bb0ff;
+.bg_style-light_silver {
+  background: #b8b8b8;
 }
-.key_pressed_default_purple {
-  color: #be76ee;
-  box-shadow: 0px 0px 5px 2px #be76ee;
+.bg_style-dark_silver {
+  background: #a0a0a0;
 }
-.key_pressed_default_white {
-  color: #ffffff;
-  box-shadow: 0px 0px 6px 1px#ffffff;
+.bg_style-emperor {
+  background: #535353;
 }
-.key_pressed_hidden_none {
-  opacity: 0;
-}
-.key_pressed_default_flashing {
-  animation: flashing 0.4s infinite;
-}
-@keyframes flashing {  
-  0% {
-    color:  #47e25c;
-    box-shadow: 0px 0px 10px 1px  #47e25c;
-  }
-  50% {
-    color: #ff4ea0;
-    box-shadow: 0px 0px 10px 1px#ff4ea0;
-  }
-  100% {
-    color:  #47e25c;
-    box-shadow: 0px 0px 10px 1px  #47e25c;
-  }
-}
-.key_pressed_blurred_none {
-  filter: blur(2.5px);
-}
-.key_pressed_array-special_white {
-  box-shadow: 0px 0px 10px 1px#ffffff!important;
-  background: #808080!important;
-  border-color: #9e9e9e #696969 #000000!important;
-}
-.key_pressed_array-special_white .keyboard-keycap {
-  color: transparent;
-  background: #2d383d!important;
-  background: linear-gradient(135deg,#2e2e2e 0%, #5e5e5e 35%, #474747 55%, #2e2e2e)!important;
-}
-.key_pressed_array-special_white.key .keyboard-keycap:before {content: '行'; color: #ffffff;}
-.key_pressed_array-special_white.space .keyboard-keycap:before {content: '← Check These Buttons →'; color: #ffffff;}
-.key_pressed_array-special_white.s_key span {display: none;}
-.key_pressed_array-special_white.key-dictionary .keyboard-keycap:before {content: 'This'; font-size: 18px; color: #ffffff;}
-.key_pressed_array-special_white.key-typing .keyboard-keycap:before {content: 'Is'; font-size: 18px; color: #ffffff;}
-.key_pressed_array-special_white.key-array .keyboard-keycap:before {content: 'Designed by FISH UP'; font-size: 18px; color: #ffffff;}
-/* =====[ ↑ 10 easter eggs END ]===== */
-
-/* ===================
-    GAME OUTPUT FIELD
-  ==================== */
-
-#game-output-field {
-  font-size: large;
-  border: 1px solid none;
-  min-height: 2em;
-  margin: 12px auto;
+.bg_style-dark {
+  background: #3f3f3f;
 }
 
-
-/* ========================
-    GAME INSTRUCTIONS OPEN
-  ========================= */
-
-#game-instructions-open {
-  cursor: pointer;
-  width: 45px;
-  height: 45px;
-  position: relative;
-  float: left;
-  margin: 12px 4px 0;  
+.bg_style-change1 {
+  background: #66b7ec;
 }
-#game-instructions-icon {
-  background: white;  
-  background: linear-gradient(#ffffff, #ffffffb3 80%);  
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.bg_style-change2 {
+  background: #8d817c;
 }
-#game-notification {
-  position: absolute;
-  animation: notification 1.5s infinite;  
-  left: 75%;
-  top: 0%
+
+/* Name that Color: https://chir.ag/projects/name-that-color/#6195ED */
+
+/* ================
+    KB BASE STYLES
+  ================= */
+/*
+  class will be added to #keyboard or #key_area
+  FORMAT: kb_base_style-[xxx]
+*/
+
+/* white-gray-black */
+#keyboard.kb_base_style-white, #key_area.kb_base_style-white { background: white; }
+#keyboard.kb_base_style-gainsboro, #key_area.kb_base_style-gainsboro { background: gainsboro; }
+#keyboard.kb_base_style-dark_gray, #key_area.kb_base_style-dark_gray { background: #a9a9a9; }
+#keyboard.kb_base_style-emperor, #key_area.kb_base_style-emperor { background: #535353; }
+#keyboard.kb_base_style-limed_spruce, #key_area.kb_base_style-limed_spruce { background: #394851; }
+#keyboard.kb_base_style-mine_shaft, #key_area.kb_base_style-mine_shaft { background: #323232; }
+#keyboard.kb_base_style-black, #key_area.kb_base_style-black { background: black; }
+/* pink */
+#keyboard.kb_base_style-carnation_pink, #key_area.kb_base_style-carnation_pink {
+  background: #ffa6c9;
+  background: linear-gradient(-30deg, #ffa6bc, #ffa6c9, #ffa6da, #ffa6c9);
 }
-@keyframes notification { 0% { color: white; } 50% { color:transparent } 100% { color: white; }}
+/* yellow */
+#keyboard.kb_base_style-salomie { background: #fedb8d; }
+/* blue */
+#keyboard.kb_base_style-ming { 
+  background: #36747d;
+  background: linear-gradient(-30deg, #36747d, #559faa, #478a94, #36747d);
+}
+#keyboard.kb_base_style-chambray {
+  background: #3b5598;
+  background: linear-gradient(-30deg, #3b5598, #4e6bb4, #5777c7, #3b5598);
+}
+#keyboard.kb_base_style-viking-appr { background: #47d6d1; }
+#keyboard.kb_base_style-cornflower-appr { background: #83b0e2; }
+#keyboard.kb_base_style-rhino {
+  background: #2e3f62;
+  background: linear-gradient(to left, #2e3f62, #394b70, #404f6d, #2e3f62);
+}
+/* purple */
+#keyboard.kb_base_style-melanie { background: #e7c6e1; }
+#keyboard.kb_base_style-grape {
+  background: #381a51;
+  background: linear-gradient(-30deg, #381a51, #542f72, #562c79, #381a51);
+}
+/* brown */
+#keyboard.kb_base_style-beaver {
+  background: #926f5b;
+  /* background: linear-gradient(-30deg, #634839, #7e5f57, #6e544d); */
+}
 
-/* ===================
-    GAME INSTRUCTIONS
-  ===================== */
+/* ==============
+    KEY STYLES '
+  =============== */
 
-.not-visible {
+/*
+  class will be added to .n_key, .f_key, s_key, .enter_key, .backspace, .sapce_bar
+  FORMAT: key_style-[xxx]
+
+  [PURE]
+  pink:
+    - carnation_pink
+    - vanilla_ice
+  red:
+    - carnation (appr.)
+    - roman
+  orange:
+    - coral
+  yellow:
+    - samolie
+    - bright_sun
+  green:
+    - llama_green
+    - razer_green
+    - riptide
+  blue (appr.):
+    - blizzard_blue
+    - cornflower-appr
+    - scooter
+    - mosque
+    - picton_blue
+    - havelock_blue
+    - chambray
+    - fiord
+  purple:
+    - melanie (appr.)
+    - fuchsia_pink (appr.)
+    - blue_marguerite-appr (appr.)
+    - orchid
+    - trendy_pink (appr.)
+  gray:
+    - regent_gray (a bit blue)
+    - silver_chalice
+    - jumbo-appr (appr.)
+  black:
+    - emperor
+    - shark
+  combinations:
+    - keychron_k6-light (silver_chalice + jumbo-appr + coral)
+    - keychron_k6-dark (silver_chalice + jumbo-appr + coral)
+    - ducky_one_2_razer (shark + razer_green)
+  [GRADIENT]
+*/
+
+/* carnation_pink */
+.key_style-carnation_pink {
+  background: #e480a4;
+  border-color: #d16a90 #e480a4 #bd456f;
+}
+.key_style-carnation_pink .kb-keycap {
+  background: #ffa6c9;
+  background: linear-gradient(-30deg, #f89fc3, #ffa6c9);
+}
+/* vanilla_ice */
+.key_style-vanilla_ice {
+  background: #d8b3bf;
+  border-color: #d1a7b4 #d8b3bf #c08ea3;
+}
+.key_style-vanilla_ice .kb-keycap {
+  background: #f3d9df;
+  background: linear-gradient(-30deg, #e6c8cf, #f3d9df);
+}
+
+
+/* carnation */
+.key_style-carnation {
+  background: #d33f46;
+  border-color: #eb4951 #d33f46 #9b2026;
+}
+.key_style-carnation .kb-keycap {
+  background: #fa5560;
+  background: linear-gradient(-30deg, #fa5560, #ff5f69, #fa5560);
+}
+/* roman */
+.key_style-roman {
+  background: #c24341;
+  border-color: #e16477 #c24341 #7c0e0c;
+}
+.key_style-roman .kb-keycap {
+  background: #de6360;
+  background: linear-gradient(-30deg, #ce5a58, #de6360);
+}
+
+
+/* coral */
+.key_style-coral {
+  background: #ec6331;
+  border-color: #e45c26 #ec6331 #ac3410;
+}
+.key_style-coral .kb-keycap {
+  background: #ff7f50;
+  background: linear-gradient(-30deg, #ff7948, #ff7f50);
+}
+
+
+/* salomie */
+.key_style-salomie {
+  background: #db9d30;
+  border-color: #da9929 #db9d30 #cc7814;
+}
+.key_style-salomie .kb-keycap {
+  background: #fedb8d;
+}
+/* bright_sun */
+.key_style-bright_sun {
+  background: #ffb11a;
+  border-color: #fec425 #ffb11a #d3680a;
+}
+.key_style-bright_sun .kb-keycap {
+  background: #fed33c;
+  background: linear-gradient(-30deg, #feb43c, #fed33c);
+}
+
+
+/* razer_green */
+.key_style-razer_green {
+  background: #6eea4c;
+  border-color: #5fd43e #6eea4c #2a9016;
+}
+.key_style-razer_green .kb-keycap {
+  background: #a2fe78;
+  background: linear-gradient(-30deg, #98ff68, #a2fe78);
+}
+/* llama_green */
+.key_style-llama_green {
+  background: #36b99f;
+  border-color: #33af96 #36b99f #22967f;
+}
+.key_style-llama_green .kb-keycap {
+  background: #59d5bc;
+  background: linear-gradient(-30deg, #59d5bc, #5cddc3);
+}
+/* riptide */
+.key_style-riptide {
+  background: #54acaa;
+  border-color: #469e9d #54acaa #1c828d;
+}
+.key_style-riptide .kb-keycap {
+  background: #8be6d8;
+  background: linear-gradient(-30deg, #83dfd1, #8be6d8);
+}
+
+
+/* blizzard_blue */
+.key_style-blizzard_blue {
+  background: #a4cde5;
+  border-color: #97c2db #a4cde5 #6689af;
+}
+.key_style-blizzard_blue .kb-keycap {
+  background: #b3e2f2;
+  background: linear-gradient(-30deg, #a2d2e2, #b3e2f2);
+}
+/* cornflower-appr */
+.key_style-cornflower-appr {
+  background: #6693c7;
+  border-color: #5989c0 #6693c7 #406d9e;
+}
+.key_style-cornflower-appr .kb-keycap {
+  background: #83b0e2;
+  background: linear-gradient(-30deg, #739fd1, #83b0e2);
+}
+/* scooter */
+.key_style-scooter {
+  background: #1799c0;
+  border-color: #17a0ca #1799c0 #0368ae;
+}
+.key_style-scooter .kb-keycap {
+  background: #35b4d5;
+  background: linear-gradient(-30deg, #35b4d5, #37badb);
+}
+/* mosque */
+.key_style-mosque {
+  background: #0f4e5f;
+  border-color: #084252 #0f4e5f #00212b;
+}
+.key_style-mosque .kb-keycap {
+  background: #006274;
+  background: linear-gradient(-30deg, #00515f, #006274);
+}
+/* picton_blue */
+.key_style-picton_blue {
+  background: #2a89c9;
+  border-color: #267fbb #2a89c9 #023973;
+}
+.key_style-picton_blue .kb-keycap {
+  background: #38a3eb;
+  background: linear-gradient(-30deg, #2e96db, #38a3eb);
+}
+/* havelock_blue */
+.key_style-havelock_blue {
+  background: #2f70b9;
+  border-color: #2964a8 #2f70b9 #184e8b;
+}
+.key_style-havelock_blue .kb-keycap {
+  background: #4082cf;
+  background: linear-gradient(-30deg, #3776bd, #4082cf);
+}
+/* chambray */
+.key_style-chambray {
+  background: #1f3769;
+  border-color: #505992 #1f3769 #0c122c;
+}
+.key_style-chambray .kb-keycap {
+  background: #3b5598;
+  background: linear-gradient(-30deg, #2b417a, #3b5598);
+}
+/* fiord */
+.key_style-fiord { 
+  background: #133a58;
+  border-color: #364c68 #30455e #17304c;
+}
+.key_style-fiord .kb-keycap {
+  background: #394f6b;
+  background: linear-gradient(-30deg, #344863, #394f6b);
+}
+
+
+/* melanie */
+.key_style-melanie {
+  background: #cca2c4;
+  border-color: #bb8fb3 #cca2c4 #b17fa4;
+}
+.key_style-melanie .kb-keycap {
+  background: #e7c6e1;
+  background: linear-gradient(-30deg, #d3afcc, #e7c6e1);
+}
+/* fuchsia_pink */
+.key_style-fuchsia_pink {
+  background: #a54ca2;
+  border-color: #af50ac #a54ca2 #7a2471;
+}
+.key_style-fuchsia_pink .kb-keycap {
+  background: #c166be;
+  background: linear-gradient(-30deg, #b158ae, #c166be);
+}
+/* blue_marguerite-appr */
+.key_style-blue_marguerite-appr {
+  background: #745cb6;
+  border-color: #7159b3 #745cb6 #5c419c;
+}
+.key_style-blue_marguerite-appr .kb-keycap {
+  background: #876eca;
+  background: linear-gradient(-30deg, #7f67c0, #876eca);
+}
+/* orchid */
+.key_style-orchid {
+  background: #b45ab3;
+  border-color: #ca72c9 #b45ab3 #803b7d;
+}
+.key_style-orchid .kb-keycap {
+  background: #da70d6;
+  background: linear-gradient(-30deg, #da70d6, #e778e4, #da70d6);
+}
+/* trendy_pink */
+.key_style-trendy_pink {
+  background: #834692;
+  border-color: #834692 #834692 #582d63;
+}
+.key_style-trendy_pink .kb-keycap {
+  background: #9255a2;
+  background: linear-gradient(-30deg, #8c4d9c, #9255a2);
+}
+
+
+/* regent_gray */
+.key_style-regent_gray {
+  background: #505b5d;
+  border-color: #677375 #505b5d #262b30;
+}
+.key_style-regent_gray .kb-keycap {
+  background: #86949f;
+  background: linear-gradient(-30deg, #5b666e, #86949f);
+}
+/* silver_chalice */
+.key_style-silver_chalice {
+  background: #888888;
+  border-color: #8f8f8f #888888 #5e5e5e;
+}
+.key_style-silver_chalice .kb-keycap {
+  background: #acacac;
+  background: linear-gradient(-30deg, #9c9c9c, #acacac);
+}
+/* jumbo-appr */
+.key_style-jumbo-appr {
+  background: #5d5d61;
+  border-color: #656669 #5d5d61 #313133;
+}
+.key_style-jumbo-appr .kb-keycap {
+  background: #818287;
+  background: linear-gradient(-30deg, #707175, #818287);
+}
+
+
+/* limed_spruce */
+.key_style-limed_spruce {
+  background: #2f3c44;
+  border-color: #263236 #2f3c44 #151d22;
+}
+.key_style-limed_spruce .kb-keycap {
+  background: #394851;
+  background: linear-gradient(-30deg, #303d46, #394851);
+}
+/* emperor */
+.key_style-emperor {
+  background: #424242;
+  border-color: #333333 #424242 #222222;
+}
+.key_style-emperor .kb-keycap {
+  background: #535353;
+  background: linear-gradient(-30deg, #484848, #535353);
+}
+/* river_bed */
+.key_style-river_bed {
+  background: #2d3440;
+  border-color: #38414b #2d3440 #0e1317;
+}
+.key_style-river_bed .kb-keycap {
+  background: #3f4858;
+  background: linear-gradient(-30deg, #2d3542, #3f4858);
+}
+/* shark */
+.key_style-shark {
+  background: #3e4247;
+  border-color: #2b2f33 #3e4247 #101010;
+}
+.key_style-shark .kb-keycap {
+  background: #25272c;
+  background: linear-gradient(-30deg, #33363d, #25272c);
+}
+
+
+/* white */
+.key_style-white {
+  background: #edeeea;
+  border-color: #f1f1f0 #edeeea #d3d3d1;
+}
+.key_style-white .kb-keycap {
+  background: white;
+  background: linear-gradient(to left, white, #fcfcfc, white);
+}
+
+
+/* keychron_k6-light (coral + silver_chalice + jumbo-appr) */
+.key_style-keychron_k6-light {
+  background: #888888;
+  border-color: #8f8f8f #888888 #5e5e5e;
+}
+.key_style-keychron_k6-light .kb-keycap {
+  background: #acacac;
+  background: linear-gradient(-30deg, #9c9c9c, #acacac);
+}
+.key_style-keychron_k6-light.digit5,
+.key_style-keychron_k6-light.digit6,
+.key_style-keychron_k6-light.digit7,
+.key_style-keychron_k6-light.digit8,
+.key_style-keychron_k6-light.digit9 {
+  background: #5d5d61;
+  border-color: #656669 #5d5d61 #313133;
+}
+.key_style-keychron_k6-light.digit5 .kb-keycap,
+.key_style-keychron_k6-light.digit6 .kb-keycap,
+.key_style-keychron_k6-light.digit7 .kb-keycap,
+.key_style-keychron_k6-light.digit8 .kb-keycap,
+.key_style-keychron_k6-light.digit9 .kb-keycap {
+  background: #818287;
+  background: linear-gradient(-30deg, #707175, #818287);
+}
+.key_style-keychron_k6-light.backquote {
+  background: #ec6331;
+  border-color: #e45c26 #ec6331 #ac3410;
+}
+.key_style-keychron_k6-light.backquote .kb-keycap {
+  background: #ff7f50;
+  background: linear-gradient(-30deg, #ff7948, #ff7f50);
+}
+/* keychron_k6-dark (coral + silver_chalice + jumbo-appr) */
+.key_style-keychron_k6-dark {
+  background: #5d5d61;
+  border-color: #656669 #5d5d61 #313133;
+}
+.key_style-keychron_k6-dark .kb-keycap {
+  background: #818287;
+  background: linear-gradient(-30deg, #707175, #818287);
+}
+.key_style-keychron_k6-dark.digit5,
+.key_style-keychron_k6-dark.digit6,
+.key_style-keychron_k6-dark.digit7,
+.key_style-keychron_k6-dark.digit8,
+.key_style-keychron_k6-dark.digit9 {
+  background: #888888;
+  border-color: #8f8f8f #888888 #5e5e5e;
+}
+.key_style-keychron_k6-dark.digit5 .kb-keycap,
+.key_style-keychron_k6-dark.digit6 .kb-keycap,
+.key_style-keychron_k6-dark.digit7 .kb-keycap,
+.key_style-keychron_k6-dark.digit8 .kb-keycap,
+.key_style-keychron_k6-dark.digit9 .kb-keycap {
+  background: #acacac;
+  background: linear-gradient(-30deg, #9c9c9c, #acacac);
+}
+.key_style-keychron_k6-dark.backquote {
+  background: #ec6331;
+  border-color: #e45c26 #ec6331 #ac3410;
+}
+.key_style-keychron_k6-dark.backquote .kb-keycap {
+  background: #ff7f50;
+  background: linear-gradient(-30deg, #ff7948, #ff7f50);
+}
+/* ducky_one_2_razer (shark + razer_green) */
+.key_style-ducky_one_2_razer {
+  background: #3e4247;
+  border-color: #2b2f33 #3e4247 #101010;
+}
+.key_style-ducky_one_2_razer .kb-keycap {
+  background: #25272c;
+  background: linear-gradient(-30deg, #33363d, #25272c);
+}
+.key_style-ducky_one_2_razer.keya,
+.key_style-ducky_one_2_razer.keys,
+.key_style-ducky_one_2_razer.keyw,
+.key_style-ducky_one_2_razer.keyd,
+.key_style-ducky_one_2_razer.enter,
+.key_style-ducky_one_2_razer.backspace {
+  background: #6eea4c;
+  border-color: #5fd43e #6eea4c #2a9016;
+}
+.key_style-ducky_one_2_razer.keya .kb-keycap,
+.key_style-ducky_one_2_razer.keys .kb-keycap,
+.key_style-ducky_one_2_razer.keyw .kb-keycap,
+.key_style-ducky_one_2_razer.keyd .kb-keycap,
+.key_style-ducky_one_2_razer.enter .kb-keycap,
+.key_style-ducky_one_2_razer.backspace .kb-keycap {
+  background: #a2fe78;
+  background: linear-gradient(-30deg, #98ff68, #a2fe78);
+}
+.key_style-ducky_one_2_razer.keya .kb-keycap span,
+.key_style-ducky_one_2_razer.keyw .kb-keycap span,
+.key_style-ducky_one_2_razer.keys .kb-keycap span,
+.key_style-ducky_one_2_razer.keyd .kb-keycap span {
   visibility: hidden;
 }
-.fade-in { animation: opaci 1.2s }
-@keyframes opaci { from { opacity:0 } to { opacity:1 }}
+.key_style-ducky_one_2_razer.backspace .kb-keycap { color: black!important; }
+.key_style-ducky_one_2_razer.keya .kb-keycap::before { content: "←"; color: black; }
+.key_style-ducky_one_2_razer.keyw .kb-keycap::before { content: "↑"; color: black; }
+.key_style-ducky_one_2_razer.keys .kb-keycap::before { content: "↓"; color: black; }
+.key_style-ducky_one_2_razer.keyd .kb-keycap::before { content: "→"; color: black; }
 
-#game-instructions-wrapper {
-  position: fixed;
-  width: min(70vw, 1000px);
-  left: max(15vw, 50vw - 500px);  
-  height: 70vh;
-  top: 15vh;
-  z-index: 3;
-  border-radius: 20px;  
-  background: linear-gradient(25deg, #864f33, #4d2312, #9e6346);
-}
-#game-instructions {
-  padding: 16px 32px;
-  position: fixed;
-  width: min(66vw - 64px, 1000px - 4vw - 64px);
-  left: max(17vw, 52vw - 500px);
-  height: calc(66vh - 32px);
-  top: 17vh;
-  overflow-y: scroll;
-  color: #2e1608;
-  background: #e9d9c6;
-}
-.easter-egg-hint {
-  cursor: pointer;
-}
-#game-instructions-close {
-  cursor: pointer;
-  position: absolute;
-  right: -12px;
-  top: -12px;
-  background-color: #ffc4ce;
-  width: 36px;
-  height: 36px;
-  border-radius: 36px;
-  border: none;
-  padding: 0;
-}
-#game-instructions hr {
-  margin: 12px 0;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.key_pressed_style-description {
-  margin-left: 90px;
-}
-.key_pressed_style-name {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.key_pressed_style-instructions {
-  font-size: 16px;  
-}
+/* =============
+    TEXT STYLES
+  ============== */
 
-/* =========================
-    CONGRATULATIONS MESSAGE
-  ========================== */
+/*
+  mainly for keycap text colour, no animation included
+  class will be added to .kb-keycap
+  FORMAT: text_style-[xxx]
+    - 'none': not visible
+    - not starting with 'o-': translucent
+    - starting with 'o-': opaque (color: xxx!important)
+*/
 
-#modal_congratulations_message {
-  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  padding: 24px 48px;
-  border-radius: 30px;
-  text-align: center;
-  z-index: 100;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
-  color: white;  
-  background: linear-gradient(to right, #96c93d, #00b09b);
-}
-#modal_bg_congratulations_message {
-  position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 99;
-  background-color: rgba(0, 0, 0, 0.2)
-}
-#modal_congratulations_message_close {
-  cursor: pointer;
-  position: absolute;
-  right: -12px;
-  top: -12px;
-  background-color: #ffc4ce;
-  width: 36px;
-  height: 36px;
-  border-radius: 36px;
-  border: none;
-  padding: 0;
-}
+.text_style-none span { visibility: hidden; }
+/* pink */
+.text_style-persian_pink { color: #f77fbe; }
+.text_style-o-persian_pink { color: #f77fbe !important; }
+.text_style-brink_pink { color: #fb607f; }
+.text_style-o-brink_pink { color: #fb607f !important; }
+.text_style-brilliant_rose { color: #F653A6; }
+.text_style-o-brilliant_rose { color: #F653A6!important; }
+/* yellow */
+.text_style-bright_sun { color: #fed33c; }
+.text_style-o-bright_sun { color: #fed33c !important; }
+/* green */
+.text_style-riptide { color: #8be6d8; }
+.text_style-o-riptide { color: #8be6d8 !important; }
+.text_style-aquamarine { color: #6ef7e6; }
+.text_style-o-aquamarine { color: #6ef7e6 !important; }
+/* blue */
+.text_style-spray { color: #79deec; }
+.text_style-o-spray { color: #79deec !important; }
+.text_style-havelock_blue { color: #4082cf; }
+.text_style-o-havelock_blue { color: #4082cf !important; }
+/* gray */
+.text_style-loblolly { color: #bdc9ce; }
+.text_style-o-loblolly { color: #bdc9ce !important; }
+/* black */
+.text_style-limed_spruce { color: #394851; }
+.text_style-o-limed_spruce { color: #394851 !important; }
+.text_style-black { color: black; }
+.text_style-o-black { color: black!important; }
+/* white */
+.text_style-white { color: white; }
+.text_style-o-white { color: white!important; }
 
-/* ===============
-    CODE EXAMPLES
-  ================ */
+/* ====================
+    PRESSED KEY STYLES
+  ===================== */
+/*
+  class will be added to .n_key, .f_key, s_key, .backspace, .enter_key, .space_bar (when pressed)
+  FORMAT: pressed_key_style-[xxx]
+  CATALOG:
+    [name]      [keycap], [backlight] 
+    pink_bl     -, pink
+    yellow_bl   -, yellow
+    green_bl    -, green
+    blue_bl     -, blue
+    purple_bl   -, purple
+    all_white   white , white
+    hidden      hidden, none
+    flashing_bl -, flashing (red/green)
+    blurred     blurred, none
+    special     special, white
+    red_bl      -, red
+    dark_orange_bl -, dark orange
+    sakura      sakura, pink
+    banana      banana, yellow
+    turtle      turtle, green
+    alien       alien, flashing (red/yellow/green)
+*/
 
-#code_examples_toggle {
-  cursor: pointer;
+/* pink_bl */
+.pressed_key_style-pink_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #ff4ea0;
 }
-#code_examples_block {
-  padding: 16px;  
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
+.pressed_key_style-pink_bl .kb-keycap { color: #ff4ea0; }
+/* yellow_bl */
+.pressed_key_style-yellow_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #ffd64e;
 }
-#code_examples_wrapper {
-  font-size: large;
-  height: 250px;
-  height: max(250px, 100vh - 600px);
-  overflow-y: auto;
+.pressed_key_style-yellow_bl .kb-keycap { color: #ffd64e; }
+/* green_bl */
+.pressed_key_style-green_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #47e25c;
 }
-#code_examples_left {
-  width: 50%;
-  padding: 8px 16px;
-  margin-right: 16px;
-  border-right: 1px solid black;
-  float: left;
-  box-sizing: border-box;
+.pressed_key_style-green_bl .kb-keycap { color: #47e25c; }
+/* blue_bl */
+.pressed_key_style-blue_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #58aeff;
 }
-#code_examples_right {
-  padding: 8px 16px;
+.pressed_key_style-blue_bl .kb-keycap { color: #58aeff; }
+/* purple_bl */
+.pressed_key_style-purple_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #be76ee;
+}
+.pressed_key_style-purple_bl .kb-keycap { color: #be76ee; }
+/* all_white */
+.pressed_key_style-all_white {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #ffffff;
+  background: #e6e3e0 !important;
+  border-color: #f0edea #e6e3e0 #d1cccc !important;
+}
+.pressed_key_style-all_white span {
+  visibility: hidden;
+}
+.pressed_key_style-all_white .kb-keycap {
+  background: #f8f8f8 !important;
+  background: linear-gradient(to left, #f8f8f8, #fdfdfd, #f8f8f8) !important;
+}
+/* hidden */
+.pressed_key_style-hidden {
+  opacity: 0;
+}
+/* flashing_bl */
+.pressed_key_style-flashing_bl {
+  position: relative;
+  animation: flashing1-bl 0.4s infinite;
+}
+.pressed_key_style-flashing_bl .kb-keycap {
+  animation: flashing1-text 0.4s infinite;
+}
+@keyframes flashing1-bl {
+  0% { box-shadow: 0px 0px 10px 2px #47e25c; }
+  50% { box-shadow: 0px 0px 10px 2px#ff4ea0; }
+  100% { box-shadow: 0px 0px 10px 2px #47e25c; }
+}
+@keyframes flashing1-text {
+  0% { color: #47e25c; }
+  50% { color: #ff4ea0; }
+  100% { color: #47e25c; }
+}
+/* blurred */
+.pressed_key_style-blurred { filter: blur(2.5px); }
+/* special */
+.pressed_key_style-special {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #ffffff;
+  background: #696969 !important;
+  border-color: #9e9e9e #696969 #000000 !important;
+}
+.pressed_key_style-special .kb-keycap {
+  background: #2d383d !important;
+  background: linear-gradient( 135deg, #2e2e2e 0%, #5e5e5e 35%, #474747 55%, #2e2e2e) !important;
+}
+.pressed_key_style-special.n_key span {
+  display: none;
+}
+.pressed_key_style-special.n_key .kb-keycap:before {
+  content: "行";
+  color: #ffffff;
+}
+.pressed_key_style-special.space_bar .kb-keycap:before {
+  content: "← Check These Buttons →";
+  color: #ffffff;
+}
+.pressed_key_style-special.s_key span {
+  display: none;
+}
+.pressed_key_style-special.key-dictionary .kb-keycap:before {
+  content: "This";
+  font-size: 18px;
+  color: #ffffff;
+}
+.pressed_key_style-special.key-typing .kb-keycap:before {
+  content: "Is";
+  font-size: 18px;
+  color: #ffffff;
+}
+.pressed_key_style-special.key-array .kb-keycap:before {
+  content: "Designed by FISH UP";
+  font-size: 18px;
+  color: #ffffff;
+}
+.pressed_key_style-none {
+  position: relative;
+}
+/* red_bl */
+.pressed_key_style-red_bl {
+  box-shadow: 0px 0px 6px 2px #ff1818;
+  position: relative;
+}
+.pressed_key_style-red_bl .kb-keycap { color: #ff1818; }
+/* dark_orange_bl */
+.pressed_key_style-dark_orange_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px darkorange;
+}
+.pressed_key_style-dark_orange_bl .kb-keycap { color: darkorange; }
+/* wheat_bl */
+.pressed_key_style-wheat_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px wheat;
+}
+.pressed_key_style-wheat_bl .kb-keycap { color: wheat; }
+/* forest_green_bl */
+.pressed_key_style-forest_green_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px forestgreen;
+}
+.pressed_key_style-forest_green_bl .kb-keycap { color: forestgreen; }
+/* turquoise_bl */
+.pressed_key_style-turquoise_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px turquoise;
+}
+.pressed_key_style-turquoise_bl .kb-keycap { color: turquoise; }
+/* light_gray_bl */
+.pressed_key_style-light_gray_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px lightgray;
+}
+.pressed_key_style-light_gray_bl .kb-keycap { color: lightgray; }
+/* dim_gray_bl */
+.pressed_key_style-dim_gray_bl {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px dimgray;
+}
+.pressed_key_style-dim_gray_bl .kb-keycap { color: dimgray; }
+/* sakura */
+.pressed_key_style-sakura {
+  position: relative;
+  box-shadow: 0px 0px 10px 2px #ff5580;
+  background: #eba7cd !important;
+  border-color: #fddfe7 #eebfca #db8a9d !important;
+}
+.pressed_key_style-sakura .kb-keycap {
+  background: #f8cbd6 !important;
+  background: linear-gradient(to left, #f8cbd6, #fcd6df, #f8cbd6) !important;
+}
+.pressed_key_style-sakura.n_key span {
+  display: none;
+}
+.pressed_key_style-sakura.n_key .kb-keycap:before {
+  content: "櫻";
+  color: #ffffff;
+}
+.pressed_key_style-sakura.space_bar .kb-keycap:before {
+  content: "sakura";
+  color: #ffffff;
+}
+.pressed_key_style-sakura.s_key span {
+  display: none;
+}
+.pressed_key_style-sakura.key-dictionary .kb-keycap::before {
+  content: "🌸🌸";
+}
+.pressed_key_style-sakura.key-typing .kb-keycap:before {
+  content: "🌸🌸";
+}
+.pressed_key_style-sakura.key-array .kb-keycap:before {
+  content: "🌸 I'm a beautiful sakura";
+  color: #4d1a1a;
+}
+/* banana */
+.pressed_key_style-banana {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #ffd64e;
+  background: #ccc8a0 !important;
+  border-color: #e6e3c7 #cfca94 #afae71 !important;
+}
+.pressed_key_style-banana .kb-keycap {
+  background: #ffec96 !important;
+}
+.pressed_key_style-banana.n_key span {
+  display: none;
+}
+.pressed_key_style-banana.n_key .kb-keycap:before {
+  content: "🍌";
+  color: white;
+}
+.pressed_key_style-banana.s_key span {
+  display: none;
+}
+.pressed_key_style-banana.key-dictionary .kb-keycap:before {
+  content: "🍌🍌";
+}
+.pressed_key_style-banana.key-typing .kb-keycap:before {
+  content: "🍌🍌";
+}
+.pressed_key_style-banana.key-array .kb-keycap:before {
+  content: "🍌 I'm a healthy banana";
+  color: #796217;
+}
+/* turtle */
+.pressed_key_style-turtle {
+  position: relative;
+  box-shadow: 0px 0px 6px 2px #91ffa0;
+  background: #77aa6a !important;
+  border-color: #c1e0b8 #79ca77 #57aa56 !important;
+}
+.pressed_key_style-turtle .kb-keycap {
+  background: #d4f8cb !important;
+}
+.pressed_key_style-turtle.n_key span {
+  display: none;
+}
+.pressed_key_style-turtle.n_key .kb-keycap:before {
+  content: "🐢";
+  color: white;
+}
+.pressed_key_style-turtle.s_key span {
+  display: none;
+}
+.pressed_key_style-turtle.key-dictionary .kb-keycap:before {
+  content: "🐢🐢";
+}
+.pressed_key_style-turtle.key-typing .kb-keycap:before {
+  content: "🐢🐢";
+}
+.pressed_key_style-turtle.key-array .kb-keycap:before {
+  content: "🐢 I'm a cute turtle 💚";
+  color: #114e19;
+}
+/* alien */
+.pressed_key_style-alien {
+  position: relative;
+  animation: alien_backlight 0.8s infinite;
+  background: #8abe9a !important;
+  border-color: #8bd4b1 #e3ffef #64a385 !important;
+}
+@keyframes alien_backlight {
+  0% { box-shadow: 0px 0px 10px 1px #e24747; }
+  33% { box-shadow: 0px 0px 10px 1px #fdff8a; }
+  67% { box-shadow: 0px 0px 10px 1px #8aff9a; }
+  100% { box-shadow: 0px 0px 10px 1px #e24747; }
+}
+.pressed_key_style-alien .kb-keycap {
+  background: #0e633b !important;
+}
+.pressed_key_style-alien.n_key span {
+  display: none;
+}
+.pressed_key_style-alien.n_key .kb-keycap:before {
+  content: "👽";
+  color: white;
+}
+.pressed_key_style-alien.s_key span {
+  display: none;
+}
+.pressed_key_style-alien.key-dictionary .kb-keycap:before {
+  content: "👽👽";
+  color: white;
+}
+.pressed_key_style-alien.key-typing .kb-keycap:before {
+  content: "👽👽";
+  color: white;
+}
+.pressed_key_style-alien.key-array .kb-keycap:before {
+  content: "👽 I'm an alien LOL";
+  color: white;
 }

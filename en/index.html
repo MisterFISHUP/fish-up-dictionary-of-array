@@ -130,7 +130,8 @@
                         <!-- congrats messages -->
                         <div id="congrats_messages-block" class="fade-in w3-hide">
                             <h4 class="bold-center">{{ appContent.game.congrats.title[local] }}</h4>
-                            <h6 class="w3-center">{{ appContent.game.congrats.reward[local] }}</h6>
+                            <h6>{{ appContent.game.congrats.reward[local] }}</h6>
+                            <h6 v-html='appContent.game.congrats.unlock[local]'></h6>
                         </div>
 
                         <!-- easter egg collection (preview & detail)-->

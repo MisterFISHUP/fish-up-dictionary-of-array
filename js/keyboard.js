@@ -20,6 +20,7 @@
     └ detect command (and change style)
   - Easter eggs '
     ├ show hint, egg, congrats
+    ├ unlock all eggs
     ├ click to get hints
     └ close congrats modal
   - interaction with keyboard
@@ -688,57 +689,57 @@ const stylePressedKeyInfo = {
   pink_bl: {
     name: { tw: '粉紅色背光', en: 'Pink backlight', fr: 'Rétro-éclairage rose' },
     instructions: {
-      tw: "按下行列（或注音、拼音）輸入法中「粉紅色」三字或「粉色」兩字的鍵位、按下英文字 'pink' 的鍵位、按下法文字 « rose » 的鍵位",
-      en: "Type the Chinese word '粉紅色' or '粉紅' with the Array input method (or Bopomofo, or Pinyin); type the English word 'pink'; type the French word 'rose'",
-      fr: "Tapez le mot chinois « 粉紅色 » ou « 粉色 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « pink » ; tapez le mot français « rose »"
+      tw: "按下行列（或注音、拼音）輸入法中「<span class='cmd'>粉紅色</span>」三字或「<span class='cmd'>粉色</span>」兩字的鍵位、按下英文字 '<span class='cmd'>pink</span>' 的鍵位、按下法文字 « <span class='cmd'>rose</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>粉紅色</span>' or '<span class='cmd'>粉紅</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>pink</span>'; type the French word '<span class='cmd'>rose</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>粉紅色</span> » ou « <span class='cmd'>粉色</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>pink</span> » ; tapez le mot français « <span class='cmd'>rose</span> »"
     }
   },
   yellow_bl: {
     name: { tw: '黃色背光', en: 'Yellow backlight', fr: 'Rétro-éclairage jaune' },
     instructions: {
-      tw: "按下行列（或注音、拼音）輸入法中「黃色」兩字的鍵位、按下英文字 'yellow' 的鍵位、按下法文字 « jaune » 的鍵位",
-      en: "Type the Chinese word '黃色' with the Array input method (or Bopomofo, or Pinyin); type the English word 'yellow'; type the French word 'jaune'",
-      fr: "Tapez le mot chinois « 黃色 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « yellow » ; tapez le mot français « jaune »"
+      tw: "按下行列（或注音、拼音）輸入法中「<span class='cmd'>黃色</span>」兩字的鍵位、按下英文字 '<span class='cmd'>yellow</span>' 的鍵位、按下法文字 « <span class='cmd'>jaune</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>黃色</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>yellow</span>'; type the French word '<span class='cmd'>jaune</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>黃色</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>yellow</span> » ; tapez le mot français « <span class='cmd'>jaune</span> »"
     }
   },
   green_bl: {
     name: { tw: '綠色背光', en: 'Green backlight', fr: 'Rétro-éclairage vert' },
     instructions: {
-      tw: "按下行列（或注音、拼音）輸入法中「綠色」兩字的鍵位、按下英文字 'green' 的鍵位、按下法文字 « vert » 的鍵位",
-      en: "Type the Chinese word '綠色' with the Array input method (or Bopomofo, or Pinyin); type the English word 'green'; type the French word 'vert'",
-      fr: "Tapez le mot chinois « 綠色 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « green » ; tapez le mot français « vert »"
+      tw: "按下行列（或注音、拼音）輸入法中「<span class='cmd'>綠色</span>」兩字的鍵位、按下英文字 '<span class='cmd'>green</span>' 的鍵位、按下法文字 « <span class='cmd'>vert</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>綠色</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>green</span>'; type the French word '<span class='cmd'>vert</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>綠色</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>green</span> » ; tapez le mot français « <span class='cmd'>vert</span> »"
     }
   },
   blue_bl: {
     name: { tw: '藍色背光', en: 'Blue backlight', fr: 'Rétro-éclairage bleu' },
     instructions: {
-      tw: "按下行列（或注音、拼音）輸入法中「藍色」兩字的鍵位、按下英文字 'blue' 的鍵位、按下法文字 « bleu » 的鍵位",
-      en: "Type the Chinese word '藍色' with the Array input method (or Bopomofo, or Pinyin); type the English word 'blue'; type the French word 'bleu'",
-      fr: "Tapez le mot chinois « 藍色 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « blue » ; tapez le mot français « bleu »"
+      tw: "按下行列（或注音、拼音）輸入法中「<span class='cmd'>藍色</span>」兩字的鍵位、按下英文字 '<span class='cmd'>blue</span>' 的鍵位、按下法文字 « <span class='cmd'>bleu</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>藍色</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>blue</span>'; type the French word '<span class='cmd'>bleu</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>藍色</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>blue</span> » ; tapez le mot français « <span class='cmd'>bleu</span> »"
     }
   },
   purple_bl: {
     name: { tw: '紫色背光', en: 'Purple backlight', fr: 'Rétro-éclairage violet' },
     instructions: {
-      tw: "按下行列（或注音、拼音）輸入法中「紫色」兩字的鍵位、按下英文字 'purple' 的鍵位、按下法文字 « violet » 的鍵位",
-      en: "Type the Chinese word '紫色' with the Array input method (or Bopomofo, or Pinyin); type the English word 'purple'; type the French word 'violet'",
-      fr: "Tapez le mot chinois « 紫色 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « purple » ; tapez le mot français « violet »"
+      tw: "按下行列（或注音、拼音）輸入法中「<span class='cmd'>紫色</span>」兩字的鍵位、按下英文字 '<span class='cmd'>purple</span>' 的鍵位、按下法文字 « <span class='cmd'>violet</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>紫色</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>purple</span>'; type the French word '<span class='cmd'>violet</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>紫色</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>purple</span> » ; tapez le mot français « <span class='cmd'>violet</span> »"
     }
   },
   all_white: {
     name: { tw: '全白', en: 'All white', fr: 'Tout blanc' },
     instructions: {
       tw: `<ul>
-        <li>照順序按下數字鍵 1234567890（若順序顛倒地按下則恢復預設狀態）</li>
-        <li>按下行列（或注音、拼音）輸入法中「全白」兩字的鍵位、按下英文字 'all white' 的鍵位、按下法文字 « tout blanc »（或 « toute blanche »）的鍵位</li>
+        <li>照順序按下數字鍵 <span class='cmd'>1234567890</span>（若<span class='cmd'>順序顛倒</span>地按下則恢復預設狀態）</li>
+        <li>按下行列（或注音、拼音）輸入法中「<span class='cmd'>全白</span>」兩字的鍵位、按下英文字 '<span class='cmd'>all white</span>' 的鍵位、按下法文字 « <span class='cmd'>tout blanc</span> »（或 « <span class='cmd'>toute blanche</span> »）的鍵位</li>
       </ul>`,
       en: `<ul>
-        <li>Press the number keys 1234567890 in order (and in reverse order to return to the default state)</li>
-        <li>Type the Chinese word '全白' with the Array input method (or Bopomofo, or Pinyin); type the English words 'all white'; type the French words 'tout blanc' (or 'toute blanche')</li>
+        <li>Press the number keys <span class='cmd'>1234567890</span> in order (and in <span class='cmd'>reverse order</span> to return to the default state)</li>
+        <li>Type the Chinese word '<span class='cmd'>全白</span>' with the Array input method (or Bopomofo, or Pinyin); type the English words '<span class='cmd'>all white</span>'; type the French words '<span class='cmd'>tout blanc</span>' (or '<span class='cmd'>toute blanche</span>')</li>
       </ul>`,
       fr: `<ul>
-        <li>Appuyez sur les touches de chiffre 1234567890 dans l'ordre (et dans l'ordre inverse pour revenir à l'état par défaut)</li>
-        <li>Tapez le mot chinois « 全白 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez les mots anglais « all white » ; tapez les mots français « tout blanc » (ou « toute blanche »)</li>
+        <li>Appuyez sur les touches de chiffre <span class='cmd'>1234567890</span> dans l'ordre (et dans <span class='cmd'>l'ordre inverse</span> pour revenir à l'état par défaut)</li>
+        <li>Tapez le mot chinois « <span class='cmd'>全白</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez les mots anglais « <span class='cmd'>all white</span> » ; tapez les mots français « <span class='cmd'>tout blanc</span> » (ou « <span class='cmd'>toute blanche</span> »)</li>
       </ul>`,
     }
   },
@@ -746,16 +747,16 @@ const stylePressedKeyInfo = {
     name: { tw: '消失/隱藏', en: 'Disappeared/hidden', fr: 'Disparu/caché' },
     instructions: {
       tw: `<ul>
-        <li>照順序按下行列 30 鍵 1 上到 0 上這十顆鍵，即英文鍵 qwertyuiop（若順序顛倒地按下則恢復預設狀態）</li>
-        <li>按下行列（或注音、拼音）輸入法中「消失」或「隱藏」兩字的鍵位（「顯示」兩字則恢復預設狀態）、按下英文字 'disappearing' 或 'disappeared' 或 'hidden' 的鍵位（'showing' 則恢復預設狀態）、按下法文字 « disparu » 或 « caché »（無尖音符也可）的鍵位（« montré »（無尖音符也可）則恢復預設狀態）</li>
+        <li>照順序按下行列 30 鍵 <span class='cmd'>1 上到 0 上</span>這十顆鍵，即英文鍵 qwertyuiop（若<span class='cmd'>順序顛倒</span>地按下則恢復預設狀態）</li>
+        <li>按下行列（或注音、拼音）輸入法中「<span class='cmd'>消失</span>」或「<span class='cmd'>隱藏</span>」兩字的鍵位（「<span class='cmd'>顯示</span>」兩字則恢復預設狀態）、按下英文字 '<span class='cmd'>disappearing</span>' 或 '<span class='cmd'>disappeared</span>' 或 '<span class='cmd'>hidden</span>' 的鍵位（'<span class='cmd'>showing</span>' 則恢復預設狀態）、按下法文字 « <span class='cmd'>disparu</span> » 或 « <span class='cmd'>caché</span> »（無尖音符也可）的鍵位（« <span class='cmd'>montré</span> »（無尖音符也可）則恢復預設狀態）</li>
       </ul>`,
       en: `<ul>
-        <li>Press the 10 Array keys '1 top', '2 top', ..., '0 top' in order, i.e., the English keys qwertyuiop (and in reverse order to return to the default state)</li>
-        <li>Type the Chinese word '消失' or '隱藏' with the Array input method (or Bopomofo, or Pinyin) (and '顯示' to return to the default state); type the English word 'disappearing' or 'disappeared' or 'hidden' (and 'showing' to return to the default state); type the French word 'disparu' or 'caché' (ok without the acute accent) (and 'montré' (ok without the acute accent) to return to the default state)</li>
+        <li>Press the 10 Array keys <span class='cmd'>'1 top', '2 top', ..., '0 top'</span> in order, i.e., the English keys qwertyuiop (and in <span class='cmd'>reverse order</span> to return to the default state)</li>
+        <li>Type the Chinese word '<span class='cmd'>消失</span>' or '<span class='cmd'>隱藏</span>' with the Array input method (or Bopomofo, or Pinyin) (and '<span class='cmd'>顯示</span>' to return to the default state); type the English word '<span class='cmd'>disappearing</span>' or '<span class='cmd'>disappeared</span>' or '<span class='cmd'>hidden</span>' (and '<span class='cmd'>showing</span>' to return to the default state); type the French word '<span class='cmd'>disparu</span>' or '<span class='cmd'>caché</span>' (ok without the acute accent) (and '<span class='cmd'>montré</span>' (ok without the acute accent) to return to the default state)</li>
       </ul>`,
       fr: `<ul>
-        <li>Appuyez sur les 10 touches Tableau « 1 haut », « 2 haut », ..., « 0 haut » dans l'ordre, c'est-à-dire les touches azertyuiop (et dans l'ordre inverse pour revenir à l'état par défaut)</li>
-        <li>Tapez le mot chinois « 消失 » ou « 隱藏 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) (et « 顯示 » pour revenir à l'état par défaut) ; tapez le mot anglais « disappearing » ou « disappeared » ou « hidden » (et « showing » pour revenir à l'état par défaut) ; tapez le mot français « disparu » ou « caché » (et « montré » pour revenir à l'état par défaut)</li>
+        <li>Appuyez sur les 10 touches Tableau <span class='cmd'>« 1 haut », « 2 haut », ..., « 0 haut »</span> dans l'ordre, c'est-à-dire les touches azertyuiop (et dans <span class='cmd'>l'ordre inverse</span> pour revenir à l'état par défaut)</li>
+        <li>Tapez le mot chinois « <span class='cmd'>消失</span> » ou « <span class='cmd'>隱藏</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) (et « <span class='cmd'>顯示</span> » pour revenir à l'état par défaut) ; tapez le mot anglais « <span class='cmd'>disappearing</span> » ou « <span class='cmd'>disappeared</span> » ou « <span class='cmd'>hidden</span> » (et « <span class='cmd'>showing</span> » pour revenir à l'état par défaut) ; tapez le mot français « <span class='cmd'>disparu</span> » ou « <span class='cmd'>caché</span> » (et « <span class='cmd'>montré</span> » pour revenir à l'état par défaut)</li>
       </ul>`,
     }
   },
@@ -763,16 +764,16 @@ const stylePressedKeyInfo = {
     name: { tw: '閃爍', en: 'Flashing', fr: 'Clignotant' },
     instructions: {
       tw: `<ul>
-        <li>照順序按下行列 30 鍵 1 中到 0 中這十顆鍵，即英文鍵 asdfghjkl;（若順序顛倒地按則恢復預設狀態）</li>
-        <li>按下行列（或注音、拼音）輸入法中「閃爍」兩字的鍵位、按下英文字 'flashing' 的鍵位、按下法文字 « clignotant » 的鍵位</li>
+        <li>照順序按下行列 30 鍵 <span class='cmd'>1 中到 0 中</span>這十顆鍵，即英文鍵 asdfghjkl;（若<span class='cmd'>順序顛倒</span>地按則恢復預設狀態）</li>
+        <li>按下行列（或注音、拼音）輸入法中「<span class='cmd'>閃爍</span>」兩字的鍵位、按下英文字 '<span class='cmd'>flashing</span>' 的鍵位、按下法文字 « <span class='cmd'>clignotant</span> » 的鍵位</li>
       </ul>`,
       en: `<ul>
-        <li>Press the 10 Array keys '1 middle', '2 middle', ..., '0 middle' in order, i.e., the English keys asdfghjkl; (and in reverse order to return to the default state)</li>
-        <li>Type the Chinese word '閃爍' with the Array input method (or Bopomofo, or Pinyin); type the English word 'flashing'; type the French word 'clignotant'</li>
+        <li>Press the 10 Array keys <span class='cmd'>'1 middle', '2 middle', ..., '0 middle'</span> in order, i.e., the English keys asdfghjkl; (and in <span class='cmd'>reverse order</span> to return to the default state)</li>
+        <li>Type the Chinese word '<span class='cmd'>閃爍</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>flashing</span>'; type the French word '<span class='cmd'>clignotant</span>'</li>
       </ul>`,
       fr: `<ul>
-        <li>Appuyez sur les 10 touches Tableau « 1 milieu », « 2 milieu », ..., « 0 milieu » dans l'ordre, c'est-à-dire les touches qsdfghjklm (et dans l'ordre inverse pour revenir à l'état par défaut)</li>
-        <li>Tapez le mot chinois « 閃爍 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « flashing » ; tapez le mot français « clignotant »</li>
+        <li>Appuyez sur les 10 touches Tableau <span class='cmd'>« 1 milieu », « 2 milieu », ..., « 0 milieu »</span> dans l'ordre, c'est-à-dire les touches qsdfghjklm (et dans <span class='cmd'>l'ordre inverse</span> pour revenir à l'état par défaut)</li>
+        <li>Tapez le mot chinois « <span class='cmd'>閃爍</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>flashing</span> » ; tapez le mot français « <span class='cmd'>clignotant</span> »</li>
       </ul>`,
     }
   },
@@ -780,16 +781,16 @@ const stylePressedKeyInfo = {
     name: { tw: '模糊', en: 'Blurred', fr: 'Flou' },
     instructions: {
       tw: `<ul>
-        <li>照順序按下行列 30 鍵 1 下到 0 下這十顆鍵，即英文鍵 zxcvbnm,./（若順序顛倒地按則恢復預設狀態）</li>
-        <li>按下行列（或注音、拼音）輸入法中「模糊」兩字或「馬賽克」三字的鍵位、按下英文字 'blurred' 的鍵位、按下法文字 « flou » 的鍵位</li>
+        <li>照順序按下行列 30 鍵 <span class='cmd'>1 下到 0 下</span>這十顆鍵，即英文鍵 zxcvbnm,./（若<span class='cmd'>順序顛倒</span>地按則恢復預設狀態）</li>
+        <li>按下行列（或注音、拼音）輸入法中「<span class='cmd'>模糊</span>」兩字或「<span class='cmd'>馬賽克</span>」三字的鍵位、按下英文字 '<span class='cmd'>blurred</span>' 的鍵位、按下法文字 « <span class='cmd'>flou</span> » 的鍵位</li>
       </ul>`,
       en: `<ul>
-        <li>Press the 10 Array keys '1 bottom', '2 bottom', ..., '0 bottom' in order, i.e., the English keys zxcvbnm,./ (and in reverse order to return to the default state)</li>
-        <li>Type the Chinese word '模糊' or '馬賽克' with the Array input method (or Bopomofo, or Pinyin); type the English word 'blurred'; type the French word 'flou'</li>
+        <li>Press the 10 Array keys <span class='cmd'>'1 bottom', '2 bottom', ..., '0 bottom'</span> in order, i.e., the English keys zxcvbnm,./ (and in <span class='cmd'>reverse order</span> to return to the default state)</li>
+        <li>Type the Chinese word '<span class='cmd'>模糊</span>' or '<span class='cmd'>馬賽克</span>' with the Array input method (or Bopomofo, or Pinyin); type the English word '<span class='cmd'>blurred</span>'; type the French word '<span class='cmd'>flou</span>'</li>
       </ul>`,
       fr: `<ul>
-        <li>Appuyez sur les 10 touches Tableau « 1 bas », « 2 bas », ..., « 0 bas » dans l'ordre, c'est-à-dire les touches wxcvbn,;:! (et dans l'ordre inverse pour revenir à l'état par défaut)</li>
-        <li>Tapez le mot chinois « 模糊 » ou « 馬賽克 » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « blurred » ; tapez le mot français « flou »</li>
+        <li>Appuyez sur les 10 touches Tableau <span class='cmd'>« 1 bas », « 2 bas », ..., « 0 bas »</span> dans l'ordre, c'est-à-dire les touches wxcvbn,;:! (et dans <span class='cmd'>l'ordre inverse</span> pour revenir à l'état par défaut)</li>
+        <li>Tapez le mot chinois « <span class='cmd'>模糊</span> » ou « <span class='cmd'>馬賽克</span> » avec la méthode Tableau (ou Bopomofo, ou Pinyin) ; tapez le mot anglais « <span class='cmd'>blurred</span> » ; tapez le mot français « <span class='cmd'>flou</span> »</li>
       </ul>`,
     }
   },
@@ -798,115 +799,115 @@ const stylePressedKeyInfo = {
     instructions: {
       tw: `註：此時點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉（請按空白鍵看看！）
       <ul>
-        <li>按下行列輸入法中「行列」兩字的鍵位、按下英文字 'array' 的鍵位、按下法文字 « tableau » 的鍵位</li>
-        <li>按下英文字 'fish up' 的鍵位</li>
+        <li>按下行列輸入法中「<span class='cmd'>行列</span>」兩字的鍵位、按下英文字 '<span class='cmd'>array</span>' 的鍵位、按下法文字 « <span class='cmd'>tableau</span> » 的鍵位</li>
+        <li>按下英文字 '<span class='cmd'>fish up</span>' 的鍵位</li>
       </ul>`,
       en: `Note: Clicking keys from the last row of the virtual Array keyboard will not trigger any page jumps in this mode. (Press the space bar to see a message for you!)
       <ul>
-        <li>Type the Chinese word '行列' with the Array input method; type the English word 'array'; type the French word 'tableau'</li>
-        <li>Type the English words 'fish up'</li>
+        <li>Type the Chinese word '<span class='cmd'>行列</span>' with the Array input method; type the English word '<span class='cmd'>array</span>'; type the French word '<span class='cmd'>tableau</span>'</li>
+        <li>Type the English words '<span class='cmd'>fish up</span>'</li>
       </ul>`,
       fr: `NB : Le fait de cliquer sur les touches de la dernière rangée du clavier virtuel de Tableau ne déclenchera pas de saut de page dans ce mode. (Appuyez sur la barre d'espace pour voir un message pour vous !)
       <ul>
-        <li>Tapez le mot chinois « 行列 » avec la méthode Tableau ; tapez le mot anglais « array » ; tapez le mot français « tableau »</li>
-        <li>Tapez les mots anglais « fish up »</li>
+        <li>Tapez le mot chinois « <span class='cmd'>行列</span> » avec la méthode Tableau ; tapez le mot anglais « <span class='cmd'>array</span> » ; tapez le mot français « <span class='cmd'>tableau</span> »</li>
+        <li>Tapez les mots anglais « <span class='cmd'>fish up</span> »</li>
       </ul>`,
     }
   },
   none: {
     name: { tw: '無背光', en: 'No backlight', fr: 'Pas de rétro-éclairage' },
     instructions: {
-      tw: "按下行列輸入法中「無背光」三字的鍵位（限普通編碼）、按下英文字 'no backlight' 的鍵位、按下法文字 « pas de rétro éclairage »（無尖音符也可）的鍵位",
-      en: "Type the Chinese word '無背光' with the Array input method (standard codes only); type the English words 'no backlight'; type the French words 'pas de rétro éclairage' (ok without the acute accent)",
-      fr: "Tapez le mot chinois « 無背光 » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « no backlight » ; tapez les mots français « pas de rétro éclairage »"
+      tw: "按下行列輸入法中「<span class='cmd'>無背光</span>」三字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>no backlight</span>' 的鍵位、按下法文字 « <span class='cmd'>pas de rétro éclairage</span> »（無尖音符也可）的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>無背光</span>' with the Array input method (standard codes only); type the English words '<span class='cmd'>no backlight</span>'; type the French words '<span class='cmd'>pas de rétro éclairage</span>' (ok without the acute accent)",
+      fr: "Tapez le mot chinois « <span class='cmd'>無背光</span> » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « <span class='cmd'>no backlight</span> » ; tapez les mots français « <span class='cmd'>pas de rétro éclairage</span> »"
     }
   },
   red_bl: {
     name: { tw: '亮紅色背光', en: 'Bright red backlight', fr: 'Rétro-éclairage rouge vif' },
     instructions: {
-      tw: "按下行列輸入法中「亮紅色」三字的鍵位（限普通編碼）、按下英文字 'bright red' 的鍵位、按下法文字 « rouge vif » 的鍵位",
-      en: "Type the Chinese word '亮紅色' with the Array input method (standard codes only); type the English words 'bright red'; type the French words 'rouge vif'",
-      fr: "Tapez le mot chinois « 亮紅色 » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « bright red » ; tapez les mots français « rouge vif »"
+      tw: "按下行列輸入法中「<span class='cmd'>亮紅色</span>」三字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>bright red</span>' 的鍵位、按下法文字 « <span class='cmd'>rouge vif</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>亮紅色</span>' with the Array input method (standard codes only); type the English words '<span class='cmd'>bright red</span>'; type the French words '<span class='cmd'>rouge vif</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>亮紅色</span> » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « <span class='cmd'>bright red</span> » ; tapez les mots français « <span class='cmd'>rouge vif</span> »"
     }
   },
   dark_orange_bl: {
     name: { tw: '深橘色背光', en: 'Dark orange backlight', fr: 'Rétro-éclairage orange foncé' },
     instructions: {
-      tw: "按下行列輸入法中「深橘色」三字的鍵位（限二級簡碼）、按下英文字 'dark orange' 的鍵位、按下法文字 « orange foncé »（無尖音符也可）的鍵位",
-      en: "Type the Chinese word '深橘色' with the Array input method (short codes II only); type the English words 'dark orange'; type the French words 'orange foncé' (ok without the acute accent)",
-      fr: "Tapez le mot chinois « 深橘色 » avec la méthode Tableau (codes courts II uniquement) ; tapez les mots anglais « dark orange » ; tapez les mots français « orange foncé »"
+      tw: "按下行列輸入法中「<span class='cmd'>深橘色</span>」三字的鍵位（限二級簡碼）、按下英文字 '<span class='cmd'>dark orange</span>' 的鍵位、按下法文字 « <span class='cmd'>orange foncé</span> »（無尖音符也可）的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>深橘色</span>' with the Array input method (short codes II only); type the English words '<span class='cmd'>dark orange</span>'; type the French words '<span class='cmd'>orange foncé</span>' (ok without the acute accent)",
+      fr: "Tapez le mot chinois « <span class='cmd'>深橘色</span> » avec la méthode Tableau (codes courts II uniquement) ; tapez les mots anglais « <span class='cmd'>dark orange</span> » ; tapez les mots français « <span class='cmd'>orange foncé</span> »"
     }
   },
   wheat_bl: {
     name: { tw: '小麥色背光', en: 'Wheat backlight', fr: 'Rétro-éclairage de couleur du blé' },
     instructions: {
-      tw: "按下行列輸入法中「小麥色」三字的鍵位（限簡碼）、按下英文字 'wheat' 的鍵位、按下法文字 « couleur du blé »（無尖音符也可）的鍵位",
-      en: "Type the Chinese word '小麥色' with the Array input method (short codes only); type the English word 'wheat'; type the French words 'couleur du blé' (ok without the acute accent)",
-      fr: "Tapez le mot chinois « 小麥色 » avec la méthode Tableau (codes courts uniquement) ; tapez le mot anglais « wheat » ; tapez les mots français « couleur du blé »"
+      tw: "按下行列輸入法中「<span class='cmd'>小麥色</span>」三字的鍵位（限簡碼）、按下英文字 '<span class='cmd'>wheat</span>' 的鍵位、按下法文字 « <span class='cmd'>couleur du blé</span> »（無尖音符也可）的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>小麥色</span>' with the Array input method (short codes only); type the English word '<span class='cmd'>wheat</span>'; type the French words '<span class='cmd'>couleur du blé</span>' (ok without the acute accent)",
+      fr: "Tapez le mot chinois « <span class='cmd'>小麥色</span> » avec la méthode Tableau (codes courts uniquement) ; tapez le mot anglais « <span class='cmd'>wheat</span> » ; tapez les mots français « <span class='cmd'>couleur du blé</span> »"
     }
   },
   forest_green_bl: {
     name: { tw: '森林綠背光', en: 'Forest green backlight', fr: 'Rétro-éclairage vert forêt' },
     instructions: {
-      tw: "按下行列輸入法中「森林綠」三字的鍵位（限二級簡碼）、按下英文字 'forest green' 的鍵位、按下法文字 « vert foret »（無揚抑符）的鍵位",
-      en: "Type the Chinese word '森林綠' with the Array input method (short codes II only); type the English words 'forest green'; type the French words 'orange foncé' (without the circumflex)",
-      fr: "Tapez le mot chinois « 森林綠 » avec la méthode Tableau (codes courts II uniquement) ; tapez les mots anglais « forest green » ; tapez les mots français « vert foret » (sans l'accent circonflexe)"
+      tw: "按下行列輸入法中「<span class='cmd'>森林綠</span>」三字的鍵位（限二級簡碼）、按下英文字 '<span class='cmd'>forest green</span>' 的鍵位、按下法文字 « <span class='cmd'>vert foret</span> »（無揚抑符）的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>森林綠</span>' with the Array input method (short codes II only); type the English words '<span class='cmd'>forest green</span>'; type the French words '<span class='cmd'>vert foret</span>' (without the circumflex)",
+      fr: "Tapez le mot chinois « <span class='cmd'>森林綠</span> » avec la méthode Tableau (codes courts II uniquement) ; tapez les mots anglais « <span class='cmd'>forest green</span> » ; tapez les mots français « <span class='cmd'>vert foret</span> » (sans l'accent circonflexe)"
     }
   },
   turquoise_bl: {
     name: { tw: '綠松色背光', en: 'Turquoise backlight', fr: 'Rétro-éclairage turquoise' },
     instructions: {
-      tw: "按下行列輸入法中「綠松色」三字的鍵位（限二級簡碼）、按下英/法文字 'turquoise' 的鍵位",
-      en: "Type the Chinese word '綠松色' with the Array input method (short codes II only); type the English/French word 'turquoise'",
-      fr: "Tapez le mot chinois « 綠松色 » avec la méthode Tableau (codes courts II uniquement) ; tapez le mot français/anglais « turquoise »"
+      tw: "按下行列輸入法中「<span class='cmd'>綠松色</span>」三字的鍵位（限二級簡碼）、按下英/法文字 '<span class='cmd'>turquoise</span>' 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>綠松色</span>' with the Array input method (short codes II only); type the English/French word '<span class='cmd'>turquoise</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>綠松色</span> » avec la méthode Tableau (codes courts II uniquement) ; tapez le mot français/anglais « <span class='cmd'>turquoise</span> »"
     }
   },
   light_gray_bl: {
     name: { tw: '淺灰色背光', en: 'Light gray backlight', fr: 'Rétro-éclairage gris clair' },
     instructions: {
-      tw: "按下行列輸入法中「淺灰色」三字的鍵位（限普通編碼）、按下英文字 'light gray' 或 'light grey' 的鍵位、按下法文字 « gris clair » 的鍵位",
-      en: "Type the Chinese word '淺灰色' with the Array input method (standard codes only); type the English words 'light gray' or 'light grey'; type the French words 'gris clair'",
-      fr: "Tapez le mot chinois « 淺灰色 » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « light gray » ou « light grey » ; tapez les mots français « gris clair »"
+      tw: "按下行列輸入法中「<span class='cmd'>淺灰色</span>」三字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>light gray</span>' 或 '<span class='cmd'>light grey</span>' 的鍵位、按下法文字 « <span class='cmd'>gris clair</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>淺灰色</span>' with the Array input method (standard codes only); type the English words '<span class='cmd'>light gray</span>' or '<span class='cmd'>light grey</span>'; type the French words '<span class='cmd'>gris clair</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>淺灰色</span> » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « <span class='cmd'>light gray</span> » ou « <span class='cmd'>light grey</span> » ; tapez les mots français « <span class='cmd'>gris clair</span> »"
     }
   },
   dim_gray_bl: {
     name: { tw: '暗灰色背光', en: 'Dim gray backlight', fr: 'Rétro-éclairage gris sombre' },
     instructions: {
-      tw: "按下行列輸入法中「暗灰色」三字的鍵位（限普通編碼）、按下英文字 'dim gray' 或 'dim grey' 的鍵位、按下法文字 « gris sombre » 的鍵位",
-      en: "Type the Chinese word '暗灰色' with the Array input method (standard codes only); type the English words 'dim gray' or 'dim grey'; type the French words 'gris sombre'",
-      fr: "Tapez le mot chinois « 暗灰色 » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « dim gray » ou « dim grey » ; tapez les mots français « gris sombre »"
+      tw: "按下行列輸入法中「<span class='cmd'>暗灰色</span>」三字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>dim gray</span>' 或 '<span class='cmd'>dim grey</span>' 的鍵位、按下法文字 « <span class='cmd'>gris sombre</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>暗灰色</span>' with the Array input method (standard codes only); type the English words '<span class='cmd'>dim gray</span>' or '<span class='cmd'>dim grey</span>'; type the French words '<span class='cmd'>gris sombre</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>暗灰色</span> » avec la méthode Tableau (codes standard uniquement) ; tapez les mots anglais « <span class='cmd'>dim gray</span> » ou « <span class='cmd'>dim grey</span> » ; tapez les mots français « <span class='cmd'>gris sombre</span> »"
     }
   },
   sakura: {
     name: { tw: '櫻花', en: 'Sakura', fr: 'Fleur de cerisier' },
     instructions: {
-      tw: "按下行列輸入法中「櫻花」兩字的鍵位（限普通編碼）、按下英文字 'sakura' 或 'cherry blossom' 的鍵位、按下法文字 « fleur de cerisier » 的鍵位",
-      en: "Type the Chinese word '櫻花' with the Array input method (standard codes only); type the English word 'sakura' or 'cherry blossom'; type the French words 'fleur de cerisier'",
-      fr: "Tapez le mot chinois « 櫻花 » avec la méthode Tableau (codes standard uniquement) ; tapez le mot anglais « sakura » ou « cherry blossom » ; tapez les mots français « fleur de cerisier »"
+      tw: "按下行列輸入法中「<span class='cmd'>櫻花</span>」兩字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>sakura</span>' 或 '<span class='cmd'>cherry blossom</span>' 的鍵位、按下法文字 « <span class='cmd'>fleur de cerisier</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>櫻花</span>' with the Array input method (standard codes only); type the English word '<span class='cmd'>sakura</span>' or '<span class='cmd'>cherry blossom</span>'; type the French words '<span class='cmd'>fleur de cerisier</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>櫻花</span> » avec la méthode Tableau (codes standard uniquement) ; tapez le mot anglais « <span class='cmd'>sakura</span> » ou « <span class='cmd'>cherry blossom</span> » ; tapez les mots français « <span class='cmd'>fleur de cerisier</span> »"
     }
   },
   banana: {
     name: { tw: '香蕉', en: 'Banana', fr: 'Banane' },
     instructions: {
-      tw: "按下行列輸入法中「香蕉」兩字的鍵位（限普通編碼）、按下英文字 'banana' 的鍵位、按下法文字 « banane » 的鍵位",
-      en: "Type the Chinese word '香蕉' with the Array input method (standard codes only); type the English word 'banana'; type the French word 'banane'",
-      fr: "Tapez le mot chinois « 香蕉 » avec la méthode Tableau (codes standard uniquement) ; tapez le mot anglais « banana » ; tapez le mot français « banane »"
+      tw: "按下行列輸入法中「<span class='cmd'>香蕉</span>」兩字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>banana</span>' 的鍵位、按下法文字 « <span class='cmd'>banane</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>香蕉</span>' with the Array input method (standard codes only); type the English word '<span class='cmd'>banana</span>'; type the French word '<span class='cmd'>banane</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>香蕉</span> » avec la méthode Tableau (codes standard uniquement) ; tapez le mot anglais « <span class='cmd'>banana</span> » ; tapez le mot français « <span class='cmd'>banane</span> »"
     }
   },
   turtle: {
     name: { tw: '烏龜', en: 'Turtle', fr: 'Tortue' },
     instructions: {
-      tw: "按下行列輸入法中「烏龜」兩字的鍵位（限二級簡碼）、按下英文字 'turtle' 的鍵位、按下法文字 « tortue » 的鍵位",
-      en: "Type the Chinese word '烏龜' with the Array input method (short codes II only); type the English word 'turtle'; type the French word 'tortue'",
-      fr: "Tapez le mot chinois « 烏龜 » avec la méthode Tableau (codes courts II uniquement) ; tapez le mot anglais « turtle » ; tapez le mot français « tortue »"
+      tw: "按下行列輸入法中「<span class='cmd'>烏龜</span>」兩字的鍵位（限二級簡碼）、按下英文字 '<span class='cmd'>turtle</span>' 的鍵位、按下法文字 « <span class='cmd'>tortue</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>烏龜</span>' with the Array input method (short codes II only); type the English word '<span class='cmd'>turtle</span>'; type the French word '<span class='cmd'>tortue</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>烏龜</span> » avec la méthode Tableau (codes courts II uniquement) ; tapez le mot anglais « <span class='cmd'>turtle</span> » ; tapez le mot français « <span class='cmd'>tortue</span> »"
     }
   },
   alien: {
     name: { tw: '外星人', en: 'Alien', fr: 'Extraterrestre' },
     instructions: {
-      tw: "按下行列輸入法中「外星人」三字的鍵位（限普通編碼）、按下英文字 'alien' 的鍵位、按下法文字 « extraterrestre » 的鍵位",
-      en: "Type the Chinese word '外星人' with the Array input method (standard codes only); type the English word 'alien'; type the French word 'extraterrestre'",
-      fr: "Tapez le mot chinois « 外星人 » avec la méthode Tableau (codes standard uniquement); tapez le mot anglais « alien » ; tapez le mot français « extraterrestre »"
+      tw: "按下行列輸入法中「<span class='cmd'>外星人</span>」三字的鍵位（限普通編碼）、按下英文字 '<span class='cmd'>alien</span>' 的鍵位、按下法文字 « <span class='cmd'>extraterrestre</span> » 的鍵位",
+      en: "Type the Chinese word '<span class='cmd'>外星人</span>' with the Array input method (standard codes only); type the English word '<span class='cmd'>alien</span>'; type the French word '<span class='cmd'>extraterrestre</span>'",
+      fr: "Tapez le mot chinois « <span class='cmd'>外星人</span> » avec la méthode Tableau (codes standard uniquement); tapez le mot anglais « <span class='cmd'>alien</span> » ; tapez le mot français « <span class='cmd'>extraterrestre</span> »"
     }
   },
 }
@@ -944,9 +945,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 丁香紫</a>。亦可透過輸入'ducky one 2 bright lilac' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. You can also switch to this style by typing 'ducky one 2 bright lilac'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 bright lilac ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 丁香紫</a>。亦可透過輸入'<span class='cmd'>ducky one 2 bright lilac</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 bright lilac</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 bright lilac</span> ».`
     }
   },
   {// ducky mecha sf emerald -o
@@ -962,9 +963,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF Emerald</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF 翠</a>。亦可透過輸入'ducky mecha sf emerald' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF Emerald</a>. You can also switch to this style by typing 'ducky mecha sf emerald'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF Emerald</a>. Vous pouvez aussi passez à ce style en tapant « ducky mecha sf emerald ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF 翠</a>。亦可透過輸入'<span class='cmd'>ducky mecha sf emerald</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF Emerald</a>. You can also switch to this style by typing '<span class='cmd'>ducky mecha sf emerald</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Mecha-SF-Emerald" class="my_link" target='_blank'>Ducky Mecha SF Emerald</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky mecha sf emerald</span> ».`
     }
   },
   {// ducky ultra violet -o
@@ -980,9 +981,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky Ultra-Violet Keycaps</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky 紫外光鍵帽</a>。亦可透過輸入'ducky ultra violet' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky Ultra-Violet Keycaps</a>. You can also switch to this style by typing 'ducky ultra violet'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky Ultra-Violet Keycaps</a>. Vous pouvez aussi passez à ce style en tapant « ducky ultra violet ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky 紫外光鍵帽</a>。亦可透過輸入'<span class='cmd'>ducky ultra violet</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky Ultra-Violet Keycaps</a>. You can also switch to this style by typing '<span class='cmd'>ducky ultra violet</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-PBT-Double-shot-Ultra-Violet-keycap" class="my_link" target='_blank'>Ducky Ultra-Violet Keycaps</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky ultra violet</span> ».`
     }
   },
   {// ducky one rgb razer
@@ -998,9 +999,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>。亦可透過輸入'ducky one 2 razer' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. You can also switch to this style by typing 'ducky one 2 razer'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 razer ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>。亦可透過輸入'<span class='cmd'>ducky one 2 razer</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 razer</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 razer</span> ».`
     }
   },
   {// ducky one 2 tuxedo -o
@@ -1016,9 +1017,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 燕尾服</a>。亦可透過輸入'ducky one 2 tuxedo' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. You can also switch to this style by typing 'ducky one 2 tuxedo'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 tuxedo ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 燕尾服</a>。亦可透過輸入'<span class='cmd'>ducky one 2 tuxedo</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 tuxedo</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 tuxedo</span> ».`
     }
   },
   {// ducky 2017
@@ -1034,9 +1035,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 Year of The Rooster Edition</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 雞年生肖限定鍵盤</a>。亦可透過輸入 'ducky 2017' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 Year of The Rooster Edition</a>. You can also switch to this style by typing 'ducky 2017'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 Year of The Rooster Edition</a>. Vous pouvez aussi passez à ce style en tapant « ducky 2017 ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 雞年生肖限定鍵盤</a>。亦可透過輸入 '<span class='cmd'>ducky 2017</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 Year of The Rooster Edition</a>. You can also switch to this style by typing '<span class='cmd'>ducky 2017</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Year-Of-The-Rooster-Edition" class="my_link" target='_blank'>Ducky 2017 Year of The Rooster Edition</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky 2017</span> ».`
     }
   },
   {// ducky one 2 mini skyline -o
@@ -1052,9 +1053,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-skyline" class="my_link" target='_blank'>Ducky One 2 Mini 天際線版</a>。亦可透過輸入'ducky one 2 mini skyline' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. You can also switch to this style by typing 'ducky one 2 mini skyline'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 mini skyline ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-skyline" class="my_link" target='_blank'>Ducky One 2 Mini 天際線版</a>。亦可透過輸入'<span class='cmd'>ducky one 2 mini skyline</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 mini skyline</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 mini skyline</span> ».`
     }
   },
   {// creator mecha mini
@@ -1070,9 +1071,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>。亦可透過輸入 'creator mecha mini' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>. You can also switch to this style by typing 'creator mecha mini'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>. Vous pouvez aussi passez à ce style en tapant « creator mecha mini ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>。亦可透過輸入 '<span class='cmd'>creator mecha mini</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>. You can also switch to this style by typing '<span class='cmd'>creator mecha mini</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Creator-Mecha-Mini" class="my_link" target='_blank'>Ducky x MK Creator Mecha Mini</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>creator mecha mini</span> ».`
     }
   },
   {// ducky one 2 good in blue -o
@@ -1088,9 +1089,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 海波浪</a>。亦可透過輸入'ducky one 2 good in blue' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>. You can also switch to this style by typing 'ducky one 2 good in blue'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 good in blue ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 海波浪</a>。亦可透過輸入'<span class='cmd'>ducky one 2 good in blue</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 good in blue</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 good in blue</span> ».`
     }
   },
   {// ducky shine 3 yellow
@@ -1106,9 +1107,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 Yellow</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 黃色小鴨版</a>。亦可透過輸入'ducky shine 3 yellow' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 Yellow</a>. You can also switch to this style by typing 'ducky shine 3 yellow'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 Yellow</a>. Vous pouvez aussi passez à ce style en tapant « ducky shine 3 yellow ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 黃色小鴨版</a>。亦可透過輸入'<span class='cmd'>ducky shine 3 yellow</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 Yellow</a>. You can also switch to this style by typing '<span class='cmd'>ducky shine 3 yellow</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-Shine3-Yellow" class="my_link" target='_blank'>Ducky Shine 3 Yellow</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky shine 3 yellow</span> ».`
     }
   },
   {// ducky one mini horizon -o
@@ -1124,9 +1125,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini 地平線版</a>。亦可透過輸入'ducky one 2 mini horizon' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. You can also switch to this style by typing 'ducky one 2 mini mini horizon'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 mini mini horizon ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini 地平線版</a>。亦可透過輸入'<span class='cmd'>ducky one 2 mini horizon</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 mini horizon</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 mini horizon</span> ».`
     }
   },
   {// ducky one 2 bon voyage o-
@@ -1142,9 +1143,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bon-Voyage-Editon" class="my_link" target='_blank'>Ducky One 2 海灘假期</a>。亦可透過輸入'ducky one 2 bon voyage' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. You can also switch to this style by typing 'ducky one 2 bon voyage'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 bon voyage ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bon-Voyage-Editon" class="my_link" target='_blank'>Ducky One 2 海灘假期</a>。亦可透過輸入'<span class='cmd'>ducky one 2 bon voyage</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 bon voyage</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 bon voyage</span> ».`
     }
   },
   {// frozen llama
@@ -1160,9 +1161,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>。亦可透過輸入'frozen llama' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>. You can also switch to this style by typing 'frozen llama'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>. Vous pouvez aussi passez à ce style en tapant « frozen llama ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>。亦可透過輸入'<span class='cmd'>frozen llama</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>. You can also switch to this style by typing '<span class='cmd'>frozen llama</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Frozen-Llama-RGB" class="my_link" target='_blank'>Ducky x MK Frozen Llama One 2 Mecha Mini</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>frozen llama</span> ».`
     }
   },
   {// ducky one 2 midnight -o
@@ -1178,9 +1179,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 Midnight</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 午夜</a>。亦可透過輸入'ducky one 2 midnight' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 Midnight</a>. You can also switch to this style by typing 'ducky one 2 midnight'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 Midnight</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 midnight ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 午夜</a>。亦可透過輸入'<span class='cmd'>ducky one 2 midnight</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 Midnight</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 midnight</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Midnight" class="my_link" target='_blank'>Ducky One 2 Midnight</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 midnight</span> ».`
     }
   },
   {// ducky one mini pure white
@@ -1196,9 +1197,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini Pure White RGB</a>.`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini 白色版</a>。亦可透過輸入 'ducky one 2 mini pure white' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini Pure White RGB</a>. You can also switch to this style by typing 'ducky one 2 mini pure white'.`,
-      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini Pure White RGB</a>. Vous pouvez aussi passez à ce style en tapant « ducky one 2 mini pure white ».`
+      tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini 白色版</a>。亦可透過輸入 '<span class='cmd'>ducky one 2 mini pure white</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini Pure White RGB</a>. You can also switch to this style by typing '<span class='cmd'>ducky one 2 mini pure white</span>'.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Pure-White-RGB" class="my_link" target='_blank'>Ducky One 2 Mini Pure White RGB</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>ducky one 2 mini pure white</span> ».`
     }
   },
   {// ducky one 2 bright lilac
@@ -1215,8 +1216,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 丁香紫</a>。透光鍵帽版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Translucent keycap version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Version touches translucides.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Translucent keycap version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bright-Lilac" class="my_link" target='_blank'>Ducky One 2 Bright Lilac</a>. Version touches translucides.`
     }
   },
   {// ducky mecha sf emerald
@@ -1269,8 +1270,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>。白框版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. White border version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. Version bord blanc.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. White border version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-RGB-Razer-Edition" class="my_link" target='_blank'>Ducky One 2 RGB Razer Edition</a>. Version bord blanc.`
     }
   },
   {// ducky one 2 tuxedo
@@ -1287,8 +1288,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 燕尾服</a>。透光鍵帽版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. Translucent keycap version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a> Version touches translucides.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a>. Translucent keycap version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Tuxedo" class="my_link" target='_blank'>Ducky One 2 Tuxedo</a> Version touches translucides.`
     }
   },
   {// ducky one 2 mini skyline
@@ -1305,8 +1306,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-skyline" class="my_link" target='_blank'>Ducky One 2 Mini 天際線版</a>。透光鍵帽版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Translucent keycap version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Version touches translucides.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Translucent keycap version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/One-2-Mini-Skyline" class="my_link" target='_blank'>Ducky One 2 Mini Skyline</a>. Version touches translucides.`
     }
   },
   {// ducky one 2 good in blue
@@ -1315,7 +1316,7 @@ const styleSetOptions = [
     key: { nKey: 'cornflower-appr', fKey: 'fiord', sKey: 'fiord', bs: 'fiord', enterKey: 'white', spaceBar: 'cornflower-appr' },
     text: { nKey: 'white', bs: 'white', sKey: 'white' },
     pressedKey: 'wheat_bl',
-    cmdList: ['ducky one 2 good in blue'],
+    cmdList: [],
     name: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 海波浪</a>。透光鍵帽版本。`,
       en: `inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Good-in-Blue" class="my_link" target='_blank'>Ducky One 2 Good in Blue</a>. Translucent keycap version.`,
@@ -1341,8 +1342,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini 地平線版</a>。透光鍵帽版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. Translucent keycap version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>. Translucent keycap version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Mini-Horizon" class="my_link" target='_blank'>Ducky One 2 Mini Horizon</a>.`
     }
   },
   {// ducky one 2 bon voyage
@@ -1359,8 +1360,8 @@ const styleSetOptions = [
     },
     info: {
       tw: `靈感源於 <a href="https://www.duckychannel.com.tw/tw/Ducky-One2-Bon-Voyage-Editon" class="my_link" target='_blank'>Ducky One 2 海灘假期</a>。透光鍵帽版本。`,
-      en: `inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Translucent keycap version.`,
-      fr: `inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Version touches translucides.`
+      en: `Inspired by <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Translucent keycap version.`,
+      fr: `Inspiré par <a href="https://www.duckychannel.com.tw/en/Ducky-One2-Bon-Voyage-Edition" class="my_link" target='_blank'>Ducky One 2 Bon Voyage</a>. Version touches translucides.`
     }
   },
   {// ducky one 2 midnight
@@ -1394,9 +1395,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 White Backlight Version</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.keychron.com.tw/k6" class="my_link" target='_blank'>Keychron K6 輕量底座版</a>。亦可透過輸入 'keychron k6 a' 或 'keychron k6 white' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 White Backlight Version</a>. You can also switch to this style by typing 'keychron k6 a' or 'keychron k6 white'.`,
-      fr: `Inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 White Backlight Version</a>. Vous pouvez aussi passez à ce style en tapant « keychron k6 a » ou « keychron k6 white ».`
+      tw: `靈感源於 <a href="https://www.keychron.com.tw/k6" class="my_link" target='_blank'>Keychron K6 輕量底座版</a>。亦可透過輸入 '<span class='cmd'>keychron k6 a</span>' 或 '<span class='cmd'>keychron k6 white</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 White Backlight Version</a>. You can also switch to this style by typing '<span class='cmd'>keychron k6 a</span>' or '<span class='cmd'>keychron k6 white</span>'.`,
+      fr: `Inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 White Backlight Version</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>keychron k6 a</span> » ou « <span class='cmd'>keychron k6 white</span> ».`
     }
   },
   {// keychron k6 aluminum
@@ -1412,9 +1413,9 @@ const styleSetOptions = [
       fr: `inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 Aluminum Frame</a>`
     },
     info: {
-      tw: `靈感源於 <a href="https://www.keychron.com.tw/k6" class="my_link" target='_blank'>Keychron K6 鋁合金底座版</a>。亦可透過輸入'keychron k6 b' 或 'keychron k6 aluminum' 切換到此樣式。`,
-      en: `Inspired by <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 Aluminum Frame</a>. You can also switch to this style by typing 'keychron k6 b' or 'keychron k6 aluminum'.`,
-      fr: `Inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 Aluminum Frame</a>. Vous pouvez aussi passez à ce style en tapant « keychron k6 b » ou « keychron k6 aluminum ».`
+      tw: `靈感源於 <a href="https://www.keychron.com.tw/k6" class="my_link" target='_blank'>Keychron K6 鋁合金底座版</a>。亦可透過輸入'<span class='cmd'>keychron k6 b</span>' 或 '<span class='cmd'>keychron k6 aluminum</span>' 切換到此樣式。`,
+      en: `Inspired by <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 Aluminum Frame</a>. You can also switch to this style by typing '<span class='cmd'>keychron k6 b</span>' or '<span class='cmd'>keychron k6 aluminum</span>'.`,
+      fr: `Inspiré par <a href="https://www.keychron.com/products/keychron-k6-wireless-mechanical-keyboard" class="my_link" target='_blank'>Keychron K6 Aluminum Frame</a>. Vous pouvez aussi passez à ce style en tapant « <span class='cmd'>keychron k6 b</span> » ou « <span class='cmd'>keychron k6 aluminum</span> ».`
     }
   },
 ];
@@ -1565,9 +1566,9 @@ function createPressedKeyStyleDetails() {
   })
 
   const i18nRemark = {
-    tw: `註：按下行列輸入法中「預設」兩字的鍵位、按下英文字 'default' 的鍵位、按下法文字 « défaut »（無尖音符也可）的鍵位即可返回預設樣式（<span id="current-default-pressed_key_style"></span>）。`,
-    en: `Note: You can revert back to the default style (<span id="current-default-pressed_key_style"></span>) by typing the Chinese word '預設' with the Array input method (standard codes only), or the English word 'default', or the French word 'défaut' (ok without the acute accent).`,
-    fr: `NB: Vous pouvez revenir au style par défaut (<span id="current-default-pressed_key_style"></span>) en tapant le mot chinois « 預設 » avec la méthode Tableau (codes standard uniquement), ou le mot anglais « default », ou le mot français « défaut ».`
+    tw: `註：按下行列輸入法中「<span class='cmd'>預設</span>」兩字的鍵位、按下英文字 '<span class='cmd'>default</span>' 的鍵位、按下法文字 « <span class='cmd'>défaut</span> »（無尖音符也可）的鍵位即可返回預設樣式（<span id="current-default-pressed_key_style"></span>）。`,
+    en: `Note: You can revert back to the default style (<span id="current-default-pressed_key_style"></span>) by typing the Chinese word '<span class='cmd'>預設</span>' with the Array input method (standard codes only), or the English word '<span class="cmd">default</span>', or the French word '<span class="cmd">défaut</span>' (ok without the acute accent).`,
+    fr: `NB: Vous pouvez revenir au style par défaut (<span id="current-default-pressed_key_style"></span>) en tapant le mot chinois « <span class="cmd">預設</span> » avec la méthode Tableau (codes standard uniquement), ou le mot anglais « <span class="cmd">default</span> », ou le mot français « <span class="cmd">défaut</span> ».`
   };
   let remark = document.createElement('div');
   remark.innerHTML = i18nRemark[stringLocal];
@@ -1581,14 +1582,14 @@ function createStyleSetInstructions(num) {
   const numString = num.toString();
   const numLeadingZeros = '0'.repeat(cmdDigitLength - numString.length) + numString;
   const i18nPar1 = {
-    tw: `按下行列輸入法中「樣式」兩字的鍵位或按下英文字 'style' 的鍵位後，輸入樣式編號即可切換到該樣式。樣式 ${numLeadingZeros} 為預設樣式。`,
-    en: `You can switch to a keyboard style by first typing the Chinese word '樣式' with the Array input method or the English word 'style' then entering the style number. Style ${numLeadingZeros} is the default style.`,
-    fr: `Vous pouvez passer à un style du clavier en tapant d'abord le mot chinois « 樣式 » avec la méthode Tableau ou le mot français « style », puis entrant le numéro du style. Le style ${numLeadingZeros} est le style par défaut.`
+    tw: `按下行列輸入法中「<span class="cmd">樣式</span>」兩字的鍵位或按下英文字 '<span class="cmd">style</span>' 的鍵位後，輸入樣式編號即可切換到該樣式。樣式 ${numLeadingZeros} 為預設樣式。`,
+    en: `You can switch to a keyboard style by first typing the Chinese word '<span class="cmd">樣式</span>' with the Array input method or the English word '<span class="cmd">style</span>' then entering the style number. Style ${numLeadingZeros} is the default style.`,
+    fr: `Vous pouvez passer à un style du clavier en tapant d'abord le mot chinois « <span class="cmd">樣式</span> » avec la méthode Tableau ou le mot français « <span class="cmd">style</span> », puis entrant le numéro du style. Le style ${numLeadingZeros} est le style par défaut.`
   };
   const i18nPar2 = {
-    tw: `連續按三次 <span class="keycap keycap-letter">[</span> 或 <span class="keycap keycap-letter">]</span> （ <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span> 右邊的兩個鍵）可以切換至上一個或下一個樣式。`,
-    en: `Pressing <span class="keycap keycap-letter">[</span> or <span class="keycap keycap-letter">]</span> (the two keys next to <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>) three times in succession will switch to the previous or next style.`,
-    fr: `En appuyant trois fois de suite sur <span class="keycap keycap-letter">^</span> ou <span class="keycap keycap-letter">$</span> (les deux touches à droite de <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>), vous passez au style précédent ou suivant.`
+    tw: `<span class="cmd">連續按三次</span> <span class="keycap keycap-letter">[</span> 或 <span class="keycap keycap-letter">]</span> （ <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span> 右邊的兩個鍵）可以切換至上一個或下一個樣式。`,
+    en: `Pressing <span class="keycap keycap-letter">[</span> or <span class="keycap keycap-letter">]</span> (the two keys next to <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>) <span class="cmd">three times in succession</span> will switch to the previous or next style.`,
+    fr: `En appuyant <span class="cmd">trois fois de suite</span> sur <span class="keycap keycap-letter">^</span> ou <span class="keycap keycap-letter">$</span> (les deux touches à droite de <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>), vous passez au style précédent ou suivant.`
   };
   let elem = document.getElementById('instructions-style_set');
   elem.innerHTML += `<p>${i18nPar1[stringLocal]}</p><p>${i18nPar2[stringLocal]}</p>`;
@@ -1930,6 +1931,33 @@ function findAllEggs(eggStyle) {
   }
 }
 
+// #####[ unlock all eggs ]#####
+
+const cmdUnlock = [
+  'unlock', 'd2verrouiller', 'deverrouiller',
+  'jjof icm ', 'jjq icm ', 'j7icm ', // 行列 解鎖
+  'ru,3nji3', 'jie suo' // 注音拼音 解鎖
+];
+let cmdUnlockState = Array(cmdUnlock.length).fill('');
+function detectCmdUnlock(eventCodeLowerCase) {
+  if (keyCodeTable.hasOwnProperty(eventCodeLowerCase)) {
+    const ch = keyCodeTable[eventCodeLowerCase].char;
+    let x = updateCmdState(cmdUnlock, cmdUnlockState, ch);
+    cmdUnlockState = x.updatedStates;
+    if (x.index >= 0) {
+      cmdUnlockState[x.index] = '';
+      unlockAllEggs();
+    }
+  } else {
+    cmdUnlockState = Array(cmdUnlock.length).fill('');
+  }
+}
+function unlockAllEggs() {
+  for (const egg of stylePressedKeyOptions.slice(0, 10)) {
+    easterEggs(egg);
+  }
+}
+
 // #####[ click to get hints ]#####
 $('.easter-egg-hint').click(function () {
   $(this).next().removeClass('w3-hide');
@@ -1986,6 +2014,7 @@ $(window).on({
     changeGameOutputStatus(eventCodeLowerCase);
     detectcodeExamples(eventCodeLowerCase);
     detectCmdStyle(eventCodeLowerCase);
+    detectCmdUnlock(eventCodeLowerCase);
   },
   'keyup': function (e) {
     const eventCodeLowerCase = e.code.toLowerCase();
@@ -2007,6 +2036,7 @@ $("#keyboard .n_key .kb-keycap, .f_key .kb-keycap, #keyboard a, .enter_key .kb-k
   changeGameOutputStatus(eventCodeLowerCase);
   detectcodeExamples(eventCodeLowerCase);
   detectCmdStyle(eventCodeLowerCase);
+  detectCmdUnlock(eventCodeLowerCase);
 }).mouseup(function () {
   let clickedKey = $(this).parent();
   clickedKey.removeClass('pressed');

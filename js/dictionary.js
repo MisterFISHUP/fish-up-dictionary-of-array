@@ -1,8 +1,8 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-22(23)
+ * Copyright © 2020-2021 FISH UP Dictionary of Array
+ * Date: 2021 Jan. 02
  */
 
 /* Structure: (use search)
@@ -253,7 +253,6 @@ function prepareResultFile(list) {
   const researchTime = new Date().toLocaleString(dateLocal, { hour12: false });
   const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
   const websiteName = { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dictionnaire FISH UP de Tableau' };
-  const year = '2020';
   const siteURL = 'https://array30.misterfishup.com/'
   const separationLine = '--------------------------------------------\n';
   const signatures = [
@@ -467,7 +466,7 @@ function prepareResultFile(list) {
   fileContent += signatures[Math.floor(Math.random() * signatures.length)];
 
   // add dictionary URL
-  fileContent += `\nCopyright © ${year} ${websiteName[stringLocal]}\n`;
+  fileContent += `\nCopyright © ${websiteYear} ${websiteName[stringLocal]}\n`;
   if (stringLocal == 'tw') {
     fileContent += siteURL + 'dictionary.html\n';
   } else {

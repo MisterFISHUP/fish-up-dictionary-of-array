@@ -15,7 +15,6 @@
   - key styles '
   - text styles
   - pressed key styles
-  
 */
 
 /* ===========
@@ -23,13 +22,11 @@
   ============ */
 
 #game_area {
-  width: 902px;
+  width: 880px;
   margin: 0px auto 30px;
-  box-sizing: content-box;
 }
 #game-output_field {
   font-size: large;
-  border: 1px solid none;
   min-height: 2em;
   margin: 12px auto;
 }
@@ -39,12 +36,12 @@
   ========================= */
 
 #game_instructions-open {
-  cursor: pointer;
-  width: 45px;
-  height: 45px;
   position: relative;
   float: left;
+  width: 42px;
+  height: 38px;
   margin: 12px 4px 0;
+  cursor: pointer;
 }
 #game_instructions-icon {
   background: white;
@@ -55,20 +52,14 @@
 }
 #game-notification {
   position: absolute;
-  animation: notification 1.5s infinite;
   left: 75%;
   top: 0%;
+  animation: notification 1.5s infinite;
 }
 @keyframes notification {
-  0% {
-    color: white;
-  }
-  50% {
-    color: transparent;
-  }
-  100% {
-    color: white;
-  }
+  0% { color: white; }
+  50% { color: transparent; }
+  100% { color: white; }
 }
 
 /* ==========================
@@ -89,32 +80,32 @@
   background: #596dad;
 }
 #game_instructions {
-  padding: 16px 32px;
   position: fixed;
-  width: min(70vw - 96px, 1000px - 96px);
+  width: min(70vw - 32px, 1000px - 32px);
   left: max(15vw + 16px, 50vw - 484px);
-  height: calc(70vh - 64px);
+  height: calc(70vh - 32px);
   top: calc(15vh + 16px);
+  padding: 16px 32px;
   border-radius: 10px;
   overflow-y: scroll;
   color: #2e1608;
   background: #ffffff;
 }
 #game_instructions-close {
-  cursor: pointer;
   position: absolute;
   right: -12px;
   top: -12px;
-  background-color: #eabeff;
   width: 36px;
   height: 36px;
+  padding: 0;
   border-radius: 36px;
   border: none;
-  padding: 0;
+  cursor: pointer;
+  background-color: #eabeff;
 }
 #game_instructions-close:hover {
-  background-color: #9e2fa8;
   color: white;
+  background-color: #9e2fa8;
 }
 
 /* =====================
@@ -137,16 +128,6 @@
   margin-top: 60px;
   font-size: 16px;
 }
-.cmd {
-  color: coral;
-}
-.my_link {
-  text-decoration: none;
-  color: darkmagenta;
-}
-.my_link:hover {
-  color: orchid;
-}
 #hint_for_easter_eggs {
   width: 85%;
   margin: auto;
@@ -167,20 +148,18 @@
 }
 /* preview */
 #egg_collection-preview, #other_pressed_key_style-preview {
-  margin: 40px auto 45px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin: 40px auto 45px;
 }
 .flex-break {
   flex-basis: 100%;
   height: 0;
 }
 .container-single_key {
-  margin: 2px;
-  padding: 8px;
-  border-radius: 10px;
-  width: 59px;
+  margin: 10px;
+  width: 60px;
 }
 .unknown_egg {
   width: 35px;
@@ -191,7 +170,7 @@
   margin: 4px auto;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 22px;
 }
 /* detail */
 #egg_collection-detail, #other_pressed_key_style-detail {
@@ -207,9 +186,10 @@
 .instructions-pressed_key_style {
   font-size: 16px;
 }
+/* style set table */
 #table-style_set {
-  margin: 30px auto 40px;
   width: 75%;
+  margin: 30px auto 40px;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 16px;
@@ -222,8 +202,19 @@
 }
 #table-style_set td, #table-style_set th {
   padding: 8px;
-  text-align:left;
+  text-align: left;
   min-width: 5em;
+}
+/* highlight */
+.cmd {
+  color: coral;
+}
+.my_link {
+  text-decoration: none;
+  color: darkmagenta;
+}
+.my_link:hover {
+  color: orchid;
 }
 
 /* =========================
@@ -232,41 +223,42 @@
 
 #congrats_messages-modal-block {
   position: fixed;
+  z-index: 100;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 24px 48px;
   border-radius: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  z-index: 100;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: white;
+  background: #00b09b;
   background: linear-gradient(to right, #96c93d, #00b09b);
 }
 #congrats_messages-modal_bg {
   position: fixed;
+  z-index: 99;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 99;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 #congrats_messages-modal-close {
-  cursor: pointer;
   position: absolute;
   right: -12px;
   top: -12px;
-  background-color: #ffc4ce;
   width: 36px;
   height: 36px;
   border-radius: 36px;
-  border: none;
   padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #ffb9b9;
 }
 #congrats_messages-modal-close:hover {
-  background-color: #af7a82;
   color: white;
+  background-color: #ff5f5f;
 }
 
 /* ===============
@@ -278,22 +270,21 @@
 }
 #code_examples-block {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
 }
 #code_examples-wrapper {
   font-size: large;
   height: 250px;
-  height: max(250px, 100vh - 600px);
+  height: max(250px, 100vh - 570px);
   overflow-y: auto;
 }
 #code_examples-left {
+  float: left;
   width: 50%;
   padding: 8px 16px;
   margin-right: 16px;
   border-right: 1px solid black;
-  float: left;
-  box-sizing: border-box;
 }
 #code_examples-right {
   padding: 8px 16px;
@@ -305,100 +296,131 @@
 
 /* =====[ keyboard base ]===== */
 #keyboard {
-  padding: 13px;
-  border-radius: 7px;
-  box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
+  margin: 0px auto;
+  border-radius: 8px;
+  width: 870px;
+  padding: 12px;
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.5);
 }
+
 #key_area {
+  padding: 3px;
   border-radius: 6px;
-  box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.5);
-  padding: 2px 0 2px 3px;
+  box-shadow: inset 0 0 6px 2px rgba(0, 0, 0, 0.7);
 }
+
 /* =====[ keys ^ ]===== */
-/* inspired by https://codepen.io/P233/pen/qEagi */
+.kb-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .n_key, .f_key, .s_key, .enter_key, .space_bar, .backspace {
-  width: 40px;
-  height: 44px;
+  height: 56px;
   margin: 2px;
-  border-width: 3px 7px 10px;
-  border-style: solid;
   border-radius: 4px;
-  float: left;
-  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.35);
+  border-width: 4px 7px 9px;
+  border-style: solid;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
 }
 .kb-keycap {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  height: 43px;
 }
 .n_key .kb-keycap {
-  width: 33px;
-  height: 40px;
   padding: 5px 0 0 7px;
   font-size: 17px;
   font-weight: bold;
   line-height: 17px;
 }
-.f_key .kb-keycap, .enter_key .kb-keycap, .backspace .kb-keycap {
-  width: inherit;
-  height: inherit;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
-}
-.s_key .kb-keycap, .space_bar .kb-keycap {
-  width: inherit;
-  height: inherit;
+.f_key .kb-keycap, .s_key .kb-keycap, .enter .kb-keycap, .space .kb-keycap, .backspace .kb-keycap {
   text-align: center;
   font-size: 15px;
-  line-height: 45px;
-  padding: 0;
+  line-height: 44px;
 }
 
 /* =====[ modify key widths ]===== */
-.tab {
-  width: 66px;
-  border-right-width: 10px;
+.n_key {
+  width: 52px;
+}
+.n_key .kb-keycap {
+  width: 38px;
 }
 .backspace {
-  width: 96px;
+  width: 108px;
   border-left-width: 9px;
+}
+.backspace .kb-keycap {
+  width: 92px;
+}
+.tab {
+  width: 80px;
+  border-right-width: 9px;
+}
+.tab .kb-keycap {
+  width: 64px;
 }
 .backslash {
-  width: 67px;
+  width: 80px;
   border-left-width: 9px;
 }
-.backslash > .kb-keycap {
-  width: 60px;
+.backslash .kb-keycap {
+  width: 64px;
 }
 .capslock {
-  width: 87px;
-  border-right-width: 10px;
+  width: 102px;
+  border-right-width: 9px;
 }
-.enter_key {
-  width: 103px;
-  border-left-width: 10px;
+.capslock .kb-keycap {
+  width: 86px;
+}
+.enter {
+  width: 114px;
+  border-left-width: 9px;
+}
+.enter .kb-keycap {
+  width: 98px;
 }
 .shiftleft {
-  width: 113px;
-  border-right-width: 10px;
+  width: 130px;
+  border-right-width: 9px;
+}
+.shiftleft .kb-keycap {
+  width: 114px;
 }
 .shiftright {
-  width: 135px;
-  border-left-width: 10px;
+  width: 142px;
+  border-left-width: 9px;
 }
-.key-dictionary, .key-typing {
-  width: 95px;
+.shiftright .kb-keycap {
+  width: 126px;
 }
-.space_bar {
-  width: 326px;
-  border-width: 3px 8px 10px;
+.key-dictionary,
+.key-typing {
+  width: 112px;
+}
+.key-dictionary .kb-keycap,
+.key-typing .kb-keycap {
+  width: 98px;
+}
+.space {
+  width: 330px;
+  border-left-width: 9px;
+  border-right-width: 9px;
+}
+.space .kb-keycap {
+  width: 312px;
 }
 .key-array {
-  width: 277px;
-  border-left-width: 10px;
+  width: 270px;
+}
+.key-array .kb-keycap {
+  width: 256px;
 }
 
 /* ===========
@@ -424,24 +446,14 @@
 */
 
 /* pink */
-.bg_style-hot_pink {
-  background: #ffa6d2;
-}
+.bg_style-hot_pink { background: #ffa6d2; }
 /* yellow */
-.bg_style-shiny_yellow {
-  background: #ffd17c;
-}
+.bg_style-shiny_yellow { background: #ffd17c; }
 /* green */
-.bg_style-silver_tree {
-  background: #65b496;
-}
+.bg_style-silver_tree { background: #65b496; }
 /* blue */
-.bg_style-voyage_blue {
-  background: #85ceff;
-}
-.bg_style-good_blue {
-  background: #77afee;
-}
+.bg_style-voyage_blue { background: #85ceff; }
+.bg_style-good_blue { background: #77afee; }
 .bg_style-sf_emerald {
   background: #00788d;
   background: linear-gradient(to right, #00788d, #006e81);
@@ -460,28 +472,14 @@
   background: linear-gradient(315deg, #ddcad9, #d1b1cb);
 }
 /* gray */
-.bg_style-light_gray {
-  background: #c0c0c0
-}
-.bg_style-light_silver {
-  background: #b8b8b8;
-}
-.bg_style-dark_silver {
-  background: #a0a0a0;
-}
-.bg_style-emperor {
-  background: #535353;
-}
-.bg_style-dark {
-  background: #3f3f3f;
-}
+.bg_style-light_gray { background: #c0c0c0; }
+.bg_style-light_silver { background: #b8b8b8; }
+.bg_style-dark_silver { background: #a0a0a0; }
+.bg_style-emperor { background: #535353; }
+.bg_style-dark { background: #3f3f3f; }
 
-.bg_style-change1 {
-  background: #66b7ec;
-}
-.bg_style-change2 {
-  background: #8d817c;
-}
+.bg_style-change1 { background: #66b7ec; }
+.bg_style-change2 { background: #8d817c; }
 
 /* Name that Color: https://chir.ag/projects/name-that-color/#6195ED */
 
@@ -494,22 +492,46 @@
 */
 
 /* white-gray-black */
-#keyboard.kb_base_style-white, #key_area.kb_base_style-white { background: white; }
-#keyboard.kb_base_style-gainsboro, #key_area.kb_base_style-gainsboro { background: gainsboro; }
-#keyboard.kb_base_style-dark_gray, #key_area.kb_base_style-dark_gray { background: #a9a9a9; }
-#keyboard.kb_base_style-emperor, #key_area.kb_base_style-emperor { background: #535353; }
-#keyboard.kb_base_style-limed_spruce, #key_area.kb_base_style-limed_spruce { background: #394851; }
-#keyboard.kb_base_style-mine_shaft, #key_area.kb_base_style-mine_shaft { background: #323232; }
-#keyboard.kb_base_style-black, #key_area.kb_base_style-black { background: black; }
+#keyboard.kb_base_style-white,
+#key_area.kb_base_style-white {
+  background: white;
+}
+#keyboard.kb_base_style-gainsboro,
+#key_area.kb_base_style-gainsboro {
+  background: gainsboro;
+}
+#keyboard.kb_base_style-dark_gray,
+#key_area.kb_base_style-dark_gray {
+  background: #a9a9a9;
+}
+#keyboard.kb_base_style-emperor,
+#key_area.kb_base_style-emperor {
+  background: #535353;
+}
+#keyboard.kb_base_style-limed_spruce,
+#key_area.kb_base_style-limed_spruce {
+  background: #394851;
+}
+#keyboard.kb_base_style-mine_shaft,
+#key_area.kb_base_style-mine_shaft {
+  background: #323232;
+}
+#keyboard.kb_base_style-black,
+#key_area.kb_base_style-black {
+  background: black;
+}
 /* pink */
-#keyboard.kb_base_style-carnation_pink, #key_area.kb_base_style-carnation_pink {
+#keyboard.kb_base_style-carnation_pink,
+#key_area.kb_base_style-carnation_pink {
   background: #ffa6c9;
   background: linear-gradient(-30deg, #ffa6bc, #ffa6c9, #ffa6da, #ffa6c9);
 }
 /* yellow */
-#keyboard.kb_base_style-salomie { background: #fedb8d; }
+#keyboard.kb_base_style-salomie {
+  background: #fedb8d;
+}
 /* blue */
-#keyboard.kb_base_style-ming { 
+#keyboard.kb_base_style-ming {
   background: #36747d;
   background: linear-gradient(-30deg, #36747d, #559faa, #478a94, #36747d);
 }
@@ -517,14 +539,20 @@
   background: #3b5598;
   background: linear-gradient(-30deg, #3b5598, #4e6bb4, #5777c7, #3b5598);
 }
-#keyboard.kb_base_style-viking-appr { background: #47d6d1; }
-#keyboard.kb_base_style-cornflower-appr { background: #83b0e2; }
+#keyboard.kb_base_style-viking-appr {
+  background: #47d6d1;
+}
+#keyboard.kb_base_style-cornflower-appr {
+  background: #83b0e2;
+}
 #keyboard.kb_base_style-rhino {
   background: #2e3f62;
   background: linear-gradient(to left, #2e3f62, #394b70, #404f6d, #2e3f62);
 }
 /* purple */
-#keyboard.kb_base_style-melanie { background: #e7c6e1; }
+#keyboard.kb_base_style-melanie {
+  background: #e7c6e1;
+}
 #keyboard.kb_base_style-grape {
   background: #381a51;
   background: linear-gradient(-30deg, #381a51, #542f72, #562c79, #381a51);
@@ -532,7 +560,7 @@
 /* brown */
 #keyboard.kb_base_style-beaver {
   background: #926f5b;
-  /* background: linear-gradient(-30deg, #634839, #7e5f57, #6e544d); */
+  background: linear-gradient(-30deg, #634839, #7e5f57, #6e544d);
 }
 
 /* ==============
@@ -607,7 +635,6 @@
   background: linear-gradient(-30deg, #e6c8cf, #f3d9df);
 }
 
-
 /* carnation */
 .key_style-carnation {
   background: #d33f46;
@@ -627,7 +654,6 @@
   background: linear-gradient(-30deg, #ce5a58, #de6360);
 }
 
-
 /* coral */
 .key_style-coral {
   background: #ec6331;
@@ -637,7 +663,6 @@
   background: #ff7f50;
   background: linear-gradient(-30deg, #ff7948, #ff7f50);
 }
-
 
 /* salomie */
 .key_style-salomie {
@@ -656,7 +681,6 @@
   background: #fed33c;
   background: linear-gradient(-30deg, #feb43c, #fed33c);
 }
-
 
 /* razer_green */
 .key_style-razer_green {
@@ -685,7 +709,6 @@
   background: #8be6d8;
   background: linear-gradient(-30deg, #83dfd1, #8be6d8);
 }
-
 
 /* blizzard_blue */
 .key_style-blizzard_blue {
@@ -751,7 +774,7 @@
   background: linear-gradient(-30deg, #2b417a, #3b5598);
 }
 /* fiord */
-.key_style-fiord { 
+.key_style-fiord {
   background: #133a58;
   border-color: #364c68 #30455e #17304c;
 }
@@ -759,7 +782,6 @@
   background: #394f6b;
   background: linear-gradient(-30deg, #344863, #394f6b);
 }
-
 
 /* melanie */
 .key_style-melanie {
@@ -807,7 +829,6 @@
   background: linear-gradient(-30deg, #8c4d9c, #9255a2);
 }
 
-
 /* regent_gray */
 .key_style-regent_gray {
   background: #505b5d;
@@ -835,7 +856,6 @@
   background: #818287;
   background: linear-gradient(-30deg, #707175, #818287);
 }
-
 
 /* limed_spruce */
 .key_style-limed_spruce {
@@ -874,7 +894,6 @@
   background: linear-gradient(-30deg, #33363d, #25272c);
 }
 
-
 /* white */
 .key_style-white {
   background: #edeeea;
@@ -884,7 +903,6 @@
   background: white;
   background: linear-gradient(to left, white, #fcfcfc, white);
 }
-
 
 /* keychron_k6-light (coral + silver_chalice + jumbo-appr) */
 .key_style-keychron_k6-light {
@@ -985,11 +1003,25 @@
 .key_style-ducky_one_2_razer.keyd .kb-keycap span {
   visibility: hidden;
 }
-.key_style-ducky_one_2_razer.backspace .kb-keycap { color: black!important; }
-.key_style-ducky_one_2_razer.keya .kb-keycap::before { content: "←"; color: black; }
-.key_style-ducky_one_2_razer.keyw .kb-keycap::before { content: "↑"; color: black; }
-.key_style-ducky_one_2_razer.keys .kb-keycap::before { content: "↓"; color: black; }
-.key_style-ducky_one_2_razer.keyd .kb-keycap::before { content: "→"; color: black; }
+.key_style-ducky_one_2_razer.backspace .kb-keycap {
+  color: black !important;
+}
+.key_style-ducky_one_2_razer.keya .kb-keycap::before {
+  content: "←";
+  color: black;
+}
+.key_style-ducky_one_2_razer.keyw .kb-keycap::before {
+  content: "↑";
+  color: black;
+}
+.key_style-ducky_one_2_razer.keys .kb-keycap::before {
+  content: "↓";
+  color: black;
+}
+.key_style-ducky_one_2_razer.keyd .kb-keycap::before {
+  content: "→";
+  color: black;
+}
 
 /* =============
     TEXT STYLES
@@ -1010,8 +1042,8 @@
 .text_style-o-persian_pink { color: #f77fbe !important; }
 .text_style-brink_pink { color: #fb607f; }
 .text_style-o-brink_pink { color: #fb607f !important; }
-.text_style-brilliant_rose { color: #F653A6; }
-.text_style-o-brilliant_rose { color: #F653A6!important; }
+.text_style-brilliant_rose { color: #f653a6; }
+.text_style-o-brilliant_rose { color: #f653a6 !important; }
 /* yellow */
 .text_style-bright_sun { color: #fed33c; }
 .text_style-o-bright_sun { color: #fed33c !important; }
@@ -1019,7 +1051,7 @@
 .text_style-riptide { color: #8be6d8; }
 .text_style-o-riptide { color: #8be6d8 !important; }
 .text_style-aquamarine { color: #6ef7e6; }
-.text_style-o-aquamarine { color: #6ef7e6 !important; }
+.text_style-o-aquamarine { color: #6ef7e6 !important;}
 /* blue */
 .text_style-spray { color: #79deec; }
 .text_style-o-spray { color: #79deec !important; }
@@ -1032,10 +1064,10 @@
 .text_style-limed_spruce { color: #394851; }
 .text_style-o-limed_spruce { color: #394851 !important; }
 .text_style-black { color: black; }
-.text_style-o-black { color: black!important; }
+.text_style-o-black { color: black !important; }
 /* white */
 .text_style-white { color: white; }
-.text_style-o-white { color: white!important; }
+.text_style-o-white { color: white !important; }
 
 /* ====================
     PRESSED KEY STYLES
@@ -1100,17 +1132,13 @@
   background: #e6e3e0 !important;
   border-color: #f0edea #e6e3e0 #d1cccc !important;
 }
-.pressed_key_style-all_white span {
-  visibility: hidden;
-}
+.pressed_key_style-all_white span { visibility: hidden; }
 .pressed_key_style-all_white .kb-keycap {
   background: #f8f8f8 !important;
   background: linear-gradient(to left, #f8f8f8, #fdfdfd, #f8f8f8) !important;
 }
 /* hidden */
-.pressed_key_style-hidden {
-  opacity: 0;
-}
+.pressed_key_style-hidden { opacity: 0; }
 /* flashing_bl */
 .pressed_key_style-flashing_bl {
   position: relative;
@@ -1140,7 +1168,13 @@
 }
 .pressed_key_style-special .kb-keycap {
   background: #2d383d !important;
-  background: linear-gradient( 135deg, #2e2e2e 0%, #5e5e5e 35%, #474747 55%, #2e2e2e) !important;
+  background: linear-gradient(
+    135deg,
+    #2e2e2e 0%,
+    #5e5e5e 35%,
+    #474747 55%,
+    #2e2e2e
+  ) !important;
 }
 .pressed_key_style-special.n_key span {
   display: none;
@@ -1319,10 +1353,18 @@
   border-color: #8bd4b1 #e3ffef #64a385 !important;
 }
 @keyframes alien_backlight {
-  0% { box-shadow: 0px 0px 10px 1px #e24747; }
-  33% { box-shadow: 0px 0px 10px 1px #fdff8a; }
-  67% { box-shadow: 0px 0px 10px 1px #8aff9a; }
-  100% { box-shadow: 0px 0px 10px 1px #e24747; }
+  0% {
+    box-shadow: 0px 0px 10px 1px #e24747;
+  }
+  33% {
+    box-shadow: 0px 0px 10px 1px #fdff8a;
+  }
+  67% {
+    box-shadow: 0px 0px 10px 1px #8aff9a;
+  }
+  100% {
+    box-shadow: 0px 0px 10px 1px #e24747;
+  }
 }
 .pressed_key_style-alien .kb-keycap {
   background: #0e633b !important;

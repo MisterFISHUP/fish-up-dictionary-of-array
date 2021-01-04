@@ -1,8 +1,8 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2021-01-01
+ * Copyright © 2020-2021 FISH UP Dictionary of Array
+ * Date: 2021-01-04
  */
 
 /* structure:
@@ -91,18 +91,17 @@ $("#game_instructions-open").click(function () {
   areGameInstructionsOpen = true;
 })
 
-// close game instructions: by clicking close button
-$("#game_instructions-close").click(function () {
+function closeGameInstructions() {
   $('#game_instructions-wrapper').addClass('not-visible');
   areGameInstructionsOpen = false;
-})
+}
 
-// close game instructions: by pressing Esc
+// close game instructions: by clicking close button/pressing Esc
+$("#game_instructions-close").click(closeGameInstructions);
 $(window).on({
   'keydown': function (e) {
     if (areGameInstructionsOpen && e.code == 'Escape') {
-      $('#game_instructions-wrapper').addClass('not-visible');
-      areGameInstructionsOpen = false;
+      closeGameInstructions();
     }
   }
 })
@@ -228,8 +227,8 @@ function gameAutoClear() {
   let gameOutputFieldWidth = [...children].map(x => x.offsetWidth + 4).reduce((a, b) => a + b, 0);
 
   // if game output field too wide
-  // 840 = 890 (~= keyboard width) - 50 (~=game instrucitons open button)
-  if (gameOutputFieldWidth > 840) {
+  // 820 = 880 (= game area width) - 50 (= game instrucitons open button) - 10
+  if (gameOutputFieldWidth > 820) {
     // clear game output field 
     for (let i = 0; i < children.length; i++) {
       gameOutputFieldElem.removeChild(children[i]);
@@ -1525,6 +1524,7 @@ function createPressedKeyStyleDetails() {
 
     let styledKey = document.createElement('div');
     styledKey.className = 'n_key';
+    styledKey.style.float = 'left';
     styledKey.classList.add('pressed_key_style-' + style);
     let styledKeyKeycap = document.createElement('div');
     styledKeyKeycap.className = 'kb-keycap';
@@ -1607,11 +1607,30 @@ function createStyleSetTable() {
 
   // table data
   styleSetOptions.forEach(function (styleSet, i) {
+    const i18nClick = {
+      tw: '點擊切換到樣式 ',
+      en: 'Click to switch to style ',
+      fr: 'Cliquez pour passer au style '
+    }
     const styleInfo = styleSet.info[stringLocal];
     const styleNumber = (i + 1).toString();
     const numberLeadingZeros = '0'.repeat(cmdDigitLength - styleNumber.length) + styleNumber;
     let row = document.createElement('tr');
-    row.innerHTML = `<td class="w3-center">${numberLeadingZeros}</td><td>${styleInfo}</td>`;
+    let tdNumber = document.createElement('td');
+    tdNumber.className = 'w3-center';
+    let x = document.createElement('span');
+    x.textContent = numberLeadingZeros;
+    x.style.cursor = 'pointer';
+    x.title = i18nClick[stringLocal] + numberLeadingZeros;
+    x.addEventListener('click', function () {
+      changeStyleSet(i + 1);
+      closeGameInstructions();
+    });
+    tdNumber.appendChild(x);
+    let tdInfo = document.createElement('td');
+    tdInfo.innerHTML = styleInfo;
+    row.appendChild(tdNumber);
+    row.appendChild(tdInfo);
     tableStyleSet.appendChild(row);
   })
 }

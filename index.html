@@ -92,7 +92,7 @@
                         <h5 class="w3-center" v-html='appContent.game.description1[local]'></h5>
                         <hr style="width: 570px; margin: 15px auto 25px;">
 
-                        <p class="w3-large w3-center" style="margin: 4em auto; width: 80%" v-html='appContent.game.description2[local]'></p>
+                        <p class="w3-large w3-center" style="margin: 4em auto; width: 85%" v-html='appContent.game.description2[local]'></p>
 
                         <!-- egg hunt title -->
                         <h4 id='egg_hunt-title' class="bold-center">{{ appContent.game.eggHuntTitle[local] }}</h4>
@@ -205,7 +205,7 @@
                 <div id="keyboard">
                     <div id="key_area">
                         <!-- first row -->
-                        <div>
+                        <div class="kb-row">
                             <div class="backquote n_key" name='backquote'>
                                 <div class="kb-keycap"></div>
                             </div>
@@ -251,7 +251,7 @@
                             <br clear="both">
                         </div>
                         <!-- second row -->
-                        <div>
+                        <div class="kb-row">
                             <div class="tab f_key" name='tab'>
                                 <div class="kb-keycap"></div>
                             </div>
@@ -297,7 +297,7 @@
                             <br clear="both">
                         </div>
                         <!-- third row -->
-                        <div>
+                        <div class="kb-row">
                             <div class="capslock f_key" name='capslock'>
                                 <div class="kb-keycap"></div>
                             </div>
@@ -340,7 +340,7 @@
                             <br clear="both">
                         </div>
                         <!-- fourth row -->
-                        <div>
+                        <div class="kb-row">
                             <div class="shiftleft f_key" name='shiftleft'>
                                 <div class="kb-keycap"></div>
                             </div>
@@ -380,7 +380,7 @@
                             <br clear="both">
                         </div>
                         <!-- last row -->
-                        <div>
+                        <div class="kb-row">
                             <div class="key-dictionary s_key" name='dictionary'>
                                 <a href="dictionary.html">
                                     <div class="kb-keycap"><span>{{ appContent.sKeyDictionary[local] }}</span></div>

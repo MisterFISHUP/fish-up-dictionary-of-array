@@ -215,11 +215,6 @@ const AppContent = {
       en: `Clicking on the title of this page will move the screen to the exercise area. Also, it is recommended that you read the page 'FISH UP Dictionary of Array' before using this page for a better understanding of Array codes shown here (when dealing with coincident codes for example).&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>Click here to read the page<<</a>`,
       fr: `Par ailleur, le fait de cliquer sur le titre de cette page permet de déplacer l'écran vers la zone d'exercices. Il est recommandé de lire la page « Dictionnaire FISH UP de Tableau » avant d'utiliser cette page, pour mieux comprendre les codes Tableau indiqués ici (pour la saisie des codes coïncidents par exemple). &emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>> Cliquez ici pour lire la page <<</a>`,
     },
-    par3: {
-      tw: `🔥🔥 新功能：「當前提示」中現在提供常用字的拆字了！若有多種拆法，僅顯示標準拆字，或是標準拆字中的其中一種。此功能預設關閉。`,
-      en: `🔥🔥 New feature: In 'Current character', an Array decomposition is now provided for commonly used characters! More precisely, if there are several possible decompositions, only the standard decomposition or one of the standard decompositions is indicated. This function is turned off by default.`,
-      fr: `🔥🔥 Nouvelle fonctionnalité : Dans « Caractère actuel », une décomposition Tableau est désormais fournie pour les caractères couramment utilisés ! Plus précisément, s'il y a plusieurs décompositions possibles, seule la décomposition standard ou une des décompositions standard est indiquée. Cette fonction est désactivée par défaut.`,
-    },
   },
   typedLines: { tw: '已打句子', en: 'Typed lines', fr: 'Lignes tapées' },
   wrongCharacterPreviousLines: { tw: '先前行列錯字', en: 'Wrong characters and their Array codes (typed lines)', fr: 'Caractères incorrects avec leurs codes Array (lignes tapées)' },

@@ -137,11 +137,6 @@ const AppContent = {
       },
     },
     otherPressedKeyStyle: { tw: '按鍵按下樣式', en: 'Pressed key styles', fr: 'Styles des touches pressées' },
-    noPageJump: {
-      tw: "使用下列任一樣式時，點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉",
-      en: "When you're using any of the following styles, clicking keys from the last row of the virtual Array keyboard will not trigger page jump.",
-      fr: "Lorsque vous utilisez l'un des styles suivants, le fait de cliquer sur les touches de la dernière rangée du clavier virtuel de Tableau ne déclenchera pas de saut de page."
-    },
     styleWholeKeyboard: { tw: '全鍵盤樣式', en: 'Keyboard styles', fr: 'Styles du clavier' },
   },
   array: { tw: '行列輸入法', en: 'Array', fr: 'Tableau' },

@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-01-04
+ * Date: 2021-01-06(07)
  */
 
 /* structure:
@@ -796,17 +796,17 @@ const stylePressedKeyInfo = {
   special: {
     name: { tw: '特別彩蛋', en: 'Special Easter Egg', fr: 'Œuf de Pâques spécial' },
     instructions: {
-      tw: `註：此時點擊虛擬行列鍵盤的底排按鍵，頁面不會跳轉（請按空白鍵看看！）
+      tw: `註：請按空白鍵看看！
       <ul>
         <li>按下行列輸入法中「<span class='cmd'>行列</span>」兩字的鍵位、按下英文字 '<span class='cmd'>array</span>' 的鍵位、按下法文字 « <span class='cmd'>tableau</span> » 的鍵位</li>
         <li>按下英文字 '<span class='cmd'>fish up</span>' 的鍵位</li>
       </ul>`,
-      en: `Note: Clicking keys from the last row of the virtual Array keyboard will not trigger any page jumps in this mode. (Press the space bar to see a message for you!)
+      en: `Note: Press the space bar to see a message for you!
       <ul>
         <li>Type the Chinese word '<span class='cmd'>行列</span>' with the Array input method; type the English word '<span class='cmd'>array</span>'; type the French word '<span class='cmd'>tableau</span>'</li>
         <li>Type the English words '<span class='cmd'>fish up</span>'</li>
       </ul>`,
-      fr: `NB : Le fait de cliquer sur les touches de la dernière rangée du clavier virtuel de Tableau ne déclenchera pas de saut de page dans ce mode. (Appuyez sur la barre d'espace pour voir un message pour vous !)
+      fr: `NB : Appuyez sur la barre d'espace pour voir un message pour vous !
       <ul>
         <li>Tapez le mot chinois « <span class='cmd'>行列</span> » avec la méthode Tableau ; tapez le mot anglais « <span class='cmd'>array</span> » ; tapez le mot français « <span class='cmd'>tableau</span> »</li>
         <li>Tapez les mots anglais « <span class='cmd'>fish up</span> »</li>
@@ -953,7 +953,7 @@ const styleSetOptions = [
     bg: 'sf_emerald',
     kbBase: { border: 'ming', keyArea: 'white' },
     key: { nKey: 'mosque', fKey: 'coral', sKey: 'coral', bs: 'coral', enterKey: 'coral', spaceBar: 'riptide' },
-    text: { nKey: 'o-riptide', bs: 'o-riptide', sKey: 'o-riptide' },
+    text: { nKey: 'o-riptide', bs: 'o-white', sKey: 'o-white' },
     pressedKey: 'turquoise_bl',
     cmdList: ['ducky mecha sf emerald', 'ducky mechq sf emerqld'],
     name: {
@@ -1432,7 +1432,16 @@ const cmdStyleSet = styleSetOptions.map(function (styleSet, i) {
 });
 
 // define the initial styles
-const defaultStyleSetNumber = 1;
+let defaultStyleSetNumber = 1;
+const goodList = [1, 2, 3, 4, 6, 7, 9, 10, 13, 15, 24, 27];
+const nightList = [3, 7, 15, 24];
+const d = new Date();
+const hour = d.getHours();
+if (hour < 7 || (hour >= 11 && hour < 13)) {
+  defaultStyleSetNumber = goodList[Math.floor(Math.random() * goodList.length)];
+} else if (hour >= 21) {
+  defaultStyleSetNumber = nightList[Math.floor(Math.random() * nightList.length)];
+}
 let currentStyleSetNumber = defaultStyleSetNumber;
 let currentStylePressedKey = styleSetOptions[defaultStyleSetNumber - 1].pressedKey;
 
@@ -1591,8 +1600,13 @@ function createStyleSetInstructions(num) {
     en: `Pressing <span class="keycap keycap-letter">[</span> or <span class="keycap keycap-letter">]</span> (the two keys next to <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>) <span class="cmd">three times in succession</span> will switch to the previous or next style.`,
     fr: `En appuyant <span class="cmd">trois fois de suite</span> sur <span class="keycap keycap-letter">^</span> ou <span class="keycap keycap-letter">$</span> (les deux touches à droite de <span class="keycap keycap-letter">0↑</span> = <span class="keycap keycap-letter">p</span>), vous passez au style précédent ou suivant.`
   };
+  const i18nPar3 = {
+    tw: '當然，您可以任意搭配<b>全鍵盤樣式</b>以及<b>按鍵按下樣式</b>（包括十顆彩蛋）！',
+    en: 'Of course, you can combine any <b>keyboard styles</b> with any <b>pressed key styles</b> (including the ten Easter eggs)!',
+    fr: `Bien sûr, vous pouvez combiner les <b>styles du clavier</b> avec les <b>styles des touches pressées</b> (y compris les dix œufs de Pâques) !`
+  }
   let elem = document.getElementById('instructions-style_set');
-  elem.innerHTML += `<p>${i18nPar1[stringLocal]}</p><p>${i18nPar2[stringLocal]}</p>`;
+  elem.innerHTML += `<p>${i18nPar1[stringLocal]}</p><p>${i18nPar2[stringLocal]}</p><p>${i18nPar3[stringLocal]}</p>`;
 }
 function createStyleSetTable() {
   let i18nStyleNum = { tw: '樣式編號', en: 'Style number', fr: 'Numéro du style' };
@@ -1638,6 +1652,8 @@ function createStyleSetTable() {
 // #####[ style initialisation ' ]#####
 
 changeStyleSet(defaultStyleSetNumber); // after content creation in game instructions
+addHrefInKeyboard();
+$('.s_key span').removeClass('not-visible');
 
 // #####[ change style ' ]#####
 
@@ -1694,17 +1710,12 @@ function changeStylePressedKey(styleName) {
   currentStylePressedKey = styleName;
   changeCodeExampleIcon(styleName);
 
-  // hrefs in s_key exist only when using one of the first nine pressed key styles
-  if (stylePressedKeyOptions.slice(0, 9).includes(styleName)) {
+  // hrefs/texts in s_key exist/are visible only when using one of the first nine pressed key styles and using default style set
+  if (stylePressedKeyOptions.slice(0, 9).includes(styleName) && currentStyleSetNumber == defaultStyleSetNumber) {
     addHrefInKeyboard();
-  } else {
-    removeHrefInKeyboard();
-  }
-
-  // texts in s_key are visible only when using default style set
-  if (currentStyleSetNumber == defaultStyleSetNumber) {
     $('.s_key span').removeClass('not-visible');
   } else {
+    removeHrefInKeyboard();
     $('.s_key span').addClass('not-visible');
   }
 }

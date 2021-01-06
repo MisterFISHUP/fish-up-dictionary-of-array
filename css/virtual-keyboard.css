@@ -453,14 +453,14 @@
 .bg_style-silver_tree { background: #65b496; }
 /* blue */
 .bg_style-voyage_blue { background: #85ceff; }
-.bg_style-good_blue { background: #77afee; }
+.bg_style-good_blue { background: #64b4ff; }
 .bg_style-sf_emerald {
   background: #00788d;
   background: linear-gradient(to right, #00788d, #006e81);
 }
 .bg_style-bunting {
-  background: #1e235a;
-  background: linear-gradient(30deg, #1b215e, #1e235a);
+  background: #0e144d;
+  background: linear-gradient(30deg, #09134e, #0e144d);
 }
 /* purple */
 .bg_style-creator_purple {

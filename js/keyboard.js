@@ -1439,7 +1439,7 @@ const d = new Date();
 const hour = d.getHours();
 if (hour < 7 || (hour >= 11 && hour < 13)) {
   defaultStyleSetNumber = goodList[Math.floor(Math.random() * goodList.length)];
-} else if (hour >= 21) {
+} else if (hour >= 22) {
   defaultStyleSetNumber = nightList[Math.floor(Math.random() * nightList.length)];
 }
 let currentStyleSetNumber = defaultStyleSetNumber;

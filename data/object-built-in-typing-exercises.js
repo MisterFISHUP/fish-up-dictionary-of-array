@@ -1,8 +1,8 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-01
+ * Copyright © 2020-2021 FISH UP Dictionary of Array
+ * Date: 2021-01-10
  */
 
 const defaultExercise = {
@@ -140,7 +140,7 @@ const objectBuiltInTypingExercise = {
     stroke2: "二亠人（亻）儿入八冂冖冫几凵刀（刂）力勹匕匚匸十卜卩（㔾）厂厶又",
     stroke3: "口囗土士夂夊夕大女子宀寸小尢（兀）尸屮山巛工己巾干幺广廴廾弋弓彐（彑）彡彳",
     stroke4: "心（忄㣺）戈戶手（扌）支攴（攵）文斗斤方无日曰月木欠止歹（歺）殳毋（母）比毛氏气水（氵氺）火（灬）爪（爫）父爻爿片牙牛（牜）犬（犭）",
-    stroke5: "玄玉（⺩）瓜瓦甘生用田疋（𤴔）疒癶白皮皿目（罒）矛矢石示（礻）禸禾穴立",
+    stroke5: "玄玉（𤣩）瓜瓦甘生用田疋（𤴔）疒癶白皮皿目（罒）矛矢石示（礻）禸禾穴立",
     stroke6: "竹（𥫗）米糸（糹）缶网（罓罒）羊（𦍌）羽老（耂）而耒耳聿肉臣自至臼（𦥑）舌舛舟艮色艸（艹）虍虫血行衣（衤）襾（覀）",
     stroke7: "見角言谷豆豕豸貝赤走足身車辛辰辵（辶）邑（阝）酉釆里",
     stroke8: "金長（镸）門阜（阝）隶隹雨青非",

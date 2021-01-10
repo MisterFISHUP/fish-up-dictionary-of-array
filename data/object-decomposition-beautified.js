@@ -1,8 +1,8 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-03
+ * Copyright © 2020-2021 FISH UP Dictionary of Array
+ * Date: 2021-01-10
  */
 
 // Created by FISH UP, this is a big project
@@ -1879,7 +1879,7 @@ const decompositionCommonTW4808 = {
   // 祺祿禁禎福禍禦禧禪禮禱
   '禹': '㇒口禸',
   '萬': '艹日禸',
-  '禽': '今一乂禸',
+  '禽': '人亠乂禸',
   '禾': '㇒木',
   '私': '㇒木厶',
   '秀': '㇒木㇒㇡',

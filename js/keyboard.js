@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-01-06(07)
+ * Date: 2021-01-14
  */
 
 /* structure:
@@ -1432,16 +1432,9 @@ const cmdStyleSet = styleSetOptions.map(function (styleSet, i) {
 });
 
 // define the initial styles
-let defaultStyleSetNumber = 1;
-const goodList = [1, 2, 3, 4, 6, 7, 9, 10, 13, 15, 24, 27];
-const nightList = [3, 7, 15, 24];
-const d = new Date();
-const hour = d.getHours();
-if (hour < 7 || (hour >= 11 && hour < 13)) {
-  defaultStyleSetNumber = goodList[Math.floor(Math.random() * goodList.length)];
-} else if (hour >= 22) {
-  defaultStyleSetNumber = nightList[Math.floor(Math.random() * nightList.length)];
-}
+let defaultStyleSetNumber = (localStorage.getItem('indexDefaultStyleSetNumber'))
+  ? parseInt(localStorage.getItem('indexDefaultStyleSetNumber'))
+  : 1;
 let currentStyleSetNumber = defaultStyleSetNumber;
 let currentStylePressedKey = styleSetOptions[defaultStyleSetNumber - 1].pressedKey;
 
@@ -1721,6 +1714,8 @@ function changeStylePressedKey(styleName) {
 }
 function changeStyleSet(num) {
   currentStyleSetNumber = num;
+  localStorage.setItem('indexDefaultStyleSetNumber', num);
+
   const newStyleSet = styleSetOptions[num - 1];
   changeStyleBg(newStyleSet.bg);
   changeStyleKbBase(newStyleSet.kbBase);

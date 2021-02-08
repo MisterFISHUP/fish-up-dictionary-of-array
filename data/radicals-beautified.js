@@ -1,8 +1,8 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020 FISH UP Dictionary of Array
- * Date: 2020-12-03
+ * Copyright © 2020-2021 FISH UP Dictionary of Array
+ * Date: 2021 fev. 08
  */
 
 // two js objects in this file:
@@ -428,7 +428,7 @@ const arrayRadicalInformation = {
     }
   },
   '衣': {
-    code: '28', type: 'special', isSimplified: false, isText: false, imgName: '28衣', imgDescription: {
+    code: '28', type: 'sess', isSimplified: false, isText: false, imgName: '28衣', imgDescription: {
       tw: '「衣」去掉前三筆畫',
       en: "'衣' without the first three strokes",
       fr: "« 衣 » sans les trois prmiers traits",

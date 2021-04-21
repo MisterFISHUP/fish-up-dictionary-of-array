@@ -5,10 +5,6 @@
  * Date: 2021 Jan. 30
  */
 
-/* Structure: (use search)
-  - initialisation
-*/
-
 // get some html elements
 const lineCurElem = document.getElementById('line_cur');
 const lineNextElem = document.getElementById('line_next');
@@ -22,7 +18,6 @@ const wrgChCurLineElem = document.getElementById('wrg_ch_cur_line');
     GENERAL FUNCTIONS
    =================== */
 
-// ok
 const shuffleString = str => {
   let a = [...str];
   let n = a.length;
@@ -124,7 +119,6 @@ let durInSec;
     CREATE EXERCISE DATA
    ====================== */
 
-// ok
 // create exercise data (obj) from a string according to selected options
 // output: { lineList: array of strings, nbLines: int, nbCh: int }
 function createExerData(str) {
@@ -263,7 +257,6 @@ function prepLinesCurChHint() {
   instantVerification();
 }
 
-// ok
 function createCurChHint(ch) {
   const elem = document.getElementById('cur_ch-hint');
   elem.innerHTML = '';
@@ -329,17 +322,15 @@ function instantVerification() {
 /* ===========================================
     ADD ARRAY CODE BLOCKS OF WRONG CHARACTERS
   ============================================ */
-// ok
+
 function addWrgChCurLine(ch, pos) {
   createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_cur_line');
 }
 
-// ok
 function addWrgChAlrLines(ch, pos) {
   createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_alr_lines');
 }
 
-// ok
 // append the Array code block (id = blockId) of the character = ch to some elem (id = id)
 // no decomp included; ch supposed to be in DB
 function createArrayBlock(ch, blockId, id) {
@@ -413,7 +404,6 @@ function changeLine() {
   }
 }
 
-// ok
 // situation = 'custExerEmptyInput' | 'custExerLongInput' | 'finishExer'
 function displayPrompt(situation) {
   switch (situation) {
@@ -462,7 +452,6 @@ function displayPrompt(situation) {
   }
 }
 
-// ok
 // convert Array keys alr existing on page into English ones or conversly
 // keyType = 'eng' | 'array'
 function convertKey(keyType) {
@@ -613,13 +602,12 @@ $(`#${settings.useEngKey.elemId}`).click(function () {
 $(`#${settings.showCurCh.elemId}`).click(function () {
   settingForDecompCurCh(settings.showCurCh.state);
 })
+// close got it
+if (localStorage.getItem('typingGotItClosed') == "true") {
+  $('#got_it-block').remove();
+}
 
-
-// if (localStorage.getItem('typingGotItClosed') == "true") {
-//   $('#got_it-block').remove();
-// }
-
-// $('#got_it-close_btn').click(function () {
-//   $('#got_it-block').remove();
-//   localStorage.setItem('typingGotItClosed', "true");
-// })
+$('#got_it-close_btn').click(function () {
+  $('#got_it-block').remove();
+  localStorage.setItem('typingGotItClosed', "true");
+})

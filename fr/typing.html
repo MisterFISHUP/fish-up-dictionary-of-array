@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/typing.css">
+    <link rel="stylesheet" href="/css/typing-toggle.css">
 </head>
 
 <body>
@@ -84,28 +85,11 @@
         <!-- The Grid -->
         <div class="w3-padding-24 w3-row-padding typing-bg">
             <!-- Left Column -->
-            <div class="w3-quarter" style="margin-bottom: 32px;">
+            <div class="w3-quarter" style="margin-bottom: 8px;">
                 <!-- Current character with its Array code -->
-                <div>
-                    <span class="w3-large">{{ appContent.currentCharacter[local] }}</span>
-                    <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
-                    <label>
-                        <input type="checkbox" id="cb_close_hint_current" class="checkbox" autocomplete="off">
-                        <span class="btn-toggle-box">
-                            <span class="btn-toggle"></span>
-                        </span>
-                    </label>
-                    <div style="display: inline;" id="toggle-standard-decomp">
-                        <span class="w3-small">&emsp;{{ appContent.showStandardDecomposition[local] }}&nbsp;</span>
-                        <label>
-                            <input type="checkbox" id="cb_decomp_in_hint_current" class="checkbox" autocomplete="off">
-                            <span class="btn-toggle-box">
-                                <span class="btn-toggle"></span>
-                            </span>
-                        </label>
-                    </div>
-                    <span class="w3-small">）</span>
-                    <div id="hint_current" class="w3-margin-bottom"></div>
+                <div id="container-cur_ch">
+                    <h4>{{ appContent.currentCharacter[local] }}</h4>
+                    <div id="cur_ch-hint"></div>
                 </div>
 
                 <!-- Exercises -->
@@ -115,16 +99,18 @@
                     <details class="typing-dtls-first">
                         <summary>{{ appContent.exercises.settings[local] }}</summary>
                         <div class="typing-block-dtls-first">
-                            <label for="num_char" class="w3-small">{{ appContent.exercises.maxNumber[local] }}</label>
-                            <select name='num_char' id="option_num_char" class="w3-select w3-light-gray w3-margin-bottom">
+                            <!-- max char per line -->
+                            <label for="maxChPerLine" class="w3-small">{{ appContent.exercises.maxNumber[local] }}</label>
+                            <select name='maxChPerLine' id="maxChPerLine" class="w3-select w3-light-gray w3-margin-bottom">
                                 <option value="4">4</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
                                 <option value="20" selected="selected">20{{ appContent.exercises.defaultInParentheses[local] }}</option>
                             </select>
 
-                            <label for="num_char" class="w3-small">{{ appContent.exercises.characterOrder[local] }}</label>
-                            <select name='char_permutation' id="option_permutation" class="w3-select w3-light-gray">
+                            <!-- char permutation type -->
+                            <label for="chPermType" class="w3-small">{{ appContent.exercises.characterOrder[local] }}</label>
+                            <select name='chPermType' id="chPermType" class="w3-select w3-light-gray">
                                 <option value="normal" selected="selected">{{ appContent.exercises.normalDefault[local] }}</option>
                                 <option value="reversed">{{ appContent.exercises.reverse[local] }}</option>
                                 <option value="random">{{ appContent.exercises.random[local] }}</option>
@@ -133,7 +119,7 @@
                     </details>
 
                     <!-- Choose a built-in exercise -->
-                    <details class="typing-dtls-first" id="built-in-exercise">
+                    <details class="typing-dtls-first" id="built_in_exer">
                         <summary>{{ appContent.exercises.builtIn.title[local] }}</summary>
                         <hr style="margin: 8px 0 4px;">
                         <div class="w3-text-brown w3-padding-small" style="font-size: 0.9em;">
@@ -428,7 +414,7 @@
                             </details>
                         </div>
 
-                        <!-- Special, short codes asdf-->
+                        <!-- Special, short codes -->
                         <div class="typing-block-dtls-first">
                             <span class="typing-exer-series-title">{{ appContent.builtInExercise.specialShort.title[local] }}</span>
 
@@ -503,9 +489,9 @@
                             <i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ appContent.exercises.customisation.description[local] }}
                         </div>
                         <div class="typing-block-dtls-first">
-                            <div id='cust_exer_hint' class="typing-block-cust-exer-hint"></div>
-                            <textarea id='input_cust_exer' rows="4" :placeholder="appContent.exercises.customisation.inputPlaceholder[local]"></textarea>
-                            <button id="btn_submit_cust_exer" class="btn-built-in-exer w3-margin-bottom">{{ appContent.exercises.customisation.creation[local] }}*</button>
+                            <div id='cust_exer-prompt' class="typing-block-cust-exer-hint"></div>
+                            <textarea id='cust_exer-input' rows="4" :placeholder="appContent.exercises.customisation.inputPlaceholder[local]"></textarea>
+                            <button id="btn-submit_cust_exer" class="btn-built-in-exer w3-margin-bottom">{{ appContent.exercises.customisation.creation[local] }}*</button>
                             <br>
                             <div class="w3-round-large w3-margin-bottom" style="font-size: small">
                                 * {{ appContent.exercises.customisation.comment[local] }}
@@ -541,131 +527,191 @@
 
             <!-- Middle Column -->
             <div class='w3-half w3-padding' id='middle_column'>
-                <!-- share button -->
-                <div class="w3-left">
-                    <img class="social-share facebook-share" tabindex="0">
-                    <img class="social-share twitter-share" tabindex="0">
-                    <img class="social-share line-share" tabindex="0">
-                    <img class="social-share telegram-share" tabindex="0">
-                    <img class="social-share linkedIn-share" tabindex="0">
+                <!-- settings, info, and share buttons -->
+                <div style="display: flex; flex-wrap: wrap-reverse; align-items: flex-start;">
+                    <!-- settings -->
+                    <div class="modal-container">
+                        <input id="modal-settings" type="checkbox">
+                        <label for="modal-settings" class="modal-button">
+                            <i class="fa fa-cog" aria-hidden="true"></i> {{ appContent.settings.title[local] }}
+                        </label>
+                        <label for="modal-settings" class="modal-bg"></label>
+                        <div class="modal-content">
+                            <label for="modal-settings" class="modal-close-cross">&times;</label>
+                            <div class="modal-title">{{ appContent.settings.title[local] }}</div>
+                            <div class="modal-body">
+                                <table class="settings-table">
+                                    <tr>
+                                        <td>{{ appContent.settings.useEngKey[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="useEngKey" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showCurCh[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showCurCh" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showDecompCurCh[local] }} <i class="fa fa-question-circle-o" :title=appContent.settings.showDecompCurChHint[local] style="cursor: help;"></i></td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showDecompCurCh" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showAlrLines[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showAlrLines" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showWrgChAlrLines[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showWrgChAlrLines" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showWrgChCurLine[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showWrgChCurLine" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ appContent.settings.showPerformance[local] }}</td>
+                                        <td>
+                                            <label class="toggle-container">
+                                                <input type="checkbox" id="showPerformance" />
+                                                <span class="toggle-button"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <label for="modal-settings" class="modal-close-btn">{{ appContent.settings.close[local] }}</label>
+                        </div>
+                    </div>
+
+                    <!-- info -->
+                    <div class="modal-container">
+                        <input id="modal-info" type="checkbox">
+                        <label for="modal-info" class="modal-button">
+                            <i class="fa fa-cog" aria-hidden="true"></i> {{ appContent.info.title[local] }}
+                        </label>
+                        <label for="modal-info" class="modal-bg"></label>
+                        <div class="modal-content">
+                            <label for="modal-info" class="modal-close-cross">&times;</label>
+                            <div class="modal-title">{{ appContent.info.title[local] }}</div>
+                            <div class="modal-body">
+                                <p v-html='appContent.info.par1[local]'></p>
+                                <p v-html='appContent.info.par2[local]'></p>
+                            </div>
+                            <label for="modal-info" class="modal-close-btn">{{ appContent.info.close[local] }}</label>
+                        </div>
+                    </div>
+
+                    <!-- share buttons -->
+                    <div style="margin-left: auto;">
+                        <img class="social-share facebook-share" tabindex="0">
+                        <img class="social-share twitter-share" tabindex="0">
+                        <img class="social-share line-share" tabindex="0">
+                        <img class="social-share telegram-share" tabindex="0">
+                        <img class="social-share linkedIn-share" tabindex="0">
+                    </div>
                 </div>
 
-                <!-- toggle English key mode -->
-                <div class="w3-right" style="margin: 8px 0;">
-                    <span>{{ appContent.toggleEngKey[local] }}</span>&nbsp;
-                    <label>
-                        <input type="checkbox" id="cb_eng_key_active" class="checkbox">
-                        <span class="btn-toggle-box">
-                            <span class="btn-toggle"></span>
-                        </span>
-                    </label>
-                </div>
-                <hr id='hr_above_sentence_current'>
-                <div id="sentence_display">
-                    <span class="w3-small">&ensp;{{ appContent.currentExercise[local] }}</span>
-                    <div id='sentence_current'></div>
+                <hr id='hr_above_line_cur'>
+
+                <!-- current line, next line -->
+                <div>
+                    <span class="w3-small">&ensp;{{ appContent.currentExerciseBeforeNb[local] }}<span id='cur_line_num'></span>{{ appContent.currentExerciseAfterNb[local] }}</span>
+                    <div id='line_cur'></div>
                     <span class="w3-small">&ensp;{{ appContent.nextLine[local] }}</span>
-                    <div id='sentence_next'></div>
+                    <div id='line_next'></div>
                 </div>
+
+                <!-- typing input field / reset button -->
                 <label class="w3-small" style="float:left">&ensp;{{ appContent.inputField[local] }}</label>
-                <button id="btn_exer_reset" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> {{ appContent.reset[local] }}&ensp;</button>
+                <button id="btn-reset_cur_exer" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> {{ appContent.reset[local] }}&ensp;</button>
                 <br>
                 <input type="text" id="typing_input" autofocus :placeholder='appContent.inputPlaceholder[local]' class="w3-input w3-padding w3-round-xxlarge typing-input-field">
                 <br>
                 <br>
-                <div class="typing-block-close-me">
-                    <span onclick="this.parentElement.style.display='none'" class="typing-btn-close-me w3-button w3-large">&times;</span>
-                    <h4>{{ appContent.reminder.title[local] }}</h4>
-                    <p v-html='appContent.reminder.par1[local]'></p>
-                    <p v-html='appContent.reminder.par2[local]'></p>
+
+                <!-- typed lines -->
+                <div id="container-alr_lines">
+                    <h4>{{ appContent.typedLines[local] }}</h4>
+                    <div id='alr_lines' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off w3-round-xlarge' style="font-size: 1.2em; min-height: 2em;"></div>
                 </div>
                 <br>
-                <span class="w3-large">{{ appContent.typedLines[local] }}</span>
-                <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
-                <label>
-                    <input type="checkbox" id="cb_close_sentences_already" class="checkbox" autocomplete="off">
-                    <span class="btn-toggle-box">
-                        <span class="btn-toggle"></span>
-                    </span>
-                </label>
-                <span class="w3-small">）</span>
-                <div id='sentences_already' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off w3-round-xlarge' style="font-size: 1.2em; min-height: 2em;"></div>
-                <br>
-                <span class="w3-large">{{ appContent.wrongCharacterPreviousLines[local] }}</span>
-                <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
-                <label>
-                    <input type="checkbox" id="cb_close_wrong_chars_already" class="checkbox" autocomplete="off">
-                    <span class="btn-toggle-box">
-                        <span class="btn-toggle"></span>
-                    </span>
-                </label>
-                <span class="w3-small">）</span>
-                <div id='wrong_chars_already_div'>
-                    <div id='wrong_chars_already_link' class="w3-round-xlarge w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
-                    <div id='wrong_chars_already'></div>
+
+                <!-- wrong char (typed lines) -->
+                <div id="container-wrg_ch_alr_lines">
+                    <h4>{{ appContent.wrongCharacterPreviousLines[local] }}</h4>
+                    <div id='wrg_ch_alr_lines-link' class="w3-round-xlarge w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
+                    <div id='wrg_ch_alr_lines'></div>
                 </div>
+                <br>
             </div>
 
             <!-- Right Column -->
             <div class='w3-quarter'>
-                <div id="result_display">
-                    <div id="results" class="typing-results">
-                        <div style="font-size: large;">{{ appContent.results.lines[local] }}</div>
-                        <hr style="margin: 0 0 8px 0;">
-                        <span style="float: left;">{{ appContent.results.total[local] }}</span>
-                        <span style="float: right;"><span id='num_total_sentences'></span></span>
-                        <p style="clear: both;"></p>
+                <!-- statistics -->
+                <div class="container-statistics">
+                    {{ appContent.stats.total[local] }}
+                    <div class="stats_number">
+                        <span id='nb-total_lines'></span>/<span id='nb-total_ch'></span>
+                    </div>
 
-                        <span style="float: left;">{{ appContent.results.currentRemaining[local] }}</span>
-                        <span style="float: right;"><span id='pos_line'></span>/<span id='num_remaining_lines'></span></span>
-                        <hr style="clear: both; margin: 1em; border-color: transparent;">
+                    <!-- performance -->
+                    <div id="container-performance">
+                        <div class="performance_title">{{ appContent.stats.character[local] }}</div>
+                        <div class="stats_number">
+                            <span id='nb-cor_ch' class="correct"></span>/<span id="nb-wrg_ch" class="wrong"></span>/<span id='nb-rem_ch'></span>
+                        </div>
 
-                        <div style="font-size: large;">{{ appContent.results.characters[local] }}</div>
-                        <hr style="margin: 0 0 8px 0;">
-                        <span style="float: left;">{{ appContent.results.total[local] }}</span>
-                        <span style="float: right;"><span id='num_total_chars'></span></span>
-                        <p style="clear: both;"></p>
+                        <div class="performance_title">{{ appContent.stats.accuracy[local] }}</div>
+                        <div class="stats_number">
+                            <span id='accuracy'></span> %
+                        </div>
 
-                        <span style="float: left;" v-html='appContent.results.correctWrong[local]'></span>
-                        <span style="float: right;"><span id='num_total_correct_chars' style="color: green;"></span>/<span id="num_total_incorrect_chars" style="color: red;"></span></span>
-                        <p style="clear: both;"></p>
+                        <div class="performance_title">{{ appContent.stats.time[local] }}</div>
+                        <div class="stats_number">
+                            <span id='timer'></span>
+                        </div>
 
-                        <span style="float: left;">{{ appContent.results.accuracy[local] }}</span>
-                        <span style="float: right;"><span id='accuracy' style="color: green;"></span> %</span>
-                        <p style="clear: both;"></p>
-
-                        <span style="float: left;">{{ appContent.results.remaining[local] }}</span>
-                        <span style="float: right;"><span id='num_total_untouched_chars'></span></span>
-                        <p style="clear: both;"></p>
-                        <hr style="clear: both; margin: 1em; border-color: transparent;">
-
-                        <div style="font-size: large;">{{ appContent.results.speed[local] }}</div>
-                        <hr style="margin: 0 0 8px 0;">
-
-                        <span style="float: left;">{{ appContent.results.time[local] }}</span>
-                        <span style="float: right;"><span id='time_length'></span></span>
-                        <p style="clear: both;"></p>
-
-                        <span style="float: left;">{{ appContent.results.correct[local] }}</span>
-                        <span style="float: right;"><span style="color: green;" id='cpm_correct'></span></span>
-                        <p style="clear: both;"></p>
-
-                        <span style="float: left;">{{ appContent.results.typed[local] }}</span>
-                        <span style="float: right;"><span id='cpm_typed'></span></span>
-                        <p style="clear: both;"></p>
+                        <div class="performance_title">{{ appContent.stats.speed[local] }}</div>
+                        <div class="stats_number">
+                            <span id='cpm-cor' class="correct"></span>/<span id='cpm-typed'></span>
+                        </div>
                     </div>
                 </div>
-                <br>
-                <span class="w3-large">{{ appContent.wrongCharactersCurrentLine[local] }}</span>
-                <span class="w3-small">（{{ appContent.toggleClose[local] }}&nbsp;</span>
-                <label>
-                    <input type="checkbox" id="cb_close_wrong_chars_current" class="checkbox" autocomplete="off">
-                    <span class="btn-toggle-box">
-                        <span class="btn-toggle"></span>
-                    </span>
-                </label>
-                <span class="w3-small">）</span>
-                <div id="wrong_chars_current" class="w3-white w3-round-xlarge"></div>
+
+                <!-- wrong char (current line) -->
+                <div id="container-wrg_ch_cur_line">
+                    <h4>{{ appContent.wrongCharactersCurrentLine[local] }}</h4>
+                    <div id="wrg_ch_cur_line" class="w3-white w3-round-xlarge"></div>
+                </div>
+
+                <!-- End right column -->
             </div>
         </div>
 
@@ -675,23 +721,26 @@
         <!-- back to top button -->
         <button type="button" id="to_top" class="toTop-arrow"></button>
     </div>
+
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.prod.js"></script>
     <!-- <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script> -->
     <script type="text/javascript" src="/app/local.js"></script>
     <script type="text/javascript" src="/data/radicals.js"></script>
-    <script type="text/javascript" src="/data/object-normal.js"></script>
-    <script type="text/javascript" src="/data/object-short-code-i.js"></script>
-    <script type="text/javascript" src="/data/object-short-code-ii.js"></script>
-    <script type="text/javascript" src="/data/object-single.js"></script>
-    <script type="text/javascript" src="/data/object-special.js"></script>
-    <script type="text/javascript" src="/data/object-symbol.js"></script>
-    <script type="text/javascript" src="/data/object-decomposition.js"></script>
-    <script type="text/javascript" src="/data/keys.js"></script>
-    <script type="text/javascript" src="/data/object-built-in-typing-exercises.js"></script>
+    <script type="text/javascript" src="/data/code-standard.js"></script>
+    <script type="text/javascript" src="/data/code-short1.js"></script>
+    <script type="text/javascript" src="/data/code-short2.js"></script>
+    <script type="text/javascript" src="/data/code-single.js"></script>
+    <script type="text/javascript" src="/data/code-special.js"></script>
+    <script type="text/javascript" src="/data/code-symbol.js"></script>
+    <script type="text/javascript" src="/data/code-array10.js"></script>
+    <script type="text/javascript" src="/data/code-decomposition.js"></script>
+    <script type="text/javascript" src="/data/array-key.js"></script>
+    <script type="text/javascript" src="/data/typing-exercises.js"></script>
     <script type="text/javascript" src="/app/typing.js"></script>
     <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/js/array-code-generator.js"></script>
     <script type="text/javascript" src="/js/decomposition-generator.js"></script>
     <script type="text/javascript" src="/js/typing.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>

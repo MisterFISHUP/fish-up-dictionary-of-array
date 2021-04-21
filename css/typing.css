@@ -51,49 +51,35 @@
 .typing-bg {
   background-color: #beebbe;
 }
-.typing-block-close-me {
-  background-color: #126139;
-  color: whitesmoke;
-  border-radius: 15px;
-  padding: 8px 16px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  position: relative;
-}
-.typing-btn-close-me {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-radius: 0 15px 0 0;
-}
-#hr_above_sentence_current {
-  clear: both;
+
+#hr_above_line_cur {
   border: none;
   border-top: 1px solid #105710;
-  margin: 15px 0 10px;
+  margin: 10px 0 10px;
 }
 /* ===================
     CURRENT CHARACTER
   ==================== */
 
-.current_char_code_block {
-  padding: 8px 16px;
-  margin-top: 16px;
+#cur_ch-hint {
+  margin-bottom: 20px;
   background-color: white;
+  padding: 12px 16px;
   border-radius: 20px;
 }
 
 /* =====[ radicals in decompositions ]===== */
-#hint_current .radical {
+
+#cur_ch-hint .radical {
   cursor: text;
 }
-#hint_current .radical-special {
+#cur_ch-hint .radical-special {
   cursor: default;
 }
-#hint_current .radical-special-sc {
+#cur_ch-hint .radical-special-sc {
   cursor: default;
 }
-#hint_current .radical-sc {
+#cur_ch-hint .radical-sc {
   cursor: default;
 }
 
@@ -101,7 +87,7 @@
     CURRENT EXERCISE
   =================== */
 
-#sentence_current {
+#line_cur {
   margin-bottom: 5px;
   padding: 8px 16px;
   border-radius: 32px;
@@ -110,7 +96,7 @@
   min-height: 2.1em;
   user-select: none;
 }
-#sentence_next {
+#line_next {
   margin-bottom: 3px;
   padding: 6px 16px 4px;
   font-size: 1.7em;
@@ -131,25 +117,37 @@
 }
 .wrong-character-anchor {
   text-decoration: none;
+  transition: transform 0.1s;
 }
 .wrong-character-anchor:hover {
   color: #4bb35c;
   display: inline-block;
-  transition: 0.1s;
   transform: scale(1.4);
 }
 
-.typing-results {
-  line-height: 1.6;
-  padding: 24px;
+.container-statistics {
+  padding: 16px;
   border-radius: 16px;
   background-color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  overflow: auto;
+}
+.performance_title {
+  margin-top: 10px;
+}
+.stats_number {
+  font-size: 1.5em;
 }
 .correct {
   color: green;
 }
-.incorrect {
+.wrong {
   color: red;
+}
+.current {
+  background-color: #e0e0e0;
+  border-radius: 15%;
 }
 .typing-block-cust-exer-hint {
   padding: 0 16px;
@@ -158,13 +156,13 @@
   font-size: 1.2em;
   clear: both;
   border: 1.5px solid transparent;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
 .typing-input-field:focus {
   border: 1.5px solid #11471a;
   outline: none;
 }
-
 
 /* choosing exercises */
 .typing-dtls-first {
@@ -214,14 +212,15 @@
 }
 
 /* create your own exercise */
-#input_cust_exer {
+#cust_exer-input {
   padding: 8px;
   width: 95%;
   border: 1.5px solid #cccccc;
   border-radius: 15px;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
-#input_cust_exer:focus {
+#cust_exer-input:focus {
   border: 1.5px solid #303030;
   outline: none;
 }

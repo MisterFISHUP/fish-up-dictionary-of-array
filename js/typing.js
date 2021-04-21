@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021 Jan. 30
+ * Date: 2021-04-21
  */
 
 // get some html elements
@@ -601,13 +601,4 @@ $(`#${settings.useEngKey.elemId}`).click(function () {
 // disable or enable setting
 $(`#${settings.showCurCh.elemId}`).click(function () {
   settingForDecompCurCh(settings.showCurCh.state);
-})
-// close got it
-if (localStorage.getItem('typingGotItClosed') == "true") {
-  $('#got_it-block').remove();
-}
-
-$('#got_it-close_btn').click(function () {
-  $('#got_it-block').remove();
-  localStorage.setItem('typingGotItClosed', "true");
 })

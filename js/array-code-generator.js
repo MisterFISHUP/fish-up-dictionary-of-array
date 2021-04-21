@@ -112,7 +112,7 @@ function createArrayCodeList(ch, listId, id, useEngKey, maxDecomp) {
 
   if (codeArray10.hasOwnProperty(ch)) {
     let item = document.createElement('li');
-    item.innerHTML = `<span class="keycap title-array10">數</span>'：${codeArray10[ch]}`;
+    item.innerHTML = `<span class="keycap title-array10">數</span>：${codeArray10[ch]}`;
     list.appendChild(item);
   }
 }

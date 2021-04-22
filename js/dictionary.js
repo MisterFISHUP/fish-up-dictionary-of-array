@@ -2,76 +2,72 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021 Jan. 02
+ * Date: 2021-04-22
  */
 
-/* Structure: (use search)
-  - get html DOMs
-  - auto focus for the input area
-  - search functionality
-  - prepare result file
-  - filter with checkboxes
-  - fetch data
-  - toggle English key mode
-*/
-
-// --------------
-// get html DOMs
-// --------------
-
 const resultAreaElem = document.getElementById('result_area');
-const inputElem = document.getElementById('inputCharacters');
-const btnSubmitElem = document.getElementById('btn_submit');
-const btnFilterSubmit = document.getElementById("btn_filter_submit");
 
+// Fixed constants
 const maxInputChar = 500;
 const maxLoad = 100;
 
-// ------------------------------
-// auto focus for the input area
-// ------------------------------
+/* ================
+    INITIALISATION
+  ================= */
 
-$('#inputCharacters').on('hover, mouseover', function () {
-  $('#inputCharacters').focus();
-  $('#inputCharacters').select();
-});
+// define settings and initialise their states
+let settings = {
+  // only 'state' values are likely to be changed
+  // if type is checkbox, the state should be a boolean
+  useEngKey: {
+    type: 'checkbox',
+    localStgKey: 'useEngKey',
+    elemId: 'useEngKey',
+    state: false,
+  },
+}
 
 // ---------------------
 // search functionality
 // ---------------------
 
-// click btn or press enter to trigger 'search'
-btnSubmitElem.addEventListener("click", search);
-$(window).on('keypress', function (e) {
-  if (e.which == 13) search();
-});
+// situation = 'inputTooManyCh' | ''
+function displayPrompt(situation) {
+  const emoticonA = ['(͡° ͜ʖ ͡°)', '( ͡• ͜ʖ ͡•)', '(͠≖ ͜ʖ͠≖)👌', '( ´_ゝ`)', 'ヽ(´ー｀)┌', '(´･ω･`)', '(ㆆ_ㆆ)'];
+  const emoticonB = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
+
+  switch (situation) {
+    case 'inputTooManyCh': {
+      const i18nTooMany = {
+        tw: `不要輸入超過 ${maxInputChar} 字喔 `,
+        en: `Don't type more than ${maxInputChar} characters `,
+        fr: `Ne saisissez pas plus de ${maxInputChar} caractères `,
+      };
+      const hintDiv = document.createElement('div');
+      hintDiv.className = 'dict-block-result-description';
+      hintDiv.innerHTML = i18nTooMany[stringLocal] + emoticonA[Math.floor(Math.random() * emoticonA.length)];
+      resultAreaElem.appendChild(hintDiv);
+      hintDiv.scrollIntoView();
+      break;
+    }
+    case 'nothingToShow': {
+      const hereNone = { tw: `沒有資料可以呈現 `, en: `Nothing to show `, fr: `Rien à afficher ` };
+      $('#result_description').html(hereNone[stringLocal] + emoticonB[Math.floor(Math.random() * emoticonB.length)]);
+      break;
+    }
+  }
+}
 
 // clear the result area, and if input is not too long, call printResults
 function search() {
-  // prompt for too many characters
-  const emoticons = ['(͡° ͜ʖ ͡°)', '( ͡• ͜ʖ ͡•)', '(͠≖ ͜ʖ͠≖)👌', '( ´_ゝ`)', 'ヽ(´ー｀)┌', '(´･ω･`)', '(ㆆ_ㆆ)'];
-  const tooMany = { tw: `不要輸入超過 ${String(maxInputChar)} 字喔 `, en: `Don't type more than ${String(maxInputChar)} characters `, fr: `Ne saisissez pas plus de ${String(maxInputChar)} caractères ` };
-
-  const input = inputElem.value;
-  const charList = [...input];
-  if (charList.length > 0) {
+  const inputElem = document.getElementById('inputCharacters');
+  const chList = [...inputElem.value];
+  if (chList.length > 0) {
     resultAreaElem.innerHTML = "";
-    if (charList.length > maxInputChar) {
-      const hintDiv = document.createElement('div');
-      hintDiv.className = 'dict-block-hint';
-      hintDiv.innerHTML = "<span>" + tooMany[stringLocal] + emoticons[Math.floor(Math.random() * emoticons.length)] + "</span>";
-      resultAreaElem.appendChild(hintDiv);
+    if (chList.length > maxInputChar) {
+      displayPrompt('inputTooManyCh');
     } else {
-      function isInArrayDicitnary(char) {
-        return objectNormal.hasOwnProperty(char)
-          || objectSymbol.hasOwnProperty(char)
-          || objectArray10.hasOwnProperty(char);
-        // || objectSpecial.hasOwnProperty(char)
-        // || objectSingle.hasOwnProperty(char)
-        // || objectShortcode1.hasOwnProperty(char)
-        // || objectShortcode2.hasOwnProperty(char)
-      }
-      printResults(charList.filter(isInArrayDicitnary));
+      printResults(chList.filter(ifInDb));
     }
   }
 }
@@ -87,12 +83,7 @@ function printResults(list) {
   resultAreaElem.appendChild(resultDescription);
 
   if (!charNumber) {
-    const hereNone = { tw: `沒有資料可以呈現 `, en: `Nothing to show `, fr: `Rien à afficher ` };
-    const hereNoneEmoticons = ['(´_ゝ`)', '´•_ゝ•`', '( ´•̥̥̥ω•̥̥̥` )', '(|||ﾟдﾟ)', '( ˘･з･)', '( ˘•ω•˘ )', '_(:3」∠)_'];
-
-    // add the descriptive sentence to resultDescription
-    resultDescription.textContent = hereNone[stringLocal] + hereNoneEmoticons[Math.floor(Math.random() * hereNoneEmoticons.length)];
-    resultDescription.scrollIntoView();
+    displayPrompt('nothingToShow');
   } else {
     const moreThanMaxLoad = {
       tw: `總共 ${charNumber} 筆資料，`,
@@ -139,7 +130,7 @@ function printResults(list) {
     // add the code block of the character to resultBlocks
     // and the character with link to resultCharList
     function addCharaterBlockAndLink(character, block_id) {
-      createBlock(character, block_id, 'result_blocks');
+      createArrayBlock(character, block_id, 'result_blocks');
       const charLink = document.createElement('a');
       charLink.textContent = character;
       charLink.className = "dict-link-char";
@@ -149,16 +140,8 @@ function printResults(list) {
       resultCharList.appendChild(aSpace);
     }
     function addResults(listOfCharacters, startNumber) {
-      const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
       listOfCharacters.forEach(function (character, index) {
         addCharaterBlockAndLink(character, 'result_' + String(startNumber + index));
-        if (!isEngKeyActive) {
-          const letterList = document.getElementById('result_' + String(startNumber + index)).getElementsByClassName("keycap-letter");
-          for (let letter of letterList) {
-            const letter_content = letter.textContent;
-            letter.textContent = letterToArray30Dict[letter_content];
-          }
-        }
       })
     }
     function loadMore(startNumber) {
@@ -231,10 +214,9 @@ function printResults(list) {
 
     // prepare result file for users to download
     prepareResultFile(list);
-
-    // scroll into view
-    resultDescription.scrollIntoView();
   }
+  // scroll into view
+  resultDescription.scrollIntoView();
 }
 
 // --------------------
@@ -244,6 +226,7 @@ function printResults(list) {
 // prepare the file for users to download 
 function prepareResultFile(list) {
   const num = list.length;
+  const useEngKey = settings.useEngKey.state;
 
   // get DOM
   let downloadBtnElem = document.getElementById('result_download_btn');
@@ -251,7 +234,6 @@ function prepareResultFile(list) {
   // set some result-independent strings
   const dateLocal = (stringLocal != 'tw') ? stringLocal : 'zh-Hant'
   const researchTime = new Date().toLocaleString(dateLocal, { hour12: false });
-  const isEngKeyActive = document.getElementById('cb_eng_key_active').checked;
   const websiteName = { tw: 'FISH UP 行列查碼', en: 'FISH UP Dictionary of Array', fr: 'Dictionnaire FISH UP de Tableau' };
   const siteURL = 'https://array30.misterfishup.com/'
   const separationLine = '--------------------------------------------\n';
@@ -349,7 +331,7 @@ function prepareResultFile(list) {
     fr: "\n(Codes Tableau écrits en touche anglaise)"
   };
   (num > 1) ? fileContent += resultInTotalPlural[stringLocal] : fileContent += resultInTotalSingular[stringLocal]
-  if (isEngKeyActive) {
+  if (useEngKey) {
     fileContent += shownEnglishKey[stringLocal]
   }
   if (stringLocal == 'tw') fileContent += '：';
@@ -367,95 +349,84 @@ function prepareResultFile(list) {
 
   // add Array code results
   list.forEach(function (character) {
-    function toArrayKey(dom) {
-      letterList = dom.getElementsByClassName("keycap-letter");
-      for (let letter of letterList) {
-        const letter_content = letter.textContent;
-        letter.textContent = letterToArray30Dict[letter_content];
-      }
-    }
-
     // add character
     fileContent += character + '：\n';
 
     // add codes
-    if (objectNormal.hasOwnProperty(character)) {
-      const nlArray = objectNormal[character];
-      for (let i = 0; i < nlArray.length; i++) {
+    if (codeStandard.hasOwnProperty(character)) {
+      codeStandard[character].forEach(function (code) {
         let temp = document.createElement('div');
         temp.id = 'temp';
-        temp.className = 'w3-hide';
+        temp.style.display = 'none';
         resultAreaElem.appendChild(temp);
-        createLineNL(nlArray[i], 'temp');
-        if (!isEngKeyActive) toArrayKey(temp);
+        createArrayCode('std', code, 'temp', useEngKey);
         fileContent += '    ' + temp.textContent + '\n';
         temp.remove();
-      }
+      });
     }
-    if (objectSingle.hasOwnProperty(character)) {
+    if (codeSingle.hasOwnProperty(character)) {
       let temp = document.createElement('div');
       temp.id = 'temp';
-      temp.className = 'w3-hide';
+      temp.style.display = 'none';
       resultAreaElem.appendChild(temp);
-      createLineSG(objectSingle[character], 'temp');
-      if (!isEngKeyActive) toArrayKey(temp);
+      createArrayCode('sg', codeSingle[character], 'temp', useEngKey);
       fileContent += '    ' + temp.textContent + '\n';
       temp.remove();
     }
-    if (objectSpecial.hasOwnProperty(character)) {
+    if (codeSpecial.hasOwnProperty(character)) {
       let temp = document.createElement('div');
       temp.id = 'temp';
-      temp.className = 'w3-hide';
+      temp.style.display = 'none';
       resultAreaElem.appendChild(temp);
-      createLineSP(objectSpecial[character], 'temp');
-      if (!isEngKeyActive) toArrayKey(temp);
+      createArrayCode('sp', codeSpecial[character], 'temp', useEngKey);
       fileContent += '    ' + temp.textContent;
       temp.remove();
-      const coincidenceRankOne = {
-        tw: '，重碼位 1',
-        en: ', coincidence rank equal to 1',
-        fr: ', rang de coïncidence égal à 1'
-      };
       if (["敦", "雇"].includes(character)) {
-        fileContent += coincidenceRankOne[stringLocal];
+        fileContent += i18nCR1.default[stringLocal];
       }
       fileContent += '\n';
     }
-    if (objectShortcode1.hasOwnProperty(character)) {
+    if (codeShort1.hasOwnProperty(character)) {
       let temp = document.createElement('div');
       temp.id = 'temp';
-      temp.className = 'w3-hide';
+      temp.style.display = 'none';
       resultAreaElem.appendChild(temp);
-      createLineSC1(objectShortcode1[character], 'temp');
-      if (!isEngKeyActive) toArrayKey(temp);
+      createArrayCode('sc1', codeShort1[character], 'temp', useEngKey);
       fileContent += '    ' + temp.textContent + '\n';
       temp.remove();
     }
-    if (objectShortcode2.hasOwnProperty(character)) {
-      const sc2Array = objectShortcode2[character];
-      for (let i = 0; i < sc2Array.length; i++) {
+    if (codeShort2.hasOwnProperty(character)) {
+      if (typeof codeShort2[character] === 'string') {
         let temp = document.createElement('div');
         temp.id = 'temp';
-        temp.className = 'w3-hide';
+        temp.style.display = 'none';
         resultAreaElem.appendChild(temp);
-        createLineSC2(sc2Array[i], 'temp');
-        if (!isEngKeyActive) toArrayKey(temp);
+        createArrayCode('sc2', codeShort2[character], 'temp', useEngKey);
         fileContent += '    ' + temp.textContent + '\n';
         temp.remove();
+      } else {
+        codeShort2[character].forEach(function (code) {
+          let temp = document.createElement('div');
+          temp.id = 'temp';
+          temp.style.display = 'none';
+          resultAreaElem.appendChild(temp);
+          createArrayCode('sc2', code, 'temp', useEngKey);
+          fileContent += '    ' + temp.textContent + '\n';
+          temp.remove();
+        });
       }
     }
-    if (objectSymbol.hasOwnProperty(character)) {
+    if (codeSymbol.hasOwnProperty(character)) {
       let temp = document.createElement('div');
       temp.id = 'temp';
-      temp.className = 'w3-hide';
+      temp.style.display = 'none';
       resultAreaElem.appendChild(temp);
-      createLineSYM(objectSymbol[character], 'temp');
-      if (!isEngKeyActive) toArrayKey(temp);
+      createArrayCode('sym', codeSymbol[character], 'temp', useEngKey);
       fileContent += '    ' + temp.textContent + '\n';
       temp.remove();
     }
-    if (objectArray10.hasOwnProperty(character)) {
-      fileContent += '    ' + '數：' + objectArray10[character] + '\n';
+    if (codeArray10.hasOwnProperty(character)) {
+      fileContent += '    ' + '數：' + codeArray10[character] + '\n';
     }
 
     // add separation line
@@ -482,12 +453,6 @@ function prepareResultFile(list) {
   downloadBtnElem.href = 'data:text/plain,' + encodeURI(fileContent);
   downloadBtnElem.target = "_blank";
 }
-
-//------------------------
-// filter with checkboxes
-//------------------------
-
-btnFilterSubmit.addEventListener("click", array30Filter);
 
 // clear the result area, add result recap sentence, call printResults
 function array30Filter() {
@@ -525,7 +490,6 @@ function array30Filter() {
       stringToSearch = '再個在痕畫刺盛卓容索崇擁繪榮築等須啊尾淨業深清歲急憐表姐始紀語詞衣復罷聖室城跑編裝讀高還唱展岸直葉弟利度察賽情物質圍望改君費選陳材妙姓她妹組被刻部請歷壓靠遠造廢條慶游神社祖剛考遇般航喝範掃退餘候嘴呀恐衛科實聲會獨取受希假活碟球謝傳議次沒夢例項題轉試光吧晚溫龍妳雄哪鳳隊罵辦標底檔掉調版歡建交件凰哈換客程覺板幫訊教理至影參徵星線錢界圖保團阿究卻啦怎者速元商您整完若市感戰冷管代錄站討許式笑需協打灣守意其統按喜舊'
       stringToSearchLength = 204;
     }
-
     else if (sc1.checked && !sc2.checked) { // only sp & sc1 ticked
       stringToSearch = '大不小是個我在你那家會雨'
       stringToSearchLength = 12;
@@ -554,12 +518,12 @@ function array30Filter() {
   if (~~sp.checked + ~~sc1.checked + ~~sym.checked + ~~sg.checked == 0) {
     if (sc2.checked) {
       // only sc2 selected in this case
-      const tooManySC2 = {
+      const i18nTooManySC2 = {
         tw: '總共有 3037 個字有二級簡碼，實在是太多了，請和其它條件搭配篩選 😉',
         en: "Please also tick other types of code to reduce the number of characters 😉. There is a total of 3037 characters having a short code II, which is too many to display, so...",
         fr: "Merci de cocher aussi d'autres types de code pour réduire le nombre des caractères 😉. Il y a un total de 3037 caractères qui possèdent un code court II, et c'est trop pour montrer, donc" // ???
       }
-      filterResultRecapSpan.textContent = tooManySC2[stringLocal];
+      filterResultRecapSpan.textContent = i18nTooManySC2[stringLocal];
     } else {
       // nothing selected in this case
       const noTickedBox = {
@@ -664,487 +628,80 @@ function array30Filter() {
   }
 }
 
-// ------------
-// fetch data
-// ------------
+// append the Array code block (id = blockId) of the character = ch to some elem (id = id)
+// ch supposed to be in DB
+function createArrayBlock(ch, blockId, id) {
+  const elem = document.getElementById(id);
+  let block = document.createElement('div');
+  block.id = blockId;
+  block.className = 'dict-block-result';
+  elem.appendChild(block);
 
-// create the block (resultBlock) #block_id_name from character, add it to some elem #id_name
-function createBlock(character, block_id_name, id_name) {
-  const elem = document.getElementById(id_name);
-
-  // create resultBlock, put it into elem
-  let resultBlock = document.createElement('div');
-  resultBlock.id = block_id_name;
-  resultBlock.className = 'dict-block-result';
-  elem.appendChild(resultBlock);
-
-  // add character and comma to resultBlock
+  // add the character and comma to block
   let char = document.createElement('span');
-  char.textContent = character + "：";
-  char.style = "font-size: 1.2em;";  // bigger font size
-  resultBlock.appendChild(char);
+  char.textContent = ch + "：";
+  char.style = "font-size: 1.2em;"; // bigger font size
+  block.appendChild(char);
 
-  // add content to resultBlock
-  createList(character, block_id_name + '_list', block_id_name);
+  // add Array code list to block
+  createArrayCodeList(ch, blockId + '_list', blockId, settings.useEngKey.state, -1);
 }
 
-// create the list (resultList) #list_id_name from character, add it to some elem #id_name
-function createList(character, list_id_name, id_name) {
-  const elem = document.getElementById(id_name);
 
-  // create resultList, put it into elem
-  let resultList = document.createElement("ul");
-  resultList.id = list_id_name;
-  resultList.className = 'w3-ul w3-hoverable'; // w3 css
-  elem.appendChild(resultList);
-
-  // add items to resultList
-  if (objectDecomposition.hasOwnProperty(character)) {
-    // if only one decomposition (saved in string)
-    if (typeof objectDecomposition[character] === 'string') {
-      // create itemDECOMP, add it into resultList
-      let itemDECOMP = document.createElement('li');
-      itemDECOMP.id = list_id_name + '_item_DECOMP';
-      resultList.appendChild(itemDECOMP);
-
-      // add content of itemDECOMP
-      createLineDecomposition(objectDecomposition[character], itemDECOMP.id);
-    } else if (Array.isArray(objectDecomposition[character])) {
-      // several decompositions possible, saved in array
-      const decompArray = objectDecomposition[character];
-      for (let i = 0; i < decompArray.length; i++) {
-        // create itemDECOMP, add it into resultList
-        let itemDECOMP = document.createElement('li');
-        itemDECOMP.id = list_id_name + '_item_DECOMP_' + String(i + 1);
-        resultList.appendChild(itemDECOMP);
-
-        // add content of itemDECOMP
-        createLineDecomposition(decompArray[i], itemDECOMP.id);
-      }
-    }
-  }
-  if (objectNormal.hasOwnProperty(character)) {
-    const nlArray = objectNormal[character];
-    for (let i = 0; i < nlArray.length; i++) {
-      // create itemNL, add it into resultList
-      let itemNL = document.createElement('li');
-      itemNL.id = list_id_name + '_item_NL_' + String(i + 1);
-      resultList.appendChild(itemNL);
-
-      // add content of itemNL
-      createLineNL(nlArray[i], itemNL.id);
-    }
-  }
-  if (objectSingle.hasOwnProperty(character)) {
-    // create itemSG, add it into resultList
-    let itemSG = document.createElement('li');
-    itemSG.id = list_id_name + '_item_SG';
-    resultList.appendChild(itemSG);
-
-    // add content of itemSG
-    createLineSG(objectSingle[character], itemSG.id);
-  }
-  if (objectSpecial.hasOwnProperty(character)) {
-    // create itemSP, add it into resultList
-    let itemSP = document.createElement('li');
-    itemSP.id = list_id_name + '_item_SP';
-    resultList.appendChild(itemSP);
-
-    // add content of itemSP
-    createLineSP(objectSpecial[character], itemSP.id);
-
-    // 敦雇 coincidence rank 1
-    const coincidenceRankOne = {
-      tw: '，重碼位 1',
-      en: ', coincidence rank equal to 1',
-      fr: ', rang de coïncidence égal à 1'
-    };
-    if (["敦", "雇"].includes(character)) {
-      const ccHint = document.createTextNode(coincidenceRankOne[stringLocal]);
-      itemSP.appendChild(ccHint);
-    }
-  }
-  if (objectShortcode1.hasOwnProperty(character)) {
-    // create itemSC1, add it into resultList
-    let itemSC1 = document.createElement('li');
-    itemSC1.id = list_id_name + '_item_SC1';
-    resultList.appendChild(itemSC1);
-
-    // add content of itemSC1
-    createLineSC1(objectShortcode1[character], itemSC1.id);
-  }
-  if (objectShortcode2.hasOwnProperty(character)) {
-    const sc2Array = objectShortcode2[character];
-    for (let i = 0; i < sc2Array.length; i++) {
-      // create itemSC2, add it into resultList
-      let itemSC2 = document.createElement('li');
-      itemSC2.id = list_id_name + '_item_SC2_' + String(i + 1);
-      resultList.appendChild(itemSC2);
-
-      // add content of itemSC2
-      createLineSC2(sc2Array[i], itemSC2.id);
-    }
-  }
-  if (objectSymbol.hasOwnProperty(character)) {
-    // create itemSYM, add it into resultList
-    let itemSYM = document.createElement('li');
-    itemSYM.id = list_id_name + '_item_SYM';
-    resultList.appendChild(itemSYM);
-
-    // add content of itemSYM
-    createLineSYM(objectSymbol[character], itemSYM.id);
-  }
-  if (objectArray10.hasOwnProperty(character)) {
-    let itemArray10 = document.createElement('li');
-    itemArray10.innerHTML = '<span class="keycap title-array10">數</span>' + "：" + objectArray10[character];
-    resultList.appendChild(itemArray10);
-  }
-}
-
-// create lineDecomposition from decomp and add it to some elem #id_name
-function createLineDecomposition(decomp, id_name) {
-  // add label
-  document.getElementById(id_name).innerHTML += '<span class="keycap title-decomposition">拆</span>：';
-
-  // from js/decomposition-generator.js
-  createDecomposition(decomp, id_name)
-}
-
-// create lineSG from encodingSG and add it to some elem #id_name
-function createLineSG(encodingSG, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleSG and colon, insert them into elem
-  const titleSG = document.createElement("span");
-  titleSG.className = 'keycap title-single';
-  titleSG.textContent = '單';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleSG);
-  elem.appendChild(colon);
-
-  // create encodingSGKey, insert it into elem
-  let encodingSGKey = document.createElement('span');
-  encodingSGKey.className = 'keycap keycap-letter';
-  encodingSGKey.textContent = encodingSG;
-  elem.appendChild(encodingSGKey);
-
-  // create plus and spaceKey, insert them into elem
-  const plus = document.createTextNode(' + ');
-  const spaceKey = document.createElement("span");
-  spaceKey.className = 'keycap keycap-space';
-  spaceKey.textContent = 'Space';
-  elem.appendChild(plus);
-  elem.appendChild(spaceKey);
-}
-
-// create lineSP from encodingSP and add it to some elem #id_name
-function createLineSP(encodingSP, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleSP and colon, insert them into elem
-  const titleSP = document.createElement("span");
-  titleSP.className = 'keycap title-special';
-  titleSP.textContent = '特';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleSP);
-  elem.appendChild(colon);
-
-  // create encodingSPKey1, insert it into elem
-  let encodingSPKey1 = document.createElement('span');
-  encodingSPKey1.className = 'keycap keycap-letter';
-  encodingSPKey1.textContent = encodingSP[0];
-  elem.appendChild(encodingSPKey1);
-
-  // create plus1 and encodingSPKey2, insert them into elem
-  const plus1 = document.createTextNode(' + ');
-  let encodingSPKey2 = document.createElement('span');
-  encodingSPKey2.className = 'keycap keycap-letter';
-  encodingSPKey2.textContent = encodingSP[1];
-  elem.appendChild(plus1);
-  elem.appendChild(encodingSPKey2);
-
-  // create plus2 and spaceKey, insert them into elem
-  const plus2 = document.createTextNode(' + ');
-  const spaceKey = document.createElement("span");
-  spaceKey.className = 'keycap keycap-space';
-  spaceKey.textContent = 'Space';
-  elem.appendChild(plus2);
-  elem.appendChild(spaceKey);
-}
-
-// create lineSC1 from encodingSC1 and add it to some elem #id_name
-function createLineSC1(encodingSC1, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleSC1 and colon, insert them into elem
-  const titleSC1 = document.createElement("span");
-  titleSC1.className = 'keycap title-shortcode1';
-  titleSC1.textContent = '一';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleSC1);
-  elem.appendChild(colon);
-
-  // create encodingSC1Key1, insert it into elem
-  let encodingSC1Key1 = document.createElement('span');
-  encodingSC1Key1.className = 'keycap keycap-letter';
-  encodingSC1Key1.textContent = encodingSC1[0];
-  elem.appendChild(encodingSC1Key1);
-
-  // create plus and encodingSC1Key2, insert them into elem
-  const plus = document.createTextNode(' + ');
-  let encodingSC1Key2 = document.createElement('span');
-  encodingSC1Key2.className = 'keycap keycap-number';
-  encodingSC1Key2.textContent = encodingSC1[1];
-  elem.appendChild(plus);
-  elem.appendChild(encodingSC1Key2);
-}
-
-// create lineSC2 from encodingSC2 and add it to some elem #id_name
-function createLineSC2(encodingSC2, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleSC2 and colon, insert them into elem
-  const titleSC2 = document.createElement("span");
-  titleSC2.className = 'keycap title-shortcode2';
-  titleSC2.textContent = '二';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleSC2);
-  elem.appendChild(colon);
-
-  // create encodingSC2Key1, insert it into elem
-  let encodingSC2Key1 = document.createElement('span');
-  encodingSC2Key1.className = 'keycap keycap-letter';
-  encodingSC2Key1.textContent = encodingSC2[0];
-  elem.appendChild(encodingSC2Key1);
-
-  // create plus1 and encodingSC2Key2, insert them into elem
-  const plus1 = document.createTextNode(' + ');
-  let encodingSC2Key2 = document.createElement('span');
-  encodingSC2Key2.className = 'keycap keycap-letter';
-  encodingSC2Key2.textContent = encodingSC2[1];
-  elem.appendChild(plus1);
-  elem.appendChild(encodingSC2Key2);
-
-  // create plus2 and encodingSC2Key3, insert them into elem  
-  const plus2 = document.createTextNode(' + ');
-  let encodingSC2Key3 = document.createElement('span');
-  encodingSC2Key3.className = 'keycap keycap-number';
-  encodingSC2Key3.textContent = encodingSC2[2];
-  elem.appendChild(plus2);
-  elem.appendChild(encodingSC2Key3);
-}
-
-// create lineSYM from encodingSYM and add it to some elem #id_name
-function createLineSYM(encodingSYM, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleSYM and colon, insert them into elem
-  const titleSYM = document.createElement("span");
-  titleSYM.className = 'keycap title-symbol';
-  titleSYM.textContent = '符';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleSYM);
-  elem.appendChild(colon);
-
-  // create keyW and plus1, insert them into elem
-  let keyW = document.createElement('span');
-  keyW.className = 'keycap keycap-letter';
-  keyW.textContent = 'w';
-  const plus1 = document.createTextNode(' + ');
-  elem.appendChild(keyW);
-  elem.appendChild(plus1);
-
-  // create keyNum, insert it into elem
-  let keyNum = document.createElement("span");
-  keyNum.className = 'keycap keycap-number';
-  keyNum.textContent = encodingSYM[0][1];
-  elem.appendChild(keyNum);
-
-  // create several plus and spaceKey, insert them into elem
-  const position = encodingSYM[1];
-  for (i = 10; i < position; i += 10) {
-    const plus = document.createTextNode(' + ');
-    const spaceKey = document.createElement("span");
-    spaceKey.className = 'keycap keycap-space';
-    spaceKey.textContent = 'Space';
-    elem.appendChild(plus);
-    elem.appendChild(spaceKey);
-  }
-
-  // create plusLast and keySelect, insert them into elem
-  const plusLast = document.createTextNode(' + ');
-  let keySelect = document.createElement("span");
-  keySelect.className = 'keycap keycap-cc';
-  keySelect.textContent = String(position % 10);
-  elem.appendChild(plusLast);
-  elem.appendChild(keySelect);
-}
-
-// create lineNL from encodingNl and add it to some elem #id_name
-function createLineNL(encodingNl, id_name) {
-  let elem = document.getElementById(id_name);
-
-  // create titleNL and colon, insert them into elem
-  const titleNL = document.createElement("span");
-  titleNL.className = 'keycap title-normal';
-  titleNL.textContent = '普';
-  const colon = document.createTextNode("：");
-  elem.appendChild(titleNL);
-  elem.appendChild(colon);
-
-  // create encodingNlKey1, insert it into elem
-  let encodingNlKey1 = document.createElement('span');
-  encodingNlKey1.className = 'keycap keycap-letter';
-  encodingNlKey1.textContent = encodingNl[0][0];
-  elem.appendChild(encodingNlKey1);
-
-  // create several plus & keyNL, insert them into elem
-  for (let i = 1; i < encodingNl[0].length; i++) {
-    const plus = document.createTextNode(' + ');
-    let keyNL = document.createElement('span');
-    keyNL.className = 'keycap keycap-letter';
-    keyNL.textContent = encodingNl[0][i];
-    elem.appendChild(plus);
-    elem.appendChild(keyNL);
-  }
-
-  // create plusLast and spaceKey, insert them into elem
-  const plusLast = document.createTextNode(' + ');
-  const spaceKey = document.createElement("span");
-  spaceKey.className = 'keycap keycap-space';
-  spaceKey.textContent = 'Space';
-  elem.appendChild(plusLast);
-  elem.appendChild(spaceKey);
-
-  if (encodingNl[1] > 1 && encodingNl[1] <= 10) {
-    const plusCC = document.createTextNode(' + ');
-    const numberCC = document.createElement("span");
-    numberCC.className = 'keycap keycap-cc';
-    if (encodingNl[1] === 10) {
-      numberCC.textContent = '0';
-    } else {
-      numberCC.textContent = encodingNl[1];
-    }
-    elem.appendChild(plusCC);
-    elem.appendChild(numberCC);
-  } else if (encodingNl[1] > 10) {
-    const plusCC1 = document.createTextNode(' + ');
-    const spaceCC = document.createElement("span");
-    spaceCC.className = 'keycap keycap-cc';
-    spaceCC.textContent = 'Space';
-    const plusCC2 = document.createTextNode(' + ');
-    const numberCC = document.createElement("span");
-    numberCC.className = 'keycap keycap-cc';
-    numberCC.textContent = encodingNl[1] - 10;
-    elem.appendChild(plusCC1);
-    elem.appendChild(spaceCC);
-    elem.appendChild(plusCC2);
-    elem.appendChild(numberCC);
-  }
-  if (encodingNl[1] === 1) {
-    // hint for coincident codes
-    const hintCC = {
-      coincidenceRankOne: {
-        tw: '，重碼位 1',
-        en: ', coincidence rank equal to 1',
-        fr: ', rang de coïncidence égal à 1'
-      },
-      coincidenceRankOneIfExtB: {
-        tw: '，若啟用擴充區 B 則重碼位 1，否則無重碼',
-        en: ', coincidence rank equal to 1 if Extension B (CJK Unified Ideographs) activated, otherwise non-coincident code',
-        fr: ', rang de coïncidence égal à 1 si Supplément B (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
-      },
-      coincidenceRankOneIfExtCD: {
-        tw: '，若啟用擴充區 CD 則重碼位 1，否則無重碼',
-        en: ', coincidence rank equal to 1 if Extensions CD (CJK Unified Ideographs) activated, otherwise non-coincident code',
-        fr: ', rang de coïncidence égal à 1 si Suppléments CD (Sinogrammes unifiés CJC) activée, sinon code non coïncident'
-      },
-    };
-
-    // get coincidence code data
-    ccData = objectEncoding[encodingNl[0]];
-    if (ccData[0] > 1) {
-      // cc pos = 1
-      const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
-      elem.appendChild(ccHint);
-    }
-    if (ccData[0] === 1) {
-      if (ccData[1] > 0) {
-        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtB[stringLocal]);
-        elem.appendChild(ccHint);
-      } else if (ccData[2] > 0) {
-        const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
-        elem.appendChild(ccHint);
-      }
-    }
-    if (ccData[0] === 0) {
-      if (ccData[1] > 1) {
-        // cc pos = 1
-        const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
-        elem.appendChild(ccHint);
-      }
-      if (ccData[1] === 1) {
-        if (ccData[2] > 0) {
-          const ccHint = document.createTextNode(hintCC.coincidenceRankOneIfExtCD[stringLocal]);
-          elem.appendChild(ccHint);
-        }
-      }
-      if (ccData[1] === 0) {
-        if (ccData[2] > 1) {
-          // cc pos = 1
-          const ccHint = document.createTextNode(hintCC.coincidenceRankOne[stringLocal]);
-          elem.appendChild(ccHint);
-        }
+// convert Array keys alr existing on page into English ones or conversly
+// keyType = 'eng' | 'array'
+function convertKey(keyType) {
+  const keys = document.getElementsByClassName("keycap-letter");
+  if (keys.length) {
+    const isEngNow = keys[0].textContent.length == 1;
+    if ((keyType == 'eng' && !isEngNow) || (keyType == 'array' && isEngNow)) {
+      for (let i = 0; i < keys.length; i++) {
+        keys[i].textContent = isEngNow
+          ? letterToArray30Dict[keys[i].textContent]
+          : array30ToLetterDict[keys[i].textContent];
       }
     }
   }
 }
 
-// ---------------
-// toggle English key mode
-// ---------------
+//=======================
+// WHEN LOADING THE FILE
+// ======================
 
-document.getElementById("cb_eng_key_active").addEventListener("click", engKeyToggle);
-// document.getElementById("cb_eng_key_active").addEventListener("click", ccTriviaEngKeyToggle);
+// 1. Update states of settings by localStorage
 
-function engKeyToggle() {
-  letterList = document.getElementsByClassName("keycap-letter");
-  if (letterList.length) {
-    if (letterList[0].textContent.length === 1) {
-      for (let letter of letterList) {
-        const letter_content = letter.textContent;
-        letter.textContent = letterToArray30Dict[letter_content];
-      }
-    } else {
-      for (let letter of letterList) {
-        const letter_content = letter.textContent;
-        letter.textContent = array30ToLetterDict[letter_content];
-      }
-    }
-  }
+if (localStorage.getItem(settings.useEngKey.localStgKey) === JSON.stringify(!settings.useEngKey.state)) {
+  settings.useEngKey.state = !settings.useEngKey.state;
 }
-// function ccTriviaEngKeyToggle() {
-//   ccTrivia = document.getElementById("coincident_code_trivia");
-//   encodingList = ccTrivia.getElementsByClassName("keycap-cc-trivia");
-//   for (let encoding of encodingList) {
-//     const encodingString = encoding.textContent;
-//     // if encoding uses array30 keys
-//     if (encodingString[0] >= '0' && encodingString[0] <= '9') {
-//       let newTextContent = '';
-//       for (var i = 0; i < encodingString.length; i += 2) {
-//         newTextContent += array30ToLetterDict[encodingString.slice(i, i + 2)];
-//       }
-//       encoding.textContent = newTextContent;
-//     } else { // if encoding uses eng keys
-//       let newTextContent = '';
-//       for (char of encodingString) {
-//         newTextContent += letterToArray30Dict[char];
-//       }
-//       encoding.textContent = newTextContent;
-//     }
-//   }
-// }
-// perform ccTrivia eng key toggle when loading the page
-// if (!document.getElementById('cb_eng_key_active').checked) {
-//   ccTriviaEngKeyToggle();
-// }
+$(`#${settings.useEngKey.elemId}`).prop('checked', settings.useEngKey.state);
+
+// 2. Auto focus for the input area
+$('#inputCharacters').on('hover, mouseover', function () {
+  $('#inputCharacters').focus();
+  $('#inputCharacters').select();
+});
+
+/* ==============
+    USER ACTIONS
+  ============== */
+
+// click btn or press enter to trigger 'search'
+document.getElementById('btn_submit').addEventListener("click", search);
+$(window).on('keypress', function (e) {
+  if (e.which == 13) search();
+});
+
+document.getElementById("btn_filter_submit").addEventListener("click", array30Filter);
+
+// =====[ settings related ]=====
+
+// Eng Key
+$(`#${settings.useEngKey.elemId}`).click(function () {
+  // perform action
+  convertKey($(this).prop('checked') ? 'eng' : 'array');
+
+  // update local storage
+  const state = $(this).prop('checked');
+  settings.useEngKey.state = state;
+  localStorage.setItem(settings.useEngKey.localStgKey, state);
+})

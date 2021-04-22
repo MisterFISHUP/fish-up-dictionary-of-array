@@ -14,11 +14,36 @@
 .dict-header {
   padding: 40px 16px 0px 16px;
   background-color: #57342d;
-  background-image:
-    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-image: repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    );
   background-size: 70px 120px;
   margin-top: 45px;
 }
@@ -35,7 +60,8 @@
   margin: 8px;
   border-radius: 20px;
   border: 1.5px solid #cccccc;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
 #inputCharacters:focus {
   border: 1.5px solid #333333;
@@ -93,12 +119,6 @@
     ELEMENTS CREATED BY JS
   ======================== */
 
-.dict-block-hint {
-  font-size: 1.1em;
-  padding: 16px 24px;
-  background-color: white;
-  border-radius: 16px;
-}
 .dict-block-result-description {
   font-size: 1.1em;
   padding: 12px 24px;
@@ -140,8 +160,8 @@
   margin: 30px auto;
   padding: 12px 28px;
   border: none;
-  text-align:center;
-  cursor:pointer;
+  text-align: center;
+  cursor: pointer;
   font-size: 1.3em;
   border-radius: 32px;
   background-color: #795548;

@@ -36,7 +36,7 @@ const snakeToCamel = str => str.replace(/([-_]\w)/g, g => g[1].toUpperCase());
     INITIALISATION
   ================= */
 
-// define settings and initialse their states
+// define settings and initialise their states
 let settings = {
   // only 'state' values are likely to be changed
   // if type is checkbox, the state should be a boolean

@@ -124,9 +124,9 @@ const AppContent = {
         fr: `Plus de 500 combinaisons de styles déjà disponibles !<br>N'oubliez pas de revenir régulièrement pour voir quels nouveaux styles sont ajoutés 😁`
       },
       par2: {
-        tw: `您可以使用 <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>例如查詢結果中有標籤 <span class="keycap title-normal">普</span> 的那一行就是「普通編碼」`,
-        en: `You can use <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP Dictionary of Array</a> to look up the Array code of any character! For example, results with label <span class="keycap title-normal">普</span> are 'standard codes'.`,
-        fr: `Vous pouvez utiliser <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> Dictionnaire FISH UP de Tableau</a> pour trouver le code Tableau de tous les caractères ! Par exemple, les résultats avec l'étiquette <span class="keycap title-normal">普</span> sont des « codes standard ».`
+        tw: `您可以使用 <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP 行列編碼</a> 查詢任何字的行列編碼！<br>例如查詢結果中有標籤 <span class="keycap title-standard">普</span> 的那一行就是「普通編碼」`,
+        en: `You can use <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> FISH UP Dictionary of Array</a> to look up the Array code of any character! For example, results with label <span class="keycap title-standard">普</span> are 'standard codes'.`,
+        fr: `Vous pouvez utiliser <a href="dictionary.html" target="_blank" class="my_link"><i class="fa fa-external-link" aria-hidden="true"></i> Dictionnaire FISH UP de Tableau</a> pour trouver le code Tableau de tous les caractères ! Par exemple, les résultats avec l'étiquette <span class="keycap title-standard">普</span> sont des « codes standard ».`
       },
       par3: {
         tw: `最後，喜歡這個小遊戲或這個網站的話，請不要客氣踴躍分享給身邊的親朋好友！<br>希望讓越來越多人認識行列輸入法 🥰`,

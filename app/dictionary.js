@@ -58,7 +58,7 @@ const AppContent = {
     codeType: {
       tw: `✔️ 標註編碼類型：
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span>：普通編碼</li>
+        <li><span class="keycap title-standard">普</span>：普通編碼</li>
         <li><span class="keycap title-single">單</span>：單鍵碼*</li>
         <li><span class="keycap title-special">特</span>：特別碼</li>
         <li><span class="keycap title-shortcode1">一</span>：一級簡碼</li>
@@ -68,7 +68,7 @@ const AppContent = {
       </ul>`,
       en: `✔️ Indicates the type of code by
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span>：standard code</li>
+        <li><span class="keycap title-standard">普</span>：standard code</li>
         <li><span class="keycap title-single">單</span>：one-key code*</li>
         <li><span class="keycap title-special">特</span>：special code</li>
         <li><span class="keycap title-shortcode1">一</span>：short code I</li>
@@ -78,7 +78,7 @@ const AppContent = {
       </ul>`,
       fr: `✔️ Indique le type de code par
       <ul class="code-type-list">
-        <li><span class="keycap title-normal">普</span>：code standard</li>
+        <li><span class="keycap title-standard">普</span>：code standard</li>
         <li><span class="keycap title-single">單</span>：code mono-touche*</li>
         <li><span class="keycap title-special">特</span>：code spécial</li>
         <li><span class="keycap title-shortcode1">一</span>：code court I</li>

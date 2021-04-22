@@ -337,7 +337,7 @@ function createArrayBlock(ch, blockId, id) {
   const elem = document.getElementById(id);
   let block = document.createElement('div');
   block.id = blockId;
-  block.className = 'wrong_char_code_block'; // #change
+  block.className = 'wrong_char_code_block';
   elem.appendChild(block);
 
   // add the character and comma to block

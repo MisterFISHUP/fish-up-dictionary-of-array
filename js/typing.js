@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-04-21
+ * Date: 2021-04-23
  */
 
 // get some html elements
@@ -14,9 +14,9 @@ const wrgChAlrLinesLinkElem = document.getElementById('wrg_ch_alr_lines-link');
 const wrgChAlrLinesElem = document.getElementById('wrg_ch_alr_lines');
 const wrgChCurLineElem = document.getElementById('wrg_ch_cur_line');
 
-/* ===================
-    GENERAL FUNCTIONS
-   =================== */
+// =======
+//  UTILS 
+// =======
 
 const shuffleString = str => {
   let a = [...str];
@@ -32,75 +32,71 @@ const shuffleString = str => {
 const reverseString = str => [...str].reverse().join("");
 const snakeToCamel = str => str.replace(/([-_]\w)/g, g => g[1].toUpperCase());
 
-/* ================
-    INITIALISATION
-  ================= */
+// =================
+//  FIXED CONSTANTS
+// =================
 
-// define settings and initialise their states
-let settings = {
-  // only 'state' values are likely to be changed
-  // if type is checkbox, the state should be a boolean
+const localStgSufx = '1f77t';
+const exerStringLocalStgKey = 'typingExerString' + localStgSufx;
+
+// Note: each setting will have a state (which will be initialised in the next section 'initialisation')
+const settings = {
   useEngKey: {
     type: 'checkbox',
-    localStgKey: 'useEngKey',
+    localStgKey: 'useEngKey' + localStgSufx,
     elemId: 'useEngKey',
-    state: false,
   },
   showCurCh: {
     type: 'checkbox',
-    localStgKey: 'typingShowCurCh',
+    localStgKey: 'typingShowCurCh' + localStgSufx,
     elemId: 'showCurCh',
     toggleDisplayJquery: '#container-cur_ch',
-    state: true,
   },
   showDecompCurCh: {
     type: 'checkbox',
-    localStgKey: 'typingShowDecompCurCh',
+    localStgKey: 'typingShowDecompCurCh' + localStgSufx,
     elemId: 'showDecompCurCh',
     toggleDisplayJquery: '.itemDecomp',
-    state: false,
   },
   showAlrLines: {
     type: 'checkbox',
-    localStgKey: 'typingShowAlrLines',
+    localStgKey: 'typingShowAlrLines' + localStgSufx,
     elemId: 'showAlrLines',
     toggleDisplayJquery: '#container-alr_lines',
-    state: true,
   },
   showWrgChAlrLines: {
     type: 'checkbox',
-    localStgKey: 'typingShowWrgChAlrLines',
+    localStgKey: 'typingShowWrgChAlrLines' + localStgSufx,
     elemId: 'showWrgChAlrLines',
     toggleDisplayJquery: '#container-wrg_ch_alr_lines',
-    state: true,
   },
   showWrgChCurLine: {
     type: 'checkbox',
-    localStgKey: 'typingShowWrgChCurLine',
+    localStgKey: 'typingShowWrgChCurLine' + localStgSufx,
     elemId: 'showWrgChCurLine',
     toggleDisplayJquery: '#container-wrg_ch_cur_line',
-    state: true,
   },
   showPerformance: {
     type: 'checkbox',
-    localStgKey: 'typingShowPerformance',
+    localStgKey: 'typingShowPerformance' + localStgSufx,
     elemId: 'showPerformance',
     toggleDisplayJquery: '#container-performance',
-    state: true,
   },
   maxChPerLine: {
     type: 'select',
-    localStgKey: 'typingMaxChPerLine',
+    localStgKey: 'typingMaxChPerLine' + localStgSufx,
     elemId: 'maxChPerLine',
-    state: "20",
   },
   chPermType: {
     type: 'select',
-    localStgKey: 'typingChPermType',
+    localStgKey: 'typingChPermType' + localStgSufx,
     elemId: 'chPermType',
-    state: 'normal',
   },
 }
+
+// ================
+//  INITIALISATION 
+// ================
 
 let exerString; // default is typingExerDflt[stringLocal]
 let exerData; // will always be createExerData(exerString)
@@ -115,17 +111,38 @@ let isTimerActive = false;
 let startTime;
 let durInSec;
 
-/* ======================
-    CREATE EXERCISE DATA
-   ====================== */
+// Initialise settings states
+// Note: If type is checkbox, the state should be a boolean
+settings.useEngKey.state = false;
+settings.showCurCh.state = true;
+settings.showDecompCurCh.state = false;
+settings.showAlrLines.state = true;
+settings.showWrgChAlrLines.state = true;
+settings.showWrgChCurLine.state = true;
+settings.showPerformance.state = true;
+settings.maxChPerLine.state = '20';
+settings.chPermType.state = 'normal';
 
-// create exercise data (obj) from a string according to selected options
+// ======================
+//  Note on localStroage
+// ======================
+
+// Things (and the only things) that will go into localStorage:
+// - settings (see `localStgKey` property for their key)
+// - exerString (key is `exerStringLocalStgKey`)
+// All localStorage keys will end with an identical hash (localStgSufx).
+
+// ======================
+//  CREATE EXERCISE DATA
+// ======================
+
+// create exercise data (object) from a string according to current states (selected options)
 // output: { lineList: array of strings, nbLines: int, nbCh: int }
 function createExerData(str) {
   const n = settings.maxChPerLine.state; // string
   const permType = settings.chPermType.state;
 
-  let permStr = str; // correspond to permType == 'normal'
+  let permStr = str; // this corresponds to case permType == 'normal'
   if (permType == 'reversed') {
     permStr = reverseString(str);
   } else if (permType == "random") {
@@ -139,9 +156,9 @@ function createExerData(str) {
   return { lineList: lineList, nbLines: lineList.length, nbCh: [...str].length };
 }
 
-/* =================
-    DISPLAY RESULTS
-   ================= */
+// =================
+//  DISPLAY RESULTS
+// =================
 
 function displayStat() {
   const nbTotalCorCh = nbCorChCurLine + nbCorChAlrLines;
@@ -184,7 +201,7 @@ function prepExer(str) {
   // update exerString & exerData (global variables), save the former to localStorage
   exerString = str;
   exerData = createExerData(str);
-  localStorage.setItem('typingExerString', str);
+  localStorage.setItem(exerStringLocalStgKey, str);
 
   // initialise things
   idxCurLine = 0;
@@ -510,8 +527,8 @@ for (const setting in settings) {
 settingForDecompCurCh(settings.showCurCh.state);
 
 // 2. Set exerString then prepare exercise
-exerString = (localStorage.getItem('typingExerString'))
-  ? localStorage.getItem('typingExerString')
+exerString = (localStorage.getItem(exerStringLocalStgKey))
+  ? localStorage.getItem(exerStringLocalStgKey)
   : typingExerDflt[stringLocal];
 
 prepExer(exerString);

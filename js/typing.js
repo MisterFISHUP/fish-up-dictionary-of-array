@@ -98,6 +98,7 @@ const settings = {
 //  INITIALISATION 
 // ================
 
+// global variables
 let exerString; // default is typingExerDflt[stringLocal]
 let exerData; // will always be createExerData(exerString)
 
@@ -107,9 +108,9 @@ let nbCorChAlrLines = 0;
 let nbWrgChCurLine = 0;
 let nbWrgChAlrLines = 0;
 
-let isTimerActive = false;
+let timerState = 'inactive'; // 'active' | 'inactive'
 let startTime;
-let durInSec;
+let duration;
 
 // Initialise settings states
 // Note: If type is checkbox, the state should be a boolean
@@ -160,6 +161,7 @@ function createExerData(str) {
 //  DISPLAY RESULTS
 // =================
 
+// note: this is time-independent
 function displayStat() {
   const nbTotalCorCh = nbCorChCurLine + nbCorChAlrLines;
   const nbTotalWrgCh = nbWrgChCurLine + nbWrgChAlrLines;
@@ -172,10 +174,11 @@ function displayStat() {
   $('#accuracy').text(acc);
 }
 
-// update timer & cpm if timer is active
+// update timer & cpm (if timer is active)
 function updateTimerCPM() {
-  if (isTimerActive) {
-    durInSec = Math.floor((Date.now() - startTime) / 1000);
+  if (timerState == 'active') {
+    duration = Date.now() - startTime;
+    const durInSec = Math.floor(duration / 1000);
     const min = Math.floor(durInSec / 60);
     const sec = durInSec - min * 60;
     const timer = sec < 10
@@ -209,8 +212,8 @@ function prepExer(str) {
   nbCorChAlrLines = 0;
   nbWrgChCurLine = 0;
   nbWrgChAlrLines = 0;
-  isTimerActive = false;
-  durInSec = 0;
+  timerState = 'inactive';
+  duration = 0;
   $('#timer').text('0:00');
   $('#cpm-cor').text('0');
   $('#cpm-typed').text('0');
@@ -414,7 +417,7 @@ function changeLine() {
 
     // update timer & cpm before desactiving timer
     updateTimerCPM();
-    isTimerActive = false;
+    timerState = 'inactive';
   } else {
     $('#cur_line_num').text(idxCurLine + 1);
     prepLinesCurChHint();
@@ -544,8 +547,8 @@ setInterval(updateTimerCPM, 200);
 
 typingInputElem.addEventListener('input', function () {
   if (idxCurLine < exerData.nbLines) {
-    if (!isTimerActive) {
-      isTimerActive = true;
+    if (timerState == 'inactive') {
+      timerState = 'active';
       startTime = Date.now();
     }
     instantVerification();

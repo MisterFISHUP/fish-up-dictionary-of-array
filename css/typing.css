@@ -108,6 +108,7 @@
 /* ======================
     WRONG CHARACTER CODE
   ======================= */
+
 .wrong_char_code_block {
   padding: 8px 16px;
   margin-top: 16px;
@@ -125,6 +126,15 @@
   transform: scale(1.4);
 }
 
+/* timer btn */
+#timer-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* stats */
 .container-statistics {
   padding: 16px;
   border-radius: 16px;
@@ -139,6 +149,8 @@
 .stats_number {
   font-size: 1.5em;
 }
+
+/* character state */
 .correct {
   color: green;
 }
@@ -149,6 +161,7 @@
   background-color: #e0e0e0;
   border-radius: 15%;
 }
+
 .typing-block-cust-exer-hint {
   padding: 0 16px;
 }

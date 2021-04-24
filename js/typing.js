@@ -109,9 +109,10 @@ let nbCorChAlrLines = 0;
 let nbWrgChCurLine = 0;
 let nbWrgChAlrLines = 0;
 
-let timerState = 'inactive'; // 'active' | 'inactive' (<=> timer-btn is hidden)
+let timerState = 'inactive'; // 'active' | 'paused' | 'inactive' (<=> timer-btn is hidden)
 let startTime;
-let duration;
+let totalDuration = 0;
+let oldDuration = 0;
 
 // Initialise settings states
 // Note: If type is checkbox, the state should be a boolean
@@ -178,8 +179,8 @@ function displayStat() {
 // update timer & cpm (if timer is active)
 function updateTimerCPM() {
   if (timerState == 'active') {
-    duration = Date.now() - startTime;
-    const durInSec = Math.floor(duration / 1000);
+    totalDuration = Date.now() - startTime + oldDuration;
+    const durInSec = Math.floor(totalDuration / 1000);
     const min = Math.floor(durInSec / 60);
     const sec = durInSec - min * 60;
     const timer = sec < 10
@@ -267,7 +268,8 @@ function prepExer(str) {
   nbWrgChCurLine = 0;
   nbWrgChAlrLines = 0;
   timerState = 'inactive';
-  duration = 0;
+  totalDuration = 0;
+  oldDuration = 0;
   $('#timer').text('0:00');
   $('#cpm-cor').text('0');
   $('#cpm-typed').text('0');
@@ -275,6 +277,7 @@ function prepExer(str) {
   $('#nb-total_ch').text(exerData.nbCh);
   $('#cur_line_num').text(idxCurLine + 1);
   displayStat();
+  typingInputElem.disabled = false;
 
   // hide timer btn
   timerBtn.classList.add('w3-hide');
@@ -288,8 +291,8 @@ function prepExer(str) {
   // prep lines, hint, results (overwrite current, next lines)
   prepLinesCurChHint();
 
-  // focus & scroll into view
-  $('#typing_input').focus();
+  // focus input field & scroll into view
+  typingInputElem.focus();
   document.getElementById("middle_column").scrollIntoView();
 }
 
@@ -490,6 +493,44 @@ function createArrayBlock(ch, blockId, id) {
   createArrayCodeList(ch, blockId + '_list', blockId, settings.useEngKey.state, 0);
 }
 
+// ====================
+//  PAUSE/RESUME TIMER
+// ====================
+
+function handleTimerClick() {
+  switch (timerState) {
+    case 'active':
+      timerState = 'paused';
+      oldDuration = totalDuration;
+
+      // change btn icon
+      timerBtn.querySelector('i').classList.add('fa-play-circle');
+      timerBtn.querySelector('i').classList.remove('fa-pause-circle');
+
+      // disable input
+      typingInputElem.disabled = true;
+
+      break;
+    case 'paused':
+      startTime = Date.now();
+      timerState = 'active';
+
+      // change btn icon
+      timerBtn.querySelector('i').classList.remove('fa-play-circle');
+      timerBtn.querySelector('i').classList.add('fa-pause-circle');
+
+      // enable input
+      typingInputElem.disabled = false;
+
+      // focus input field & scroll into view
+      typingInputElem.focus();
+      document.getElementById("middle_column").scrollIntoView();
+
+      break;
+    // case 'inactive' is impossible, since timer-btn is hidden
+  }
+}
+
 // ==========================
 //  ENG-ARRAY KEY CONVERSION
 // ==========================
@@ -573,7 +614,11 @@ typingInputElem.addEventListener('input', function () {
     if (timerState == 'inactive') {
       timerState = 'active';
       startTime = Date.now();
-      timerBtn.classList.remove('w3-hide'); // show timer btn
+
+      // show timer btn
+      timerBtn.querySelector('i').classList.remove('fa-play-circle');
+      timerBtn.querySelector('i').classList.add('fa-pause-circle');
+      timerBtn.classList.remove('w3-hide');
     }
     instantVerification();
   }
@@ -593,6 +638,10 @@ $("#built_in_exer button").click(function () {
   const btnId = $(this).attr('id');
   prepBuiltInExer(btnId);
 })
+
+// =====[ pause/resume timer ]=====
+
+timerBtn.addEventListener('click', handleTimerClick);
 
 // =====[ settings related ]=====
 

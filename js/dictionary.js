@@ -7,13 +7,27 @@
 
 const resultAreaElem = document.getElementById('result_area');
 
+// =======
+//  UTILS 
+// =======
+
+function removeDuplicateItem(list) {
+  let x = [];
+  for (let i = 0; i < list.length; i++) {
+    if (!x.includes(list[i])) x.push(list[i]);
+  }
+  return x;
+}
+
 // =================
 //  FIXED CONSTANTS
 // =================
 
 const maxInputChar = 500;
 const maxLoad = 100;
+const maxRecentChar = 20;
 const localStgSufx = '1f77t'; // should be equal to the one used in typing.js
+const recentCharLocalStgKey = 'dictRecentChar' + localStgSufx;
 const settings = {
   useEngKey: {
     type: 'checkbox',
@@ -28,7 +42,6 @@ const settings = {
 
 // if type is checkbox, the state should be a boolean
 settings.useEngKey.state = false;
-
 
 // ================
 //  DISPLAY PROMPT
@@ -61,6 +74,19 @@ function displayPrompt(situation) {
   }
 }
 
+// =================
+//  RECENT SEARCHES
+// =================
+
+// update recent char in local storage in the form of string (max char = maxRecentChar, no duplicate char)
+// char in newCharList are supposed to be in db
+function updateLocalStgRecentChr(newCharList) {
+  const stg = localStorage.getItem(recentCharLocalStgKey);
+  const oldList = stg ? [...stg].filter(ifInDb) : [];
+  const finalList = removeDuplicateItem([...newCharList, ...oldList]).slice(0, maxRecentChar);
+  localStorage.setItem(recentCharLocalStgKey, finalList.join(''));
+}
+
 // ======================
 //  SEARCH FUNCTIONALITY
 // ======================
@@ -74,7 +100,9 @@ function search() {
     if (chList.length > maxInputChar) {
       displayPrompt('inputTooManyCh');
     } else {
-      printResults(chList.filter(ifInDb));
+      const list = chList.filter(ifInDb);
+      updateLocalStgRecentChr(list);
+      printResults(list);
     }
   }
 }

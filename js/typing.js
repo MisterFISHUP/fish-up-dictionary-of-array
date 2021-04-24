@@ -2,7 +2,7 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-04-23
+ * Date: 2021-04-24
  */
 
 // get some html elements
@@ -195,11 +195,64 @@ function updateTimerCPM() {
   }
 }
 
-// ----------------------------------------------
-// prepare or reset exercise according to exerData
-// ----------------------------------------------
+// ================
+//  DISPLAY PROMPT
+// ================
 
-// prepare the exercise (with respect to exerData)
+// situation = 'custExerEmptyInput' | 'custExerLongInput' | 'finishExer'
+function displayPrompt(situation) {
+  switch (situation) {
+    case 'custExerEmptyInput': {
+      const i18nEmptyInput = {
+        tw: '您的輸入為空白！',
+        en: 'Nothing is entered!',
+        fr: "Rien n'est entré !"
+      };
+      $('#cust_exer-prompt').text(i18nEmptyInput[stringLocal]);
+      break;
+    }
+    case 'custExerLongInput': {
+      const i18nLongInput = {
+        tw: '提醒：您的輸入超過了 3000 字元！',
+        en: "You've entered more than 3000 characters!",
+        fr: 'Vous avez saisi plus de 3000 caractères !'
+      };
+      $('#cust_exer-prompt').text(i18nLongInput[stringLocal]);
+      break;
+    }
+    case 'finishExer': {
+      const i18nFinish = {
+        congratsSg: {
+          tw: `恭喜打完以上 1 句！🥳`,
+          en: `Congratulations! You've finished typing the line! 🥳`,
+          fr: `Félicitations d'avoir fini la saisie de la ligne ! 🥳`,
+        },
+        congratsPl: {
+          tw: `恭喜打完以上 ${exerData.nbLines} 句！🥳`,
+          en: `Congratulations! You've finished typing the ${exerData.nbLines} lines! 🥳`,
+          fr: `Félicitations d'avoir fini la saisie des ${exerData.nbLines} lignes ! 🥳`,
+        },
+        continueTyping: {
+          tw: "您可以透過「題目選擇」繼續練習！",
+          en: "Go to 'Exercises' to choose your next exercise!",
+          fr: "Rendez-vous à « Exercices » pour choisir votre exercice suivant !"
+        }
+      };
+      lineCurElem.innerHTML = (exerData.nbLines > 1)
+        ? i18nFinish.congratsPl[stringLocal]
+        : i18nFinish.congratsSg[stringLocal];
+      lineNextElem.innerHTML = i18nFinish.continueTyping[stringLocal];
+      break;
+    }
+  }
+}
+
+// ============================================
+//  Prepare the exercise according to exerData
+// ============================================
+
+// prepare the exercise, i.e. present the new exercise
+// with respect to exerData (which depends on argument `str` & settings states) 
 function prepExer(str) {
   // update exerString & exerData (global variables), save the former to localStorage
   exerString = str;
@@ -251,16 +304,27 @@ function createCustExer() {
   }
 }
 
-// ------------------------------------
-// prepare sentences, hints and results
-// ------------------------------------
+function prepBuiltInExer(btnId) {
+  // if btnId is 'example-category__example-exercise_name', then
+  // category is 'exampleCategory'
+  // exerciseName is 'exampleExerciseName'
+  const category = snakeToCamel(btnId.substring(0, btnId.indexOf('__')));
+  const exerciseName = snakeToCamel(btnId.substring(btnId.indexOf('__') + 2));
+  prepExer(typingExer[category][exerciseName]);
+}
 
+// ============================
+//  Prepare lines, cur ch hint
+// ============================
+
+// prepare lines, cur ch hint (and stats, which is updated
+// by instant verification)
 function prepLinesCurChHint() {
   // prep cur line
   lineCurElem.innerHTML = '';
   for (char of exerData.lineList[idxCurLine]) {
     const chSpan = document.createElement('span');
-    chSpan.innerHTML = (char == ' ') ? '&nbsp;' : char;
+    chSpan.textContent = char;
     lineCurElem.appendChild(chSpan);
   }
 
@@ -281,12 +345,11 @@ function createCurChHint(ch) {
   const elem = document.getElementById('cur_ch-hint');
   elem.innerHTML = '';
 
-  // add the character and comma to elem  
+  // add the character
   let char = document.createElement('div');
   const i18nSpace = { tw: '空白', en: 'Space', fr: 'Espace' };
   char.textContent = (ch == ' ') ? i18nSpace[stringLocal] : ch;
   char.style = "font-size: 2em; text-align: center;"; // bigger font size
-  char.textContent = ch;
   elem.appendChild(char);
 
   // add Array code list to block if the character is in DB
@@ -294,9 +357,9 @@ function createCurChHint(ch) {
   if (ifInDb(ch)) createArrayCodeList(ch, 'cur_ch-hint-code_list', 'cur_ch-hint', settings.useEngKey.state, maxDecomp);
 }
 
-// ---------------------
-// instant verification
-// ---------------------
+// ====================================
+//  INSTANT VERIFICATION & CHANGE LINE
+// ====================================
 
 function instantVerification() {
   const chCurLine = lineCurElem.querySelectorAll('span');
@@ -339,40 +402,6 @@ function instantVerification() {
   displayStat();
 }
 
-/* ===========================================
-    ADD ARRAY CODE BLOCKS OF WRONG CHARACTERS
-  ============================================ */
-
-function addWrgChCurLine(ch, pos) {
-  createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_cur_line');
-}
-
-function addWrgChAlrLines(ch, pos) {
-  createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_alr_lines');
-}
-
-// append the Array code block (id = blockId) of the character = ch to some elem (id = id)
-// no decomp included; ch supposed to be in DB
-function createArrayBlock(ch, blockId, id) {
-  const elem = document.getElementById(id);
-  let block = document.createElement('div');
-  block.id = blockId;
-  block.className = 'wrong_char_code_block';
-  elem.appendChild(block);
-
-  // add the character and comma to block
-  let char = document.createElement('span');
-  char.textContent = ch + "：";
-  char.style = "font-size: 1.2em;"; // bigger font size
-  block.appendChild(char);
-
-  // add Array code list to block
-  createArrayCodeList(ch, blockId + '_list', blockId, settings.useEngKey.state, 0);
-}
-
-//////////////////////
-//////////////////////
-
 function changeLine() {
   typingInputElem.value = '';
 
@@ -405,7 +434,6 @@ function changeLine() {
   alrLinesElem.innerHTML += lineCurElem.innerHTML + '<br>';
   displayStat();
 
-
   idxCurLine += 1;
 
   if (idxCurLine == exerData.nbLines) {
@@ -424,55 +452,42 @@ function changeLine() {
   }
 }
 
-// situation = 'custExerEmptyInput' | 'custExerLongInput' | 'finishExer'
-function displayPrompt(situation) {
-  switch (situation) {
-    case 'custExerEmptyInput': {
-      const i18nEmptyInput = {
-        tw: '您的輸入為空白！',
-        en: 'Nothing is entered!',
-        fr: "Rien n'est entré !"
-      };
-      $('#cust_exer-prompt').text(i18nEmptyInput[stringLocal]);
-      break;
-    }
-    case 'custExerLongInput': {
-      const i18nLongInput = {
-        tw: '提醒：您的輸入超過了 3000 字元！',
-        en: "You've entered more than 3000 characters!",
-        fr: 'Vous avez saisi plus de 3000 caractères !'
-      };
-      $('#cust_exer-prompt').text(i18nLongInput[stringLocal]);
-      break;
-    }
-    case 'finishExer': {
-      const i18nFinish = {
-        congratsSg: {
-          tw: `恭喜打完以上 1 句！🥳`,
-          en: `Congratulations! You've finished typing the line! 🥳`,
-          fr: `Félicitations d'avoir fini la saisie de la ligne ! 🥳`,
-        },
-        congratsPl: {
-          tw: `恭喜打完以上 ${exerData.nbLines} 句！🥳`,
-          en: `Congratulations! You've finished typing the ${exerData.nbLines} lines! 🥳`,
-          fr: `Félicitations d'avoir fini la saisie des ${exerData.nbLines} lignes ! 🥳`,
-        },
-        continueTyping: {
-          tw: "您可以透過「題目選擇」繼續練習！",
-          en: "Go to 'Exercises' to choose your next exercise!",
-          fr: "Rendez-vous à « Exercices » pour choisir votre exercice suivant !"
-        }
-      };
-      lineCurElem.innerHTML = (exerData.nbLines > 1)
-        ? i18nFinish.congratsPl[stringLocal]
-        : i18nFinish.congratsSg[stringLocal];
-      lineNextElem.innerHTML = i18nFinish.continueTyping[stringLocal];
-      break;
-    }
-  }
+// ===========================================
+//  ADD ARRAY CODE BLOCKS OF WRONG CHARACTERS
+// ===========================================
+
+function addWrgChCurLine(ch, pos) {
+  createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_cur_line');
 }
 
-// convert Array keys alr existing on page into English ones or conversly
+function addWrgChAlrLines(ch, pos) {
+  createArrayBlock(ch, 'line_' + String(idxCurLine + 1) + '_pos_' + String(pos), 'wrg_ch_alr_lines');
+}
+
+// append the Array code block (id = blockId) of the character = ch to some elem (id = id)
+// no decomp included; ch supposed to be in DB
+function createArrayBlock(ch, blockId, id) {
+  const elem = document.getElementById(id);
+  let block = document.createElement('div');
+  block.id = blockId;
+  block.className = 'wrong_char_code_block';
+  elem.appendChild(block);
+
+  // add the character and comma to block
+  let char = document.createElement('span');
+  char.textContent = ch + "：";
+  char.style = "font-size: 1.2em;"; // bigger font size
+  block.appendChild(char);
+
+  // add Array code list to block
+  createArrayCodeList(ch, blockId + '_list', blockId, settings.useEngKey.state, 0);
+}
+
+// ==========================
+//  ENG-ARRAY KEY CONVERSION
+// ==========================
+
+// convert Array keys already existing on page into English ones or conversly
 // keyType = 'eng' | 'array'
 function convertKey(keyType) {
   const keys = document.getElementsByClassName("keycap-letter");
@@ -488,8 +503,9 @@ function convertKey(keyType) {
   }
 }
 
-
+// =================
 // DISABLE SETTINGS
+// =================
 
 function settingForDecompCurCh(isShownCurCh) {
   $(`#${settings.showDecompCurCh.elemId}`).closest("tr").css('opacity', isShownCurCh ? 1 : 0.3);
@@ -498,9 +514,9 @@ function settingForDecompCurCh(isShownCurCh) {
     .closest('.toggle-container').css('cursor', isShownCurCh ? 'pointer' : 'not-allowed');
 }
 
-//=======================
-// WHEN LOADING THE FILE
-// ======================
+// =======================
+//  WHEN LOADING THE FILE
+// =======================
 
 // 1. Update states of settings by localStorage
 for (const setting in settings) {
@@ -539,9 +555,9 @@ prepExer(exerString);
 // 3. Update time & cpm every 200ms
 setInterval(updateTimerCPM, 200);
 
-/* ==============
-    USER ACTIONS
-  ============== */
+// ==============
+//  USER ACTIONS
+// ==============
 
 // =====[ typing input related ]=====
 
@@ -572,13 +588,8 @@ typingInputElem.addEventListener('keypress', (event) => {
 $('#btn-reset_cur_exer').click(() => prepExer(exerString));
 $('#btn-submit_cust_exer').click(createCustExer);
 $("#built_in_exer button").click(function () {
-  // if buttonId is 'example-category__example-exercise_name', then
-  // category is 'exampleCategory'
-  // exerciseName is 'exampleExerciseName'
-  const buttonId = $(this).attr('id');
-  const category = snakeToCamel(buttonId.substring(0, buttonId.indexOf('__')));
-  const exerciseName = snakeToCamel(buttonId.substring(buttonId.indexOf('__') + 2));
-  prepExer(typingExer[category][exerciseName]);
+  const btnId = $(this).attr('id');
+  prepBuiltInExer(btnId);
 })
 
 // =====[ settings related ]=====

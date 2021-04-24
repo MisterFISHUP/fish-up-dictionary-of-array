@@ -580,14 +580,8 @@ typingInputElem.addEventListener('input', function () {
 });
 
 typingInputElem.addEventListener('keypress', (event) => {
-  if (event.code == 'Enter') {
-    if (idxCurLine <= exerData.nbLines - 1) {
-      changeLine();
-    } else {
-      typingInputElem.value = '';
-      lineCurElem.innerHTML = '';
-      lineNextElem.innerHTML = '';
-    }
+  if (event.code == 'Enter' && timerState == 'active') {
+    changeLine();
   }
 });
 

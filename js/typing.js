@@ -13,6 +13,7 @@ const alrLinesElem = document.getElementById('alr_lines');
 const wrgChAlrLinesLinkElem = document.getElementById('wrg_ch_alr_lines-link');
 const wrgChAlrLinesElem = document.getElementById('wrg_ch_alr_lines');
 const wrgChCurLineElem = document.getElementById('wrg_ch_cur_line');
+const timerBtn = document.getElementById('timer-btn');
 
 // =======
 //  UTILS 
@@ -108,7 +109,7 @@ let nbCorChAlrLines = 0;
 let nbWrgChCurLine = 0;
 let nbWrgChAlrLines = 0;
 
-let timerState = 'inactive'; // 'active' | 'inactive'
+let timerState = 'inactive'; // 'active' | 'inactive' (<=> timer-btn is hidden)
 let startTime;
 let duration;
 
@@ -274,6 +275,9 @@ function prepExer(str) {
   $('#nb-total_ch').text(exerData.nbCh);
   $('#cur_line_num').text(idxCurLine + 1);
   displayStat();
+
+  // hide timer btn
+  timerBtn.classList.add('w3-hide');
 
   // clear contents 
   typingInputElem.value = '';
@@ -446,6 +450,9 @@ function changeLine() {
     // update timer & cpm before desactiving timer
     updateTimerCPM();
     timerState = 'inactive';
+
+    // hide timer btn
+    timerBtn.classList.add('w3-hide');
   } else {
     $('#cur_line_num').text(idxCurLine + 1);
     prepLinesCurChHint();
@@ -566,6 +573,7 @@ typingInputElem.addEventListener('input', function () {
     if (timerState == 'inactive') {
       timerState = 'active';
       startTime = Date.now();
+      timerBtn.classList.remove('w3-hide'); // show timer btn
     }
     instantVerification();
   }

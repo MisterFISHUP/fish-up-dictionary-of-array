@@ -156,7 +156,7 @@ function createExerData(str) {
   const regex = new RegExp(".{1," + n + "}", "gu");
   const lineList = permStr.match(regex).map(x => x.trim()).filter(Boolean);
 
-  return { lineList: lineList, nbLines: lineList.length, nbCh: [...str].length };
+  return { lineList: lineList, nbLines: lineList.length, nbCh: [...lineList.join('')].length };
 }
 
 // =================

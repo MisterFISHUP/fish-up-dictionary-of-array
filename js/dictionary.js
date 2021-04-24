@@ -2,34 +2,37 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-04-22
+ * Date: 2021-04-24
  */
 
 const resultAreaElem = document.getElementById('result_area');
 
-// Fixed constants
+// =================
+//  FIXED CONSTANTS
+// =================
+
 const maxInputChar = 500;
 const maxLoad = 100;
-
-/* ================
-    INITIALISATION
-  ================= */
-
-// define settings and initialise their states
-let settings = {
-  // only 'state' values are likely to be changed
-  // if type is checkbox, the state should be a boolean
+const localStgSufx = '1f77t'; // should be equal to the one used in typing.js
+const settings = {
   useEngKey: {
     type: 'checkbox',
-    localStgKey: 'useEngKey',
+    localStgKey: 'useEngKey' + localStgSufx,
     elemId: 'useEngKey',
-    state: false,
   },
 }
 
-// ---------------------
-// search functionality
-// ---------------------
+// ================
+//  INITIALISATION
+// ================
+
+// if type is checkbox, the state should be a boolean
+settings.useEngKey.state = false;
+
+
+// ================
+//  DISPLAY PROMPT
+// ================
 
 // situation = 'inputTooManyCh' | ''
 function displayPrompt(situation) {
@@ -57,6 +60,10 @@ function displayPrompt(situation) {
     }
   }
 }
+
+// ======================
+//  SEARCH FUNCTIONALITY
+// ======================
 
 // clear the result area, and if input is not too long, call printResults
 function search() {
@@ -219,9 +226,9 @@ function printResults(list) {
   resultDescription.scrollIntoView();
 }
 
-// --------------------
-// prepare result file
-// --------------------
+// =====================
+//  PREPARE RESULT FILE
+// =====================
 
 // prepare the file for users to download 
 function prepareResultFile(list) {
@@ -454,6 +461,10 @@ function prepareResultFile(list) {
   downloadBtnElem.target = "_blank";
 }
 
+// ===================
+//  ARRAY CODE FILTER
+// ===================
+
 // clear the result area, add result recap sentence, call printResults
 function array30Filter() {
   resultAreaElem.innerHTML = "";
@@ -628,6 +639,10 @@ function array30Filter() {
   }
 }
 
+// ====================
+//  CREATE ARRAY BLOCK
+// ====================
+
 // append the Array code block (id = blockId) of the character = ch to some elem (id = id)
 // ch supposed to be in DB
 function createArrayBlock(ch, blockId, id) {
@@ -647,6 +662,9 @@ function createArrayBlock(ch, blockId, id) {
   createArrayCodeList(ch, blockId + '_list', blockId, settings.useEngKey.state, -1);
 }
 
+// ==========================
+//  ENG-ARRAY KEY CONVERSION
+// ==========================
 
 // convert Array keys alr existing on page into English ones or conversly
 // keyType = 'eng' | 'array'
@@ -664,9 +682,9 @@ function convertKey(keyType) {
   }
 }
 
-//=======================
-// WHEN LOADING THE FILE
-// ======================
+// =======================
+//  WHEN LOADING THE FILE
+// =======================
 
 // 1. Update states of settings by localStorage
 
@@ -681,9 +699,9 @@ $('#inputCharacters').on('hover, mouseover', function () {
   $('#inputCharacters').select();
 });
 
-/* ==============
-    USER ACTIONS
-  ============== */
+// ==============
+//  USER ACTIONS
+// ==============
 
 // click btn or press enter to trigger 'search'
 document.getElementById('btn_submit').addEventListener("click", search);

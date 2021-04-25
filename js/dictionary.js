@@ -90,9 +90,28 @@ function updateRecentChr(newCharList) {
     // store in local storage in the form of string
     localStorage.setItem(recentCharLocalStgKey, finalList.join(''));
 
-    // show on the page
-    const i18nRecentSearches = { tw: '近期搜尋：', en: 'Recent searches: ', fr: 'Recherches récentes: ' };
-    recentCharElem.innerHTML = i18nRecentSearches[stringLocal];
+    // show on the page (clear btn + description + recent char)
+    const i18nRecentSearches = {
+      description: { tw: '近期搜尋：', en: 'Recent searches: ', fr: 'Recherches récentes : ' },
+      clearTitle: { tw: '清空近期搜尋', en: 'Clear recent searches', fr: 'Effacer les recherches récentes' }
+    };
+
+    // clear html
+    recentCharElem.innerHTML = '';
+
+    // add btn for clearing recent searches
+    const btnClear = document.createElement('button');
+    btnClear.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+    btnClear.title = i18nRecentSearches.clearTitle[stringLocal];
+    btnClear.classList.add('btn-clear_recent_char');
+    btnClear.onclick = clearRecentChar;
+    recentCharElem.appendChild(btnClear);
+
+    // add description
+    const desc = document.createTextNode(i18nRecentSearches.description[stringLocal]);
+    recentCharElem.appendChild(desc);
+
+    // add recent char
     finalList.forEach(x => {
       const btn = document.createElement('button');
       btn.classList.add('btn-recent_char');
@@ -105,6 +124,11 @@ function updateRecentChr(newCharList) {
       recentCharElem.appendChild(aSpace);
     })
   }
+}
+
+function clearRecentChar() {
+  localStorage.removeItem(recentCharLocalStgKey);
+  recentCharElem.innerHTML = '';
 }
 
 // ======================

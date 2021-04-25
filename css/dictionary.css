@@ -79,6 +79,13 @@
   padding: 0;
   cursor: pointer;
 }
+.btn-clear_recent_char {
+  border: none;
+  background: #dfdfdf;
+  border-radius: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
 
 /* ==============
     BELOW HEADER

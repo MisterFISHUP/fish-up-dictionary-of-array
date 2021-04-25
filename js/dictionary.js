@@ -38,6 +38,14 @@ const settings = {
   },
 }
 
+// =======================
+//  Note on local storage
+// =======================
+
+// The only things that are stored in local storage are
+// - useEngKey (key: see settings.useEngKey.localStgKey, also used in typing page)
+// - recent char (key: see recentCharLocalStgKey)
+
 // ================
 //  INITIALISATION
 // ================

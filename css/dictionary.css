@@ -55,9 +55,15 @@
   background-color: #81574f;
   color: white;
 }
+.dict-tab_search {
+  padding: 24px 12px 12px;
+  text-align: center;
+}
 #inputCharacters {
   width: 90%;
-  margin: 8px;
+  margin: 0 8px 12px;
+  padding: 8px;
+  display: inline-block;
   border-radius: 20px;
   border: 1.5px solid #cccccc;
   font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
@@ -68,9 +74,17 @@
   outline: none;
 }
 .dict-button {
+  border: none;
+  padding: 8px 16px;
+  vertical-align: middle;
+  cursor: pointer;
   background-color: #57342d;
   color: white;
   border-radius: 20px;
+  margin-bottom: 8px;
+}
+.dict-button:hover {
+  background-color: #9c6d63;
 }
 
 .btn-recent_char {
@@ -78,13 +92,23 @@
   background: none;
   padding: 0;
   cursor: pointer;
+  font-size: 1.1em;
+  vertical-align: middle;
+  transition: transform 0.1s;
+}
+.btn-recent_char:hover {
+  color: #c0896a;
+  transform: scale(1.3);
 }
 .btn-clear_recent_char {
   border: none;
-  background: #dfdfdf;
-  border-radius: 10px;
-  margin-right: 5px;
+  background: none;
   cursor: pointer;
+  transition: transform 0.1s;
+}
+.btn-clear_recent_char:hover {
+  color: #c0896a;
+  transform: scale(1.3);
 }
 
 /* ==============

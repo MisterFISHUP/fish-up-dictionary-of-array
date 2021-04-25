@@ -2,10 +2,12 @@
  * Author: FISH UP
  * https://array30.misterfishup.com/
  * Copyright © 2020-2021 FISH UP Dictionary of Array
- * Date: 2021-04-24
+ * Date: 2021-04-25
  */
 
 const resultAreaElem = document.getElementById('result_area');
+const recentCharElem = document.getElementById('recent_char');
+const inputElem = document.getElementById('inputCharacters');
 
 // =======
 //  UTILS 
@@ -78,13 +80,31 @@ function displayPrompt(situation) {
 //  RECENT SEARCHES
 // =================
 
-// update recent char in local storage in the form of string (max char = maxRecentChar, no duplicate char)
+// update recent char (no duplicate char, at most maxRecentChar) in local storage and on the page
 // char in newCharList are supposed to be in db
-function updateLocalStgRecentChr(newCharList) {
+function updateRecentChr(newCharList) {
   const stg = localStorage.getItem(recentCharLocalStgKey);
   const oldList = stg ? [...stg].filter(ifInDb) : [];
   const finalList = removeDuplicateItem([...newCharList, ...oldList]).slice(0, maxRecentChar);
-  localStorage.setItem(recentCharLocalStgKey, finalList.join(''));
+  if (finalList.length) {
+    // store in local storage in the form of string
+    localStorage.setItem(recentCharLocalStgKey, finalList.join(''));
+
+    // show on the page
+    const i18nRecentSearches = { tw: '近期搜尋：', en: 'Recent searches: ', fr: 'Recherches récentes: ' };
+    recentCharElem.innerHTML = i18nRecentSearches[stringLocal];
+    finalList.forEach(x => {
+      const btn = document.createElement('button');
+      btn.classList.add('btn-recent_char');
+      btn.textContent = x;
+      const i18nAdd = { tw: `搜尋欄內加上「${x}」`, en: `Add ${x} in the search field`, fr: `Ajouter ${x} dans le champ de recherche` };
+      btn.title = i18nAdd[stringLocal];
+      btn.onclick = function () { inputElem.value = inputElem.value + x; inputElem.focus(); }
+      aSpace = document.createTextNode(' ');
+      recentCharElem.appendChild(btn);
+      recentCharElem.appendChild(aSpace);
+    })
+  }
 }
 
 // ======================
@@ -93,7 +113,6 @@ function updateLocalStgRecentChr(newCharList) {
 
 // clear the result area, and if input is not too long, call printResults
 function search() {
-  const inputElem = document.getElementById('inputCharacters');
   const chList = [...inputElem.value];
   if (chList.length > 0) {
     resultAreaElem.innerHTML = "";
@@ -101,7 +120,7 @@ function search() {
       displayPrompt('inputTooManyCh');
     } else {
       const list = chList.filter(ifInDb);
-      updateLocalStgRecentChr(list);
+      updateRecentChr(list);
       printResults(list);
     }
   }
@@ -721,7 +740,10 @@ if (localStorage.getItem(settings.useEngKey.localStgKey) === JSON.stringify(!set
 }
 $(`#${settings.useEngKey.elemId}`).prop('checked', settings.useEngKey.state);
 
-// 2. Auto focus for the input area
+// 2. Show recent char
+updateRecentChr([]);
+
+// 3. Auto focus for the input area
 $('#inputCharacters').on('hover, mouseover', function () {
   $('#inputCharacters').focus();
   $('#inputCharacters').select();

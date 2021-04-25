@@ -73,6 +73,13 @@
   border-radius: 20px;
 }
 
+.btn-recent_char {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 /* ==============
     BELOW HEADER
   =============== */

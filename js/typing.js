@@ -423,7 +423,7 @@ function changeLine() {
       nbWrgChAlrLines += 1;
       const ch = chSpan.textContent;
       if (chSpan.classList.contains('untouched')) {
-        addWrgChAlrLines(ch, index + 1);
+        if (ifInDb(ch)) addWrgChAlrLines(ch, index + 1);
         chSpan.className = 'wrong';
       }
       if (ifInDb(ch)) {

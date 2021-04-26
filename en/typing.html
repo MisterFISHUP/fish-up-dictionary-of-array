@@ -83,9 +83,9 @@
         </header>
 
         <!-- The Grid -->
-        <div class="w3-padding-24 w3-row-padding typing-bg">
+        <div class="w3-row typing-bg">
             <!-- Left Column -->
-            <div class="w3-quarter" style="margin-bottom: 8px;">
+            <div class="w3-quarter typing-row_padding">
                 <!-- Current character with its Array code -->
                 <div id="container-cur_ch">
                     <h4>{{ appContent.currentCharacter[local] }}</h4>
@@ -94,7 +94,7 @@
 
                 <!-- Exercises -->
                 <h5>{{ appContent.exercises.title[local] }}</h5>
-                <div class="w3-padding w3-white w3-round-xlarge w3-margin-bottom">
+                <div class="w3-padding w3-white w3-round-xlarge">
                     <!-- Settings -->
                     <details class="typing-dtls-first">
                         <summary>{{ appContent.exercises.settings[local] }}</summary>
@@ -517,16 +517,17 @@
                         </div>
                     </details>
                 </div>
+                <br>
 
                 <!-- Buy me a cake -->
                 <h5>{{ appContent.supportThisWebsite[local] }}</h5>
-                <div class="w3-white w3-round-xlarge w3-margin-bottom" id='buy-me-a-cake-block' v-html='appContent.buyMeACake[local]'></div>
+                <div class="w3-white w3-round-xlarge" id='buy-me-a-cake-block' v-html='appContent.buyMeACake[local]'></div>
 
                 <!-- End Left Column -->
             </div>
 
             <!-- Middle Column -->
-            <div class='w3-half w3-padding' id='middle_column'>
+            <div class='w3-half typing-row_padding' id='middle_column'>
                 <!-- settings, info, and share buttons -->
                 <div style="display: flex; flex-wrap: wrap-reverse; align-items: flex-start;">
                     <!-- settings -->
@@ -669,11 +670,10 @@
                     <div id='wrg_ch_alr_lines-link'></div>
                     <div id='wrg_ch_alr_lines'></div>
                 </div>
-                <br>
             </div>
 
             <!-- Right Column -->
-            <div class='w3-quarter'>
+            <div class='w3-quarter typing-row_padding'>
                 <!-- statistics -->
                 <div class="container-statistics">
                     {{ appContent.stats.total[local] }}

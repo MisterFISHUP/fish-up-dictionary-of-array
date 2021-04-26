@@ -3,60 +3,37 @@
 }
 .typing-header {
   padding: 50px 16px 24px 16px;
-  background-color: #335544;
-  background-image: repeating-linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      60deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 60px
-    ),
-    linear-gradient(
-      60deg,
-      rgba(0, 0, 0, 0.1) 25%,
-      transparent 25%,
-      transparent 75%,
-      rgba(0, 0, 0, 0.1) 75%,
-      rgba(0, 0, 0, 0.1)
-    ),
-    linear-gradient(
-      120deg,
-      rgba(0, 0, 0, 0.1) 25%,
-      transparent 25%,
-      transparent 75%,
-      rgba(0, 0, 0, 0.1) 75%,
-      rgba(0, 0, 0, 0.1)
-    );
-  background-size: 70px 120px;
   margin-top: 45px;
+  background-color: rgb(56, 14, 0);
+  background-image: radial-gradient(circle, rgb(82, 20, 0), rgb(31, 7, 0));
 }
 .typing-header-title {
   display: inline-block;
   cursor: pointer;
-  background-color: rgba(100, 199, 158, 0.3);
+  background-color: rgba(165, 165, 165, 0.3);
   border-radius: 20px;
   padding: 12px 24px;
 }
 .typing-header-title:hover {
-  background-color: rgba(61, 172, 125, 0.8);
+  background-color: rgba(245, 245, 245, 0.3);
 }
 
 .typing-bg {
-  background-color: #beebbe;
+  background-color: rgb(255, 220, 184);
+  background-image: linear-gradient(
+    160deg,
+    rgb(255, 220, 184),
+    rgb(255, 208, 184),
+    rgb(255, 220, 184)
+  );
 }
 
 #hr_above_line_cur {
   border: none;
-  border-top: 1px solid #105710;
+  border-top: 1px solid #441b00;
   margin: 10px 0 10px;
 }
+
 /* ===================
     CURRENT CHARACTER
   ==================== */
@@ -67,6 +44,9 @@
   padding: 12px 16px;
   border-radius: 20px;
 }
+/* #cur_ch-hint:hover {
+  box-shadow: 0 0 5px 2px rgba(160, 160, 160, 0.3);
+} */
 
 /* =====[ radicals in decompositions ]===== */
 
@@ -103,8 +83,49 @@
   line-height: 1.1;
   min-height: 1.6em;
   user-select: none;
-  color: #999999;
+  color: #333333;
 }
+
+/* ===== typing input field ===== */
+#typing_input {
+  font-size: 1.2em;
+  padding: 8px 16px;
+  border-radius: 32px;
+  width: 100%;
+  clear: both;
+  border: 1.5px solid transparent;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
+}
+#typing_input:focus {
+  border: 1.5px solid #3b3b3b;
+  outline: none;
+}
+
+/* ===== typed lines block ===== */
+#alr_lines {
+  font-size: 1.2em;
+  min-height: 2em;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 32px;
+  background-color: white;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+#alr_lines:hover {
+  opacity: 0.9;
+}
+
+/* ===== wrong ch alr lines ===== */
+#wrg_ch_alr_lines-link {
+  font-size: 1.3em;
+  min-height: 2em;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 32px;
+}
+
 /* ======================
     WRONG CHARACTER CODE
   ======================= */
@@ -117,12 +138,12 @@
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .wrong-character-anchor {
+  display: inline-block;
   text-decoration: none;
   transition: transform 0.1s;
 }
 .wrong-character-anchor:hover {
-  color: #4bb35c;
-  display: inline-block;
+  color: #d42c2c;
   transform: scale(1.4);
 }
 
@@ -132,6 +153,12 @@
   border: none;
   background: none;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+#timer-btn:hover,
+#timer-btn:focus {
+  color: #e00000;
+  transform: scale(1.2);
 }
 
 /* stats */
@@ -152,10 +179,10 @@
 
 /* character state */
 .correct {
-  color: green;
+  color: #00a838;
 }
 .wrong {
-  color: red;
+  color: #e00000;
 }
 .current {
   background-color: #e0e0e0;
@@ -164,17 +191,6 @@
 
 .typing-block-cust-exer-hint {
   padding: 0 16px;
-}
-.typing-input-field {
-  font-size: 1.2em;
-  clear: both;
-  border: 1.5px solid transparent;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
-    "Noto Serif CJK SC", serif;
-}
-.typing-input-field:focus {
-  border: 1.5px solid #11471a;
-  outline: none;
 }
 
 /* choosing exercises */
@@ -218,7 +234,7 @@
   text-decoration: none;
   text-align: center;
   overflow: hidden;
-  transition: 0.2s;
+  transition: background-color 0.2s;
 }
 .btn-built-in-exer:hover {
   background-color: #cfcfcf;
@@ -242,6 +258,10 @@
 #buy-me-a-cake-block {
   padding: 16px 24px;
 }
+#buy-me-a-cake-block a {
+  text-decoration: none;
+  color: #ff519a;
+}
 #buy-me-a-cake-block a:hover {
-  color: green;
+  text-decoration: underline;
 }

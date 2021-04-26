@@ -652,21 +652,21 @@
                 <label class="w3-small" style="float:left">&ensp;{{ appContent.inputField[local] }}</label>
                 <button id="btn-reset_cur_exer" class="w3-small w3-hover-text-gray" style="float: right; cursor: pointer; border: none; background: none;"><i class="fa fa-refresh"></i> {{ appContent.reset[local] }}&ensp;</button>
                 <br>
-                <input type="text" id="typing_input" autofocus :placeholder='appContent.inputPlaceholder[local]' class="w3-input w3-padding w3-round-xxlarge typing-input-field">
+                <input type="text" id="typing_input" autofocus :placeholder='appContent.inputPlaceholder[local]'>
                 <br>
                 <br>
 
                 <!-- typed lines -->
                 <div id="container-alr_lines">
                     <h4>{{ appContent.typedLines[local] }}</h4>
-                    <div id='alr_lines' class='w3-padding w3-margin-bottom w3-round w3-light-gray w3-opacity w3-hover-white  w3-hover-opacity-off w3-round-xlarge' style="font-size: 1.2em; min-height: 2em;"></div>
+                    <div id='alr_lines'></div>
                 </div>
                 <br>
 
                 <!-- wrong char (typed lines) -->
                 <div id="container-wrg_ch_alr_lines">
                     <h4>{{ appContent.wrongCharacterPreviousLines[local] }}</h4>
-                    <div id='wrg_ch_alr_lines-link' class="w3-round-xlarge w3-padding w3-white" style="font-size: 1.3em; min-height: 2em;"></div>
+                    <div id='wrg_ch_alr_lines-link'></div>
                     <div id='wrg_ch_alr_lines'></div>
                 </div>
                 <br>

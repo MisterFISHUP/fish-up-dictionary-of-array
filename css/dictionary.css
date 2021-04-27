@@ -134,8 +134,12 @@
   margin-bottom: 16px;
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
-.dict-block-comment a:hover {
-  color: #9e7055;
+.dict-block-comment a {
+  color: rgb(206, 116, 64);
+  text-decoration: none;
+}
+.dict-block-comment a:hover, .dict-block-comment a:focus {
+  text-decoration: underline;
 }
 .dict-example {
   padding: 1px 20px;

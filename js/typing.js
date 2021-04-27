@@ -625,7 +625,7 @@ typingInputElem.addEventListener('input', function () {
 });
 
 typingInputElem.addEventListener('keypress', (event) => {
-  if (event.code == 'Enter' && timerState == 'active') {
+  if (event.key == 'Enter' && timerState == 'active') {
     changeLine();
   }
 });

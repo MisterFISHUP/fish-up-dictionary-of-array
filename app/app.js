@@ -215,7 +215,7 @@ function setShareLinksAndImages() {
   }).on("click", function () {
     socialWindow(shareUrl.line);
   }).on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.key == 'Enter') {
       socialWindow(shareUrl.line);
     }
   });
@@ -227,7 +227,7 @@ function setShareLinksAndImages() {
   }).on("click", function () {
     socialWindow(shareUrl.facebook);
   }).on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.key == 'Enter') {
       socialWindow(shareUrl.facebook);
     }
   });
@@ -239,7 +239,7 @@ function setShareLinksAndImages() {
   }).on("click", function () {
     socialWindow(shareUrl.twitter);
   }).on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.key == 'Enter') {
       socialWindow(shareUrl.twitter);
     }
   });
@@ -251,7 +251,7 @@ function setShareLinksAndImages() {
   }).on("click", function () {
     socialWindow(shareUrl.telegram);
   }).on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.key == 'Enter') {
       socialWindow(shareUrl.telegram);
     }
   });
@@ -263,7 +263,7 @@ function setShareLinksAndImages() {
   }).on("click", function () {
     socialWindow(shareUrl.linkedIn);
   }).on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.key == 'Enter') {
       socialWindow(shareUrl.linkedIn);
     }
   });

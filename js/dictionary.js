@@ -788,7 +788,7 @@ $('#inputCharacters').on('hover, mouseover', function () {
 // click btn or press enter to trigger 'search'
 document.getElementById('btn_submit').addEventListener("click", search);
 $(window).on('keypress', function (e) {
-  if (e.which == 13) search();
+  if (e.key == 'Enter') search();
 });
 
 document.getElementById("btn_filter_submit").addEventListener("click", array30Filter);

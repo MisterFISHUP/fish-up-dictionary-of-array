@@ -2,6 +2,7 @@ $toggle-width: 45px;
 $toggle-height: 24px;
 $toggle-border-radius: 24px;
 $toggle-border: 2px;
+$toggle-active_color: hsl(27, 100%, 70%);
 
 .toggle-container {
   position: relative;
@@ -37,8 +38,8 @@ $toggle-border: 2px;
 .toggle-container > input {
   display: none;
   &:checked + .toggle-button {
-    border: $toggle-border solid #7ff57f;
-    background-color: #7ff57f;
+    border: $toggle-border solid $toggle-active_color;
+    background-color: $toggle-active_color;
     &::before {
       left: $toggle-width - $toggle-height;
     }
@@ -51,7 +52,7 @@ $toggle-border: 2px;
   tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     &:hover {
-      background-color: rgba(0, 0, 0, 0.03);
+      background-color: rgba(0, 0, 0, 0.05);
     }
     &:last-child {
       border-bottom: none;
@@ -76,7 +77,7 @@ $toggle-border: 2px;
   transition: color 0.2s;
   cursor: pointer;
   &:hover {
-    color: hsl(123, 100%, 32%);
+    color: hsl(27, 84%, 40%);
   }
 }
 .modal-bg {
@@ -106,8 +107,12 @@ $toggle-border: 2px;
   .modal-title {
     font-size: 28px;
     padding: 12px 20px;
-    background-color: #8ec5fc;
-    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+    background-color: hsl(27, 100%, 75%);
+    background-image: linear-gradient(
+      145deg,
+      hsl(27, 100%, 75%),
+      hsl(35, 100%, 80%)
+    );
   }
   .modal-body {
     max-height: 355px;
@@ -120,7 +125,7 @@ $toggle-border: 2px;
     right: 20px;
     font-size: 28px;
     font-weight: bold;
-    color: #a0a0a0;
+    color: #6e6e6e;
     cursor: pointer;
     user-select: none;
     &:hover {
@@ -136,11 +141,11 @@ $toggle-border: 2px;
     text-align: center;
     font-size: 15px;
     color: #fff;
-    background: #4caf50;
+    background: darken($color: $toggle-active_color, $amount: 10%);
     cursor: pointer;
     &:hover {
       color: #fff;
-      background: #1e824c;
+      background: $toggle-active_color;
     }
   }
 }

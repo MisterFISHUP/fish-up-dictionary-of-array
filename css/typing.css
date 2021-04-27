@@ -1,5 +1,5 @@
 #middle_column {
-  scroll-margin-top: 69px; /* 45 + 24 (margin top) */
+  scroll-margin-top: 57px; /* 45 + 12 (padding top) */
 }
 .typing-row_padding {
   padding: 16px 12px;
@@ -264,7 +264,7 @@
 }
 #buy-me-a-cake-block a {
   text-decoration: none;
-  color: #ff519a;
+  color: #f56e00;
 }
 #buy-me-a-cake-block a:hover {
   text-decoration: underline;

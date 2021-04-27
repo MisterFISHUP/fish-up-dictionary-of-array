@@ -118,6 +118,14 @@ $toggle-active_color: hsl(27, 100%, 70%);
     max-height: 355px;
     padding: 10px 20px 10px;
     overflow-y: auto;
+    font-size: 17px;
+    a {
+      color: darken($toggle-active_color,22%);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   .modal-close-cross {
     position: absolute;

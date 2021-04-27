@@ -1,7 +1,7 @@
 const stringPageName = document.getElementById('app').dataset.pageName;
 const AppContent = {
   // header
-  title: { tw: 'FISH UP 行列打字練習', en: 'FISH UP Typing practice', fr: 'FISH UP Exercices de saisie' },
+  title: { tw: 'FISH UP 行列打字練習', en: 'FISH UP Typing Practice', fr: 'FISH UP Exercices de saisie' },
   subtitle: {
     tw: '最有效的行列輸入法打字練習',
     en: 'The Most Effective Typing Exercises with Array code hints',
@@ -218,15 +218,21 @@ const AppContent = {
     title: { tw: '說明', en: 'Info', fr: 'Info' },
     close: { tw: '關閉', en: 'Close', fr: 'Fermer' },
     par1: {
-      tw: `還沒有行列輸入法？本站<a href="download.html" target="_blank" class="w3-hover-opacity">下載頁面</a>可以免費下載！`,
-      en: `Don't have Array yet? You can get it for free on the <a href="download.html" target="_blank" class="w3-hover-opacity">download page</a>!`,
-      fr: `Vous n'avez pas encore Tableau ? Vous pouvez le télécharger gratuitement à la page <a href="download.html" target="_blank" class="w3-hover-opacity">Téléchargements</a> !`,
+      tw: '歡迎來到 FISH UP 行列打字練習！這裡提供了最完整的行列打字提示、豐富的打字題目，您甚至可以自製打字題目。',
+      en: 'Welcome to FISH UP Typing Practice! Here you will find a wide range of typing exercises and the most complete Array typing hints. You can also create your own exercises.',
+      fr: 'Bienvenue sur FISH UP Exercises de saisie ! Vous trouverez ici de nombreux exercices de saisie et les indices de saisie en Tableau les plus complets. Vous pourrez aussi créer vos propres exercises.',
     },
     par2: {
-      tw: `另外，點擊本頁的標題，可以將畫面移動至打字練習的區塊。打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，例如關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a>`,
-      en: `Clicking on the title of this page will move the screen to the exercise area. Also, it is recommended that you read the page 'FISH UP Dictionary of Array' before using this page for a better understanding of Array codes shown here (when dealing with coincident codes for example).&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>Click here to read the page<<</a>`,
-      fr: `Par ailleur, le fait de cliquer sur le titre de cette page permet de déplacer l'écran vers la zone d'exercices. Il est recommandé de lire la page « Dictionnaire FISH UP de Tableau » avant d'utiliser cette page, pour mieux comprendre les codes Tableau indiqués ici (pour la saisie des codes coïncidents par exemple). &emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>> Cliquez ici pour lire la page <<</a>`,
+      tw: `此外，FISH UP 行列打字練習能夠讓您自由練習打字，不限於<a href="./" target="_blank">行列輸入法</a>、也不限於中文。在此，您可以使用任何輸入法來練習中文或任何外文的打字。`,
+      en: `Of course, FISH UP Typing Practice is not limited to typing with <a href="./" target="_blank">the Array input method</a> or in Chinese. Here, you can use any input method to practise typing in Chinese or any other languages.`,
+      fr: `Bien entendu, FISH UP Exercises de saisie ne se limite pas à la saisie avec <a href="./" target="_blank">la méthode Tableau</a> ou la saisie du chinois. 
+      Ici, vous pouvez utiliser n'importe quelle méthode de saisie pour vous entraîner à taper en chinois ou dans d'autres langues.`,
     },
+    par3: {
+      tw: `若您還沒有行列輸入法，可以到本站<a href="download.html" target="_blank">下載頁面</a>免費下載！打字前建議先閱讀過本站<a href="dictionary.html" target="_blank">FISH UP 行列查碼</a>頁面，以了解本頁顯示的行列編碼與重碼提示。`,
+      en: `Finally, if you don't have Array yet, you can get it for free on the <a href="download.html" target="_blank">download page</a>. It is recommended that you read the page <a href="download.html" target="_blank">FISH UP Dictionary of Array</a> before using this page, for a better understanding of Array codes or coincident codes shown here.`,
+      fr: `Si vous n'avez pas encore Tableau, vous pouvez le télécharger gratuitement à la page <a href="download.html" target="_blank">Téléchargements</a>. Il est recommandé de lire la page <a href="download.html" target="_blank">Dictionnaire FISH UP de Tableau</a> avant d'utiliser cette page, pour mieux comprendre les codes Tableau et les codes coïncidents indiqués ici.`,
+    }
   },
   currentExerciseBeforeNb: { tw: '當前題目（第 ', en: 'Current exercise (Line ', fr: 'Exercice courant (Ligne ' },
   currentExerciseAfterNb: { tw: ' 句）', en: ')', fr: ')' },

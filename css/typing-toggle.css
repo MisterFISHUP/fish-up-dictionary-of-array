@@ -32,7 +32,11 @@
 
 .modal-content .modal-title { font-size: 28px; padding: 12px 20px; background-color: #ffb980; background-image: linear-gradient(145deg, #ffb980, #ffd599); }
 
-.modal-content .modal-body { max-height: 355px; padding: 10px 20px 10px; overflow-y: auto; }
+.modal-content .modal-body { max-height: 355px; padding: 10px 20px 10px; overflow-y: auto; font-size: 17px; }
+
+.modal-content .modal-body a { color: #f56e00; text-decoration: none; }
+
+.modal-content .modal-body a:hover { text-decoration: underline; }
 
 .modal-content .modal-close-cross { position: absolute; top: 12px; right: 20px; font-size: 28px; font-weight: bold; color: #6e6e6e; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 

@@ -97,7 +97,9 @@ $toggle-active_color: hsl(27, 100%, 70%);
   left: calc(50vw - min(90vw, 600px) / 2);
   top: 55px;
   width: calc(min(90vw, 600px));
-  height: 490px;
+  height: calc(
+    min(490px, calc(100vh - 55px - 16px))
+  ); // 490px is defalut height
   border-radius: 4px;
   overflow: hidden;
   background-color: #ffffff;
@@ -115,12 +117,14 @@ $toggle-active_color: hsl(27, 100%, 70%);
     );
   }
   .modal-body {
-    max-height: 355px;
+    max-height: calc(
+      min(360px, calc(100vh - 55px - 16px - 130px))
+    ); // 490 - 130 is default max-height
     padding: 10px 20px 10px;
     overflow-y: auto;
     font-size: 17px;
     a {
-      color: darken($toggle-active_color,22%);
+      color: darken($toggle-active_color, 22%);
       text-decoration: none;
       &:hover {
         text-decoration: underline;

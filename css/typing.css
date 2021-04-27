@@ -7,29 +7,54 @@
 .typing-header {
   padding: 50px 16px 24px 16px;
   margin-top: 45px;
-  background-color: rgb(56, 14, 0);
-  background-image: radial-gradient(circle, rgb(71, 18, 0), rgb(31, 7, 0));
+  background: rgb(251, 160, 96);
+  background-image: repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.07) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.07) 75%,
+      rgba(0, 0, 0, 0.07)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.07) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.07) 75%,
+      rgba(0, 0, 0, 0.07)
+    );
+  background-size: 70px 120px;
 }
 .typing-header-title {
   display: inline-block;
   cursor: pointer;
-  background-color: rgba(165, 165, 165, 0.3);
+  background-color: rgba(122, 122, 122, 0.3);
   border-radius: 20px;
   padding: 12px 24px;
+  transition: background 0.2s;
 }
 .typing-header-title:hover {
-  background-color: rgba(245, 245, 245, 0.3);
+  background-color: rgba(233, 233, 233, 0.3);
 }
 
 .typing-bg {
   padding: 12px;
-  background-color: rgb(255, 220, 184);
-  background-image: linear-gradient(
-    160deg,
-    rgb(255, 220, 184),
-    rgb(255, 208, 184),
-    rgb(255, 220, 184)
-  );
+  background-color: rgb(255, 219, 184);
 }
 
 #hr_above_line_cur {

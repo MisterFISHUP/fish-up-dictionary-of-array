@@ -1,7 +1,7 @@
 const stringPageName = document.getElementById('app').dataset.pageName;
 const AppContent = {
   // header
-  title: { tw: 'FISH UP 行列打字練習', en: 'FISH UP Typing practice', fr: 'FISH UP Exercices de saisie' },
+  title: { tw: 'FISH UP 行列打字練習', en: 'FISH UP Typing Practice', fr: 'FISH UP Exercices de saisie' },
   subtitle: {
     tw: '最有效的行列輸入法打字練習',
     en: 'The Most Effective Typing Exercises with Array code hints',
@@ -12,8 +12,7 @@ const AppContent = {
     en: 'A wide variety of exercises. You can even create your own.',
     fr: 'De nombreux exercices. Vous pouvez même en crée de nouveaux.'
   },
-  toggleClose: { tw: '請關閉', en: 'Close', fr: 'Fermer' },
-  showStandardDecomposition: { tw: '顯示拆字', en: 'Show decomposition', fr: 'Montrer décomposition' },
+
   // left column
   currentCharacter: { tw: '當前提示', en: 'Current character', fr: 'Caractère actuel' },
   exercises: {
@@ -195,56 +194,62 @@ const AppContent = {
       wtf: { tw: '獵奇', en: 'WTF', fr: "WTF" },
     },
   },
-  // middle column
-  toggleEngKey: { tw: '按鍵顯示為英文鍵', en: 'English-key Mode', fr: 'Mode touche anglaise' },
-  currentExercise: { tw: '當前題目', en: 'Current exercise', fr: 'Exercice courant' },
-  nextLine: { tw: '下一句', en: 'Next line', fr: 'Ligne suivante' },
-  inputField: { tw: '輸入欄', en: 'Input field', fr: 'Champ de saisie' },
-  reset: { tw: '重置當前題目 ', en: 'Reset', fr: "Réinitialiser" },
-  inputPlaceholder: { tw: '按 Enter 鍵換下一句', en: 'Press Enter to go to the next line', fr: "Appuyez sur Entrée pour accéder à la ligne suivante" },
-
-  reminder: {
-    title: { tw: '我知道了！', en: 'I got it!', fr: "J'ai compris !" },
-    par1: {
-      tw: `還沒有行列輸入法？本站<a href="download.html" target="_blank" class="w3-hover-opacity">下載頁面</a>可以免費下載！`,
-      en: `Don't have Array yet? You can get it for free on the <a href="download.html" target="_blank" class="w3-hover-opacity">download page</a>!`,
-      fr: `Vous n'avez pas encore Tableau ? Vous pouvez le télécharger gratuitement à la page <a href="download.html" target="_blank" class="w3-hover-opacity">Téléchargements</a> !`,
-    },
-    par2: {
-      tw: `另外，點擊本頁的標題，可以將畫面移動至打字練習的區塊。打字前建議先閱讀過本站「FISH UP 行列查碼」的頁面，以了解本頁顯示的行列編碼，例如關於使用普通編碼輸入時重碼的部分。&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>點我閱讀頁面<<</a>`,
-      en: `Clicking on the title of this page will move the screen to the exercise area. Also, it is recommended that you read the page 'FISH UP Dictionary of Array' before using this page for a better understanding of Array codes shown here (when dealing with coincident codes for example).&emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>>Click here to read the page<<</a>`,
-      fr: `Par ailleur, le fait de cliquer sur le titre de cette page permet de déplacer l'écran vers la zone d'exercices. Il est recommandé de lire la page « Dictionnaire FISH UP de Tableau » avant d'utiliser cette page, pour mieux comprendre les codes Tableau indiqués ici (pour la saisie des codes coïncidents par exemple). &emsp;<a href="dictionary.html#about-coincident-codes" target="_blank" class="w3-hover-opacity">>> Cliquez ici pour lire la page <<</a>`,
-    },
-  },
-  typedLines: { tw: '已打句子', en: 'Typed lines', fr: 'Lignes tapées' },
-  wrongCharacterPreviousLines: { tw: '先前行列錯字', en: 'Wrong characters and their Array codes (typed lines)', fr: 'Caractères incorrects avec leurs codes Array (lignes tapées)' },
-
-  // right column
-  results: {
-    // lines
-    lines: { tw: '句數', en: 'Lines', fr: 'Lignes' },
-    total: { tw: '全部', en: 'Total', fr: 'Total' },
-    currentRemaining: { tw: '當前/剩餘', en: 'Current/remaining', fr: 'Actuelle/restantes' },
-    // characters
-    characters: { tw: '字數', en: 'Characters', fr: 'Caractères' },
-    correctWrong: {
-      tw: `<span style="color: green;">正確</span>/<span style="color: red;">錯誤</span>`,
-      en: `<span style="color: green;">Correct</span>/<span style="color: red;">wrong</span>`,
-      fr: `<span style="color: green;">Corrects</span>/<span style="color: red;">incorrects</span>`
-    },
-    accuracy: { tw: '正確率', en: 'Accuracy', fr: 'Précision' },
-    remaining: { tw: '剩餘', en: 'Remaining', fr: 'Restants' },
-    // speed
-    speed: { tw: '速度（每分鐘字）', en: 'Speed (characters per minute)', fr: 'Vitesse (caractères par minute)' },
-    time: { tw: '時間', en: 'Time', fr: 'Temps' },
-    correct: { tw: '正確', en: 'Correct', fr: 'Correct' },
-    typed: { tw: '已打', en: 'Typed', fr: 'Tapé' },
-  },
-  wrongCharactersCurrentLine: { tw: '當句行列錯字', en: 'Wrong characters with their Array codes (current line)', fr: 'Caractères incorrects avec leurs codes Tableau (ligne actuelle)' },
   supportThisWebsite: { tw: '支持本站', en: 'Support this website', fr: 'Soutenez ce site' },
   buyMeACake: {
     tw: `如果您覺得本網站對您很有幫助，可以<a href="https://www.buymeacoffee.com/misterfishup" target="_blank" title='♫ 請我吃蛋糕 ♫'>給 FISH UP 買個蛋糕</a>來支持他！（臺灣的朋友請使用<a href="https://p.ecpay.com.tw/868A37D" target="_blank" title="支持 FISH UP 行列查碼去！">此連結</a>。）`,
     en: `If you enjoy this website, you can support FISH UP by <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" title='♫ Buy me a cake ♫'>buying him a cake</a> 🍰! (If you're from Taiwan, use <a href="https://p.ecpay.com.tw/868A37D" target="_blank" title="Support FISH UP Dictionary of Array!">this link</a> instead.)`,
     fr: `Si vous aimez ce site, vous pouvez <a href="https://www.buymeacoffee.com/misterfishup" target="_blank" title='♫ Achetez-moi un gâteau ♫'>soutenir FISH UP en lui achetant un gâteau</a> 🍰 ! (Si vous êtes de Taïwan, utilisez plutôt <a href="https://p.ecpay.com.tw/868A37D" target="_blank" title="Soutenez Dictionnaire FISH UP de Tableau !">ce lien</a>.)`
-  }
+  },
+
+  // middle column
+  settings: {
+    title: { tw: '設定', en: 'Settings', fr: 'Paramètres' },
+    close: { tw: '關閉', en: 'Close', fr: 'Fermer' },
+    useEngKey: { tw: '按鍵顯示為英文鍵', en: 'English-key Mode', fr: 'Mode touche anglaise' },
+    showCurCh: { tw: '顯示當前提示', en: 'Show the current character', fr: 'Afficher le caractère actuel' },
+    showDecompCurCh: { tw: '當前提示顯示拆字', en: 'Show character decomposition', fr: 'Afficher la décomposition du caractère' },
+    showDecompCurChHint: { tw: '若有拆字資料，顯示最標準拆字或是多種標準拆字中的其中一種', en: 'If data is available, display the standard decomposition or one of the standard decompositions of the current character', fr: "S'il des données sont disponibles, afficher la décomposition standard ou une des décompositions standard du caractère actuel" },
+    showAlrLines: { tw: '顯示已打句子', en: 'Show typed lines', fr: 'Afficher les lignes tapées' },
+    showWrgChAlrLines: { tw: '顯示先前行列錯字', en: 'Show wrong Array characters (typed lines)', fr: 'Afficher les caractères Tableau incorrects (lignes tapées)' },
+    showWrgChCurLine: { tw: '顯示當句行列錯字', en: 'Show wrong Array characters (current line)', fr: 'Afficher les caractères Tableau incorrects (ligne acutelle)' },
+    showPerformance: { tw: '顯示打字表現', en: 'Show typing performance', fr: 'Afficher les performances de frappe' },
+  },
+  info: {
+    title: { tw: '說明', en: 'Info', fr: 'Info' },
+    close: { tw: '關閉', en: 'Close', fr: 'Fermer' },
+    par1: {
+      tw: '歡迎來到 FISH UP 行列打字練習！這裡提供了最完整的行列打字提示、豐富的打字題目，您甚至可以自製打字題目。',
+      en: 'Welcome to FISH UP Typing Practice! Here you will find a wide range of typing exercises and the most complete Array typing hints. You can also create your own exercises.',
+      fr: 'Bienvenue sur FISH UP Exercises de saisie ! Vous trouverez ici de nombreux exercices de saisie et les indices de saisie en Tableau les plus complets. Vous pourrez aussi créer vos propres exercises.',
+    },
+    par2: {
+      tw: `此外，FISH UP 行列打字練習能夠讓您自由練習打字，不限於<a href="./" target="_blank">行列輸入法</a>、也不限於中文。在此，您可以使用任何輸入法來練習中文或任何外文的打字。`,
+      en: `Of course, FISH UP Typing Practice is not limited to typing with <a href="./" target="_blank">the Array input method</a> or in Chinese. Here, you can use any input method to practise typing in Chinese or any other languages.`,
+      fr: `Bien entendu, FISH UP Exercises de saisie ne se limite pas à la saisie avec <a href="./" target="_blank">la méthode Tableau</a> ou la saisie du chinois. 
+      Ici, vous pouvez utiliser n'importe quelle méthode de saisie pour vous entraîner à taper en chinois ou dans d'autres langues.`,
+    },
+    par3: {
+      tw: `若您還沒有行列輸入法，可以到本站<a href="download.html" target="_blank">下載頁面</a>免費下載！打字前建議先閱讀過本站<a href="dictionary.html" target="_blank">FISH UP 行列查碼</a>頁面，以了解本頁顯示的行列編碼與重碼提示。`,
+      en: `Finally, if you don't have Array yet, you can get it for free on the <a href="download.html" target="_blank">download page</a>. It is recommended that you read the page <a href="download.html" target="_blank">FISH UP Dictionary of Array</a> before using this page, for a better understanding of Array codes or coincident codes shown here.`,
+      fr: `Si vous n'avez pas encore Tableau, vous pouvez le télécharger gratuitement à la page <a href="download.html" target="_blank">Téléchargements</a>. Il est recommandé de lire la page <a href="download.html" target="_blank">Dictionnaire FISH UP de Tableau</a> avant d'utiliser cette page, pour mieux comprendre les codes Tableau et les codes coïncidents indiqués ici.`,
+    }
+  },
+  currentExerciseBeforeNb: { tw: '當前題目（第 ', en: 'Current exercise (Line ', fr: 'Exercice courant (Ligne ' },
+  currentExerciseAfterNb: { tw: ' 句）', en: ')', fr: ')' },
+  nextLine: { tw: '下一句', en: 'Next line', fr: 'Ligne suivante' },
+  inputField: { tw: '輸入欄', en: 'Input field', fr: 'Champ de saisie' },
+  reset: { tw: '重置 ', en: 'Reset', fr: "Réinitialiser" },
+  inputPlaceholder: { tw: '按 Enter 鍵換下一句', en: 'Press Enter to go to the next line', fr: "Appuyez sur Entrée pour accéder à la ligne suivante" },
+  typedLines: { tw: '已打句子', en: 'Typed lines', fr: 'Lignes tapées' },
+  wrongCharacterPreviousLines: { tw: '先前行列錯字', en: 'Wrong characters and their Array codes (typed lines)', fr: 'Caractères incorrects avec leurs codes Array (lignes tapées)' },
+
+  // right column
+  stats: {
+    total: { tw: '總句數/字數', en: 'Total lines/characters', fr: 'Total des lignes/caractères' },
+    character: { tw: '正確/錯誤/剩餘字數', en: 'Correct/wrong/remaining characters', fr: 'Caractères corrects/incorrects/restants' },
+    accuracy: { tw: '正確率', en: 'Accuracy', fr: 'Précision' },
+    time: { tw: '時間', en: 'Time', fr: 'Temps' },
+    speed: { tw: '每分鐘字（正確/所有）', en: 'CPM (correct/all)', fr: 'CPM (corrects/tous)' }
+  },
+  wrongCharactersCurrentLine: { tw: '當句行列錯字', en: 'Wrong characters with their Array codes (current line)', fr: 'Caractères incorrects avec leurs codes Tableau (ligne actuelle)' },
 };

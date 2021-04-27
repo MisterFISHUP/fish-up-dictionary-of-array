@@ -14,11 +14,36 @@
 .dict-header {
   padding: 40px 16px 0px 16px;
   background-color: #57342d;
-  background-image:
-    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-image: repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    );
   background-size: 70px 120px;
   margin-top: 45px;
 }
@@ -30,21 +55,60 @@
   background-color: #81574f;
   color: white;
 }
+.dict-tab_search {
+  padding: 24px 12px 12px;
+  text-align: center;
+}
 #inputCharacters {
   width: 90%;
-  margin: 8px;
+  margin: 0 8px 12px;
+  padding: 8px;
+  display: inline-block;
   border-radius: 20px;
   border: 1.5px solid #cccccc;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
 #inputCharacters:focus {
   border: 1.5px solid #333333;
   outline: none;
 }
 .dict-button {
+  border: none;
+  padding: 8px 16px;
+  vertical-align: middle;
+  cursor: pointer;
   background-color: #57342d;
   color: white;
   border-radius: 20px;
+  margin-bottom: 8px;
+}
+.dict-button:hover {
+  background-color: #9c6d63;
+}
+
+.btn-recent_char {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.1em;
+  vertical-align: middle;
+  transition: transform 0.1s;
+}
+.btn-recent_char:hover {
+  color: #c0896a;
+  transform: scale(1.3);
+}
+.btn-clear_recent_char {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.btn-clear_recent_char:hover {
+  color: #c0896a;
+  transform: scale(1.3);
 }
 
 /* ==============
@@ -70,8 +134,12 @@
   margin-bottom: 16px;
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
-.dict-block-comment a:hover {
-  color: #9e7055;
+.dict-block-comment a {
+  color: rgb(206, 116, 64);
+  text-decoration: none;
+}
+.dict-block-comment a:hover, .dict-block-comment a:focus {
+  text-decoration: underline;
 }
 .dict-example {
   padding: 1px 20px;
@@ -93,12 +161,6 @@
     ELEMENTS CREATED BY JS
   ======================== */
 
-.dict-block-hint {
-  font-size: 1.1em;
-  padding: 16px 24px;
-  background-color: white;
-  border-radius: 16px;
-}
 .dict-block-result-description {
   font-size: 1.1em;
   padding: 12px 24px;
@@ -140,8 +202,8 @@
   margin: 30px auto;
   padding: 12px 28px;
   border: none;
-  text-align:center;
-  cursor:pointer;
+  text-align: center;
+  cursor: pointer;
   font-size: 1.3em;
   border-radius: 32px;
   background-color: #795548;

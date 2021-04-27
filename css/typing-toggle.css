@@ -1,0 +1,55 @@
+.toggle-container { position: relative; display: inline-block; vertical-align: middle; width: 45px; height: 24px; cursor: pointer; }
+
+.toggle-button { position: absolute; top: 0; bottom: 0; left: 0; right: 0; border-radius: 24px; border: 2px solid #7c7c7c; background-color: #aaaaaa; -webkit-transition: all 0.2s; transition: all 0.2s; }
+
+.toggle-button::before { content: ""; width: 20px; height: 20px; border-radius: 22px; position: absolute; top: 0; left: 0; background-color: #f5f5f5; -webkit-transition: left 0.2s; transition: left 0.2s; }
+
+.toggle-container > input { display: none; }
+
+.toggle-container > input:checked + .toggle-button { border: 2px solid #ffab66; background-color: #ffab66; }
+
+.toggle-container > input:checked + .toggle-button::before { left: 21px; }
+
+.settings-table { font-size: 16px; border-collapse: collapse; width: 100%; }
+
+.settings-table tr { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+
+.settings-table tr:hover { background-color: rgba(0, 0, 0, 0.05); }
+
+.settings-table tr:last-child { border-bottom: none; }
+
+.settings-table td { vertical-align: middle; padding: 10px 16px; }
+
+.settings-table td:last-child { text-align: right; }
+
+.modal-button { font-size: 16px; margin: 0 8px; -webkit-transition: color 0.2s; transition: color 0.2s; cursor: pointer; }
+
+.modal-button:hover { color: #bc5d10; }
+
+.modal-bg { visibility: hidden; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10; -webkit-transition: background-color 0.2s ease-in; transition: background-color 0.2s ease-in; }
+
+.modal-content { visibility: hidden; position: fixed; z-index: 15; left: calc(50vw - min(90vw, 600px) / 2); top: 55px; width: calc(min(90vw, 600px)); height: calc( min(490px, calc(100vh - 55px - 16px))); border-radius: 4px; overflow: hidden; background-color: #ffffff; -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6); opacity: 0; -webkit-transition: opacity 0.2s ease-in; transition: opacity 0.2s ease-in; }
+
+.modal-content .modal-title { font-size: 28px; padding: 12px 20px; background-color: #ffb980; background-image: linear-gradient(145deg, #ffb980, #ffd599); }
+
+.modal-content .modal-body { max-height: calc( min(360px, calc(100vh - 55px - 16px - 130px))); padding: 10px 20px 10px; overflow-y: auto; font-size: 17px; }
+
+.modal-content .modal-body a { color: #f56e00; text-decoration: none; }
+
+.modal-content .modal-body a:hover { text-decoration: underline; }
+
+.modal-content .modal-close-cross { position: absolute; top: 12px; right: 20px; font-size: 28px; font-weight: bold; color: #6e6e6e; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.modal-content .modal-close-cross:hover { color: black; }
+
+.modal-content .modal-close-btn { position: absolute; bottom: 16px; right: 20px; padding: 6px 12px; border-radius: 3px; text-align: center; font-size: 15px; color: #fff; background: #ff8f33; cursor: pointer; }
+
+.modal-content .modal-close-btn:hover { color: #fff; background: #ffab66; }
+
+.modal-container { margin-top: 12px; }
+
+.modal-container > input { display: none; }
+
+.modal-container > input:checked ~ .modal-bg { visibility: visible; background-color: rgba(0, 0, 0, 0.6); }
+
+.modal-container > input:checked ~ .modal-content { visibility: visible; opacity: 1; }

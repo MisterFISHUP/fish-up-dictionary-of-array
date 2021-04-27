@@ -1,9 +1,13 @@
 #middle_column {
-  scroll-margin-top: 69px; /* 45 + 24 (margin top) */
+  scroll-margin-top: 57px; /* 45 + 12 (padding top) */
+}
+.typing-row_padding {
+  padding: 16px 12px;
 }
 .typing-header {
   padding: 50px 16px 24px 16px;
-  background-color: #335544;
+  margin-top: 45px;
+  background: rgb(251, 160, 96);
   background-image: repeating-linear-gradient(
       120deg,
       rgba(255, 255, 255, 0.1),
@@ -20,80 +24,71 @@
     ),
     linear-gradient(
       60deg,
-      rgba(0, 0, 0, 0.1) 25%,
+      rgba(0, 0, 0, 0.07) 25%,
       transparent 25%,
       transparent 75%,
-      rgba(0, 0, 0, 0.1) 75%,
-      rgba(0, 0, 0, 0.1)
+      rgba(0, 0, 0, 0.07) 75%,
+      rgba(0, 0, 0, 0.07)
     ),
     linear-gradient(
       120deg,
-      rgba(0, 0, 0, 0.1) 25%,
+      rgba(0, 0, 0, 0.07) 25%,
       transparent 25%,
       transparent 75%,
-      rgba(0, 0, 0, 0.1) 75%,
-      rgba(0, 0, 0, 0.1)
+      rgba(0, 0, 0, 0.07) 75%,
+      rgba(0, 0, 0, 0.07)
     );
   background-size: 70px 120px;
-  margin-top: 45px;
 }
 .typing-header-title {
   display: inline-block;
   cursor: pointer;
-  background-color: rgba(100, 199, 158, 0.3);
+  background-color: rgba(122, 122, 122, 0.3);
   border-radius: 20px;
   padding: 12px 24px;
+  transition: background 0.2s;
 }
 .typing-header-title:hover {
-  background-color: rgba(61, 172, 125, 0.8);
+  background-color: rgba(233, 233, 233, 0.3);
 }
 
 .typing-bg {
-  background-color: #beebbe;
+  padding: 12px;
+  background-color: rgb(255, 219, 184);
 }
-.typing-block-close-me {
-  background-color: #126139;
-  color: whitesmoke;
-  border-radius: 15px;
-  padding: 8px 16px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  position: relative;
-}
-.typing-btn-close-me {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-radius: 0 15px 0 0;
-}
-#hr_above_sentence_current {
-  clear: both;
+
+#hr_above_line_cur {
   border: none;
-  border-top: 1px solid #105710;
-  margin: 15px 0 10px;
+  border-top: 1px solid #441b00;
+  margin: 10px 0 10px;
 }
+
 /* ===================
     CURRENT CHARACTER
   ==================== */
 
-.current_char_code_block {
-  padding: 8px 16px;
-  margin-top: 16px;
+#cur_ch-hint {
+  margin-bottom: 2rem;
   background-color: white;
+  padding: 12px 16px;
   border-radius: 20px;
 }
+/* #cur_ch-hint:hover {
+  box-shadow: 0 0 5px 2px rgba(160, 160, 160, 0.3);
+} */
 
 /* =====[ radicals in decompositions ]===== */
-#hint_current .radical {
+
+#cur_ch-hint .radical {
   cursor: text;
 }
-#hint_current .radical-special {
+#cur_ch-hint .radical-special {
   cursor: default;
 }
-#hint_current .radical-special-sc {
+#cur_ch-hint .radical-special-sc {
   cursor: default;
 }
-#hint_current .radical-sc {
+#cur_ch-hint .radical-sc {
   cursor: default;
 }
 
@@ -101,7 +96,7 @@
     CURRENT EXERCISE
   =================== */
 
-#sentence_current {
+#line_cur {
   margin-bottom: 5px;
   padding: 8px 16px;
   border-radius: 32px;
@@ -110,18 +105,60 @@
   min-height: 2.1em;
   user-select: none;
 }
-#sentence_next {
+#line_next {
   margin-bottom: 3px;
   padding: 6px 16px 4px;
   font-size: 1.7em;
   line-height: 1.1;
   min-height: 1.6em;
   user-select: none;
-  color: #999999;
+  color: #333333;
 }
+
+/* ===== typing input field ===== */
+#typing_input {
+  font-size: 1.2em;
+  padding: 8px 16px;
+  border-radius: 32px;
+  width: 100%;
+  clear: both;
+  border: 1.5px solid transparent;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
+}
+#typing_input:focus {
+  border: 1.5px solid #3b3b3b;
+  outline: none;
+}
+
+/* ===== typed lines block ===== */
+#alr_lines {
+  font-size: 1.2em;
+  min-height: 2em;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 32px;
+  background-color: white;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+#alr_lines:hover {
+  opacity: 0.9;
+}
+
+/* ===== wrong ch alr lines ===== */
+#wrg_ch_alr_lines-link {
+  font-size: 1.3em;
+  min-height: 2em;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 32px;
+}
+
 /* ======================
     WRONG CHARACTER CODE
   ======================= */
+
 .wrong_char_code_block {
   padding: 8px 16px;
   margin-top: 16px;
@@ -130,41 +167,60 @@
   scroll-margin-top: 61px; /* 45 + 16 (margin top) */
 }
 .wrong-character-anchor {
+  display: inline-block;
   text-decoration: none;
+  transition: transform 0.1s;
 }
 .wrong-character-anchor:hover {
-  color: #4bb35c;
-  display: inline-block;
-  transition: 0.1s;
+  color: #d42c2c;
   transform: scale(1.4);
 }
 
-.typing-results {
-  line-height: 1.6;
-  padding: 24px;
+/* timer btn */
+#timer-btn {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#timer-btn:hover,
+#timer-btn:focus {
+  color: #e00000;
+  transform: scale(1.2);
+}
+
+/* stats */
+.container-statistics {
+  padding: 16px;
   border-radius: 16px;
   background-color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  overflow: auto;
 }
+.performance_title {
+  margin-top: 10px;
+}
+.stats_number {
+  font-size: 1.5em;
+}
+
+/* character state */
 .correct {
-  color: green;
+  color: #00a838;
 }
-.incorrect {
-  color: red;
+.wrong {
+  color: #e00000;
 }
+.current {
+  background-color: #e0e0e0;
+  border-radius: 15%;
+}
+
 .typing-block-cust-exer-hint {
   padding: 0 16px;
 }
-.typing-input-field {
-  font-size: 1.2em;
-  clear: both;
-  border: 1.5px solid transparent;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
-}
-.typing-input-field:focus {
-  border: 1.5px solid #11471a;
-  outline: none;
-}
-
 
 /* choosing exercises */
 .typing-dtls-first {
@@ -207,21 +263,22 @@
   text-decoration: none;
   text-align: center;
   overflow: hidden;
-  transition: 0.2s;
+  transition: background-color 0.2s;
 }
 .btn-built-in-exer:hover {
   background-color: #cfcfcf;
 }
 
 /* create your own exercise */
-#input_cust_exer {
+#cust_exer-input {
   padding: 8px;
   width: 95%;
   border: 1.5px solid #cccccc;
   border-radius: 15px;
-  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC", "Noto Serif CJK SC", serif;
+  font-family: "Noto Serif", "Noto Serif TC", "Noto Serif CJK TC",
+    "Noto Serif CJK SC", serif;
 }
-#input_cust_exer:focus {
+#cust_exer-input:focus {
   border: 1.5px solid #303030;
   outline: none;
 }
@@ -230,6 +287,10 @@
 #buy-me-a-cake-block {
   padding: 16px 24px;
 }
+#buy-me-a-cake-block a {
+  text-decoration: none;
+  color: #f56e00;
+}
 #buy-me-a-cake-block a:hover {
-  color: green;
+  text-decoration: underline;
 }

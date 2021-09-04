@@ -239,8 +239,8 @@ const AppContent = {
       },
       twoDigits: {
         description: {
-          tw: `<b>1. 字根碼是一個二位數字</b>：第一位數對應到行列 30 鍵的行，而第二位數依照「0, 1, 2, 3, 4：上&emsp;5：中&emsp;6, 7, 8, 9, 0：下」對應行列 30 鍵的列。`,
-          en: `<b>1. The radical code is a 2-digit number</b>: the first digit is the column position of the Array key, and the second digit gives the row position of the Array key according to the following rule: '0, 1, 2, 3, 4 = top; 5 = middle; 6, 7, 8, 9, 0 = bottom'.`,
+          tw: `<b>1. 字根碼是一個二位數字</b>：第一位數對應到行列 30 鍵的行，而第二位數依照「0, 1, 2, 3, 4：上&emsp;5：中&emsp;6, 7, 8, 9：下」對應行列 30 鍵的列。`,
+          en: `<b>1. The radical code is a 2-digit number</b>: the first digit is the column position of the Array key, and the second digit gives the row position of the Array key according to the following rule: '0, 1, 2, 3, 4 = top; 5 = middle; 6, 7, 8, 9 = bottom'.`,
           fr: `<b>1. Le code de radical est composé de 2 chiffres</b> : le premier chiffre est la position de la colonne de la touche Tableau, et le second chiffre donne la position de la ligne de la touche Tableau selon la règle suivante : « 0, 1, 2, 3, 4 = haut ; 5 = milieu ; 6, 7, 8, 9 = bas ».`
         },
         examplePar1: {

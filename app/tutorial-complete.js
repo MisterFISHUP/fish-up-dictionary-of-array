@@ -874,13 +874,13 @@ const AppContent = {
       fr: ``
     },
     topBottom: {
-      tw: `行列鍵位的「↑」、「↓」符號常用「^」、「v」代替。例如 <span class="keycap keycap-letter">7↑</span> 寫成「7^」， <span class="keycap keycap-letter">3↓</span> 寫成「3v」。鍵位間表示順序的加號「<span class="radical-plus">+</span>」一般也省略不寫，例如「洪」字的普通編碼 <span class="keycap keycap-letter">3↓</span> <span class="radical-plus">+</span> <span class="keycap keycap-letter">4↑</span> <span class="radical-plus">+</span> <span class="keycap keycap-letter">8-</span> 一般會寫成「3v4^8-」。
+      tw: `行列鍵位的「↑」、「↓」符號常用「<span style="font-family: sans-serif">^</span>」、「v」代替。例如 <span class="keycap keycap-letter">7↑</span> 寫成「7<span style="font-family: sans-serif">^</span>」， <span class="keycap keycap-letter">3↓</span> 寫成「3v」。鍵位間表示順序的加號「<span class="radical-plus">+</span>」一般也省略不寫，例如「洪」字的普通編碼 <span class="keycap keycap-letter">3↓</span> <span class="radical-plus">+</span> <span class="keycap keycap-letter">4↑</span> <span class="radical-plus">+</span> <span class="keycap keycap-letter">8-</span> 一般會寫成「3v4<span style="font-family: sans-serif">^</span>8-」。
       `,
       en: ``,
       fr: ``
     },
     com1: {
-      tw: `註：輸入「^」方式為 <span class="keycap keycap-space">Shift</span> 鍵按住不放的同時按下 <span class="keycap keycap-number">6</span>。`,
+      tw: `註：輸入「<span style="font-family: sans-serif">^</span>」方式為 <span class="keycap keycap-space">Shift</span> 鍵按住不放的同時按下 <span class="keycap keycap-number">6</span>。`,
       en: `Note: `,
       fr: `NB : `
     }

@@ -819,9 +819,9 @@ const arrayRadicalInformation = {
   },
   '戶': {
     code: '5-', type: 'special', isSimplified: false, isText: true, remark: {
-      tw: '以第二筆「順彎」定位',
-      en: "encoded by the 2nd stroke 'clockwise turning stroke'",
-      fr: "encodé par le 2e trait « trait brisé dans le sens horaire »"
+      tw: '以第三筆「順彎」定位',
+      en: "encoded by the 3rd stroke 'clockwise turning stroke'",
+      fr: "encodé par le 3e trait « trait brisé dans le sens horaire »"
     }
   },
   '鼎': {

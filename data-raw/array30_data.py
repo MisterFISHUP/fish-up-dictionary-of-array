@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author: Mister FISH UP
 # https://array30.misterfishup.com/
-# Copyright © 2020-2021 FISH UP Dictionary of Array
+# Copyright © 2020-2022 FISH UP Dictionary of Array
 # Date: 2021 Jan. 21
 
 # create data/code-XXXX.js and data/array-key.js files from from data-raw/XXX.txt

@@ -125,9 +125,9 @@ const AppContent = {
     download: {
       title: { tw: '下載', en: 'Download', fr: 'Téléchargement' },
       link: {
-        tw: `<a href="https://github.com/jrywu/DIME/raw/1.1.273a/installer/DIME-x8664.zip">點此直接下載</a>，或到<a href="https://github.com/jrywu/DIME/releases/tag/1.1.273a" target="_blank">這裡</a>下載。`,
-        en: `<a href="https://github.com/jrywu/DIME/raw/1.1.273a/installer/DIME-x8664.zip">Click here</a> to start the download, or download from <a href="https://github.com/jrywu/DIME/releases/tag/1.1.273a" target="_blank">this page</a> on GitHub.`,
-        fr: `<a href="https://github.com/jrywu/DIME/raw/1.1.273a/installer/DIME-x8664.zip">Cliquez ici</a> pour démarrer le téléchargement, ou télécharger depuis <a href="https://github.com/jrywu/DIME/releases/tag/1.1.273a" target="_blank">cette page</a> sur GitHub.`
+        tw: `<a href="https://github.com/jrywu/DIME/raw/1.2.337/installer/DIME-x86armUniversal.zip">點此直接下載</a>，或到<a href="https://github.com/jrywu/DIME/releases" target="_blank">這裡</a>下載。`,
+        en: `<a href="https://github.com/jrywu/DIME/raw/1.2.337/installer/DIME-x86armUniversal.zip">Click here</a> to start the download, or download from <a href="https://github.com/jrywu/DIME/releases" target="_blank">this page</a> on GitHub.`,
+        fr: `<a href="https://github.com/jrywu/DIME/raw/1.2.337/installer/DIME-x86armUniversal.zip">Cliquez ici</a> pour démarrer le téléchargement, ou télécharger depuis <a href="https://github.com/jrywu/DIME/releases" target="_blank">cette page</a> sur GitHub.`
       },
     },
     installationAndActivation: {
@@ -237,9 +237,9 @@ const AppContent = {
       fr: `La méthode Tableau n'est pas intégrée sur Android. Il est recommandé de télécharger « LIME IME », qui a non seulement Tableau 30 mais aussi Tableau 10. Il supporte d'ailleurs la conversion caractères chinois traditionnels-simplifiés, la recherche inversée, et de nombreuses autres fonctionnalités pratiques.`,
     },
     installation: {
-      tw: `到 Play 商店搜尋「萊姆中文輸入法」，或是<a href="https://play.google.com/store/apps/details?id=net.toload.main.hd" target="_blank">點此</a>直接進入下載頁面。`,
-      en: `Go to the Play Store and search for 'LIME IME' (the name of the application is '萊姆中文輸入法 - LIME IME'), or <a href="https://play.google.com/store/apps/details?id=net.toload.main.hd" target="_blank">click here</a> to go directly to the download page.`,
-      fr: `Allez sur le Play Store et cherchez « LIME IME » (le nom de l'application est « 萊姆中文輸入法 - LIME IME »), ou <a href="https://play.google.com/store/apps/details?id=net.toload.main.hd" target="_blank">cliquez ici</a> pour aller directement à la page de téléchargement.`,
+      tw: `<del>到 Play 商店搜尋「萊姆中文輸入法」</del>，或是<a href="https://github.com/gontera/LIME-IME" target="_blank">點此</a>直接進入下載頁面。`,
+      en: `<del>Go to the Play Store and search for 'LIME IME' (the name of the application is '萊姆中文輸入法 - LIME IME')</del>, or <a href="https://github.com/gontera/LIME-IME" target="_blank">click here</a> to go directly to the download page.`,
+      fr: `<del>Allez sur le Play Store et cherchez « LIME IME » (le nom de l'application est « 萊姆中文輸入法 - LIME IME »)</del>, ou <a href="https://github.com/gontera/LIME-IME" target="_blank">cliquez ici</a> pour aller directement à la page de téléchargement.`,
     },
     settings: {
       tw: `在萊姆輸入法頁面上方點擊齒輪圖示可以進入設定頁面。設定頁面中，可以開啟反查功能。例如到注音字根反查選擇行列 10，在使用萊姆注音輸入時，系統就會提示輸入字的行列 10 編碼。另外，使用萊姆輸入法時，左右滑動鍵盤中的空白鍵可以快速切換不同的輸入法。`,

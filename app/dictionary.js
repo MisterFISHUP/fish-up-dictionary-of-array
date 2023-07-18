@@ -8,7 +8,7 @@ const AppContent = {
   },
   tab1Title: { tw: '我想要查碼', en: 'Dictionary', fr: 'Dictionnaire' },
   tab2Title: { tw: '我想看列表', en: 'Lists', fr: 'Listes' },
-  searchPlaceholder: { tw: '可同時查 500 個字！', en: '500 caracters! You can simultaneously look up 500 caracters!', fr: "500 caractères ! Vous pouvez simultanément rechercher 500 caractères !" },
+  searchPlaceholder: { tw: '可同時查 500 個字！', en: '500 characters! You can simultaneously look up 500 characters!', fr: "500 caractères ! Vous pouvez simultanément rechercher 500 caractères !" },
 
   singleCode: { tw: '單鍵碼', en: 'one-key codes', fr: 'codes mono-touche' },
   specialCode: { tw: '特別碼', en: 'special codes', fr: 'codes spéciaux' },
@@ -23,7 +23,7 @@ const AppContent = {
     sec1Title: { tw: '我想要查碼', en: 'Array dictionary', fr: 'Dictionnaire Tableau' },
     sec1Point1: {
       tw: '查詢範圍涵蓋至中日韓統一表意文字擴充區 D，總共 75016 字符提供查詢',
-      en: "75016 characters et symbols, including all characters in CJK Unified Ideographs until Extension D",
+      en: "75016 characters and symbols, including all characters in CJK Unified Ideographs until Extension D",
       fr: "75016 caractères et symboles, y compris tous les caractères dans les sinogrammes unifiés CJC jusqu'au supplément D",
     },
     sec1Point2: {

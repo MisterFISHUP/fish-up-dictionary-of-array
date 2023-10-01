@@ -17,6 +17,10 @@
 #radical-overview-wrapper {
   max-width: 1180px;
   margin: 100px auto;
+
+  @media print {
+    margin: -15px auto;
+  }
 }
 #radical-overview {
   margin: 20px;

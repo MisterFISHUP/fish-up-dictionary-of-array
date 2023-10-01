@@ -45,7 +45,7 @@ app.component('app-nav-bar', {
     },
   },
   template: `
-  <div class="w3-top">
+  <div class="w3-top no-print">
       <div class="w3-bar w3-black w3-card">
           <!-- always there -->
           <a :href="homeUrlLocal" class="w3-bar-item w3-button w3-padding-large w3-pale-yellow"><i class="fa fa-home w3-large" aria-hidden="true"></i></a>
@@ -170,6 +170,7 @@ $(function () {
   $('#to_top').click(function () {
     $('html,body').animate({ scrollTop: 0 }, 150);
   });
+  $('#to_top').addClass('no-print');
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
       $('#to_top').fadeIn(222);

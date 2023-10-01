@@ -33,6 +33,9 @@ $("#toggleStickyTOC").click(function () {
   $("#stickyTOCWrapper").toggleClass("w3-hide");
   $(this).children().toggleClass("w3-hide");
 });
+// no print
+$("#toggleTOCSmall").addClass("no-print");
+$("#toggleStickyTOC").addClass("no-print");
 
 // simulate position sticky
 window.onscroll = function () { toggleStickyForTOC() };

@@ -6,7 +6,7 @@ const AppContent = {
   sKeyDictionary: { tw: '查碼去', en: 'Dictionary', fr: 'Dictionnaire' },
   sKeyTyping: { tw: '打字去', en: 'Typing', fr: 'Exercices' },
   sKeyArray: { tw: '什麼是行列輸入法', en: 'What is Array?', fr: "Qu'est-ce que Tableau ?" },
-  tryTheseExamples: { tw: '您可以試試這些例子', en: 'You can try these examples', fr: "Vous pouvez essayer ces examples" },
+  tryTheseExamples: { tw: '您可以試試這些例子', en: 'You can try these examples', fr: "Vous pouvez essayer ces exemples" },
   examplesShow: { tw: '展開', en: 'Show', fr: "Afficher" },
   examplesHide: { tw: '收合', en: 'Hide', fr: "Masquer" },
   game: {

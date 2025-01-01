@@ -1,7 +1,7 @@
 /**
  * Author: FISH UP
  * https://array30.misterfishup.com/
- * Copyright © 2020-2024 FISH UP Dictionary of Array
+ * Copyright © 2020-2025 FISH UP Dictionary of Array
  * Date: 2021 fev. 8
  */
 

@@ -1,2 +1,2 @@
 const stringLocal = document.getElementById('app').dataset.local;
-const websiteYear = '2020-2024';
+const websiteYear = '2020-2025';
